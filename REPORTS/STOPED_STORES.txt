@@ -1,0 +1,6 @@
+cWhere As String
+& _
+                " INNER JOIN STORE_BR ON QFILE6_20.STORE = STORE_BR.CODE"
+If chkStoped.Value = 0 Then cWhere = "STORE_BR.ISSTOP = 0"
+If cWhere <> "" Then cString = cString & " WHERE " & cWhere
+

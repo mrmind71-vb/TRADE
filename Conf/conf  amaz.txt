@@ -1,0 +1,6 @@
+SERVER=junior-sql.database.windows.net
+USERID=062F8C407C77
+PASSWORD=C77DA5F185954963DD1F902815
+Catalog=junior_shop
+
+

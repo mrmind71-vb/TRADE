@@ -1,0 +1,198 @@
+{
+	"info": {
+		"_postman_id": "fa342409-9da4-4128-a248-426a85fcd943",
+		"name": "Stores-MOA-Junior",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27478692"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "{{wp_user}}",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "{{wp_pass}}",
+							"type": "string"
+						},
+						{
+							"key": "showPassword",
+							"value": false,
+							"type": "boolean"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "x-api-key",
+						"value": "{{api-key}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "userName",
+							"value": "moa@rsmsapi.marakez.net",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "Moa@2023@encopedia",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{url}}Users/Login",
+					"host": [
+						"{{url}}Users"
+					],
+					"path": [
+						"Login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Transactions (create)",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "{{wp_user}}",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "{{wp_pass}}",
+							"type": "string"
+						},
+						{
+							"key": "showPassword",
+							"value": false,
+							"type": "boolean"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "x-api-key",
+						"value": "{{api-key}}",
+						"type": "text"
+					},
+					{
+						"key": "x-token",
+						"value": "23b15da16ed9b939f0e75fc2a63fe4c02e98e0ecd2ef045ab7efdbe4c237fddd",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n                \"store_id\": \"b4be47a1bd67dcc8246a6bbcdc99aff453dbc2242cdcaac452231f8e6829bdf7\",\n                \"invoice_no\": \"Inv-11-01-2023-01\",\n                \"invoice_date\": \"2023-01-01 16:50:00:000\",\n                \"subtotal\": \"231.00\",\n                \"tax\": \"00.00\",\n                \"service\": \"00.00\",\n                \"total\": \"00.00\",\n                \"discount\": \"0\"\n            }"
+				},
+				"url": {
+					"raw": "{{url}}/:module/Record/",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						":module",
+						"Record",
+						""
+					],
+					"variable": [
+						{
+							"key": "module",
+							"value": "Transactions"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "url",
+			"value": "https://rsmsapi.marakez.net/webservice/RestApi/"
+		},
+		{
+			"key": "api-key",
+			"value": "Ya2bMAprxRUSDS041Py498maQk99ADs4"
+		},
+		{
+			"key": "wp_user",
+			"value": "Encopedia"
+		},
+		{
+			"key": "wp_pass",
+			"value": "Encopedia@2021"
+		},
+		{
+			"key": "user",
+			"value": "D5.Mall@rsmsapi.marakez.net"
+		},
+		{
+			"key": "pass",
+			"value": "D5@Maarakex3032"
+		},
+		{
+			"key": "token",
+			"value": ""
+		}
+	]
+}

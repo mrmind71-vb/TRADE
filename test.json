@@ -1,0 +1,6467 @@
+{
+  "issuer": {
+    "address": {
+      "branchID": "0",
+      "country": "EG",
+      "governate": "القاهرة",
+      "regionCity": "المعادي",
+      "street": "محل 1 قطعة 10062 المجاور العاشر تقسيم المعراج",
+      "buildingNumber": "0",
+      "postalCode": "",
+      "floor": "",
+      "landmark": "",
+      "additionalInformation": ""
+    },
+    "type": "B",
+    "id": "545262429",
+    "name": "يسري رشاد عبد المعبود وشركاه جونيور تكس"
+  },
+  "receiver": {
+    "address": {
+      "country": "EG",
+      "governate": "-",
+      "regionCity": "-",
+      "Street": "Maadi Technology Park, Building MB3, Maadi, Cairo",
+      "buildingNumber": "-",
+      "postalCode": "",
+      "floor": "",
+      "landmark": "",
+      "additionalInformation": ""
+    },
+    "type": "B",
+    "id": "340035072",
+    "name": "Souq.com for E Commerce LLC"
+  },
+  "documentType": "I",
+  "documentTypeVersion": "1.0",
+  "dateTimeIssued": "2024-01-30T00:00:00Z",
+  "taxpayerActivityCode": "4651",
+  "internalID": "000186",
+  "purchaseOrderReference": "7YANM4VW",
+  "purchaseOrderDescription": "",
+  "salesOrderReference": "",
+  "proformaInvoiceNumber": "",
+  "payment": {
+    "bankName": "",
+    "bankAddress": "",
+    "bankAccountNo": "",
+    "bankAccountIBAN": "",
+    "swiftCode": "",
+    "terms": ""
+  },
+  "delivery": {
+    "approach": "",
+    "packaging": "",
+    "dateValidity": "",
+    "exportPort": "",
+    "grossWeight": 0,
+    "netWeight": 0,
+    "terms": ""
+  },
+  "invoiceLines": [
+    {
+      "description": "كيلوت بيبي مكشكش",
+      "itemType": "GS1",
+      "itemCode": "6222040388946",
+      "unitType": "PK",
+      "quantity": 6,
+      "internalCode": "56267",
+      "salesTotal": 171.06,
+      "total": 195.0084,
+      "valueDifference": 0,
+      "totalTaxableFees": 0,
+      "netTotal": 171.06,
+      "itemsDiscount": 0,
+      "unitValue": {
+        "currencySold": "EGP",
+        "amountEGP": 28.51
+      },
+      "discount": {
+        "rate": 0,
+        "amount": 0
+      },
+      "taxableItems": [
+        {
+          "taxType": "T1",
+          "amount": 23.9484,
+          "subType": "V009",
+          "rate": 14
+        }
+      ]
+    },
+    {
+      "description": "طقم تدفئه بيبي سمر ميلتون روز",
+      "itemType": "GS1",
+      "itemCode": "6222040387338",
+      "unitType": "PK",
+      "quantity": 12,
+      "internalCode": "105569",
+      "salesTotal": 1265.76,
+      "total": 1442.9664,
+      "valueDifference": 0,
+      "totalTaxableFees": 0,
+      "netTotal": 1265.76,
+      "itemsDiscount": 0,
+      "unitValue": {
+        "currencySold": "EGP",
+        "amountEGP": 105.48
+      },
+      "discount": {
+        "rate": 0,
+        "amount": 0
+      },
+      "taxableItems": [
+        {
+          "taxType": "T1",
+          "amount": 177.2064,
+          "subType": "V009",
+          "rate": 14
+        }
+      ]
+    },
+    {
+      "description": "طقم تدفئه صبياني سمر ميلتون لبني",
+      "itemType": "GS1",
+      "itemCode": "6222040387925",
+      "unitType": "PK",
+      "quantity": 11,
+      "internalCode": "103947",
+      "salesTotal": 1944.25,
+      "total": 2216.445,
+      "valueDifference": 0,
+      "totalTaxableFees": 0,
+      "netTotal": 1944.25,
+      "itemsDiscount": 0,
+      "unitValue": {
+        "currencySold": "EGP",
+        "amountEGP": 176.75
+      },
+      "discount": {
+        "rate": 0,
+        "amount": 0
+      },
+      "taxableItems": [
+        {
+          "taxType": "T1",
+          "amount": 272.195,
+          "subType": "V009",
+          "rate": 14
+        }
+      ]
+    },
+    {
+      "description": "طقم تدفئه بيبي سمر ميلتون اصفر",
+      "itemType": "GS1",
+      "itemCode": "6222040387260",
+      "unitType": "PK",
+      "quantity": 12,
+      "internalCode": "105562",
+      "salesTotal": 1265.76,
+      "total": 1442.9664,
+      "valueDifference": 0,
+      "totalTaxableFees": 0,
+      "netTotal": 1265.76,
+      "itemsDiscount": 0,
+      "unitValue": {
+        "currencySold": "EGP",
+        "amountEGP": 105.48
+      },
+      "discount": {
+        "rate": 0,
+        "amount": 0
+      },
+      "taxableItems": [
+        {
+          "taxType": "T1",
+          "amount": 177.2064,
+          "subType": "V009",
+          "rate": 14
+        }
+      ]
+    },
+    {
+      "description": "كيلوت بيبي مطبوع من الخلف",
+      "itemType": "GS1",
+      "itemCode": "6222040389073",
+      "unitType": "PK",
+      "quantity": 6,
+      "internalCode": "7991",
+      "salesTotal": 136.86,
+      "total": 156.0204,
+      "valueDifference": 0,
+      "totalTaxableFees": 0,
+      "netTotal": 136.86,
+      "itemsDiscount": 0,
+      "unitValue": {
+        "currencySold": "EGP",
+        "amountEGP": 22.81
+      },
+      "discount": {
+        "rate": 0,
+        "amount": 0
+      },
+      "taxableItems": [
+        {
+          "taxType": "T1",
+          "amount": 19.1604,
+          "subType": "V009",
+          "rate": 14
+        }
+      ]
+    },
+    {
+      "description": "فانلة بيبي نصف كم كبسول انترلوك",
+      "itemType": "GS1",
+      "itemCode": "6222040390048",
+      "unitType": "PK",
+      "quantity": 12,
+      "internalCode": "11254",
+      "salesTotal": 342.12,
+      "total": 390.0168,
+      "valueDifference": 0,
+      "totalTaxableFees": 0,
+      "netTotal": 342.12,
+      "itemsDiscount": 0,
+      "unitValue": {
+        "currencySold": "EGP",
+        "amountEGP": 28.51
+      },
+      "discount": {
+        "rate": 0,
+        "amount": 0
+      },
+      "taxableItems": [
+        {
+          "taxType": "T1",
+          "amount": 47.8968,
+          "subType": "V009",
+          "rate": 14
+        }
+      ]
+    },
+    {
+      "description": "فانلة كم طويل ابيض سادة",
+      "itemType": "GS1",
+      "itemCode": "6222040384283",
+      "unitType": "PK",
+      "quantity": 12,
+      "internalCode": "114",
+      "salesTotal": 444.72,
+      "total": 506.9808,
+      "valueDifference": 0,
+      "totalTaxableFees": 0,
+      "netTotal": 444.72,
+      "itemsDiscount": 0,
+      "unitValue": {
+        "currencySold": "EGP",
+        "amountEGP": 37.06
+      },
+      "discount": {
+        "rate": 0,
+        "amount": 0
+      },
+      "taxableItems": [
+        {
+          "taxType": "T1",
+          "amount": 62.2608,
+          "subType": "V009",
+          "rate": 14
+        }
+      ]
+    },
+    {
+      "description": "كيلوت بيبي مطبوع من الخلف",
+      "itemType": "GS1",
+      "itemCode": "6222040389110",
+      "unitType": "PK",
+      "quantity": 6,
+      "internalCode": "7994",
+      "salesTotal": 136.86,
+      "total": 156.0204,
+      "valueDifference": 0,
+      "totalTaxableFees": 0,
+      "netTotal": 136.86,
+      "itemsDiscount": 0,
+      "unitValue": {
+        "currencySold": "EGP",
+        "amountEGP": 22.81
+      },
+      "discount": {
+        "rate": 0,
+        "amount": 0
+      },
+      "taxableItems": [
+        {
+          "taxType": "T1",
+          "amount": 19.1604,
+          "subType": "V009",
+          "rate": 14
+        }
+      ]
+    },
+    {
+      "description": "طقم تدفئه صبياني سمر ميلتون شانيه",
+      "itemType": "GS1",
+      "itemCode": "6222040387765",
+      "unitType": "PK",
+      "quantity": 11,
+      "internalCode": "103931",
+      "salesTotal": 1944.25,
+      "total": 2216.445,
+      "valueDifference": 0,
+      "totalTaxableFees": 0,
+      "netTotal": 1944.25,
+      "itemsDiscount": 0,
+      "unitValue": {
+        "currencySold": "EGP",
+        "amountEGP": 176.75
+      },
+      "discount": {
+        "rate": 0,
+        "amount": 0
+      },
+      "taxableItems": [
+        {
+          "taxType": "T1",
+          "amount": 272.195,
+          "subType": "V009",
+          "rate": 14
+        }
+      ]
+    },
+    {
+      "description": "فانلة نصف كم ابيض",
+      "itemType": "GS1",
+      "itemCode": "6222040383583",
+      "unitType": "PK",
+      "quantity": 12,
+      "internalCode": "106",
+      "salesTotal": 410.52,
+      "total": 467.9928,
+      "valueDifference": 0,
+      "totalTaxableFees": 0,
+      "netTotal": 410.52,
+      "itemsDiscount": 0,
+      "unitValue": {
+        "currencySold": "EGP",
+        "amountEGP": 34.21
+      },
+      "discount": {
+        "rate": 0,
+        "amount": 0
+      },
+      "taxableItems": [
+        {
+          "taxType": "T1",
+          "amount": 57.4728,
+          "subType": "V009",
+          "rate": 14
+        }
+      ]
+    },
+    {
+      "description": "فانلة بيبي كم طويل كبسول انترلوك",
+      "itemType": "GS1",
+      "itemCode": "6222040392202",
+      "unitType": "PK",
+      "quantity": 12,
+      "internalCode": "11089",
+      "salesTotal": 376.32,
+      "total": 429.0048,
+      "valueDifference": 0,
+      "totalTaxableFees": 0,
+      "netTotal": 376.32,
+      "itemsDiscount": 0,
+      "unitValue": {
+        "currencySold": "EGP",
+        "amountEGP": 31.36
+      },
+      "discount": {
+        "rate": 0,
+        "amount": 0
+      },
+      "taxableItems": [
+        {
+          "taxType": "T1",
+          "amount": 52.6848,
+          "subType": "V009",
+          "rate": 14
+        }
+      ]
+    },
+    {
+      "description": "بودي نصف كم ابيض سادة",
+      "itemType": "GS1",
+      "itemCode": "6222040389158",
+      "unitType": "PK",
+      "quantity": 6,
+      "internalCode": "28627",
+      "salesTotal": 222.36,
+      "total": 253.4904,
+      "valueDifference": 0,
+      "totalTaxableFees": 0,
+      "netTotal": 222.36,
+      "itemsDiscount": 0,
+      "unitValue": {
+        "currencySold": "EGP",
+        "amountEGP": 37.06
+      },
+      "discount": {
+        "rate": 0,
+        "amount": 0
+      },
+      "taxableItems": [
+        {
+          "taxType": "T1",
+          "amount": 31.1304,
+          "subType": "V009",
+          "rate": 14
+        }
+      ]
+    },
+    {
+      "description": "طقم تدفئه بيبي سمر ميلتون روز",
+      "itemType": "GS1",
+      "itemCode": "6222040387291",
+      "unitType": "PK",
+      "quantity": 12,
+      "internalCode": "105565",
+      "salesTotal": 1265.76,
+      "total": 1442.9664,
+      "valueDifference": 0,
+      "totalTaxableFees": 0,
+      "netTotal": 1265.76,
+      "itemsDiscount": 0,
+      "unitValue": {
+        "currencySold": "EGP",
+        "amountEGP": 105.48
+      },
+      "discount": {
+        "rate": 0,
+        "amount": 0
+      },
+      "taxableItems": [
+        {
+          "taxType": "T1",
+          "amount": 177.2064,
+          "subType": "V009",
+          "rate": 14
+        }
+      ]
+    },
+    {
+      "description": "Bodysuit P/3  Short Sleeve sweet dreams",
+      "itemType": "GS1",
+      "itemCode": "6221319024363",
+      "unitType": "PK",
+      "quantity": 12,
+      "internalCode": "113683",
+      "salesTotal": 1505.28,
+      "total": 1716.0192,
+      "valueDifference": 0,
+      "totalTaxableFees": 0,
+      "netTotal": 1505.28,
+      "itemsDiscount": 0,
+      "unitValue": {
+        "currencySold": "EGP",
+        "amountEGP": 125.44
+      },
+      "discount": {
+        "rate": 0,
+        "amount": 0
+      },
+      "taxableItems": [
+        {
+          "taxType": "T1",
+          "amount": 210.7392,
+          "subType": "V009",
+          "rate": 14
+        }
+      ]
+    },
+    {
+      "description": "بودي كت 3 قطع",
+      "itemType": "GS1",
+      "itemCode": "6221319007335",
+      "unitType": "PK",
+      "quantity": 12,
+      "internalCode": "103386",
+      "salesTotal": 1436.88,
+      "total": 1638.0432,
+      "valueDifference": 0,
+      "totalTaxableFees": 0,
+      "netTotal": 1436.88,
+      "itemsDiscount": 0,
+      "unitValue": {
+        "currencySold": "EGP",
+        "amountEGP": 119.74
+      },
+      "discount": {
+        "rate": 0,
+        "amount": 0
+      },
+      "taxableItems": [
+        {
+          "taxType": "T1",
+          "amount": 201.1632,
+          "subType": "V009",
+          "rate": 14
+        }
+      ]
+    },
+    {
+      "description": "بودي كم طويل ابيض سادة",
+      "itemType": "GS1",
+      "itemCode": "6222040391182",
+      "unitType": "PK",
+      "quantity": 12,
+      "internalCode": "332",
+      "salesTotal": 478.92,
+      "total": 545.9688,
+      "valueDifference": 0,
+      "totalTaxableFees": 0,
+      "netTotal": 478.92,
+      "itemsDiscount": 0,
+      "unitValue": {
+        "currencySold": "EGP",
+        "amountEGP": 39.91
+      },
+      "discount": {
+        "rate": 0,
+        "amount": 0
+      },
+      "taxableItems": [
+        {
+          "taxType": "T1",
+          "amount": 67.0488,
+          "subType": "V009",
+          "rate": 14
+        }
+      ]
+    },
+    {
+      "description": "فانلة نصف كم ابيض",
+      "itemType": "GS1",
+      "itemCode": "6222040383545",
+      "unitType": "PK",
+      "quantity": 12,
+      "internalCode": "102",
+      "salesTotal": 342.12,
+      "total": 390.0168,
+      "valueDifference": 0,
+      "totalTaxableFees": 0,
+      "netTotal": 342.12,
+      "itemsDiscount": 0,
+      "unitValue": {
+        "currencySold": "EGP",
+        "amountEGP": 28.51
+      },
+      "discount": {
+        "rate": 0,
+        "amount": 0
+      },
+      "taxableItems": [
+        {
+          "taxType": "T1",
+          "amount": 47.8968,
+          "subType": "V009",
+          "rate": 14
+        }
+      ]
+    },
+    {
+      "description": "بودي كت انترلوك ابيض سادة",
+      "itemType": "GS1",
+      "itemCode": "6222040393346",
+      "unitType": "PK",
+      "quantity": 12,
+      "internalCode": "109806",
+      "salesTotal": 410.52,
+      "total": 467.9928,
+      "valueDifference": 0,
+      "totalTaxableFees": 0,
+      "netTotal": 410.52,
+      "itemsDiscount": 0,
+      "unitValue": {
+        "currencySold": "EGP",
+        "amountEGP": 34.21
+      },
+      "discount": {
+        "rate": 0,
+        "amount": 0
+      },
+      "taxableItems": [
+        {
+          "taxType": "T1",
+          "amount": 57.4728,
+          "subType": "V009",
+          "rate": 14
+        }
+      ]
+    },
+    {
+      "description": "بودي كت 3 قطع",
+      "itemType": "GS1",
+      "itemCode": "6221319007526",
+      "unitType": "PK",
+      "quantity": 3,
+      "internalCode": "97719",
+      "salesTotal": 359.22,
+      "total": 409.5108,
+      "valueDifference": 0,
+      "totalTaxableFees": 0,
+      "netTotal": 359.22,
+      "itemsDiscount": 0,
+      "unitValue": {
+        "currencySold": "EGP",
+        "amountEGP": 119.74
+      },
+      "discount": {
+        "rate": 0,
+        "amount": 0
+      },
+      "taxableItems": [
+        {
+          "taxType": "T1",
+          "amount": 50.2908,
+          "subType": "V009",
+          "rate": 14
+        }
+      ]
+    },
+    {
+      "description": "بودي كم طويل ابيض سادة",
+      "itemType": "GS1",
+      "itemCode": "6222040391199",
+      "unitType": "PK",
+      "quantity": 12,
+      "internalCode": "333",
+      "salesTotal": 478.92,
+      "total": 545.9688,
+      "valueDifference": 0,
+      "totalTaxableFees": 0,
+      "netTotal": 478.92,
+      "itemsDiscount": 0,
+      "unitValue": {
+        "currencySold": "EGP",
+        "amountEGP": 39.91
+      },
+      "discount": {
+        "rate": 0,
+        "amount": 0
+      },
+      "taxableItems": [
+        {
+          "taxType": "T1",
+          "amount": 67.0488,
+          "subType": "V009",
+          "rate": 14
+        }
+      ]
+    },
+    {
+      "description": "طقم تدفئه صبياني سمر ميلتون بيج",
+      "itemType": "GS1",
+      "itemCode": "6222040387680",
+      "unitType": "PK",
+      "quantity": 6,
+      "internalCode": "103923",
+      "salesTotal": 889.5,
+      "total": 1014.03,
+      "valueDifference": 0,
+      "totalTaxableFees": 0,
+      "netTotal": 889.5,
+      "itemsDiscount": 0,
+      "unitValue": {
+        "currencySold": "EGP",
+        "amountEGP": 148.25
+      },
+      "discount": {
+        "rate": 0,
+        "amount": 0
+      },
+      "taxableItems": [
+        {
+          "taxType": "T1",
+          "amount": 124.53,
+          "subType": "V009",
+          "rate": 14
+        }
+      ]
+    },
+    {
+      "description": "طقم نصف كم + كيلوت الوان ليكرا",
+      "itemType": "GS1",
+      "itemCode": "6222040384085",
+      "unitType": "PK",
+      "quantity": 12,
+      "internalCode": "106712",
+      "salesTotal": 889.44,
+      "total": 1013.9616,
+      "valueDifference": 0,
+      "totalTaxableFees": 0,
+      "netTotal": 889.44,
+      "itemsDiscount": 0,
+      "unitValue": {
+        "currencySold": "EGP",
+        "amountEGP": 74.12
+      },
+      "discount": {
+        "rate": 0,
+        "amount": 0
+      },
+      "taxableItems": [
+        {
+          "taxType": "T1",
+          "amount": 124.5216,
+          "subType": "V009",
+          "rate": 14
+        }
+      ]
+    },
+    {
+      "description": "فانلة نصف كم ابيض",
+      "itemType": "GS1",
+      "itemCode": "6222040383576",
+      "unitType": "PK",
+      "quantity": 12,
+      "internalCode": "105",
+      "salesTotal": 410.52,
+      "total": 467.9928,
+      "valueDifference": 0,
+      "totalTaxableFees": 0,
+      "netTotal": 410.52,
+      "itemsDiscount": 0,
+      "unitValue": {
+        "currencySold": "EGP",
+        "amountEGP": 34.21
+      },
+      "discount": {
+        "rate": 0,
+        "amount": 0
+      },
+      "taxableItems": [
+        {
+          "taxType": "T1",
+          "amount": 57.4728,
+          "subType": "V009",
+          "rate": 14
+        }
+      ]
+    },
+    {
+      "description": "بودي كت انترلوك ابيض سادة",
+      "itemType": "GS1",
+      "itemCode": "6222040393339",
+      "unitType": "PK",
+      "quantity": 12,
+      "internalCode": "109805",
+      "salesTotal": 410.52,
+      "total": 467.9928,
+      "valueDifference": 0,
+      "totalTaxableFees": 0,
+      "netTotal": 410.52,
+      "itemsDiscount": 0,
+      "unitValue": {
+        "currencySold": "EGP",
+        "amountEGP": 34.21
+      },
+      "discount": {
+        "rate": 0,
+        "amount": 0
+      },
+      "taxableItems": [
+        {
+          "taxType": "T1",
+          "amount": 57.4728,
+          "subType": "V009",
+          "rate": 14
+        }
+      ]
+    },
+    {
+      "description": "طقم تدفئه صبياني سمر ميلتون لبني",
+      "itemType": "GS1",
+      "itemCode": "6222040387871",
+      "unitType": "PK",
+      "quantity": 4,
+      "internalCode": "103942",
+      "salesTotal": 593,
+      "total": 676.02,
+      "valueDifference": 0,
+      "totalTaxableFees": 0,
+      "netTotal": 593,
+      "itemsDiscount": 0,
+      "unitValue": {
+        "currencySold": "EGP",
+        "amountEGP": 148.25
+      },
+      "discount": {
+        "rate": 0,
+        "amount": 0
+      },
+      "taxableItems": [
+        {
+          "taxType": "T1",
+          "amount": 83.02,
+          "subType": "V009",
+          "rate": 14
+        }
+      ]
+    },
+    {
+      "description": "طقم تدفئه بيبي سمر ميلتون روز",
+      "itemType": "GS1",
+      "itemCode": "6222040387321",
+      "unitType": "PK",
+      "quantity": 12,
+      "internalCode": "105568",
+      "salesTotal": 1265.76,
+      "total": 1442.9664,
+      "valueDifference": 0,
+      "totalTaxableFees": 0,
+      "netTotal": 1265.76,
+      "itemsDiscount": 0,
+      "unitValue": {
+        "currencySold": "EGP",
+        "amountEGP": 105.48
+      },
+      "discount": {
+        "rate": 0,
+        "amount": 0
+      },
+      "taxableItems": [
+        {
+          "taxType": "T1",
+          "amount": 177.2064,
+          "subType": "V009",
+          "rate": 14
+        }
+      ]
+    },
+    {
+      "description": "طقم تدفئه بيبي سمر ميلتون شانيه",
+      "itemType": "GS1",
+      "itemCode": "6222040387352",
+      "unitType": "PK",
+      "quantity": 12,
+      "internalCode": "106382",
+      "salesTotal": 1265.76,
+      "total": 1442.9664,
+      "valueDifference": 0,
+      "totalTaxableFees": 0,
+      "netTotal": 1265.76,
+      "itemsDiscount": 0,
+      "unitValue": {
+        "currencySold": "EGP",
+        "amountEGP": 105.48
+      },
+      "discount": {
+        "rate": 0,
+        "amount": 0
+      },
+      "taxableItems": [
+        {
+          "taxType": "T1",
+          "amount": 177.2064,
+          "subType": "V009",
+          "rate": 14
+        }
+      ]
+    },
+    {
+      "description": "كيلوت بيبي مكشكش",
+      "itemType": "GS1",
+      "itemCode": "6222040388939",
+      "unitType": "PK",
+      "quantity": 6,
+      "internalCode": "1732",
+      "salesTotal": 171.06,
+      "total": 195.0084,
+      "valueDifference": 0,
+      "totalTaxableFees": 0,
+      "netTotal": 171.06,
+      "itemsDiscount": 0,
+      "unitValue": {
+        "currencySold": "EGP",
+        "amountEGP": 28.51
+      },
+      "discount": {
+        "rate": 0,
+        "amount": 0
+      },
+      "taxableItems": [
+        {
+          "taxType": "T1",
+          "amount": 23.9484,
+          "subType": "V009",
+          "rate": 14
+        }
+      ]
+    },
+    {
+      "description": "كيلوت بيبي مكشكش",
+      "itemType": "GS1",
+      "itemCode": "6222040388953",
+      "unitType": "PK",
+      "quantity": 6,
+      "internalCode": "1733",
+      "salesTotal": 171.06,
+      "total": 195.0084,
+      "valueDifference": 0,
+      "totalTaxableFees": 0,
+      "netTotal": 171.06,
+      "itemsDiscount": 0,
+      "unitValue": {
+        "currencySold": "EGP",
+        "amountEGP": 28.51
+      },
+      "discount": {
+        "rate": 0,
+        "amount": 0
+      },
+      "taxableItems": [
+        {
+          "taxType": "T1",
+          "amount": 23.9484,
+          "subType": "V009",
+          "rate": 14
+        }
+      ]
+    },
+    {
+      "description": "بودي كم طويل ابيض سادة",
+      "itemType": "GS1",
+      "itemCode": "6222040391205",
+      "unitType": "PK",
+      "quantity": 12,
+      "internalCode": "23307",
+      "salesTotal": 478.92,
+      "total": 545.9688,
+      "valueDifference": 0,
+      "totalTaxableFees": 0,
+      "netTotal": 478.92,
+      "itemsDiscount": 0,
+      "unitValue": {
+        "currencySold": "EGP",
+        "amountEGP": 39.91
+      },
+      "discount": {
+        "rate": 0,
+        "amount": 0
+      },
+      "taxableItems": [
+        {
+          "taxType": "T1",
+          "amount": 67.0488,
+          "subType": "V009",
+          "rate": 14
+        }
+      ]
+    },
+    {
+      "description": "فانلة سبور ابيض سادة",
+      "itemType": "GS1",
+      "itemCode": "6222040381343",
+      "unitType": "PK",
+      "quantity": 12,
+      "internalCode": "153",
+      "salesTotal": 376.32,
+      "total": 429.0048,
+      "valueDifference": 0,
+      "totalTaxableFees": 0,
+      "netTotal": 376.32,
+      "itemsDiscount": 0,
+      "unitValue": {
+        "currencySold": "EGP",
+        "amountEGP": 31.36
+      },
+      "discount": {
+        "rate": 0,
+        "amount": 0
+      },
+      "taxableItems": [
+        {
+          "taxType": "T1",
+          "amount": 52.6848,
+          "subType": "V009",
+          "rate": 14
+        }
+      ]
+    },
+    {
+      "description": "براسيرا كم طويل ابيض سادة",
+      "itemType": "GS1",
+      "itemCode": "6222040392042",
+      "unitType": "PK",
+      "quantity": 12,
+      "internalCode": "13354",
+      "salesTotal": 513.12,
+      "total": 584.9568,
+      "valueDifference": 0,
+      "totalTaxableFees": 0,
+      "netTotal": 513.12,
+      "itemsDiscount": 0,
+      "unitValue": {
+        "currencySold": "EGP",
+        "amountEGP": 42.76
+      },
+      "discount": {
+        "rate": 0,
+        "amount": 0
+      },
+      "taxableItems": [
+        {
+          "taxType": "T1",
+          "amount": 71.8368,
+          "subType": "V009",
+          "rate": 14
+        }
+      ]
+    },
+    {
+      "description": "طقم تدفئه بيبي سمر ميلتون اصفر",
+      "itemType": "GS1",
+      "itemCode": "6222040387277",
+      "unitType": "PK",
+      "quantity": 12,
+      "internalCode": "105563",
+      "salesTotal": 1265.76,
+      "total": 1442.9664,
+      "valueDifference": 0,
+      "totalTaxableFees": 0,
+      "netTotal": 1265.76,
+      "itemsDiscount": 0,
+      "unitValue": {
+        "currencySold": "EGP",
+        "amountEGP": 105.48
+      },
+      "discount": {
+        "rate": 0,
+        "amount": 0
+      },
+      "taxableItems": [
+        {
+          "taxType": "T1",
+          "amount": 177.2064,
+          "subType": "V009",
+          "rate": 14
+        }
+      ]
+    },
+    {
+      "description": "فانلة كم طويل ابيض سادة",
+      "itemType": "GS1",
+      "itemCode": "6222040384245",
+      "unitType": "PK",
+      "quantity": 12,
+      "internalCode": "110",
+      "salesTotal": 376.32,
+      "total": 429.0048,
+      "valueDifference": 0,
+      "totalTaxableFees": 0,
+      "netTotal": 376.32,
+      "itemsDiscount": 0,
+      "unitValue": {
+        "currencySold": "EGP",
+        "amountEGP": 31.36
+      },
+      "discount": {
+        "rate": 0,
+        "amount": 0
+      },
+      "taxableItems": [
+        {
+          "taxType": "T1",
+          "amount": 52.6848,
+          "subType": "V009",
+          "rate": 14
+        }
+      ]
+    },
+    {
+      "description": "بودي كت 3 قطع بناتي",
+      "itemType": "GS1",
+      "itemCode": "6221319007991",
+      "unitType": "PK",
+      "quantity": 12,
+      "internalCode": "97724",
+      "salesTotal": 1436.88,
+      "total": 1638.0432,
+      "valueDifference": 0,
+      "totalTaxableFees": 0,
+      "netTotal": 1436.88,
+      "itemsDiscount": 0,
+      "unitValue": {
+        "currencySold": "EGP",
+        "amountEGP": 119.74
+      },
+      "discount": {
+        "rate": 0,
+        "amount": 0
+      },
+      "taxableItems": [
+        {
+          "taxType": "T1",
+          "amount": 201.1632,
+          "subType": "V009",
+          "rate": 14
+        }
+      ]
+    },
+    {
+      "description": "طقم تدفئه صبياني سمر ميلتون كحلي",
+      "itemType": "GS1",
+      "itemCode": "6222040387857",
+      "unitType": "PK",
+      "quantity": 9,
+      "internalCode": "103940",
+      "salesTotal": 1590.75,
+      "total": 1813.455,
+      "valueDifference": 0,
+      "totalTaxableFees": 0,
+      "netTotal": 1590.75,
+      "itemsDiscount": 0,
+      "unitValue": {
+        "currencySold": "EGP",
+        "amountEGP": 176.75
+      },
+      "discount": {
+        "rate": 0,
+        "amount": 0
+      },
+      "taxableItems": [
+        {
+          "taxType": "T1",
+          "amount": 222.705,
+          "subType": "V009",
+          "rate": 14
+        }
+      ]
+    },
+    {
+      "description": "فانلة بيبي كم طويل كبسول انترلوك",
+      "itemType": "GS1",
+      "itemCode": "6222040392226",
+      "unitType": "PK",
+      "quantity": 12,
+      "internalCode": "11090",
+      "salesTotal": 376.32,
+      "total": 429.0048,
+      "valueDifference": 0,
+      "totalTaxableFees": 0,
+      "netTotal": 376.32,
+      "itemsDiscount": 0,
+      "unitValue": {
+        "currencySold": "EGP",
+        "amountEGP": 31.36
+      },
+      "discount": {
+        "rate": 0,
+        "amount": 0
+      },
+      "taxableItems": [
+        {
+          "taxType": "T1",
+          "amount": 52.6848,
+          "subType": "V009",
+          "rate": 14
+        }
+      ]
+    },
+    {
+      "description": "بودي كت 3 قطع بناتي",
+      "itemType": "GS1",
+      "itemCode": "6221319007977",
+      "unitType": "PK",
+      "quantity": 12,
+      "internalCode": "97722",
+      "salesTotal": 1436.88,
+      "total": 1638.0432,
+      "valueDifference": 0,
+      "totalTaxableFees": 0,
+      "netTotal": 1436.88,
+      "itemsDiscount": 0,
+      "unitValue": {
+        "currencySold": "EGP",
+        "amountEGP": 119.74
+      },
+      "discount": {
+        "rate": 0,
+        "amount": 0
+      },
+      "taxableItems": [
+        {
+          "taxType": "T1",
+          "amount": 201.1632,
+          "subType": "V009",
+          "rate": 14
+        }
+      ]
+    },
+    {
+      "description": "طقم نصف كم + كيلوت الوان ليكرا",
+      "itemType": "GS1",
+      "itemCode": "6222040384108",
+      "unitType": "PK",
+      "quantity": 12,
+      "internalCode": "106714",
+      "salesTotal": 889.44,
+      "total": 1013.9616,
+      "valueDifference": 0,
+      "totalTaxableFees": 0,
+      "netTotal": 889.44,
+      "itemsDiscount": 0,
+      "unitValue": {
+        "currencySold": "EGP",
+        "amountEGP": 74.12
+      },
+      "discount": {
+        "rate": 0,
+        "amount": 0
+      },
+      "taxableItems": [
+        {
+          "taxType": "T1",
+          "amount": 124.5216,
+          "subType": "V009",
+          "rate": 14
+        }
+      ]
+    },
+    {
+      "description": "فانله نصف كم مطبوع بالكامل ليكرا",
+      "itemType": "GS1",
+      "itemCode": "6222040383880",
+      "unitType": "PK",
+      "quantity": 12,
+      "internalCode": "103960",
+      "salesTotal": 478.92,
+      "total": 545.9688,
+      "valueDifference": 0,
+      "totalTaxableFees": 0,
+      "netTotal": 478.92,
+      "itemsDiscount": 0,
+      "unitValue": {
+        "currencySold": "EGP",
+        "amountEGP": 39.91
+      },
+      "discount": {
+        "rate": 0,
+        "amount": 0
+      },
+      "taxableItems": [
+        {
+          "taxType": "T1",
+          "amount": 67.0488,
+          "subType": "V009",
+          "rate": 14
+        }
+      ]
+    },
+    {
+      "description": "طقم تدفئه بيبي سمر ميلتون روز",
+      "itemType": "GS1",
+      "itemCode": "6222040387307",
+      "unitType": "PK",
+      "quantity": 12,
+      "internalCode": "105566",
+      "salesTotal": 1265.76,
+      "total": 1442.9664,
+      "valueDifference": 0,
+      "totalTaxableFees": 0,
+      "netTotal": 1265.76,
+      "itemsDiscount": 0,
+      "unitValue": {
+        "currencySold": "EGP",
+        "amountEGP": 105.48
+      },
+      "discount": {
+        "rate": 0,
+        "amount": 0
+      },
+      "taxableItems": [
+        {
+          "taxType": "T1",
+          "amount": 177.2064,
+          "subType": "V009",
+          "rate": 14
+        }
+      ]
+    },
+    {
+      "description": "فانلة بيبي كم طويل كبسول",
+      "itemType": "GS1",
+      "itemCode": "6222040384146",
+      "unitType": "PK",
+      "quantity": 12,
+      "internalCode": "78171",
+      "salesTotal": 342.12,
+      "total": 390.0168,
+      "valueDifference": 0,
+      "totalTaxableFees": 0,
+      "netTotal": 342.12,
+      "itemsDiscount": 0,
+      "unitValue": {
+        "currencySold": "EGP",
+        "amountEGP": 28.51
+      },
+      "discount": {
+        "rate": 0,
+        "amount": 0
+      },
+      "taxableItems": [
+        {
+          "taxType": "T1",
+          "amount": 47.8968,
+          "subType": "V009",
+          "rate": 14
+        }
+      ]
+    },
+    {
+      "description": "فانله نصف كم مطبوع بالكامل ليكرا",
+      "itemType": "GS1",
+      "itemCode": "6222040383866",
+      "unitType": "PK",
+      "quantity": 12,
+      "internalCode": "103958",
+      "salesTotal": 410.52,
+      "total": 467.9928,
+      "valueDifference": 0,
+      "totalTaxableFees": 0,
+      "netTotal": 410.52,
+      "itemsDiscount": 0,
+      "unitValue": {
+        "currencySold": "EGP",
+        "amountEGP": 34.21
+      },
+      "discount": {
+        "rate": 0,
+        "amount": 0
+      },
+      "taxableItems": [
+        {
+          "taxType": "T1",
+          "amount": 57.4728,
+          "subType": "V009",
+          "rate": 14
+        }
+      ]
+    },
+    {
+      "description": "فانلة بيبي نصف كم كبسول",
+      "itemType": "GS1",
+      "itemCode": "6222040383422",
+      "unitType": "PK",
+      "quantity": 12,
+      "internalCode": "360",
+      "salesTotal": 273.72,
+      "total": 312.0408,
+      "valueDifference": 0,
+      "totalTaxableFees": 0,
+      "netTotal": 273.72,
+      "itemsDiscount": 0,
+      "unitValue": {
+        "currencySold": "EGP",
+        "amountEGP": 22.81
+      },
+      "discount": {
+        "rate": 0,
+        "amount": 0
+      },
+      "taxableItems": [
+        {
+          "taxType": "T1",
+          "amount": 38.3208,
+          "subType": "V009",
+          "rate": 14
+        }
+      ]
+    },
+    {
+      "description": "فانلة كم طويل ابيض سادة",
+      "itemType": "GS1",
+      "itemCode": "6222040384290",
+      "unitType": "PK",
+      "quantity": 12,
+      "internalCode": "115",
+      "salesTotal": 444.72,
+      "total": 506.9808,
+      "valueDifference": 0,
+      "totalTaxableFees": 0,
+      "netTotal": 444.72,
+      "itemsDiscount": 0,
+      "unitValue": {
+        "currencySold": "EGP",
+        "amountEGP": 37.06
+      },
+      "discount": {
+        "rate": 0,
+        "amount": 0
+      },
+      "taxableItems": [
+        {
+          "taxType": "T1",
+          "amount": 62.2608,
+          "subType": "V009",
+          "rate": 14
+        }
+      ]
+    },
+    {
+      "description": "بودي نصف كم ابيض سادة",
+      "itemType": "GS1",
+      "itemCode": "6222040389134",
+      "unitType": "PK",
+      "quantity": 12,
+      "internalCode": "337",
+      "salesTotal": 444.72,
+      "total": 506.9808,
+      "valueDifference": 0,
+      "totalTaxableFees": 0,
+      "netTotal": 444.72,
+      "itemsDiscount": 0,
+      "unitValue": {
+        "currencySold": "EGP",
+        "amountEGP": 37.06
+      },
+      "discount": {
+        "rate": 0,
+        "amount": 0
+      },
+      "taxableItems": [
+        {
+          "taxType": "T1",
+          "amount": 62.2608,
+          "subType": "V009",
+          "rate": 14
+        }
+      ]
+    },
+    {
+      "description": "فانلة بيبي نصف كم كبسول انترلوك",
+      "itemType": "GS1",
+      "itemCode": "6222040390055",
+      "unitType": "PK",
+      "quantity": 12,
+      "internalCode": "61156",
+      "salesTotal": 342.12,
+      "total": 390.0168,
+      "valueDifference": 0,
+      "totalTaxableFees": 0,
+      "netTotal": 342.12,
+      "itemsDiscount": 0,
+      "unitValue": {
+        "currencySold": "EGP",
+        "amountEGP": 28.51
+      },
+      "discount": {
+        "rate": 0,
+        "amount": 0
+      },
+      "taxableItems": [
+        {
+          "taxType": "T1",
+          "amount": 47.8968,
+          "subType": "V009",
+          "rate": 14
+        }
+      ]
+    },
+    {
+      "description": "طقم نصف كم + كيلوت الوان ليكرا",
+      "itemType": "GS1",
+      "itemCode": "6222040384054",
+      "unitType": "PK",
+      "quantity": 12,
+      "internalCode": "106709",
+      "salesTotal": 752.64,
+      "total": 858.0096,
+      "valueDifference": 0,
+      "totalTaxableFees": 0,
+      "netTotal": 752.64,
+      "itemsDiscount": 0,
+      "unitValue": {
+        "currencySold": "EGP",
+        "amountEGP": 62.72
+      },
+      "discount": {
+        "rate": 0,
+        "amount": 0
+      },
+      "taxableItems": [
+        {
+          "taxType": "T1",
+          "amount": 105.3696,
+          "subType": "V009",
+          "rate": 14
+        }
+      ]
+    },
+    {
+      "description": "طقم تدفئه صبياني سمر ميلتون شانيه",
+      "itemType": "GS1",
+      "itemCode": "6222040387789",
+      "unitType": "PK",
+      "quantity": 8,
+      "internalCode": "103933",
+      "salesTotal": 1414,
+      "total": 1611.96,
+      "valueDifference": 0,
+      "totalTaxableFees": 0,
+      "netTotal": 1414,
+      "itemsDiscount": 0,
+      "unitValue": {
+        "currencySold": "EGP",
+        "amountEGP": 176.75
+      },
+      "discount": {
+        "rate": 0,
+        "amount": 0
+      },
+      "taxableItems": [
+        {
+          "taxType": "T1",
+          "amount": 197.96,
+          "subType": "V009",
+          "rate": 14
+        }
+      ]
+    },
+    {
+      "description": "كيلوت بيبي مطبوع من الخلف",
+      "itemType": "GS1",
+      "itemCode": "6222040389066",
+      "unitType": "PK",
+      "quantity": 6,
+      "internalCode": "7990",
+      "salesTotal": 136.86,
+      "total": 156.0204,
+      "valueDifference": 0,
+      "totalTaxableFees": 0,
+      "netTotal": 136.86,
+      "itemsDiscount": 0,
+      "unitValue": {
+        "currencySold": "EGP",
+        "amountEGP": 22.81
+      },
+      "discount": {
+        "rate": 0,
+        "amount": 0
+      },
+      "taxableItems": [
+        {
+          "taxType": "T1",
+          "amount": 19.1604,
+          "subType": "V009",
+          "rate": 14
+        }
+      ]
+    },
+    {
+      "description": "طقم تدفئه بيبي سمر ميلتون شانيه",
+      "itemType": "GS1",
+      "itemCode": "6222040387376",
+      "unitType": "PK",
+      "quantity": 12,
+      "internalCode": "106384",
+      "salesTotal": 1265.76,
+      "total": 1442.9664,
+      "valueDifference": 0,
+      "totalTaxableFees": 0,
+      "netTotal": 1265.76,
+      "itemsDiscount": 0,
+      "unitValue": {
+        "currencySold": "EGP",
+        "amountEGP": 105.48
+      },
+      "discount": {
+        "rate": 0,
+        "amount": 0
+      },
+      "taxableItems": [
+        {
+          "taxType": "T1",
+          "amount": 177.2064,
+          "subType": "V009",
+          "rate": 14
+        }
+      ]
+    },
+    {
+      "description": "بودي كت 3 قطع",
+      "itemType": "GS1",
+      "itemCode": "6221319007472",
+      "unitType": "PK",
+      "quantity": 12,
+      "internalCode": "97714",
+      "salesTotal": 1436.88,
+      "total": 1638.0432,
+      "valueDifference": 0,
+      "totalTaxableFees": 0,
+      "netTotal": 1436.88,
+      "itemsDiscount": 0,
+      "unitValue": {
+        "currencySold": "EGP",
+        "amountEGP": 119.74
+      },
+      "discount": {
+        "rate": 0,
+        "amount": 0
+      },
+      "taxableItems": [
+        {
+          "taxType": "T1",
+          "amount": 201.1632,
+          "subType": "V009",
+          "rate": 14
+        }
+      ]
+    },
+    {
+      "description": "فانلة بيبي نصف كم كبسول انترلوك",
+      "itemType": "GS1",
+      "itemCode": "6222040389998",
+      "unitType": "PK",
+      "quantity": 12,
+      "internalCode": "11250",
+      "salesTotal": 342.12,
+      "total": 390.0168,
+      "valueDifference": 0,
+      "totalTaxableFees": 0,
+      "netTotal": 342.12,
+      "itemsDiscount": 0,
+      "unitValue": {
+        "currencySold": "EGP",
+        "amountEGP": 28.51
+      },
+      "discount": {
+        "rate": 0,
+        "amount": 0
+      },
+      "taxableItems": [
+        {
+          "taxType": "T1",
+          "amount": 47.8968,
+          "subType": "V009",
+          "rate": 14
+        }
+      ]
+    },
+    {
+      "description": "بودي كت 3 قطع بناتي",
+      "itemType": "GS1",
+      "itemCode": "6221319007960",
+      "unitType": "PK",
+      "quantity": 12,
+      "internalCode": "97721",
+      "salesTotal": 1436.88,
+      "total": 1638.0432,
+      "valueDifference": 0,
+      "totalTaxableFees": 0,
+      "netTotal": 1436.88,
+      "itemsDiscount": 0,
+      "unitValue": {
+        "currencySold": "EGP",
+        "amountEGP": 119.74
+      },
+      "discount": {
+        "rate": 0,
+        "amount": 0
+      },
+      "taxableItems": [
+        {
+          "taxType": "T1",
+          "amount": 201.1632,
+          "subType": "V009",
+          "rate": 14
+        }
+      ]
+    },
+    {
+      "description": "فانلة بيبي كم طويل كبسول انترلوك",
+      "itemType": "GS1",
+      "itemCode": "6222040392219",
+      "unitType": "PK",
+      "quantity": 12,
+      "internalCode": "59177",
+      "salesTotal": 376.32,
+      "total": 429.0048,
+      "valueDifference": 0,
+      "totalTaxableFees": 0,
+      "netTotal": 376.32,
+      "itemsDiscount": 0,
+      "unitValue": {
+        "currencySold": "EGP",
+        "amountEGP": 31.36
+      },
+      "discount": {
+        "rate": 0,
+        "amount": 0
+      },
+      "taxableItems": [
+        {
+          "taxType": "T1",
+          "amount": 52.6848,
+          "subType": "V009",
+          "rate": 14
+        }
+      ]
+    },
+    {
+      "description": "كيلوت بيبي مطبوع من الخلف",
+      "itemType": "GS1",
+      "itemCode": "6222040389097",
+      "unitType": "PK",
+      "quantity": 6,
+      "internalCode": "7992",
+      "salesTotal": 136.86,
+      "total": 156.0204,
+      "valueDifference": 0,
+      "totalTaxableFees": 0,
+      "netTotal": 136.86,
+      "itemsDiscount": 0,
+      "unitValue": {
+        "currencySold": "EGP",
+        "amountEGP": 22.81
+      },
+      "discount": {
+        "rate": 0,
+        "amount": 0
+      },
+      "taxableItems": [
+        {
+          "taxType": "T1",
+          "amount": 19.1604,
+          "subType": "V009",
+          "rate": 14
+        }
+      ]
+    },
+    {
+      "description": "طقم تدفئه صبياني سمر ميلتون شانية غامق",
+      "itemType": "GS1",
+      "itemCode": "6221319088747",
+      "unitType": "PK",
+      "quantity": 12,
+      "internalCode": "122672",
+      "salesTotal": 1779,
+      "total": 2028.06,
+      "valueDifference": 0,
+      "totalTaxableFees": 0,
+      "netTotal": 1779,
+      "itemsDiscount": 0,
+      "unitValue": {
+        "currencySold": "EGP",
+        "amountEGP": 148.25
+      },
+      "discount": {
+        "rate": 0,
+        "amount": 0
+      },
+      "taxableItems": [
+        {
+          "taxType": "T1",
+          "amount": 249.06,
+          "subType": "V009",
+          "rate": 14
+        }
+      ]
+    },
+    {
+      "description": "طقم تدفئه بيبي سمر ميلتون شانيه",
+      "itemType": "GS1",
+      "itemCode": "6222040387390",
+      "unitType": "PK",
+      "quantity": 12,
+      "internalCode": "106386",
+      "salesTotal": 1265.76,
+      "total": 1442.9664,
+      "valueDifference": 0,
+      "totalTaxableFees": 0,
+      "netTotal": 1265.76,
+      "itemsDiscount": 0,
+      "unitValue": {
+        "currencySold": "EGP",
+        "amountEGP": 105.48
+      },
+      "discount": {
+        "rate": 0,
+        "amount": 0
+      },
+      "taxableItems": [
+        {
+          "taxType": "T1",
+          "amount": 177.2064,
+          "subType": "V009",
+          "rate": 14
+        }
+      ]
+    },
+    {
+      "description": "بودي كت انترلوك ابيض سادة",
+      "itemType": "GS1",
+      "itemCode": "6222040393292",
+      "unitType": "PK",
+      "quantity": 12,
+      "internalCode": "109801",
+      "salesTotal": 410.52,
+      "total": 467.9928,
+      "valueDifference": 0,
+      "totalTaxableFees": 0,
+      "netTotal": 410.52,
+      "itemsDiscount": 0,
+      "unitValue": {
+        "currencySold": "EGP",
+        "amountEGP": 34.21
+      },
+      "discount": {
+        "rate": 0,
+        "amount": 0
+      },
+      "taxableItems": [
+        {
+          "taxType": "T1",
+          "amount": 57.4728,
+          "subType": "V009",
+          "rate": 14
+        }
+      ]
+    },
+    {
+      "description": "طقم تدفئه صبياني سمر ميلتون بيج",
+      "itemType": "GS1",
+      "itemCode": "6222040387697",
+      "unitType": "PK",
+      "quantity": 12,
+      "internalCode": "103924",
+      "salesTotal": 2121,
+      "total": 2417.94,
+      "valueDifference": 0,
+      "totalTaxableFees": 0,
+      "netTotal": 2121,
+      "itemsDiscount": 0,
+      "unitValue": {
+        "currencySold": "EGP",
+        "amountEGP": 176.75
+      },
+      "discount": {
+        "rate": 0,
+        "amount": 0
+      },
+      "taxableItems": [
+        {
+          "taxType": "T1",
+          "amount": 296.94,
+          "subType": "V009",
+          "rate": 14
+        }
+      ]
+    },
+    {
+      "description": "بودي كم طويل 3 قطع",
+      "itemType": "GS1",
+      "itemCode": "6222040391939",
+      "unitType": "PK",
+      "quantity": 12,
+      "internalCode": "109091",
+      "salesTotal": 1539.48,
+      "total": 1755.0072,
+      "valueDifference": 0,
+      "totalTaxableFees": 0,
+      "netTotal": 1539.48,
+      "itemsDiscount": 0,
+      "unitValue": {
+        "currencySold": "EGP",
+        "amountEGP": 128.29
+      },
+      "discount": {
+        "rate": 0,
+        "amount": 0
+      },
+      "taxableItems": [
+        {
+          "taxType": "T1",
+          "amount": 215.5272,
+          "subType": "V009",
+          "rate": 14
+        }
+      ]
+    },
+    {
+      "description": "طقم نصف كم + كيلوت الوان ليكرا",
+      "itemType": "GS1",
+      "itemCode": "6222040384092",
+      "unitType": "PK",
+      "quantity": 12,
+      "internalCode": "106713",
+      "salesTotal": 889.44,
+      "total": 1013.9616,
+      "valueDifference": 0,
+      "totalTaxableFees": 0,
+      "netTotal": 889.44,
+      "itemsDiscount": 0,
+      "unitValue": {
+        "currencySold": "EGP",
+        "amountEGP": 74.12
+      },
+      "discount": {
+        "rate": 0,
+        "amount": 0
+      },
+      "taxableItems": [
+        {
+          "taxType": "T1",
+          "amount": 124.5216,
+          "subType": "V009",
+          "rate": 14
+        }
+      ]
+    },
+    {
+      "description": "فانله نصف كم مطبوع بالكامل ليكرا",
+      "itemType": "GS1",
+      "itemCode": "6222040383897",
+      "unitType": "PK",
+      "quantity": 12,
+      "internalCode": "103961",
+      "salesTotal": 478.92,
+      "total": 545.9688,
+      "valueDifference": 0,
+      "totalTaxableFees": 0,
+      "netTotal": 478.92,
+      "itemsDiscount": 0,
+      "unitValue": {
+        "currencySold": "EGP",
+        "amountEGP": 39.91
+      },
+      "discount": {
+        "rate": 0,
+        "amount": 0
+      },
+      "taxableItems": [
+        {
+          "taxType": "T1",
+          "amount": 67.0488,
+          "subType": "V009",
+          "rate": 14
+        }
+      ]
+    },
+    {
+      "description": "طقم تدفئه بيبي سمر ميلتون شانيه بيج",
+      "itemType": "GS1",
+      "itemCode": "6222040387475",
+      "unitType": "PK",
+      "quantity": 12,
+      "internalCode": "108797",
+      "salesTotal": 1265.76,
+      "total": 1442.9664,
+      "valueDifference": 0,
+      "totalTaxableFees": 0,
+      "netTotal": 1265.76,
+      "itemsDiscount": 0,
+      "unitValue": {
+        "currencySold": "EGP",
+        "amountEGP": 105.48
+      },
+      "discount": {
+        "rate": 0,
+        "amount": 0
+      },
+      "taxableItems": [
+        {
+          "taxType": "T1",
+          "amount": 177.2064,
+          "subType": "V009",
+          "rate": 14
+        }
+      ]
+    },
+    {
+      "description": "طقم تدفئه صبياني سمر ميلتون كحلي",
+      "itemType": "GS1",
+      "itemCode": "6222040387864",
+      "unitType": "PK",
+      "quantity": 11,
+      "internalCode": "103941",
+      "salesTotal": 1944.25,
+      "total": 2216.445,
+      "valueDifference": 0,
+      "totalTaxableFees": 0,
+      "netTotal": 1944.25,
+      "itemsDiscount": 0,
+      "unitValue": {
+        "currencySold": "EGP",
+        "amountEGP": 176.75
+      },
+      "discount": {
+        "rate": 0,
+        "amount": 0
+      },
+      "taxableItems": [
+        {
+          "taxType": "T1",
+          "amount": 272.195,
+          "subType": "V009",
+          "rate": 14
+        }
+      ]
+    },
+    {
+      "description": "طقم تدفئه صبياني سمر ميلتون شانية غامق",
+      "itemType": "GS1",
+      "itemCode": "6221319088785",
+      "unitType": "PK",
+      "quantity": 12,
+      "internalCode": "122674",
+      "salesTotal": 2121,
+      "total": 2417.94,
+      "valueDifference": 0,
+      "totalTaxableFees": 0,
+      "netTotal": 2121,
+      "itemsDiscount": 0,
+      "unitValue": {
+        "currencySold": "EGP",
+        "amountEGP": 176.75
+      },
+      "discount": {
+        "rate": 0,
+        "amount": 0
+      },
+      "taxableItems": [
+        {
+          "taxType": "T1",
+          "amount": 296.94,
+          "subType": "V009",
+          "rate": 14
+        }
+      ]
+    },
+    {
+      "description": "طقم تدفئه صبياني سمر ميلتون كحلي",
+      "itemType": "GS1",
+      "itemCode": "6222040387819",
+      "unitType": "PK",
+      "quantity": 6,
+      "internalCode": "103936",
+      "salesTotal": 889.5,
+      "total": 1014.03,
+      "valueDifference": 0,
+      "totalTaxableFees": 0,
+      "netTotal": 889.5,
+      "itemsDiscount": 0,
+      "unitValue": {
+        "currencySold": "EGP",
+        "amountEGP": 148.25
+      },
+      "discount": {
+        "rate": 0,
+        "amount": 0
+      },
+      "taxableItems": [
+        {
+          "taxType": "T1",
+          "amount": 124.53,
+          "subType": "V009",
+          "rate": 14
+        }
+      ]
+    },
+    {
+      "description": "فانلة سبور ابيض سادة",
+      "itemType": "GS1",
+      "itemCode": "6222040381350",
+      "unitType": "PK",
+      "quantity": 12,
+      "internalCode": "154",
+      "salesTotal": 376.32,
+      "total": 429.0048,
+      "valueDifference": 0,
+      "totalTaxableFees": 0,
+      "netTotal": 376.32,
+      "itemsDiscount": 0,
+      "unitValue": {
+        "currencySold": "EGP",
+        "amountEGP": 31.36
+      },
+      "discount": {
+        "rate": 0,
+        "amount": 0
+      },
+      "taxableItems": [
+        {
+          "taxType": "T1",
+          "amount": 52.6848,
+          "subType": "V009",
+          "rate": 14
+        }
+      ]
+    },
+    {
+      "description": "طقم تدفئه صبياني سمر ميلتون لبني",
+      "itemType": "GS1",
+      "itemCode": "6222040387932",
+      "unitType": "PK",
+      "quantity": 12,
+      "internalCode": "103948",
+      "salesTotal": 2121,
+      "total": 2417.94,
+      "valueDifference": 0,
+      "totalTaxableFees": 0,
+      "netTotal": 2121,
+      "itemsDiscount": 0,
+      "unitValue": {
+        "currencySold": "EGP",
+        "amountEGP": 176.75
+      },
+      "discount": {
+        "rate": 0,
+        "amount": 0
+      },
+      "taxableItems": [
+        {
+          "taxType": "T1",
+          "amount": 296.94,
+          "subType": "V009",
+          "rate": 14
+        }
+      ]
+    },
+    {
+      "description": "طقم تدفئه بيبي سمر ميلتون شانيه بيج",
+      "itemType": "GS1",
+      "itemCode": "6222040387505",
+      "unitType": "PK",
+      "quantity": 12,
+      "internalCode": "108800",
+      "salesTotal": 1265.76,
+      "total": 1442.9664,
+      "valueDifference": 0,
+      "totalTaxableFees": 0,
+      "netTotal": 1265.76,
+      "itemsDiscount": 0,
+      "unitValue": {
+        "currencySold": "EGP",
+        "amountEGP": 105.48
+      },
+      "discount": {
+        "rate": 0,
+        "amount": 0
+      },
+      "taxableItems": [
+        {
+          "taxType": "T1",
+          "amount": 177.2064,
+          "subType": "V009",
+          "rate": 14
+        }
+      ]
+    },
+    {
+      "description": "فانله نصف كم مطبوع بالكامل ليكرا",
+      "itemType": "GS1",
+      "itemCode": "6222040383842",
+      "unitType": "PK",
+      "quantity": 12,
+      "internalCode": "103956",
+      "salesTotal": 410.52,
+      "total": 467.9928,
+      "valueDifference": 0,
+      "totalTaxableFees": 0,
+      "netTotal": 410.52,
+      "itemsDiscount": 0,
+      "unitValue": {
+        "currencySold": "EGP",
+        "amountEGP": 34.21
+      },
+      "discount": {
+        "rate": 0,
+        "amount": 0
+      },
+      "taxableItems": [
+        {
+          "taxType": "T1",
+          "amount": 57.4728,
+          "subType": "V009",
+          "rate": 14
+        }
+      ]
+    },
+    {
+      "description": "بودي كت 3 قطع صبياني",
+      "itemType": "GS1",
+      "itemCode": "6221319007755",
+      "unitType": "PK",
+      "quantity": 12,
+      "internalCode": "95517",
+      "salesTotal": 1436.88,
+      "total": 1638.0432,
+      "valueDifference": 0,
+      "totalTaxableFees": 0,
+      "netTotal": 1436.88,
+      "itemsDiscount": 0,
+      "unitValue": {
+        "currencySold": "EGP",
+        "amountEGP": 119.74
+      },
+      "discount": {
+        "rate": 0,
+        "amount": 0
+      },
+      "taxableItems": [
+        {
+          "taxType": "T1",
+          "amount": 201.1632,
+          "subType": "V009",
+          "rate": 14
+        }
+      ]
+    },
+    {
+      "description": "طقم تدفئه صبياني سمر ميلتون شانية غامق",
+      "itemType": "GS1",
+      "itemCode": "6221319088723",
+      "unitType": "PK",
+      "quantity": 12,
+      "internalCode": "122671",
+      "salesTotal": 1779,
+      "total": 2028.06,
+      "valueDifference": 0,
+      "totalTaxableFees": 0,
+      "netTotal": 1779,
+      "itemsDiscount": 0,
+      "unitValue": {
+        "currencySold": "EGP",
+        "amountEGP": 148.25
+      },
+      "discount": {
+        "rate": 0,
+        "amount": 0
+      },
+      "taxableItems": [
+        {
+          "taxType": "T1",
+          "amount": 249.06,
+          "subType": "V009",
+          "rate": 14
+        }
+      ]
+    },
+    {
+      "description": "بودي كم طويل 3 قطع",
+      "itemType": "GS1",
+      "itemCode": "6222040391823",
+      "unitType": "PK",
+      "quantity": 12,
+      "internalCode": "109014",
+      "salesTotal": 1539.48,
+      "total": 1755.0072,
+      "valueDifference": 0,
+      "totalTaxableFees": 0,
+      "netTotal": 1539.48,
+      "itemsDiscount": 0,
+      "unitValue": {
+        "currencySold": "EGP",
+        "amountEGP": 128.29
+      },
+      "discount": {
+        "rate": 0,
+        "amount": 0
+      },
+      "taxableItems": [
+        {
+          "taxType": "T1",
+          "amount": 215.5272,
+          "subType": "V009",
+          "rate": 14
+        }
+      ]
+    },
+    {
+      "description": "بودي كت 3 قطع بناتي",
+      "itemType": "GS1",
+      "itemCode": "6221319007984",
+      "unitType": "PK",
+      "quantity": 12,
+      "internalCode": "97723",
+      "salesTotal": 1436.88,
+      "total": 1638.0432,
+      "valueDifference": 0,
+      "totalTaxableFees": 0,
+      "netTotal": 1436.88,
+      "itemsDiscount": 0,
+      "unitValue": {
+        "currencySold": "EGP",
+        "amountEGP": 119.74
+      },
+      "discount": {
+        "rate": 0,
+        "amount": 0
+      },
+      "taxableItems": [
+        {
+          "taxType": "T1",
+          "amount": 201.1632,
+          "subType": "V009",
+          "rate": 14
+        }
+      ]
+    },
+    {
+      "description": "بودي كت انترلوك ابيض سادة",
+      "itemType": "GS1",
+      "itemCode": "6222040393315",
+      "unitType": "PK",
+      "quantity": 12,
+      "internalCode": "109803",
+      "salesTotal": 410.52,
+      "total": 467.9928,
+      "valueDifference": 0,
+      "totalTaxableFees": 0,
+      "netTotal": 410.52,
+      "itemsDiscount": 0,
+      "unitValue": {
+        "currencySold": "EGP",
+        "amountEGP": 34.21
+      },
+      "discount": {
+        "rate": 0,
+        "amount": 0
+      },
+      "taxableItems": [
+        {
+          "taxType": "T1",
+          "amount": 57.4728,
+          "subType": "V009",
+          "rate": 14
+        }
+      ]
+    },
+    {
+      "description": "بودي كت 3 قطع بناتي",
+      "itemType": "GS1",
+      "itemCode": "6221319008011",
+      "unitType": "PK",
+      "quantity": 12,
+      "internalCode": "97726",
+      "salesTotal": 1436.88,
+      "total": 1638.0432,
+      "valueDifference": 0,
+      "totalTaxableFees": 0,
+      "netTotal": 1436.88,
+      "itemsDiscount": 0,
+      "unitValue": {
+        "currencySold": "EGP",
+        "amountEGP": 119.74
+      },
+      "discount": {
+        "rate": 0,
+        "amount": 0
+      },
+      "taxableItems": [
+        {
+          "taxType": "T1",
+          "amount": 201.1632,
+          "subType": "V009",
+          "rate": 14
+        }
+      ]
+    },
+    {
+      "description": "طقم تدفئه صبياني سمر ميلتون شانية غامق",
+      "itemType": "GS1",
+      "itemCode": "6221319088808",
+      "unitType": "PK",
+      "quantity": 12,
+      "internalCode": "122675",
+      "salesTotal": 2121,
+      "total": 2417.94,
+      "valueDifference": 0,
+      "totalTaxableFees": 0,
+      "netTotal": 2121,
+      "itemsDiscount": 0,
+      "unitValue": {
+        "currencySold": "EGP",
+        "amountEGP": 176.75
+      },
+      "discount": {
+        "rate": 0,
+        "amount": 0
+      },
+      "taxableItems": [
+        {
+          "taxType": "T1",
+          "amount": 296.94,
+          "subType": "V009",
+          "rate": 14
+        }
+      ]
+    },
+    {
+      "description": "Bodysuit P/3  Short Sleeve sweet dreams",
+      "itemType": "GS1",
+      "itemCode": "6221319024370",
+      "unitType": "PK",
+      "quantity": 12,
+      "internalCode": "113684",
+      "salesTotal": 1505.28,
+      "total": 1716.0192,
+      "valueDifference": 0,
+      "totalTaxableFees": 0,
+      "netTotal": 1505.28,
+      "itemsDiscount": 0,
+      "unitValue": {
+        "currencySold": "EGP",
+        "amountEGP": 125.44
+      },
+      "discount": {
+        "rate": 0,
+        "amount": 0
+      },
+      "taxableItems": [
+        {
+          "taxType": "T1",
+          "amount": 210.7392,
+          "subType": "V009",
+          "rate": 14
+        }
+      ]
+    },
+    {
+      "description": "طقم تدفئه صبياني سمر ميلتون شانيه اخضر",
+      "itemType": "GS1",
+      "itemCode": "6221319066851",
+      "unitType": "PK",
+      "quantity": 12,
+      "internalCode": "119563",
+      "salesTotal": 2121,
+      "total": 2417.94,
+      "valueDifference": 0,
+      "totalTaxableFees": 0,
+      "netTotal": 2121,
+      "itemsDiscount": 0,
+      "unitValue": {
+        "currencySold": "EGP",
+        "amountEGP": 176.75
+      },
+      "discount": {
+        "rate": 0,
+        "amount": 0
+      },
+      "taxableItems": [
+        {
+          "taxType": "T1",
+          "amount": 296.94,
+          "subType": "V009",
+          "rate": 14
+        }
+      ]
+    },
+    {
+      "description": "طقم تدفئه صبياني سمر ميلتون بيج",
+      "itemType": "GS1",
+      "itemCode": "6222040387710",
+      "unitType": "PK",
+      "quantity": 8,
+      "internalCode": "103926",
+      "salesTotal": 1414,
+      "total": 1611.96,
+      "valueDifference": 0,
+      "totalTaxableFees": 0,
+      "netTotal": 1414,
+      "itemsDiscount": 0,
+      "unitValue": {
+        "currencySold": "EGP",
+        "amountEGP": 176.75
+      },
+      "discount": {
+        "rate": 0,
+        "amount": 0
+      },
+      "taxableItems": [
+        {
+          "taxType": "T1",
+          "amount": 197.96,
+          "subType": "V009",
+          "rate": 14
+        }
+      ]
+    },
+    {
+      "description": "كيلوت بيبي مكشكش",
+      "itemType": "GS1",
+      "itemCode": "6222040388984",
+      "unitType": "PK",
+      "quantity": 6,
+      "internalCode": "7989",
+      "salesTotal": 171.06,
+      "total": 195.0084,
+      "valueDifference": 0,
+      "totalTaxableFees": 0,
+      "netTotal": 171.06,
+      "itemsDiscount": 0,
+      "unitValue": {
+        "currencySold": "EGP",
+        "amountEGP": 28.51
+      },
+      "discount": {
+        "rate": 0,
+        "amount": 0
+      },
+      "taxableItems": [
+        {
+          "taxType": "T1",
+          "amount": 23.9484,
+          "subType": "V009",
+          "rate": 14
+        }
+      ]
+    },
+    {
+      "description": "طقم تدفئه بيبي سمر ميلتون لبني",
+      "itemType": "GS1",
+      "itemCode": "6222040387444",
+      "unitType": "PK",
+      "quantity": 12,
+      "internalCode": "106391",
+      "salesTotal": 1265.76,
+      "total": 1442.9664,
+      "valueDifference": 0,
+      "totalTaxableFees": 0,
+      "netTotal": 1265.76,
+      "itemsDiscount": 0,
+      "unitValue": {
+        "currencySold": "EGP",
+        "amountEGP": 105.48
+      },
+      "discount": {
+        "rate": 0,
+        "amount": 0
+      },
+      "taxableItems": [
+        {
+          "taxType": "T1",
+          "amount": 177.2064,
+          "subType": "V009",
+          "rate": 14
+        }
+      ]
+    },
+    {
+      "description": "فانلة بيبي نصف كم كبسول انترلوك",
+      "itemType": "GS1",
+      "itemCode": "6222040390031",
+      "unitType": "PK",
+      "quantity": 12,
+      "internalCode": "11253",
+      "salesTotal": 342.12,
+      "total": 390.0168,
+      "valueDifference": 0,
+      "totalTaxableFees": 0,
+      "netTotal": 342.12,
+      "itemsDiscount": 0,
+      "unitValue": {
+        "currencySold": "EGP",
+        "amountEGP": 28.51
+      },
+      "discount": {
+        "rate": 0,
+        "amount": 0
+      },
+      "taxableItems": [
+        {
+          "taxType": "T1",
+          "amount": 47.8968,
+          "subType": "V009",
+          "rate": 14
+        }
+      ]
+    },
+    {
+      "description": "بودي نصف كم ابيض سادة",
+      "itemType": "GS1",
+      "itemCode": "6222040389165",
+      "unitType": "PK",
+      "quantity": 12,
+      "internalCode": "339",
+      "salesTotal": 444.72,
+      "total": 506.9808,
+      "valueDifference": 0,
+      "totalTaxableFees": 0,
+      "netTotal": 444.72,
+      "itemsDiscount": 0,
+      "unitValue": {
+        "currencySold": "EGP",
+        "amountEGP": 37.06
+      },
+      "discount": {
+        "rate": 0,
+        "amount": 0
+      },
+      "taxableItems": [
+        {
+          "taxType": "T1",
+          "amount": 62.2608,
+          "subType": "V009",
+          "rate": 14
+        }
+      ]
+    },
+    {
+      "description": "فانلة سبور ابيض سادة",
+      "itemType": "GS1",
+      "itemCode": "6222040381312",
+      "unitType": "PK",
+      "quantity": 12,
+      "internalCode": "150",
+      "salesTotal": 307.92,
+      "total": 351.0288,
+      "valueDifference": 0,
+      "totalTaxableFees": 0,
+      "netTotal": 307.92,
+      "itemsDiscount": 0,
+      "unitValue": {
+        "currencySold": "EGP",
+        "amountEGP": 25.66
+      },
+      "discount": {
+        "rate": 0,
+        "amount": 0
+      },
+      "taxableItems": [
+        {
+          "taxType": "T1",
+          "amount": 43.1088,
+          "subType": "V009",
+          "rate": 14
+        }
+      ]
+    },
+    {
+      "description": "براسيرا نصف كم ابيض سادة",
+      "itemType": "GS1",
+      "itemCode": "6222040389844",
+      "unitType": "PK",
+      "quantity": 12,
+      "internalCode": "17283",
+      "salesTotal": 478.92,
+      "total": 545.9688,
+      "valueDifference": 0,
+      "totalTaxableFees": 0,
+      "netTotal": 478.92,
+      "itemsDiscount": 0,
+      "unitValue": {
+        "currencySold": "EGP",
+        "amountEGP": 39.91
+      },
+      "discount": {
+        "rate": 0,
+        "amount": 0
+      },
+      "taxableItems": [
+        {
+          "taxType": "T1",
+          "amount": 67.0488,
+          "subType": "V009",
+          "rate": 14
+        }
+      ]
+    },
+    {
+      "description": "شورت بناتي",
+      "itemType": "GS1",
+      "itemCode": "6222040390802",
+      "unitType": "PK",
+      "quantity": 12,
+      "internalCode": "106380",
+      "salesTotal": 376.32,
+      "total": 429.0048,
+      "valueDifference": 0,
+      "totalTaxableFees": 0,
+      "netTotal": 376.32,
+      "itemsDiscount": 0,
+      "unitValue": {
+        "currencySold": "EGP",
+        "amountEGP": 31.36
+      },
+      "discount": {
+        "rate": 0,
+        "amount": 0
+      },
+      "taxableItems": [
+        {
+          "taxType": "T1",
+          "amount": 52.6848,
+          "subType": "V009",
+          "rate": 14
+        }
+      ]
+    },
+    {
+      "description": "فانلة سبور ابيض سادة",
+      "itemType": "GS1",
+      "itemCode": "6222040381374",
+      "unitType": "PK",
+      "quantity": 12,
+      "internalCode": "156",
+      "salesTotal": 376.32,
+      "total": 429.0048,
+      "valueDifference": 0,
+      "totalTaxableFees": 0,
+      "netTotal": 376.32,
+      "itemsDiscount": 0,
+      "unitValue": {
+        "currencySold": "EGP",
+        "amountEGP": 31.36
+      },
+      "discount": {
+        "rate": 0,
+        "amount": 0
+      },
+      "taxableItems": [
+        {
+          "taxType": "T1",
+          "amount": 52.6848,
+          "subType": "V009",
+          "rate": 14
+        }
+      ]
+    },
+    {
+      "description": "طقم تدفئه بيبي سمر ميلتون لبني",
+      "itemType": "GS1",
+      "itemCode": "6222040387468",
+      "unitType": "PK",
+      "quantity": 12,
+      "internalCode": "106393",
+      "salesTotal": 1265.76,
+      "total": 1442.9664,
+      "valueDifference": 0,
+      "totalTaxableFees": 0,
+      "netTotal": 1265.76,
+      "itemsDiscount": 0,
+      "unitValue": {
+        "currencySold": "EGP",
+        "amountEGP": 105.48
+      },
+      "discount": {
+        "rate": 0,
+        "amount": 0
+      },
+      "taxableItems": [
+        {
+          "taxType": "T1",
+          "amount": 177.2064,
+          "subType": "V009",
+          "rate": 14
+        }
+      ]
+    },
+    {
+      "description": "بودي كم طويل 3 قطع",
+      "itemType": "GS1",
+      "itemCode": "6222040391922",
+      "unitType": "PK",
+      "quantity": 12,
+      "internalCode": "109090",
+      "salesTotal": 1539.48,
+      "total": 1755.0072,
+      "valueDifference": 0,
+      "totalTaxableFees": 0,
+      "netTotal": 1539.48,
+      "itemsDiscount": 0,
+      "unitValue": {
+        "currencySold": "EGP",
+        "amountEGP": 128.29
+      },
+      "discount": {
+        "rate": 0,
+        "amount": 0
+      },
+      "taxableItems": [
+        {
+          "taxType": "T1",
+          "amount": 215.5272,
+          "subType": "V009",
+          "rate": 14
+        }
+      ]
+    },
+    {
+      "description": "طقم تدفئه بيبي سمر ميلتون كريمي",
+      "itemType": "GS1",
+      "itemCode": "6221319066691",
+      "unitType": "PK",
+      "quantity": 12,
+      "internalCode": "117670",
+      "salesTotal": 1265.76,
+      "total": 1442.9664,
+      "valueDifference": 0,
+      "totalTaxableFees": 0,
+      "netTotal": 1265.76,
+      "itemsDiscount": 0,
+      "unitValue": {
+        "currencySold": "EGP",
+        "amountEGP": 105.48
+      },
+      "discount": {
+        "rate": 0,
+        "amount": 0
+      },
+      "taxableItems": [
+        {
+          "taxType": "T1",
+          "amount": 177.2064,
+          "subType": "V009",
+          "rate": 14
+        }
+      ]
+    },
+    {
+      "description": "طقم تدفئه بيبي سمر ميلتون اصفر",
+      "itemType": "GS1",
+      "itemCode": "6222040387253",
+      "unitType": "PK",
+      "quantity": 12,
+      "internalCode": "105561",
+      "salesTotal": 1265.76,
+      "total": 1442.9664,
+      "valueDifference": 0,
+      "totalTaxableFees": 0,
+      "netTotal": 1265.76,
+      "itemsDiscount": 0,
+      "unitValue": {
+        "currencySold": "EGP",
+        "amountEGP": 105.48
+      },
+      "discount": {
+        "rate": 0,
+        "amount": 0
+      },
+      "taxableItems": [
+        {
+          "taxType": "T1",
+          "amount": 177.2064,
+          "subType": "V009",
+          "rate": 14
+        }
+      ]
+    },
+    {
+      "description": "طقم تدفئه بيبي سمر ميلتون شانيه بيج",
+      "itemType": "GS1",
+      "itemCode": "6222040387512",
+      "unitType": "PK",
+      "quantity": 12,
+      "internalCode": "108801",
+      "salesTotal": 1265.76,
+      "total": 1442.9664,
+      "valueDifference": 0,
+      "totalTaxableFees": 0,
+      "netTotal": 1265.76,
+      "itemsDiscount": 0,
+      "unitValue": {
+        "currencySold": "EGP",
+        "amountEGP": 105.48
+      },
+      "discount": {
+        "rate": 0,
+        "amount": 0
+      },
+      "taxableItems": [
+        {
+          "taxType": "T1",
+          "amount": 177.2064,
+          "subType": "V009",
+          "rate": 14
+        }
+      ]
+    },
+    {
+      "description": "فانلة بيبي كم طويل كبسول",
+      "itemType": "GS1",
+      "itemCode": "6222040384184",
+      "unitType": "PK",
+      "quantity": 12,
+      "internalCode": "78172",
+      "salesTotal": 342.12,
+      "total": 390.0168,
+      "valueDifference": 0,
+      "totalTaxableFees": 0,
+      "netTotal": 342.12,
+      "itemsDiscount": 0,
+      "unitValue": {
+        "currencySold": "EGP",
+        "amountEGP": 28.51
+      },
+      "discount": {
+        "rate": 0,
+        "amount": 0
+      },
+      "taxableItems": [
+        {
+          "taxType": "T1",
+          "amount": 47.8968,
+          "subType": "V009",
+          "rate": 14
+        }
+      ]
+    },
+    {
+      "description": "بودي كت 3 قطع بناتي",
+      "itemType": "GS1",
+      "itemCode": "6221319007557",
+      "unitType": "PK",
+      "quantity": 12,
+      "internalCode": "98849",
+      "salesTotal": 1436.88,
+      "total": 1638.0432,
+      "valueDifference": 0,
+      "totalTaxableFees": 0,
+      "netTotal": 1436.88,
+      "itemsDiscount": 0,
+      "unitValue": {
+        "currencySold": "EGP",
+        "amountEGP": 119.74
+      },
+      "discount": {
+        "rate": 0,
+        "amount": 0
+      },
+      "taxableItems": [
+        {
+          "taxType": "T1",
+          "amount": 201.1632,
+          "subType": "V009",
+          "rate": 14
+        }
+      ]
+    },
+    {
+      "description": "بودي كم طويل ابيض سادة",
+      "itemType": "GS1",
+      "itemCode": "6222040391229",
+      "unitType": "PK",
+      "quantity": 6,
+      "internalCode": "335",
+      "salesTotal": 239.46,
+      "total": 272.9844,
+      "valueDifference": 0,
+      "totalTaxableFees": 0,
+      "netTotal": 239.46,
+      "itemsDiscount": 0,
+      "unitValue": {
+        "currencySold": "EGP",
+        "amountEGP": 39.91
+      },
+      "discount": {
+        "rate": 0,
+        "amount": 0
+      },
+      "taxableItems": [
+        {
+          "taxType": "T1",
+          "amount": 33.5244,
+          "subType": "V009",
+          "rate": 14
+        }
+      ]
+    },
+    {
+      "description": "كيلوت بيبي مطبوع من الخلف",
+      "itemType": "GS1",
+      "itemCode": "6222040389127",
+      "unitType": "PK",
+      "quantity": 6,
+      "internalCode": "7995",
+      "salesTotal": 136.86,
+      "total": 156.0204,
+      "valueDifference": 0,
+      "totalTaxableFees": 0,
+      "netTotal": 136.86,
+      "itemsDiscount": 0,
+      "unitValue": {
+        "currencySold": "EGP",
+        "amountEGP": 22.81
+      },
+      "discount": {
+        "rate": 0,
+        "amount": 0
+      },
+      "taxableItems": [
+        {
+          "taxType": "T1",
+          "amount": 19.1604,
+          "subType": "V009",
+          "rate": 14
+        }
+      ]
+    },
+    {
+      "description": "طقم تدفئه صبياني سمر ميلتون شانيه اخضر",
+      "itemType": "GS1",
+      "itemCode": "6221319066837",
+      "unitType": "PK",
+      "quantity": 12,
+      "internalCode": "119562",
+      "salesTotal": 2121,
+      "total": 2417.94,
+      "valueDifference": 0,
+      "totalTaxableFees": 0,
+      "netTotal": 2121,
+      "itemsDiscount": 0,
+      "unitValue": {
+        "currencySold": "EGP",
+        "amountEGP": 176.75
+      },
+      "discount": {
+        "rate": 0,
+        "amount": 0
+      },
+      "taxableItems": [
+        {
+          "taxType": "T1",
+          "amount": 296.94,
+          "subType": "V009",
+          "rate": 14
+        }
+      ]
+    },
+    {
+      "description": "بودي كت 3 قطع",
+      "itemType": "GS1",
+      "itemCode": "6221319007359",
+      "unitType": "PK",
+      "quantity": 12,
+      "internalCode": "103388",
+      "salesTotal": 1436.88,
+      "total": 1638.0432,
+      "valueDifference": 0,
+      "totalTaxableFees": 0,
+      "netTotal": 1436.88,
+      "itemsDiscount": 0,
+      "unitValue": {
+        "currencySold": "EGP",
+        "amountEGP": 119.74
+      },
+      "discount": {
+        "rate": 0,
+        "amount": 0
+      },
+      "taxableItems": [
+        {
+          "taxType": "T1",
+          "amount": 201.1632,
+          "subType": "V009",
+          "rate": 14
+        }
+      ]
+    },
+    {
+      "description": "فانله نصف كم مطبوع بالكامل ليكرا",
+      "itemType": "GS1",
+      "itemCode": "6222040383903",
+      "unitType": "PK",
+      "quantity": 12,
+      "internalCode": "103962",
+      "salesTotal": 478.92,
+      "total": 545.9688,
+      "valueDifference": 0,
+      "totalTaxableFees": 0,
+      "netTotal": 478.92,
+      "itemsDiscount": 0,
+      "unitValue": {
+        "currencySold": "EGP",
+        "amountEGP": 39.91
+      },
+      "discount": {
+        "rate": 0,
+        "amount": 0
+      },
+      "taxableItems": [
+        {
+          "taxType": "T1",
+          "amount": 67.0488,
+          "subType": "V009",
+          "rate": 14
+        }
+      ]
+    },
+    {
+      "description": "طقم تدفئه صبياني سمر ميلتون شانيه",
+      "itemType": "GS1",
+      "itemCode": "6222040387741",
+      "unitType": "PK",
+      "quantity": 12,
+      "internalCode": "103929",
+      "salesTotal": 1779,
+      "total": 2028.06,
+      "valueDifference": 0,
+      "totalTaxableFees": 0,
+      "netTotal": 1779,
+      "itemsDiscount": 0,
+      "unitValue": {
+        "currencySold": "EGP",
+        "amountEGP": 148.25
+      },
+      "discount": {
+        "rate": 0,
+        "amount": 0
+      },
+      "taxableItems": [
+        {
+          "taxType": "T1",
+          "amount": 249.06,
+          "subType": "V009",
+          "rate": 14
+        }
+      ]
+    },
+    {
+      "description": "فانلة بيبي كم طويل كبسول",
+      "itemType": "GS1",
+      "itemCode": "6222040384177",
+      "unitType": "PK",
+      "quantity": 12,
+      "internalCode": "351",
+      "salesTotal": 342.12,
+      "total": 390.0168,
+      "valueDifference": 0,
+      "totalTaxableFees": 0,
+      "netTotal": 342.12,
+      "itemsDiscount": 0,
+      "unitValue": {
+        "currencySold": "EGP",
+        "amountEGP": 28.51
+      },
+      "discount": {
+        "rate": 0,
+        "amount": 0
+      },
+      "taxableItems": [
+        {
+          "taxType": "T1",
+          "amount": 47.8968,
+          "subType": "V009",
+          "rate": 14
+        }
+      ]
+    },
+    {
+      "description": "طقم تدفئه صبياني سمر ميلتون بيج",
+      "itemType": "GS1",
+      "itemCode": "6222040387673",
+      "unitType": "PK",
+      "quantity": 12,
+      "internalCode": "103922",
+      "salesTotal": 1779,
+      "total": 2028.06,
+      "valueDifference": 0,
+      "totalTaxableFees": 0,
+      "netTotal": 1779,
+      "itemsDiscount": 0,
+      "unitValue": {
+        "currencySold": "EGP",
+        "amountEGP": 148.25
+      },
+      "discount": {
+        "rate": 0,
+        "amount": 0
+      },
+      "taxableItems": [
+        {
+          "taxType": "T1",
+          "amount": 249.06,
+          "subType": "V009",
+          "rate": 14
+        }
+      ]
+    },
+    {
+      "description": "طقم تدفئه صبياني سمر ميلتون لبني",
+      "itemType": "GS1",
+      "itemCode": "6222040387888",
+      "unitType": "PK",
+      "quantity": 2,
+      "internalCode": "103943",
+      "salesTotal": 296.5,
+      "total": 338.01,
+      "valueDifference": 0,
+      "totalTaxableFees": 0,
+      "netTotal": 296.5,
+      "itemsDiscount": 0,
+      "unitValue": {
+        "currencySold": "EGP",
+        "amountEGP": 148.25
+      },
+      "discount": {
+        "rate": 0,
+        "amount": 0
+      },
+      "taxableItems": [
+        {
+          "taxType": "T1",
+          "amount": 41.51,
+          "subType": "V009",
+          "rate": 14
+        }
+      ]
+    },
+    {
+      "description": "فانلة بيبي كم طويل كبسول انترلوك",
+      "itemType": "GS1",
+      "itemCode": "6222040392240",
+      "unitType": "PK",
+      "quantity": 12,
+      "internalCode": "11092",
+      "salesTotal": 376.32,
+      "total": 429.0048,
+      "valueDifference": 0,
+      "totalTaxableFees": 0,
+      "netTotal": 376.32,
+      "itemsDiscount": 0,
+      "unitValue": {
+        "currencySold": "EGP",
+        "amountEGP": 31.36
+      },
+      "discount": {
+        "rate": 0,
+        "amount": 0
+      },
+      "taxableItems": [
+        {
+          "taxType": "T1",
+          "amount": 52.6848,
+          "subType": "V009",
+          "rate": 14
+        }
+      ]
+    },
+    {
+      "description": "فانلة كم طويل ابيض سادة",
+      "itemType": "GS1",
+      "itemCode": "6222040384276",
+      "unitType": "PK",
+      "quantity": 12,
+      "internalCode": "113",
+      "salesTotal": 444.72,
+      "total": 506.9808,
+      "valueDifference": 0,
+      "totalTaxableFees": 0,
+      "netTotal": 444.72,
+      "itemsDiscount": 0,
+      "unitValue": {
+        "currencySold": "EGP",
+        "amountEGP": 37.06
+      },
+      "discount": {
+        "rate": 0,
+        "amount": 0
+      },
+      "taxableItems": [
+        {
+          "taxType": "T1",
+          "amount": 62.2608,
+          "subType": "V009",
+          "rate": 14
+        }
+      ]
+    },
+    {
+      "description": "طقم تدفئه بيبي سمر ميلتون كريمي",
+      "itemType": "GS1",
+      "itemCode": "6221319066615",
+      "unitType": "PK",
+      "quantity": 12,
+      "internalCode": "117666",
+      "salesTotal": 1265.76,
+      "total": 1442.9664,
+      "valueDifference": 0,
+      "totalTaxableFees": 0,
+      "netTotal": 1265.76,
+      "itemsDiscount": 0,
+      "unitValue": {
+        "currencySold": "EGP",
+        "amountEGP": 105.48
+      },
+      "discount": {
+        "rate": 0,
+        "amount": 0
+      },
+      "taxableItems": [
+        {
+          "taxType": "T1",
+          "amount": 177.2064,
+          "subType": "V009",
+          "rate": 14
+        }
+      ]
+    },
+    {
+      "description": "طقم تدفئه صبياني سمر ميلتون شانية غامق",
+      "itemType": "GS1",
+      "itemCode": "6221319088761",
+      "unitType": "PK",
+      "quantity": 12,
+      "internalCode": "122673",
+      "salesTotal": 1779,
+      "total": 2028.06,
+      "valueDifference": 0,
+      "totalTaxableFees": 0,
+      "netTotal": 1779,
+      "itemsDiscount": 0,
+      "unitValue": {
+        "currencySold": "EGP",
+        "amountEGP": 148.25
+      },
+      "discount": {
+        "rate": 0,
+        "amount": 0
+      },
+      "taxableItems": [
+        {
+          "taxType": "T1",
+          "amount": 249.06,
+          "subType": "V009",
+          "rate": 14
+        }
+      ]
+    },
+    {
+      "description": "شاية كت انترلوك ابيض سادة",
+      "itemType": "GS1",
+      "itemCode": "6221319001166",
+      "unitType": "PK",
+      "quantity": 12,
+      "internalCode": "113384",
+      "salesTotal": 444.72,
+      "total": 506.9808,
+      "valueDifference": 0,
+      "totalTaxableFees": 0,
+      "netTotal": 444.72,
+      "itemsDiscount": 0,
+      "unitValue": {
+        "currencySold": "EGP",
+        "amountEGP": 37.06
+      },
+      "discount": {
+        "rate": 0,
+        "amount": 0
+      },
+      "taxableItems": [
+        {
+          "taxType": "T1",
+          "amount": 62.2608,
+          "subType": "V009",
+          "rate": 14
+        }
+      ]
+    },
+    {
+      "description": "كيلوت بيبي مكشكش",
+      "itemType": "GS1",
+      "itemCode": "6222040388960",
+      "unitType": "PK",
+      "quantity": 6,
+      "internalCode": "1734",
+      "salesTotal": 171.06,
+      "total": 195.0084,
+      "valueDifference": 0,
+      "totalTaxableFees": 0,
+      "netTotal": 171.06,
+      "itemsDiscount": 0,
+      "unitValue": {
+        "currencySold": "EGP",
+        "amountEGP": 28.51
+      },
+      "discount": {
+        "rate": 0,
+        "amount": 0
+      },
+      "taxableItems": [
+        {
+          "taxType": "T1",
+          "amount": 23.9484,
+          "subType": "V009",
+          "rate": 14
+        }
+      ]
+    },
+    {
+      "description": "طقم تدفئه بيبي سمر ميلتون كريمي",
+      "itemType": "GS1",
+      "itemCode": "6221319066714",
+      "unitType": "PK",
+      "quantity": 12,
+      "internalCode": "117671",
+      "salesTotal": 1265.76,
+      "total": 1442.9664,
+      "valueDifference": 0,
+      "totalTaxableFees": 0,
+      "netTotal": 1265.76,
+      "itemsDiscount": 0,
+      "unitValue": {
+        "currencySold": "EGP",
+        "amountEGP": 105.48
+      },
+      "discount": {
+        "rate": 0,
+        "amount": 0
+      },
+      "taxableItems": [
+        {
+          "taxType": "T1",
+          "amount": 177.2064,
+          "subType": "V009",
+          "rate": 14
+        }
+      ]
+    },
+    {
+      "description": "بودي كت 3 قطع بناتي",
+      "itemType": "GS1",
+      "itemCode": "6221319007564",
+      "unitType": "PK",
+      "quantity": 10,
+      "internalCode": "98850",
+      "salesTotal": 1197.4,
+      "total": 1365.036,
+      "valueDifference": 0,
+      "totalTaxableFees": 0,
+      "netTotal": 1197.4,
+      "itemsDiscount": 0,
+      "unitValue": {
+        "currencySold": "EGP",
+        "amountEGP": 119.74
+      },
+      "discount": {
+        "rate": 0,
+        "amount": 0
+      },
+      "taxableItems": [
+        {
+          "taxType": "T1",
+          "amount": 167.636,
+          "subType": "V009",
+          "rate": 14
+        }
+      ]
+    },
+    {
+      "description": "Bodysuit P/3  Short Sleeve sweet dreams",
+      "itemType": "GS1",
+      "itemCode": "6221319024387",
+      "unitType": "PK",
+      "quantity": 12,
+      "internalCode": "113685",
+      "salesTotal": 1505.28,
+      "total": 1716.0192,
+      "valueDifference": 0,
+      "totalTaxableFees": 0,
+      "netTotal": 1505.28,
+      "itemsDiscount": 0,
+      "unitValue": {
+        "currencySold": "EGP",
+        "amountEGP": 125.44
+      },
+      "discount": {
+        "rate": 0,
+        "amount": 0
+      },
+      "taxableItems": [
+        {
+          "taxType": "T1",
+          "amount": 210.7392,
+          "subType": "V009",
+          "rate": 14
+        }
+      ]
+    },
+    {
+      "description": "طقم تدفئه صبياني سمر ميلتون بيج",
+      "itemType": "GS1",
+      "itemCode": "6222040387666",
+      "unitType": "PK",
+      "quantity": 12,
+      "internalCode": "103921",
+      "salesTotal": 1779,
+      "total": 2028.06,
+      "valueDifference": 0,
+      "totalTaxableFees": 0,
+      "netTotal": 1779,
+      "itemsDiscount": 0,
+      "unitValue": {
+        "currencySold": "EGP",
+        "amountEGP": 148.25
+      },
+      "discount": {
+        "rate": 0,
+        "amount": 0
+      },
+      "taxableItems": [
+        {
+          "taxType": "T1",
+          "amount": 249.06,
+          "subType": "V009",
+          "rate": 14
+        }
+      ]
+    },
+    {
+      "description": "طقم تدفئه صبياني سمر ميلتون كحلي",
+      "itemType": "GS1",
+      "itemCode": "6222040387826",
+      "unitType": "PK",
+      "quantity": 12,
+      "internalCode": "103937",
+      "salesTotal": 1779,
+      "total": 2028.06,
+      "valueDifference": 0,
+      "totalTaxableFees": 0,
+      "netTotal": 1779,
+      "itemsDiscount": 0,
+      "unitValue": {
+        "currencySold": "EGP",
+        "amountEGP": 148.25
+      },
+      "discount": {
+        "rate": 0,
+        "amount": 0
+      },
+      "taxableItems": [
+        {
+          "taxType": "T1",
+          "amount": 249.06,
+          "subType": "V009",
+          "rate": 14
+        }
+      ]
+    },
+    {
+      "description": "بودي كم طويل 3 قطع",
+      "itemType": "GS1",
+      "itemCode": "6222040391885",
+      "unitType": "PK",
+      "quantity": 12,
+      "internalCode": "109086",
+      "salesTotal": 1539.48,
+      "total": 1755.0072,
+      "valueDifference": 0,
+      "totalTaxableFees": 0,
+      "netTotal": 1539.48,
+      "itemsDiscount": 0,
+      "unitValue": {
+        "currencySold": "EGP",
+        "amountEGP": 128.29
+      },
+      "discount": {
+        "rate": 0,
+        "amount": 0
+      },
+      "taxableItems": [
+        {
+          "taxType": "T1",
+          "amount": 215.5272,
+          "subType": "V009",
+          "rate": 14
+        }
+      ]
+    },
+    {
+      "description": "طقم تدفئه بيبي سمر ميلتون شانيه بيج",
+      "itemType": "GS1",
+      "itemCode": "6222040387529",
+      "unitType": "PK",
+      "quantity": 12,
+      "internalCode": "108802",
+      "salesTotal": 1265.76,
+      "total": 1442.9664,
+      "valueDifference": 0,
+      "totalTaxableFees": 0,
+      "netTotal": 1265.76,
+      "itemsDiscount": 0,
+      "unitValue": {
+        "currencySold": "EGP",
+        "amountEGP": 105.48
+      },
+      "discount": {
+        "rate": 0,
+        "amount": 0
+      },
+      "taxableItems": [
+        {
+          "taxType": "T1",
+          "amount": 177.2064,
+          "subType": "V009",
+          "rate": 14
+        }
+      ]
+    },
+    {
+      "description": "فانلة بيبي كم طويل كبسول انترلوك",
+      "itemType": "GS1",
+      "itemCode": "6222040392233",
+      "unitType": "PK",
+      "quantity": 12,
+      "internalCode": "11091",
+      "salesTotal": 376.32,
+      "total": 429.0048,
+      "valueDifference": 0,
+      "totalTaxableFees": 0,
+      "netTotal": 376.32,
+      "itemsDiscount": 0,
+      "unitValue": {
+        "currencySold": "EGP",
+        "amountEGP": 31.36
+      },
+      "discount": {
+        "rate": 0,
+        "amount": 0
+      },
+      "taxableItems": [
+        {
+          "taxType": "T1",
+          "amount": 52.6848,
+          "subType": "V009",
+          "rate": 14
+        }
+      ]
+    },
+    {
+      "description": "بودي كم طويل ابيض سادة",
+      "itemType": "GS1",
+      "itemCode": "6222040391236",
+      "unitType": "PK",
+      "quantity": 12,
+      "internalCode": "336",
+      "salesTotal": 478.92,
+      "total": 545.9688,
+      "valueDifference": 0,
+      "totalTaxableFees": 0,
+      "netTotal": 478.92,
+      "itemsDiscount": 0,
+      "unitValue": {
+        "currencySold": "EGP",
+        "amountEGP": 39.91
+      },
+      "discount": {
+        "rate": 0,
+        "amount": 0
+      },
+      "taxableItems": [
+        {
+          "taxType": "T1",
+          "amount": 67.0488,
+          "subType": "V009",
+          "rate": 14
+        }
+      ]
+    },
+    {
+      "description": "كيلوت بيبي مكشكش",
+      "itemType": "GS1",
+      "itemCode": "6222040388977",
+      "unitType": "PK",
+      "quantity": 6,
+      "internalCode": "1735",
+      "salesTotal": 171.06,
+      "total": 195.0084,
+      "valueDifference": 0,
+      "totalTaxableFees": 0,
+      "netTotal": 171.06,
+      "itemsDiscount": 0,
+      "unitValue": {
+        "currencySold": "EGP",
+        "amountEGP": 28.51
+      },
+      "discount": {
+        "rate": 0,
+        "amount": 0
+      },
+      "taxableItems": [
+        {
+          "taxType": "T1",
+          "amount": 23.9484,
+          "subType": "V009",
+          "rate": 14
+        }
+      ]
+    },
+    {
+      "description": "طقم تدفئه صبياني سمر ميلتون شانية غامق",
+      "itemType": "GS1",
+      "itemCode": "6221319088822",
+      "unitType": "PK",
+      "quantity": 12,
+      "internalCode": "122676",
+      "salesTotal": 2121,
+      "total": 2417.94,
+      "valueDifference": 0,
+      "totalTaxableFees": 0,
+      "netTotal": 2121,
+      "itemsDiscount": 0,
+      "unitValue": {
+        "currencySold": "EGP",
+        "amountEGP": 176.75
+      },
+      "discount": {
+        "rate": 0,
+        "amount": 0
+      },
+      "taxableItems": [
+        {
+          "taxType": "T1",
+          "amount": 296.94,
+          "subType": "V009",
+          "rate": 14
+        }
+      ]
+    },
+    {
+      "description": "فانلة كم طويل ابيض سادة",
+      "itemType": "GS1",
+      "itemCode": "6222040384306",
+      "unitType": "PK",
+      "quantity": 12,
+      "internalCode": "116",
+      "salesTotal": 444.72,
+      "total": 506.9808,
+      "valueDifference": 0,
+      "totalTaxableFees": 0,
+      "netTotal": 444.72,
+      "itemsDiscount": 0,
+      "unitValue": {
+        "currencySold": "EGP",
+        "amountEGP": 37.06
+      },
+      "discount": {
+        "rate": 0,
+        "amount": 0
+      },
+      "taxableItems": [
+        {
+          "taxType": "T1",
+          "amount": 62.2608,
+          "subType": "V009",
+          "rate": 14
+        }
+      ]
+    },
+    {
+      "description": "طقم تدفئه صبياني سمر ميلتون لبني",
+      "itemType": "GS1",
+      "itemCode": "6222040387918",
+      "unitType": "PK",
+      "quantity": 12,
+      "internalCode": "103946",
+      "salesTotal": 2121,
+      "total": 2417.94,
+      "valueDifference": 0,
+      "totalTaxableFees": 0,
+      "netTotal": 2121,
+      "itemsDiscount": 0,
+      "unitValue": {
+        "currencySold": "EGP",
+        "amountEGP": 176.75
+      },
+      "discount": {
+        "rate": 0,
+        "amount": 0
+      },
+      "taxableItems": [
+        {
+          "taxType": "T1",
+          "amount": 296.94,
+          "subType": "V009",
+          "rate": 14
+        }
+      ]
+    },
+    {
+      "description": "بودي كت 3 قطع صبياني",
+      "itemType": "GS1",
+      "itemCode": "6221319007762",
+      "unitType": "PK",
+      "quantity": 12,
+      "internalCode": "95518",
+      "salesTotal": 1436.88,
+      "total": 1638.0432,
+      "valueDifference": 0,
+      "totalTaxableFees": 0,
+      "netTotal": 1436.88,
+      "itemsDiscount": 0,
+      "unitValue": {
+        "currencySold": "EGP",
+        "amountEGP": 119.74
+      },
+      "discount": {
+        "rate": 0,
+        "amount": 0
+      },
+      "taxableItems": [
+        {
+          "taxType": "T1",
+          "amount": 201.1632,
+          "subType": "V009",
+          "rate": 14
+        }
+      ]
+    },
+    {
+      "description": "بودي كت انترلوك ابيض سادة",
+      "itemType": "GS1",
+      "itemCode": "6222040393285",
+      "unitType": "PK",
+      "quantity": 12,
+      "internalCode": "109800",
+      "salesTotal": 410.52,
+      "total": 467.9928,
+      "valueDifference": 0,
+      "totalTaxableFees": 0,
+      "netTotal": 410.52,
+      "itemsDiscount": 0,
+      "unitValue": {
+        "currencySold": "EGP",
+        "amountEGP": 34.21
+      },
+      "discount": {
+        "rate": 0,
+        "amount": 0
+      },
+      "taxableItems": [
+        {
+          "taxType": "T1",
+          "amount": 57.4728,
+          "subType": "V009",
+          "rate": 14
+        }
+      ]
+    },
+    {
+      "description": "طقم تدفئه بيبي سمر ميلتون روز",
+      "itemType": "GS1",
+      "itemCode": "6222040387345",
+      "unitType": "PK",
+      "quantity": 12,
+      "internalCode": "105570",
+      "salesTotal": 1265.76,
+      "total": 1442.9664,
+      "valueDifference": 0,
+      "totalTaxableFees": 0,
+      "netTotal": 1265.76,
+      "itemsDiscount": 0,
+      "unitValue": {
+        "currencySold": "EGP",
+        "amountEGP": 105.48
+      },
+      "discount": {
+        "rate": 0,
+        "amount": 0
+      },
+      "taxableItems": [
+        {
+          "taxType": "T1",
+          "amount": 177.2064,
+          "subType": "V009",
+          "rate": 14
+        }
+      ]
+    },
+    {
+      "description": "طقم تدفئه صبياني سمر ميلتون لبني",
+      "itemType": "GS1",
+      "itemCode": "6222040387895",
+      "unitType": "PK",
+      "quantity": 12,
+      "internalCode": "103944",
+      "salesTotal": 1779,
+      "total": 2028.06,
+      "valueDifference": 0,
+      "totalTaxableFees": 0,
+      "netTotal": 1779,
+      "itemsDiscount": 0,
+      "unitValue": {
+        "currencySold": "EGP",
+        "amountEGP": 148.25
+      },
+      "discount": {
+        "rate": 0,
+        "amount": 0
+      },
+      "taxableItems": [
+        {
+          "taxType": "T1",
+          "amount": 249.06,
+          "subType": "V009",
+          "rate": 14
+        }
+      ]
+    },
+    {
+      "description": "Bodysuit P/3  Short Sleeve sweet dreams",
+      "itemType": "GS1",
+      "itemCode": "6221319024394",
+      "unitType": "PK",
+      "quantity": 12,
+      "internalCode": "113686",
+      "salesTotal": 1505.28,
+      "total": 1716.0192,
+      "valueDifference": 0,
+      "totalTaxableFees": 0,
+      "netTotal": 1505.28,
+      "itemsDiscount": 0,
+      "unitValue": {
+        "currencySold": "EGP",
+        "amountEGP": 125.44
+      },
+      "discount": {
+        "rate": 0,
+        "amount": 0
+      },
+      "taxableItems": [
+        {
+          "taxType": "T1",
+          "amount": 210.7392,
+          "subType": "V009",
+          "rate": 14
+        }
+      ]
+    },
+    {
+      "description": "طقم تدفئه بيبي سمر ميلتون لبني",
+      "itemType": "GS1",
+      "itemCode": "6222040387420",
+      "unitType": "PK",
+      "quantity": 12,
+      "internalCode": "106389",
+      "salesTotal": 1265.76,
+      "total": 1442.9664,
+      "valueDifference": 0,
+      "totalTaxableFees": 0,
+      "netTotal": 1265.76,
+      "itemsDiscount": 0,
+      "unitValue": {
+        "currencySold": "EGP",
+        "amountEGP": 105.48
+      },
+      "discount": {
+        "rate": 0,
+        "amount": 0
+      },
+      "taxableItems": [
+        {
+          "taxType": "T1",
+          "amount": 177.2064,
+          "subType": "V009",
+          "rate": 14
+        }
+      ]
+    },
+    {
+      "description": "طقم تدفئه صبياني سمر ميلتون شانيه",
+      "itemType": "GS1",
+      "itemCode": "6222040387734",
+      "unitType": "PK",
+      "quantity": 11,
+      "internalCode": "103928",
+      "salesTotal": 1630.75,
+      "total": 1859.055,
+      "valueDifference": 0,
+      "totalTaxableFees": 0,
+      "netTotal": 1630.75,
+      "itemsDiscount": 0,
+      "unitValue": {
+        "currencySold": "EGP",
+        "amountEGP": 148.25
+      },
+      "discount": {
+        "rate": 0,
+        "amount": 0
+      },
+      "taxableItems": [
+        {
+          "taxType": "T1",
+          "amount": 228.305,
+          "subType": "V009",
+          "rate": 14
+        }
+      ]
+    },
+    {
+      "description": "فانلة سبور ابيض سادة",
+      "itemType": "GS1",
+      "itemCode": "6222040381367",
+      "unitType": "PK",
+      "quantity": 12,
+      "internalCode": "155",
+      "salesTotal": 376.32,
+      "total": 429.0048,
+      "valueDifference": 0,
+      "totalTaxableFees": 0,
+      "netTotal": 376.32,
+      "itemsDiscount": 0,
+      "unitValue": {
+        "currencySold": "EGP",
+        "amountEGP": 31.36
+      },
+      "discount": {
+        "rate": 0,
+        "amount": 0
+      },
+      "taxableItems": [
+        {
+          "taxType": "T1",
+          "amount": 52.6848,
+          "subType": "V009",
+          "rate": 14
+        }
+      ]
+    },
+    {
+      "description": "بودي نصف كم ابيض سادة",
+      "itemType": "GS1",
+      "itemCode": "6222040389172",
+      "unitType": "PK",
+      "quantity": 12,
+      "internalCode": "340",
+      "salesTotal": 444.72,
+      "total": 506.9808,
+      "valueDifference": 0,
+      "totalTaxableFees": 0,
+      "netTotal": 444.72,
+      "itemsDiscount": 0,
+      "unitValue": {
+        "currencySold": "EGP",
+        "amountEGP": 37.06
+      },
+      "discount": {
+        "rate": 0,
+        "amount": 0
+      },
+      "taxableItems": [
+        {
+          "taxType": "T1",
+          "amount": 62.2608,
+          "subType": "V009",
+          "rate": 14
+        }
+      ]
+    },
+    {
+      "description": "فانلة بيبي نصف كم كبسول",
+      "itemType": "GS1",
+      "itemCode": "6222040383453",
+      "unitType": "PK",
+      "quantity": 12,
+      "internalCode": "362",
+      "salesTotal": 273.72,
+      "total": 312.0408,
+      "valueDifference": 0,
+      "totalTaxableFees": 0,
+      "netTotal": 273.72,
+      "itemsDiscount": 0,
+      "unitValue": {
+        "currencySold": "EGP",
+        "amountEGP": 22.81
+      },
+      "discount": {
+        "rate": 0,
+        "amount": 0
+      },
+      "taxableItems": [
+        {
+          "taxType": "T1",
+          "amount": 38.3208,
+          "subType": "V009",
+          "rate": 14
+        }
+      ]
+    },
+    {
+      "description": "بودي كت 3 قطع بناتي",
+      "itemType": "GS1",
+      "itemCode": "6221319007571",
+      "unitType": "PK",
+      "quantity": 12,
+      "internalCode": "98851",
+      "salesTotal": 1436.88,
+      "total": 1638.0432,
+      "valueDifference": 0,
+      "totalTaxableFees": 0,
+      "netTotal": 1436.88,
+      "itemsDiscount": 0,
+      "unitValue": {
+        "currencySold": "EGP",
+        "amountEGP": 119.74
+      },
+      "discount": {
+        "rate": 0,
+        "amount": 0
+      },
+      "taxableItems": [
+        {
+          "taxType": "T1",
+          "amount": 201.1632,
+          "subType": "V009",
+          "rate": 14
+        }
+      ]
+    },
+    {
+      "description": "فانلة بيبي كم طويل كبسول انترلوك",
+      "itemType": "GS1",
+      "itemCode": "6222040392196",
+      "unitType": "PK",
+      "quantity": 12,
+      "internalCode": "11088",
+      "salesTotal": 376.32,
+      "total": 429.0048,
+      "valueDifference": 0,
+      "totalTaxableFees": 0,
+      "netTotal": 376.32,
+      "itemsDiscount": 0,
+      "unitValue": {
+        "currencySold": "EGP",
+        "amountEGP": 31.36
+      },
+      "discount": {
+        "rate": 0,
+        "amount": 0
+      },
+      "taxableItems": [
+        {
+          "taxType": "T1",
+          "amount": 52.6848,
+          "subType": "V009",
+          "rate": 14
+        }
+      ]
+    },
+    {
+      "description": "طقم نصف كم + كيلوت الوان ليكرا",
+      "itemType": "GS1",
+      "itemCode": "6222040384115",
+      "unitType": "PK",
+      "quantity": 12,
+      "internalCode": "106715",
+      "salesTotal": 889.44,
+      "total": 1013.9616,
+      "valueDifference": 0,
+      "totalTaxableFees": 0,
+      "netTotal": 889.44,
+      "itemsDiscount": 0,
+      "unitValue": {
+        "currencySold": "EGP",
+        "amountEGP": 74.12
+      },
+      "discount": {
+        "rate": 0,
+        "amount": 0
+      },
+      "taxableItems": [
+        {
+          "taxType": "T1",
+          "amount": 124.5216,
+          "subType": "V009",
+          "rate": 14
+        }
+      ]
+    },
+    {
+      "description": "فانلة سبور ابيض سادة",
+      "itemType": "GS1",
+      "itemCode": "6222040381336",
+      "unitType": "PK",
+      "quantity": 12,
+      "internalCode": "152",
+      "salesTotal": 307.92,
+      "total": 351.0288,
+      "valueDifference": 0,
+      "totalTaxableFees": 0,
+      "netTotal": 307.92,
+      "itemsDiscount": 0,
+      "unitValue": {
+        "currencySold": "EGP",
+        "amountEGP": 25.66
+      },
+      "discount": {
+        "rate": 0,
+        "amount": 0
+      },
+      "taxableItems": [
+        {
+          "taxType": "T1",
+          "amount": 43.1088,
+          "subType": "V009",
+          "rate": 14
+        }
+      ]
+    },
+    {
+      "description": "طقم تدفئه صبياني سمر ميلتون شانيه",
+      "itemType": "GS1",
+      "itemCode": "6222040387758",
+      "unitType": "PK",
+      "quantity": 12,
+      "internalCode": "103930",
+      "salesTotal": 1779,
+      "total": 2028.06,
+      "valueDifference": 0,
+      "totalTaxableFees": 0,
+      "netTotal": 1779,
+      "itemsDiscount": 0,
+      "unitValue": {
+        "currencySold": "EGP",
+        "amountEGP": 148.25
+      },
+      "discount": {
+        "rate": 0,
+        "amount": 0
+      },
+      "taxableItems": [
+        {
+          "taxType": "T1",
+          "amount": 249.06,
+          "subType": "V009",
+          "rate": 14
+        }
+      ]
+    },
+    {
+      "description": "طقم تدفئه بيبي سمر ميلتون روز",
+      "itemType": "GS1",
+      "itemCode": "6222040387314",
+      "unitType": "PK",
+      "quantity": 12,
+      "internalCode": "105567",
+      "salesTotal": 1265.76,
+      "total": 1442.9664,
+      "valueDifference": 0,
+      "totalTaxableFees": 0,
+      "netTotal": 1265.76,
+      "itemsDiscount": 0,
+      "unitValue": {
+        "currencySold": "EGP",
+        "amountEGP": 105.48
+      },
+      "discount": {
+        "rate": 0,
+        "amount": 0
+      },
+      "taxableItems": [
+        {
+          "taxType": "T1",
+          "amount": 177.2064,
+          "subType": "V009",
+          "rate": 14
+        }
+      ]
+    },
+    {
+      "description": "طقم نصف كم + كيلوت الوان ليكرا",
+      "itemType": "GS1",
+      "itemCode": "6222040384061",
+      "unitType": "PK",
+      "quantity": 12,
+      "internalCode": "106710",
+      "salesTotal": 752.64,
+      "total": 858.0096,
+      "valueDifference": 0,
+      "totalTaxableFees": 0,
+      "netTotal": 752.64,
+      "itemsDiscount": 0,
+      "unitValue": {
+        "currencySold": "EGP",
+        "amountEGP": 62.72
+      },
+      "discount": {
+        "rate": 0,
+        "amount": 0
+      },
+      "taxableItems": [
+        {
+          "taxType": "T1",
+          "amount": 105.3696,
+          "subType": "V009",
+          "rate": 14
+        }
+      ]
+    },
+    {
+      "description": "فانلة بيبي نصف كم كبسول",
+      "itemType": "GS1",
+      "itemCode": "6222040383477",
+      "unitType": "PK",
+      "quantity": 12,
+      "internalCode": "364",
+      "salesTotal": 273.72,
+      "total": 312.0408,
+      "valueDifference": 0,
+      "totalTaxableFees": 0,
+      "netTotal": 273.72,
+      "itemsDiscount": 0,
+      "unitValue": {
+        "currencySold": "EGP",
+        "amountEGP": 22.81
+      },
+      "discount": {
+        "rate": 0,
+        "amount": 0
+      },
+      "taxableItems": [
+        {
+          "taxType": "T1",
+          "amount": 38.3208,
+          "subType": "V009",
+          "rate": 14
+        }
+      ]
+    },
+    {
+      "description": "طقم نصف كم + كيلوت الوان ليكرا",
+      "itemType": "GS1",
+      "itemCode": "6222040384078",
+      "unitType": "PK",
+      "quantity": 12,
+      "internalCode": "106711",
+      "salesTotal": 752.64,
+      "total": 858.0096,
+      "valueDifference": 0,
+      "totalTaxableFees": 0,
+      "netTotal": 752.64,
+      "itemsDiscount": 0,
+      "unitValue": {
+        "currencySold": "EGP",
+        "amountEGP": 62.72
+      },
+      "discount": {
+        "rate": 0,
+        "amount": 0
+      },
+      "taxableItems": [
+        {
+          "taxType": "T1",
+          "amount": 105.3696,
+          "subType": "V009",
+          "rate": 14
+        }
+      ]
+    },
+    {
+      "description": "بودي كت 3 قطع بناتي",
+      "itemType": "GS1",
+      "itemCode": "6221319008004",
+      "unitType": "PK",
+      "quantity": 12,
+      "internalCode": "97725",
+      "salesTotal": 1436.88,
+      "total": 1638.0432,
+      "valueDifference": 0,
+      "totalTaxableFees": 0,
+      "netTotal": 1436.88,
+      "itemsDiscount": 0,
+      "unitValue": {
+        "currencySold": "EGP",
+        "amountEGP": 119.74
+      },
+      "discount": {
+        "rate": 0,
+        "amount": 0
+      },
+      "taxableItems": [
+        {
+          "taxType": "T1",
+          "amount": 201.1632,
+          "subType": "V009",
+          "rate": 14
+        }
+      ]
+    },
+    {
+      "description": "طقم تدفئه بيبي سمر ميلتون شانيه بيج",
+      "itemType": "GS1",
+      "itemCode": "6222040387499",
+      "unitType": "PK",
+      "quantity": 12,
+      "internalCode": "108799",
+      "salesTotal": 1265.76,
+      "total": 1442.9664,
+      "valueDifference": 0,
+      "totalTaxableFees": 0,
+      "netTotal": 1265.76,
+      "itemsDiscount": 0,
+      "unitValue": {
+        "currencySold": "EGP",
+        "amountEGP": 105.48
+      },
+      "discount": {
+        "rate": 0,
+        "amount": 0
+      },
+      "taxableItems": [
+        {
+          "taxType": "T1",
+          "amount": 177.2064,
+          "subType": "V009",
+          "rate": 14
+        }
+      ]
+    },
+    {
+      "description": "كيلوت بيبي مطبوع من الخلف",
+      "itemType": "GS1",
+      "itemCode": "6222040389080",
+      "unitType": "PK",
+      "quantity": 6,
+      "internalCode": "67581",
+      "salesTotal": 136.86,
+      "total": 156.0204,
+      "valueDifference": 0,
+      "totalTaxableFees": 0,
+      "netTotal": 136.86,
+      "itemsDiscount": 0,
+      "unitValue": {
+        "currencySold": "EGP",
+        "amountEGP": 22.81
+      },
+      "discount": {
+        "rate": 0,
+        "amount": 0
+      },
+      "taxableItems": [
+        {
+          "taxType": "T1",
+          "amount": 19.1604,
+          "subType": "V009",
+          "rate": 14
+        }
+      ]
+    },
+    {
+      "description": "شاية كت انترلوك ابيض سادة",
+      "itemType": "GS1",
+      "itemCode": "6221319001173",
+      "unitType": "PK",
+      "quantity": 12,
+      "internalCode": "113385",
+      "salesTotal": 444.72,
+      "total": 506.9808,
+      "valueDifference": 0,
+      "totalTaxableFees": 0,
+      "netTotal": 444.72,
+      "itemsDiscount": 0,
+      "unitValue": {
+        "currencySold": "EGP",
+        "amountEGP": 37.06
+      },
+      "discount": {
+        "rate": 0,
+        "amount": 0
+      },
+      "taxableItems": [
+        {
+          "taxType": "T1",
+          "amount": 62.2608,
+          "subType": "V009",
+          "rate": 14
+        }
+      ]
+    },
+    {
+      "description": "طقم تدفئه بيبي سمر ميلتون كريمي",
+      "itemType": "GS1",
+      "itemCode": "6221319066653",
+      "unitType": "PK",
+      "quantity": 10,
+      "internalCode": "117668",
+      "salesTotal": 1054.8,
+      "total": 1202.472,
+      "valueDifference": 0,
+      "totalTaxableFees": 0,
+      "netTotal": 1054.8,
+      "itemsDiscount": 0,
+      "unitValue": {
+        "currencySold": "EGP",
+        "amountEGP": 105.48
+      },
+      "discount": {
+        "rate": 0,
+        "amount": 0
+      },
+      "taxableItems": [
+        {
+          "taxType": "T1",
+          "amount": 147.672,
+          "subType": "V009",
+          "rate": 14
+        }
+      ]
+    },
+    {
+      "description": "فانلة بيبي كم طويل كبسول",
+      "itemType": "GS1",
+      "itemCode": "6222040384160",
+      "unitType": "PK",
+      "quantity": 12,
+      "internalCode": "350",
+      "salesTotal": 342.12,
+      "total": 390.0168,
+      "valueDifference": 0,
+      "totalTaxableFees": 0,
+      "netTotal": 342.12,
+      "itemsDiscount": 0,
+      "unitValue": {
+        "currencySold": "EGP",
+        "amountEGP": 28.51
+      },
+      "discount": {
+        "rate": 0,
+        "amount": 0
+      },
+      "taxableItems": [
+        {
+          "taxType": "T1",
+          "amount": 47.8968,
+          "subType": "V009",
+          "rate": 14
+        }
+      ]
+    },
+    {
+      "description": "بودي نصف كم ابيض سادة",
+      "itemType": "GS1",
+      "itemCode": "6222040389141",
+      "unitType": "PK",
+      "quantity": 12,
+      "internalCode": "338",
+      "salesTotal": 444.72,
+      "total": 506.9808,
+      "valueDifference": 0,
+      "totalTaxableFees": 0,
+      "netTotal": 444.72,
+      "itemsDiscount": 0,
+      "unitValue": {
+        "currencySold": "EGP",
+        "amountEGP": 37.06
+      },
+      "discount": {
+        "rate": 0,
+        "amount": 0
+      },
+      "taxableItems": [
+        {
+          "taxType": "T1",
+          "amount": 62.2608,
+          "subType": "V009",
+          "rate": 14
+        }
+      ]
+    },
+    {
+      "description": "طقم تدفئه صبياني سمر ميلتون شانية غامق",
+      "itemType": "GS1",
+      "itemCode": "6221319088846",
+      "unitType": "PK",
+      "quantity": 12,
+      "internalCode": "122677",
+      "salesTotal": 2121,
+      "total": 2417.94,
+      "valueDifference": 0,
+      "totalTaxableFees": 0,
+      "netTotal": 2121,
+      "itemsDiscount": 0,
+      "unitValue": {
+        "currencySold": "EGP",
+        "amountEGP": 176.75
+      },
+      "discount": {
+        "rate": 0,
+        "amount": 0
+      },
+      "taxableItems": [
+        {
+          "taxType": "T1",
+          "amount": 296.94,
+          "subType": "V009",
+          "rate": 14
+        }
+      ]
+    },
+    {
+      "description": "فانلة نصف كم ابيض",
+      "itemType": "GS1",
+      "itemCode": "6222040383552",
+      "unitType": "PK",
+      "quantity": 12,
+      "internalCode": "103",
+      "salesTotal": 342.12,
+      "total": 390.0168,
+      "valueDifference": 0,
+      "totalTaxableFees": 0,
+      "netTotal": 342.12,
+      "itemsDiscount": 0,
+      "unitValue": {
+        "currencySold": "EGP",
+        "amountEGP": 28.51
+      },
+      "discount": {
+        "rate": 0,
+        "amount": 0
+      },
+      "taxableItems": [
+        {
+          "taxType": "T1",
+          "amount": 47.8968,
+          "subType": "V009",
+          "rate": 14
+        }
+      ]
+    },
+    {
+      "description": "بودي كت 3 قطع",
+      "itemType": "GS1",
+      "itemCode": "6221319007342",
+      "unitType": "PK",
+      "quantity": 12,
+      "internalCode": "103387",
+      "salesTotal": 1436.88,
+      "total": 1638.0432,
+      "valueDifference": 0,
+      "totalTaxableFees": 0,
+      "netTotal": 1436.88,
+      "itemsDiscount": 0,
+      "unitValue": {
+        "currencySold": "EGP",
+        "amountEGP": 119.74
+      },
+      "discount": {
+        "rate": 0,
+        "amount": 0
+      },
+      "taxableItems": [
+        {
+          "taxType": "T1",
+          "amount": 201.1632,
+          "subType": "V009",
+          "rate": 14
+        }
+      ]
+    },
+    {
+      "description": "Bodysuit P/3  Short Sleeve sweet dreams",
+      "itemType": "GS1",
+      "itemCode": "6221319024400",
+      "unitType": "PK",
+      "quantity": 12,
+      "internalCode": "113687",
+      "salesTotal": 1505.28,
+      "total": 1716.0192,
+      "valueDifference": 0,
+      "totalTaxableFees": 0,
+      "netTotal": 1505.28,
+      "itemsDiscount": 0,
+      "unitValue": {
+        "currencySold": "EGP",
+        "amountEGP": 125.44
+      },
+      "discount": {
+        "rate": 0,
+        "amount": 0
+      },
+      "taxableItems": [
+        {
+          "taxType": "T1",
+          "amount": 210.7392,
+          "subType": "V009",
+          "rate": 14
+        }
+      ]
+    },
+    {
+      "description": "فانلة بيبي نصف كم كبسول",
+      "itemType": "GS1",
+      "itemCode": "6222040383460",
+      "unitType": "PK",
+      "quantity": 12,
+      "internalCode": "363",
+      "salesTotal": 273.72,
+      "total": 312.0408,
+      "valueDifference": 0,
+      "totalTaxableFees": 0,
+      "netTotal": 273.72,
+      "itemsDiscount": 0,
+      "unitValue": {
+        "currencySold": "EGP",
+        "amountEGP": 22.81
+      },
+      "discount": {
+        "rate": 0,
+        "amount": 0
+      },
+      "taxableItems": [
+        {
+          "taxType": "T1",
+          "amount": 38.3208,
+          "subType": "V009",
+          "rate": 14
+        }
+      ]
+    },
+    {
+      "description": "طقم تدفئه بيبي سمر ميلتون شانيه",
+      "itemType": "GS1",
+      "itemCode": "6222040387383",
+      "unitType": "PK",
+      "quantity": 12,
+      "internalCode": "106385",
+      "salesTotal": 1265.76,
+      "total": 1442.9664,
+      "valueDifference": 0,
+      "totalTaxableFees": 0,
+      "netTotal": 1265.76,
+      "itemsDiscount": 0,
+      "unitValue": {
+        "currencySold": "EGP",
+        "amountEGP": 105.48
+      },
+      "discount": {
+        "rate": 0,
+        "amount": 0
+      },
+      "taxableItems": [
+        {
+          "taxType": "T1",
+          "amount": 177.2064,
+          "subType": "V009",
+          "rate": 14
+        }
+      ]
+    },
+    {
+      "description": "طقم تدفئه بيبي سمر ميلتون كريمي",
+      "itemType": "GS1",
+      "itemCode": "6221319066639",
+      "unitType": "PK",
+      "quantity": 12,
+      "internalCode": "117667",
+      "salesTotal": 1265.76,
+      "total": 1442.9664,
+      "valueDifference": 0,
+      "totalTaxableFees": 0,
+      "netTotal": 1265.76,
+      "itemsDiscount": 0,
+      "unitValue": {
+        "currencySold": "EGP",
+        "amountEGP": 105.48
+      },
+      "discount": {
+        "rate": 0,
+        "amount": 0
+      },
+      "taxableItems": [
+        {
+          "taxType": "T1",
+          "amount": 177.2064,
+          "subType": "V009",
+          "rate": 14
+        }
+      ]
+    },
+    {
+      "description": "طقم تدفئه بيبي سمر ميلتون اصفر",
+      "itemType": "GS1",
+      "itemCode": "6222040387284",
+      "unitType": "PK",
+      "quantity": 12,
+      "internalCode": "105564",
+      "salesTotal": 1265.76,
+      "total": 1442.9664,
+      "valueDifference": 0,
+      "totalTaxableFees": 0,
+      "netTotal": 1265.76,
+      "itemsDiscount": 0,
+      "unitValue": {
+        "currencySold": "EGP",
+        "amountEGP": 105.48
+      },
+      "discount": {
+        "rate": 0,
+        "amount": 0
+      },
+      "taxableItems": [
+        {
+          "taxType": "T1",
+          "amount": 177.2064,
+          "subType": "V009",
+          "rate": 14
+        }
+      ]
+    },
+    {
+      "description": "بودي كت 3 قطع",
+      "itemType": "GS1",
+      "itemCode": "6221319001388",
+      "unitType": "PK",
+      "quantity": 12,
+      "internalCode": "113423",
+      "salesTotal": 1436.88,
+      "total": 1638.0432,
+      "valueDifference": 0,
+      "totalTaxableFees": 0,
+      "netTotal": 1436.88,
+      "itemsDiscount": 0,
+      "unitValue": {
+        "currencySold": "EGP",
+        "amountEGP": 119.74
+      },
+      "discount": {
+        "rate": 0,
+        "amount": 0
+      },
+      "taxableItems": [
+        {
+          "taxType": "T1",
+          "amount": 201.1632,
+          "subType": "V009",
+          "rate": 14
+        }
+      ]
+    },
+    {
+      "description": "بودي كم طويل ابيض سادة",
+      "itemType": "GS1",
+      "itemCode": "6222040391212",
+      "unitType": "PK",
+      "quantity": 12,
+      "internalCode": "334",
+      "salesTotal": 478.92,
+      "total": 545.9688,
+      "valueDifference": 0,
+      "totalTaxableFees": 0,
+      "netTotal": 478.92,
+      "itemsDiscount": 0,
+      "unitValue": {
+        "currencySold": "EGP",
+        "amountEGP": 39.91
+      },
+      "discount": {
+        "rate": 0,
+        "amount": 0
+      },
+      "taxableItems": [
+        {
+          "taxType": "T1",
+          "amount": 67.0488,
+          "subType": "V009",
+          "rate": 14
+        }
+      ]
+    },
+    {
+      "description": "بودي كت 3 قطع صبياني",
+      "itemType": "GS1",
+      "itemCode": "6221319008332",
+      "unitType": "PK",
+      "quantity": 12,
+      "internalCode": "103218",
+      "salesTotal": 1436.88,
+      "total": 1638.0432,
+      "valueDifference": 0,
+      "totalTaxableFees": 0,
+      "netTotal": 1436.88,
+      "itemsDiscount": 0,
+      "unitValue": {
+        "currencySold": "EGP",
+        "amountEGP": 119.74
+      },
+      "discount": {
+        "rate": 0,
+        "amount": 0
+      },
+      "taxableItems": [
+        {
+          "taxType": "T1",
+          "amount": 201.1632,
+          "subType": "V009",
+          "rate": 14
+        }
+      ]
+    },
+    {
+      "description": "طقم تدفئه بيبي سمر ميلتون لبني",
+      "itemType": "GS1",
+      "itemCode": "6222040387451",
+      "unitType": "PK",
+      "quantity": 12,
+      "internalCode": "106392",
+      "salesTotal": 1265.76,
+      "total": 1442.9664,
+      "valueDifference": 0,
+      "totalTaxableFees": 0,
+      "netTotal": 1265.76,
+      "itemsDiscount": 0,
+      "unitValue": {
+        "currencySold": "EGP",
+        "amountEGP": 105.48
+      },
+      "discount": {
+        "rate": 0,
+        "amount": 0
+      },
+      "taxableItems": [
+        {
+          "taxType": "T1",
+          "amount": 177.2064,
+          "subType": "V009",
+          "rate": 14
+        }
+      ]
+    },
+    {
+      "description": "فانلة بيبي كم طويل كبسول",
+      "itemType": "GS1",
+      "itemCode": "6222040384139",
+      "unitType": "PK",
+      "quantity": 12,
+      "internalCode": "348",
+      "salesTotal": 342.12,
+      "total": 390.0168,
+      "valueDifference": 0,
+      "totalTaxableFees": 0,
+      "netTotal": 342.12,
+      "itemsDiscount": 0,
+      "unitValue": {
+        "currencySold": "EGP",
+        "amountEGP": 28.51
+      },
+      "discount": {
+        "rate": 0,
+        "amount": 0
+      },
+      "taxableItems": [
+        {
+          "taxType": "T1",
+          "amount": 47.8968,
+          "subType": "V009",
+          "rate": 14
+        }
+      ]
+    },
+    {
+      "description": "فانلة نصف كم ابيض",
+      "itemType": "GS1",
+      "itemCode": "6222040383569",
+      "unitType": "PK",
+      "quantity": 12,
+      "internalCode": "104",
+      "salesTotal": 342.12,
+      "total": 390.0168,
+      "valueDifference": 0,
+      "totalTaxableFees": 0,
+      "netTotal": 342.12,
+      "itemsDiscount": 0,
+      "unitValue": {
+        "currencySold": "EGP",
+        "amountEGP": 28.51
+      },
+      "discount": {
+        "rate": 0,
+        "amount": 0
+      },
+      "taxableItems": [
+        {
+          "taxType": "T1",
+          "amount": 47.8968,
+          "subType": "V009",
+          "rate": 14
+        }
+      ]
+    },
+    {
+      "description": "طقم تدفئه صبياني سمر ميلتون كحلي",
+      "itemType": "GS1",
+      "itemCode": "6222040387833",
+      "unitType": "PK",
+      "quantity": 12,
+      "internalCode": "103938",
+      "salesTotal": 2121,
+      "total": 2417.94,
+      "valueDifference": 0,
+      "totalTaxableFees": 0,
+      "netTotal": 2121,
+      "itemsDiscount": 0,
+      "unitValue": {
+        "currencySold": "EGP",
+        "amountEGP": 176.75
+      },
+      "discount": {
+        "rate": 0,
+        "amount": 0
+      },
+      "taxableItems": [
+        {
+          "taxType": "T1",
+          "amount": 296.94,
+          "subType": "V009",
+          "rate": 14
+        }
+      ]
+    },
+    {
+      "description": "طقم تدفئه بيبي سمر ميلتون لبني",
+      "itemType": "GS1",
+      "itemCode": "6222040387413",
+      "unitType": "PK",
+      "quantity": 12,
+      "internalCode": "106388",
+      "salesTotal": 1265.76,
+      "total": 1442.9664,
+      "valueDifference": 0,
+      "totalTaxableFees": 0,
+      "netTotal": 1265.76,
+      "itemsDiscount": 0,
+      "unitValue": {
+        "currencySold": "EGP",
+        "amountEGP": 105.48
+      },
+      "discount": {
+        "rate": 0,
+        "amount": 0
+      },
+      "taxableItems": [
+        {
+          "taxType": "T1",
+          "amount": 177.2064,
+          "subType": "V009",
+          "rate": 14
+        }
+      ]
+    },
+    {
+      "description": "كيلوت بيبي مكشكش",
+      "itemType": "GS1",
+      "itemCode": "6222040388922",
+      "unitType": "PK",
+      "quantity": 6,
+      "internalCode": "1731",
+      "salesTotal": 171.06,
+      "total": 195.0084,
+      "valueDifference": 0,
+      "totalTaxableFees": 0,
+      "netTotal": 171.06,
+      "itemsDiscount": 0,
+      "unitValue": {
+        "currencySold": "EGP",
+        "amountEGP": 28.51
+      },
+      "discount": {
+        "rate": 0,
+        "amount": 0
+      },
+      "taxableItems": [
+        {
+          "taxType": "T1",
+          "amount": 23.9484,
+          "subType": "V009",
+          "rate": 14
+        }
+      ]
+    },
+    {
+      "description": "فانلة بيبي نصف كم كبسول انترلوك",
+      "itemType": "GS1",
+      "itemCode": "6222040390024",
+      "unitType": "PK",
+      "quantity": 12,
+      "internalCode": "11252",
+      "salesTotal": 342.12,
+      "total": 390.0168,
+      "valueDifference": 0,
+      "totalTaxableFees": 0,
+      "netTotal": 342.12,
+      "itemsDiscount": 0,
+      "unitValue": {
+        "currencySold": "EGP",
+        "amountEGP": 28.51
+      },
+      "discount": {
+        "rate": 0,
+        "amount": 0
+      },
+      "taxableItems": [
+        {
+          "taxType": "T1",
+          "amount": 47.8968,
+          "subType": "V009",
+          "rate": 14
+        }
+      ]
+    },
+    {
+      "description": "فانله نصف كم مطبوع بالكامل ليكرا",
+      "itemType": "GS1",
+      "itemCode": "6222040383859",
+      "unitType": "PK",
+      "quantity": 12,
+      "internalCode": "103957",
+      "salesTotal": 410.52,
+      "total": 467.9928,
+      "valueDifference": 0,
+      "totalTaxableFees": 0,
+      "netTotal": 410.52,
+      "itemsDiscount": 0,
+      "unitValue": {
+        "currencySold": "EGP",
+        "amountEGP": 34.21
+      },
+      "discount": {
+        "rate": 0,
+        "amount": 0
+      },
+      "taxableItems": [
+        {
+          "taxType": "T1",
+          "amount": 57.4728,
+          "subType": "V009",
+          "rate": 14
+        }
+      ]
+    },
+    {
+      "description": "طقم تدفئه بيبي سمر ميلتون لبني",
+      "itemType": "GS1",
+      "itemCode": "6222040387437",
+      "unitType": "PK",
+      "quantity": 9,
+      "internalCode": "106390",
+      "salesTotal": 949.32,
+      "total": 1082.2248,
+      "valueDifference": 0,
+      "totalTaxableFees": 0,
+      "netTotal": 949.32,
+      "itemsDiscount": 0,
+      "unitValue": {
+        "currencySold": "EGP",
+        "amountEGP": 105.48
+      },
+      "discount": {
+        "rate": 0,
+        "amount": 0
+      },
+      "taxableItems": [
+        {
+          "taxType": "T1",
+          "amount": 132.9048,
+          "subType": "V009",
+          "rate": 14
+        }
+      ]
+    },
+    {
+      "description": "بودي كت 3 قطع بناتي",
+      "itemType": "GS1",
+      "itemCode": "6221319007540",
+      "unitType": "PK",
+      "quantity": 12,
+      "internalCode": "98848",
+      "salesTotal": 1436.88,
+      "total": 1638.0432,
+      "valueDifference": 0,
+      "totalTaxableFees": 0,
+      "netTotal": 1436.88,
+      "itemsDiscount": 0,
+      "unitValue": {
+        "currencySold": "EGP",
+        "amountEGP": 119.74
+      },
+      "discount": {
+        "rate": 0,
+        "amount": 0
+      },
+      "taxableItems": [
+        {
+          "taxType": "T1",
+          "amount": 201.1632,
+          "subType": "V009",
+          "rate": 14
+        }
+      ]
+    },
+    {
+      "description": "طقم تدفئه بيبي سمر ميلتون شانيه",
+      "itemType": "GS1",
+      "itemCode": "6222040387406",
+      "unitType": "PK",
+      "quantity": 12,
+      "internalCode": "106387",
+      "salesTotal": 1265.76,
+      "total": 1442.9664,
+      "valueDifference": 0,
+      "totalTaxableFees": 0,
+      "netTotal": 1265.76,
+      "itemsDiscount": 0,
+      "unitValue": {
+        "currencySold": "EGP",
+        "amountEGP": 105.48
+      },
+      "discount": {
+        "rate": 0,
+        "amount": 0
+      },
+      "taxableItems": [
+        {
+          "taxType": "T1",
+          "amount": 177.2064,
+          "subType": "V009",
+          "rate": 14
+        }
+      ]
+    },
+    {
+      "description": "فانلة نصف كم ابيض",
+      "itemType": "GS1",
+      "itemCode": "6222040383606",
+      "unitType": "PK",
+      "quantity": 12,
+      "internalCode": "108",
+      "salesTotal": 410.52,
+      "total": 467.9928,
+      "valueDifference": 0,
+      "totalTaxableFees": 0,
+      "netTotal": 410.52,
+      "itemsDiscount": 0,
+      "unitValue": {
+        "currencySold": "EGP",
+        "amountEGP": 34.21
+      },
+      "discount": {
+        "rate": 0,
+        "amount": 0
+      },
+      "taxableItems": [
+        {
+          "taxType": "T1",
+          "amount": 57.4728,
+          "subType": "V009",
+          "rate": 14
+        }
+      ]
+    },
+    {
+      "description": "براسيرا كم طويل ابيض سادة",
+      "itemType": "GS1",
+      "itemCode": "6222040392035",
+      "unitType": "PK",
+      "quantity": 12,
+      "internalCode": "13353",
+      "salesTotal": 513.12,
+      "total": 584.9568,
+      "valueDifference": 0,
+      "totalTaxableFees": 0,
+      "netTotal": 513.12,
+      "itemsDiscount": 0,
+      "unitValue": {
+        "currencySold": "EGP",
+        "amountEGP": 42.76
+      },
+      "discount": {
+        "rate": 0,
+        "amount": 0
+      },
+      "taxableItems": [
+        {
+          "taxType": "T1",
+          "amount": 71.8368,
+          "subType": "V009",
+          "rate": 14
+        }
+      ]
+    },
+    {
+      "description": "فانلة بيبي نصف كم كبسول انترلوك",
+      "itemType": "GS1",
+      "itemCode": "6222040390017",
+      "unitType": "PK",
+      "quantity": 12,
+      "internalCode": "59178",
+      "salesTotal": 342.12,
+      "total": 390.0168,
+      "valueDifference": 0,
+      "totalTaxableFees": 0,
+      "netTotal": 342.12,
+      "itemsDiscount": 0,
+      "unitValue": {
+        "currencySold": "EGP",
+        "amountEGP": 28.51
+      },
+      "discount": {
+        "rate": 0,
+        "amount": 0
+      },
+      "taxableItems": [
+        {
+          "taxType": "T1",
+          "amount": 47.8968,
+          "subType": "V009",
+          "rate": 14
+        }
+      ]
+    },
+    {
+      "description": "فانلة نصف كم ابيض",
+      "itemType": "GS1",
+      "itemCode": "6222040383590",
+      "unitType": "PK",
+      "quantity": 12,
+      "internalCode": "107",
+      "salesTotal": 410.52,
+      "total": 467.9928,
+      "valueDifference": 0,
+      "totalTaxableFees": 0,
+      "netTotal": 410.52,
+      "itemsDiscount": 0,
+      "unitValue": {
+        "currencySold": "EGP",
+        "amountEGP": 34.21
+      },
+      "discount": {
+        "rate": 0,
+        "amount": 0
+      },
+      "taxableItems": [
+        {
+          "taxType": "T1",
+          "amount": 57.4728,
+          "subType": "V009",
+          "rate": 14
+        }
+      ]
+    },
+    {
+      "description": "بودي كت 3 قطع بناتي",
+      "itemType": "GS1",
+      "itemCode": "6221319007694",
+      "unitType": "PK",
+      "quantity": 9,
+      "internalCode": "95699",
+      "salesTotal": 1077.66,
+      "total": 1228.5324,
+      "valueDifference": 0,
+      "totalTaxableFees": 0,
+      "netTotal": 1077.66,
+      "itemsDiscount": 0,
+      "unitValue": {
+        "currencySold": "EGP",
+        "amountEGP": 119.74
+      },
+      "discount": {
+        "rate": 0,
+        "amount": 0
+      },
+      "taxableItems": [
+        {
+          "taxType": "T1",
+          "amount": 150.8724,
+          "subType": "V009",
+          "rate": 14
+        }
+      ]
+    },
+    {
+      "description": "بودي كم طويل 3 قطع",
+      "itemType": "GS1",
+      "itemCode": "6222040391908",
+      "unitType": "PK",
+      "quantity": 12,
+      "internalCode": "109088",
+      "salesTotal": 1539.48,
+      "total": 1755.0072,
+      "valueDifference": 0,
+      "totalTaxableFees": 0,
+      "netTotal": 1539.48,
+      "itemsDiscount": 0,
+      "unitValue": {
+        "currencySold": "EGP",
+        "amountEGP": 128.29
+      },
+      "discount": {
+        "rate": 0,
+        "amount": 0
+      },
+      "taxableItems": [
+        {
+          "taxType": "T1",
+          "amount": 215.5272,
+          "subType": "V009",
+          "rate": 14
+        }
+      ]
+    },
+    {
+      "description": "فانلة كم طويل ابيض سادة",
+      "itemType": "GS1",
+      "itemCode": "6222040384269",
+      "unitType": "PK",
+      "quantity": 12,
+      "internalCode": "112",
+      "salesTotal": 376.32,
+      "total": 429.0048,
+      "valueDifference": 0,
+      "totalTaxableFees": 0,
+      "netTotal": 376.32,
+      "itemsDiscount": 0,
+      "unitValue": {
+        "currencySold": "EGP",
+        "amountEGP": 31.36
+      },
+      "discount": {
+        "rate": 0,
+        "amount": 0
+      },
+      "taxableItems": [
+        {
+          "taxType": "T1",
+          "amount": 52.6848,
+          "subType": "V009",
+          "rate": 14
+        }
+      ]
+    },
+    {
+      "description": "كيلوت بيبي مطبوع من الخلف",
+      "itemType": "GS1",
+      "itemCode": "6222040389103",
+      "unitType": "PK",
+      "quantity": 6,
+      "internalCode": "7993",
+      "salesTotal": 136.86,
+      "total": 156.0204,
+      "valueDifference": 0,
+      "totalTaxableFees": 0,
+      "netTotal": 136.86,
+      "itemsDiscount": 0,
+      "unitValue": {
+        "currencySold": "EGP",
+        "amountEGP": 22.81
+      },
+      "discount": {
+        "rate": 0,
+        "amount": 0
+      },
+      "taxableItems": [
+        {
+          "taxType": "T1",
+          "amount": 19.1604,
+          "subType": "V009",
+          "rate": 14
+        }
+      ]
+    },
+    {
+      "description": "فانلة بيبي كم طويل كبسول",
+      "itemType": "GS1",
+      "itemCode": "6222040384122",
+      "unitType": "PK",
+      "quantity": 12,
+      "internalCode": "347",
+      "salesTotal": 342.12,
+      "total": 390.0168,
+      "valueDifference": 0,
+      "totalTaxableFees": 0,
+      "netTotal": 342.12,
+      "itemsDiscount": 0,
+      "unitValue": {
+        "currencySold": "EGP",
+        "amountEGP": 28.51
+      },
+      "discount": {
+        "rate": 0,
+        "amount": 0
+      },
+      "taxableItems": [
+        {
+          "taxType": "T1",
+          "amount": 47.8968,
+          "subType": "V009",
+          "rate": 14
+        }
+      ]
+    },
+    {
+      "description": "بودي كم طويل 3 قطع",
+      "itemType": "GS1",
+      "itemCode": "6222040391892",
+      "unitType": "PK",
+      "quantity": 12,
+      "internalCode": "109087",
+      "salesTotal": 1539.48,
+      "total": 1755.0072,
+      "valueDifference": 0,
+      "totalTaxableFees": 0,
+      "netTotal": 1539.48,
+      "itemsDiscount": 0,
+      "unitValue": {
+        "currencySold": "EGP",
+        "amountEGP": 128.29
+      },
+      "discount": {
+        "rate": 0,
+        "amount": 0
+      },
+      "taxableItems": [
+        {
+          "taxType": "T1",
+          "amount": 215.5272,
+          "subType": "V009",
+          "rate": 14
+        }
+      ]
+    },
+    {
+      "description": "طقم تدفئه بيبي سمر ميلتون اصفر",
+      "itemType": "GS1",
+      "itemCode": "6222040387239",
+      "unitType": "PK",
+      "quantity": 12,
+      "internalCode": "105559",
+      "salesTotal": 1265.76,
+      "total": 1442.9664,
+      "valueDifference": 0,
+      "totalTaxableFees": 0,
+      "netTotal": 1265.76,
+      "itemsDiscount": 0,
+      "unitValue": {
+        "currencySold": "EGP",
+        "amountEGP": 105.48
+      },
+      "discount": {
+        "rate": 0,
+        "amount": 0
+      },
+      "taxableItems": [
+        {
+          "taxType": "T1",
+          "amount": 177.2064,
+          "subType": "V009",
+          "rate": 14
+        }
+      ]
+    },
+    {
+      "description": "براسيرا نصف كم ابيض سادة",
+      "itemType": "GS1",
+      "itemCode": "6222040389837",
+      "unitType": "PK",
+      "quantity": 12,
+      "internalCode": "17282",
+      "salesTotal": 478.92,
+      "total": 545.9688,
+      "valueDifference": 0,
+      "totalTaxableFees": 0,
+      "netTotal": 478.92,
+      "itemsDiscount": 0,
+      "unitValue": {
+        "currencySold": "EGP",
+        "amountEGP": 39.91
+      },
+      "discount": {
+        "rate": 0,
+        "amount": 0
+      },
+      "taxableItems": [
+        {
+          "taxType": "T1",
+          "amount": 67.0488,
+          "subType": "V009",
+          "rate": 14
+        }
+      ]
+    },
+    {
+      "description": "طقم تدفئه صبياني سمر ميلتون بيج",
+      "itemType": "GS1",
+      "itemCode": "6222040387727",
+      "unitType": "PK",
+      "quantity": 12,
+      "internalCode": "103927",
+      "salesTotal": 2121,
+      "total": 2417.94,
+      "valueDifference": 0,
+      "totalTaxableFees": 0,
+      "netTotal": 2121,
+      "itemsDiscount": 0,
+      "unitValue": {
+        "currencySold": "EGP",
+        "amountEGP": 176.75
+      },
+      "discount": {
+        "rate": 0,
+        "amount": 0
+      },
+      "taxableItems": [
+        {
+          "taxType": "T1",
+          "amount": 296.94,
+          "subType": "V009",
+          "rate": 14
+        }
+      ]
+    },
+    {
+      "description": "بودي نصف كم 3 قطع",
+      "itemType": "GS1",
+      "itemCode": "6222040389639",
+      "unitType": "PK",
+      "quantity": 12,
+      "internalCode": "92406",
+      "salesTotal": 1505.28,
+      "total": 1716.0192,
+      "valueDifference": 0,
+      "totalTaxableFees": 0,
+      "netTotal": 1505.28,
+      "itemsDiscount": 0,
+      "unitValue": {
+        "currencySold": "EGP",
+        "amountEGP": 125.44
+      },
+      "discount": {
+        "rate": 0,
+        "amount": 0
+      },
+      "taxableItems": [
+        {
+          "taxType": "T1",
+          "amount": 210.7392,
+          "subType": "V009",
+          "rate": 14
+        }
+      ]
+    },
+    {
+      "description": "طقم تدفئه صبياني سمر ميلتون شانيه",
+      "itemType": "GS1",
+      "itemCode": "6222040387796",
+      "unitType": "PK",
+      "quantity": 11,
+      "internalCode": "103934",
+      "salesTotal": 1944.25,
+      "total": 2216.445,
+      "valueDifference": 0,
+      "totalTaxableFees": 0,
+      "netTotal": 1944.25,
+      "itemsDiscount": 0,
+      "unitValue": {
+        "currencySold": "EGP",
+        "amountEGP": 176.75
+      },
+      "discount": {
+        "rate": 0,
+        "amount": 0
+      },
+      "taxableItems": [
+        {
+          "taxType": "T1",
+          "amount": 272.195,
+          "subType": "V009",
+          "rate": 14
+        }
+      ]
+    },
+    {
+      "description": "طقم تدفئه صبياني سمر ميلتون بيج",
+      "itemType": "GS1",
+      "itemCode": "6222040387703",
+      "unitType": "PK",
+      "quantity": 12,
+      "internalCode": "103925",
+      "salesTotal": 2121,
+      "total": 2417.94,
+      "valueDifference": 0,
+      "totalTaxableFees": 0,
+      "netTotal": 2121,
+      "itemsDiscount": 0,
+      "unitValue": {
+        "currencySold": "EGP",
+        "amountEGP": 176.75
+      },
+      "discount": {
+        "rate": 0,
+        "amount": 0
+      },
+      "taxableItems": [
+        {
+          "taxType": "T1",
+          "amount": 296.94,
+          "subType": "V009",
+          "rate": 14
+        }
+      ]
+    },
+    {
+      "description": "بودي كت 3 قطع",
+      "itemType": "GS1",
+      "itemCode": "6221319001395",
+      "unitType": "PK",
+      "quantity": 12,
+      "internalCode": "113424",
+      "salesTotal": 1436.88,
+      "total": 1638.0432,
+      "valueDifference": 0,
+      "totalTaxableFees": 0,
+      "netTotal": 1436.88,
+      "itemsDiscount": 0,
+      "unitValue": {
+        "currencySold": "EGP",
+        "amountEGP": 119.74
+      },
+      "discount": {
+        "rate": 0,
+        "amount": 0
+      },
+      "taxableItems": [
+        {
+          "taxType": "T1",
+          "amount": 201.1632,
+          "subType": "V009",
+          "rate": 14
+        }
+      ]
+    },
+    {
+      "description": "بودي نصف كم 3 قطع",
+      "itemType": "GS1",
+      "itemCode": "6222040389622",
+      "unitType": "PK",
+      "quantity": 12,
+      "internalCode": "92405",
+      "salesTotal": 1505.28,
+      "total": 1716.0192,
+      "valueDifference": 0,
+      "totalTaxableFees": 0,
+      "netTotal": 1505.28,
+      "itemsDiscount": 0,
+      "unitValue": {
+        "currencySold": "EGP",
+        "amountEGP": 125.44
+      },
+      "discount": {
+        "rate": 0,
+        "amount": 0
+      },
+      "taxableItems": [
+        {
+          "taxType": "T1",
+          "amount": 210.7392,
+          "subType": "V009",
+          "rate": 14
+        }
+      ]
+    },
+    {
+      "description": "فانلة سبور ابيض سادة",
+      "itemType": "GS1",
+      "itemCode": "6222040381329",
+      "unitType": "PK",
+      "quantity": 12,
+      "internalCode": "151",
+      "salesTotal": 307.92,
+      "total": 351.0288,
+      "valueDifference": 0,
+      "totalTaxableFees": 0,
+      "netTotal": 307.92,
+      "itemsDiscount": 0,
+      "unitValue": {
+        "currencySold": "EGP",
+        "amountEGP": 25.66
+      },
+      "discount": {
+        "rate": 0,
+        "amount": 0
+      },
+      "taxableItems": [
+        {
+          "taxType": "T1",
+          "amount": 43.1088,
+          "subType": "V009",
+          "rate": 14
+        }
+      ]
+    },
+    {
+      "description": "طقم تدفئه بيبي سمر ميلتون اصفر",
+      "itemType": "GS1",
+      "itemCode": "6222040387246",
+      "unitType": "PK",
+      "quantity": 12,
+      "internalCode": "105560",
+      "salesTotal": 1265.76,
+      "total": 1442.9664,
+      "valueDifference": 0,
+      "totalTaxableFees": 0,
+      "netTotal": 1265.76,
+      "itemsDiscount": 0,
+      "unitValue": {
+        "currencySold": "EGP",
+        "amountEGP": 105.48
+      },
+      "discount": {
+        "rate": 0,
+        "amount": 0
+      },
+      "taxableItems": [
+        {
+          "taxType": "T1",
+          "amount": 177.2064,
+          "subType": "V009",
+          "rate": 14
+        }
+      ]
+    },
+    {
+      "description": "بودي كم طويل 3 قطع",
+      "itemType": "GS1",
+      "itemCode": "6222040391946",
+      "unitType": "PK",
+      "quantity": 12,
+      "internalCode": "109092",
+      "salesTotal": 1539.48,
+      "total": 1755.0072,
+      "valueDifference": 0,
+      "totalTaxableFees": 0,
+      "netTotal": 1539.48,
+      "itemsDiscount": 0,
+      "unitValue": {
+        "currencySold": "EGP",
+        "amountEGP": 128.29
+      },
+      "discount": {
+        "rate": 0,
+        "amount": 0
+      },
+      "taxableItems": [
+        {
+          "taxType": "T1",
+          "amount": 215.5272,
+          "subType": "V009",
+          "rate": 14
+        }
+      ]
+    },
+    {
+      "description": "فانلة بيبي نصف كم كبسول",
+      "itemType": "GS1",
+      "itemCode": "6222040383446",
+      "unitType": "PK",
+      "quantity": 12,
+      "internalCode": "55989",
+      "salesTotal": 273.72,
+      "total": 312.0408,
+      "valueDifference": 0,
+      "totalTaxableFees": 0,
+      "netTotal": 273.72,
+      "itemsDiscount": 0,
+      "unitValue": {
+        "currencySold": "EGP",
+        "amountEGP": 22.81
+      },
+      "discount": {
+        "rate": 0,
+        "amount": 0
+      },
+      "taxableItems": [
+        {
+          "taxType": "T1",
+          "amount": 38.3208,
+          "subType": "V009",
+          "rate": 14
+        }
+      ]
+    },
+    {
+      "description": "طقم تدفئه بيبي سمر ميلتون كريمي",
+      "itemType": "GS1",
+      "itemCode": "6221319066677",
+      "unitType": "PK",
+      "quantity": 12,
+      "internalCode": "117669",
+      "salesTotal": 1265.76,
+      "total": 1442.9664,
+      "valueDifference": 0,
+      "totalTaxableFees": 0,
+      "netTotal": 1265.76,
+      "itemsDiscount": 0,
+      "unitValue": {
+        "currencySold": "EGP",
+        "amountEGP": 105.48
+      },
+      "discount": {
+        "rate": 0,
+        "amount": 0
+      },
+      "taxableItems": [
+        {
+          "taxType": "T1",
+          "amount": 177.2064,
+          "subType": "V009",
+          "rate": 14
+        }
+      ]
+    },
+    {
+      "description": "طقم تدفئه صبياني سمر ميلتون كحلي",
+      "itemType": "GS1",
+      "itemCode": "6222040387840",
+      "unitType": "PK",
+      "quantity": 12,
+      "internalCode": "103939",
+      "salesTotal": 2121,
+      "total": 2417.94,
+      "valueDifference": 0,
+      "totalTaxableFees": 0,
+      "netTotal": 2121,
+      "itemsDiscount": 0,
+      "unitValue": {
+        "currencySold": "EGP",
+        "amountEGP": 176.75
+      },
+      "discount": {
+        "rate": 0,
+        "amount": 0
+      },
+      "taxableItems": [
+        {
+          "taxType": "T1",
+          "amount": 296.94,
+          "subType": "V009",
+          "rate": 14
+        }
+      ]
+    },
+    {
+      "description": "طقم تدفئه بيبي سمر ميلتون شانيه بيج",
+      "itemType": "GS1",
+      "itemCode": "6222040387482",
+      "unitType": "PK",
+      "quantity": 12,
+      "internalCode": "108798",
+      "salesTotal": 1265.76,
+      "total": 1442.9664,
+      "valueDifference": 0,
+      "totalTaxableFees": 0,
+      "netTotal": 1265.76,
+      "itemsDiscount": 0,
+      "unitValue": {
+        "currencySold": "EGP",
+        "amountEGP": 105.48
+      },
+      "discount": {
+        "rate": 0,
+        "amount": 0
+      },
+      "taxableItems": [
+        {
+          "taxType": "T1",
+          "amount": 177.2064,
+          "subType": "V009",
+          "rate": 14
+        }
+      ]
+    },
+    {
+      "description": "فانلة بيبي كم طويل كبسول",
+      "itemType": "GS1",
+      "itemCode": "6222040384153",
+      "unitType": "PK",
+      "quantity": 12,
+      "internalCode": "349",
+      "salesTotal": 342.12,
+      "total": 390.0168,
+      "valueDifference": 0,
+      "totalTaxableFees": 0,
+      "netTotal": 342.12,
+      "itemsDiscount": 0,
+      "unitValue": {
+        "currencySold": "EGP",
+        "amountEGP": 28.51
+      },
+      "discount": {
+        "rate": 0,
+        "amount": 0
+      },
+      "taxableItems": [
+        {
+          "taxType": "T1",
+          "amount": 47.8968,
+          "subType": "V009",
+          "rate": 14
+        }
+      ]
+    },
+    {
+      "description": "بودي نصف كم ابيض سادة",
+      "itemType": "GS1",
+      "itemCode": "6222040389189",
+      "unitType": "PK",
+      "quantity": 12,
+      "internalCode": "341",
+      "salesTotal": 444.72,
+      "total": 506.9808,
+      "valueDifference": 0,
+      "totalTaxableFees": 0,
+      "netTotal": 444.72,
+      "itemsDiscount": 0,
+      "unitValue": {
+        "currencySold": "EGP",
+        "amountEGP": 37.06
+      },
+      "discount": {
+        "rate": 0,
+        "amount": 0
+      },
+      "taxableItems": [
+        {
+          "taxType": "T1",
+          "amount": 62.2608,
+          "subType": "V009",
+          "rate": 14
+        }
+      ]
+    },
+    {
+      "description": "فانلة بناتى كم طويل الوان",
+      "itemType": "GS1",
+      "itemCode": "6222040384436",
+      "unitType": "PK",
+      "quantity": 12,
+      "internalCode": "217",
+      "salesTotal": 478.92,
+      "total": 545.9688,
+      "valueDifference": 0,
+      "totalTaxableFees": 0,
+      "netTotal": 478.92,
+      "itemsDiscount": 0,
+      "unitValue": {
+        "currencySold": "EGP",
+        "amountEGP": 39.91
+      },
+      "discount": {
+        "rate": 0,
+        "amount": 0
+      },
+      "taxableItems": [
+        {
+          "taxType": "T1",
+          "amount": 67.0488,
+          "subType": "V009",
+          "rate": 14
+        }
+      ]
+    },
+    {
+      "description": "بودي كت انترلوك ابيض سادة",
+      "itemType": "GS1",
+      "itemCode": "6222040393308",
+      "unitType": "PK",
+      "quantity": 12,
+      "internalCode": "109802",
+      "salesTotal": 410.52,
+      "total": 467.9928,
+      "valueDifference": 0,
+      "totalTaxableFees": 0,
+      "netTotal": 410.52,
+      "itemsDiscount": 0,
+      "unitValue": {
+        "currencySold": "EGP",
+        "amountEGP": 34.21
+      },
+      "discount": {
+        "rate": 0,
+        "amount": 0
+      },
+      "taxableItems": [
+        {
+          "taxType": "T1",
+          "amount": 57.4728,
+          "subType": "V009",
+          "rate": 14
+        }
+      ]
+    },
+    {
+      "description": "فانلة بيبي كم طويل كبسول انترلوك",
+      "itemType": "GS1",
+      "itemCode": "6222040392257",
+      "unitType": "PK",
+      "quantity": 12,
+      "internalCode": "59697",
+      "salesTotal": 376.32,
+      "total": 429.0048,
+      "valueDifference": 0,
+      "totalTaxableFees": 0,
+      "netTotal": 376.32,
+      "itemsDiscount": 0,
+      "unitValue": {
+        "currencySold": "EGP",
+        "amountEGP": 31.36
+      },
+      "discount": {
+        "rate": 0,
+        "amount": 0
+      },
+      "taxableItems": [
+        {
+          "taxType": "T1",
+          "amount": 52.6848,
+          "subType": "V009",
+          "rate": 14
+        }
+      ]
+    },
+    {
+      "description": "طقم تدفئه بيبي سمر ميلتون شانيه",
+      "itemType": "GS1",
+      "itemCode": "6222040387369",
+      "unitType": "PK",
+      "quantity": 12,
+      "internalCode": "106383",
+      "salesTotal": 1265.76,
+      "total": 1442.9664,
+      "valueDifference": 0,
+      "totalTaxableFees": 0,
+      "netTotal": 1265.76,
+      "itemsDiscount": 0,
+      "unitValue": {
+        "currencySold": "EGP",
+        "amountEGP": 105.48
+      },
+      "discount": {
+        "rate": 0,
+        "amount": 0
+      },
+      "taxableItems": [
+        {
+          "taxType": "T1",
+          "amount": 177.2064,
+          "subType": "V009",
+          "rate": 14
+        }
+      ]
+    },
+    {
+      "description": "بودي كت 3 قطع صبياني",
+      "itemType": "GS1",
+      "itemCode": "6221319007793",
+      "unitType": "PK",
+      "quantity": 12,
+      "internalCode": "95521",
+      "salesTotal": 1436.88,
+      "total": 1638.0432,
+      "valueDifference": 0,
+      "totalTaxableFees": 0,
+      "netTotal": 1436.88,
+      "itemsDiscount": 0,
+      "unitValue": {
+        "currencySold": "EGP",
+        "amountEGP": 119.74
+      },
+      "discount": {
+        "rate": 0,
+        "amount": 0
+      },
+      "taxableItems": [
+        {
+          "taxType": "T1",
+          "amount": 201.1632,
+          "subType": "V009",
+          "rate": 14
+        }
+      ]
+    },
+    {
+      "description": "فانلة بيبي نصف كم كبسول انترلوك",
+      "itemType": "GS1",
+      "itemCode": "6222040390000",
+      "unitType": "PK",
+      "quantity": 12,
+      "internalCode": "11251",
+      "salesTotal": 342.12,
+      "total": 390.0168,
+      "valueDifference": 0,
+      "totalTaxableFees": 0,
+      "netTotal": 342.12,
+      "itemsDiscount": 0,
+      "unitValue": {
+        "currencySold": "EGP",
+        "amountEGP": 28.51
+      },
+      "discount": {
+        "rate": 0,
+        "amount": 0
+      },
+      "taxableItems": [
+        {
+          "taxType": "T1",
+          "amount": 47.8968,
+          "subType": "V009",
+          "rate": 14
+        }
+      ]
+    },
+    {
+      "description": "بودي نصف كم ابيض سادة",
+      "itemType": "GS1",
+      "itemCode": "6222040389196",
+      "unitType": "PK",
+      "quantity": 12,
+      "internalCode": "17951",
+      "salesTotal": 444.72,
+      "total": 506.9808,
+      "valueDifference": 0,
+      "totalTaxableFees": 0,
+      "netTotal": 444.72,
+      "itemsDiscount": 0,
+      "unitValue": {
+        "currencySold": "EGP",
+        "amountEGP": 37.06
+      },
+      "discount": {
+        "rate": 0,
+        "amount": 0
+      },
+      "taxableItems": [
+        {
+          "taxType": "T1",
+          "amount": 62.2608,
+          "subType": "V009",
+          "rate": 14
+        }
+      ]
+    },
+    {
+      "description": "طقم تدفئه صبياني سمر ميلتون شانيه",
+      "itemType": "GS1",
+      "itemCode": "6222040387772",
+      "unitType": "PK",
+      "quantity": 12,
+      "internalCode": "103932",
+      "salesTotal": 2121,
+      "total": 2417.94,
+      "valueDifference": 0,
+      "totalTaxableFees": 0,
+      "netTotal": 2121,
+      "itemsDiscount": 0,
+      "unitValue": {
+        "currencySold": "EGP",
+        "amountEGP": 176.75
+      },
+      "discount": {
+        "rate": 0,
+        "amount": 0
+      },
+      "taxableItems": [
+        {
+          "taxType": "T1",
+          "amount": 296.94,
+          "subType": "V009",
+          "rate": 14
+        }
+      ]
+    },
+    {
+      "description": "فانلة بيبي نصف كم كبسول",
+      "itemType": "GS1",
+      "itemCode": "6222040383439",
+      "unitType": "PK",
+      "quantity": 12,
+      "internalCode": "361",
+      "salesTotal": 273.72,
+      "total": 312.0408,
+      "valueDifference": 0,
+      "totalTaxableFees": 0,
+      "netTotal": 273.72,
+      "itemsDiscount": 0,
+      "unitValue": {
+        "currencySold": "EGP",
+        "amountEGP": 22.81
+      },
+      "discount": {
+        "rate": 0,
+        "amount": 0
+      },
+      "taxableItems": [
+        {
+          "taxType": "T1",
+          "amount": 38.3208,
+          "subType": "V009",
+          "rate": 14
+        }
+      ]
+    },
+    {
+      "description": "فانلة كم طويل ابيض سادة",
+      "itemType": "GS1",
+      "itemCode": "6222040384252",
+      "unitType": "PK",
+      "quantity": 12,
+      "internalCode": "111",
+      "salesTotal": 376.32,
+      "total": 429.0048,
+      "valueDifference": 0,
+      "totalTaxableFees": 0,
+      "netTotal": 376.32,
+      "itemsDiscount": 0,
+      "unitValue": {
+        "currencySold": "EGP",
+        "amountEGP": 31.36
+      },
+      "discount": {
+        "rate": 0,
+        "amount": 0
+      },
+      "taxableItems": [
+        {
+          "taxType": "T1",
+          "amount": 52.6848,
+          "subType": "V009",
+          "rate": 14
+        }
+      ]
+    },
+    {
+      "description": "طقم تدفئه صبياني سمر ميلتون كحلي",
+      "itemType": "GS1",
+      "itemCode": "6222040387802",
+      "unitType": "PK",
+      "quantity": 12,
+      "internalCode": "103935",
+      "salesTotal": 1779,
+      "total": 2028.06,
+      "valueDifference": 0,
+      "totalTaxableFees": 0,
+      "netTotal": 1779,
+      "itemsDiscount": 0,
+      "unitValue": {
+        "currencySold": "EGP",
+        "amountEGP": 148.25
+      },
+      "discount": {
+        "rate": 0,
+        "amount": 0
+      },
+      "taxableItems": [
+        {
+          "taxType": "T1",
+          "amount": 249.06,
+          "subType": "V009",
+          "rate": 14
+        }
+      ]
+    },
+    {
+      "description": "فانله نصف كم مطبوع بالكامل ليكرا",
+      "itemType": "GS1",
+      "itemCode": "6222040383873",
+      "unitType": "PK",
+      "quantity": 12,
+      "internalCode": "103959",
+      "salesTotal": 478.92,
+      "total": 545.9688,
+      "valueDifference": 0,
+      "totalTaxableFees": 0,
+      "netTotal": 478.92,
+      "itemsDiscount": 0,
+      "unitValue": {
+        "currencySold": "EGP",
+        "amountEGP": 39.91
+      },
+      "discount": {
+        "rate": 0,
+        "amount": 0
+      },
+      "taxableItems": [
+        {
+          "taxType": "T1",
+          "amount": 67.0488,
+          "subType": "V009",
+          "rate": 14
+        }
+      ]
+    },
+    {
+      "description": "طقم تدفئه صبياني سمر ميلتون لبني",
+      "itemType": "GS1",
+      "itemCode": "6222040387901",
+      "unitType": "PK",
+      "quantity": 12,
+      "internalCode": "103945",
+      "salesTotal": 2121,
+      "total": 2417.94,
+      "valueDifference": 0,
+      "totalTaxableFees": 0,
+      "netTotal": 2121,
+      "itemsDiscount": 0,
+      "unitValue": {
+        "currencySold": "EGP",
+        "amountEGP": 176.75
+      },
+      "discount": {
+        "rate": 0,
+        "amount": 0
+      },
+      "taxableItems": [
+        {
+          "taxType": "T1",
+          "amount": 296.94,
+          "subType": "V009",
+          "rate": 14
+        }
+      ]
+    },
+    {
+      "description": "بودي كت 3 قطع",
+      "itemType": "GS1",
+      "itemCode": "6221319007489",
+      "unitType": "PK",
+      "quantity": 12,
+      "internalCode": "97715",
+      "salesTotal": 1436.88,
+      "total": 1638.0432,
+      "valueDifference": 0,
+      "totalTaxableFees": 0,
+      "netTotal": 1436.88,
+      "itemsDiscount": 0,
+      "unitValue": {
+        "currencySold": "EGP",
+        "amountEGP": 119.74
+      },
+      "discount": {
+        "rate": 0,
+        "amount": 0
+      },
+      "taxableItems": [
+        {
+          "taxType": "T1",
+          "amount": 201.1632,
+          "subType": "V009",
+          "rate": 14
+        }
+      ]
+    }
+  ],
+  "totalDiscountAmount": 0,
+  "totalSalesAmount": 203731.7,
+  "netAmount": 203731.7,
+  "taxTotals": [
+    {
+      "taxType": "T1",
+      "amount": 28522.438
+    }
+  ],
+  "totalAmount": 232254.138,
+  "extraDiscountAmount": 0,
+  "totalItemsDiscountAmount": 0
+}
+
+

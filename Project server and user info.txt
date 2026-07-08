@@ -1,0 +1,19 @@
+VPN 
+Server : project.lamaregypt.com
+Domain : Project
+
+VPN users
+
+user1		6M34EOeY1IF7S3oaHLDWjs/LuZ3dqiLJ
+user2		09Ojma2thCAzSs8/bMka2Zk+JEK8qjCo
+user3		T53GSjsJrrACFBr7uzWRxzGnMFbRxwRP
+user4		RrY7KvC/DNG2qhYZx3CcbBqJeVgxjozf
+user5		VPAbPCjZeo1a/ZDuqjxNciLEIunIlhLv
+
+Server user
+
+admin		t5Iw8NL6CTipg83AQa/UEN5mOHnoPqHP
+
+server IP : 172.16.0.16
+
+SQL Server SA password : t5Iw8NL6CTipg83AQa/UEN5mOHnoPqHP

@@ -1,0 +1,85 @@
+Private Sub xActivityCode_GotFocus()
+mygotFocus xActivityCode
+End Sub
+Private Sub xActivityCode_LostFocus()
+myLostFocus xActivityCode
+End Sub
+Private Sub xSubType_GotFocus()
+mygotFocus xSubType
+End Sub
+Private Sub xSubType_LostFocus()
+myLostFocus xSubType
+End Sub
+Private Sub xTaxRate_GotFocus()
+mygotFocus xTaxRate
+End Sub
+Private Sub xTaxRate_LostFocus()
+myLostFocus xTaxRate
+End Sub
+Private Sub xdate_ref_GotFocus()
+mygotFocus xdate_ref
+End Sub
+Private Sub xdate_ref_LostFocus()
+myLostFocus xdate_ref
+myvalidDate xdate_ref
+End Sub
+Private Sub xQRUrl_GotFocus()
+mygotFocus xQRUrl
+End Sub
+Private Sub xQRUrl_LostFocus()
+myLostFocus xQRUrl
+End Sub
+Private Sub xVersion_GotFocus()
+mygotFocus xVersion
+End Sub
+Private Sub xVersion_LostFocus()
+myLostFocus xVersion
+End Sub
+Private Sub xapiBaseUrl_GotFocus()
+mygotFocus xapiBaseUrl
+End Sub
+Private Sub xapiBaseUrl_LostFocus()
+myLostFocus xapiBaseUrl
+End Sub
+Private Sub xSubmitUrl_GotFocus()
+mygotFocus xSubmitUrl
+End Sub
+Private Sub xSubmitUrl_LostFocus()
+myLostFocus xSubmitUrl
+End Sub
+Private Sub xPososVersion_GotFocus()
+mygotFocus xPososVersion
+End Sub
+Private Sub xPososVersion_LostFocus()
+myLostFocus xPososVersion
+End Sub
+Private Sub xPosSerial_GotFocus()
+mygotFocus xPosSerial
+End Sub
+Private Sub xPosSerial_LostFocus()
+myLostFocus xPosSerial
+End Sub
+Private Sub xTokenUrl_GotFocus()
+mygotFocus xTokenUrl
+End Sub
+Private Sub xTokenUrl_LostFocus()
+myLostFocus xTokenUrl
+End Sub
+Private Sub xidSrvBaseUrl_GotFocus()
+mygotFocus xidSrvBaseUrl
+End Sub
+Private Sub xidSrvBaseUrl_LostFocus()
+myLostFocus xidSrvBaseUrl
+End Sub
+Private Sub xclient_id_GotFocus()
+mygotFocus xclient_id
+End Sub
+Private Sub xclient_id_LostFocus()
+myLostFocus xclient_id
+End Sub
+Private Sub xclient_secret_GotFocus()
+mygotFocus xclient_secret
+End Sub
+Private Sub xclient_secret_LostFocus()
+myLostFocus xclient_secret
+End Sub

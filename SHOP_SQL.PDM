@@ -1,0 +1,1441 @@
+[Root]
+Most Recent Package=Standard Setup Package 4
+
+
+[Package|Standard Setup Package 1|Root]
+SubWizProgID=PDWizard.SetupPkgSubWiz
+BuildFolder=D:\prg_sql\SHOP SQL\SETUP SQL
+
+[Package|Standard Setup Package 1|Configure DAO ISAMs]
+Applicable=Yes
+Xbase=No
+Excel=No
+Exchange=No
+Text=No
+Jet 2.x=No
+Lotus=No
+Paradox=No
+
+[Package|Standard Setup Package 1|Configure DAO ODBC]
+JetWorkspace=
+ODBCDirect=
+
+[Package|Standard Setup Package 1|Files Found]
+
+[Package|Standard Setup Package 1|Files Released]
+u2LBAR.DLL=
+u25TOTAL.DLL=
+u25STORE.DLL=
+p2BBDE.DLL=
+Crystal=
+
+[Package|Standard Setup Package 1|Missing Dependency Information]
+C:\WINDOWS\system32\barcode.ocx=
+C:\WINDOWS\system32\_ISEffects10.dll=
+C:\WINDOWS\system32\_ISource22.dll=
+C:\Program Files\Common Files\System\ado\msado27.tlb=
+C:\WINDOWS\system32\msstdfmt.dll=
+C:\WINDOWS\system32\Vsflex7.ocx=
+C:\WINDOWS\system32\VSPRINT7.ocx=
+C:\WINDOWS\system32\vsflex7L.ocx=
+
+[Package|Standard Setup Package 1|Out-of-Date Dependency Information]
+C:\WINDOWS\system32\COMDLG32.OCX=
+C:\WINDOWS\system32\ImgX61.ocx=
+C:\WINDOWS\system32\MSCAL.OCX=
+C:\WINDOWS\system32\MSCOMCTL.OCX=
+C:\WINDOWS\system32\ImgXPrint61.dll=
+C:\WINDOWS\system32\ImgXDialog61.dll=
+C:\WINDOWS\system32\ImgXCapture61.dll=
+C:\WINDOWS\system32\ImgXTwain61.dll=
+C:\WINDOWS\system32\ImgX61.dll=
+C:\WINDOWS\system32\scrrun.dll=
+
+[Package|Standard Setup Package 1|Files Added]
+
+[Package|Standard Setup Package 1|Files Removed]
+
+[Package|Standard Setup Package 1|Files In Project]
+D:\prg_sql\SHOP SQL\Elmorshed.exe=Yes
+C:\WINDOWS\system32\msvbvm60.dll=Yes
+C:\WINDOWS\system32\oleaut32.dll=Yes
+C:\WINDOWS\system32\olepro32.dll=Yes
+C:\WINDOWS\system32\asycfilt.dll=Yes
+C:\WINDOWS\system32\stdole2.tlb=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\COMCAT.DLL=Yes
+C:\WINDOWS\system32\vsflex7L.ocx=Yes
+C:\WINDOWS\system32\VSPRINT7.ocx=Yes
+C:\WINDOWS\system32\Vsflex7.ocx=Yes
+C:\WINDOWS\system32\MSBIND.DLL=Yes
+C:\WINDOWS\system32\msstdfmt.dll=Yes
+C:\Program Files\Common Files\System\ado\msado27.tlb=Yes
+C:\WINDOWS\system32\scrrun.dll=Yes
+C:\WINDOWS\system32\msvcrt.dll=Yes
+C:\Program Files\Common Files\Microsoft Shared\DAO\DAO350.DLL=Yes
+C:\WINDOWS\system32\MSJET35.DLL=Yes
+C:\WINDOWS\system32\MSJTER35.DLL=Yes
+C:\WINDOWS\system32\MSJINT35.DLL=Yes
+C:\WINDOWS\system32\vbajet32.dll=Yes
+C:\WINDOWS\system32\expsrv.dll=Yes
+C:\WINDOWS\system32\MSRD2X35.DLL=Yes
+C:\WINDOWS\system32\MSREPL35.DLL=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\MSVCRT40.DLL=Yes
+C:\WINDOWS\system32\VB5DB.DLL=Yes
+C:\WINDOWS\system32\ImgX61.dll=Yes
+C:\WINDOWS\system32\_ISource22.dll=Yes
+C:\WINDOWS\system32\_ISEffects10.dll=Yes
+C:\WINDOWS\system32\ImgXTwain61.dll=Yes
+C:\WINDOWS\system32\ImgXCapture61.dll=Yes
+C:\WINDOWS\system32\ImgXDialog61.dll=Yes
+C:\WINDOWS\system32\ImgXPrint61.dll=Yes
+C:\WINDOWS\system32\DBLIST32.OCX=Yes
+C:\WINDOWS\system32\MSFLXGRD.OCX=Yes
+C:\WINDOWS\system32\MSCHRT20.OCX=Yes
+C:\WINDOWS\system32\MSCOMCTL.OCX=Yes
+C:\WINDOWS\system32\barcode.ocx=Yes
+C:\WINDOWS\system32\TABCTL32.OCX=Yes
+C:\WINDOWS\system32\MSCAL.OCX=Yes
+C:\WINDOWS\system32\MSADODC.OCX=Yes
+C:\WINDOWS\system32\MSDATLST.OCX=Yes
+C:\WINDOWS\system32\COMCTL32.OCX=Yes
+C:\WINDOWS\system32\ssa3d30.ocx=Yes
+C:\WINDOWS\system32\ssresz30.ocx=Yes
+C:\WINDOWS\system32\Crystl32.OCX=Yes
+C:\WINDOWS\system32\crpe32.dll=Yes
+C:\WINDOWS\system32\Implode.dll=Yes
+C:\WINDOWS\system32\Crpaig80.dll=Yes
+C:\WINDOWS\system32\mfc42.dll=Yes
+C:\WINDOWS\Crystal\Crxlat32.dll=Yes
+C:\WINDOWS\system32\P2bbnd.dll=Yes
+C:\WINDOWS\system32\p2bdao.dll=Yes
+C:\WINDOWS\Crystal\p2bxbse.dll=Yes
+C:\WINDOWS\system32\p2ctdao.dll=Yes
+C:\WINDOWS\system32\p2irdao.dll=Yes
+C:\WINDOWS\Crystal\p2sifmx.dll=Yes
+C:\WINDOWS\system32\P2smon.dll=Yes
+C:\WINDOWS\system32\p2sodbc.dll=Yes
+C:\WINDOWS\Crystal\p2sora7.dll=Yes
+C:\WINDOWS\Crystal\p2ssql.dll=Yes
+C:\WINDOWS\Crystal\p2ssyb10.dll=Yes
+C:\WINDOWS\Crystal\p2soledb.dll=Yes
+C:\WINDOWS\Crystal\u2ddisk.dll=Yes
+C:\WINDOWS\Crystal\u2dmapi.dll=Yes
+C:\WINDOWS\Crystal\u2dnotes.dll=Yes
+C:\WINDOWS\Crystal\u2dpost.dll=Yes
+C:\WINDOWS\Crystal\u2dvim.dll=Yes
+C:\WINDOWS\Crystal\u2dapp.dll=Yes
+C:\WINDOWS\Crystal\u2fcr.dll=Yes
+C:\WINDOWS\Crystal\u2fhtml.dll=Yes
+C:\WINDOWS\Crystal\u2fodbc.dll=Yes
+C:\WINDOWS\Crystal\u2frec.dll=Yes
+C:\WINDOWS\Crystal\u2frtf.dll=Yes
+C:\WINDOWS\Crystal\u2fsepv.dll=Yes
+C:\WINDOWS\Crystal\u2ftext.dll=Yes
+C:\WINDOWS\Crystal\u2fwks.dll=Yes
+C:\WINDOWS\Crystal\u2fwordw.dll=Yes
+C:\WINDOWS\Crystal\u2fxls.dll=Yes
+C:\WINDOWS\Crystal\u25dts.dll=Yes
+C:\WINDOWS\Crystal\u2l2000.dll=Yes
+C:\WINDOWS\Crystal\u2lcom.dll=Yes
+C:\WINDOWS\Crystal\u2ldts.dll=Yes
+C:\WINDOWS\Crystal\u2lsamp1.dll=Yes
+C:\WINDOWS\Crystal\u252000.dll=Yes
+C:\WINDOWS\system32\SSCSDK80.DLL=Yes
+C:\WINDOWS\system32\ImgX61.ocx=Yes
+C:\WINDOWS\system32\COMDLG32.OCX=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP.EXE=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP1.EXE=Yes
+C:\WINDOWS\system32\VB6STKIT.DLL=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\ST6UNST.EXE=Yes
+
+[Package|Standard Setup Package 1|Configure Registry Files]
+Applicable=No
+
+[Package|Standard Setup Package 1|Configure Remote Servers]
+Applicable=No
+
+[Package|Standard Setup Package 1|Install Locations]
+D:\prg_sql\SHOP SQL\Elmorshed.exe=$(AppPath)
+C:\WINDOWS\system32\msvbvm60.dll=$(WinSysPathSysFile)
+C:\WINDOWS\system32\oleaut32.dll=$(WinSysPathSysFile)
+C:\WINDOWS\system32\olepro32.dll=$(WinSysPathSysFile)
+C:\WINDOWS\system32\asycfilt.dll=$(WinSysPathSysFile)
+C:\WINDOWS\system32\stdole2.tlb=$(WinSysPathSysFile)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\COMCAT.DLL=$(WinSysPathSysFile)
+C:\WINDOWS\system32\vsflex7L.ocx=$(WinSysPath)
+C:\WINDOWS\system32\VSPRINT7.ocx=$(WinSysPath)
+C:\WINDOWS\system32\Vsflex7.ocx=$(WinSysPath)
+C:\WINDOWS\system32\MSBIND.DLL=$(WinSysPath)
+C:\WINDOWS\system32\msstdfmt.dll=$(WinSysPath)
+C:\Program Files\Common Files\System\ado\msado27.tlb=$(WinSysPath)
+C:\WINDOWS\system32\scrrun.dll=$(WinSysPath)
+C:\WINDOWS\system32\msvcrt.dll=$(WinSysPathSysFile)
+C:\Program Files\Common Files\Microsoft Shared\DAO\DAO350.DLL=$(MSDAOPath)
+C:\WINDOWS\system32\MSJET35.DLL=$(WinSysPathSysFile)
+C:\WINDOWS\system32\MSJTER35.DLL=$(WinSysPathSysFile)
+C:\WINDOWS\system32\MSJINT35.DLL=$(WinSysPathSysFile)
+C:\WINDOWS\system32\vbajet32.dll=$(WinSysPathSysFile)
+C:\WINDOWS\system32\expsrv.dll=$(WinSysPathSysFile)
+C:\WINDOWS\system32\MSRD2X35.DLL=$(WinSysPathSysFile)
+C:\WINDOWS\system32\MSREPL35.DLL=$(WinSysPathSysFile)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\MSVCRT40.DLL=$(WinSysPathSysFile)
+C:\WINDOWS\system32\VB5DB.DLL=$(WinSysPath)
+C:\WINDOWS\system32\ImgX61.dll=$(WinSysPath)
+C:\WINDOWS\system32\_ISource22.dll=$(WinSysPath)
+C:\WINDOWS\system32\_ISEffects10.dll=$(WinSysPath)
+C:\WINDOWS\system32\ImgXTwain61.dll=$(WinSysPath)
+C:\WINDOWS\system32\ImgXCapture61.dll=$(WinSysPath)
+C:\WINDOWS\system32\ImgXDialog61.dll=$(WinSysPath)
+C:\WINDOWS\system32\ImgXPrint61.dll=$(WinSysPath)
+C:\WINDOWS\system32\DBLIST32.OCX=$(WinSysPath)
+C:\WINDOWS\system32\MSFLXGRD.OCX=$(WinSysPath)
+C:\WINDOWS\system32\MSCHRT20.OCX=$(WinSysPath)
+C:\WINDOWS\system32\MSCOMCTL.OCX=$(WinSysPath)
+C:\WINDOWS\system32\barcode.ocx=$(WinSysPath)
+C:\WINDOWS\system32\TABCTL32.OCX=$(WinSysPath)
+C:\WINDOWS\system32\MSCAL.OCX=$(WinSysPath)
+C:\WINDOWS\system32\MSADODC.OCX=$(WinSysPath)
+C:\WINDOWS\system32\MSDATLST.OCX=$(WinSysPath)
+C:\WINDOWS\system32\COMCTL32.OCX=$(WinSysPath)
+C:\WINDOWS\system32\ssa3d30.ocx=$(WinSysPath)
+C:\WINDOWS\system32\ssresz30.ocx=$(WinSysPath)
+C:\WINDOWS\system32\Crystl32.OCX=$(WinSysPath)
+C:\WINDOWS\system32\crpe32.dll=$(WinSysPath)
+C:\WINDOWS\system32\Implode.dll=$(AppPath)
+C:\WINDOWS\system32\Crpaig80.dll=$(WinSysPath)
+C:\WINDOWS\system32\mfc42.dll=$(WinSysPath)
+C:\WINDOWS\Crystal\Crxlat32.dll=$(WinSysPath)
+C:\WINDOWS\system32\P2bbnd.dll=$(WinSysPath)
+C:\WINDOWS\system32\p2bdao.dll=$(WinSysPath)
+C:\WINDOWS\Crystal\p2bxbse.dll=$(WinSysPath)
+C:\WINDOWS\system32\p2ctdao.dll=$(WinSysPath)
+C:\WINDOWS\system32\p2irdao.dll=$(WinSysPath)
+C:\WINDOWS\Crystal\p2sifmx.dll=$(WinSysPath)
+C:\WINDOWS\system32\P2smon.dll=$(WinSysPath)
+C:\WINDOWS\system32\p2sodbc.dll=$(WinSysPath)
+C:\WINDOWS\Crystal\p2sora7.dll=$(WinSysPath)
+C:\WINDOWS\Crystal\p2ssql.dll=$(WinSysPath)
+C:\WINDOWS\Crystal\p2ssyb10.dll=$(WinSysPath)
+C:\WINDOWS\Crystal\p2soledb.dll=$(WinSysPath)
+C:\WINDOWS\Crystal\u2ddisk.dll=$(WinSysPath)
+C:\WINDOWS\Crystal\u2dmapi.dll=$(WinSysPath)
+C:\WINDOWS\Crystal\u2dnotes.dll=$(WinSysPath)
+C:\WINDOWS\Crystal\u2dpost.dll=$(WinSysPath)
+C:\WINDOWS\Crystal\u2dvim.dll=$(WinSysPath)
+C:\WINDOWS\Crystal\u2dapp.dll=$(WinSysPath)
+C:\WINDOWS\Crystal\u2fcr.dll=$(WinSysPath)
+C:\WINDOWS\Crystal\u2fhtml.dll=$(WinSysPath)
+C:\WINDOWS\Crystal\u2fodbc.dll=$(WinSysPath)
+C:\WINDOWS\Crystal\u2frec.dll=$(WinSysPath)
+C:\WINDOWS\Crystal\u2frtf.dll=$(WinSysPath)
+C:\WINDOWS\Crystal\u2fsepv.dll=$(WinSysPath)
+C:\WINDOWS\Crystal\u2ftext.dll=$(WinSysPath)
+C:\WINDOWS\Crystal\u2fwks.dll=$(WinSysPath)
+C:\WINDOWS\Crystal\u2fwordw.dll=$(WinSysPath)
+C:\WINDOWS\Crystal\u2fxls.dll=$(WinSysPath)
+C:\WINDOWS\Crystal\u25dts.dll=$(WinSysPath)
+C:\WINDOWS\Crystal\u2l2000.dll=$(WinSysPath)
+C:\WINDOWS\Crystal\u2lcom.dll=$(WinSysPath)
+C:\WINDOWS\Crystal\u2ldts.dll=$(WinSysPath)
+C:\WINDOWS\Crystal\u2lsamp1.dll=$(WinSysPath)
+C:\WINDOWS\Crystal\u252000.dll=$(WinSysPath)
+C:\WINDOWS\system32\SSCSDK80.DLL=$(WinSysPath)
+C:\WINDOWS\system32\ImgX61.ocx=$(WinSysPath)
+C:\WINDOWS\system32\COMDLG32.OCX=$(WinSysPath)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP.EXE=$(AppPath)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP1.EXE=$(WinPath)
+C:\WINDOWS\system32\VB6STKIT.DLL=$(WinSysPathSysFile)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\ST6UNST.EXE=$(WinPath)
+
+[Package|Standard Setup Package 1|Configure Shared Files]
+Applicable=Yes
+D:\prg_sql\SHOP SQL\Elmorshed.exe=No
+C:\WINDOWS\system32\Implode.dll=Yes
+
+[Package|Standard Setup Package 1|Distribution]
+Type=single
+Size=
+Title=«·„—‘œ
+
+[Package|Standard Setup Package 1|Package]
+PackageFolder=D:\prg_sql\SHOP SQL\SETUP SQL
+ProjectFolder=D:\prg_sql\SHOP SQL
+ServerSideCab=
+File1=D:\prg_sql\SHOP SQL\SETUP SQL\setup.exe
+File2=D:\prg_sql\SHOP SQL\SETUP SQL\Setup.Lst
+File3=D:\prg_sql\SHOP SQL\SETUP SQL\Elmorshed.CAB
+Handler1=PDWizard.FolderDplySubWiz
+Handler2=PDWizard.WebPostDplySubWiz
+
+
+[Package|SETUP ELMORSHED SQL2005|Root]
+SubWizProgID=PDWizard.SetupPkgSubWiz
+BuildFolder=D:\prg_sql\SHOP SQL_tree\setup shop sql
+
+[Package|SETUP ELMORSHED SQL2005|Configure DAO ISAMs]
+Applicable=Yes
+Jet 2.x=No
+
+[Package|SETUP ELMORSHED SQL2005|Configure DAO ODBC]
+JetWorkspace=
+ODBCDirect=
+
+[Package|SETUP ELMORSHED SQL2005|Files Found]
+
+[Package|SETUP ELMORSHED SQL2005|Files Released]
+u2LBAR.DLL=
+u25TOTAL.DLL=
+u25STORE.DLL=
+p2BBDE.DLL=
+Crystal=
+SSCSDK80.DLL=
+p2BBND.DLL=
+
+[Package|SETUP ELMORSHED SQL2005|Missing Dependency Information]
+C:\WINDOWS\system32\barcode.ocx=
+C:\WINDOWS\system32\_ISEffects10.dll=
+C:\WINDOWS\system32\_ISource22.dll=
+C:\Program Files\Common Files\System\ado\msado27.tlb=
+C:\WINDOWS\system32\msstdfmt.dll=
+C:\WINDOWS\system32\Vsflex7.ocx=
+C:\WINDOWS\system32\VSPRINT7.ocx=
+C:\WINDOWS\system32\vsflex7L.ocx=
+
+[Package|SETUP ELMORSHED SQL2005|Out-of-Date Dependency Information]
+C:\WINDOWS\system32\COMDLG32.OCX=
+C:\WINDOWS\system32\ImgX61.ocx=
+C:\WINDOWS\system32\MSCAL.OCX=
+C:\WINDOWS\system32\MSCOMCTL.OCX=
+C:\WINDOWS\system32\ImgXPrint61.dll=
+C:\WINDOWS\system32\ImgXDialog61.dll=
+C:\WINDOWS\system32\ImgXCapture61.dll=
+C:\WINDOWS\system32\ImgXTwain61.dll=
+C:\WINDOWS\system32\ImgX61.dll=
+C:\WINDOWS\system32\scrrun.dll=
+C:\Program Files\Microsoft Office\OFFICE11\MSCAL.OCX=
+C:\WINDOWS\system32\MSCOMCT2.OCX=
+
+[Package|SETUP ELMORSHED SQL2005|Files Added]
+
+[Package|SETUP ELMORSHED SQL2005|Files Removed]
+c:\windows\system32\mscal.ocx=
+c:\program files\microsoft office\office11\mscal.ocx=
+
+[Package|SETUP ELMORSHED SQL2005|Files In Project]
+C:\WINDOWS\system32\msvbvm60.dll=Yes
+C:\WINDOWS\system32\oleaut32.dll=Yes
+C:\WINDOWS\system32\olepro32.dll=Yes
+C:\WINDOWS\system32\asycfilt.dll=Yes
+C:\WINDOWS\system32\stdole2.tlb=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\COMCAT.DLL=Yes
+C:\WINDOWS\system32\vsflex7L.ocx=Yes
+C:\WINDOWS\system32\VSPRINT7.ocx=Yes
+C:\WINDOWS\system32\Vsflex7.ocx=Yes
+C:\WINDOWS\system32\MSBIND.DLL=Yes
+C:\WINDOWS\system32\msstdfmt.dll=Yes
+C:\Program Files\Common Files\System\ado\msado27.tlb=Yes
+C:\WINDOWS\system32\scrrun.dll=Yes
+C:\WINDOWS\system32\msvcrt.dll=Yes
+C:\Program Files\Common Files\Microsoft Shared\DAO\DAO350.DLL=Yes
+C:\WINDOWS\system32\MSJET35.DLL=Yes
+C:\WINDOWS\system32\MSJTER35.DLL=Yes
+C:\WINDOWS\system32\MSJINT35.DLL=Yes
+C:\WINDOWS\system32\vbajet32.dll=Yes
+C:\WINDOWS\system32\expsrv.dll=Yes
+C:\WINDOWS\system32\MSRD2X35.DLL=Yes
+C:\WINDOWS\system32\MSREPL35.DLL=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\MSVCRT40.DLL=Yes
+C:\WINDOWS\system32\VB5DB.DLL=Yes
+C:\WINDOWS\system32\ImgX61.dll=Yes
+C:\WINDOWS\system32\_ISource22.dll=Yes
+C:\WINDOWS\system32\_ISEffects10.dll=Yes
+C:\WINDOWS\system32\ImgXTwain61.dll=Yes
+C:\WINDOWS\system32\ImgXCapture61.dll=Yes
+C:\WINDOWS\system32\ImgXDialog61.dll=Yes
+C:\WINDOWS\system32\ImgXPrint61.dll=Yes
+C:\WINDOWS\system32\DBLIST32.OCX=Yes
+C:\WINDOWS\system32\MSFLXGRD.OCX=Yes
+C:\WINDOWS\system32\MSCHRT20.OCX=Yes
+C:\WINDOWS\system32\MSCOMCTL.OCX=Yes
+C:\WINDOWS\system32\barcode.ocx=Yes
+C:\WINDOWS\system32\TABCTL32.OCX=Yes
+C:\WINDOWS\system32\MSADODC.OCX=Yes
+C:\WINDOWS\system32\MSDATLST.OCX=Yes
+C:\WINDOWS\system32\COMCTL32.OCX=Yes
+C:\WINDOWS\system32\ssa3d30.ocx=Yes
+C:\WINDOWS\system32\ssresz30.ocx=Yes
+C:\WINDOWS\system32\Crystl32.OCX=Yes
+C:\WINDOWS\system32\crpe32.dll=Yes
+C:\WINDOWS\system32\Implode.dll=Yes
+C:\WINDOWS\system32\Crpaig80.dll=Yes
+C:\WINDOWS\system32\mfc42.dll=Yes
+C:\WINDOWS\Crystal\Crxlat32.dll=Yes
+C:\WINDOWS\system32\p2bdao.dll=Yes
+C:\WINDOWS\Crystal\p2bxbse.dll=Yes
+C:\WINDOWS\system32\p2ctdao.dll=Yes
+C:\WINDOWS\system32\p2irdao.dll=Yes
+C:\WINDOWS\Crystal\p2sifmx.dll=Yes
+C:\WINDOWS\system32\P2smon.dll=Yes
+C:\WINDOWS\system32\p2sodbc.dll=Yes
+C:\WINDOWS\Crystal\p2sora7.dll=Yes
+C:\WINDOWS\Crystal\p2ssql.dll=Yes
+C:\WINDOWS\Crystal\p2ssyb10.dll=Yes
+C:\WINDOWS\Crystal\p2soledb.dll=Yes
+C:\WINDOWS\Crystal\u2ddisk.dll=Yes
+C:\WINDOWS\Crystal\u2dmapi.dll=Yes
+C:\WINDOWS\Crystal\u2dnotes.dll=Yes
+C:\WINDOWS\Crystal\u2dpost.dll=Yes
+C:\WINDOWS\Crystal\u2dvim.dll=Yes
+C:\WINDOWS\Crystal\u2dapp.dll=Yes
+C:\WINDOWS\Crystal\u2fcr.dll=Yes
+C:\WINDOWS\Crystal\u2fhtml.dll=Yes
+C:\WINDOWS\Crystal\u2fodbc.dll=Yes
+C:\WINDOWS\Crystal\u2frec.dll=Yes
+C:\WINDOWS\Crystal\u2frtf.dll=Yes
+C:\WINDOWS\Crystal\u2fsepv.dll=Yes
+C:\WINDOWS\Crystal\u2ftext.dll=Yes
+C:\WINDOWS\Crystal\u2fwks.dll=Yes
+C:\WINDOWS\Crystal\u2fwordw.dll=Yes
+C:\WINDOWS\Crystal\u2fxls.dll=Yes
+C:\WINDOWS\Crystal\u25dts.dll=Yes
+C:\WINDOWS\Crystal\u2l2000.dll=Yes
+C:\WINDOWS\Crystal\u2lcom.dll=Yes
+C:\WINDOWS\Crystal\u2ldts.dll=Yes
+C:\WINDOWS\Crystal\u2lsamp1.dll=Yes
+C:\WINDOWS\Crystal\u252000.dll=Yes
+C:\WINDOWS\system32\ImgX61.ocx=Yes
+C:\WINDOWS\system32\COMDLG32.OCX=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP.EXE=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP1.EXE=Yes
+C:\WINDOWS\system32\VB6STKIT.DLL=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\ST6UNST.EXE=Yes
+D:\prg_sql\SHOP SQL_tree\Elmorshed.exe=Yes
+C:\Program Files\Microsoft Office\OFFICE11\MSCAL.OCX=No
+C:\WINDOWS\system32\MSCOMCT2.OCX=Yes
+
+[Package|SETUP ELMORSHED SQL2005|Configure Registry Files]
+Applicable=No
+
+[Package|SETUP ELMORSHED SQL2005|Configure Remote Servers]
+Applicable=No
+
+[Package|SETUP ELMORSHED SQL2005|Install Locations]
+D:\prg_sql\SHOP SQL\Elmorshed.exe=$(AppPath)
+C:\WINDOWS\system32\msvbvm60.dll=$(WinSysPathSysFile)
+C:\WINDOWS\system32\oleaut32.dll=$(WinSysPathSysFile)
+C:\WINDOWS\system32\olepro32.dll=$(WinSysPathSysFile)
+C:\WINDOWS\system32\asycfilt.dll=$(WinSysPathSysFile)
+C:\WINDOWS\system32\stdole2.tlb=$(WinSysPathSysFile)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\COMCAT.DLL=$(WinSysPathSysFile)
+C:\WINDOWS\system32\vsflex7L.ocx=$(WinSysPath)
+C:\WINDOWS\system32\VSPRINT7.ocx=$(WinSysPath)
+C:\WINDOWS\system32\Vsflex7.ocx=$(WinSysPath)
+C:\WINDOWS\system32\MSBIND.DLL=$(WinSysPath)
+C:\WINDOWS\system32\msstdfmt.dll=$(WinSysPath)
+C:\Program Files\Common Files\System\ado\msado27.tlb=$(WinSysPath)
+C:\WINDOWS\system32\scrrun.dll=$(WinSysPath)
+C:\WINDOWS\system32\msvcrt.dll=$(WinSysPathSysFile)
+C:\Program Files\Common Files\Microsoft Shared\DAO\DAO350.DLL=$(MSDAOPath)
+C:\WINDOWS\system32\MSJET35.DLL=$(WinSysPathSysFile)
+C:\WINDOWS\system32\MSJTER35.DLL=$(WinSysPathSysFile)
+C:\WINDOWS\system32\MSJINT35.DLL=$(WinSysPathSysFile)
+C:\WINDOWS\system32\vbajet32.dll=$(WinSysPathSysFile)
+C:\WINDOWS\system32\expsrv.dll=$(WinSysPathSysFile)
+C:\WINDOWS\system32\MSRD2X35.DLL=$(WinSysPathSysFile)
+C:\WINDOWS\system32\MSREPL35.DLL=$(WinSysPathSysFile)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\MSVCRT40.DLL=$(WinSysPathSysFile)
+C:\WINDOWS\system32\VB5DB.DLL=$(WinSysPath)
+C:\WINDOWS\system32\ImgX61.dll=$(WinSysPath)
+C:\WINDOWS\system32\_ISource22.dll=$(WinSysPath)
+C:\WINDOWS\system32\_ISEffects10.dll=$(WinSysPath)
+C:\WINDOWS\system32\ImgXTwain61.dll=$(WinSysPath)
+C:\WINDOWS\system32\ImgXCapture61.dll=$(WinSysPath)
+C:\WINDOWS\system32\ImgXDialog61.dll=$(WinSysPath)
+C:\WINDOWS\system32\ImgXPrint61.dll=$(WinSysPath)
+C:\WINDOWS\system32\DBLIST32.OCX=$(WinSysPath)
+C:\WINDOWS\system32\MSFLXGRD.OCX=$(WinSysPath)
+C:\WINDOWS\system32\MSCHRT20.OCX=$(WinSysPath)
+C:\WINDOWS\system32\MSCOMCTL.OCX=$(WinSysPath)
+C:\WINDOWS\system32\barcode.ocx=$(WinSysPath)
+C:\WINDOWS\system32\TABCTL32.OCX=$(WinSysPath)
+C:\WINDOWS\system32\MSCAL.OCX=$(WinSysPath)
+C:\WINDOWS\system32\MSADODC.OCX=$(WinSysPath)
+C:\WINDOWS\system32\MSDATLST.OCX=$(WinSysPath)
+C:\WINDOWS\system32\COMCTL32.OCX=$(WinSysPath)
+C:\WINDOWS\system32\ssa3d30.ocx=$(WinSysPath)
+C:\WINDOWS\system32\ssresz30.ocx=$(WinSysPath)
+C:\WINDOWS\system32\Crystl32.OCX=$(WinSysPath)
+C:\WINDOWS\system32\crpe32.dll=$(WinSysPath)
+C:\WINDOWS\system32\Implode.dll=$(AppPath)
+C:\WINDOWS\system32\Crpaig80.dll=$(WinSysPath)
+C:\WINDOWS\system32\mfc42.dll=$(WinSysPath)
+C:\WINDOWS\Crystal\Crxlat32.dll=$(WinSysPath)
+C:\WINDOWS\system32\P2bbnd.dll=$(WinSysPath)
+C:\WINDOWS\system32\p2bdao.dll=$(WinSysPath)
+C:\WINDOWS\Crystal\p2bxbse.dll=$(WinSysPath)
+C:\WINDOWS\system32\p2ctdao.dll=$(WinSysPath)
+C:\WINDOWS\system32\p2irdao.dll=$(WinSysPath)
+C:\WINDOWS\Crystal\p2sifmx.dll=$(WinSysPath)
+C:\WINDOWS\system32\P2smon.dll=$(WinSysPath)
+C:\WINDOWS\system32\p2sodbc.dll=$(WinSysPath)
+C:\WINDOWS\Crystal\p2sora7.dll=$(WinSysPath)
+C:\WINDOWS\Crystal\p2ssql.dll=$(WinSysPath)
+C:\WINDOWS\Crystal\p2ssyb10.dll=$(WinSysPath)
+C:\WINDOWS\Crystal\p2soledb.dll=$(WinSysPath)
+C:\WINDOWS\Crystal\u2ddisk.dll=$(WinSysPath)
+C:\WINDOWS\Crystal\u2dmapi.dll=$(WinSysPath)
+C:\WINDOWS\Crystal\u2dnotes.dll=$(WinSysPath)
+C:\WINDOWS\Crystal\u2dpost.dll=$(WinSysPath)
+C:\WINDOWS\Crystal\u2dvim.dll=$(WinSysPath)
+C:\WINDOWS\Crystal\u2dapp.dll=$(WinSysPath)
+C:\WINDOWS\Crystal\u2fcr.dll=$(WinSysPath)
+C:\WINDOWS\Crystal\u2fhtml.dll=$(WinSysPath)
+C:\WINDOWS\Crystal\u2fodbc.dll=$(WinSysPath)
+C:\WINDOWS\Crystal\u2frec.dll=$(WinSysPath)
+C:\WINDOWS\Crystal\u2frtf.dll=$(WinSysPath)
+C:\WINDOWS\Crystal\u2fsepv.dll=$(WinSysPath)
+C:\WINDOWS\Crystal\u2ftext.dll=$(WinSysPath)
+C:\WINDOWS\Crystal\u2fwks.dll=$(WinSysPath)
+C:\WINDOWS\Crystal\u2fwordw.dll=$(WinSysPath)
+C:\WINDOWS\Crystal\u2fxls.dll=$(WinSysPath)
+C:\WINDOWS\Crystal\u25dts.dll=$(WinSysPath)
+C:\WINDOWS\Crystal\u2l2000.dll=$(WinSysPath)
+C:\WINDOWS\Crystal\u2lcom.dll=$(WinSysPath)
+C:\WINDOWS\Crystal\u2ldts.dll=$(WinSysPath)
+C:\WINDOWS\Crystal\u2lsamp1.dll=$(WinSysPath)
+C:\WINDOWS\Crystal\u252000.dll=$(WinSysPath)
+C:\WINDOWS\system32\SSCSDK80.DLL=$(WinSysPath)
+C:\WINDOWS\system32\ImgX61.ocx=$(WinSysPath)
+C:\WINDOWS\system32\COMDLG32.OCX=$(WinSysPath)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP.EXE=$(AppPath)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP1.EXE=$(WinPath)
+C:\WINDOWS\system32\VB6STKIT.DLL=$(WinSysPathSysFile)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\ST6UNST.EXE=$(WinPath)
+D:\prg_sql\SHOP SQL_tree\Elmorshed.exe=$(AppPath)
+C:\WINDOWS\system32\MSCOMCT2.OCX=$(WinSysPath)
+
+[Package|SETUP ELMORSHED SQL2005|Configure Shared Files]
+Applicable=Yes
+D:\prg_sql\SHOP SQL\Elmorshed.exe=No
+C:\WINDOWS\system32\Implode.dll=Yes
+D:\prg_sql\SHOP SQL_tree\Elmorshed.exe=No
+
+[Package|SETUP ELMORSHED SQL2005|Distribution]
+Type=single
+Size=
+Title=«·„—‘œ
+
+[Package|SETUP ELMORSHED SQL2005|Package]
+PackageFolder=D:\prg_sql\SHOP SQL_tree\setup shop sql
+ProjectFolder=D:\prg_sql\SHOP SQL_tree
+ServerSideCab=
+File1=D:\prg_sql\SHOP SQL_tree\setup shop sql\setup.exe
+File2=D:\prg_sql\SHOP SQL_tree\setup shop sql\Setup.Lst
+File3=D:\prg_sql\SHOP SQL_tree\setup shop sql\Elmorshed.CAB
+Handler1=PDWizard.FolderDplySubWiz
+Handler2=PDWizard.WebPostDplySubWiz
+
+
+[Package|Standard Setup Package 2|Root]
+SubWizProgID=PDWizard.SetupPkgSubWiz
+BuildFolder=E:\PRGSQL\JENUR_SHOP\SETUP_JUNIOR
+
+[Package|Standard Setup Package 2|Configure DAO ISAMs]
+Applicable=Yes
+Jet 2.x=Yes
+
+[Package|Standard Setup Package 2|Configure DAO ODBC]
+JetWorkspace=
+ODBCDirect=
+
+[Package|Standard Setup Package 2|Files Found]
+
+[Package|Standard Setup Package 2|Files Released]
+SSCSDK80.DLL=
+u2LBAR.DLL=
+u25TOTAL.DLL=
+u25STORE.DLL=
+p2BBND.DLL=
+p2BBDE.DLL=
+Crystal=
+
+[Package|Standard Setup Package 2|Missing Dependency Information]
+C:\Windows\System32\barcode.ocx=
+C:\Program Files\Microsoft Office\OFFICE11\EXCEL.EXE=
+C:\Windows\System32\_ISEffects10.dll=
+C:\Windows\System32\_ISource22.dll=
+C:\Program Files\Common Files\System\ado\msado27.tlb=
+C:\Windows\System32\Vsflex7.ocx=
+C:\Program Files\VideoSoft\Shared Files\VSPRINT7.ocx=
+C:\Windows\System32\Vsflex7L.ocx=
+C:\Windows\SysWOW64\barcode.ocx=
+C:\Program Files (x86)\Microsoft Office\OFFICE11\EXCEL.EXE=
+C:\Windows\SysWOW64\_ISEffects10.dll=
+C:\Windows\SysWOW64\_ISource22.dll=
+C:\Program Files (x86)\Common Files\System\ado\msado27.tlb=
+C:\Windows\SysWOW64\Vsflex7.ocx=
+C:\Windows\SysWOW64\VSPRINT7.ocx=
+C:\Windows\SysWOW64\vsflex7L.ocx=
+C:\Windows\System32\USBPD.DLL=
+C:\Windows\SysWOW64\MSSTDFMT.DLL=
+
+[Package|Standard Setup Package 2|Out-of-Date Dependency Information]
+C:\Windows\System32\COMDLG32.OCX=
+C:\Windows\System32\ImgX61.ocx=
+C:\Program Files\Microsoft Office\OFFICE11\MSCAL.OCX=
+C:\Windows\System32\MSCOMCTL.OCX=
+C:\Windows\System32\ImgXPrint61.dll=
+C:\Windows\System32\ImgXDialog61.dll=
+C:\Windows\System32\ImgXCapture61.dll=
+C:\Windows\System32\ImgXTwain61.dll=
+C:\Windows\System32\ImgX61.dll=
+C:\Windows\System32\scrrun.dll=
+C:\Windows\System32\MSSTDFMT.DLL=
+C:\Windows\SysWOW64\COMDLG32.OCX=
+C:\Windows\SysWOW64\ImgX61.ocx=
+C:\Program Files (x86)\Microsoft Office\OFFICE11\MSCAL.OCX=
+C:\Windows\SysWOW64\MSCOMCTL.OCX=
+C:\Windows\SysWOW64\ImgXPrint61.dll=
+C:\Windows\SysWOW64\ImgXDialog61.dll=
+C:\Windows\SysWOW64\ImgXCapture61.dll=
+C:\Windows\SysWOW64\ImgXTwain61.dll=
+C:\Windows\SysWOW64\ImgX61.dll=
+C:\Windows\SysWOW64\scrrun.dll=
+C:\Windows\SysWOW64\MSSTDFMT.DLL=
+
+[Package|Standard Setup Package 2|Files Added]
+
+[Package|Standard Setup Package 2|Files Removed]
+
+[Package|Standard Setup Package 2|Files In Project]
+C:\Windows\System32\msvbvm60.dll=Yes
+C:\Windows\System32\oleaut32.dll=Yes
+C:\Windows\System32\olepro32.dll=Yes
+C:\Windows\System32\asycfilt.dll=Yes
+C:\Windows\System32\stdole2.tlb=Yes
+C:\Windows\System32\MSJET35.DLL=Yes
+C:\Windows\System32\MSJTER35.DLL=Yes
+C:\Windows\System32\MSJINT35.DLL=Yes
+C:\Windows\System32\vbajet32.dll=Yes
+C:\Windows\System32\expsrv.dll=Yes
+C:\Windows\System32\MSRD2X35.DLL=Yes
+C:\Windows\System32\MSREPL35.DLL=Yes
+C:\Windows\System32\VB5DB.DLL=Yes
+C:\Windows\Crystal\Crxlat32.dll=Yes
+C:\Windows\Crystal\p2bxbse.dll=Yes
+C:\Windows\Crystal\p2sifmx.dll=Yes
+C:\Windows\Crystal\p2sora7.dll=Yes
+C:\Windows\Crystal\p2ssql.dll=Yes
+C:\Windows\Crystal\p2ssyb10.dll=Yes
+C:\Windows\Crystal\p2soledb.dll=Yes
+C:\Windows\Crystal\u2ddisk.dll=Yes
+C:\Windows\Crystal\u2dmapi.dll=Yes
+C:\Windows\Crystal\u2dnotes.dll=Yes
+C:\Windows\Crystal\u2dpost.dll=Yes
+C:\Windows\Crystal\u2dvim.dll=Yes
+C:\Windows\Crystal\u2dapp.dll=Yes
+C:\Windows\Crystal\u2fcr.dll=Yes
+C:\Windows\Crystal\u2fhtml.dll=Yes
+C:\Windows\Crystal\u2fodbc.dll=Yes
+C:\Windows\Crystal\u2frec.dll=Yes
+C:\Windows\Crystal\u2frtf.dll=Yes
+C:\Windows\Crystal\u2fsepv.dll=Yes
+C:\Windows\Crystal\u2ftext.dll=Yes
+C:\Windows\Crystal\u2fwks.dll=Yes
+C:\Windows\Crystal\u2fwordw.dll=Yes
+C:\Windows\Crystal\u2fxls.dll=Yes
+C:\Windows\Crystal\u25dts.dll=Yes
+C:\Windows\Crystal\u2l2000.dll=Yes
+C:\Windows\Crystal\u2lcom.dll=Yes
+C:\Windows\Crystal\u2ldts.dll=Yes
+C:\Windows\Crystal\u2lsamp1.dll=Yes
+C:\Windows\Crystal\u252000.dll=Yes
+C:\Windows\System32\VB6STKIT.DLL=Yes
+C:\Windows\System32\USBPD.DLL=Yes
+C:\Windows\SysWOW64\vsflex7L.ocx=Yes
+C:\Windows\SysWOW64\VSPRINT7.ocx=Yes
+C:\Windows\SysWOW64\Vsflex7.ocx=Yes
+C:\Windows\SysWOW64\MSBIND.DLL=Yes
+C:\Windows\SysWOW64\MSSTDFMT.DLL=Yes
+C:\Program Files (x86)\Common Files\System\ado\msado27.tlb=Yes
+C:\Windows\SysWOW64\scrrun.dll=Yes
+C:\Windows\SysWOW64\msvcrt.dll=Yes
+C:\Program Files (x86)\Common Files\microsoft shared\DAO\DAO350.DLL=Yes
+C:\Windows\SysWOW64\ImgX61.dll=Yes
+C:\Windows\SysWOW64\_ISource22.dll=Yes
+C:\Windows\SysWOW64\_ISEffects10.dll=Yes
+C:\Windows\SysWOW64\ImgXTwain61.dll=Yes
+C:\Windows\SysWOW64\ImgXCapture61.dll=Yes
+C:\Windows\SysWOW64\ImgXDialog61.dll=Yes
+C:\Windows\SysWOW64\ImgXPrint61.dll=Yes
+C:\Program Files (x86)\Microsoft Office\OFFICE11\EXCEL.EXE=Yes
+C:\Windows\SysWOW64\DBLIST32.OCX=Yes
+C:\Windows\SysWOW64\MSFLXGRD.OCX=Yes
+C:\Windows\SysWOW64\MSCHRT20.OCX=Yes
+C:\Windows\SysWOW64\MSCOMCTL.OCX=Yes
+C:\Windows\SysWOW64\barcode.ocx=Yes
+C:\Windows\SysWOW64\TABCTL32.OCX=Yes
+C:\Program Files (x86)\Microsoft Office\OFFICE11\MSCAL.OCX=Yes
+C:\Windows\SysWOW64\MSADODC.OCX=Yes
+C:\Windows\SysWOW64\MSDATLST.OCX=Yes
+C:\Windows\SysWOW64\COMCTL32.OCX=Yes
+C:\Windows\SysWOW64\Crystl32.OCX=Yes
+C:\Windows\SysWOW64\crpe32.dll=Yes
+C:\Windows\SysWOW64\Implode.dll=Yes
+C:\Windows\SysWOW64\Crpaig80.dll=Yes
+C:\Windows\SysWOW64\mfc42.dll=Yes
+C:\Windows\SysWOW64\P2bbnd.dll=Yes
+C:\Windows\SysWOW64\p2bdao.dll=Yes
+C:\Windows\SysWOW64\p2ctdao.dll=Yes
+C:\Windows\SysWOW64\p2irdao.dll=Yes
+C:\Windows\SysWOW64\P2smon.dll=Yes
+C:\Windows\SysWOW64\p2sodbc.dll=Yes
+C:\Windows\SysWOW64\ImgX61.ocx=Yes
+C:\Windows\SysWOW64\COMDLG32.OCX=Yes
+C:\Windows\SysWOW64\MSCOMCT2.OCX=Yes
+C:\Windows\SysWOW64\MSCOMM32.OCX=Yes
+E:\PRGSQL\JENUR_SHOP\JENUR_SHOP.exe=Yes
+C:\Program Files (x86)\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\COMCAT.DLL=Yes
+C:\Program Files (x86)\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\MSVCRT40.DLL=Yes
+C:\Windows\SysWOW64\ssa3d30.ocx=Yes
+C:\Windows\SysWOW64\ssresz30.ocx=Yes
+C:\Windows\SysWOW64\SSCSDK80.DLL=Yes
+C:\Program Files (x86)\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP.EXE=Yes
+C:\Program Files (x86)\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP1.EXE=Yes
+C:\Program Files (x86)\Microsoft Visual Studio\VB98\Wizards\PDWizard\ST6UNST.EXE=Yes
+
+[Package|Standard Setup Package 2|Configure Registry Files]
+Applicable=No
+
+[Package|Standard Setup Package 2|Configure Remote Servers]
+Applicable=No
+
+[Package|Standard Setup Package 2|Install Locations]
+D:\PRGSQL\SHOP_KIDS\data_pro.exe=$(AppPath)
+C:\Windows\System32\msvbvm60.dll=$(WinSysPathSysFile)
+C:\Windows\System32\oleaut32.dll=$(WinSysPathSysFile)
+C:\Windows\System32\olepro32.dll=$(WinSysPathSysFile)
+C:\Windows\System32\asycfilt.dll=$(WinSysPathSysFile)
+C:\Windows\System32\stdole2.tlb=$(WinSysPathSysFile)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\COMCAT.DLL=$(WinSysPathSysFile)
+C:\Windows\System32\Vsflex7L.ocx=$(WinSysPath)
+C:\Program Files\VideoSoft\Shared Files\VSPRINT7.ocx=$(WinSysPath)
+C:\Windows\System32\Vsflex7.ocx=$(WinSysPath)
+C:\Windows\System32\MSBIND.DLL=$(WinSysPath)
+C:\Windows\System32\MSSTDFMT.DLL=$(WinSysPath)
+C:\Program Files\Common Files\System\ado\msado27.tlb=$(WinSysPath)
+C:\Windows\System32\scrrun.dll=$(WinSysPath)
+C:\Windows\System32\msvcrt.dll=$(WinSysPathSysFile)
+C:\Program Files\Common Files\microsoft shared\DAO\DAO350.DLL=$(MSDAOPath)
+C:\Windows\System32\MSJET35.DLL=$(WinSysPathSysFile)
+C:\Windows\System32\MSJTER35.DLL=$(WinSysPathSysFile)
+C:\Windows\System32\MSJINT35.DLL=$(WinSysPathSysFile)
+C:\Windows\System32\vbajet32.dll=$(WinSysPathSysFile)
+C:\Windows\System32\expsrv.dll=$(WinSysPathSysFile)
+C:\Windows\System32\MSRD2X35.DLL=$(WinSysPathSysFile)
+C:\Windows\System32\MSREPL35.DLL=$(WinSysPathSysFile)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\MSVCRT40.DLL=$(WinSysPathSysFile)
+C:\Windows\System32\VB5DB.DLL=$(WinSysPath)
+C:\Windows\System32\ImgX61.dll=$(WinSysPath)
+C:\Windows\System32\_ISource22.dll=$(WinSysPath)
+C:\Windows\System32\_ISEffects10.dll=$(WinSysPath)
+C:\Windows\System32\ImgXTwain61.dll=$(WinSysPath)
+C:\Windows\System32\ImgXCapture61.dll=$(WinSysPath)
+C:\Windows\System32\ImgXDialog61.dll=$(WinSysPath)
+C:\Windows\System32\ImgXPrint61.dll=$(WinSysPath)
+C:\Program Files\Microsoft Office\OFFICE11\EXCEL.EXE=$(AppPath)
+C:\Windows\System32\DBLIST32.OCX=$(WinSysPath)
+C:\Windows\System32\MSFLXGRD.OCX=$(WinSysPath)
+C:\Windows\System32\MSCHRT20.OCX=$(WinSysPath)
+C:\Windows\System32\MSCOMCTL.OCX=$(WinSysPath)
+C:\Windows\System32\barcode.ocx=$(WinSysPath)
+C:\Windows\System32\TABCTL32.OCX=$(WinSysPath)
+C:\Program Files\Microsoft Office\OFFICE11\MSCAL.OCX=$(WinSysPath)
+C:\Windows\System32\MSADODC.OCX=$(WinSysPath)
+C:\Windows\System32\MSDATLST.OCX=$(WinSysPath)
+C:\Windows\System32\COMCTL32.OCX=$(WinSysPath)
+C:\Program Files\Sheridan\ActiveThreed Plus\ssa3d30.ocx=$(WinSysPath)
+C:\Program Files\Sheridan\ActiveThreed Plus\ssresz30.ocx=$(WinSysPath)
+C:\Windows\System32\Crystl32.OCX=$(WinSysPath)
+C:\Windows\System32\crpe32.dll=$(WinSysPath)
+C:\Windows\System32\Implode.dll=$(AppPath)
+C:\Windows\System32\Crpaig80.dll=$(WinSysPath)
+C:\Windows\System32\mfc42.dll=$(WinSysPath)
+C:\Windows\Crystal\Crxlat32.dll=$(WinSysPath)
+C:\Windows\System32\p2bdao.dll=$(WinSysPath)
+C:\Windows\Crystal\p2bxbse.dll=$(WinSysPath)
+C:\Windows\System32\p2ctdao.dll=$(WinSysPath)
+C:\Windows\System32\p2irdao.dll=$(WinSysPath)
+C:\Windows\Crystal\p2sifmx.dll=$(WinSysPath)
+C:\Windows\System32\P2smon.dll=$(WinSysPath)
+C:\Windows\System32\p2sodbc.dll=$(WinSysPath)
+C:\Windows\Crystal\p2sora7.dll=$(WinSysPath)
+C:\Windows\Crystal\p2ssql.dll=$(WinSysPath)
+C:\Windows\Crystal\p2ssyb10.dll=$(WinSysPath)
+C:\Windows\Crystal\p2soledb.dll=$(WinSysPath)
+C:\Windows\Crystal\u2ddisk.dll=$(WinSysPath)
+C:\Windows\Crystal\u2dmapi.dll=$(WinSysPath)
+C:\Windows\Crystal\u2dnotes.dll=$(WinSysPath)
+C:\Windows\Crystal\u2dpost.dll=$(WinSysPath)
+C:\Windows\Crystal\u2dvim.dll=$(WinSysPath)
+C:\Windows\Crystal\u2dapp.dll=$(WinSysPath)
+C:\Windows\Crystal\u2fcr.dll=$(WinSysPath)
+C:\Windows\Crystal\u2fhtml.dll=$(WinSysPath)
+C:\Windows\Crystal\u2fodbc.dll=$(WinSysPath)
+C:\Windows\Crystal\u2frec.dll=$(WinSysPath)
+C:\Windows\Crystal\u2frtf.dll=$(WinSysPath)
+C:\Windows\Crystal\u2fsepv.dll=$(WinSysPath)
+C:\Windows\Crystal\u2ftext.dll=$(WinSysPath)
+C:\Windows\Crystal\u2fwks.dll=$(WinSysPath)
+C:\Windows\Crystal\u2fwordw.dll=$(WinSysPath)
+C:\Windows\Crystal\u2fxls.dll=$(WinSysPath)
+C:\Windows\Crystal\u25dts.dll=$(WinSysPath)
+C:\Windows\Crystal\u2l2000.dll=$(WinSysPath)
+C:\Windows\Crystal\u2lcom.dll=$(WinSysPath)
+C:\Windows\Crystal\u2ldts.dll=$(WinSysPath)
+C:\Windows\Crystal\u2lsamp1.dll=$(WinSysPath)
+C:\Windows\Crystal\u252000.dll=$(WinSysPath)
+C:\Windows\System32\ImgX61.ocx=$(WinSysPath)
+C:\Windows\System32\COMDLG32.OCX=$(WinSysPath)
+C:\Windows\System32\MSCOMCT2.OCX=$(WinSysPath)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP.EXE=$(AppPath)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP1.EXE=$(WinPath)
+C:\Windows\System32\VB6STKIT.DLL=$(WinSysPathSysFile)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\ST6UNST.EXE=$(WinPath)
+D:\prg_sql\JENUR_SHOP\DATA_PRO.exe=$(AppPath)
+D:\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\COMCAT.DLL=$(WinSysPathSysFile)
+C:\Windows\System32\USBPD.DLL=$(WinSysPath)
+C:\Windows\SysWOW64\vsflex7L.ocx=$(WinSysPath)
+C:\Windows\SysWOW64\VSPRINT7.ocx=$(WinSysPath)
+C:\Windows\SysWOW64\Vsflex7.ocx=$(WinSysPath)
+C:\Windows\SysWOW64\MSBIND.DLL=$(WinSysPath)
+C:\Windows\SysWOW64\MSSTDFMT.DLL=$(WinSysPath)
+C:\Program Files (x86)\Common Files\System\ado\msado27.tlb=$(WinSysPath)
+C:\Windows\SysWOW64\scrrun.dll=$(WinSysPath)
+C:\Windows\SysWOW64\msvcrt.dll=$(WinSysPathSysFile)
+C:\Program Files (x86)\Common Files\microsoft shared\DAO\DAO350.DLL=$(MSDAOPath)
+D:\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\MSVCRT40.DLL=$(WinSysPathSysFile)
+C:\Windows\SysWOW64\ImgX61.dll=$(WinSysPath)
+C:\Windows\SysWOW64\_ISource22.dll=$(WinSysPath)
+C:\Windows\SysWOW64\_ISEffects10.dll=$(WinSysPath)
+C:\Windows\SysWOW64\ImgXTwain61.dll=$(WinSysPath)
+C:\Windows\SysWOW64\ImgXCapture61.dll=$(WinSysPath)
+C:\Windows\SysWOW64\ImgXDialog61.dll=$(WinSysPath)
+C:\Windows\SysWOW64\ImgXPrint61.dll=$(WinSysPath)
+C:\Program Files (x86)\Microsoft Office\OFFICE11\EXCEL.EXE=$(AppPath)
+C:\Windows\SysWOW64\DBLIST32.OCX=$(WinSysPath)
+C:\Windows\SysWOW64\MSFLXGRD.OCX=$(WinSysPath)
+C:\Windows\SysWOW64\MSCHRT20.OCX=$(WinSysPath)
+C:\Windows\SysWOW64\MSCOMCTL.OCX=$(WinSysPath)
+C:\Windows\SysWOW64\barcode.ocx=$(WinSysPath)
+C:\Windows\SysWOW64\TABCTL32.OCX=$(WinSysPath)
+C:\Program Files (x86)\Microsoft Office\OFFICE11\MSCAL.OCX=$(WinSysPath)
+C:\Windows\SysWOW64\MSADODC.OCX=$(WinSysPath)
+C:\Windows\SysWOW64\MSDATLST.OCX=$(WinSysPath)
+C:\Windows\SysWOW64\COMCTL32.OCX=$(WinSysPath)
+C:\Program Files (x86)\Sheridan\ActiveThreed Plus\ssa3d30.ocx=$(WinSysPath)
+C:\Program Files (x86)\Sheridan\ActiveThreed Plus\ssresz30.ocx=$(WinSysPath)
+C:\Windows\SysWOW64\Crystl32.OCX=$(WinSysPath)
+C:\Windows\SysWOW64\crpe32.dll=$(WinSysPath)
+C:\Windows\SysWOW64\Implode.dll=$(AppPath)
+C:\Windows\SysWOW64\Crpaig80.dll=$(WinSysPath)
+C:\Windows\SysWOW64\mfc42.dll=$(WinSysPath)
+C:\Windows\SysWOW64\P2bbnd.dll=$(WinSysPath)
+C:\Windows\SysWOW64\p2bdao.dll=$(WinSysPath)
+C:\Windows\SysWOW64\p2ctdao.dll=$(WinSysPath)
+C:\Windows\SysWOW64\p2irdao.dll=$(WinSysPath)
+C:\Windows\SysWOW64\P2smon.dll=$(WinSysPath)
+C:\Windows\SysWOW64\p2sodbc.dll=$(WinSysPath)
+C:\Windows\SysWOW64\ImgX61.ocx=$(WinSysPath)
+C:\Windows\SysWOW64\COMDLG32.OCX=$(WinSysPath)
+C:\Windows\SysWOW64\MSCOMCT2.OCX=$(WinSysPath)
+C:\Windows\SysWOW64\MSCOMM32.OCX=$(WinSysPath)
+D:\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP.EXE=$(AppPath)
+D:\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP1.EXE=$(WinPath)
+D:\Microsoft Visual Studio\VB98\Wizards\PDWizard\ST6UNST.EXE=$(WinPath)
+E:\PRGSQL\JENUR_SHOP\JENUR_SHOP.exe=$(AppPath)
+C:\Program Files (x86)\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\COMCAT.DLL=$(WinSysPathSysFile)
+C:\Program Files (x86)\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\MSVCRT40.DLL=$(WinSysPathSysFile)
+C:\Windows\SysWOW64\ssa3d30.ocx=$(WinSysPath)
+C:\Windows\SysWOW64\ssresz30.ocx=$(WinSysPath)
+C:\Windows\SysWOW64\SSCSDK80.DLL=$(WinSysPath)
+C:\Program Files (x86)\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP.EXE=$(AppPath)
+C:\Program Files (x86)\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP1.EXE=$(WinPath)
+C:\Program Files (x86)\Microsoft Visual Studio\VB98\Wizards\PDWizard\ST6UNST.EXE=$(WinPath)
+
+[Package|Standard Setup Package 2|Configure Shared Files]
+Applicable=Yes
+D:\PRGSQL\SHOP_KIDS\data_pro.exe=No
+C:\Program Files\Microsoft Office\OFFICE11\EXCEL.EXE=No
+C:\Windows\System32\Implode.dll=No
+D:\prg_sql\JENUR_SHOP\DATA_PRO.exe=No
+C:\Program Files (x86)\Microsoft Office\OFFICE11\EXCEL.EXE=Yes
+C:\Windows\SysWOW64\Implode.dll=Yes
+E:\PRGSQL\JENUR_SHOP\JENUR_SHOP.exe=No
+
+[Package|Standard Setup Package 2|Distribution]
+Type=single
+Size=
+Title=Data_Pro
+
+[Package|Standard Setup Package 2|Package]
+PackageFolder=E:\PRGSQL\JENUR_SHOP\SETUP_JUNIOR
+ProjectFolder=E:\PRGSQL\JENUR_SHOP
+ServerSideCab=
+File1=E:\PRGSQL\JENUR_SHOP\SETUP_JUNIOR\setup.exe
+File2=E:\PRGSQL\JENUR_SHOP\SETUP_JUNIOR\Setup.Lst
+File3=E:\PRGSQL\JENUR_SHOP\SETUP_JUNIOR\JENUR_SHOP.CAB
+Handler1=PDWizard.FolderDplySubWiz
+Handler2=PDWizard.WebPostDplySubWiz
+
+
+[Package|Standard Setup Package 3|Root]
+SubWizProgID=PDWizard.SetupPkgSubWiz
+BuildFolder=D:\PRGSQL\Junior\JENUR_SHOP\Package
+
+[Package|Standard Setup Package 3|Configure DAO ISAMs]
+Applicable=Yes
+Jet 2.x=No
+
+[Package|Standard Setup Package 3|Configure DAO ODBC]
+JetWorkspace=
+ODBCDirect=
+
+[Package|Standard Setup Package 3|Files Found]
+
+[Package|Standard Setup Package 3|Files Released]
+SSCSDK80.DLL=
+u2LBAR.DLL=
+u25TOTAL.DLL=
+u25STORE.DLL=
+p2BBND.DLL=
+p2BBDE.DLL=
+Crystal=
+usbpd.dll=
+
+[Package|Standard Setup Package 3|Missing Dependency Information]
+C:\Windows\SysWOW64\barcode.ocx=
+C:\Program Files (x86)\Chilkat Software, Inc\Chilkat 32-bit ActiveX\ChilkatAx-9.5.0-win32.dll=
+C:\Windows\SysWOW64\zkemkeeper.dll=
+C:\Program Files (x86)\Microsoft Office\OFFICE11\EXCEL.EXE=
+C:\Windows\SysWOW64\_ISEffects10.dll=
+C:\Windows\SysWOW64\_ISource22.dll=
+C:\Program Files (x86)\Common Files\System\ado\msado27.tlb=
+C:\Windows\SysWOW64\Vsflex7.ocx=
+C:\Windows\SysWOW64\VSPRINT7.ocx=
+C:\Windows\SysWOW64\Vsflex7L.ocx=
+
+[Package|Standard Setup Package 3|Out-of-Date Dependency Information]
+D:\PRGSQL\JENIOR_SHOP\MSCOMCTL.OCX=
+C:\Windows\SysWOW64\Comdlg32.ocx=
+C:\Windows\SysWOW64\ImgX61.ocx=
+C:\Program Files (x86)\Microsoft Office\OFFICE11\MSCAL.OCX=
+C:\Windows\SysWOW64\ImgXPrint61.dll=
+C:\Windows\SysWOW64\ImgXDialog61.dll=
+C:\Windows\SysWOW64\ImgXCapture61.dll=
+C:\Windows\SysWOW64\ImgXTwain61.dll=
+C:\Windows\SysWOW64\ImgX61.dll=
+C:\Windows\SysWOW64\scrrun.dll=
+C:\Windows\SysWOW64\MSSTDFMT.DLL=
+
+[Package|Standard Setup Package 3|Files Added]
+
+[Package|Standard Setup Package 3|Files Removed]
+
+[Package|Standard Setup Package 3|Files In Project]
+D:\PRGSQL\Junior\JENUR_SHOP\JENUR_SHOP_NEW_API.exe=Yes
+C:\Windows\System32\msvbvm60.dll=Yes
+C:\Windows\System32\oleaut32.dll=Yes
+C:\Windows\System32\olepro32.dll=Yes
+C:\Windows\System32\asycfilt.dll=Yes
+C:\Windows\System32\stdole2.tlb=Yes
+C:\Program Files (x86)\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\COMCAT.DLL=Yes
+C:\Windows\SysWOW64\Vsflex7L.ocx=Yes
+C:\Windows\SysWOW64\VSPRINT7.ocx=Yes
+C:\Windows\SysWOW64\Vsflex7.ocx=Yes
+C:\Windows\SysWOW64\MSBIND.DLL=Yes
+C:\Windows\SysWOW64\MSSTDFMT.DLL=Yes
+C:\Program Files (x86)\Common Files\System\ado\msado27.tlb=Yes
+C:\Windows\SysWOW64\scrrun.dll=Yes
+C:\Windows\SysWOW64\msvcrt.dll=Yes
+C:\Program Files (x86)\Common Files\Microsoft Shared\DAO\DAO350.DLL=Yes
+C:\Windows\System32\MSJET35.DLL=Yes
+C:\Windows\System32\MSJTER35.DLL=Yes
+C:\Windows\System32\MSJINT35.DLL=Yes
+C:\Windows\System32\vbajet32.dll=Yes
+C:\Windows\System32\expsrv.dll=Yes
+C:\Windows\System32\MSRD2X35.DLL=Yes
+C:\Windows\System32\MSREPL35.DLL=Yes
+C:\Program Files (x86)\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\MSVCRT40.DLL=Yes
+C:\Windows\System32\VB5DB.DLL=Yes
+C:\Windows\SysWOW64\ImgX61.dll=Yes
+C:\Windows\SysWOW64\_ISource22.dll=Yes
+C:\Windows\SysWOW64\_ISEffects10.dll=Yes
+C:\Windows\SysWOW64\ImgXTwain61.dll=Yes
+C:\Windows\SysWOW64\ImgXCapture61.dll=Yes
+C:\Windows\SysWOW64\ImgXDialog61.dll=Yes
+C:\Windows\SysWOW64\ImgXPrint61.dll=Yes
+C:\Program Files (x86)\Microsoft Office\OFFICE11\EXCEL.EXE=Yes
+C:\Windows\SysWOW64\zkemkeeper.dll=Yes
+C:\Program Files (x86)\Chilkat Software, Inc\Chilkat 32-bit ActiveX\ChilkatAx-9.5.0-win32.dll=Yes
+C:\Windows\SysWOW64\DBLIST32.OCX=Yes
+C:\Windows\SysWOW64\MSFLXGRD.OCX=Yes
+C:\Windows\SysWOW64\MSCHRT20.OCX=Yes
+C:\Windows\SysWOW64\barcode.ocx=Yes
+C:\Windows\SysWOW64\TABCTL32.OCX=Yes
+C:\Program Files (x86)\Microsoft Office\OFFICE11\MSCAL.OCX=Yes
+C:\Windows\SysWOW64\MSADODC.OCX=Yes
+C:\Windows\SysWOW64\MSDATLST.OCX=Yes
+C:\Windows\SysWOW64\COMCTL32.OCX=Yes
+C:\Program Files (x86)\Sheridan\ActiveThreed Plus\ssa3d30.ocx=Yes
+C:\Program Files (x86)\Sheridan\ActiveThreed Plus\ssresz30.ocx=Yes
+C:\Windows\SysWOW64\Crystl32.OCX=Yes
+C:\Windows\SysWOW64\crpe32.dll=Yes
+C:\Windows\SysWOW64\Implode.dll=Yes
+C:\Windows\SysWOW64\Crpaig80.dll=Yes
+C:\Windows\SysWOW64\mfc42.dll=Yes
+C:\Windows\Crystal\Crxlat32.dll=Yes
+C:\Windows\SysWOW64\p2bdao.dll=Yes
+C:\Windows\Crystal\p2bxbse.dll=Yes
+C:\Windows\SysWOW64\p2ctdao.dll=Yes
+C:\Windows\SysWOW64\p2irdao.dll=Yes
+C:\Windows\Crystal\p2sifmx.dll=Yes
+C:\Windows\SysWOW64\P2smon.dll=Yes
+C:\Windows\SysWOW64\p2sodbc.dll=Yes
+C:\Windows\Crystal\p2sora7.dll=Yes
+C:\Windows\Crystal\p2ssql.dll=Yes
+C:\Windows\Crystal\p2ssyb10.dll=Yes
+C:\Windows\Crystal\p2soledb.dll=Yes
+C:\Windows\Crystal\u2ddisk.dll=Yes
+C:\Windows\Crystal\u2dmapi.dll=Yes
+C:\Windows\Crystal\u2dnotes.dll=Yes
+C:\Windows\Crystal\u2dpost.dll=Yes
+C:\Windows\Crystal\u2dvim.dll=Yes
+C:\Windows\Crystal\u2dapp.dll=Yes
+C:\Windows\Crystal\u2fcr.dll=Yes
+C:\Windows\Crystal\u2fhtml.dll=Yes
+C:\Windows\Crystal\u2fodbc.dll=Yes
+C:\Windows\Crystal\u2frec.dll=Yes
+C:\Windows\Crystal\u2frtf.dll=Yes
+C:\Windows\Crystal\u2fsepv.dll=Yes
+C:\Windows\Crystal\u2ftext.dll=Yes
+C:\Windows\Crystal\u2fwks.dll=Yes
+C:\Windows\Crystal\u2fwordw.dll=Yes
+C:\Windows\Crystal\u2fxls.dll=Yes
+C:\Windows\Crystal\u25dts.dll=Yes
+C:\Windows\Crystal\u2l2000.dll=Yes
+C:\Windows\Crystal\u2lcom.dll=Yes
+C:\Windows\Crystal\u2ldts.dll=Yes
+C:\Windows\Crystal\u2lsamp1.dll=Yes
+C:\Windows\Crystal\u252000.dll=Yes
+C:\Windows\SysWOW64\ImgX61.ocx=Yes
+C:\Windows\SysWOW64\Comdlg32.ocx=Yes
+C:\Windows\SysWOW64\MSCOMCT2.OCX=Yes
+C:\Windows\SysWOW64\MSCOMM32.OCX=Yes
+D:\PRGSQL\JENIOR_SHOP\MSCOMCTL.OCX=Yes
+C:\Program Files (x86)\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP.EXE=Yes
+C:\Program Files (x86)\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP1.EXE=Yes
+C:\Windows\System32\VB6STKIT.DLL=Yes
+C:\Program Files (x86)\Microsoft Visual Studio\VB98\Wizards\PDWizard\ST6UNST.EXE=Yes
+
+[Package|Standard Setup Package 3|Configure Registry Files]
+Applicable=No
+
+[Package|Standard Setup Package 3|Configure Remote Servers]
+Applicable=No
+
+[Package|Standard Setup Package 3|Install Locations]
+D:\PRGSQL\Junior\JENUR_SHOP\JENUR_SHOP_NEW_API.exe=$(AppPath)
+C:\Windows\System32\msvbvm60.dll=$(WinSysPathSysFile)
+C:\Windows\System32\oleaut32.dll=$(WinSysPathSysFile)
+C:\Windows\System32\olepro32.dll=$(WinSysPathSysFile)
+C:\Windows\System32\asycfilt.dll=$(WinSysPathSysFile)
+C:\Windows\System32\stdole2.tlb=$(WinSysPathSysFile)
+C:\Program Files (x86)\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\COMCAT.DLL=$(WinSysPathSysFile)
+C:\Windows\SysWOW64\Vsflex7L.ocx=$(WinSysPath)
+C:\Windows\SysWOW64\VSPRINT7.ocx=$(WinSysPath)
+C:\Windows\SysWOW64\Vsflex7.ocx=$(WinSysPath)
+C:\Windows\SysWOW64\MSBIND.DLL=$(WinSysPath)
+C:\Windows\SysWOW64\MSSTDFMT.DLL=$(WinSysPath)
+C:\Program Files (x86)\Common Files\System\ado\msado27.tlb=$(WinSysPath)
+C:\Windows\SysWOW64\scrrun.dll=$(WinSysPath)
+C:\Windows\SysWOW64\msvcrt.dll=$(WinSysPathSysFile)
+C:\Program Files (x86)\Common Files\Microsoft Shared\DAO\DAO350.DLL=$(MSDAOPath)
+C:\Windows\System32\MSJET35.DLL=$(WinSysPathSysFile)
+C:\Windows\System32\MSJTER35.DLL=$(WinSysPathSysFile)
+C:\Windows\System32\MSJINT35.DLL=$(WinSysPathSysFile)
+C:\Windows\System32\vbajet32.dll=$(WinSysPathSysFile)
+C:\Windows\System32\expsrv.dll=$(WinSysPathSysFile)
+C:\Windows\System32\MSRD2X35.DLL=$(WinSysPathSysFile)
+C:\Windows\System32\MSREPL35.DLL=$(WinSysPathSysFile)
+C:\Program Files (x86)\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\MSVCRT40.DLL=$(WinSysPathSysFile)
+C:\Windows\System32\VB5DB.DLL=$(WinSysPath)
+C:\Windows\SysWOW64\ImgX61.dll=$(WinSysPath)
+C:\Windows\SysWOW64\_ISource22.dll=$(WinSysPath)
+C:\Windows\SysWOW64\_ISEffects10.dll=$(WinSysPath)
+C:\Windows\SysWOW64\ImgXTwain61.dll=$(WinSysPath)
+C:\Windows\SysWOW64\ImgXCapture61.dll=$(WinSysPath)
+C:\Windows\SysWOW64\ImgXDialog61.dll=$(WinSysPath)
+C:\Windows\SysWOW64\ImgXPrint61.dll=$(WinSysPath)
+C:\Program Files (x86)\Microsoft Office\OFFICE11\EXCEL.EXE=$(AppPath)
+C:\Windows\SysWOW64\zkemkeeper.dll=$(WinSysPath)
+C:\Program Files (x86)\Chilkat Software, Inc\Chilkat 32-bit ActiveX\ChilkatAx-9.5.0-win32.dll=$(WinSysPath)
+C:\Windows\SysWOW64\DBLIST32.OCX=$(WinSysPath)
+C:\Windows\SysWOW64\MSFLXGRD.OCX=$(WinSysPath)
+C:\Windows\SysWOW64\MSCHRT20.OCX=$(WinSysPath)
+C:\Windows\SysWOW64\barcode.ocx=$(WinSysPath)
+C:\Windows\SysWOW64\TABCTL32.OCX=$(WinSysPath)
+C:\Program Files (x86)\Microsoft Office\OFFICE11\MSCAL.OCX=$(WinSysPath)
+C:\Windows\SysWOW64\MSADODC.OCX=$(WinSysPath)
+C:\Windows\SysWOW64\MSDATLST.OCX=$(WinSysPath)
+C:\Windows\SysWOW64\COMCTL32.OCX=$(WinSysPath)
+C:\Program Files (x86)\Sheridan\ActiveThreed Plus\ssa3d30.ocx=$(WinSysPath)
+C:\Program Files (x86)\Sheridan\ActiveThreed Plus\ssresz30.ocx=$(WinSysPath)
+C:\Windows\SysWOW64\Crystl32.OCX=$(WinSysPath)
+C:\Windows\SysWOW64\crpe32.dll=$(WinSysPath)
+C:\Windows\SysWOW64\Implode.dll=$(AppPath)
+C:\Windows\SysWOW64\Crpaig80.dll=$(WinSysPath)
+C:\Windows\SysWOW64\mfc42.dll=$(WinSysPath)
+C:\Windows\Crystal\Crxlat32.dll=$(WinSysPath)
+C:\Windows\SysWOW64\p2bdao.dll=$(WinSysPath)
+C:\Windows\Crystal\p2bxbse.dll=$(WinSysPath)
+C:\Windows\SysWOW64\p2ctdao.dll=$(WinSysPath)
+C:\Windows\SysWOW64\p2irdao.dll=$(WinSysPath)
+C:\Windows\Crystal\p2sifmx.dll=$(WinSysPath)
+C:\Windows\SysWOW64\P2smon.dll=$(WinSysPath)
+C:\Windows\SysWOW64\p2sodbc.dll=$(WinSysPath)
+C:\Windows\Crystal\p2sora7.dll=$(WinSysPath)
+C:\Windows\Crystal\p2ssql.dll=$(WinSysPath)
+C:\Windows\Crystal\p2ssyb10.dll=$(WinSysPath)
+C:\Windows\Crystal\p2soledb.dll=$(WinSysPath)
+C:\Windows\Crystal\u2ddisk.dll=$(WinSysPath)
+C:\Windows\Crystal\u2dmapi.dll=$(WinSysPath)
+C:\Windows\Crystal\u2dnotes.dll=$(WinSysPath)
+C:\Windows\Crystal\u2dpost.dll=$(WinSysPath)
+C:\Windows\Crystal\u2dvim.dll=$(WinSysPath)
+C:\Windows\Crystal\u2dapp.dll=$(WinSysPath)
+C:\Windows\Crystal\u2fcr.dll=$(WinSysPath)
+C:\Windows\Crystal\u2fhtml.dll=$(WinSysPath)
+C:\Windows\Crystal\u2fodbc.dll=$(WinSysPath)
+C:\Windows\Crystal\u2frec.dll=$(WinSysPath)
+C:\Windows\Crystal\u2frtf.dll=$(WinSysPath)
+C:\Windows\Crystal\u2fsepv.dll=$(WinSysPath)
+C:\Windows\Crystal\u2ftext.dll=$(WinSysPath)
+C:\Windows\Crystal\u2fwks.dll=$(WinSysPath)
+C:\Windows\Crystal\u2fwordw.dll=$(WinSysPath)
+C:\Windows\Crystal\u2fxls.dll=$(WinSysPath)
+C:\Windows\Crystal\u25dts.dll=$(WinSysPath)
+C:\Windows\Crystal\u2l2000.dll=$(WinSysPath)
+C:\Windows\Crystal\u2lcom.dll=$(WinSysPath)
+C:\Windows\Crystal\u2ldts.dll=$(WinSysPath)
+C:\Windows\Crystal\u2lsamp1.dll=$(WinSysPath)
+C:\Windows\Crystal\u252000.dll=$(WinSysPath)
+C:\Windows\SysWOW64\ImgX61.ocx=$(WinSysPath)
+C:\Windows\SysWOW64\Comdlg32.ocx=$(WinSysPath)
+C:\Windows\SysWOW64\MSCOMCT2.OCX=$(WinSysPath)
+C:\Windows\SysWOW64\MSCOMM32.OCX=$(WinSysPath)
+D:\PRGSQL\JENIOR_SHOP\MSCOMCTL.OCX=$(WinSysPath)
+C:\Program Files (x86)\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP.EXE=$(AppPath)
+C:\Program Files (x86)\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP1.EXE=$(WinPath)
+C:\Windows\System32\VB6STKIT.DLL=$(WinSysPathSysFile)
+C:\Program Files (x86)\Microsoft Visual Studio\VB98\Wizards\PDWizard\ST6UNST.EXE=$(WinPath)
+
+[Package|Standard Setup Package 3|Configure Shared Files]
+Applicable=Yes
+D:\PRGSQL\Junior\JENUR_SHOP\JENUR_SHOP_NEW_API.exe=No
+C:\Program Files (x86)\Microsoft Office\OFFICE11\EXCEL.EXE=No
+C:\Windows\SysWOW64\Implode.dll=No
+
+[Package|Standard Setup Package 3|Distribution]
+Type=single
+Size=
+Title=Data_Pro
+
+[Package|Standard Setup Package 3|Package]
+PackageFolder=D:\PRGSQL\Junior\JENUR_SHOP\Package
+ProjectFolder=D:\PRGSQL\Junior\JENUR_SHOP
+ServerSideCab=
+File1=D:\PRGSQL\Junior\JENUR_SHOP\Package\setup.exe
+File2=D:\PRGSQL\Junior\JENUR_SHOP\Package\Setup.Lst
+File3=D:\PRGSQL\Junior\JENUR_SHOP\Package\JENUR_SHOP_NEW_API.CAB
+Handler1=PDWizard.FolderDplySubWiz
+Handler2=PDWizard.WebPostDplySubWiz
+
+
+[Package|Standard Setup Package 4|Root]
+SubWizProgID=PDWizard.SetupPkgSubWiz
+BuildFolder=D:\PRGSQL\Junior\JENUR_SHOP\Package
+
+[Package|Standard Setup Package 4|Configure DAO ISAMs]
+Applicable=Yes
+Jet 2.x=No
+
+[Package|Standard Setup Package 4|Configure DAO ODBC]
+JetWorkspace=
+ODBCDirect=
+
+[Package|Standard Setup Package 4|Files Found]
+
+[Package|Standard Setup Package 4|Files Released]
+SSCSDK80.DLL=
+u2LBAR.DLL=
+u25TOTAL.DLL=
+u25STORE.DLL=
+p2BBND.DLL=
+p2BBDE.DLL=
+Crystal=
+usbpd.dll=
+
+[Package|Standard Setup Package 4|Missing Dependency Information]
+C:\Windows\SysWOW64\barcode.ocx=
+C:\Program Files (x86)\Chilkat Software, Inc\Chilkat 32-bit ActiveX\ChilkatAx-9.5.0-win32.dll=
+C:\Windows\SysWOW64\zkemkeeper.dll=
+C:\Program Files (x86)\Microsoft Office\OFFICE11\EXCEL.EXE=
+C:\Windows\SysWOW64\_ISEffects10.dll=
+C:\Windows\SysWOW64\_ISource22.dll=
+C:\Program Files (x86)\Common Files\System\ado\msado27.tlb=
+C:\Windows\SysWOW64\Vsflex7.ocx=
+C:\Windows\SysWOW64\VSPRINT7.ocx=
+C:\Windows\SysWOW64\Vsflex7L.ocx=
+C:\Windows\WinSxS\x86_microsoft.windows.gdiplus_6595b64144ccf1df_1.1.19041.4355_none_d950e3a7e104d0ea\GdiPlus.dll=
+C:\Windows\System32\wininet.dll=
+
+[Package|Standard Setup Package 4|Out-of-Date Dependency Information]
+C:\Windows\SysWOW64\MSCOMCTL.OCX=
+C:\Windows\SysWOW64\Comdlg32.ocx=
+C:\Windows\SysWOW64\ImgX61.ocx=
+C:\Program Files (x86)\Microsoft Office\OFFICE11\MSCAL.OCX=
+C:\Windows\SysWOW64\ImgXPrint61.dll=
+C:\Windows\SysWOW64\ImgXDialog61.dll=
+C:\Windows\SysWOW64\ImgXCapture61.dll=
+C:\Windows\SysWOW64\ImgXTwain61.dll=
+C:\Windows\SysWOW64\ImgX61.dll=
+C:\Windows\SysWOW64\scrrun.dll=
+C:\Windows\SysWOW64\MSSTDFMT.DLL=
+
+[Package|Standard Setup Package 4|Files Added]
+
+[Package|Standard Setup Package 4|Files Removed]
+
+[Package|Standard Setup Package 4|Files In Project]
+D:\PRGSQL\Junior\JENUR_SHOP\JENUR_SHOP.exe=Yes
+C:\Windows\System32\msvbvm60.dll=Yes
+C:\Windows\System32\oleaut32.dll=Yes
+C:\Windows\System32\olepro32.dll=Yes
+C:\Windows\System32\asycfilt.dll=Yes
+C:\Windows\System32\stdole2.tlb=Yes
+C:\Program Files (x86)\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\COMCAT.DLL=Yes
+C:\Windows\System32\wininet.dll=Yes
+C:\Windows\WinSxS\x86_microsoft.windows.gdiplus_6595b64144ccf1df_1.1.19041.4355_none_d950e3a7e104d0ea\GdiPlus.dll=Yes
+C:\Windows\SysWOW64\Vsflex7L.ocx=Yes
+C:\Windows\SysWOW64\VSPRINT7.ocx=Yes
+C:\Windows\SysWOW64\Vsflex7.ocx=Yes
+C:\Windows\SysWOW64\MSBIND.DLL=Yes
+C:\Windows\SysWOW64\MSSTDFMT.DLL=Yes
+C:\Program Files (x86)\Common Files\System\ado\msado27.tlb=Yes
+C:\Windows\SysWOW64\scrrun.dll=Yes
+C:\Windows\SysWOW64\msvcrt.dll=Yes
+C:\Program Files (x86)\Common Files\Microsoft Shared\DAO\DAO350.DLL=Yes
+C:\Windows\System32\MSJET35.DLL=Yes
+C:\Windows\System32\MSJTER35.DLL=Yes
+C:\Windows\System32\MSJINT35.DLL=Yes
+C:\Windows\System32\vbajet32.dll=Yes
+C:\Windows\System32\expsrv.dll=Yes
+C:\Windows\System32\MSRD2X35.DLL=Yes
+C:\Windows\System32\MSREPL35.DLL=Yes
+C:\Program Files (x86)\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\MSVCRT40.DLL=Yes
+C:\Windows\System32\VB5DB.DLL=Yes
+C:\Windows\SysWOW64\ImgX61.dll=Yes
+C:\Windows\SysWOW64\_ISource22.dll=Yes
+C:\Windows\SysWOW64\_ISEffects10.dll=Yes
+C:\Windows\SysWOW64\ImgXTwain61.dll=Yes
+C:\Windows\SysWOW64\ImgXCapture61.dll=Yes
+C:\Windows\SysWOW64\ImgXDialog61.dll=Yes
+C:\Windows\SysWOW64\ImgXPrint61.dll=Yes
+C:\Program Files (x86)\Microsoft Office\OFFICE11\EXCEL.EXE=Yes
+C:\Windows\SysWOW64\zkemkeeper.dll=Yes
+C:\Program Files (x86)\Chilkat Software, Inc\Chilkat 32-bit ActiveX\ChilkatAx-9.5.0-win32.dll=Yes
+C:\Windows\SysWOW64\DBLIST32.OCX=Yes
+C:\Windows\SysWOW64\MSFLXGRD.OCX=Yes
+C:\Windows\SysWOW64\MSCHRT20.OCX=Yes
+C:\Windows\SysWOW64\barcode.ocx=Yes
+C:\Windows\SysWOW64\TABCTL32.OCX=Yes
+C:\Program Files (x86)\Microsoft Office\OFFICE11\MSCAL.OCX=Yes
+C:\Windows\SysWOW64\MSADODC.OCX=Yes
+C:\Windows\SysWOW64\MSDATLST.OCX=Yes
+C:\Windows\SysWOW64\COMCTL32.OCX=Yes
+C:\Program Files (x86)\Sheridan\ActiveThreed Plus\ssa3d30.ocx=Yes
+C:\Program Files (x86)\Sheridan\ActiveThreed Plus\ssresz30.ocx=Yes
+C:\Windows\SysWOW64\Crystl32.OCX=Yes
+C:\Windows\SysWOW64\crpe32.dll=Yes
+C:\Windows\SysWOW64\Implode.dll=Yes
+C:\Windows\SysWOW64\Crpaig80.dll=Yes
+C:\Windows\SysWOW64\mfc42.dll=Yes
+C:\Windows\Crystal\Crxlat32.dll=Yes
+C:\Windows\SysWOW64\p2bdao.dll=Yes
+C:\Windows\Crystal\p2bxbse.dll=Yes
+C:\Windows\SysWOW64\p2ctdao.dll=Yes
+C:\Windows\SysWOW64\p2irdao.dll=Yes
+C:\Windows\Crystal\p2sifmx.dll=Yes
+C:\Windows\SysWOW64\P2smon.dll=Yes
+C:\Windows\SysWOW64\p2sodbc.dll=Yes
+C:\Windows\Crystal\p2sora7.dll=Yes
+C:\Windows\Crystal\p2ssql.dll=Yes
+C:\Windows\Crystal\p2ssyb10.dll=Yes
+C:\Windows\Crystal\p2soledb.dll=Yes
+C:\Windows\Crystal\u2ddisk.dll=Yes
+C:\Windows\Crystal\u2dmapi.dll=Yes
+C:\Windows\Crystal\u2dnotes.dll=Yes
+C:\Windows\Crystal\u2dpost.dll=Yes
+C:\Windows\Crystal\u2dvim.dll=Yes
+C:\Windows\Crystal\u2dapp.dll=Yes
+C:\Windows\Crystal\u2fcr.dll=Yes
+C:\Windows\Crystal\u2fhtml.dll=Yes
+C:\Windows\Crystal\u2fodbc.dll=Yes
+C:\Windows\Crystal\u2frec.dll=Yes
+C:\Windows\Crystal\u2frtf.dll=Yes
+C:\Windows\Crystal\u2fsepv.dll=Yes
+C:\Windows\Crystal\u2ftext.dll=Yes
+C:\Windows\Crystal\u2fwks.dll=Yes
+C:\Windows\Crystal\u2fwordw.dll=Yes
+C:\Windows\Crystal\u2fxls.dll=Yes
+C:\Windows\Crystal\u25dts.dll=Yes
+C:\Windows\Crystal\u2l2000.dll=Yes
+C:\Windows\Crystal\u2lcom.dll=Yes
+C:\Windows\Crystal\u2ldts.dll=Yes
+C:\Windows\Crystal\u2lsamp1.dll=Yes
+C:\Windows\Crystal\u252000.dll=Yes
+C:\Windows\SysWOW64\ImgX61.ocx=Yes
+C:\Windows\SysWOW64\Comdlg32.ocx=Yes
+C:\Windows\SysWOW64\MSCOMCT2.OCX=Yes
+C:\Windows\SysWOW64\MSCOMM32.OCX=Yes
+C:\Windows\SysWOW64\MSCOMCTL.OCX=Yes
+C:\Program Files (x86)\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP.EXE=Yes
+C:\Program Files (x86)\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP1.EXE=Yes
+C:\Windows\System32\VB6STKIT.DLL=Yes
+C:\Program Files (x86)\Microsoft Visual Studio\VB98\Wizards\PDWizard\ST6UNST.EXE=Yes
+
+[Package|Standard Setup Package 4|Configure Registry Files]
+Applicable=No
+
+[Package|Standard Setup Package 4|Configure Remote Servers]
+Applicable=No
+
+[Package|Standard Setup Package 4|Install Locations]
+D:\PRGSQL\Junior\JENUR_SHOP\JENUR_SHOP.exe=$(AppPath)
+C:\Windows\System32\msvbvm60.dll=$(WinSysPathSysFile)
+C:\Windows\System32\oleaut32.dll=$(WinSysPathSysFile)
+C:\Windows\System32\olepro32.dll=$(WinSysPathSysFile)
+C:\Windows\System32\asycfilt.dll=$(WinSysPathSysFile)
+C:\Windows\System32\stdole2.tlb=$(WinSysPathSysFile)
+C:\Program Files (x86)\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\COMCAT.DLL=$(WinSysPathSysFile)
+C:\Windows\System32\wininet.dll=$(WinSysPath)
+C:\Windows\WinSxS\x86_microsoft.windows.gdiplus_6595b64144ccf1df_1.1.19041.4355_none_d950e3a7e104d0ea\GdiPlus.dll=$(WinSysPath)
+C:\Windows\SysWOW64\Vsflex7L.ocx=$(WinSysPath)
+C:\Windows\SysWOW64\VSPRINT7.ocx=$(WinSysPath)
+C:\Windows\SysWOW64\Vsflex7.ocx=$(WinSysPath)
+C:\Windows\SysWOW64\MSBIND.DLL=$(WinSysPath)
+C:\Windows\SysWOW64\MSSTDFMT.DLL=$(WinSysPath)
+C:\Program Files (x86)\Common Files\System\ado\msado27.tlb=$(WinSysPath)
+C:\Windows\SysWOW64\scrrun.dll=$(WinSysPath)
+C:\Windows\SysWOW64\msvcrt.dll=$(WinSysPathSysFile)
+C:\Program Files (x86)\Common Files\Microsoft Shared\DAO\DAO350.DLL=$(MSDAOPath)
+C:\Windows\System32\MSJET35.DLL=$(WinSysPathSysFile)
+C:\Windows\System32\MSJTER35.DLL=$(WinSysPathSysFile)
+C:\Windows\System32\MSJINT35.DLL=$(WinSysPathSysFile)
+C:\Windows\System32\vbajet32.dll=$(WinSysPathSysFile)
+C:\Windows\System32\expsrv.dll=$(WinSysPathSysFile)
+C:\Windows\System32\MSRD2X35.DLL=$(WinSysPathSysFile)
+C:\Windows\System32\MSREPL35.DLL=$(WinSysPathSysFile)
+C:\Program Files (x86)\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\MSVCRT40.DLL=$(WinSysPathSysFile)
+C:\Windows\System32\VB5DB.DLL=$(WinSysPath)
+C:\Windows\SysWOW64\ImgX61.dll=$(WinSysPath)
+C:\Windows\SysWOW64\_ISource22.dll=$(WinSysPath)
+C:\Windows\SysWOW64\_ISEffects10.dll=$(WinSysPath)
+C:\Windows\SysWOW64\ImgXTwain61.dll=$(WinSysPath)
+C:\Windows\SysWOW64\ImgXCapture61.dll=$(WinSysPath)
+C:\Windows\SysWOW64\ImgXDialog61.dll=$(WinSysPath)
+C:\Windows\SysWOW64\ImgXPrint61.dll=$(WinSysPath)
+C:\Program Files (x86)\Microsoft Office\OFFICE11\EXCEL.EXE=$(AppPath)
+C:\Windows\SysWOW64\zkemkeeper.dll=$(WinSysPath)
+C:\Program Files (x86)\Chilkat Software, Inc\Chilkat 32-bit ActiveX\ChilkatAx-9.5.0-win32.dll=$(WinSysPath)
+C:\Windows\SysWOW64\DBLIST32.OCX=$(WinSysPath)
+C:\Windows\SysWOW64\MSFLXGRD.OCX=$(WinSysPath)
+C:\Windows\SysWOW64\MSCHRT20.OCX=$(WinSysPath)
+C:\Windows\SysWOW64\barcode.ocx=$(WinSysPath)
+C:\Windows\SysWOW64\TABCTL32.OCX=$(WinSysPath)
+C:\Program Files (x86)\Microsoft Office\OFFICE11\MSCAL.OCX=$(WinSysPath)
+C:\Windows\SysWOW64\MSADODC.OCX=$(WinSysPath)
+C:\Windows\SysWOW64\MSDATLST.OCX=$(WinSysPath)
+C:\Windows\SysWOW64\COMCTL32.OCX=$(WinSysPath)
+C:\Program Files (x86)\Sheridan\ActiveThreed Plus\ssa3d30.ocx=$(WinSysPath)
+C:\Program Files (x86)\Sheridan\ActiveThreed Plus\ssresz30.ocx=$(WinSysPath)
+C:\Windows\SysWOW64\Crystl32.OCX=$(WinSysPath)
+C:\Windows\SysWOW64\crpe32.dll=$(WinSysPath)
+C:\Windows\SysWOW64\Implode.dll=$(AppPath)
+C:\Windows\SysWOW64\Crpaig80.dll=$(WinSysPath)
+C:\Windows\SysWOW64\mfc42.dll=$(WinSysPath)
+C:\Windows\Crystal\Crxlat32.dll=$(WinSysPath)
+C:\Windows\SysWOW64\p2bdao.dll=$(WinSysPath)
+C:\Windows\Crystal\p2bxbse.dll=$(WinSysPath)
+C:\Windows\SysWOW64\p2ctdao.dll=$(WinSysPath)
+C:\Windows\SysWOW64\p2irdao.dll=$(WinSysPath)
+C:\Windows\Crystal\p2sifmx.dll=$(WinSysPath)
+C:\Windows\SysWOW64\P2smon.dll=$(WinSysPath)
+C:\Windows\SysWOW64\p2sodbc.dll=$(WinSysPath)
+C:\Windows\Crystal\p2sora7.dll=$(WinSysPath)
+C:\Windows\Crystal\p2ssql.dll=$(WinSysPath)
+C:\Windows\Crystal\p2ssyb10.dll=$(WinSysPath)
+C:\Windows\Crystal\p2soledb.dll=$(WinSysPath)
+C:\Windows\Crystal\u2ddisk.dll=$(WinSysPath)
+C:\Windows\Crystal\u2dmapi.dll=$(WinSysPath)
+C:\Windows\Crystal\u2dnotes.dll=$(WinSysPath)
+C:\Windows\Crystal\u2dpost.dll=$(WinSysPath)
+C:\Windows\Crystal\u2dvim.dll=$(WinSysPath)
+C:\Windows\Crystal\u2dapp.dll=$(WinSysPath)
+C:\Windows\Crystal\u2fcr.dll=$(WinSysPath)
+C:\Windows\Crystal\u2fhtml.dll=$(WinSysPath)
+C:\Windows\Crystal\u2fodbc.dll=$(WinSysPath)
+C:\Windows\Crystal\u2frec.dll=$(WinSysPath)
+C:\Windows\Crystal\u2frtf.dll=$(WinSysPath)
+C:\Windows\Crystal\u2fsepv.dll=$(WinSysPath)
+C:\Windows\Crystal\u2ftext.dll=$(WinSysPath)
+C:\Windows\Crystal\u2fwks.dll=$(WinSysPath)
+C:\Windows\Crystal\u2fwordw.dll=$(WinSysPath)
+C:\Windows\Crystal\u2fxls.dll=$(WinSysPath)
+C:\Windows\Crystal\u25dts.dll=$(WinSysPath)
+C:\Windows\Crystal\u2l2000.dll=$(WinSysPath)
+C:\Windows\Crystal\u2lcom.dll=$(WinSysPath)
+C:\Windows\Crystal\u2ldts.dll=$(WinSysPath)
+C:\Windows\Crystal\u2lsamp1.dll=$(WinSysPath)
+C:\Windows\Crystal\u252000.dll=$(WinSysPath)
+C:\Windows\SysWOW64\ImgX61.ocx=$(WinSysPath)
+C:\Windows\SysWOW64\Comdlg32.ocx=$(WinSysPath)
+C:\Windows\SysWOW64\MSCOMCT2.OCX=$(WinSysPath)
+C:\Windows\SysWOW64\MSCOMM32.OCX=$(WinSysPath)
+C:\Windows\SysWOW64\MSCOMCTL.OCX=$(WinSysPath)
+C:\Program Files (x86)\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP.EXE=$(AppPath)
+C:\Program Files (x86)\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP1.EXE=$(WinPath)
+C:\Windows\System32\VB6STKIT.DLL=$(WinSysPathSysFile)
+C:\Program Files (x86)\Microsoft Visual Studio\VB98\Wizards\PDWizard\ST6UNST.EXE=$(WinPath)
+
+[Package|Standard Setup Package 4|Configure Shared Files]
+Applicable=Yes
+D:\PRGSQL\Junior\JENUR_SHOP\JENUR_SHOP.exe=No
+C:\Program Files (x86)\Microsoft Office\OFFICE11\EXCEL.EXE=No
+C:\Windows\SysWOW64\Implode.dll=No
+
+[Package|Standard Setup Package 4|Distribution]
+Type=single
+Size=
+Title=Data_Pro
+
+[Package|Standard Setup Package 4|Package]
+PackageFolder=D:\PRGSQL\Junior\JENUR_SHOP\Package
+ProjectFolder=D:\PRGSQL\Junior\JENUR_SHOP
+ServerSideCab=
+File1=D:\PRGSQL\Junior\JENUR_SHOP\Package\setup.exe
+File2=D:\PRGSQL\Junior\JENUR_SHOP\Package\Setup.Lst
+File3=D:\PRGSQL\Junior\JENUR_SHOP\Package\JENUR_SHOP.CAB
+Handler1=PDWizard.FolderDplySubWiz
+Handler2=PDWizard.WebPostDplySubWiz

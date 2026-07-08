@@ -1,0 +1,14 @@
+Catalog=JUNIOR_SHOP
+ONLINE=ONLINE
+BRANCH=A892
+
+
+
+
+
+
+
+
+
+
+

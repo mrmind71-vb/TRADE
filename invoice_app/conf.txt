@@ -1,0 +1,1 @@
+SIGNER_TOKEN=invoice_app\publish\Application Files\Signer\Signer.exe
