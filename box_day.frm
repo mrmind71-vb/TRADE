@@ -1125,19 +1125,20 @@ Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 Public myPublic As Byte
-Dim rsStore As New ADODB.Recordset
-Dim rsBox As New ADODB.Recordset
-Dim cm As New Command
+Dim rsStore As New ADODB.RecordSet
+Dim rsBox As New ADODB.RecordSet
+Dim cm As New command
 Dim bSuperUser As Boolean
 Dim aPrm As Variant
 Dim bChangeBal As Boolean
 Dim CLIST As String, cList2 As String, cList3 As String
-Dim CardTable As ADODB.Recordset
+Dim CardTable As ADODB.RecordSet
 Dim cFile As String, cFileHeader As String
 Dim oSearch As New Search3, oSearchCode As New Search3, oSearchGrd As New Search_abd, oSearchDoc As New Search_abd
 Dim oSearchBox As New Search_abd
 Dim oSearchBranch As New Search_abd
 Dim oSearchAccount As New Search_abd
+Dim oSearchBalance As New Search_abd
 Dim cdef_Box As String, bigCheck As Boolean, cFilter As String
 Dim Sbox As String
 Dim bEditRecord As Boolean, bAct As Boolean
@@ -1154,7 +1155,7 @@ User = 1
 End Enum
 Private Function myreplace(Optional Row As Long = -1, Optional bNewOnly As Boolean = False) As Boolean
 Dim aInsert As Variant
-aInsert = AddFlag(Empty, "[BOX]", addstring(XBOX.BoundText))
+aInsert = AddFlag(Empty, "[BOX]", addstring(xBox.BoundText))
 aInsert = AddFlag(aInsert, "[DATE]", addDate(xDate.text))
 aInsert = AddFlag(aInsert, IIf(Me.Tag = DefineMode, "[USERNAME]", "[USERNAME2]"), addstring(cusername))
 aInsert = AddFlag(aInsert, IIf(Me.Tag = DefineMode, "[TIME]", "[TIME2]"), "getdate()")
@@ -1190,39 +1191,39 @@ End Function
 Private Sub myreplaceGrd(Row As Long)
 Dim aInsert As Variant, sCode As String
 With grid1
-    For I = IIf(Row = -1, 1, Row) To IIf(Row = -1, grid1.Rows - 2, Row)
+    For i = IIf(Row = -1, 1, Row) To IIf(Row = -1, grid1.Rows - 2, Row)
         aInsert = AddFlag(Empty, "DOC_NO", addstring(xDoc_No.text))
-        aInsert = AddFlag(aInsert, "ACCOUNT", addvalue(grid1.TextMatrix(I, 1)))
-        aInsert = AddFlag(aInsert, "CODE", addstring(grid1.TextMatrix(I, 2)))
+        aInsert = AddFlag(aInsert, "ACCOUNT", addvalue(grid1.TextMatrix(i, 1)))
+        aInsert = AddFlag(aInsert, "CODE", addstring(grid1.TextMatrix(i, 2)))
         'aInsert = AddFlag(aInsert, "DATE", addDate(grid1.TextMatrix(I, 3)))
-        aInsert = AddFlag(aInsert, "DESCA", addstring(grid1.TextMatrix(I, 5)))
-        aInsert = AddFlag(aInsert, "[VALUE]", Val(grid1.TextMatrix(I, 6)))
-        aInsert = AddFlag(aInsert, "[VALUE2]", Val(grid1.TextMatrix(I, 7)))
-        aInsert = AddFlag(aInsert, "[BRANCH]", addstring(grid1.TextMatrix(I, 9)))
+        aInsert = AddFlag(aInsert, "DESCA", addstring(grid1.TextMatrix(i, 5)))
+        aInsert = AddFlag(aInsert, "[VALUE]", Val(grid1.TextMatrix(i, 6)))
+        aInsert = AddFlag(aInsert, "[VALUE2]", Val(grid1.TextMatrix(i, 7)))
+        aInsert = AddFlag(aInsert, "[BRANCH]", addstring(grid1.TextMatrix(i, 9)))
+        aInsert = AddFlag(aInsert, "[INV_NO]", addstring(grid1.TextMatrix(i, 12)))
+        sCode = Mid(Trim(grid1.TextMatrix(i, 2)), 2)
         
-        sCode = Mid(Trim(grid1.TextMatrix(I, 2)), 2)
+        aInsert = AddFlag(aInsert, "[CUSTOMER]", IIf(Val(grid1.TextMatrix(i, 1)) = 1, addstring(sCode), "NULL"))
+        aInsert = AddFlag(aInsert, "[SUPLER]", IIf(Val(grid1.TextMatrix(i, 1)) = 2, addstring(sCode), "NULL"))
+        aInsert = AddFlag(aInsert, "[BOX]", IIf(Val(grid1.TextMatrix(i, 1)) = 3, addstring(sCode), "NULL"))
+        aInsert = AddFlag(aInsert, "[BANK]", IIf(Val(grid1.TextMatrix(i, 1)) = 4, addstring(sCode), "NULL"))
+        aInsert = AddFlag(aInsert, "[PART]", IIf(Val(grid1.TextMatrix(i, 1)) = 5, addstring(sCode), "NULL"))
+        aInsert = AddFlag(aInsert, "[CHARGE]", IIf(Val(grid1.TextMatrix(i, 1)) = 6, addstring(sCode), "NULL"))
+        aInsert = AddFlag(aInsert, "[CHARGE_AGENT]", IIf(Val(grid1.TextMatrix(i, 1)) = 7, addstring(sCode), "NULL"))
+        aInsert = AddFlag(aInsert, "[INCOME]", IIf(Val(grid1.TextMatrix(i, 1)) = 8, addstring(sCode), "NULL"))
+        aInsert = AddFlag(aInsert, "[ACC]", IIf(Val(grid1.TextMatrix(i, 1)) = 9, addstring(sCode), "NULL"))
         
-        aInsert = AddFlag(aInsert, "[CUSTOMER]", IIf(Val(grid1.TextMatrix(I, 1)) = 1, addstring(sCode), "NULL"))
-        aInsert = AddFlag(aInsert, "[SUPLER]", IIf(Val(grid1.TextMatrix(I, 1)) = 2, addstring(sCode), "NULL"))
-        aInsert = AddFlag(aInsert, "[BOX]", IIf(Val(grid1.TextMatrix(I, 1)) = 3, addstring(sCode), "NULL"))
-        aInsert = AddFlag(aInsert, "[BANK]", IIf(Val(grid1.TextMatrix(I, 1)) = 4, addstring(sCode), "NULL"))
-        aInsert = AddFlag(aInsert, "[PART]", IIf(Val(grid1.TextMatrix(I, 1)) = 5, addstring(sCode), "NULL"))
-        aInsert = AddFlag(aInsert, "[CHARGE]", IIf(Val(grid1.TextMatrix(I, 1)) = 6, addstring(sCode), "NULL"))
-        aInsert = AddFlag(aInsert, "[CHARGE_AGENT]", IIf(Val(grid1.TextMatrix(I, 1)) = 7, addstring(sCode), "NULL"))
-        aInsert = AddFlag(aInsert, "[INCOME]", IIf(Val(grid1.TextMatrix(I, 1)) = 8, addstring(sCode), "NULL"))
-        aInsert = AddFlag(aInsert, "[ACC]", IIf(Val(grid1.TextMatrix(I, 1)) = 9, addstring(sCode), "NULL"))
-        
-        If grid1.TextMatrix(I, grid1.Cols - 1) = "" Then
+        If grid1.TextMatrix(i, grid1.Cols - 1) = "" Then
             con.Execute addInsert(aInsert, "ACCOUNT_D")
         Else
-            con.Execute addUpdate(aInsert, "ACCOUNT_D", "ID = " & grid1.TextMatrix(I, .Cols - 1))
+            con.Execute addUpdate(aInsert, "ACCOUNT_D", "ID = " & grid1.TextMatrix(i, .Cols - 1))
         End If
     Next
 End With
 End Sub
 Sub myProc()
 If ActiveControl.Name = grid1.Name Then
-    If grid1.col = 0 Then
+    If grid1.Col = 0 Then
         grid1.TextMatrix(grid1.Row, 0) = oSearchAccount.grid1.TextMatrix(oSearchAccount.grid1.Row, 1)
         grid1.TextMatrix(grid1.Row, 1) = oSearchAccount.grid1.TextMatrix(oSearchAccount.grid1.Row, 0)
         grid1.TextMatrix(grid1.Row, 11) = oSearchAccount.grid1.ValueMatrix(oSearchAccount.grid1.Row, 2)
@@ -1231,9 +1232,9 @@ If ActiveControl.Name = grid1.Name Then
             fixBox
         End If
         Unload oSearchAccount
-        grid1_AfterEdit grid1.Row, grid1.col
-        CellPos 13, grid1.Row, grid1.col
-    ElseIf grid1.col = 3 Then
+        Grid1_AfterEdit grid1.Row, grid1.Col
+        CellPos 13, grid1.Row, grid1.Col
+    ElseIf grid1.Col = 3 Then
         grid1.TextMatrix(grid1.Row, 2) = grid1.TextMatrix(grid1.Row, 1) & oSearchGrd.grid1.TextMatrix(oSearchGrd.grid1.Row, 0)
         grid1.TextMatrix(grid1.Row, 3) = oSearchGrd.grid1.TextMatrix(oSearchGrd.grid1.Row, 1)
         
@@ -1243,23 +1244,28 @@ If ActiveControl.Name = grid1.Name Then
         
         Unload oSearchGrd
         If grid1.ValueMatrix(grid1.Row, 11) <> 0 And grid1.TextMatrix(grid1.Row, grid1.Cols - 1) = "" And grid1.TextMatrix(grid1.Row, 8) = "" Then
-            grid1.TextMatrix(grid1.Row, 8) = rsField(rsBranches, XBOX.Tag, "DESCA")
-            grid1.TextMatrix(grid1.Row, 9) = XBOX.Tag
+            grid1.TextMatrix(grid1.Row, 8) = rsField(rsBranches, xBox.Tag, "DESCA")
+            grid1.TextMatrix(grid1.Row, 9) = xBox.Tag
         End If
-        grid1_AfterEdit grid1.Row, grid1.col
-        CellPos 13, grid1.Row, grid1.col
-    ElseIf grid1.col = 8 Then
+        Grid1_AfterEdit grid1.Row, grid1.Col
+        CellPos 13, grid1.Row, grid1.Col
+    ElseIf grid1.Col = 8 Then
         grid1.TextMatrix(grid1.Row, 8) = oSearchBranch.grid1.TextMatrix(oSearchBranch.grid1.Row, 1)
         grid1.TextMatrix(grid1.Row, 9) = oSearchBranch.grid1.TextMatrix(oSearchBranch.grid1.Row, 0)
         Unload oSearchBranch
-        grid1_AfterEdit grid1.Row, grid1.col
-        CellPos 13, grid1.Row, grid1.col
+        Grid1_AfterEdit grid1.Row, grid1.Col
+        CellPos 13, grid1.Row, grid1.Col
+    ElseIf grid1.Col = 12 Then
+        grid1.TextMatrix(grid1.Row, 12) = oSearchBalance.grid1.TextMatrix(oSearchBalance.grid1.Row, 0)
+        Unload oSearchBalance
+        Grid1_AfterEdit grid1.Row, grid1.Col
+        CellPos 13, grid1.Row, grid1.Col
     End If
-ElseIf ActiveControl.Name = CmdInform.Name Then
+ElseIf ActiveControl.Name = cmdInform.Name Then
     openCardTable tbMode.tbFind, oSearchDoc.grid1.TextMatrix(oSearchDoc.grid1.Row, 0)
     Unload oSearchDoc
-ElseIf ActiveControl.Name = XBOX.Name Then
-    XBOX.BoundText = oSearchBox.grid1.TextMatrix(oSearchBox.grid1.Row, 0)
+ElseIf ActiveControl.Name = xBox.Name Then
+    xBox.BoundText = oSearchBox.grid1.TextMatrix(oSearchBox.grid1.Row, 0)
     oSearchBox.Hide
 End If
 End Sub
@@ -1380,7 +1386,7 @@ myDefine
 End Sub
 Private Sub cmdSave_Click()
 If FoundDay Then Exit Sub
-If Not MYVALID Then Exit Sub
+If Not myValid Then Exit Sub
 If Not myreplace Then Exit Sub
 Inform " „ Õ›Ÿ «·„” ‰œ »‰Ã«Õ"
 If Not openCardTable(tbMode.tbFind, xDoc_No.text) Then
@@ -1391,26 +1397,26 @@ Private Sub CmdUndo_Click()
 myUndo
 End Sub
 Private Sub cmdCheckBalance_Click()
-Dim loctable As New ADODB.Recordset
+Dim loctable As New ADODB.RecordSet
 Set loctable = cmd("SELECT BOXMOVE.BOX,SUM(BOXMOVE.PLUS) AS PLUS,SUM(BOXMOVE.MINUS) AS MINUS FROM BOXMOVE where date <= " & DateSq(xDate.text) & "  GROUP BY BOX", con).Execute
 
-Dim cm As New ADODB.Command
+Dim cm As New ADODB.command
 
-For I = 0 To GRID2.Cols - 1
-    GRID2.ColWidth(I) = 2000
+For i = 0 To grid2.Cols - 1
+    grid2.ColWidth(i) = 2000
 Next
 
-GRID2.Rows = 1
-I = 0
+grid2.Rows = 1
+i = 0
 Do Until loctable.EOF
-    I = I + 1
-    Me.Caption = I
-    GRID2.AddItem ""
-    GRID2.TextMatrix(GRID2.Rows - 1, 0) = loctable!BOX
-    GRID2.TextMatrix(GRID2.Rows - 1, 1) = Round(loctable!plus, 2)
+    i = i + 1
+    Me.Caption = i
+    grid2.AddItem ""
+    grid2.TextMatrix(grid2.Rows - 1, 0) = loctable!BOX
+    grid2.TextMatrix(grid2.Rows - 1, 1) = Round(loctable!plus, 2)
     
     
-    GRID2.TextMatrix(GRID2.Rows - 1, 3) = Round(loctable!Minus, 2)
+    grid2.TextMatrix(grid2.Rows - 1, 3) = Round(loctable!Minus, 2)
     
     Dim aPrm As Variant
     aPrm = AddFlag(aPrm, "BOX", loctable!BOX)
@@ -1418,11 +1424,11 @@ Do Until loctable.EOF
     Set cm = cmd("sp_BOX_BAL", con, adStoredProc, aPrm)
     
     cm.Execute
-    GRID2.TextMatrix(GRID2.Rows - 1, 2) = Round(cm.Parameters("@PLUS").Value, 2)
-    GRID2.TextMatrix(GRID2.Rows - 1, 4) = Round(cm.Parameters("@MINUS").Value, 2)
-    GRID2.TextMatrix(GRID2.Rows - 1, 5) = Round(GRID2.ValueMatrix(GRID2.Rows - 1, 1) - GRID2.ValueMatrix(GRID2.Rows - 1, 3), 2)
-    GRID2.TextMatrix(GRID2.Rows - 1, 6) = Round(GRID2.ValueMatrix(GRID2.Rows - 1, 2) - GRID2.ValueMatrix(GRID2.Rows - 1, 4), 2)
-    GRID2.TextMatrix(GRID2.Rows - 1, 7) = Round(GRID2.ValueMatrix(GRID2.Rows - 1, 5) - GRID2.ValueMatrix(GRID2.Rows - 1, 6), 2)
+    grid2.TextMatrix(grid2.Rows - 1, 2) = Round(cm.Parameters("@PLUS").Value, 2)
+    grid2.TextMatrix(grid2.Rows - 1, 4) = Round(cm.Parameters("@MINUS").Value, 2)
+    grid2.TextMatrix(grid2.Rows - 1, 5) = Round(grid2.ValueMatrix(grid2.Rows - 1, 1) - grid2.ValueMatrix(grid2.Rows - 1, 3), 2)
+    grid2.TextMatrix(grid2.Rows - 1, 6) = Round(grid2.ValueMatrix(grid2.Rows - 1, 2) - grid2.ValueMatrix(grid2.Rows - 1, 4), 2)
+    grid2.TextMatrix(grid2.Rows - 1, 7) = Round(grid2.ValueMatrix(grid2.Rows - 1, 5) - grid2.ValueMatrix(grid2.Rows - 1, 6), 2)
     
     
     loctable.MoveNext
@@ -1434,8 +1440,8 @@ On Error Resume Next
 If Not bAct Then
     bAct = True
     If Me.Tag = DefineMode Then
-        If XBOX.Enabled Then
-            XBOX.SetFocus
+        If xBox.Enabled Then
+            xBox.SetFocus
         Else
             grid1.SetFocus
         End If
@@ -1472,14 +1478,14 @@ End If
 
 Set rsBox = createRs(cmd("select * from file0_50", con).Execute)
 
-Set data1.Recordset = mycmd("SELECT * FROM FILE0_50 ORDER BY DESCA", con)
-Set XBOX.RowSource = data1
-XBOX.ListField = "Desca"
-XBOX.BoundColumn = "Code"
+Set data1.RecordSet = mycmd("SELECT * FROM FILE0_50 ORDER BY DESCA", con)
+Set xBox.RowSource = data1
+xBox.ListField = "Desca"
+xBox.BoundColumn = "Code"
 
 
 CLIST = StrList2("Select code,Desca from account  ORDER BY CODE", con)
-Set grid1.DataSource = data11
+Set grid1.DataSource = DATA11
 
 If Not openCardTable Then myDefine
 End Sub
@@ -1492,17 +1498,17 @@ closeCon con
 Set BoxDayfrm = Nothing
 End Sub
 
-Private Sub grid1_AfterEdit(ByVal Row As Long, ByVal col As Long)
+Private Sub Grid1_AfterEdit(ByVal Row As Long, ByVal Col As Long)
 
 If FoundDay Then Exit Sub
 
-If Not MYVALID(True) Then
+If Not myValid(True) Then
     On Error Resume Next
     grid1.SetFocus
     Err.Clear
     myLoadGrd
     If Row < grid1.Rows - 1 Then
-        grid1.Select Row, col
+        grid1.Select Row, Col
     Else
         CellPos 13, grid1.Rows - 2, grid1.Cols - 1
     End If
@@ -1510,7 +1516,7 @@ If Not MYVALID(True) Then
 End If
 
 
-If col = 0 And Left(grid1.TextMatrix(Row, 2), 1) <> grid1.TextMatrix(Row, 1) Then
+If Col = 0 And Left(grid1.TextMatrix(Row, 2), 1) <> grid1.TextMatrix(Row, 1) Then
     grid1.TextMatrix(Row, 2) = ""
     grid1.TextMatrix(Row, 3) = ""
 End If
@@ -1522,7 +1528,7 @@ End If
 
 With grid1
 If Row = grid1.Rows - 1 Then
-    myaddItem
+    myAddItem
 End If
 
 If myreplace(Row) Then
@@ -1540,11 +1546,11 @@ Else
 End If
 End With
 End Sub
-Private Sub grid1_CellButtonClick(ByVal Row As Long, ByVal col As Long)
+Private Sub grid1_CellButtonClick(ByVal Row As Long, ByVal Col As Long)
 Set oSearchGrd = Nothing
 Set oSearchGrd = New Search_abd
 
-If col = 0 Then
+If Col = 0 Then
     Dim cWhere As String
     If sBranchCode = "00" Then
     ElseIf Not rsBranch.EOF Then
@@ -1555,14 +1561,16 @@ If col = 0 Then
         End If
     End If
     accountLookup Me, oSearchAccount, cWhere
-ElseIf col = 8 Then
+ElseIf Col = 8 Then
     BranchLookup Me, oSearchBranch, IIf(rsBranch!isbranch2, "ISBRANCH2 = 1", "")
-ElseIf col = 10 Then
+ElseIf Col = 10 Then
     cash_document.sId_cash = grid1.TextMatrix(grid1.Row, grid1.Cols - 1)
     cash_document.sDoc_no = xDoc_No.text
-    cash_document.bedit = CmdSave.Enabled
+    cash_document.bedit = cmdSave.Enabled
     cash_document.Show 1
     myLoadGrd
+ElseIf Col = 12 Then
+    SalesBalanceLook Me, oSearchBalance, "FILE6_20H.CODE = " & MyParn(Mid(Trim(grid1.TextMatrix(grid1.Row, 2)), 2)), , IIf(grid1.TextMatrix(grid1.Row, 12) = "", "", "»œÊ‰ ›« Ê—…")
 ElseIf grid1.TextMatrix(grid1.Row, 1) = "1" Then
     CLIENTLOOKUP Me, oSearchGrd
 ElseIf grid1.TextMatrix(grid1.Row, 1) = "2" Then
@@ -1581,23 +1589,27 @@ ElseIf grid1.TextMatrix(grid1.Row, 1) = "8" Then
     IncomeLookup Me, oSearchGrd, IIf(sBranchCode = "00", "", "IS_BRANCH = 1")
 ElseIf grid1.TextMatrix(grid1.Row, 1) = "9" Then
     AccLookup Me, oSearchGrd, IIf(sBranchCode = "00", "", "IS_BRANCH = 1")
+ElseIf grid1.TextMatrix(grid1.Row, 1) = "9" Then
+    AccLookup Me, oSearchGrd, IIf(sBranchCode = "00", "", "IS_BRANCH = 1")
 End If
 End Sub
 Private Sub grid1_EnterCell()
 With grid1
-If grid1.col = 10 Then
-    grid1.Editable = flexEDKbdMouse
+If grid1.Col = 10 Then
+    grid1.Editable = IIf(grid1.Row = grid1.Rows - 1, flexEDNone, flexEDKbdMouse)
 ElseIf Not bEditRecord Then
     grid1.Editable = flexEDNone
-ElseIf grid1.col = 0 Then
+ElseIf grid1.Col = 0 Then
     grid1.Editable = IIf(grid1.TextMatrix(grid1.Row, grid1.Cols - 1) <> "", flexEDNone, flexEDKbdMouse)
 ElseIf grid1.TextMatrix(grid1.Row, 1) = "" Then
     grid1.Editable = flexEDNone
-ElseIf grid1.col = 3 Then
+ElseIf grid1.Col = 3 Then
     grid1.Editable = flexEDKbdMouse
 ElseIf grid1.TextMatrix(grid1.Row, 2) = "" Then
     grid1.Editable = flexEDNone
-ElseIf grid1.col = 8 And grid1.ValueMatrix(grid1.Row, 11) = 0 Then
+ElseIf grid1.Col = 8 And grid1.ValueMatrix(grid1.Row, 11) = 0 Then
+    grid1.Editable = flexEDNone
+ElseIf grid1.Col = 12 And grid1.Row = grid1.Rows - 1 Then
     grid1.Editable = flexEDNone
 Else
     grid1.Editable = flexEDKbdMouse
@@ -1607,21 +1619,21 @@ End Sub
 Private Sub grid1_GotFocus()
 grid1_EnterCell
 End Sub
-Private Function MYVALID(Optional bIgMsg As Boolean = False) As Boolean
+Private Function myValid(Optional bIgMsg As Boolean = False) As Boolean
 If Not IsDate(xDate.text) Then
     If Not bIgMsg Then MsgBox "«· «—ÌŒ €Ì— „”Ã·"
     Exit Function
 End If
-If Not XBOX.MatchedWithList Then
+If Not xBox.MatchedWithList Then
     If Not bIgMsg Then MsgBox "«·Œ“‰… €Ì— „”Ã·…"
     Exit Function
 End If
-MYVALID = True
+myValid = True
 End Function
 Private Sub myload(Optional bRefresh As Boolean = False)
 bChangeBal = True
 xDoc_No.text = CardTable!doc_no
-XBOX.BoundText = CardTable!BOX & ""
+xBox.BoundText = CardTable!BOX & ""
 xDate.text = myFormat_p(CardTable!Date)
 xBranchDesca.Caption = CardTable!branchDesca & ""
 
@@ -1677,14 +1689,15 @@ With grid1
               " ACCOUNT_D.BRANCH," & _
               " [dbo].[fn_doc_count](ID) AS DOCUMENT," & _
               " ACCOUNT.WITH_BRANCH," & _
+              " ACCOUNT_D.INV_NO," & _
               " ACCOUNT_D.ID " & _
               " FROM ACCOUNT_D " & _
               " INNER JOIN ACCOUNT_CODES ON ACCOUNT_D.CODE =  ACCOUNT_CODES.CODE" & _
               " INNER JOIN ACCOUNT ON ACCOUNT_D.ACCOUNT = ACCOUNT.CODE" & _
               " LEFT JOIN BRANCH ON ACCOUNT_D.BRANCH = BRANCH.CODE" & _
               " WHERE DOC_NO = " & MyParn(xDoc_No.text)
-    Set data11.Recordset = myRecordSet(cString, con)
-    myaddItem
+    Set DATA11.RecordSet = myRecordSet(cString, con)
+    myAddItem
 End With
 CalcTotals
 fixGrd
@@ -1701,7 +1714,7 @@ If cBranch <> "00" Then
 Else
     xDate.text = myFormat_p(Date)
 End If
-XBOX.BoundText = Sbox
+xBox.BoundText = Sbox
 'xBox.Tag = xBox.BoundText
 
 ChangeBalance
@@ -1718,22 +1731,22 @@ grid1.Rows = 1
 StatusBar1.Panels(2) = ""
 StatusBar1.Panels(3) = ""
 StatusBar1.Panels(4) = ""
-myaddItem
+myAddItem
 Handlecontrols DefineMode
 CalcTotals
 On Error Resume Next
 CellPos 13, grid1.Rows - 2, grid1.Cols - 1
-If XBOX.MatchedWithList Then
+If xBox.MatchedWithList Then
     grid1.SetFocus
 Else
-    XBOX.SetFocus
+    xBox.SetFocus
 End If
 Err.Clear
 End Sub
 Private Sub Handlecontrols(nMode)
 bEditRecord = bedit And xClosed.Value = 0
-XBOX.Enabled = bEditRecord And nMode = DefineMode
-XBOX.Enabled = XBOX.Enabled And nUser >= enUser.Super And Sbox = ""
+xBox.Enabled = bEditRecord And nMode = DefineMode
+xBox.Enabled = xBox.Enabled And nUser >= enUser.Super And Sbox = ""
 xDate.Enabled = bEditRecord And nMode = DefineMode
 
 If nUser = enUser.User Then
@@ -1753,7 +1766,7 @@ cmdClosePeriod.Enabled = nUser = enUser.Admin
 cmdOpenPeriod.Enabled = nUser = enUser.Admin
 
 cmdNewInv.Enabled = nMode = LoadMode And bedit
-CmdSave.Enabled = bEditRecord
+cmdSave.Enabled = bEditRecord
 CmdDelInv.Enabled = nMode = LoadMode And bEditRecord
 
 Dim nRecord As Long, nRecords As Long
@@ -1774,7 +1787,7 @@ Me.Tag = nMode
 End Sub
 Private Sub grid1_KeyUp(KeyCode As Integer, Shift As Integer)
 If KeyCode = 13 Then
-    CellPos KeyCode, grid1.Row, grid1.col
+    CellPos KeyCode, grid1.Row, grid1.Col
 ElseIf Not bEditRecord Then
 ElseIf KeyCode = 46 And grid1.Row <> grid1.Rows - 1 And grid1.Rows > 3 Then
     If MsgBox("„‰ «·„” ‰œ ?", vbOKCancel + vbDefaultButton2) = vbOK Then
@@ -1800,37 +1813,37 @@ myerror:
 MsgBox Err.Description
 Err.Clear
 End Sub
-Private Sub grid1_KeyUpEdit(ByVal Row As Long, ByVal col As Long, KeyCode As Integer, ByVal Shift As Integer)
+Private Sub grid1_KeyUpEdit(ByVal Row As Long, ByVal Col As Long, KeyCode As Integer, ByVal Shift As Integer)
 If KeyCode = 13 Then
-    If col = 0 And grid1.TextMatrix(Row, 1) = "" Then Exit Sub
-    If col = 3 And grid1.TextMatrix(Row, col) = "" Then Exit Sub
-    If col = 8 And grid1.TextMatrix(Row, col) = "" Then Exit Sub
-    If col = 9 And grid1.TextMatrix(Row, col) = "" Then Exit Sub
-    CellPos KeyCode, Row, col
+    If Col = 0 And grid1.TextMatrix(Row, 1) = "" Then Exit Sub
+    If Col = 3 And grid1.TextMatrix(Row, Col) = "" Then Exit Sub
+    If Col = 8 And grid1.TextMatrix(Row, Col) = "" Then Exit Sub
+    If Col = 9 And grid1.TextMatrix(Row, Col) = "" Then Exit Sub
+    CellPos KeyCode, Row, Col
 End If
 End Sub
-Private Sub Grid1_KeyPress(KeyAscii As Integer)
+Private Sub grid1_KeyPress(KeyAscii As Integer)
 If KeyAscii = 13 Then
-    If grid1.col = 0 And grid1.TextMatrix(grid1.Row, 1) = "" Then Exit Sub
-    If grid1.col = 3 And grid1.TextMatrix(grid1.Row, grid1.col) = "" Then Exit Sub
-    If grid1.col = 8 And grid1.TextMatrix(grid1.Row, grid1.col) = "" Then Exit Sub
-    If grid1.col = 9 And grid1.TextMatrix(grid1.Row, grid1.col) = "" Then Exit Sub
+    If grid1.Col = 0 And grid1.TextMatrix(grid1.Row, 1) = "" Then Exit Sub
+    If grid1.Col = 3 And grid1.TextMatrix(grid1.Row, grid1.Col) = "" Then Exit Sub
+    If grid1.Col = 8 And grid1.TextMatrix(grid1.Row, grid1.Col) = "" Then Exit Sub
+    If grid1.Col = 9 And grid1.TextMatrix(grid1.Row, grid1.Col) = "" Then Exit Sub
     KeyAscii = 0
 End If
 End Sub
-Private Sub Grid1_ValidateEdit(ByVal Row As Long, ByVal col As Long, Cancel As Boolean)
-If col = 0 Then
+Private Sub grid1_ValidateEdit(ByVal Row As Long, ByVal Col As Long, Cancel As Boolean)
+If Col = 0 Then
 '    If grid1.EditText = "" Then
 '        Cancel = True
 '    Else
 '        'if rsField(rsaccount,grid1.edittext,"code","desca")
 '    End If
         
-ElseIf col = 6 Then
+ElseIf Col = 6 Then
     If Val(grid1.EditText) <> 0 And grid1.ValueMatrix(Row, 7) <> 0 Then
         grid1.TextMatrix(Row, 7) = ""
     End If
-ElseIf col = 7 Then
+ElseIf Col = 7 Then
     If Val(grid1.EditText) <> 0 And grid1.ValueMatrix(Row, 6) <> 0 Then
         grid1.TextMatrix(Row, 6) = ""
     End If
@@ -1854,10 +1867,10 @@ oClosefrm.Show 1
 myUndo
 End Sub
 Private Sub xBox_Change()
-If Not XBOX.MatchedWithList Then
-    XBOX.Tag = ""
+If Not xBox.MatchedWithList Then
+    xBox.Tag = ""
 Else
-    XBOX.Tag = rsField(rsBox, XBOX.BoundText, "BRANCH") & ""
+    xBox.Tag = rsField(rsBox, xBox.BoundText, "BRANCH") & ""
 End If
 End Sub
 Private Sub xbox_GotFocus()
@@ -1871,30 +1884,30 @@ End If
 cString = cString & " ORDER BY DESCA"
 If data1.RecordSource <> cString Then
     Dim sBound As String
-    sBound = XBOX.BoundText
-    Set data1.Recordset = mycmd(cString, con)
+    sBound = xBox.BoundText
+    Set data1.RecordSet = mycmd(cString, con)
 
-    XBOX.BoundText = sBound
-    If Not XBOX.MatchedWithList Then XBOX.BoundText = ""
+    xBox.BoundText = sBound
+    If Not xBox.MatchedWithList Then xBox.BoundText = ""
 End If
 End Sub
 
 Private Sub xBox_KeyUp(KeyCode As Integer, Shift As Integer)
-If KeyCode = 112 And XBOX.Enabled Then
+If KeyCode = 112 And xBox.Enabled Then
     BoxLookup Me, oSearchBox, "[TYPE] = 0 " & IIf(sBranchCode <> "00", " AND BRANCH = " & sBranchCode, "")
     'If xBox.Tag <> "" Then cString = cString & " OR CODE = " & MyParn(xBox.Tag)
 End If
 End Sub
 
-Private Sub xBox_LostFocus()
+Private Sub xbox_LostFocus()
 Dim cString As String
 cString = "SELECT * FROM FILE0_50 ORDER BY DESCA"
-If data1.Recordset.Source <> cString Then
+If data1.RecordSet.Source <> cString Then
     Dim sBound As String
-    sBound = XBOX.BoundText
-    Set data1.Recordset = mycmd(cString, con)
-    XBOX.BoundText = sBound
-    If Not XBOX.MatchedWithList Then XBOX.BoundText = ""
+    sBound = xBox.BoundText
+    Set data1.RecordSet = mycmd(cString, con)
+    xBox.BoundText = sBound
+    If Not xBox.MatchedWithList Then xBox.BoundText = ""
 End If
 End Sub
 Private Sub xClosed_Click()
@@ -1911,9 +1924,9 @@ End Sub
 Private Function CalcTotals()
 Dim nPlus As Double, nMinus As Double
 With grid1
-For I = 1 To grid1.Rows - 2
-    nPlus = mRound(nPlus + grid1.ValueMatrix(I, 6))
-    nMinus = mRound(nMinus + grid1.ValueMatrix(I, 7))
+For i = 1 To grid1.Rows - 2
+    nPlus = mRound(nPlus + grid1.ValueMatrix(i, 6))
+    nMinus = mRound(nMinus + grid1.ValueMatrix(i, 7))
 Next
 xPlus.Caption = nPlus
 xMinus.Caption = nMinus
@@ -1926,18 +1939,20 @@ Private Sub fixGrd()
 With grid1
 .MergeCells = flexMergeFree
 .MergeRow(0) = True
-.FormatString = "‰Ê⁄ «·Õ—ﬂ…|" & "‰Ê⁄ «·Õ—ﬂ…|" & "«·ﬂÊœ|" & "«·«”„|" & "«· «—ÌŒ|" & "«·»Ì«‰|" & "«Ìœ«⁄« |" & "„”ÕÊ»« |" & "«·›—⁄|" & "«·›—⁄|" & "„” ‰œ« |" & "»›—⁄|"
+.FormatString = "‰Ê⁄ «·Õ—ﬂ…|" & "‰Ê⁄ «·Õ—ﬂ…|" & "«·ﬂÊœ|" & "«·«”„|" & "«· «—ÌŒ|" & "«·»Ì«‰|" & "«Ìœ«⁄« |" & "„”ÕÊ»« |" & "«·›—⁄|" & "«·›—⁄|" & "„” ‰œ« |" & "»›—⁄|" & "„” ‰œ|"
 .ColWidth(0) = 2000
 .ColWidth(2) = 1200
-.ColWidth(3) = 3500
+.ColWidth(3) = 3200
 .ColWidth(4) = 1400
-.ColWidth(5) = 5500
+.ColWidth(5) = 5000
 .ColWidth(6) = 1400
 .ColWidth(7) = 1400
 .ColWidth(8) = 1600
-.ColWidth(10) = 1800
+.ColWidth(10) = 900
+.ColWidth(12) = 2300
 .ColComboList(8) = "..."
 .ColComboList(10) = "..."
+.ColComboList(12) = "..."
 
 .ColHidden(1) = True
 .ColHidden(4) = True
@@ -1946,10 +1961,10 @@ With grid1
 
 '.ColHidden(.Cols - 3) = True
 .ColHidden(9) = True
-.ColHidden(.Cols - 2) = True
+.ColHidden(.Cols - 3) = True
 .ColHidden(.Cols - 1) = True
-For I = 0 To .Cols - 1
-    .ColAlignment(I) = flexAlignRightCenter
+For i = 0 To .Cols - 1
+    .ColAlignment(i) = flexAlignRightCenter
 Next
 '.ColComboList(0) = CLIST
 .ColComboList(0) = "..."
@@ -1986,8 +2001,10 @@ If sDoc_no <> "" Then
     cFilter = "DOC_NO = " & MyParn(sDoc_no)
 End If
 
-cString = "SELECT TOP 1 ACCOUNT_H.*,BRANCH.DESCA AS branchDesca " & _
-          " FROM ACCOUNT_H INNER JOIN BRANCH ON ACCOUNT_H.BRANCH = BRANCH.CODE"
+cString = "SELECT TOP 1 ACCOUNT_H.*," & _
+          " BRANCH.DESCA AS branchDesca " & _
+          " FROM ACCOUNT_H " & _
+          " INNER JOIN BRANCH ON ACCOUNT_H.BRANCH = BRANCH.CODE"
 
 If pMode = tbMode.tbFirst Then
     cOrder = "Order by FLAG"
@@ -2040,7 +2057,7 @@ Else
     End If
 End If
 End Sub
-Private Sub myaddItem()
+Private Sub myAddItem()
 With grid1
 .AddItem ""
 'If cdef_Box <> "" Then .TextMatrix(.Rows - 1, 4) = cdef_Box
@@ -2060,7 +2077,7 @@ If .ValueMatrix(Row, 11) <> 0 And .TextMatrix(Row, 8) = "" Then Exit Function
 End With
 validRow = True
 End Function
-Private Sub CellPos(ByRef KeyCode, ByVal Row As Long, ByVal col As Long)
+Private Sub CellPos(ByRef KeyCode, ByVal Row As Long, ByVal Col As Long)
 KeyCode = 0
 Dim nColEnd As Long
 
@@ -2070,25 +2087,25 @@ Else
     nColEnd = grid1.Cols - 6 - IIf(grid1.ValueMatrix(Row, 6) <> 0, 1, 0)
 End If
 
-If col < nColEnd Then
-    If col = 6 And grid1.ValueMatrix(Row, 6) = 0 Then
-        grid1.col = col + 1
-    ElseIf col >= 6 Then
-        grid1.col = nColEnd
-    ElseIf col = 5 Then
+If Col < nColEnd Then
+    If Col = 6 And grid1.ValueMatrix(Row, 6) = 0 Then
+        grid1.Col = Col + 1
+    ElseIf Col >= 6 Then
+        grid1.Col = nColEnd
+    ElseIf Col = 5 Then
         If (grid1.TextMatrix(Row, 1) = 2 Or grid1.TextMatrix(Row, 1) = 6 Or grid1.TextMatrix(Row, 1) = 7) And grid1.ValueMatrix(Row, 6) = 0 Then
-            grid1.col = 7
+            grid1.Col = 7
         Else
-            grid1.col = 6
+            grid1.Col = 6
         End If
     Else
-        grid1.col = col + 1 + IIf(col = 0 Or col = 3, 1, 0) + IIf(col = 0, 1, 0)
+        grid1.Col = Col + 1 + IIf(Col = 0 Or Col = 3, 1, 0) + IIf(Col = 0, 1, 0)
     End If
 ElseIf Row < grid1.Rows - 1 Then
     grid1.Select Row + 1, NextEmpty(grid1, Row + 1, 0, 6)
     grid1.ShowCell grid1.Row, 0
 Else
-    grid1.Select Row, col
+    grid1.Select Row, Col
 End If
 End Sub
 Private Sub xDoc_No_GotFocus()
@@ -2115,7 +2132,7 @@ If validYear(xYear.text) Or xYear.text = "" Then
 End If
 End Sub
 Private Function retRecords(pCode, ByRef nRecords As Long, ByRef nRecord As Long) As Variant
-Dim cString As String, loctable As New ADODB.Recordset
+Dim cString As String, loctable As New ADODB.RecordSet
 If pCode <> "" Then
     cString = "SELECT Count(*) AS records,COUNT(CASE WHEN FLAG <= " & MyParn(pCode) & " THEN 1 END) AS record"
 Else
@@ -2132,16 +2149,16 @@ If Not loctable.EOF Then
 End If
 End Function
 Private Sub ChangeBalance(Optional bCheck As Boolean = False)
-    If IsDate(xDate.text) And XBOX.MatchedWithList And xDoc_No.text <> "" And chkBalance.Value = 1 Then
+    If IsDate(xDate.text) And xBox.MatchedWithList And xDoc_No.text <> "" And chkBalance.Value = 1 Then
         If (Not IsEmpty(aPrm)) And bCheck = False Then
-            If retFlag(aPrm, "BOX") = XBOX.BoundText And _
+            If retFlag(aPrm, "BOX") = xBox.BoundText And _
                retFlag(aPrm, "DATE") = myFormat_sp(xDate.text) And _
                retFlag(aPrm, "DOC_NO") = xDoc_No.text Then
                Exit Sub
             End If
         End If
     
-        aPrm = AddFlag(Empty, "BOX", XBOX.BoundText)
+        aPrm = AddFlag(Empty, "BOX", xBox.BoundText)
         aPrm = AddFlag(aPrm, "date", myFormat_sp(xDate.text))
         aPrm = AddFlag(aPrm, "doc_no", xDoc_No.text)
         Set cm = cmd("sp_box_bal", con, adStoredProc, aPrm)
@@ -2154,12 +2171,12 @@ Private Sub ChangeBalance(Optional bCheck As Boolean = False)
     End If
 End Sub
 Private Function NewflagBox()
-NewflagBox = Format(xDate.text, "yymmdd") & "-" & XBOX.BoundText
+NewflagBox = Format(xDate.text, "yymmdd") & "-" & xBox.BoundText
 End Function
 Private Function FoundDay() As Boolean
 If Me.Tag = LoadMode Then Exit Function
 If Not IsDate(xDate.text) Then Exit Function
-If Not XBOX.MatchedWithList Then Exit Function
+If Not xBox.MatchedWithList Then Exit Function
 If myField("Select doc_no from ACCOUNT_H WHERE DOC_NO = " & MyParn(NewflagBox), con) = "" Then Exit Function
 
 MsgBox "„” ‰œ »‰›” «·Œ“‰… ·‰›” «·ÌÊ„"
@@ -2178,11 +2195,11 @@ MsgBox Err.Description
 Err.Clear
 End Sub
 Private Sub fixBox(Optional pBox As String = "")
-Dim loctable As New ADODB.Recordset
+Dim loctable As New ADODB.RecordSet
 Dim cString As String
 
 If pBox = "" Then
-    cString = "SELECT COUNT(*) AS COUNTOF,MIN(CODE) AS CODE,MIN(TYPE) AS TYPE,MIN(FILE0_50.DESCA) AS DESCA  FROM FILE0_50 WHERE CODE <> " & MyParn(XBOX.BoundText)
+    cString = "SELECT COUNT(*) AS COUNTOF,MIN(CODE) AS CODE,MIN(TYPE) AS TYPE,MIN(FILE0_50.DESCA) AS DESCA  FROM FILE0_50 WHERE CODE <> " & MyParn(xBox.BoundText)
     If sBranchCode <> "00" Then
         cString = cString & " AND FILE0_50.BRANCH = " & MyParn(sBranchCode)
     End If
@@ -2195,21 +2212,21 @@ Set loctable = cmd(cString, con).Execute
 If loctable.EOF Then Exit Sub
 
 If pBox = "" Then
-    grid1.TextMatrix(grid1.Row, 2) = grid1.TextMatrix(grid1.Row, 1) & loctable!CODE & ""
+    grid1.TextMatrix(grid1.Row, 2) = grid1.TextMatrix(grid1.Row, 1) & loctable!code & ""
     grid1.TextMatrix(grid1.Row, 3) = loctable!DESCA
 End If
 
 If loctable!Type = 1 Then
     Dim Prm As Variant
-    aPrm = AddFlag(Empty, "BOX", loctable!CODE)
+    aPrm = AddFlag(Empty, "BOX", loctable!code)
     aPrm = AddFlag(aPrm, "date", myFormat_sp(xDate.text))
-    Dim cm As New ADODB.Command
+    Dim cm As New ADODB.command
     Set cm = cmd("sp_box_bal", con, adStoredProc, aPrm)
     cm.Execute
     Dim nBalance As Double
     nBalance = mRound(Val(cm.Parameters("@PLUS").Value & "") - Val(cm.Parameters("@MINUS").Value & ""))
     grid1.TextMatrix(grid1.Row, 6) = nBalance
-    grid1.col = 6
+    grid1.Col = 6
 End If
 Set loctable = Nothing
 End Sub

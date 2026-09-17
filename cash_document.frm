@@ -340,14 +340,14 @@ Attribute VB_Exposed = False
 Dim WithEvents twain As ImgXTwain
 Attribute twain.VB_VarHelpID = -1
 Public bedit As Boolean
-Private WithEvents MyPrinter As ImgXPrint
+Private WithEvents MyPrinter As imgxPrint
 Attribute MyPrinter.VB_VarHelpID = -1
 Dim bIg As Boolean
-Dim con As New ADOdb.Connection
+Dim con As New ADODB.Connection
 
-Dim ImageTable As ADOdb.Recordset
+Dim imageTable As ADODB.Recordset
 
-Dim con_image As New ADOdb.Connection
+Dim con_image As New ADODB.Connection
 Public sDoc_no As String, sId_cash  As String
 Dim fs As New FileSystemObject
 Dim aPhoto
@@ -356,10 +356,10 @@ If cboZoomBy.text = "" Then
     If chkFit.Value = 1 Then
         chkFit_Click
     Else
-        imgx1.Zoom = 1
+        ImgX1.Zoom = 1
     End If
 Else
-    imgx1.Zoom = Val(cboZoomBy.text) / 100
+    ImgX1.Zoom = Val(cboZoomBy.text) / 100
 End If
 End Sub
 
@@ -369,8 +369,8 @@ End Sub
 
 Private Sub chkFit_Click()
 If Not bIg Then
-    imgx1.AutoZoom = chkFit.Value = 1
-    If chkFit.Value = 0 Then imgx1.Zoom = 1
+    ImgX1.AutoZoom = chkFit.Value = 1
+    If chkFit.Value = 0 Then ImgX1.Zoom = 1
     LoadPhoto
 End If
 'ImgX1.Update
@@ -435,11 +435,11 @@ Err.Clear
 End Sub
 Private Sub ImgX1_MouseWheelScroll(ByVal ScrollValue As Long, ByVal Keys As Long)
 If chkFit.Value = 1 Then chkFit.Value = 0
-imgx1.Zoom = imgx1.Zoom + (ScrollValue / 100)
+ImgX1.Zoom = ImgX1.Zoom + (ScrollValue / 100)
 End Sub
 Private Sub Twain_ImageAcquired(Image As ImgX_Image)
-imgx1.Images.Replace Image, , False
-imgx1.TIFCompression = ixtcJPEGCompression
+ImgX1.Images.Replace Image, , False
+ImgX1.TIFCompression = ixtcJPEGCompression
 
 myReplaceImage xPhoto.Caption
 
@@ -449,7 +449,7 @@ Private Sub ReplaceFromImage(Image As ImgX_Image)
 
 Exit Sub
 myerror:
-imgx1.Images.Clear
+ImgX1.Images.Clear
 Err.Clear
 End Sub
 Private Sub cmdPrint_Click()
@@ -457,7 +457,7 @@ Dim i As Long
 Dim Index As Integer
 Dim sList As String
 
-Set MyPrinter = New ImgXPrint
+Set MyPrinter = New imgxPrint
 MyPrinter.PageFrom = 1
 MyPrinter.PageTo = grid1.Rows - 2
 MyPrinter.PageMax = grid1.Rows - 2
@@ -467,7 +467,7 @@ MyPrinter.MarginTop = 0
 MyPrinter.MarginBottom = 15
 MyPrinter.PageMin = 1
 MyPrinter.Antialias = True
-'On Error GoTo myerror
+On Error GoTo myerror
 
 If MyPrinter.ShowPrinter(Me.hwnd) Then
     If MyPrinter.Range = iprAllPages Then
@@ -482,7 +482,7 @@ If MyPrinter.ShowPrinter(Me.hwnd) Then
     End If
 End If
 
-Dim loctable As New ADOdb.Recordset
+Dim loctable As New ADODB.Recordset
 Dim cString As String
 
 cString = "select * from ACCOUNT_IMAGES " & _
@@ -493,9 +493,11 @@ End If
 
 Set loctable = cmd(cString, con_image).Execute
 Do Until loctable.EOF
-    Imgx2.Images.Clear
-    Imgx2.Import.FromMemoryFile (loctable!Image)
-    MyPrinter.PrintImage "Print Document", Imgx2.Images(0), False, True
+    
+    imgx2.Images.Clear
+    imgx2.Import.FromMemoryFile (loctable!Image)
+    
+    MyPrinter.PrintImage "Print Document", imgx2.Images(0), False, True
     loctable.MoveNext
 Loop
 Exit Sub
@@ -504,16 +506,16 @@ MsgBox Err.Description
 Err.Clear
 End Sub
 Private Sub LoadPhoto()
-'On Error GoTo myError
-imgx1.Images.Clear
+On Error GoTo myerror
+ImgX1.Images.Clear
 If xPhoto.Caption <> "" Then
-    imgx1.Images.Clear
+    ImgX1.Images.Clear
     
-    Dim loctable As New ADOdb.Recordset
+    Dim loctable As New ADODB.Recordset
     Set loctable = accountRs(con_image, xPhoto.Caption)
     
     If Not loctable.EOF Then
-        imgx1.Import.FromMemoryFile (loctable!Image)
+        ImgX1.Import.FromMemoryFile (loctable!Image)
     End If
 End If
 Exit Sub
@@ -611,7 +613,8 @@ ElseIf col = 3 And xPhoto.Caption <> "" Then
     Dim cFile As String, cNewFile As String
     Common1.FileName = ""
     Common1.InitDir = doc_dir()
-    Common1.Filter = "Pictures (*.Jpg)|*.Jpg"
+    Common1.Filter = "JPEG Images (*.jpg;*.jpeg;*.png)|*.jpg;*.jpeg;*.png"
+    
     Common1.ShowOpen
     If Common1.FileTitle <> "" Then
         cFile = Common1.FileName
@@ -767,13 +770,13 @@ myerror:
 
 End Sub
 Private Function myReplaceImage(sid As String, Optional pFile As String = "") As Boolean
-Dim mstream As ADOdb.Stream
-Set mstream = New ADOdb.Stream
+Dim mstream As ADODB.Stream
+Set mstream = New ADODB.Stream
 
 mstream.Type = adTypeBinary ' Set the stream type to binary data
 mstream.Open
 
-Dim command As ADOdb.command
+Dim command As ADODB.command
 Dim aPrm As Variant
 aPrm = AddFlag(aPrm, "DOC_NO", sDoc_no)
 aPrm = AddFlag(aPrm, "ID_CASH", sId_cash)
@@ -784,11 +787,11 @@ If pFile <> "" Then
     aPrm = AddFlag(aPrm, "IMAGE", mstream.Read)
 Else
     Dim bytes() As Byte
-    imgx1.Export.ToMemoryFile bytes, ixmfJPG
+    ImgX1.Export.ToMemoryFile bytes, ixmfJPG
     aPrm = AddFlag(aPrm, "IMAGE", bytes)
 End If
 
 Set cm = cmd("sp_add_account_image", con_image, adStoredProc, aPrm)
 cm.Execute
-imgx1.Images.Clear
+ImgX1.Images.Clear
 End Function

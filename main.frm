@@ -95,6 +95,12 @@ Begin VB.MDIForm main
       Begin VB.Menu tmmovecust 
          Caption         =   "Õ—ﬂ… ⁄„·«¡ √Ã·"
       End
+      Begin VB.Menu tm_grid_inv_balance 
+         Caption         =   " ﬁ—Ì— «—’œ… «·›Ê« Ì—"
+      End
+      Begin VB.Menu tm_list_price 
+         Caption         =   "ﬁ«∆„… «”⁄«— «·⁄„·«¡"
+      End
    End
    Begin VB.Menu mnVendorsx 
       Caption         =   "„Ê—œÌ‰"
@@ -739,7 +745,7 @@ Case "XEXIT"
 End Select
 End Sub
 Private Sub MDIForm_Load()
-Dim TableAddress As New ADODB.Recordset
+Dim TableAddress As New ADODB.RecordSet
 
 'SetKbLayout Lang_EN
 If cusername <> "Aymen Junior" Then
@@ -779,13 +785,13 @@ Else
 End If
 
 If con.State = adStateOpen Then con.Close
-openCon con
+OpenCon con
 
 
 '''''''  ADDRESS
 TableAddress.Open "ADDRESS", con, adOpenStatic, adLockReadOnly, adCmdTable
 If TableAddress.RecordCount > 0 Then
-    cComp_Name = TableAddress!desca
+    cComp_Name = TableAddress!DESCA
 End If
 
 If lSupperVisor Or bOpt5 Or cBranch <> "00" Then
@@ -811,10 +817,10 @@ CheckData
 '
 ClosedCashDoc
 
-Dim PriceTable As New ADODB.Recordset
+Dim PriceTable As New ADODB.RecordSet
 PriceTable.Open "PRICE", con, adOpenStatic, adLockReadOnly, adCmdTable
 
-Dim File0_00Table As New ADODB.Recordset
+Dim File0_00Table As New ADODB.RecordSet
 File0_00Table.Open "FILE0_00", con, adOpenStatic, adLockReadOnly, adCmdTable
 
 If PriceTable.RecordCount > 0 Then
@@ -1045,11 +1051,11 @@ Private Sub LoadMenu()
 Dim cConStr As String
 If lShowBranch Then
     cConStr = LoadConStringServer
-    openCon con, cConStr
+    OpenCon con, cConStr
 Else
-    openCon con
+    OpenCon con
 End If
-Dim sectable As New ADODB.Recordset
+Dim sectable As New ADODB.RecordSet
 cString = "SELECT users.code,users.title1,users.title2, users.Password, users.desca,USERS.option1,users.option2,users.option3,users.option4,users.option5 ,Menusetting.Visible, Menusetting.Editable, Menu.Control, Menu.MenuNo,Menu.mainMenu " & _
           " FROM (users INNER JOIN Menusetting ON users.Code = Menusetting.code) INNER JOIN Menu ON Menusetting.control = Menu.Control " & _
           " where users.code = " & nusercode
@@ -1141,7 +1147,7 @@ aPublic(2) = "Desca"
 aPublic(3) = "ﬂÊœ «·„’—Ê›"
 aPublic(4) = "»Ì«‰ "
 aPublic(5) = "√ﬂÊ«œ „’«—Ì› ≈” Ì—«œÌ…"
-FlagFrm.bedit = True
+FlagFrm.bEdit = True
 FlagFrm.aPublic = aPublic
 FlagFrm.Show 1
 
@@ -1266,8 +1272,20 @@ Private Sub tm_grdProfitMonth_Click()
 grdMonthProfit.Show
 End Sub
 
+Private Sub tm_grid_inv_balance_Click()
+grdInvBalance.Show
+End Sub
+
+Private Sub tm_list_price_Click()
+price_listfrm.Show
+End Sub
+
 Private Sub tm_logo_codes_Click()
 logofrm.Show 1
+End Sub
+
+Private Sub tm_online_orders_Click()
+Online_Stage_main.Show
 End Sub
 
 Private Sub tm_printers_Click()
@@ -1312,7 +1330,7 @@ Private Sub tmagecode_Click()
     aLocal(4) = "»Ì«‰ "
     aLocal(5) = " ”ÃÌ· «·›∆«  «·⁄„—Ì…"
     aLocal(6) = 2
-    FlagFrm2.bedit = True
+    FlagFrm2.bEdit = True
     FlagFrm2.myPublic = aLocal
     FlagFrm2.Show 1
 End Sub
@@ -1420,7 +1438,7 @@ Private Sub tmbaltot_Click()
 End Sub
 
 Private Sub tmBankData_Click()
-    bankfrm.bedit = True
+    bankfrm.bEdit = True
     bankfrm.Show
 End Sub
 Private Sub tmbankDtl1_Click()
@@ -1434,12 +1452,12 @@ aPublic(2) = "Desca"
 aPublic(3) = "ﬂÊœ «·„Ã„Ê⁄…"
 aPublic(4) = "≈”„ «·„Ã„Ê⁄…"
 aPublic(5) = "„Ã„Ê⁄«  «·»‰Êﬂ"
-FlagFrm.bedit = True
+FlagFrm.bEdit = True
 FlagFrm.aPublic = aPublic
 FlagFrm.Show 1
 End Sub
 Private Sub tmBankInout_Click()
-    BankInOutfrm.bedit = True
+    BankInOutfrm.bEdit = True
     BankInOutfrm.Show
 End Sub
 Private Sub tmBankItems_Click()
@@ -1450,7 +1468,7 @@ aPublic(2) = "Desca"
 aPublic(3) = "ﬂÊœ «·Õ—ﬂ…"
 aPublic(4) = "≈”„ «·Õ—ﬂ…"
 aPublic(5) = "«ﬂÊ«œ Õ—ﬂ… «·»‰Êﬂ"
-FlagFrm.bedit = True
+FlagFrm.bEdit = True
 FlagFrm.aPublic = aPublic
 FlagFrm.Show
 End Sub
@@ -1479,7 +1497,7 @@ Private Sub tmbarcode2_Click()
     barcodefrm_2.Show
 End Sub
 Private Sub tmbox_Click()
-    Boxfrm.bedit = True
+    Boxfrm.bEdit = True
     Boxfrm.Show
 End Sub
 Private Sub tmboxbal_Click()
@@ -1487,10 +1505,10 @@ Private Sub tmboxbal_Click()
 End Sub
 Private Sub tmboxtrans_Click()
     If lIsBranchStore Then
-        boxtrans_2.bedit = True
+        boxtrans_2.bEdit = True
         boxtrans_2.Show
     Else
-        boxtransfrm.bedit = True
+        boxtransfrm.bEdit = True
         boxtransfrm.Show
     End If
 End Sub
@@ -1519,7 +1537,7 @@ Private Sub tmcash11_Click()
 End Sub
 
 Private Sub tmcashbranch_Click()
-    chargefrm.bedit = True
+    chargefrm.bEdit = True
     chargefrm.myPublic = 3
     chargefrm.Show
 End Sub
@@ -1529,13 +1547,13 @@ Private Sub tmcashser_Click()
 End Sub
 
 Private Sub tmcharge_Click()
-    chargefrm.bedit = True
+    chargefrm.bEdit = True
     chargefrm.myPublic = 1
     chargefrm.Show
 End Sub
 
 Private Sub tmcharge2_Click()
-    chargefrm.bedit = True
+    chargefrm.bEdit = True
     chargefrm.myPublic = 4
     chargefrm.Show
 End Sub
@@ -1543,7 +1561,7 @@ Private Sub tmchargecode_Click()
 '    chargecodefrm.bEdit = True
 '    chargecodefrm.myPublic = 1
 '    chargecodefrm.Show 1
-chargeCodesfrm.bedit = True
+chargeCodesfrm.bEdit = True
 chargeCodesfrm.myPublic = 1
 chargeCodesfrm.Show 1
 End Sub
@@ -1556,7 +1574,7 @@ aPublic(3) = "ﬂÊœ «·„’—Ê›"
 aPublic(4) = "»Ì«‰ «·„’—Ê›"
 aPublic(5) = "„’«—Ì› —∆Ì”Ì…"
 aPublic(6) = 3
-FlagFrm2.bedit = True
+FlagFrm2.bEdit = True
 FlagFrm2.myPublic = aPublic
 FlagFrm2.Show 1
 End Sub
@@ -1575,12 +1593,12 @@ End Sub
 Private Sub tmChqIn_Click()
 
     publicFlag = 1
-    bedit = True
+    bEdit = True
     chqClientfrm.Show 1
 End Sub
 Private Sub tmChqOut_Click()
 publicFlag = 2
-bedit = True
+bEdit = True
 chqsupfrm.Show 1
 End Sub
 Private Sub tmChqRep_Click()
@@ -1591,14 +1609,14 @@ Private Sub tmClientReport_Click()
 End Sub
 
 Private Sub tmcolor_Click()
-colorfrm.bedit = True
+colorfrm.bEdit = True
 colorfrm.Show
 End Sub
 Private Sub TMCustImp_Click()
 CustSalesImp.Show
 End Sub
 Private Sub tmCut_Click()
-Cutfrm.bedit = True
+Cutfrm.bEdit = True
 Cutfrm.Show
 End Sub
 Private Sub tmDamage_Click()
@@ -1768,7 +1786,7 @@ Private Sub tmgroupsection_Click()
     VsTGroup.Show
 End Sub
 Private Sub tmimpcost_Click()
-    impcostfrm.bedit = True
+    impcostfrm.bEdit = True
     impcostfrm.Show
 End Sub
 
@@ -1780,13 +1798,13 @@ Private Sub tminAGE_Click()
     VsAllTransage.Show
 End Sub
 Private Sub tmincome_Click()
-    chargefrm.bedit = True
+    chargefrm.bEdit = True
     chargefrm.myPublic = 2
     chargefrm.Show
 End Sub
 Private Sub tmincomecode_Click()
 chargeCodesfrm.myPublic = 2
-chargeCodesfrm.bedit = True
+chargeCodesfrm.bEdit = True
 chargeCodesfrm.Show 1
 End Sub
 Private Sub tmincomemaincode_Click()
@@ -1798,7 +1816,7 @@ aPublic(3) = "ﬂÊœ «·«Ì—«œ"
 aPublic(4) = "»Ì«‰ «·«Ì—«œ"
 aPublic(5) = "«Ì—«œ«  —∆Ì”Ì…"
 aPublic(6) = 3
-FlagFrm2.bedit = True
+FlagFrm2.bEdit = True
 FlagFrm2.myPublic = aPublic
 FlagFrm2.Show 1
 End Sub
@@ -1842,7 +1860,7 @@ aPublic(2) = "Desca"
 aPublic(3) = "«·ﬂÊœ"
 aPublic(4) = "«·»Ì«‰"
 aPublic(5) = "«·„Ã„Ê⁄… «·—∆Ì”Ì…"
-FlagFrm.bedit = True
+FlagFrm.bEdit = True
 FlagFrm.aPublic = aPublic
 FlagFrm.Show
 End Sub
@@ -1859,7 +1877,7 @@ aPublic(2) = "Desca"
 aPublic(3) = "«·ﬂÊœ"
 aPublic(4) = "«·»Ì«‰"
 aPublic(5) = "«·„Ã„Ê⁄… «·—∆Ì”Ì…"
-FlagFrm.bedit = True
+FlagFrm.bEdit = True
 FlagFrm.aPublic = aPublic
 FlagFrm.Show
 End Sub
@@ -2001,22 +2019,22 @@ Private Sub tmorderreponline_Click()
 End Sub
 
 Private Sub tmpart_Click()
-    Partfrm.bedit = True
+    Partfrm.bEdit = True
     Partfrm.Show
 End Sub
 Private Sub tmPath_Click()
     SettingFrm.Show 1
 End Sub
 Private Sub tmproduct_Click()
-    productfrm.bedit = True
+    productfrm.bEdit = True
     productfrm.Show
 End Sub
 Private Sub tmRawitem_Click()
-    itemrawfrm.bedit = True
+    itemrawfrm.bEdit = True
     itemrawfrm.Show 1
 End Sub
 Private Sub tmsection_Click()
-    sectionfrm.bedit = True
+    sectionfrm.bEdit = True
     sectionfrm.Show
 End Sub
 
@@ -2029,7 +2047,7 @@ aLocal(3) = "ﬂÊœ «·‘—Ìﬂ"
 aLocal(4) = "»Ì«‰ «·‘—Ìﬂ"
 aLocal(5) = " ”ÃÌ· «·‘—ﬂ«¡"
 aLocal(6) = 2
-FlagFrm2.bedit = True
+FlagFrm2.bEdit = True
 FlagFrm2.myPublic = aLocal
 FlagFrm2.Show
 End Sub
@@ -2159,7 +2177,7 @@ Private Sub tmrebranch_Click()
     strConfact = LoadConStringfact
     strConfact2 = LoadConStringfact2
     GetCon.Close
-    openCon GetCon, strCon
+    OpenCon GetCon, strCon
     PassWord.Show
 End Sub
 
@@ -2428,7 +2446,7 @@ Private Sub tmsexcode_Click()
     aLocal(4) = "»Ì«‰ "
     aLocal(5) = " ”ÃÌ· «·‰Ê⁄"
     aLocal(6) = 2
-    FlagFrm2.bedit = True
+    FlagFrm2.bEdit = True
     FlagFrm2.myPublic = aLocal
     FlagFrm2.Show 1
 End Sub
@@ -2442,7 +2460,7 @@ aLocal(3) = "ﬂÊœ "
 aLocal(4) = "»Ì«‰ "
 aLocal(5) = "‘—ﬂ«  «·‘Õ‰"
 aLocal(6) = 2
-FlagFrm2.bedit = True
+FlagFrm2.bEdit = True
 FlagFrm2.myPublic = aLocal
 FlagFrm2.Show 1
 
@@ -2492,7 +2510,7 @@ aLocal(3) = "ﬂÊœ „Ã„Ê⁄…"
 aLocal(4) = "»Ì«‰ „Ã„Ê⁄« "
 aLocal(5) = "„Ã„Ê⁄«  „Ê—œÌ‰"
 aLocal(6) = 2
-FlagFrm2.bedit = True
+FlagFrm2.bEdit = True
 FlagFrm2.myPublic = aLocal
 FlagFrm2.Show 1
 End Sub
@@ -2514,12 +2532,12 @@ Private Sub tmTargetBr_Click()
 End Sub
 
 Private Sub tmtrans_br_Click()
-    trans_FR.bedit = True
+    trans_FR.bEdit = True
     trans_FR.Show
 End Sub
 
 Private Sub tmtrans_Click()
-    transfrm.bedit = True
+    transfrm.bEdit = True
     transfrm.Show
 End Sub
 
@@ -2536,7 +2554,7 @@ Private Sub tmtransbarcode_Click()
 End Sub
 
 Private Sub tmtranscode2_Click()
-    boxtrans_2.bedit = True
+    boxtrans_2.bEdit = True
     boxtrans_2.Show
 End Sub
 
@@ -2612,7 +2630,7 @@ aLocal(3) = "ﬂÊœ "
 aLocal(4) = "»Ì«‰ «·„‰«ÿﬁ"
 aLocal(5) = " ”ÃÌ· «·„‰«ÿﬁ"
 aLocal(6) = 1
-FlagFrm2.bedit = True
+FlagFrm2.bEdit = True
 FlagFrm2.myPublic = aLocal
 FlagFrm2.Show 1
 End Sub
@@ -2673,7 +2691,7 @@ Private Sub xItemMoveFR_Click()
 End Sub
 
 Private Sub xmcash3_Click()
-    bedit = True
+    bEdit = True
     Cashfrm.myPublic = 4
     Cashfrm.Show
 End Sub
@@ -2714,7 +2732,7 @@ aLocal(3) = "ﬂÊœ «·„Œ“‰"
 aLocal(4) = "»Ì«‰ «·„Œ“‰"
 aLocal(5) = " ”ÃÌ· « ·„Œ«“‰"
 aLocal(6) = 2
-FlagFrm2.bedit = True
+FlagFrm2.bEdit = True
 FlagFrm2.myPublic = aLocal
 FlagFrm2.Show 1
 End Sub
@@ -2785,7 +2803,7 @@ aLocal(3) = "ﬂÊœ"
 aLocal(4) = "≈”„ «·„Ã„Ê⁄…"
 aLocal(5) = " ”ÃÌ· «·⁄„·«¡"
 aLocal(6) = 2
-FlagFrm2.bedit = True
+FlagFrm2.bEdit = True
 FlagFrm2.myPublic = aLocal
 FlagFrm2.Show 1
 End Sub
@@ -2913,13 +2931,13 @@ aLocal(3) = "ﬂÊœ"
 aLocal(4) = "≈”„ «·„Ã„Ê⁄…"
 aLocal(5) = " ”ÃÌ· «·„Ê—œ"
 aLocal(6) = 2
-FlagFrm2.bedit = True
+FlagFrm2.bEdit = True
 FlagFrm2.myPublic = aLocal
 FlagFrm2.Show 1
 End Sub
 Private Sub FixData1()
 Dim FS1 As New ADODB.command
-openCon con
+OpenCon con
 On Error Resume Next
 
 
@@ -2935,7 +2953,7 @@ End Sub
 Private Sub FixData2()
 Dim FS1 As New ADODB.command, cDesca As String
 cDesca = "’·«ÕÌ… „— Ã⁄"
-openCon con
+OpenCon con
 On Error Resume Next
 If GetDesca("SELECT ID FROM [option] WHERE ID = 7 ", con) = "" Then
     cStr1 = " INSERT INTO [option] ([desca]) VALUES ( " & addstring(cDesca) & " ) "
@@ -2946,7 +2964,7 @@ End Sub
 
 Private Sub FixData4()
 Dim FS1 As New ADODB.command
-openCon con
+OpenCon con
 On Error Resume Next
 cString = "alter TABLE [dbo].[FILE0_10H] add   [branch] [nvarchar](50) COLLATE Arabic_CI_AS NULL"
 
@@ -2960,7 +2978,7 @@ End Sub
 
 Private Sub FixData12()
 Dim FS1 As New ADODB.command
-openCon con
+OpenCon con
 On Error Resume Next
 cString = "ALTER TABLE [dbo].[FILE7_20h] ADD [isnew2] [bit] NULL"
 FS1.CommandType = adCmdText
@@ -2972,7 +2990,7 @@ Err.Clear
 End Sub
 Private Sub FixData13()
 Dim FS1 As New ADODB.command
-openCon con
+OpenCon con
 On Error Resume Next
 cString = "ALTER TABLE [dbo].[FILE7_20h] ADD [isnew3] [bit] NULL"
 FS1.CommandType = adCmdText
@@ -2985,7 +3003,7 @@ End Sub
 
 Private Sub FixData5()
 Dim FS1 As New ADODB.command
-openCon con
+OpenCon con
 On Error Resume Next
 
 cString = " ALTER VIEW [dbo].[FILE1_10H] AS SELECT     model, MAX(desca) AS DESCA, MAX([GROUP]) AS [GROUP], MAX(RATE) AS RATE, MAX(OKAZ) AS OKAZ, MAX(FACT) AS FACT, MAX(MOSM) AS MOSM, MAX(modelno)  AS MODELNO, MAX(MODELFACT) AS MODELFACT, MAX(code) AS code, MAX(SUPP) AS SUPP, MAX(MODELFACT0) AS MODELFACT0, REDEM, FIXPRICE,  SHOWSALES, ISOKAZITEM, SECTION " & _
@@ -3012,7 +3030,7 @@ Sub FixStoreCode()
 End Sub
 Sub Show_NewDoc()
     Set grid1.DataSource = data1
-    data1.ConnectionString = strCon
+    data1.connectionString = strCon
     grid1.Rows = 1
     fixGrd
     myload
@@ -3104,7 +3122,7 @@ End Function
 Private Function createBackUp(pFileName) As Boolean
 Dim cFile As String
 Dim con As New ADODB.Connection
-openCon con
+OpenCon con
 
 Dim cmd
 'Set cmd = con.CreateObject("ADODB.Command")
@@ -3123,7 +3141,7 @@ closeCon con
 createBackUp = True
 End Function
 Sub ClosedCashDoc()
-    openCon con
+    OpenCon con
     Dim pDate As Date
 '    con.Execute " UPDATE FILE7_10H SET CLOSED = 1   WHERE CLOSED  = 0 AND DATE < " & DateSq(Date)
 '    con.Execute " UPDATE FILE7_20H SET CLOSED = 1   WHERE CLOSED  = 0 AND DATE < " & DateSq(Date)
@@ -3150,7 +3168,7 @@ Sub ClosedCashDoc()
 End Sub
 Sub FixData_ALL_FR()
 Dim cString As String
-openCon con
+OpenCon con
 On Error Resume Next
 Inform cBranch
 
@@ -3253,7 +3271,7 @@ LoadConStringServer = "provider=SQLOLEDB;data source=" & cServerName & ";initial
 End Function
 Sub FixData_ALL()
 Dim cString As String
-openCon con
+OpenCon con
 On Error Resume Next
 
 
@@ -3442,7 +3460,7 @@ Dim success As Long
 Dim sb As New ChilkatStringBuilder
 success = sb.LoadFile(App.Path & "\fix.sql", "utf-8")
 sMarker = "GO"
-Do Until sb.Length = 0
+Do Until sb.length = 0
     con.Execute sb.GetBefore(sMarker, True)
 Loop
 Err.Clear

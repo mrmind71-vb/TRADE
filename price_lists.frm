@@ -1,13 +1,10 @@
 VERSION 5.00
 Object = "{D76D7128-4A96-11D3-BD95-D296DC2DD072}#1.0#0"; "Vsflex7.ocx"
 Object = "{67397AA1-7FB1-11D0-B148-00A0C922E820}#6.0#0"; "MSADODC.OCX"
-Object = "{F0D2F211-CCB0-11D0-A316-00AA00688B10}#1.0#0"; "MSDATLST.OCX"
 Object = "{6B7E6392-850A-101B-AFC0-4210102A8DA7}#1.3#0"; "COMCTL32.OCX"
 Object = "{065E6FD1-1BF9-11D2-BAE8-00104B9E0792}#3.0#0"; "ssa3d30.ocx"
-Object = "{00025600-0000-0000-C000-000000000046}#5.2#0"; "Crystl32.OCX"
-Object = "{BF5DA8BB-099C-41DC-88F2-87E2D46819E4}#3.3#0"; "ImgX61.ocx"
 Object = "{F9043C88-F6F2-101A-A3C9-08002B2F49FB}#1.2#0"; "Comdlg32.ocx"
-Begin VB.Form sales_ordersfrm 
+Begin VB.Form price_listfrm 
    BackColor       =   &H00FFFFFF&
    BorderStyle     =   1  'Fixed Single
    ClientHeight    =   10860
@@ -31,99 +28,6 @@ Begin VB.Form sales_ordersfrm
    WhatsThisButton =   -1  'True
    WhatsThisHelp   =   -1  'True
    WindowState     =   2  'Maximized
-   Begin VB.Frame Frame3 
-      BackColor       =   &H00FFFFFF&
-      Height          =   735
-      Left            =   9855
-      TabIndex        =   74
-      Top             =   -90
-      Width           =   4785
-      Begin VB.CheckBox chkModel 
-         Appearance      =   0  'Flat
-         BackColor       =   &H80000005&
-         Caption         =   " „ÊœÌ·« "
-         ForeColor       =   &H80000008&
-         Height          =   270
-         Left            =   180
-         TabIndex        =   79
-         Top             =   270
-         Width           =   1140
-      End
-      Begin VB.CheckBox chkQuant 
-         Appearance      =   0  'Flat
-         BackColor       =   &H80000005&
-         Caption         =   "”⁄— ›ﬁÿ"
-         ForeColor       =   &H80000008&
-         Height          =   270
-         Left            =   1890
-         TabIndex        =   76
-         Top             =   270
-         Width           =   1140
-      End
-      Begin VB.CheckBox chkImage 
-         Appearance      =   0  'Flat
-         BackColor       =   &H80000005&
-         Caption         =   "ÿ»«⁄… ’Ê—"
-         ForeColor       =   &H80000008&
-         Height          =   270
-         Left            =   3420
-         TabIndex        =   75
-         Top             =   270
-         Width           =   1230
-      End
-   End
-   Begin VB.Frame fmPrice 
-      BackColor       =   &H00FFFFFF&
-      Height          =   735
-      Left            =   4770
-      TabIndex        =   71
-      Top             =   1260
-      Width           =   3075
-      Begin VB.OptionButton optPrice 
-         Alignment       =   1  'Right Justify
-         Appearance      =   0  'Flat
-         BackColor       =   &H80000005&
-         Caption         =   "”⁄— Ã„·…"
-         ForeColor       =   &H80000008&
-         Height          =   330
-         Index           =   0
-         Left            =   1845
-         RightToLeft     =   -1  'True
-         TabIndex        =   73
-         Top             =   270
-         Value           =   -1  'True
-         Width           =   1050
-      End
-      Begin VB.OptionButton optPrice 
-         Alignment       =   1  'Right Justify
-         Appearance      =   0  'Flat
-         BackColor       =   &H80000005&
-         Caption         =   "”⁄— „” Â·ﬂ"
-         ForeColor       =   &H80000008&
-         Height          =   330
-         Index           =   1
-         Left            =   135
-         RightToLeft     =   -1  'True
-         TabIndex        =   72
-         Top             =   270
-         Width           =   1275
-      End
-   End
-   Begin VB.CheckBox XISINVOICE 
-      Alignment       =   1  'Right Justify
-      Appearance      =   0  'Flat
-      BackColor       =   &H00FFFFFF&
-      Caption         =   "›« Ê—…"
-      ForeColor       =   &H80000008&
-      Height          =   285
-      Left            =   -1170
-      RightToLeft     =   -1  'True
-      TabIndex        =   67
-      TabStop         =   0   'False
-      Top             =   1575
-      Visible         =   0   'False
-      Width           =   1230
-   End
    Begin VB.PictureBox Picture1 
       Align           =   2  'Align Bottom
       BackColor       =   &H00FFFFFF&
@@ -132,7 +36,7 @@ Begin VB.Form sales_ordersfrm
       Left            =   0
       ScaleHeight     =   1080
       ScaleWidth      =   20355
-      TabIndex        =   49
+      TabIndex        =   35
       Top             =   9315
       Width           =   20355
       Begin VB.Frame Frame6 
@@ -149,13 +53,13 @@ Begin VB.Form sales_ordersfrm
          Height          =   645
          Left            =   45
          RightToLeft     =   -1  'True
-         TabIndex        =   50
+         TabIndex        =   36
          Top             =   0
          Width           =   3525
          Begin Threed.SSCommand cmdFirst 
             Height          =   420
             Left            =   2610
-            TabIndex        =   51
+            TabIndex        =   37
             TabStop         =   0   'False
             Top             =   135
             Width           =   825
@@ -173,18 +77,18 @@ Begin VB.Form sales_ordersfrm
                Italic          =   0   'False
                Strikethrough   =   0   'False
             EndProperty
-            Picture         =   "sales_order.frx":0000
+            Picture         =   "price_lists.frx":0000
             Caption         =   "√Ê·"
             ButtonStyle     =   3
             PictureAlignment=   10
             BevelWidth      =   0
             PictureDisabledFrames=   1
-            PictureDisabled =   "sales_order.frx":21A7
+            PictureDisabled =   "price_lists.frx":21A7
          End
          Begin Threed.SSCommand cmdPrevious 
             Height          =   420
             Left            =   1710
-            TabIndex        =   52
+            TabIndex        =   38
             TabStop         =   0   'False
             Top             =   135
             Width           =   870
@@ -202,18 +106,18 @@ Begin VB.Form sales_ordersfrm
                Italic          =   0   'False
                Strikethrough   =   0   'False
             EndProperty
-            Picture         =   "sales_order.frx":41EE
+            Picture         =   "price_lists.frx":41EE
             Caption         =   "”«»ﬁ"
             ButtonStyle     =   3
             PictureAlignment=   10
             BevelWidth      =   0
             PictureDisabledFrames=   1
-            PictureDisabled =   "sales_order.frx":62D9
+            PictureDisabled =   "price_lists.frx":62D9
          End
          Begin Threed.SSCommand cmdNext 
             Height          =   420
             Left            =   855
-            TabIndex        =   53
+            TabIndex        =   39
             TabStop         =   0   'False
             Top             =   135
             Width           =   825
@@ -231,18 +135,18 @@ Begin VB.Form sales_ordersfrm
                Italic          =   0   'False
                Strikethrough   =   0   'False
             EndProperty
-            Picture         =   "sales_order.frx":82D3
+            Picture         =   "price_lists.frx":82D3
             Caption         =   "·«Õﬁ"
             ButtonStyle     =   3
             PictureAlignment=   9
             BevelWidth      =   0
             PictureDisabledFrames=   1
-            PictureDisabled =   "sales_order.frx":A3E4
+            PictureDisabled =   "price_lists.frx":A3E4
          End
          Begin Threed.SSCommand cmdLast 
             Height          =   420
             Left            =   45
-            TabIndex        =   54
+            TabIndex        =   40
             TabStop         =   0   'False
             Top             =   135
             Width           =   780
@@ -260,13 +164,13 @@ Begin VB.Form sales_ordersfrm
                Italic          =   0   'False
                Strikethrough   =   0   'False
             EndProperty
-            Picture         =   "sales_order.frx":C3DE
+            Picture         =   "price_lists.frx":C3DE
             Caption         =   "√ŒÌ—"
             ButtonStyle     =   3
             PictureAlignment=   9
             BevelWidth      =   0
             PictureDisabledFrames=   1
-            PictureDisabled =   "sales_order.frx":E602
+            PictureDisabled =   "price_lists.frx":E602
          End
       End
       Begin VB.Frame Frame12 
@@ -274,7 +178,7 @@ Begin VB.Form sales_ordersfrm
          Height          =   690
          Left            =   3645
          RightToLeft     =   -1  'True
-         TabIndex        =   61
+         TabIndex        =   42
          Top             =   -45
          Width           =   6360
          Begin VB.TextBox txtModel 
@@ -284,7 +188,7 @@ Begin VB.Form sales_ordersfrm
             Left            =   90
             MaxLength       =   10
             RightToLeft     =   -1  'True
-            TabIndex        =   63
+            TabIndex        =   44
             TabStop         =   0   'False
             Tag             =   "1"
             Top             =   225
@@ -297,7 +201,7 @@ Begin VB.Form sales_ordersfrm
             Left            =   3420
             MaxLength       =   10
             RightToLeft     =   -1  'True
-            TabIndex        =   62
+            TabIndex        =   43
             TabStop         =   0   'False
             Tag             =   "1"
             Top             =   225
@@ -309,7 +213,7 @@ Begin VB.Form sales_ordersfrm
             Height          =   285
             Left            =   2250
             RightToLeft     =   -1  'True
-            TabIndex        =   65
+            TabIndex        =   46
             Top             =   225
             Width           =   825
          End
@@ -319,76 +223,15 @@ Begin VB.Form sales_ordersfrm
             Height          =   285
             Left            =   5535
             RightToLeft     =   -1  'True
-            TabIndex        =   64
+            TabIndex        =   45
             Top             =   270
             Width           =   645
-         End
-      End
-      Begin VB.Frame Frame16 
-         BackColor       =   &H00FFFFFF&
-         BeginProperty Font 
-            Name            =   "Tahoma"
-            Size            =   8.25
-            Charset         =   178
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   1050
-         Left            =   14175
-         TabIndex        =   55
-         Top             =   0
-         Width           =   6135
-         Begin VB.Label xTotalItem 
-            Alignment       =   1  'Right Justify
-            Appearance      =   0  'Flat
-            BorderStyle     =   1  'Fixed Single
-            Height          =   330
-            Left            =   3015
-            TabIndex        =   59
-            Top             =   540
-            Width           =   1905
-         End
-         Begin VB.Label Label40 
-            AutoSize        =   -1  'True
-            BackColor       =   &H00E0E0E0&
-            BackStyle       =   0  'Transparent
-            Caption         =   "ﬁÌ„… «’‰«›"
-            Height          =   270
-            Left            =   5040
-            RightToLeft     =   -1  'True
-            TabIndex        =   58
-            Top             =   540
-            Width           =   900
-         End
-         Begin VB.Label xTotalQuant 
-            Alignment       =   1  'Right Justify
-            Appearance      =   0  'Flat
-            BorderStyle     =   1  'Fixed Single
-            Height          =   330
-            Left            =   3015
-            TabIndex        =   57
-            Top             =   180
-            Width           =   1905
-         End
-         Begin VB.Label lblQuant 
-            AutoSize        =   -1  'True
-            BackColor       =   &H00E0E0E0&
-            BackStyle       =   0  'Transparent
-            Caption         =   "⁄œœ ﬁÿ⁄"
-            Height          =   270
-            Left            =   4995
-            RightToLeft     =   -1  'True
-            TabIndex        =   56
-            Top             =   225
-            Width           =   630
          End
       End
       Begin Threed.SSCommand cmdClient 
          Height          =   555
          Left            =   10035
-         TabIndex        =   60
+         TabIndex        =   41
          Top             =   90
          Width           =   4065
          _ExtentX        =   7170
@@ -411,7 +254,7 @@ Begin VB.Form sales_ordersfrm
       Begin ComctlLib.ProgressBar prog1 
          Height          =   375
          Left            =   45
-         TabIndex        =   70
+         TabIndex        =   47
          Top             =   675
          Visible         =   0   'False
          Width           =   14100
@@ -425,17 +268,17 @@ Begin VB.Form sales_ordersfrm
    Begin VB.Frame Frame4 
       BackColor       =   &H00FFFFFF&
       Height          =   735
-      Left            =   7875
-      TabIndex        =   47
-      Top             =   1260
-      Width           =   1905
+      Left            =   10530
+      TabIndex        =   34
+      Top             =   -90
+      Width           =   4110
       Begin Threed.SSCommand cmdExcel 
          Height          =   510
          Left            =   45
          TabIndex        =   48
          Top             =   180
-         Width           =   1815
-         _ExtentX        =   3201
+         Width           =   1905
+         _ExtentX        =   3360
          _ExtentY        =   900
          _Version        =   196610
          ForeColor       =   0
@@ -450,12 +293,39 @@ Begin VB.Form sales_ordersfrm
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Picture         =   "sales_order.frx":106D3
+         Picture         =   "price_lists.frx":106D3
          Caption         =   " ÕÊÌ· «·Ì „·› "
          ButtonStyle     =   3
          PictureAlignment=   9
          BevelWidth      =   0
          ShapeSize       =   1
+      End
+      Begin Threed.SSCommand cmdCSV 
+         Height          =   510
+         Left            =   1935
+         TabIndex        =   49
+         Top             =   180
+         Width           =   2130
+         _ExtentX        =   3757
+         _ExtentY        =   900
+         _Version        =   196610
+         CaptionStyle    =   1
+         BackColor       =   16777215
+         PictureFrames   =   1
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Arial"
+            Size            =   11.25
+            Charset         =   178
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Picture         =   "price_lists.frx":12B3D
+         Caption         =   "”Õ» „‰ „·› CSV"
+         TagVariant      =   "«Œ «— «·„ﬁ«Ê·"
+         ButtonStyle     =   3
+         PictureAlignment=   9
       End
    End
    Begin VB.Frame Frame99 
@@ -470,7 +340,7 @@ Begin VB.Form sales_ordersfrm
       EndProperty
       Height          =   5235
       Left            =   -4005
-      TabIndex        =   11
+      TabIndex        =   9
       Top             =   11070
       Visible         =   0   'False
       Width           =   10725
@@ -479,7 +349,7 @@ Begin VB.Form sales_ordersfrm
          Height          =   450
          Left            =   135
          Style           =   1  'Graphical
-         TabIndex        =   12
+         TabIndex        =   10
          Top             =   270
          Width           =   2310
       End
@@ -491,7 +361,7 @@ Begin VB.Form sales_ordersfrm
          Height          =   270
          Left            =   1035
          RightToLeft     =   -1  'True
-         TabIndex        =   38
+         TabIndex        =   25
          Top             =   1080
          Width           =   525
       End
@@ -512,7 +382,7 @@ Begin VB.Form sales_ordersfrm
          Height          =   375
          Left            =   0
          RightToLeft     =   -1  'True
-         TabIndex        =   37
+         TabIndex        =   24
          Top             =   1035
          Width           =   1005
       End
@@ -525,7 +395,7 @@ Begin VB.Form sales_ordersfrm
          ForeColor       =   &H000000C0&
          Height          =   330
          Left            =   2610
-         TabIndex        =   16
+         TabIndex        =   14
          Top             =   990
          Width           =   1950
       End
@@ -538,7 +408,7 @@ Begin VB.Form sales_ordersfrm
          ForeColor       =   &H000000C0&
          Height          =   330
          Left            =   2610
-         TabIndex        =   15
+         TabIndex        =   13
          Top             =   1350
          Width           =   1950
       End
@@ -559,7 +429,7 @@ Begin VB.Form sales_ordersfrm
          EndProperty
          Height          =   285
          Left            =   675
-         TabIndex        =   14
+         TabIndex        =   12
          Top             =   765
          Width           =   960
       End
@@ -580,7 +450,7 @@ Begin VB.Form sales_ordersfrm
          EndProperty
          Height          =   285
          Left            =   3195
-         TabIndex        =   13
+         TabIndex        =   11
          Top             =   720
          Width           =   735
       End
@@ -598,15 +468,15 @@ Begin VB.Form sales_ordersfrm
       EndProperty
       Height          =   1320
       Index           =   4
-      Left            =   9810
+      Left            =   6165
       RightToLeft     =   -1  'True
-      TabIndex        =   26
+      TabIndex        =   21
       Top             =   675
       Width           =   1275
       Begin Threed.SSCommand cmdSave 
          Height          =   555
          Left            =   45
-         TabIndex        =   27
+         TabIndex        =   22
          Top             =   135
          Width           =   1185
          _ExtentX        =   2090
@@ -625,19 +495,19 @@ Begin VB.Form sales_ordersfrm
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Picture         =   "sales_order.frx":12B3D
+         Picture         =   "price_lists.frx":15110
          Alignment       =   8
          ButtonStyle     =   2
          PictureAlignment=   11
          BevelWidth      =   0
          PictureDisabledFrames=   1
          ShapeSize       =   1
-         PictureDisabled =   "sales_order.frx":15462
+         PictureDisabled =   "price_lists.frx":17A35
       End
       Begin Threed.SSCommand cmdUndo 
          Height          =   510
          Left            =   45
-         TabIndex        =   28
+         TabIndex        =   23
          TabStop         =   0   'False
          Top             =   720
          Width           =   1185
@@ -656,14 +526,14 @@ Begin VB.Form sales_ordersfrm
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Picture         =   "sales_order.frx":17CB6
+         Picture         =   "price_lists.frx":1A289
          Alignment       =   8
          ButtonStyle     =   2
          PictureAlignment=   11
          BevelWidth      =   0
          PictureDisabledFrames=   1
          ShapeSize       =   1
-         PictureDisabled =   "sales_order.frx":19E16
+         PictureDisabled =   "price_lists.frx":1C3E9
       End
    End
    Begin VB.Frame Frame1 
@@ -671,13 +541,13 @@ Begin VB.Form sales_ordersfrm
       Height          =   735
       Left            =   14670
       RightToLeft     =   -1  'True
-      TabIndex        =   20
+      TabIndex        =   15
       Top             =   -90
       Width           =   5595
       Begin Threed.SSCommand cmdInform 
          Height          =   510
          Left            =   4500
-         TabIndex        =   21
+         TabIndex        =   16
          TabStop         =   0   'False
          Top             =   180
          Width           =   1050
@@ -696,19 +566,19 @@ Begin VB.Form sales_ordersfrm
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Picture         =   "sales_order.frx":1C103
+         Picture         =   "price_lists.frx":1E6D6
          Alignment       =   8
          ButtonStyle     =   3
          PictureAlignment=   11
          BevelWidth      =   0
          PictureDisabledFrames=   1
          ShapeSize       =   1
-         PictureDisabled =   "sales_order.frx":1E4CE
+         PictureDisabled =   "price_lists.frx":20AA1
       End
       Begin Threed.SSCommand cmdNewInv 
          Height          =   510
          Left            =   3375
-         TabIndex        =   22
+         TabIndex        =   17
          TabStop         =   0   'False
          Top             =   180
          Width           =   1095
@@ -727,19 +597,19 @@ Begin VB.Form sales_ordersfrm
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Picture         =   "sales_order.frx":20577
+         Picture         =   "price_lists.frx":22B4A
          Alignment       =   8
          ButtonStyle     =   3
          PictureAlignment=   11
          BevelWidth      =   0
          PictureDisabledFrames=   1
          ShapeSize       =   1
-         PictureDisabled =   "sales_order.frx":2257F
+         PictureDisabled =   "price_lists.frx":24B52
       End
       Begin Threed.SSCommand cmddel 
          Height          =   510
          Left            =   2250
-         TabIndex        =   23
+         TabIndex        =   18
          TabStop         =   0   'False
          Top             =   180
          Width           =   1095
@@ -758,19 +628,19 @@ Begin VB.Form sales_ordersfrm
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Picture         =   "sales_order.frx":24536
+         Picture         =   "price_lists.frx":26B09
          Alignment       =   8
          ButtonStyle     =   3
          PictureAlignment=   11
          BevelWidth      =   0
          PictureDisabledFrames=   1
          ShapeSize       =   1
-         PictureDisabled =   "sales_order.frx":26CD2
+         PictureDisabled =   "price_lists.frx":292A5
       End
       Begin Threed.SSCommand cmdExit 
          Height          =   510
          Left            =   45
-         TabIndex        =   24
+         TabIndex        =   19
          TabStop         =   0   'False
          Top             =   180
          Width           =   1050
@@ -789,7 +659,7 @@ Begin VB.Form sales_ordersfrm
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Picture         =   "sales_order.frx":29166
+         Picture         =   "price_lists.frx":2B739
          Alignment       =   8
          ButtonStyle     =   3
          PictureAlignment=   11
@@ -799,7 +669,7 @@ Begin VB.Form sales_ordersfrm
       Begin Threed.SSCommand cmdPrint 
          Height          =   510
          Left            =   1125
-         TabIndex        =   25
+         TabIndex        =   20
          TabStop         =   0   'False
          Top             =   180
          Width           =   1095
@@ -817,30 +687,13 @@ Begin VB.Form sales_ordersfrm
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Picture         =   "sales_order.frx":2B489
+         Picture         =   "price_lists.frx":2DA5C
          ButtonStyle     =   3
          PictureAlignment=   11
          BevelWidth      =   0
          PictureDisabledFrames=   1
-         PictureDisabled =   "sales_order.frx":2D7FF
+         PictureDisabled =   "price_lists.frx":2FDD2
       End
-   End
-   Begin Crystal.CrystalReport REPORT1 
-      Left            =   1440
-      Top             =   675
-      _ExtentX        =   741
-      _ExtentY        =   741
-      _Version        =   348160
-      Destination     =   1
-      WindowTop       =   0
-      WindowControlBox=   -1  'True
-      WindowMaxButton =   -1  'True
-      WindowMinButton =   -1  'True
-      BoundReportHeading=   "dddd"
-      WindowState     =   2
-      PrintFileLinesPerPage=   60
-      WindowShowProgressCtls=   0   'False
-      WindowShowPrintSetupBtn=   -1  'True
    End
    Begin MSAdodcLib.Adodc data2 
       Height          =   330
@@ -889,120 +742,11 @@ Begin VB.Form sales_ordersfrm
       EndProperty
       _Version        =   393216
    End
-   Begin MSAdodcLib.Adodc DATA11 
-      Height          =   330
-      Left            =   -765
-      Top             =   -225
-      Visible         =   0   'False
-      Width           =   1200
-      _ExtentX        =   2117
-      _ExtentY        =   582
-      ConnectMode     =   0
-      CursorLocation  =   3
-      IsolationLevel  =   -1
-      ConnectionTimeout=   15
-      CommandTimeout  =   30
-      CursorType      =   3
-      LockType        =   3
-      CommandType     =   8
-      CursorOptions   =   0
-      CacheSize       =   50
-      MaxRecords      =   0
-      BOFAction       =   0
-      EOFAction       =   0
-      ConnectStringType=   1
-      Appearance      =   1
-      BackColor       =   -2147483643
-      ForeColor       =   -2147483640
-      Orientation     =   0
-      Enabled         =   -1
-      Connect         =   ""
-      OLEDBString     =   ""
-      OLEDBFile       =   ""
-      DataSourceName  =   ""
-      OtherAttributes =   ""
-      UserName        =   ""
-      Password        =   ""
-      RecordSource    =   ""
-      Caption         =   "Adodc1"
-      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-         Name            =   "Tahoma"
-         Size            =   8.25
-         Charset         =   178
-         Weight          =   400
-         Underline       =   0   'False
-         Italic          =   0   'False
-         Strikethrough   =   0   'False
-      EndProperty
-      _Version        =   393216
-   End
-   Begin Crystal.CrystalReport Report_T 
-      Left            =   1440
-      Top             =   3330
-      _ExtentX        =   741
-      _ExtentY        =   741
-      _Version        =   348160
-      Destination     =   1
-      WindowTop       =   0
-      WindowControlBox=   -1  'True
-      WindowMaxButton =   -1  'True
-      WindowMinButton =   -1  'True
-      BoundReportHeading=   "dddd"
-      WindowState     =   2
-      PrintFileLinesPerPage=   60
-   End
-   Begin MSAdodcLib.Adodc DATA13 
-      Height          =   330
-      Left            =   5535
-      Top             =   360
-      Visible         =   0   'False
-      Width           =   1200
-      _ExtentX        =   2117
-      _ExtentY        =   582
-      ConnectMode     =   0
-      CursorLocation  =   3
-      IsolationLevel  =   -1
-      ConnectionTimeout=   15
-      CommandTimeout  =   30
-      CursorType      =   3
-      LockType        =   3
-      CommandType     =   8
-      CursorOptions   =   0
-      CacheSize       =   50
-      MaxRecords      =   0
-      BOFAction       =   0
-      EOFAction       =   0
-      ConnectStringType=   1
-      Appearance      =   1
-      BackColor       =   -2147483643
-      ForeColor       =   -2147483640
-      Orientation     =   0
-      Enabled         =   -1
-      Connect         =   ""
-      OLEDBString     =   ""
-      OLEDBFile       =   ""
-      DataSourceName  =   ""
-      OtherAttributes =   ""
-      UserName        =   ""
-      Password        =   ""
-      RecordSource    =   ""
-      Caption         =   "Adodc1"
-      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-         Name            =   "Tahoma"
-         Size            =   8.25
-         Charset         =   178
-         Weight          =   400
-         Underline       =   0   'False
-         Italic          =   0   'False
-         Strikethrough   =   0   'False
-      EndProperty
-      _Version        =   393216
-   End
    Begin Threed.SSPanel SSPanel1 
       Align           =   2  'Align Bottom
       Height          =   465
       Left            =   0
-      TabIndex        =   41
+      TabIndex        =   28
       Top             =   10395
       Width           =   20355
       _ExtentX        =   35904
@@ -1024,7 +768,7 @@ Begin VB.Form sales_ordersfrm
          Height          =   405
          Index           =   0
          Left            =   0
-         TabIndex        =   42
+         TabIndex        =   29
          Top             =   45
          Width           =   4005
          _ExtentX        =   7064
@@ -1048,7 +792,7 @@ Begin VB.Form sales_ordersfrm
          Height          =   330
          Index           =   1
          Left            =   4095
-         TabIndex        =   43
+         TabIndex        =   30
          Top             =   45
          Width           =   4005
          _ExtentX        =   7064
@@ -1072,7 +816,7 @@ Begin VB.Form sales_ordersfrm
          Height          =   330
          Index           =   2
          Left            =   8100
-         TabIndex        =   44
+         TabIndex        =   31
          Top             =   45
          Width           =   4000
          _ExtentX        =   7064
@@ -1096,7 +840,7 @@ Begin VB.Form sales_ordersfrm
          Height          =   330
          Index           =   3
          Left            =   12150
-         TabIndex        =   45
+         TabIndex        =   32
          Top             =   45
          Width           =   3960
          _ExtentX        =   6985
@@ -1120,7 +864,7 @@ Begin VB.Form sales_ordersfrm
          Height          =   330
          Index           =   4
          Left            =   16155
-         TabIndex        =   46
+         TabIndex        =   33
          Top             =   45
          Width           =   4185
          _ExtentX        =   7382
@@ -1141,13 +885,6 @@ Begin VB.Form sales_ordersfrm
          FloodShowPct    =   -1  'True
       End
    End
-   Begin MSComDlg.CommonDialog Common1 
-      Left            =   585
-      Top             =   990
-      _ExtentX        =   847
-      _ExtentY        =   847
-      _Version        =   393216
-   End
    Begin VB.Frame Frame2 
       BackColor       =   &H00FFFFFF&
       BeginProperty Font 
@@ -1160,10 +897,10 @@ Begin VB.Form sales_ordersfrm
          Strikethrough   =   0   'False
       EndProperty
       Height          =   1365
-      Left            =   11115
-      TabIndex        =   6
+      Left            =   7470
+      TabIndex        =   5
       Top             =   630
-      Width           =   9150
+      Width           =   12750
       Begin VB.TextBox xDoc_No 
          Alignment       =   1  'Right Justify
          Appearance      =   0  'Flat
@@ -1177,7 +914,7 @@ Begin VB.Form sales_ordersfrm
             Strikethrough   =   0   'False
          EndProperty
          Height          =   330
-         Left            =   6975
+         Left            =   10485
          Locked          =   -1  'True
          MaxLength       =   12
          TabIndex        =   0
@@ -1191,10 +928,10 @@ Begin VB.Form sales_ordersfrm
          Appearance      =   0  'Flat
          BackColor       =   &H00FFFFFF&
          Height          =   330
-         Left            =   6975
+         Left            =   10485
          MaxLength       =   10
          RightToLeft     =   -1  'True
-         TabIndex        =   2
+         TabIndex        =   1
          Top             =   540
          Width           =   1185
       End
@@ -1217,7 +954,7 @@ Begin VB.Form sales_ordersfrm
          Left            =   5355
          MaxLength       =   15
          PasswordChar    =   "*"
-         TabIndex        =   5
+         TabIndex        =   4
          Top             =   2460
          Visible         =   0   'False
          Width           =   1185
@@ -1227,57 +964,11 @@ Begin VB.Form sales_ordersfrm
          Appearance      =   0  'Flat
          BackColor       =   &H00FFFFFF&
          Height          =   330
-         Left            =   3465
+         Left            =   6975
          MaxLength       =   200
-         TabIndex        =   3
+         TabIndex        =   2
          Top             =   900
          Width           =   4695
-      End
-      Begin VB.TextBox xDate 
-         Alignment       =   1  'Right Justify
-         Appearance      =   0  'Flat
-         Height          =   330
-         Left            =   90
-         MaxLength       =   10
-         RightToLeft     =   -1  'True
-         TabIndex        =   1
-         TabStop         =   0   'False
-         Top             =   180
-         Width           =   1635
-      End
-      Begin MSDataListLib.DataCombo xLogo 
-         CausesValidation=   0   'False
-         Height          =   315
-         Left            =   90
-         TabIndex        =   77
-         Top             =   945
-         Width           =   2355
-         _ExtentX        =   4154
-         _ExtentY        =   556
-         _Version        =   393216
-         Appearance      =   0
-         Text            =   ""
-         RightToLeft     =   -1  'True
-         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-            Name            =   "Tahoma"
-            Size            =   8.25
-            Charset         =   178
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-      End
-      Begin VB.Label Label11 
-         AutoSize        =   -1  'True
-         BackStyle       =   0  'Transparent
-         Caption         =   "«·‘⁄«—"
-         Height          =   270
-         Left            =   2565
-         RightToLeft     =   -1  'True
-         TabIndex        =   78
-         Top             =   990
-         Width           =   480
       End
       Begin VB.Label xCodeDesca 
          Alignment       =   1  'Right Justify
@@ -1285,8 +976,8 @@ Begin VB.Form sales_ordersfrm
          BorderStyle     =   1  'Fixed Single
          ForeColor       =   &H80000008&
          Height          =   330
-         Left            =   3465
-         TabIndex        =   40
+         Left            =   6975
+         TabIndex        =   27
          Top             =   540
          Width           =   3480
       End
@@ -1295,9 +986,9 @@ Begin VB.Form sales_ordersfrm
          BackColor       =   &H80000005&
          Caption         =   "«·⁄„Ì·"
          Height          =   270
-         Left            =   8235
+         Left            =   11745
          RightToLeft     =   -1  'True
-         TabIndex        =   39
+         TabIndex        =   26
          Top             =   585
          Width           =   450
       End
@@ -1305,9 +996,9 @@ Begin VB.Form sales_ordersfrm
          BackColor       =   &H00FFFFFF&
          Caption         =   "—ﬁ„ „” ‰œ"
          Height          =   285
-         Left            =   8190
+         Left            =   11745
          RightToLeft     =   -1  'True
-         TabIndex        =   7
+         TabIndex        =   6
          Top             =   225
          Width           =   750
       End
@@ -1327,7 +1018,7 @@ Begin VB.Form sales_ordersfrm
          Index           =   0
          Left            =   6615
          RightToLeft     =   -1  'True
-         TabIndex        =   10
+         TabIndex        =   8
          Top             =   2430
          Visible         =   0   'False
          Width           =   900
@@ -1335,627 +1026,19 @@ Begin VB.Form sales_ordersfrm
       Begin VB.Label Label13 
          AutoSize        =   -1  'True
          BackColor       =   &H00FFFFFF&
-         Caption         =   "„·«ÕŸ« "
+         Caption         =   "«·»Ì«‰"
          Height          =   270
-         Left            =   8235
+         Left            =   11745
          RightToLeft     =   -1  'True
-         TabIndex        =   9
-         Top             =   945
-         Width           =   660
-      End
-      Begin VB.Label Label5 
-         Alignment       =   1  'Right Justify
-         AutoSize        =   -1  'True
-         BackStyle       =   0  'Transparent
-         Caption         =   "«· «—ÌŒ"
-         Height          =   270
-         Index           =   0
-         Left            =   1800
-         RightToLeft     =   -1  'True
-         TabIndex        =   8
-         Top             =   225
-         Width           =   510
-      End
-   End
-   Begin VB.Frame Frame14 
-      Caption         =   "Frame14"
-      BeginProperty Font 
-         Name            =   "Tahoma"
-         Size            =   8.25
-         Charset         =   178
-         Weight          =   400
-         Underline       =   0   'False
-         Italic          =   0   'False
-         Strikethrough   =   0   'False
-      EndProperty
-      Height          =   8385
-      Left            =   5670
-      TabIndex        =   17
-      Top             =   1980
-      Visible         =   0   'False
-      Width           =   11760
-      Begin VB.PictureBox picPrint 
-         Appearance      =   0  'Flat
-         AutoSize        =   -1  'True
-         BackColor       =   &H80000005&
-         BorderStyle     =   0  'None
-         ForeColor       =   &H80000008&
-         Height          =   945
-         Left            =   1845
-         ScaleHeight     =   945
-         ScaleWidth      =   1125
-         TabIndex        =   80
-         Top             =   945
-         Width           =   1125
-      End
-      Begin VB.CheckBox xIs_collect 
-         Caption         =   "Check1"
-         Height          =   270
-         Left            =   360
-         TabIndex        =   68
-         Top             =   765
-         Width           =   1365
-      End
-      Begin VB.TextBox xinv_no 
-         Alignment       =   1  'Right Justify
-         Appearance      =   0  'Flat
-         Height          =   345
-         Left            =   1935
-         MaxLength       =   6
-         RightToLeft     =   -1  'True
-         TabIndex        =   36
-         TabStop         =   0   'False
-         Top             =   3825
-         Visible         =   0   'False
-         Width           =   2175
-      End
-      Begin VB.CheckBox XISONEST 
-         Caption         =   "Check1"
-         Enabled         =   0   'False
-         BeginProperty Font 
-            Name            =   "Tahoma"
-            Size            =   8.25
-            Charset         =   178
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   285
-         Left            =   2745
-         TabIndex        =   30
-         Top             =   1170
-         Visible         =   0   'False
-         Width           =   195
-      End
-      Begin VB.CheckBox XISRETS 
-         Caption         =   "Check1"
-         BeginProperty Font 
-            Name            =   "Tahoma"
-            Size            =   8.25
-            Charset         =   178
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   285
-         Left            =   3555
-         TabIndex        =   29
-         Top             =   2070
-         Width           =   195
-      End
-      Begin VB.PictureBox pctBarCode 
-         AutoSize        =   -1  'True
-         BeginProperty Font 
-            Name            =   "Tahoma"
-            Size            =   8.25
-            Charset         =   178
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   1830
-         Left            =   6435
-         ScaleHeight     =   118
-         ScaleMode       =   3  'Pixel
-         ScaleWidth      =   151
-         TabIndex        =   19
-         Top             =   3780
-         Visible         =   0   'False
-         Width           =   2325
-      End
-      Begin MSAdodcLib.Adodc data1 
-         Height          =   330
-         Left            =   1125
-         Top             =   3285
-         Visible         =   0   'False
-         Width           =   3510
-         _ExtentX        =   6191
-         _ExtentY        =   582
-         ConnectMode     =   0
-         CursorLocation  =   3
-         IsolationLevel  =   -1
-         ConnectionTimeout=   15
-         CommandTimeout  =   30
-         CursorType      =   3
-         LockType        =   3
-         CommandType     =   8
-         CursorOptions   =   0
-         CacheSize       =   50
-         MaxRecords      =   0
-         BOFAction       =   0
-         EOFAction       =   0
-         ConnectStringType=   1
-         Appearance      =   1
-         BackColor       =   -2147483643
-         ForeColor       =   -2147483640
-         Orientation     =   0
-         Enabled         =   -1
-         Connect         =   ""
-         OLEDBString     =   ""
-         OLEDBFile       =   ""
-         DataSourceName  =   ""
-         OtherAttributes =   ""
-         UserName        =   ""
-         Password        =   ""
-         RecordSource    =   ""
-         Caption         =   "Adodc1"
-         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-            Name            =   "Tahoma"
-            Size            =   8.25
-            Charset         =   178
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         _Version        =   393216
-      End
-      Begin MSAdodcLib.Adodc DATA3 
-         Height          =   330
-         Left            =   2610
-         Top             =   2655
-         Visible         =   0   'False
-         Width           =   1200
-         _ExtentX        =   2117
-         _ExtentY        =   582
-         ConnectMode     =   0
-         CursorLocation  =   3
-         IsolationLevel  =   -1
-         ConnectionTimeout=   15
-         CommandTimeout  =   30
-         CursorType      =   3
-         LockType        =   3
-         CommandType     =   8
-         CursorOptions   =   0
-         CacheSize       =   50
-         MaxRecords      =   0
-         BOFAction       =   0
-         EOFAction       =   0
-         ConnectStringType=   1
-         Appearance      =   1
-         BackColor       =   -2147483643
-         ForeColor       =   -2147483640
-         Orientation     =   0
-         Enabled         =   -1
-         Connect         =   ""
-         OLEDBString     =   ""
-         OLEDBFile       =   ""
-         DataSourceName  =   ""
-         OtherAttributes =   ""
-         UserName        =   ""
-         Password        =   ""
-         RecordSource    =   ""
-         Caption         =   "Adodc1"
-         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-            Name            =   "Tahoma"
-            Size            =   8.25
-            Charset         =   178
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         _Version        =   393216
-      End
-      Begin MSAdodcLib.Adodc data4 
-         Height          =   330
-         Left            =   1035
-         Top             =   3060
-         Visible         =   0   'False
-         Width           =   3510
-         _ExtentX        =   6191
-         _ExtentY        =   582
-         ConnectMode     =   0
-         CursorLocation  =   3
-         IsolationLevel  =   -1
-         ConnectionTimeout=   15
-         CommandTimeout  =   30
-         CursorType      =   3
-         LockType        =   3
-         CommandType     =   8
-         CursorOptions   =   0
-         CacheSize       =   50
-         MaxRecords      =   0
-         BOFAction       =   0
-         EOFAction       =   0
-         ConnectStringType=   1
-         Appearance      =   1
-         BackColor       =   -2147483643
-         ForeColor       =   -2147483640
-         Orientation     =   0
-         Enabled         =   -1
-         Connect         =   ""
-         OLEDBString     =   ""
-         OLEDBFile       =   ""
-         DataSourceName  =   ""
-         OtherAttributes =   ""
-         UserName        =   ""
-         Password        =   ""
-         RecordSource    =   ""
-         Caption         =   "Adodc1"
-         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-            Name            =   "Tahoma"
-            Size            =   8.25
-            Charset         =   178
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         _Version        =   393216
-      End
-      Begin MSAdodcLib.Adodc data5 
-         Height          =   330
-         Left            =   2295
-         Top             =   2880
-         Visible         =   0   'False
-         Width           =   2340
-         _ExtentX        =   4128
-         _ExtentY        =   582
-         ConnectMode     =   0
-         CursorLocation  =   3
-         IsolationLevel  =   -1
-         ConnectionTimeout=   15
-         CommandTimeout  =   30
-         CursorType      =   3
-         LockType        =   3
-         CommandType     =   8
-         CursorOptions   =   0
-         CacheSize       =   50
-         MaxRecords      =   0
-         BOFAction       =   0
-         EOFAction       =   0
-         ConnectStringType=   1
-         Appearance      =   1
-         BackColor       =   -2147483643
-         ForeColor       =   -2147483640
-         Orientation     =   0
-         Enabled         =   -1
-         Connect         =   ""
-         OLEDBString     =   ""
-         OLEDBFile       =   ""
-         DataSourceName  =   ""
-         OtherAttributes =   ""
-         UserName        =   ""
-         Password        =   ""
-         RecordSource    =   ""
-         Caption         =   "Adodc1"
-         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-            Name            =   "Tahoma"
-            Size            =   8.25
-            Charset         =   178
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         _Version        =   393216
-      End
-      Begin MSAdodcLib.Adodc data12 
-         Height          =   330
-         Left            =   5040
-         Top             =   1080
-         Visible         =   0   'False
-         Width           =   1200
-         _ExtentX        =   2117
-         _ExtentY        =   582
-         ConnectMode     =   0
-         CursorLocation  =   3
-         IsolationLevel  =   -1
-         ConnectionTimeout=   15
-         CommandTimeout  =   30
-         CursorType      =   3
-         LockType        =   3
-         CommandType     =   8
-         CursorOptions   =   0
-         CacheSize       =   50
-         MaxRecords      =   0
-         BOFAction       =   0
-         EOFAction       =   0
-         ConnectStringType=   1
-         Appearance      =   1
-         BackColor       =   -2147483643
-         ForeColor       =   -2147483640
-         Orientation     =   0
-         Enabled         =   -1
-         Connect         =   ""
-         OLEDBString     =   ""
-         OLEDBFile       =   ""
-         DataSourceName  =   ""
-         OtherAttributes =   ""
-         UserName        =   ""
-         Password        =   ""
-         RecordSource    =   ""
-         Caption         =   "Adodc1"
-         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-            Name            =   "Tahoma"
-            Size            =   8.25
-            Charset         =   178
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         _Version        =   393216
-      End
-      Begin MSAdodcLib.Adodc DATA7 
-         Height          =   330
-         Left            =   3015
-         Top             =   2880
-         Visible         =   0   'False
-         Width           =   3510
-         _ExtentX        =   6191
-         _ExtentY        =   582
-         ConnectMode     =   0
-         CursorLocation  =   3
-         IsolationLevel  =   -1
-         ConnectionTimeout=   15
-         CommandTimeout  =   30
-         CursorType      =   3
-         LockType        =   3
-         CommandType     =   8
-         CursorOptions   =   0
-         CacheSize       =   50
-         MaxRecords      =   0
-         BOFAction       =   0
-         EOFAction       =   0
-         ConnectStringType=   1
-         Appearance      =   1
-         BackColor       =   -2147483643
-         ForeColor       =   -2147483640
-         Orientation     =   0
-         Enabled         =   -1
-         Connect         =   ""
-         OLEDBString     =   ""
-         OLEDBFile       =   ""
-         DataSourceName  =   ""
-         OtherAttributes =   ""
-         UserName        =   ""
-         Password        =   ""
-         RecordSource    =   ""
-         Caption         =   "Adodc1"
-         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-            Name            =   "Tahoma"
-            Size            =   8.25
-            Charset         =   178
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         _Version        =   393216
-      End
-      Begin MSAdodcLib.Adodc data8 
-         Height          =   330
-         Left            =   4680
-         Top             =   2070
-         Visible         =   0   'False
-         Width           =   3510
-         _ExtentX        =   6191
-         _ExtentY        =   582
-         ConnectMode     =   0
-         CursorLocation  =   3
-         IsolationLevel  =   -1
-         ConnectionTimeout=   15
-         CommandTimeout  =   30
-         CursorType      =   3
-         LockType        =   3
-         CommandType     =   8
-         CursorOptions   =   0
-         CacheSize       =   50
-         MaxRecords      =   0
-         BOFAction       =   0
-         EOFAction       =   0
-         ConnectStringType=   1
-         Appearance      =   1
-         BackColor       =   -2147483643
-         ForeColor       =   -2147483640
-         Orientation     =   0
-         Enabled         =   -1
-         Connect         =   ""
-         OLEDBString     =   ""
-         OLEDBFile       =   ""
-         DataSourceName  =   ""
-         OtherAttributes =   ""
-         UserName        =   ""
-         Password        =   ""
-         RecordSource    =   ""
-         Caption         =   "Adodc1"
-         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-            Name            =   "Tahoma"
-            Size            =   8.25
-            Charset         =   178
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         _Version        =   393216
-      End
-      Begin Threed.SSCommand SSCommand1 
-         Height          =   330
-         Left            =   3330
-         TabIndex        =   69
-         Top             =   405
-         Width           =   2130
-         _ExtentX        =   3757
-         _ExtentY        =   582
-         _Version        =   196610
-         BackColor       =   16777215
-         Enabled         =   0   'False
-         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-            Name            =   "Arial"
-            Size            =   11.25
-            Charset         =   178
-            Weight          =   700
-            Underline       =   -1  'True
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Caption         =   " ÕÊÌ· «·Ì ›« Ê—… „Ã„⁄…"
-         TagVariant      =   "«Œ «— «·„Œ“‰"
-         ButtonStyle     =   3
-      End
-      Begin ImgXCtrl6.ImgXCtrl ImgxPrint2 
-         Height          =   945
-         Left            =   1170
-         TabIndex        =   81
-         Top             =   2880
-         Width           =   1125
-         _ExtentX        =   1984
-         _ExtentY        =   1667
-         AutoSize        =   -1  'True
-         LicenseUserName =   "mrmind"
-         LicenseRegCode  =   "íß“ªª•≤≥Ω≠∞“±≤ß´¥©ÆØOOHH-FAOOYNJB-EQCF6gI"
-      End
-      Begin ImgXCtrl6.ImgXCtrl imgxPrint 
-         Height          =   2040
-         Left            =   855
-         TabIndex        =   82
-         Top             =   3285
-         Width           =   3165
-         _ExtentX        =   5583
-         _ExtentY        =   3598
-         AutoZoom        =   -1  'True
-         LicenseUserName =   "mrmind"
-         LicenseRegCode  =   "íß“ªª•≤≥Ω≠∞“±≤ß´¥©ÆØOOHH-FAOOYNJB-EQCF6gI"
-      End
-      Begin VB.Label xdoc_no_flag 
-         Alignment       =   1  'Right Justify
-         Appearance      =   0  'Flat
-         BorderStyle     =   1  'Fixed Single
-         ForeColor       =   &H80000008&
-         Height          =   330
-         Left            =   2655
-         TabIndex        =   66
-         Top             =   1485
-         Width           =   1545
-      End
-      Begin VB.Label xdoc_disc 
-         Alignment       =   1  'Right Justify
-         Appearance      =   0  'Flat
-         BorderStyle     =   1  'Fixed Single
-         BeginProperty Font 
-            Name            =   "Tahoma"
-            Size            =   9.75
-            Charset         =   178
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         ForeColor       =   &H00000040&
-         Height          =   375
-         Left            =   3735
-         TabIndex        =   35
-         Top             =   1035
-         Visible         =   0   'False
-         Width           =   1455
-      End
-      Begin VB.Label XBRANCH 
-         BackColor       =   &H00FFFFFF&
-         Caption         =   "«·„” Œœ„"
-         Height          =   285
-         Left            =   0
-         TabIndex        =   34
-         Top             =   0
-         Width           =   555
-      End
-      Begin VB.Label xlate 
-         Alignment       =   1  'Right Justify
-         Appearance      =   0  'Flat
-         BorderStyle     =   1  'Fixed Single
-         BeginProperty Font 
-            Name            =   "Tahoma"
-            Size            =   9.75
-            Charset         =   178
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         ForeColor       =   &H00000040&
-         Height          =   375
-         Left            =   360
-         TabIndex        =   33
-         Top             =   2385
-         Visible         =   0   'False
-         Width           =   1455
-      End
-      Begin VB.Label Label2 
-         AutoSize        =   -1  'True
-         BackColor       =   &H00FFFFFF&
-         Caption         =   "«·„Œ“‰"
-         Height          =   270
-         Index           =   0
-         Left            =   2805
-         RightToLeft     =   -1  'True
-         TabIndex        =   32
-         Top             =   3285
-         Width           =   540
-      End
-      Begin VB.Label XTOTAL2 
-         Alignment       =   1  'Right Justify
-         Appearance      =   0  'Flat
-         BorderStyle     =   1  'Fixed Single
-         BeginProperty Font 
-            Name            =   "Arial"
-            Size            =   12
-            Charset         =   178
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         ForeColor       =   &H00000040&
-         Height          =   555
-         Left            =   4950
-         TabIndex        =   31
-         Top             =   855
-         Width           =   2535
-      End
-      Begin VB.Label xcard_doc 
-         Alignment       =   2  'Center
-         Appearance      =   0  'Flat
-         BackColor       =   &H80000005&
-         BackStyle       =   0  'Transparent
-         BorderStyle     =   1  'Fixed Single
-         ForeColor       =   &H000000C0&
-         Height          =   315
-         Left            =   1440
-         TabIndex        =   18
-         Top             =   405
-         Visible         =   0   'False
-         Width           =   675
+         TabIndex        =   7
+         Top             =   990
+         Width           =   420
       End
    End
    Begin VSFlex7Ctl.VSFlexGrid grid1 
       Height          =   7215
       Left            =   90
-      TabIndex        =   4
+      TabIndex        =   3
       Top             =   2025
       Width           =   20220
       _cx             =   35666
@@ -1997,7 +1080,7 @@ Begin VB.Form sales_ordersfrm
       GridLinesFixed  =   1
       GridLineWidth   =   1
       Rows            =   1
-      Cols            =   16
+      Cols            =   12
       FixedRows       =   1
       FixedCols       =   1
       RowHeightMin    =   0
@@ -2046,8 +1129,15 @@ Begin VB.Form sales_ordersfrm
       ForeColorFrozen =   0
       WallPaperAlignment=   9
    End
+   Begin MSComDlg.CommonDialog Common1 
+      Left            =   270
+      Top             =   45
+      _ExtentX        =   847
+      _ExtentY        =   847
+      _Version        =   393216
+   End
 End
-Attribute VB_Name = "sales_ordersfrm"
+Attribute VB_Name = "price_listfrm"
 Attribute VB_GlobalNameSpace = False
 Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
@@ -2072,19 +1162,18 @@ ItemsLookupAll Me, oSearchItem
 End Sub
 Function myreplace(Optional Row As Long = -1) As Boolean
 Dim aInsert As Variant
-aInsert = AddFlag(aInsert, "CODE", addstring(Xcode.text))
-aInsert = AddFlag(aInsert, "[DATE]", addDate(xDate.text))
+aInsert = AddFlag(aInsert, "CODE", addstring(xCode.text))
 aInsert = AddFlag(aInsert, "[NOTES]", addstring(xNotes.text))
 On Error GoTo myerror
 con.BeginTrans
-If xdoc_no.Tag = DefineMode Then
-    xdoc_no.text = IncData("FILE6_51H", "DOC_NO", con, , "00001")
-    aInsert = AddFlag(aInsert, "DOC_NO", addstring(xdoc_no.text))
+If xDoc_No.Tag = DefineMode Then
+    xDoc_No.text = NewFlag("FILE6_53H", "DOC_NO", con)
+    aInsert = AddFlag(aInsert, "DOC_NO", xDoc_No.text)
     aInsert = AddFlag(aInsert, "[USERNAME]", addstring(cusername))
-    con.Execute addInsert(aInsert, "FILE6_51H")
+    con.Execute addInsert(aInsert, "FILE6_53H")
 Else
     aInsert = AddFlag(aInsert, "[USERNAME2]", addstring(cusername))
-    con.Execute addUpdate(aInsert, "FILE6_51H", "DOC_NO = " & addstring(xdoc_no.text))
+    con.Execute addUpdate(aInsert, "FILE6_53H", "DOC_NO = " & addstring(xDoc_No.text))
 End If
 If Row > 0 Then myreplaceGrd Row
 con.CommitTrans
@@ -2097,22 +1186,20 @@ con.RollbackTrans
 Err.Clear
 End Function
 Sub myProc()
-On Error GoTo myerror
+'On Error GoTo myerror
 If ActiveControl.Name = grid1.Name Then
     Dim bNew As Boolean
     bNew = grid1.Row = grid1.Rows - 1
     grid1.TextMatrix(grid1.Row, 1) = oSearchItem.grid1.TextMatrix(oSearchItem.grid1.Row, 0)
-    If Not bNew Then
-        CellPos 13, grid1.Row, grid1.Col
-    End If
+    CellPos 13, grid1.Row, grid1.Col
     GrdDesc grid1.TextMatrix(grid1.Row, 1), grid1.Row
     Grid1_AfterEdit grid1.Row, grid1.Col
 ElseIf ActiveControl.Name = cmdInform.Name Then
-    xdoc_no.text = oSearchDoc.grid1.TextMatrix(oSearchDoc.grid1.Row, 0)
+    xDoc_No.text = oSearchDoc.grid1.TextMatrix(oSearchDoc.grid1.Row, 0)
     Unload oSearchDoc
     myUndo
-ElseIf ActiveControl.Name = Xcode.Name Then
-    Xcode.text = oSearchClientLook.grid1.TextMatrix(oSearchClientLook.grid1.Row, 0)
+ElseIf ActiveControl.Name = xCode.Name Then
+    xCode.text = oSearchClientLook.grid1.TextMatrix(oSearchClientLook.grid1.Row, 0)
     oSearchClientLook.Hide
     SendKeys "{tab}"
 ElseIf ActiveControl.Name = cmdClient.Name Then
@@ -2123,7 +1210,7 @@ ElseIf ActiveControl.Name = cmdClient.Name Then
         cmdClient.Tag = osearchClient.grid1.TextMatrix(osearchClient.grid1.Row, 0)
         cmdClient.Caption = osearchClient.grid1.TextMatrix(osearchClient.grid1.Row, 1)
     End If
-    If Not openCardTable(tbMode.tbFind, xdoc_no.text) Then
+    If Not openCardTable(tbMode.tbFind, xDoc_No.text) Then
         If Not openCardTable Then myDefine
     End If
     osearchClient.Hide
@@ -2140,17 +1227,25 @@ Private Sub cmdClient_Click()
 CLIENTLOOKUP Me, osearchClient, , , IIf(cmdClient.Tag = "", "", "ﬂ· «·⁄„·«¡")
 End Sub
 
+Private Sub cmdCSV_Click()
+'If grid1.Rows > 2 Then
+'    MsgBox " ÊÃœ «’‰«› »«·„” ‰œ"
+'    Exit Sub
+'End If
+getData
+End Sub
+
 Private Sub CmdDel_Click()
 If MsgBox("Õ–› «·„” ‰œ »«·ﬂ«„·  ?, Â· «‰  „Ê«›ﬁ ø", vbOKCancel + vbDefaultButton2) <> vbOK Then
     Exit Sub
 End If
 
 con.BeginTrans
-con.Execute "Delete  From FILE6_51 where Doc_No = " & MyParn(xdoc_no.text)
-con.Execute "Delete  From FILE6_51H where Doc_No = " & MyParn(xdoc_no.text)
+con.Execute "Delete  From FILE6_53 where Doc_No = " & xDoc_No.text
+con.Execute "Delete  From FILE6_53H where Doc_No = " & xDoc_No.text
 con.CommitTrans
     
-If Not openCardTable(tbMode.tbPrevious, xdoc_no.text) Then
+If Not openCardTable(tbMode.tbPrevious, xDoc_No.text) Then
     If Not openCardTable(tbMode.tbFirst) Then
         myDefine
     End If
@@ -2171,7 +1266,7 @@ Dim aRow As Variant
         aSub = AddFlag(aSub, "back_color", 19)
         aRow = AddFlag(aRow, aSub)
     End If
-    ToFileExelNew grid1, , , aRow, , 0.9, , , , , , Me, Array("⁄—÷ ”⁄— —ﬁ„ : " & xdoc_no.text, "«·⁄„Ì· : " & xCodeDesca.Caption, "«· «—ÌŒ : " & xDate.text)
+    ToFileExelNew grid1, , , aRow, , 0.9, , , , , , Me, Array("⁄—÷ ”⁄— —ﬁ„ : " & xDoc_No.text, "«·⁄„Ì· : " & xCodeDesca.Caption, "«· «—ÌŒ : " & xDate.text)
 
 Me.MousePointer = 0
 End Sub
@@ -2190,12 +1285,14 @@ End Sub
 Private Sub CmdNewInv_Click()
 myDefine
 On Error Resume Next
-Xcode.SetFocus
+xCode.SetFocus
 Err.Clear
 End Sub
 Private Sub cmdSave_Click()
-myreplace
-If Not openCardTable(tbMode.tbFind, xdoc_no.text) Then
+If myreplace Then
+    MsgBox " „ «·Õ›Ÿ »‰Ã«Õ"
+End If
+If Not openCardTable(tbMode.tbFind, xDoc_No.text) Then
     If Not openCardTable Then myDefine
 End If
 End Sub
@@ -2204,12 +1301,12 @@ myUndo
 End Sub
 Private Sub Form_Activate()
 If Not bAct Then
-    If xdoc_no.Tag = LoadMode Then
+    If xDoc_No.Tag = LoadMode Then
         On Error Resume Next
         grid1.SetFocus
         CellPos 13, grid1.Rows - 2, grid1.Cols - 1
     Else
-       xDate.SetFocus
+       xCode.SetFocus
     End If
 End If
 End Sub
@@ -2230,14 +1327,11 @@ End If
 End Sub
 Private Sub Form_Load()
 'On Error GoTo myerror
+bEdit = True
+
 OpenCon con
 nRound = 0
 
-Set xLogo.RowSource = myRs("SELECT * FROM LOGO_CODES", con)
-xLogo.ListField = "Desca"
-xLogo.BoundColumn = "Code"
-
-Set grid1.DataSource = DATA11
 If Not openCardTable Then myDefine
 Exit Sub
 myerror:
@@ -2282,7 +1376,6 @@ End If
 
 
 If Not validRow(Row) Then
-    CalcTotals
     Exit Sub
 End If
 
@@ -2291,14 +1384,11 @@ If Row = grid1.Rows - 1 Then
     bNew = True
 End If
 
-CalcTotals
-
 If myreplace(Row) Then
-    If xdoc_no.Tag = DefineMode Then
-        openCardTable tbMode.tbFind, xdoc_no.text
+    If xDoc_No.Tag = DefineMode Then
+        openCardTable tbMode.tbFind, xDoc_No.text
     ElseIf grid1.TextMatrix(Row, grid1.Cols - 1) = "" Then
         grid1.TextMatrix(Row, grid1.Cols - 1) = get_Id(con)
-        CalcTotals
     End If
     If bNew Then
         grid1.Select grid1.Rows - 1, 1
@@ -2315,9 +1405,7 @@ Private Sub grid1_EnterCell()
 With grid1
     If Not bEditRecord Then
         .Editable = flexEDNone
-    ElseIf xIs_collect.Value = 1 Then
-        .Editable = flexEDNone
-    ElseIf .Col = 1 Or .Col = 10 Or .Col = 11 Then
+    ElseIf .Col = 1 Or .Col = 11 Then
         .Editable = flexEDKbdMouse
     Else
         .Editable = flexEDNone
@@ -2382,13 +1470,8 @@ Private Sub xDate_Validate(Cancel As Boolean)
 If Not IsDate(xDate.text) Then Cancel = True
 End Sub
 Private Function myValid(Optional bIgMsg As Boolean = False, Optional bIgMan As Boolean = False) As Boolean
-If Trim(Xcode.text) = "" Then
+If Trim(xCode.text) = "" Then
     MsgBox "·« ÌÊÃœ ﬂÊœ ⁄„Ì· «Ê ﬂÊœ „Ê—œ"
-    Exit Function
-End If
-
-If Not IsDate(xDate.text) Then
-    If Not bIgMsg Then MsgBox "«· «—ÌŒ €Ì— ”·Ì„"
     Exit Function
 End If
 
@@ -2399,12 +1482,12 @@ End If
 myValid = True
 End Function
 Private Sub myload()
-xdoc_no.text = CardTable!doc_no
-xDate.text = myFormat_p(CardTable!Date)
-xNotes.text = CardTable!NOTES & ""
-Xcode.text = CardTable!code & ""
+xDoc_No.text = CardTable!doc_no
+xNotes.text = CardTable!notes & ""
+xCode.text = CardTable!code & ""
 xCodeDesca.Caption = CardTable!ClientDesca & ""
 panel1(0).Caption = CardTable!UserName & ""
+
 Handlecontrols LoadMode
 
 myLoadGrd
@@ -2415,16 +1498,12 @@ grid1.SetFocus
 Err.Clear
 End Sub
 Private Sub myDefine()
-xdoc_no.text = IncData("FILE6_51H", "DOC_NO", con, , "00001")
+xDoc_No.text = NewFlag("FILE6_53H", "DOC_NO", con)
 
-Xcode.text = ""
+xCode.text = ""
 xCodeDesca.Caption = ""
-xDate.text = myFormat_p(Date)
 
 
-xTotalQuant.Caption = ""
-xTotalItem.Caption = ""
-'xTotal.Caption = ""
 xNotes.text = ""
 panel1(1).Caption = GetComputerName
 panel1(2).Caption = cusername
@@ -2435,7 +1514,6 @@ myAddItem
 fixGrd
 
 Handlecontrols DefineMode
-CalcTotals
 
 CellPos 13, grid1.Rows - 2, grid1.Cols - 1
 On Error Resume Next
@@ -2443,18 +1521,17 @@ grid1.SetFocus
 Err.Clear
 End Sub
 Private Sub Handlecontrols(nMode)
-bEdit = True
 bEditRecord = bEdit
 cmdNewInv.Enabled = bEdit And nMode = LoadMode
 
-xdoc_no.Tag = nMode
+xDoc_No.Tag = nMode
 
 
 cmdSave.Enabled = bEditRecord
 cmddel.Enabled = (bEditRecord Or bDelRecord) And nMode = LoadMode
 
 Dim nRecord As Long, nRecords As Long
-retRecords xdoc_no.text, nRecords, nRecord
+retRecords xDoc_No.text, nRecords, nRecord
 
 cmdNext.Enabled = nRecord < nRecords And nRecords <> 0 And nMode = LoadMode
 cmdPrevious.Enabled = nRecord <> 1 And nRecords <> 0 And nMode = LoadMode
@@ -2473,8 +1550,6 @@ End Sub
 Private Sub grid1_KeyUp(KeyCode As Integer, Shift As Integer)
 If Not bEditRecord Then
     Exit Sub
-ElseIf xIs_collect.Value = 1 Then
-    Exit Sub
 ElseIf KeyCode = 13 Then
     CellPos KeyCode, grid1.Row, grid1.Col
 ElseIf KeyCode = 112 And grid1.Editable = flexEDKbdMouse Then
@@ -2484,8 +1559,6 @@ ElseIf KeyCode = 46 And grid1.Row <> grid1.Rows - 1 And grid1.Rows > 2 Then
     grid1.Select grid1.Rows - 1, 1
     grid1.ShowCell grid1.Rows - 1, 1
     MakeSerial grid1.Row
-        
-    CalcTotals
 End If
 End Sub
 Private Function GrdDesc(pItem As String, ByRef Row As Long, Optional ByRef sMsg As String) As Boolean
@@ -2519,233 +1592,57 @@ grid1.TextMatrix(Row, 6) = cm.Parameters("@DESCA").Value
 grid1.TextMatrix(Row, 7) = cm.Parameters("@SCAL").Value
 grid1.TextMatrix(Row, 8) = cm.Parameters("@COLOR").Value
 grid1.TextMatrix(Row, 9) = cm.Parameters("@PRICE").Value
-grid1.TextMatrix(Row, 10) = "1"
-grid1.TextMatrix(Row, 11) = IIf(optPrice(0).Value, cm.Parameters("@COST2").Value, cm.Parameters("@PRICE").Value)
-grid1.TextMatrix(Row, 14) = cm.Parameters("@COST").Value
-'grid1.TextMatrix(Row, 15) = fnBalance(cm.Parameters("@ITEM").Value, con, xStore.BoundText) & ""
+grid1.TextMatrix(Row, 10) = cm.Parameters("@COST2").Value
 GrdDesc = True
-End With
-End Function
-Private Function CalcTotals(Optional nMode As Integer = 0)
-Dim nTotalQuant As Double, nTotalQuant2 As Double, nTotalItem As Double, nTotalItemNoDiscount As Double, nTotalDiscount As Double, nTotalMin As Double
-Dim nDisountRow As Double
-With grid1
-Dim i As Long
-For i = 1 To grid1.Rows - 2
-    .TextMatrix(i, 13) = .ValueMatrix(i, 10) * .ValueMatrix(i, 11)
-    nTotalQuant = nTotalQuant + grid1.ValueMatrix(i, 10)
-    nTotalItem = mRound(nTotalItem + (.ValueMatrix(i, 10) * .ValueMatrix(i, 11)), 6)
-Next
-xTotalQuant.Caption = Myvalue(nTotalQuant)
-xTotalItem.Caption = Myvalue(mRound(nTotalItem))
-
-
-'bIg = True
-'If Val(xTotalItem.Caption) <> 0 Then
-'    If Round(Val(xRate.text), nRound) <> Round(Val(xDiscount.text) / Val(xTotalItem.Caption) * 100, nRound) Then
-'        xRate.text = Myvalue(Round((Val(xDiscount.text) / Val(xTotalItem.Caption)) * 100, nRound))
-'    End If
-'Else
-'    xRate.text = ""
-'End If
-'
-'
-'If IsDate(XDATESALES1.text) Or IsDate(XDATESALES2.text) Then
-'    xRate_Tax.text = "14"
-'    xtax.text = mRound(Val(xTotalItem.Caption) * 0.14)
-'Else
-'    If (Val(xTotalItem.Caption) - Val(xDiscount.text)) <> 0 Then
-'        If Round(Val(xRate_Tax.text), nRound) <> Round(Val(xtax.text) / (Val(xTotalItem.Caption) - Val(xDiscount.text)) * 100, nRound) Then
-'            xRate_Tax.text = Myvalue(Round((Val(xtax.text) / (Val(xTotalItem.Caption) - Val(xDiscount.text))) * 100, nRound))
-'        End If
-'    Else
-'        xRate_Tax.text = ""
-'    End If
-'End If
-'For i = 1 To .Rows - 2
-'    If .ValueMatrix(i, 9) > 0 Then
-'         nPrice = .ValueMatrix(i, 9) / ((1 + (Val(xRate_Tax.text) / 100)))
-'        .TextMatrix(i, 12) = Myvalue(mRound((nPrice - .ValueMatrix(i, 11)) / nPrice, 4) * 100)
-'    Else
-'        .TextMatrix(i, 12) = ""
-'    End If
-'Next
-'
-'xTotal.Caption = mRound((nTotalItem - Val(xDiscount.text)) + Val(xtax.text), 2)
-'bIg = False
 End With
 End Function
 Private Sub CardLookup(Optional pFilter As String = "")
 Dim Generalarray(5)
-Dim listarray(2, 5)
-Dim GrdArray(3, 1)
+Dim listarray(0, 5)
+Dim GrdArray(2, 1)
 Set Generalarray(0) = Me
 
 Generalarray(1) = "SELECT TOP 1000 " & _
-                  " FILE6_51H.DOC_NO ," & _
-                  " FORMAT(FILE6_51H.date,'yyyy/M/d')," & _
+                  " FILE6_53H.DOC_NO ," & _
                   " FILE3_10.DESCA," & _
-                  " FILE6_51H.NOTES" & _
-                  " FROM FILE6_51H" & _
-                  " INNER JOIN FILE3_10 ON FILE6_51H.CODE = FILE3_10.CODE"
+                  " FILE6_53H.NOTES" & _
+                  " FROM FILE6_53H" & _
+                  " INNER JOIN FILE3_10 ON FILE6_53H.CODE = FILE3_10.CODE"
 
 If cFilter <> "" Then
     Generalarray(1) = Generalarray(1) & " WHERE " & cFilter
 End If
 
-Generalarray(2) = "Order by DATE DESC,doc_no DESC"
+Generalarray(2) = "Order by doc_no DESC"
 Generalarray(3) = 6000
 Generalarray(5) = False
 
-listarray(0, 0) = "—ﬁ„ «·„” ‰œ"
-listarray(0, 1) = "(FILE6_51H.DOC_NO = 'cFilter')"
-
-listarray(1, 0) = "«· «—ÌŒ"
-listarray(1, 1) = "(##FILE6_51H.DATE##)"
-
-listarray(2, 0) = "«·⁄„Ì·"
-listarray(2, 1) = "(%%FILE3_10.DESCA%%)"
+listarray(0, 0) = "«·⁄„Ì·"
+listarray(0, 1) = "(%%FILE3_10.DESCA%%)"
 
 
 GrdArray(0, 0) = "—ﬁ„ «·„” ‰œ"
 GrdArray(0, 1) = 1200
 
-GrdArray(1, 0) = "«· «—ÌŒ"
-GrdArray(1, 1) = 1300
+GrdArray(1, 0) = "«·⁄„Ì·"
+GrdArray(1, 1) = 6500
 
-GrdArray(2, 0) = "«·⁄„Ì·"
-GrdArray(2, 1) = 4500
-
-GrdArray(3, 0) = "«·»Ì«‰"
-GrdArray(3, 1) = 3500
-
+GrdArray(2, 0) = "≈”„ «·ﬁ«∆„…"
+GrdArray(2, 1) = 3500
 
 searchArray = Array(Generalarray, listarray, GrdArray)
 oSearchDoc.Caption = "«” ⁄·«„"
 oSearchDoc.Show 1
 End Sub
-
-
-Private Sub xDiscount_offer_Change()
-lblOffer.Visible = Val(xDiscount_offer.Caption) <> 0
-xtotalitem_offer.Visible = Val(xDiscount_offer.Caption) <> 0
-End Sub
-
-Private Sub xdoc_replace_Change()
-xdoc_replace.Visible = xdoc_replace.Caption <> ""
-If xdoc_replace.Caption <> "" Then
-    xType.Caption = "«” »œ«·"
-Else
-    xType.Caption = ""
-End If
-End Sub
-Private Sub xdoc_ret_Change()
-cmdReplace.Enabled = IsDgt(xdoc_ret.text) And xdoc_no.Tag = DefineMode And (Len(Trim(xdoc_ret.text)) >= 11)
-cmdRefund.Enabled = IsDgt(xdoc_ret.text) And xdoc_no.Tag = DefineMode And (Len(Trim(xdoc_ret.text)) >= 11)
-End Sub
-
-Private Sub xdoc_ret_KeyPress(KeyAscii As Integer)
-    'If KeyAscii = 13 Then cmd_showdoc_Click
-End Sub
-
-Private Sub xIsRet_Click()
-If bIg Then Exit Sub
-If MsgBox("«·”„«Õ »„— Ã⁄ ··›« Ê—…", vbYesNo + vbDefaultButton2) = vbYes Then
-    con.Execute " UPDATE FILE6_51H SET ISRET = " & xIsRet.Value & " , ISNEW = 1 WHERE DOC_NO = " & MyParn(xdoc_no.text), nRec
-    If nRec = 1 Then MsgBox "  „  ⁄œÌ· «·„” ‰œ "
-End If
-End Sub
-
-Private Sub xMan_KeyPress(KeyAscii As Integer)
-If KeyAscii = 13 Then
-    If (Not xMan.MatchedWithList) And IsDgt(xMan.text) Then
-        Dim sCodeEmp As String
-        sCodeEmp = xMan.BoundText
-        xMan.BoundText = RetZero(xMan.text, 4)
-        If Not xMan.MatchedWithList Then
-            If Not xMan.MatchedWithList Then
-                xMan.BoundText = GetField("SELECT CODE FROM FILE6_25 WHERE ID_EMP = " & MyParn(sCodeEmp), con)
-            End If
-        End If
-    End If
-End If
-End Sub
-Private Sub xMAN_Validate(Cancel As Boolean)
-If Not xMan.MatchedWithList Then
-    Cancel = True
-ElseIf xMan.BoundText = "" Then
-    Cancel = True
-Else
-    grid1.TextMatrix(grid1.Rows - 1, 15) = xMan.BoundText
-End If
-End Sub
-
-Private Sub XPHONE_Click()
-Set Phonesfrm.myForm = Me
-Set Phonesfrm.con = con
-Phonesfrm.Show 1
-End Sub
-
 Private Sub xPrinted_Click()
 If bIg Then Exit Sub
-'If xPrinted.Value = 1 Then Exit Sub
-con.Execute "update FILE6_51h set printed = " & xPrinted.Value & ",closed = " & xPrinted.Value & " from FILE6_51h where doc_no = " & MyParn(xdoc_no.text)
+con.Execute "update FILE6_53h set printed = " & xPrinted.Value & ",closed = " & xPrinted.Value & " from FILE6_53h where doc_no = " & MyParn(xDoc_No.text)
 MsgBox " „ › Õ «·›« Ê—… »‰Ã«Õ"
-If Not openCardTable(tbMode.tbFind, xdoc_no.text) Then
+If Not openCardTable(tbMode.tbFind, xDoc_No.text) Then
     If Not openCardTable Then
         myDefine
     End If
 End If
-End Sub
-Sub OrderNoLook()
-Dim Generalarray(5)
-Dim listarray(0, 4)
-Dim GrdArray(3, 1)
-
-Set Generalarray(0) = Me
-Generalarray(1) = "SELECT DOC_NO, " & _
-                  " FORMAT([DATE],'yyyy/M/d')," & _
-                  " NOTES " & _
-                  " FROM FILE6_51H WHERE doc_sales IS NULL AND ISPOSTED = 0"
-
-If Xcode.text <> "" Then
-    Generalarray(1) = Generalarray(1) & " AND FILE6_51H.CODE = " & MyParn(Xcode.text)
-End If
-
-Generalarray(2) = "Order by Date , DOC_NO "
-Generalarray(3) = 4200
-Generalarray(5) = False
-
-listarray(0, 0) = "«·—ﬁ„-«· «—ÌŒ"
-listarray(0, 1) = "(@@Doc_No@@6 OR " & _
-                  " ##[DATE]##)"
-
-GrdArray(0, 0) = "—ﬁ„ «·„” ‰œ"
-GrdArray(0, 1) = 2000
-
-GrdArray(1, 0) = "«· «—ÌŒ"
-GrdArray(1, 1) = 1300
-
-GrdArray(2, 0) = "«·»Ì«‰"
-GrdArray(2, 1) = 3000
-
-searchArray = Array(Generalarray, listarray, GrdArray)
-oSearchOrder.sCaption = "«” ⁄·«„ «·ÿ·»Ì« "
-oSearchOrder.Show 1
-End Sub
-
-Private Sub xRate_Change()
-If bIg Then Exit Sub
-bIg = True
-If Val(xTotalItem.Caption) <> 0 Then
-    If Round(Val(xRate.text), 0) <> Round(Val(xDiscount.text) / Val(xTotalItem.Caption) * 100, 0) Then
-        xDiscount.text = Round((Val(xRate.text) * Val(xTotalItem.Caption)) / 100, 2)
-    End If
-Else
-    xDiscount.text = ""
-End If
-CalcTotals
-bIg = False
 End Sub
 Private Sub MakeSerial(Optional nBeginRow As Integer = 1)
 For i = 1 To grid1.Rows - 1
@@ -2754,8 +1651,8 @@ Next
 End Sub
 Private Sub fixGrd()
 With grid1
-'                 0         1          2         3         4          5             6          7          8         9          10        11           12           13          14            15
-.FormatString = "„.|" & "»«—ﬂÊœ|" & "„Ê”„|" & "„’‰⁄|" & "„ﬂ »|" & "—ﬁ„ „ÊœÌ·|" & "«·’‰›|" & "„ﬁ«”|" & "«··Ê‰|" & "”⁄—|" & "⁄œœ|" & "”⁄— «·»Ì⁄|" & "‰”»… Œ’„|" & "«·≈Ã„«·Ï|" & "«· ﬂ·›…|"
+'                 0         1          2         3         4          5             6          7          8               9          10              11
+.FormatString = "„.|" & "»«—ﬂÊœ|" & "„Ê”„|" & "„’‰⁄|" & "„ﬂ »|" & "—ﬁ„ „ÊœÌ·|" & "«·’‰›|" & "„ﬁ«”|" & "«··Ê‰|" & "”⁄— „” Â·ﬂ|" & "”⁄— Ã„·…|" & "”⁄—|"
 .RowHeight(0) = 600
 .WordWrap = True
 
@@ -2766,31 +1663,18 @@ With grid1
 .ColWidth(3) = 2000
 .ColWidth(4) = 0
 .ColWidth(5) = 2000
-.ColWidth(6) = 4000
-.ColWidth(7) = 1000
+.ColWidth(6) = 5000
+.ColWidth(7) = 1200
 .ColWidth(8) = 1600
-.ColWidth(9) = 1000
-.ColWidth(10) = 800
-.ColWidth(11) = 1000
-.ColWidth(12) = 1000
-.ColWidth(13) = 1300
-.ColWidth(14) = 1300
-.ColWidth(15) = 900
-'.ColHidden(.Cols - 2) = True
+.ColWidth(9) = 1200
+.ColWidth(10) = 1200
+.ColWidth(11) = 1200
+
 .ColHidden(.Cols - 1) = True
-If xIs_collect.Value = 1 Then
-    .ColFormat(9) = "0.00"
-    .ColFormat(11) = "0.00"
-    .ColFormat(12) = "0.00"
-    .ColFormat(13) = "0.00"
-    .ColFormat(14) = "0.00"
-End If
 .Cell(flexcpAlignment, 0, 0, 0, .Cols - 1) = flexAlignCenterCenter
-'.Cell(flexcpAlignment, 1, 0, .Rows - 1, .Cols - 1) = flexAlignRightCenter
 For i = 0 To grid1.Cols - 1
     .ColAlignment(i) = flexAlignRightCenter
 Next
-
 End With
 End Sub
 Private Function RemoveItem(Row As Long) As Boolean
@@ -2800,7 +1684,7 @@ End If
 
 If grid1.TextMatrix(Row, grid1.Cols - 1) <> "" Then
     On Error GoTo myerror
-    con.Execute "Delete  From FILE6_51 where id = " & grid1.TextMatrix(Row, grid1.Cols - 1)
+    con.Execute "Delete  From FILE6_53 where id = " & grid1.TextMatrix(Row, grid1.Cols - 1)
 End If
 grid1.RemoveItem Row
 RemoveItem = True
@@ -2814,39 +1698,50 @@ Dim aInsert As Variant
 With grid1
     For i = IIf(Row = -1, 1, Row) To IIf(Row = -1, grid1.Rows - 2, Row)
         aInsert = AddFlag(Empty, "ITEM", addstring(grid1.TextMatrix(i, 1)))
-        aInsert = AddFlag(aInsert, "PRICE_C", .ValueMatrix(i, 9))
-        aInsert = AddFlag(aInsert, "QUANT", .ValueMatrix(i, 10))
         aInsert = AddFlag(aInsert, "PRICE", .ValueMatrix(i, 11))
-        aInsert = AddFlag(aInsert, "COST", .ValueMatrix(i, 14))
         If grid1.TextMatrix(i, grid1.Cols - 1) = "" Then
-            aInsert = AddFlag(aInsert, "DOC_NO", addstring(xdoc_no.text))
-            con.Execute addInsert(aInsert, "FILE6_51")
+            aInsert = AddFlag(aInsert, "DOC_NO", addstring(xDoc_No.text))
+            con.Execute addInsert(aInsert, "FILE6_53")
         Else
-            con.Execute addUpdate(aInsert, "FILE6_51", "ID = " & grid1.TextMatrix(i, .Cols - 1))
+            con.Execute addUpdate(aInsert, "FILE6_53", "ID = " & grid1.TextMatrix(i, .Cols - 1))
         End If
     Next
 End With
 myreplaceGrd = True
 End Function
 Private Sub myLoadGrd()
-Dim aPrm As Variant
+Dim strSql As String
 
-aPrm = AddFlag(aPrm, "DOC_NO", xdoc_no.text)
-Set DATA11.RecordSet = cmd("[dbo].[sp_orders]", con, adStoredProc, aPrm).Execute
+strSql = "SELECT FILE6_53.ITEM," & _
+         "FILE1_10.MOSM," & _
+         "FACT.DESCA," & _
+         "FILE1_10.SUPP," & _
+         "FILE1_10.MODELFACT0," & _
+         "FILE1_10.DESCA," & _
+         "FILE1_10.SCAL," & _
+         "FILE1_10.COLOR," & _
+         "FILE1_10.PRICE," & _
+         "FILE1_10.COST2," & _
+         "FILE6_53.PRICE," & _
+         "FILE6_53.ID " & _
+         "FROM FILE6_53 " & _
+         "INNER JOIN FILE1_10 " & _
+         " ON FILE6_53.ITEM = FILE1_10.ITEM" & _
+         " LEFT JOIN FACT ON FACT.CODE = FILE1_10.FACT" & _
+         " WHERE FILE6_53.DOC_NO = " & xDoc_No.text & _
+         " ORDER BY FILE6_53.ID"
+Set grid1.DataSource = cmd(strSql, con).Execute
 myAddItem
-CalcTotals
 fixGrd
 End Sub
 Private Function mysave() As Boolean
 
 If Not myValid Then Exit Function
 
-CalcTotals
-
 If Not myreplace Then Exit Function
 
 Inform " „ Õ›Ÿ «·„” ‰œ »‰Ã«Õ"
-If Not openCardTable(tbMode.tbFind, xdoc_no.text) Then
+If Not openCardTable(tbMode.tbFind, xDoc_No.text) Then
     If Not openCardTable Then myDefine
 End If
                     
@@ -2854,7 +1749,7 @@ End Function
 Private Function validRow(Row As Long, Optional bIgMsg As Boolean = False, Optional bIgMsgsub As Boolean = True) As Boolean
 With grid1
 If Not IsNumeric(.TextMatrix(Row, 1)) Then Exit Function
-If .ValueMatrix(Row, 10) = 0 Then Exit Function
+If .ValueMatrix(Row, 11) = 0 Then Exit Function
 End With
 validRow = True
 End Function
@@ -2863,10 +1758,10 @@ KeyCode = 0
 If bStopCell Then
     bStopCell = False
 ElseIf Col = 1 And grid1.TextMatrix(Row, Col) = "" Then
-ElseIf Col < 10 Then
-    grid1.Col = 10
+ElseIf Col < 11 Then
+    grid1.Col = 11
 ElseIf Row < grid1.Rows - 1 Then
-    grid1.Select Row + 1, NextEmpty(grid1, Row + 1, 1, 10)
+    grid1.Select Row + 1, NextEmpty(grid1, Row + 1, 1, 11)
     grid1.ShowCell grid1.Row, 1
 End If
 End Sub
@@ -2874,21 +1769,13 @@ Private Sub myAddItem()
 grid1.AddItem ""
 MakeSerial
 End Sub
-Private Sub xTotal_Change()
-If Not bIg Then
-    bIg = True
-    xDiscount.text = Round(Val(xTotalItem.Caption) - Val(xTotal.Caption), 2)
-    CalcTotals
-    bIg = False
-End If
-End Sub
 Private Sub myUndo()
-If xdoc_no.Tag = DefineMode Then
+If xDoc_No.Tag = DefineMode Then
     If Not openCardTable Then
         CmdNewInv_Click
     End If
 Else
-    If Not openCardTable(tbMode.tbFind, xdoc_no.text) Then
+    If Not openCardTable(tbMode.tbFind, xDoc_No.text) Then
         If Not openCardTable Then
             myDefine
         End If
@@ -2901,7 +1788,7 @@ Err.Clear
 End Sub
 Private Sub CmdNext_Click()
 'If Not openCardTable(tbMode.tbNext, xdoc_no_flag.Caption) Then
-If Not openCardTable(tbMode.tbNext, xdoc_no.text) Then
+If Not openCardTable(tbMode.tbNext, xDoc_No.text) Then
     If Not openCardTable(tbMode.tblast) Then
         myDefine
     End If
@@ -2909,7 +1796,7 @@ End If
 End Sub
 Private Sub CmdPrevious_Click()
 'If Not openCardTable(tbMode.tbPrevious, xdoc_no_flag.Caption) Then
-If Not openCardTable(tbMode.tbPrevious, xdoc_no.text) Then
+If Not openCardTable(tbMode.tbPrevious, xDoc_No.text) Then
     If Not openCardTable(tbMode.tbFirst) Then
         myDefine
     End If
@@ -2935,13 +1822,13 @@ End Function
 Private Function retRecords(pDoc_no, ByRef nRecords As Long, ByRef nRecord As Long) As Variant
 Dim cString As String, loctable As New ADODB.RecordSet
 If pDoc_no <> "" Then
-    cString = "SELECT Count(FILE6_51H.DOC_NO) AS records,COUNT(CASE WHEN FILE6_51H.DOC_NO <= " & MyParn(pDoc_no) & " THEN 1 END) AS record"
+    cString = "SELECT Count(FILE6_53H.DOC_NO) AS records,COUNT(CASE WHEN FILE6_53H.DOC_NO <= " & MyParn(pDoc_no) & " THEN 1 END) AS record"
 Else
-    cString = "SELECT Count(FILE6_51H.DOC_NO) AS records,0 as record"
+    cString = "SELECT Count(FILE6_53H.DOC_NO) AS records,0 as record"
 End If
 
-cString = cString & " FROM FILE6_51H " & _
-                    " INNER JOIN FILE3_10 ON FILE6_51H.CODE = FILE3_10.CODE"
+cString = cString & " FROM FILE6_53H " & _
+                    " INNER JOIN FILE3_10 ON FILE6_53H.CODE = FILE3_10.CODE"
 
 If cFilter <> "" Then
     cString = cString & " WHERE " & cFilter
@@ -2955,7 +1842,7 @@ End If
 End Function
 Private Function retFilter()
 If cmdClient.Tag <> "" Then
-    retFilter = retFilter & " AND FILE6_51H.CODE = " & MyParn(cmdClient.Tag)
+    retFilter = retFilter & " AND FILE6_53H.CODE = " & MyParn(cmdClient.Tag)
 End If
 End Function
 Private Sub xdate_filter_GotFocus()
@@ -2997,25 +1884,44 @@ myLostFocus xDate
 myValidDate xDate
 End Sub
 Private Sub xcode_GotFocus()
-myGotFocus Xcode
+myGotFocus xCode
 End Sub
 Private Sub xcode_LostFocus()
-myLostFocus Xcode
+myLostFocus xCode
 xCodeDesca.Caption = ""
-If Trim(Xcode.text) = "" Then Exit Sub
-Xcode.text = RetZero(Xcode.text, 4)
-If Xcode.text = "0000" Then Exit Sub
+If Trim(xCode.text) = "" Then Exit Sub
+xCode.text = RetZero(xCode.text, 4)
+If xCode.text = "0000" Then Exit Sub
 
 Dim loctable As New ADODB.RecordSet
-Set loctable = cmd("SELECT * FROM FILE3_10 WHERE CODE = " & MyParn(Xcode.text), con).Execute
+Set loctable = cmd("SELECT * FROM FILE3_10 WHERE CODE = " & MyParn(xCode.text), con).Execute
 If loctable.EOF Then Exit Sub
 xCodeDesca.Caption = loctable!DESCA & ""
 End Sub
 Private Sub xDoc_No_GotFocus()
-myGotFocus xdoc_no
+myGotFocus xDoc_No
 End Sub
 Private Sub xDoc_No_LostFocus()
-myLostFocus xdoc_no
+myLostFocus xDoc_No
+If Not ValidNum(xDoc_No.text) Then
+     If xDoc_No.Tag = LoadMode Then
+        myDefine
+    Else
+        xDoc_No.text = ""
+    End If
+Else
+    If (Not (CardTable.EOF)) And xDoc_No.Tag = LoadMode Then
+        If CardTable!doc_no = xDoc_No.text Then
+            Exit Sub
+        End If
+    End If
+    
+    If Not openCardTable(tbMode.tbFind, xDoc_No.text) Then
+        If Not openCardTable Then
+            myDefine
+        End If
+    End If
+End If
 End Sub
 Private Sub XSTORE_GotFocus()
 myGotFocus xStore
@@ -3054,26 +1960,26 @@ If xLogo.MatchedWithList Then
 End If
 
 Dim loctable As New ADODB.RecordSet, cString As String
-cString = "SELECT FILE6_51H.DOC_NO," & _
-          " FILE6_51H.DATE," & _
+cString = "SELECT FILE6_53H.DOC_NO," & _
+          " FILE6_53H.DATE," & _
           " FILE3_10.DESCA AS CODE_DESCA," & _
-          " FILE6_51.ITEM," & _
-          " FILE6_51.QUANT," & _
-          " FILE6_51.PRICE," & _
+          " FILE6_53.ITEM," & _
+          " FILE6_53.QUANT," & _
+          " FILE6_53.PRICE," & _
           " FILE1_10.DESCA AS ITEM_DESCA," & _
-          " FILE6_51.TOTAL," & _
+          " FILE6_53.TOTAL," & _
           " file1_10.modelfact," & _
           " FACT.DESCA AS FACTDESCA," & _
           " FILE1_10.COLOR," & _
           " FILE1_10.C_COLOR," & _
           " FILE1_10.SCAL," & _
           " FILE1_10.MODEL" & _
-          " FROM FILE6_51 " & _
-          " INNER JOIN FILE6_51H ON FILE6_51.DOC_NO = FILE6_51H.DOC_NO" & _
-          " INNER JOIN FILE1_10 ON FILE6_51.ITEM = FILE1_10.ITEM" & _
-          " INNER JOIN FILE3_10 ON FILE6_51H.CODE = FILE3_10.CODE" & _
+          " FROM FILE6_53 " & _
+          " INNER JOIN FILE6_53H ON FILE6_53.DOC_NO = FILE6_53H.DOC_NO" & _
+          " INNER JOIN FILE1_10 ON FILE6_53.ITEM = FILE1_10.ITEM" & _
+          " INNER JOIN FILE3_10 ON FILE6_53H.CODE = FILE3_10.CODE" & _
           " LEFT JOIN FACT ON FACT.CODE = FILE1_10.[FACT]" & _
-          " WHERE  FILE6_51.DOC_NO = " & MyParn(xdoc_no.text)
+          " WHERE  FILE6_53.DOC_NO = " & MyParn(xDoc_No.text)
 Set loctable = cmd(cString, con).Execute
 
 Dim con_image As New ADODB.Connection
@@ -3201,27 +2107,27 @@ Dim cString As String
 cString = "SELECT FILE1_10.MODEL," & _
             "FILE1_10.MODELFACT," & _
             "FILE1_10.DESCA AS ITEM_DESCA," & _
-            "MAX(FILE6_51.PRICE) AS PRICE," & _
-            "FILE6_51H.DOC_NO," & _
-            "FILE6_51H.[DATE]," & _
+            "MAX(FILE6_53.PRICE) AS PRICE," & _
+            "FILE6_53H.DOC_NO," & _
+            "FILE6_53H.[DATE]," & _
             "FACT.DESCA AS FACT_DESCA," & _
             "FILE3_10.DESCA AS CODE_desca," & _
             " (SELECT  STRING_AGG(COLOR, CHAR(13)) AS COLOR FROM (SELECT DISTINCT  COLOR FROM FILE1_10 F where model = FILE1_10.MODEL) FC) AS COLOR," & _
             " (SELECT  STRING_AGG(SCAL, CHAR(13)) AS SCAL FROM (SELECT DISTINCT  SCAL FROM FILE1_10 F where model = FILE1_10.MODEL) FS) AS SCAL" & _
-            " From FILE6_51 " & _
-            " INNER JOIN FILE6_51H ON FILE6_51.DOC_NO = FILE6_51H.DOC_NO" & _
-            " INNER JOIN FILE1_10 ON FILE1_10.ITEM = FILE6_51.ITEM" & _
-            " INNER JOIN FILE3_10 ON FILE6_51H.CODE = FILE3_10.CODE" & _
+            " From FILE6_53 " & _
+            " INNER JOIN FILE6_53H ON FILE6_53.DOC_NO = FILE6_53H.DOC_NO" & _
+            " INNER JOIN FILE1_10 ON FILE1_10.ITEM = FILE6_53.ITEM" & _
+            " INNER JOIN FILE3_10 ON FILE6_53H.CODE = FILE3_10.CODE" & _
             " LEFT JOIN FACT ON FACT.CODE = FILE1_10.[FACT]" & _
-            " WHERE FILE6_51H.DOC_NO = " & MyParn(xdoc_no.text)
+            " WHERE FILE6_53H.DOC_NO = " & MyParn(xDoc_No.text)
  
  cString = cString & _
-            " GROUP BY FILE6_51H.DOC_NO," & _
+            " GROUP BY FILE6_53H.DOC_NO," & _
              "FILE1_10.MODEL," & _
              "FILE1_10.MODELFACT," & _
              "FILE1_10.DESCA," & _
-             "FILE6_51.DOC_NO," & _
-             "FILE6_51H.[DATE]," & _
+             "FILE6_53.DOC_NO," & _
+             "FILE6_53H.[DATE]," & _
              "FILE3_10.DESCA," & _
              "FACT.DESCA" & _
             " ORDER BY FILE1_10.MODEL"
@@ -3338,33 +2244,33 @@ End If
 Me.MousePointer = vbHourglass
 
 
-On Error GoTo myerror
+'On Error GoTo myerror
 cFilter = retFilter
 
 Set CardTable = New ADODB.RecordSet
-cString = "SELECT TOP 1 FILE6_51H.*," & _
+cString = "SELECT TOP 1 FILE6_53H.*," & _
           " FILE3_10.DESCA AS CLIENTDESCA " & _
-          " FROM FILE6_51H " & _
-          " INNER JOIN FILE3_10 ON FILE3_10.CODE = FILE6_51H.code"
+          " FROM FILE6_53H " & _
+          " INNER JOIN FILE3_10 ON FILE3_10.CODE = FILE6_53H.code"
   
 If pMode = tbMode.tbFirst Then
-    'cOrder = "Order by FILE6_51H.DOC_NO_FLAG"
-    cOrder = "Order by FILE6_51H.DOC_NO"
+    'cOrder = "Order by FILE6_53H.DOC_NO_FLAG"
+    cOrder = "Order by FILE6_53H.DOC_NO"
 ElseIf pMode = tbMode.tblast Then
-    'cOrder = "Order by FILE6_51H.DOC_NO_FLAG DESC"
-    cOrder = "Order by FILE6_51H.DOC_NO DESC"
+    'cOrder = "Order by FILE6_53H.DOC_NO_FLAG DESC"
+    cOrder = "Order by FILE6_53H.DOC_NO DESC"
 ElseIf pMode = tbMode.tbFind Then
-    cWhere = "FILE6_51H.Doc_no = " & MyParn(pDoc_no)
+    cWhere = "FILE6_53H.Doc_no = " & pDoc_no
 ElseIf pMode = tbMode.tbPrevious Then
-    'cWhere = "FILE6_51H.DOC_NO_FLAG < " & MyParn(pDoc_no)
-    'cOrder = "Order by FILE6_51H.DOC_NO_FLAG DESC"
+    'cWhere = "FILE6_53H.DOC_NO_FLAG < " & MyParn(pDoc_no)
+    'cOrder = "Order by FILE6_53H.DOC_NO_FLAG DESC"
     
-    cWhere = "FILE6_51H.DOC_NO < " & MyParn(pDoc_no)
-    cOrder = "Order by FILE6_51H.DOC_NO DESC"
+    cWhere = "FILE6_53H.DOC_NO < " & pDoc_no
+    cOrder = "Order by FILE6_53H.DOC_NO DESC"
 ElseIf pMode = tbMode.tbNext Then
-    'cWhere = "FILE6_51H.DOC_NO_FLAG > " & MyParn(pDoc_no)
-    cWhere = "FILE6_51H.DOC_NO > " & MyParn(pDoc_no)
-    cOrder = "Order by FILE6_51H.DOC_NO"
+    'cWhere = "FILE6_53H.DOC_NO_FLAG > " & MyParn(pDoc_no)
+    cWhere = "FILE6_53H.DOC_NO > " & MyParn(pDoc_no)
+    cOrder = "Order by FILE6_53H.DOC_NO"
 End If
 
 If cWhere <> "" Then
@@ -3390,5 +2296,106 @@ Me.MousePointer = vbNormal
 MsgBox Err.Description
 Err.Clear
 End Function
+Private Function getData()
+Dim cFileName As String
+Dim sb As New ChilkatStringBuilder
+
+Common1.InitDir = ""
+Common1.FileName = ""
+Common1.Filter = "CSV (*.CSV*)|*.CSV*"
+Common1.ShowOpen
+
+cFileName = Common1.FileName
+
+If cFileName = "" Then Exit Function
+
+Dim cSv As New ChilkatCsv
+Dim i As Long
+
+nAccess = sb.LoadFile(cFileName, "auto")
+
+If nAccess = 0 Then
+    MsgBox "·„ Ì „ﬂ‰ «·‰Ÿ«„ „‰  Õ„Ì· «·„·›"
+    Exit Function
+End If
 
 
+cSv.HasColumnNames = 1
+nAccess = cSv.LoadFromString(sb.GetAsString)
+
+If cSv.NumRows < 1 Then Exit Function
+
+If myloadCSV(cSv) Then
+    Inform " „  «÷«›… «·«’‰«› »‰Ã«Õ"
+    myLoadGrd
+End If
+End Function
+Private Function myloadCSV(ByRef cSv As ChilkatCsv) As Boolean
+Dim i As Long
+Dim sCaption As String
+Dim ship_no As String
+
+
+sCaption = Me.Caption
+prog1.Visible = True
+
+Dim sb As New ChilkatStringBuilder
+Dim nAffect As Long
+For i = 0 To cSv.NumRows - 1
+    If Trim(cSv.GetCell(i, 0)) <> "" Then
+        sb.Append MyParn(cSv.GetCell(i, 0)) & ","
+    End If
+Next
+
+sb.Shorten 1
+If sb.length = 0 Then Exit Function
+
+Dim strSql As String
+Dim ItemTable As ADODB.RecordSet
+
+strSql = "SELECT * " & _
+         " FROM FILE1_10 " & _
+         " WHERE ITEM IN(" & sb.GetAsString & ")"
+
+Dim db As New clsDb
+Set ItemTable = db.myRs(strSql): If ItemTable Is Nothing Then GoTo CleanUp
+
+                    
+
+Dim nquant As Double
+prog1.Visible = True
+For i = 1 To cSv.NumRows - 1
+    Me.Caption = sCaption & " - " & "”Ã· " & (i + 1) & " „‰ " & cSv.NumRows
+    prog1.Value = Round(i / (cSv.NumRows), 2) * 100
+        
+    sitem = Trim(cSv.GetCell(i, 0))
+    nPrice = Val(cSv.GetCell(i, 1))
+                        
+    If sitem <> "" And nPrice > 0 Then
+         ItemTable.Find "ITEM = " & MyParn(sitem), , adSearchForward, adBookmarkFirst
+         If Not ItemTable.EOF Then
+            If nPrice > 0 Then
+                strSql = "update file6_53 " & _
+                              "set file6_53.price = " & nPrice & _
+                              " where doc_no = " & MyParn(xDoc_No.text) & _
+                              " and item  = " & MyParn(sitem)
+                
+                If Not db.Execute(strSql, nAffect) Then GoTo CleanUp
+                
+                If nAffect = 0 Then
+                    strSql = "INSERT INTO FILE6_53(DOC_NO,ITEM,PRICE)" & _
+                             "VALUES(" & xDoc_No.text & "," & _
+                             addstring(sitem) & "," & _
+                             nPrice & ")"
+                    If Not db.Execute(strSql) Then GoTo CleanUp
+                End If
+            End If
+        End If
+    End If
+Next
+myloadCSV = True
+CleanUp:
+prog1.Visible = False
+Me.Caption = sCaption
+Set db = Nothing
+End Function

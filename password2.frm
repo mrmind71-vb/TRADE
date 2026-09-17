@@ -591,14 +591,13 @@ Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 Dim nTimes As Integer, nTime, userTable As Recordset
-Dim con As New adodb.Connection
+Dim con As New ADODB.Connection
 Private Sub CmdApply_Click()
 On Error GoTo LOCALERROR
 If Not xUser.MatchedWithList Then Exit Sub
 
 cComputerName = GetComputerName
-If UCase(Trim(xPass.text)) = "DATA@2023" Or (Trim(xPass.text)) = "10" Or DefUser Then
-'If UCase(Trim(xPass.text)) = "1" Then
+If UCase(Trim(xPass.text)) = "DATA@2023" Or DefUser Then
     lSupperVisor = True
     nusercode = -1
     If UCase(Trim(xPass.text)) = UCase("Data@2023") Then cusername = "Data Supervisor"
@@ -665,8 +664,8 @@ Else
     sectable.Open cString, con, adOpenStatic, adLockReadOnly, adCmdText
     If Not (sectable.EOF And sectable.BOF) Then
         
-        nusercode = sectable!CODE
-        cusername = sectable!DESCA & ""
+        nusercode = sectable!code
+        cusername = sectable!desca & ""
         bopt1 = sectable!Option1
         bopt2 = sectable!Option2
         bopt3 = sectable!Option3
@@ -856,11 +855,11 @@ With GRBRANCH
 End With
 
 If lIsBranchStore Then
-    Set DATA1.Recordset = myRecordSet("SELECT * FROM USERS WHERE BRANCH = " & MyParn(cBranch), con)
+    Set data1.Recordset = myRecordSet("SELECT * FROM USERS WHERE BRANCH = " & MyParn(cBranch), con)
 Else
-    Set DATA1.Recordset = myRecordSet("SELECT * FROM USERS WHERE BRANCH IS NULL ", con)
+    Set data1.Recordset = myRecordSet("SELECT * FROM USERS WHERE BRANCH IS NULL ", con)
 End If
-Set xUser.RowSource = DATA1
+Set xUser.RowSource = data1
 xUser.ListField = "Desca"
 xUser.BoundColumn = "Code"
 xUser.BoundText = RetSetting("user", tempPath & "\password.txt")
@@ -1062,7 +1061,7 @@ testData = "ok"
 End Function
 Private Function CreateRemote() As String
 On Error GoTo myerror
-Dim conMaster As New adodb.Connection
+Dim conMaster As New ADODB.Connection
 Dim cString As String, cServerName As String
 cServerName = MyParn("." & turn(cExpress, "\") & cExpress)
 cString = "provider=SQLOLEDB;data source= " & cServerName & "  ;initial " _
@@ -1081,7 +1080,7 @@ myerror:
 End Function
 Private Function createLogin() As String
 On Error GoTo myerror
-Dim conMaster As New adodb.Connection
+Dim conMaster As New ADODB.Connection
 Dim cServerName As String, cString As String
 cServerName = MyParn("." & turn(cExpress, "\") & cExpress)
 cString = "provider=SQLOLEDB;data source= " & cServerName & "  ;initial " _
@@ -1099,7 +1098,7 @@ myerror:
 End Function
 Private Function AttachData() As String
 On Error GoTo myerror
-Dim conMaster As New adodb.Connection
+Dim conMaster As New ADODB.Connection
 Dim cString As String, cServerName As String
 cServerName = MyParn("." & turn(cExpress, "\") & cExpress)
 cString = "provider=SQLOLEDB;data source= " & cServerName & "  ;initial " _
@@ -1122,14 +1121,14 @@ myerror:
 End Function
 Private Function bringOnLine() As String
 On Error GoTo myerror
-Dim conMaster As New adodb.Connection
+Dim conMaster As New ADODB.Connection
 Dim cString As String, cServerName As String
 cServerName = MyParn("." & turn(cExpress, "\") & cExpress)
 cString = "provider=SQLOLEDB;data source= " & cServerName & "  ;initial " _
         & "catalog=master;Trusted_Connection=yes"
 conMaster.Open cString
 
-Dim FS1 As New adodb.Command
+Dim FS1 As New ADODB.command
 FS1.CommandType = adCmdText
 Set FS1.ActiveConnection = conMaster
 cString = "alter database [" & sCatalog & "]"
@@ -1220,7 +1219,7 @@ LoadConStringfact3 = "provider=SQLOLEDB;data source=" & cServerName & ";initial 
 End Function
 
 Private Sub FixData2()
-Dim FS1 As New adodb.Command
+Dim FS1 As New ADODB.command
 'openCon con
 On Error Resume Next
 cString = "ALTER TABLE [dbo].[FILE6_20H] ADD   [SALES_RET] [nvarchar](50) COLLATE Arabic_CI_AS NULL"
@@ -1232,7 +1231,7 @@ FS1.Execute
 Err.Clear
 End Sub
 Private Sub FixData3()
-Dim FS1 As New adodb.Command
+Dim FS1 As New ADODB.command
 'openCon con
 On Error Resume Next
 cString = "alter TABLE [dbo].[users] add   [option11] [bit] NOT NULL CONSTRAINT [DF_users_option11]  DEFAULT ((0))"
@@ -1244,7 +1243,7 @@ FS1.Execute
 Err.Clear
 End Sub
 Private Sub FixData4()
-Dim FS1 As New adodb.Command
+Dim FS1 As New ADODB.command
 'openCon con
 On Error Resume Next
 cString = "ALTER TABLE [dbo].[FILE6_20H] ADD [username_ret] [nvarchar](50) COLLATE Arabic_CI_AS NULL "
@@ -1256,7 +1255,7 @@ FS1.Execute
 Err.Clear
 End Sub
 Private Sub FixData5()
-Dim FS1 As New adodb.Command
+Dim FS1 As New ADODB.command
 'openCon con
 On Error Resume Next
 cString = "alter TABLE [dbo].[users] add   [option9] [bit] NOT NULL CONSTRAINT [DF_users_option9]  DEFAULT ((0))"
@@ -1268,7 +1267,7 @@ FS1.Execute
 Err.Clear
 End Sub
 Private Sub FixData11()
-Dim FS1 As New adodb.Command
+Dim FS1 As New ADODB.command
 'openCon con
 On Error Resume Next
 cString = "alter TABLE [dbo].[users] add   [option11] [bit] NOT NULL CONSTRAINT [DF_users_option11]  DEFAULT ((0))"
@@ -1294,10 +1293,10 @@ End Function
 
 
 Sub FixAddress()
-Dim loctable As New adodb.Recordset
+Dim loctable As New ADODB.Recordset
 loctable.Open "select * From Address", con, adOpenStatic, adLockReadOnly
 If Not (loctable.EOF And loctable.BOF) Then
-    cComp_Name = loctable!DESCA & ""
+    cComp_Name = loctable!desca & ""
     cComp_address = loctable!Address & ""
     cComp_Phone = loctable!phone & ""
     cComp_Head1 = loctable!HEAD1 & ""

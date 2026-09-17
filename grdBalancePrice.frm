@@ -10,7 +10,7 @@ Begin VB.Form grdBalancePrice
    ClientHeight    =   10290
    ClientLeft      =   75
    ClientTop       =   450
-   ClientWidth     =   20370
+   ClientWidth     =   10830
    BeginProperty Font 
       Name            =   "Tahoma"
       Size            =   8.25
@@ -23,8 +23,8 @@ Begin VB.Form grdBalancePrice
    LinkTopic       =   "Form1"
    MDIChild        =   -1  'True
    RightToLeft     =   -1  'True
-   ScaleHeight     =   10290
-   ScaleWidth      =   20370
+   ScaleHeight     =   11055
+   ScaleWidth      =   11400
    WindowState     =   2  'Maximized
    Begin VB.Frame fmBranch 
       BackColor       =   &H00FFFFFF&
@@ -752,7 +752,7 @@ Begin VB.Form grdBalancePrice
       GridLinesFixed  =   1
       GridLineWidth   =   1
       Rows            =   1
-      Cols            =   6
+      Cols            =   7
       FixedRows       =   1
       FixedCols       =   0
       RowHeightMin    =   0
@@ -1182,9 +1182,9 @@ Begin VB.Form grdBalancePrice
       Height          =   465
       Left            =   0
       TabIndex        =   26
-      Top             =   9825
-      Width           =   20370
-      _ExtentX        =   35930
+      Top             =   10590
+      Width           =   11400
+      _ExtentX        =   20108
       _ExtentY        =   820
       _Version        =   196610
       BackColor       =   16777215
@@ -1316,10 +1316,10 @@ Begin VB.Form grdBalancePrice
       Height          =   195
       Left            =   0
       TabIndex        =   32
-      Top             =   9630
+      Top             =   10395
       Visible         =   0   'False
-      Width           =   20370
-      _ExtentX        =   35930
+      Width           =   11400
+      _ExtentX        =   20108
       _ExtentY        =   344
       _Version        =   327682
       BorderStyle     =   1
@@ -1472,7 +1472,7 @@ Begin VB.Form grdBalancePrice
       GridLinesFixed  =   1
       GridLineWidth   =   1
       Rows            =   1
-      Cols            =   6
+      Cols            =   7
       FixedRows       =   1
       FixedCols       =   0
       RowHeightMin    =   0
@@ -1568,7 +1568,7 @@ Begin VB.Form grdBalancePrice
       GridLinesFixed  =   1
       GridLineWidth   =   1
       Rows            =   1
-      Cols            =   6
+      Cols            =   7
       FixedRows       =   1
       FixedCols       =   0
       RowHeightMin    =   0
@@ -1664,7 +1664,7 @@ Begin VB.Form grdBalancePrice
       GridLinesFixed  =   1
       GridLineWidth   =   1
       Rows            =   1
-      Cols            =   6
+      Cols            =   7
       FixedRows       =   1
       FixedCols       =   0
       RowHeightMin    =   0
@@ -1760,7 +1760,7 @@ Begin VB.Form grdBalancePrice
       GridLinesFixed  =   1
       GridLineWidth   =   1
       Rows            =   1
-      Cols            =   12
+      Cols            =   14
       FixedRows       =   1
       FixedCols       =   0
       RowHeightMin    =   0
@@ -1792,7 +1792,7 @@ Begin VB.Form grdBalancePrice
       OwnerDraw       =   0
       Editable        =   0
       ShowComboButton =   -1  'True
-      WordWrap        =   0   'False
+      WordWrap        =   -1  'True
       TextStyle       =   0
       TextStyleFixed  =   0
       OleDragMode     =   0
@@ -2089,33 +2089,33 @@ Private Sub CMD_PRINT_Click()
 End Sub
 Private Sub cmdExcel_Click()
 Me.MousePointer = 11
-Dim I As Long
-For I = 1 To cmdRep.UBound
+Dim i As Long
+For i = 1 To cmdRep.UBound
     Dim aRow As Variant
-    If cmdRep(I).Value = -1 Then
-        If grid1(I).Rows > 1 Then
+    If cmdRep(i).Value = -1 Then
+        If grid1(i).Rows > 1 Then
             aSub = AddFlag(Empty, "row", 1)
             aSub = AddFlag(aSub, "bold", True)
             aSub = AddFlag(aSub, "word_wrap", False)
             aSub = AddFlag(aSub, "back_color", 19)
             aRow = AddFlag(aRow, aSub)
         End If
-        ToFileExelNew grid1(I), , , aRow, Array(1), 0.9, , , , , , Me, Array(Me.Caption & "-" & cmdRep(I).Caption, retHeader(aHeader, 0, 6), retHeader(aHeader, 4, 4), retHeader(aHeader, 8, 4))
+        ToFileExelNew grid1(i), , , aRow, Array(1), 0.9, , , , , , Me, Array(Me.Caption & "-" & cmdRep(i).Caption, retHeader(aHeader, 0, 6), retHeader(aHeader, 4, 4), retHeader(aHeader, 8, 4))
     End If
 Next
 Me.MousePointer = 0
 End Sub
 
-Private Sub CmdExit_Click()
+Private Sub cmdExit_Click()
 Unload Me
 End Sub
 Private Sub CmdUndo_Click()
     Unload Me
 End Sub
-Private Sub cmdGo_Click()
+Private Sub CmdGo_Click()
 If Not MYVALID Then Exit Sub
 Me.MousePointer = vbHourglass
-myloadgrd
+myLoadGrd
 Me.MousePointer = vbNormal
 End Sub
 Private Function MYVALID() As Boolean
@@ -2136,75 +2136,75 @@ Private Sub cmdRep_Click(Index As Integer, Value As Integer)
 Handlecontrols
 End Sub
 Private Sub Handlecontrols()
-Dim I As Long
-For I = 1 To cmdRep.UBound
-    cmdRep(I).BackColor = IIf(cmdRep(I).Value = -1, &HC0C0C0, &HFFFFFF)
+Dim i As Long
+For i = 1 To cmdRep.UBound
+    cmdRep(i).BackColor = IIf(cmdRep(i).Value = -1, &HC0C0C0, &HFFFFFF)
     
-    grid1(I).Visible = cmdRep(I).Value = -1
+    grid1(i).Visible = cmdRep(i).Value = -1
 Next
 End Sub
 Private Sub cmdSql_Click()
-myloadgrd True
+myLoadGrd True
 End Sub
 
 Private Sub Form_Load()
 openCon con
 
-Set DATA7.Recordset = myCmd("Select Code,DescA From STORE_ALL WHERE " & cUserStore, con)
-Set xStore.RowSource = DATA7
-xStore.ListField = "Desca"
-xStore.BoundColumn = "Code"
+Set DATA7.Recordset = mycmd("Select Code,DescA From STORE_ALL WHERE " & cUserStore, con)
+Set XSTORE.RowSource = DATA7
+XSTORE.ListField = "Desca"
+XSTORE.BoundColumn = "Code"
 If cBranch <> "00" Then
-    xStore.BoundText = cBranchStore
-    xStore.Enabled = False
+    XSTORE.BoundText = cBranchStore
+    XSTORE.Enabled = False
 End If
 
-Set data1.Recordset = myCmd("Select Code,DescA From File1_10SC ORDER BY code ", con)
-Set XSECTION.RowSource = data1
-XSECTION.ListField = "Desca"
-XSECTION.BoundColumn = "Code"
+Set data1.Recordset = mycmd("Select Code,DescA From File1_10SC ORDER BY code ", con)
+Set xSection.RowSource = data1
+xSection.ListField = "Desca"
+xSection.BoundColumn = "Code"
 
-Set data1.Recordset = myCmd("SELECT CODE,DESCA FROM FILE0_40 UNION ALL SELECT CODE,DESCA FROM BRANCH WHERE STORE IS NULL  " & cWhere, con)
-Set xStore.RowSource = data1
-xStore.ListField = "Desca"
-xStore.BoundColumn = "Code"
+Set data1.Recordset = mycmd("SELECT CODE,DESCA FROM FILE0_40 UNION ALL SELECT CODE,DESCA FROM BRANCH WHERE STORE IS NULL  " & cWhere, con)
+Set XSTORE.RowSource = data1
+XSTORE.ListField = "Desca"
+XSTORE.BoundColumn = "Code"
 
-Set DATA2.Recordset = myCmd("Select Code,DescA From File4_10 order by Desca", con)
+Set DATA2.Recordset = mycmd("Select Code,DescA From File4_10 order by Desca", con)
 Set xSupp.RowSource = DATA2
 xSupp.ListField = "Desca"
 xSupp.BoundColumn = "Code"
 
-Set DATA3.Recordset = myCmd("Select Code,DescA From File1_50 ORDER BY DESCA", con)
-Set xGroup.RowSource = DATA3
+Set data3.Recordset = mycmd("Select Code,DescA From File1_50 ORDER BY DESCA", con)
+Set xGroup.RowSource = data3
 xGroup.ListField = "Desca"
 xGroup.BoundColumn = "Code"
 
-Set DATA4.Recordset = myCmd("Select mosm ,descA From mosm ORDER BY date DESC ", con)
-Set xMosm.RowSource = DATA4
+Set data4.Recordset = mycmd("Select mosm ,descA From mosm ORDER BY date DESC ", con)
+Set xMosm.RowSource = data4
 xMosm.ListField = "Desca"
 xMosm.BoundColumn = "MOSM"
 xMosm.BoundText = cPMosm
 
 
-Set DATA5.Recordset = myCmd("Select code ,desca From fact ORDER BY DESCA ", con)
-Set xFact.RowSource = DATA5
+Set data5.Recordset = mycmd("Select code ,desca From fact ORDER BY DESCA ", con)
+Set xFact.RowSource = data5
 xFact.ListField = "Desca"
 xFact.BoundColumn = "Code"
 
 
-Set DATA7.Recordset = myCmd("Select Code,DescA From STORE_ALL WHERE " & cUserStore, con)
-Set xStore.RowSource = DATA7
-xStore.ListField = "Desca"
-xStore.BoundColumn = "Code"
+Set DATA7.Recordset = mycmd("Select Code,DescA From STORE_ALL WHERE " & cUserStore, con)
+Set XSTORE.RowSource = DATA7
+XSTORE.ListField = "Desca"
+XSTORE.BoundColumn = "Code"
 If cBranch <> "00" Then
-    xStore.BoundText = cBranchStore
-    xStore.Enabled = False
+    XSTORE.BoundText = cBranchStore
+    XSTORE.Enabled = False
 End If
 
-Dim I As Long
-For I = 1 To grid1.UBound
-    Set grid1(I).DataSource = DATA11(I)
-    Fixgrd (I)
+Dim i As Long
+For i = 1 To grid1.UBound
+    Set grid1(i).DataSource = DATA11(i)
+    fixGrd (i)
 Next
 
 grid1(1).Tag = "rp.sp_balance_price_section"
@@ -2223,7 +2223,7 @@ fixControls
 cmdRep(1).Value = -1
 
 End Sub
-Private Sub myloadgrd(Optional bString As Boolean = False)
+Private Sub myLoadGrd(Optional bString As Boolean = False)
 ReDim aHeader(13)
 
 Dim aPrm As Variant
@@ -2233,9 +2233,9 @@ If IsDate(xDate1.text) Then
 End If
 
 
-If XSECTION.MatchedWithList Then
-    aPrm = AddFlag(aPrm, "SECTION", addvalue(XSECTION.BoundText))
-    aHeader(1) = "«·ﬁ”„ : " & XSECTION.text
+If xSection.MatchedWithList Then
+    aPrm = AddFlag(aPrm, "SECTION", addvalue(xSection.BoundText))
+    aHeader(1) = "«·ﬁ”„ : " & xSection.text
 End If
 
 If xSupp.MatchedWithList Then
@@ -2258,9 +2258,9 @@ If xMosm.MatchedWithList Then
     aHeader(5) = "«·„Ê”„ : " & xMosm.text
 End If
 
-If xStore.MatchedWithList Then
-    aPrm = AddFlag(aPrm, "STORE", addstring(xStore.BoundText))
-    aHeader(6) = "„Œ“‰ : " & xStore.text
+If XSTORE.MatchedWithList Then
+    aPrm = AddFlag(aPrm, "STORE", addstring(XSTORE.BoundText))
+    aHeader(6) = "„Œ“‰ : " & XSTORE.text
 End If
 
 
@@ -2279,28 +2279,28 @@ If Not bOpt5 Then
 End If
 
 Dim cString As String
-Dim I As Long
+Dim i As Long
 If Not bString Then
-    For I = 1 To cmdRep.UBound
-        cString = myPrcString(grid1(I).Tag, aPrm)
-        If cmdRep(I).Value = -1 Then
-            Set DATA11(I).Recordset = myCmd(cString, con, , , 600)
-            Fixgrd I
-            panel1(0).Caption = "⁄œœ «·”Ã·«  : " & grid1(I).Rows - 1
+    For i = 1 To cmdRep.UBound
+        cString = myPrcString(grid1(i).Tag, aPrm)
+        If cmdRep(i).Value = -1 Then
+            Set DATA11(i).Recordset = mycmd(cString, con, , , 600)
+            fixGrd i
+            panel1(0).Caption = "⁄œœ «·”Ã·«  : " & grid1(i).Rows - 1
         Else
-            If DATA11(I).RecordSource <> cString Then grid1(I).Rows = 1
+            If DATA11(i).RecordSource <> cString Then grid1(i).Rows = 1
         End If
     Next
 Else
     Clipboard.Clear
-    For I = 1 To cmdRep.UBound
-        If cmdRep(I).Value = -1 Then
-            Clipboard.SetText myPrcString(grid1(I).Tag, aPrm)
+    For i = 1 To cmdRep.UBound
+        If cmdRep(i).Value = -1 Then
+            Clipboard.SetText myPrcString(grid1(i).Tag, aPrm)
         End If
     Next
 End If
 End Sub
-Sub Fixgrd(Index As Long)
+Sub fixGrd(Index As Long)
 With grid1(Index)
 If Index = 5 Then
     .RowHeight(0) = 700
@@ -2314,9 +2314,13 @@ If Index = 5 Then
     .TextMatrix(0, 6) = "”⁄— „’‰⁄"
     .TextMatrix(0, 7) = "”⁄— «· ﬂ·›…"
     .TextMatrix(0, 8) = "”⁄— «·»Ì⁄"
-    .TextMatrix(0, 9) = " ﬁÌ„ »”⁄— „’‰⁄"
-    .TextMatrix(0, 10) = " ﬁÌ„ »”⁄— «· ﬂ·›…"
-    .TextMatrix(0, 11) = " ﬁÌ„ »”⁄— «·»Ì⁄"
+    .TextMatrix(0, 8 + 1) = "”⁄— «·Ã„·…"
+    
+    
+    .TextMatrix(0, 9 + 1) = " ﬁÌ„ »”⁄— „’‰⁄"
+    .TextMatrix(0, 10 + 1) = " ﬁÌ„ »”⁄— «· ﬂ·›…"
+    .TextMatrix(0, 11 + 1) = " ﬁÌ„ »”⁄— «·»Ì⁄"
+    .TextMatrix(0, 12 + 1) = " ﬁÌ„ »”⁄— «·Ã„·…"
     
     .ColHidden(0) = True
     .ColHidden(6) = Not bOpt10
@@ -2334,9 +2338,11 @@ If Index = 5 Then
     .ColWidth(6) = 900
     .ColWidth(7) = 900
     .ColWidth(8) = 900
-    .ColWidth(9) = 1400
-    .ColWidth(10) = 1400
-    .ColWidth(11) = 1400
+    .ColWidth(8 + 1) = 900
+    .ColWidth(9 + 1) = 1400
+    .ColWidth(10 + 1) = 1400
+    .ColWidth(11 + 1) = 1400
+    .ColWidth(12 + 1) = 1400
         
     .ExplorerBar = flexExSort
     .Cell(flexcpAlignment, 0, 0, .Rows - 1, .Cols - 1) = 4
@@ -2344,8 +2350,8 @@ If Index = 5 Then
     .SubtotalPosition = flexSTAbove
     
     .Subtotal flexSTSum, -1, 5, "##,##", &HC0FFC0, vbBlack, True, "«·≈Ã„«·Ï"
-    For Col = 9 To .Cols - 1
-        .Subtotal flexSTSum, -1, Col, "##,##", &HC0FFC0, vbBlack, True, "«·≈Ã„«·Ï"
+    For col = 9 + 1 To .Cols - 1
+        .Subtotal flexSTSum, -1, col, "##,##", &HC0FFC0, vbBlack, True, "«·≈Ã„«·Ï"
     Next
 Else
     .RowHeight(0) = 700
@@ -2363,6 +2369,7 @@ Else
     .TextMatrix(0, 3) = " ﬁÌ„ »”⁄— „’‰⁄"
     .TextMatrix(0, 4) = " ﬁÌ„ »”⁄— «· ﬂ·›…"
     .TextMatrix(0, 5) = " ﬁÌ„ »”⁄— «·»Ì⁄"
+    .TextMatrix(0, 6) = " ﬁÌ„ »”⁄— «·Ã„·…"
     
     .ColHidden(3) = Not bOpt10
     .ColHidden(4) = Not bOpt10
@@ -2374,10 +2381,11 @@ Else
     .ColWidth(3) = 2000
     .ColWidth(4) = 2000
     .ColWidth(5) = 2000
+    .ColWidth(6) = 2000
     
-    For Col = 2 To .Cols - 1
-        .ColFormat(Col) = "##,##"
-        .ColDataType(Col) = flexDTDouble
+    For col = 2 To .Cols - 1
+        .ColFormat(col) = "##,##"
+        .ColDataType(col) = flexDTDouble
     Next
     
     .ExplorerBar = flexExSort
@@ -2385,8 +2393,8 @@ Else
     
     .SubtotalPosition = flexSTAbove
     
-    For Col = 2 To .Cols - 1
-        .Subtotal flexSTSum, -1, Col, "##,##", &HC0FFC0, vbBlack, True, "«·≈Ã„«·Ï"
+    For col = 2 To .Cols - 1
+        .Subtotal flexSTSum, -1, col, "##,##", &HC0FFC0, vbBlack, True, "«·≈Ã„«·Ï"
     Next
 End If
 End With
@@ -2400,19 +2408,19 @@ End Sub
 Private Sub myPrint(Optional pDevice As String = "", Optional bIgPreview As Boolean = False)
 Dim aRow As Variant, aSub As Variant
 
-Dim I As Long
-For I = 1 To cmdRep.UBound
-    If cmdRep(I).Value = -1 Then
+Dim i As Long
+For i = 1 To cmdRep.UBound
+    If cmdRep(i).Value = -1 Then
         aSub = AddFlag(Empty, "row", 1)
         aSub = AddFlag(aSub, "col", 0)
         aSub = AddFlag(aSub, "cols", 2)
         aSub = AddFlag(aSub, "text", "≈Ã„«·Ì")
         aRow = AddFlag(aRow, aSub)
 
-        If grid1(I).Rows < 2 Then Exit Sub
+        If grid1(i).Rows < 2 Then Exit Sub
         
         Set PrintGrdNew.myform = Me
-        PrintGrdNew.DOPRINT grid1(I), 0.95, 0, "ÃÊ‰ÌÊ—", Me.Caption & " - " & cmdRep(I).Caption, ArbString(retHeader(aHeader, 0, 5)), , False, I = 5, 10, , aRow, Array(1)
+        PrintGrdNew.DOPRINT grid1(i), 0.95, 0, "ÃÊ‰ÌÊ—", Me.Caption & " - " & cmdRep(i).Caption, ArbString(retHeader(aHeader, 0, 5)), , False, i = 5, 10, , aRow, Array(1)
     End If
 Next
 
@@ -2493,18 +2501,18 @@ myLostFocus xMosm
 If Not xMosm.MatchedWithList Then xMosm.BoundText = ""
 End Sub
 Private Sub XSTORE_GotFocus()
-myGotFocus xStore
+myGotFocus XSTORE
 End Sub
 Private Sub XSTORE_LostFocus()
-myLostFocus xStore
-If Not xStore.MatchedWithList Then xStore.BoundText = ""
+myLostFocus XSTORE
+If Not XSTORE.MatchedWithList Then XSTORE.BoundText = ""
 End Sub
 Private Sub xSection_GotFocus()
-myGotFocus XSECTION
+myGotFocus xSection
 End Sub
 Private Sub xSection_LostFocus()
-myLostFocus XSECTION
-If Not XSECTION.MatchedWithList Then XSECTION.BoundText = ""
+myLostFocus xSection
+If Not xSection.MatchedWithList Then xSection.BoundText = ""
 End Sub
 Private Sub xmosm20_GotFocus()
 myGotFocus xmosm20
@@ -2515,8 +2523,8 @@ If Not xmosm20.MatchedWithList Then xmosm20.BoundText = ""
 End Sub
 Private Sub fixControls()
 If Dir(App.Path & "\sys_img\selected.jpg") = "" Then Exit Sub
-Dim I As Long
-For I = 1 To cmdRep.UBound
-    cmdRep(I).PictureDn = LoadPicture(App.Path & "\sys_img\selected.jpg")
+Dim i As Long
+For i = 1 To cmdRep.UBound
+    cmdRep(i).PictureDn = LoadPicture(App.Path & "\sys_img\selected.jpg")
 Next
 End Sub
