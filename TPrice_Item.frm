@@ -301,7 +301,7 @@ Begin VB.Form TPrice_item
          EndProperty
          CheckBox        =   -1  'True
          DateIsNull      =   -1  'True
-         Format          =   441516033
+         Format          =   438501377
          CurrentDate     =   43098.0832986111
       End
       Begin MSDataListLib.DataCombo XSTORE 
@@ -971,7 +971,7 @@ Private Sub CMD_PRINT_Click()
     Dim cHead1 As String
     Dim cHead2 As String
     Dim cHead3 As String
-    cHead1 = Me.Caption & " " & xMosm.text
+    cHead1 = Me.Caption & " " & XMOSM.text
     cHead2 = " „‰  «—ÌŒ " & Format(xDate2.Value, "DD-MM-YYYY")
     cHead3 = ""
     If xFact.BoundText <> "" Then cHead3 = cHead3 & " „’‰⁄ " & xFact.text
@@ -979,9 +979,9 @@ Private Sub CMD_PRINT_Click()
     If xGroup.BoundText <> "" Then cHead3 = cHead3 & " „Ã„Ê⁄…" & xGroup.text
     If XSECTION.text <> "" Then cHead3 = cHead3 & " ﬁ”„ " & XSECTION.text
 
-    If xMosm.BoundText <> "" Then cHead3 = cHead3 & " „Ê”„ " & xMosm.text
+    If XMOSM.BoundText <> "" Then cHead3 = cHead3 & " „Ê”„ " & XMOSM.text
     
-    PrintGrdNew.DOPRINT grid1, 0.9, , cHead1, cHead2, , , , , 10, "Arial"
+    PrintGrdNew.doprint grid1, 0.9, , cHead1, cHead2, , , , , 10, "Arial"
     PrintGrdNew.Show 1
 End Sub
 Private Sub CmdExit_Click()
@@ -991,15 +991,15 @@ End Sub
 Private Sub CmdUndo_Click()
     Unload Me
 End Sub
-Private Sub CmdGo_Click()
+Private Sub cmdgo_Click()
     grid1.Rows = 1
     myload
 End Sub
 Private Sub Form_Load()
     
-    openCon con
+    OpenCon con
     
-    DATA7.ConnectionString = strCon
+    DATA7.connectionString = strCon
     DATA7.RecordSource = "Select Code,DescA From STORE_BR WHERE " & cUserStore
     Set xStore.RowSource = DATA7
     xStore.ListField = "Desca"
@@ -1010,38 +1010,38 @@ Private Sub Form_Load()
     End If
     
     
-    data1.ConnectionString = strCon
+    data1.connectionString = strCon
     data1.RecordSource = "Select Code,DescA From File1_10SC ORDER BY code "
     Set XSECTION.RowSource = data1
     XSECTION.ListField = "Desca"
     XSECTION.BoundColumn = "Code"
     
-    DATA2.ConnectionString = strCon
+    DATA2.connectionString = strCon
     DATA2.RecordSource = "Select Code,DescA From File4_10 order by Desca"
     Set xSupp.RowSource = DATA2
     xSupp.ListField = "Desca"
     xSupp.BoundColumn = "Code"
     
-    DATA3.ConnectionString = strCon
-    DATA3.RecordSource = "Select Code,DescA From File1_50 ORDER BY DESCA"
-    Set xGroup.RowSource = DATA3
+    data3.connectionString = strCon
+    data3.RecordSource = "Select Code,DescA From File1_50 ORDER BY DESCA"
+    Set xGroup.RowSource = data3
     xGroup.ListField = "Desca"
     xGroup.BoundColumn = "Code"
     
-    DATA4.ConnectionString = strCon
+    DATA4.connectionString = strCon
     DATA4.RecordSource = "Select mosm ,descA From mosm ORDER BY date DESC "
-    Set xMosm.RowSource = DATA4
-    xMosm.ListField = "Desca"
-    xMosm.BoundColumn = "MOSM"
+    Set XMOSM.RowSource = DATA4
+    XMOSM.ListField = "Desca"
+    XMOSM.BoundColumn = "MOSM"
     
-    DATA5.ConnectionString = strCon
-    DATA5.RecordSource = "Select code ,desca From fact ORDER BY DESCA "
-    Set xFact.RowSource = DATA5
+    data5.connectionString = strCon
+    data5.RecordSource = "Select code ,desca From fact ORDER BY DESCA "
+    Set xFact.RowSource = data5
     xFact.ListField = "Desca"
     xFact.BoundColumn = "Code"
     
     Set grid1.DataSource = DATA6
-    DATA6.ConnectionString = strCon
+    DATA6.connectionString = strCon
     
     
     grid1.Rows = 1
@@ -1049,7 +1049,7 @@ Private Sub Form_Load()
     FIXGRID
 End Sub
 Private Sub myload()
-Dim I As Double
+Dim i As Double
 Dim cString  As String, cStr2 As String
 With grid1
 '                           0               1                 2                3               4                5
@@ -1069,7 +1069,7 @@ With grid1
                 " SUM(FILE1_10.COST * ( FILE1_11_ALL.[IN] -FILE1_11_ALL.OUT) ) , SUM(FILE1_10.COSTITEM * ( FILE1_11_ALL.[IN] -FILE1_11_ALL.OUT) ) , SUM(FILE1_10.PRICE * ( FILE1_11_ALL.[IN] -FILE1_11_ALL.OUT) )  " & _
                 " FROM FILE1_10 INNER JOIN FILE1_11_ALL ON FILE1_10.ITEM = FILE1_11_ALL.ITEM INNER JOIN FACT ON FILE1_10.FACT = FACT.CODE WHERE FILE1_10.MODELNO IS NOT NULL "
     End If
-    If xMosm.BoundText <> "" Then cStr2 = cStr2 & " AND FILE1_10.MOSM = " & MyParn(xMosm.BoundText)
+    If XMOSM.BoundText <> "" Then cStr2 = cStr2 & " AND FILE1_10.MOSM = " & MyParn(XMOSM.BoundText)
     If XSECTION.BoundText <> "" Then cStr2 = cStr2 & " AND FILE1_10.[SECTION] = " & (XSECTION.BoundText)
     If xStore.BoundText <> "" Then cStr2 = cStr2 & " AND [STORE] = " & MyParn(xStore.BoundText)
     If xSupp.BoundText <> "" Then cStr2 = cStr2 & " AND FILE1_10.CODE = " & MyParn(xSupp.BoundText)
@@ -1137,9 +1137,9 @@ With grid1
     
     .SubtotalPosition = flexSTAbove
     .Subtotal flexSTSum, -1, 0, "#0", vbRed, vbYellow, True, "  "
-    For I = 9 To .Cols - 1
-        .Subtotal flexSTSum, -1, I, "#0", vbRed, vbYellow, True, "  "
-    Next I
+    For i = 9 To .Cols - 1
+        .Subtotal flexSTSum, -1, i, "#0", vbRed, vbYellow, True, "  "
+    Next i
     If .Rows > 1 Then .Cell(flexcpAlignment, 1, 0, .Rows - 1, .Cols - 1) = 7
     End With
 End Sub
@@ -1150,21 +1150,21 @@ End Sub
 
 Private Sub grid1_DblClick()
     Load ModelMove
-    ModelMove.XMODEL.text = grid1.TextMatrix(grid1.Row, 0)
+    ModelMove.xModel.text = grid1.TextMatrix(grid1.Row, 0)
     ModelMove.Show
 End Sub
 
 Private Sub xSection_LostFocus()
-    DATA3.ConnectionString = strCon
+    data3.connectionString = strCon
     If XSECTION.BoundText = "" Then
-        DATA3.RecordSource = "Select Code,DescA From File1_50 ORDER BY DESCA"
+        data3.RecordSource = "Select Code,DescA From File1_50 ORDER BY DESCA"
     Else
-        DATA3.RecordSource = "Select Code,DescA From File1_50 where [group] = " & Val(XSECTION.BoundText) & " ORDER BY DESCA"
+        data3.RecordSource = "Select Code,DescA From File1_50 where [group] = " & Val(XSECTION.BoundText) & " ORDER BY DESCA"
     End If
-    Set xGroup.RowSource = DATA3
+    Set xGroup.RowSource = data3
     xGroup.ListField = "Desca"
     xGroup.BoundColumn = "Code"
-    DATA3.Refresh
+    data3.Refresh
 End Sub
 
 Private Sub xSupp_KeyUp(KeyCode As Integer, Shift As Integer)
@@ -1210,11 +1210,11 @@ Search3.Show 1
 End If
 End Sub
 Private Sub LoadPhoto(sModelNo As String)
-On Error GoTo myerror
-imgx1.Images.Clear
-imgx1.Import.FromFile retFile(sModelNo)
+On Error GoTo myError
+ImgX1.Images.Clear
+ImgX1.Import.FromFile retFile(sModelNo)
 Exit Sub
-myerror:
+myError:
 Err.Clear
 End Sub
 

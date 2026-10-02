@@ -526,7 +526,7 @@ Attribute VB_Exposed = False
 Dim cString As String
 Dim cStr1 As String, cStr2 As String
 Dim con As New ADODB.Connection
-Dim TSalesTable As New ADODB.Recordset
+Dim TSalesTable As New ADODB.RecordSet
 
 Private Sub cmd_excel_Click()
     ToFileExel2 grid1, , , , , 1.1, , , , , , Me
@@ -537,10 +537,10 @@ Private Sub CMD_PRINT_Click()
     Dim cHead2 As String
     cHead1 = "»Ì«‰ œ›⁄«  „” Õﬁ… ··„Ê—œÌ‰"
     If xGrCust.text <> "" Then cHead1 = cHead1 & xGrCust.text
-    cHead2 = " ·„Ê”„ " & xMosm.text
+    cHead2 = " ·„Ê”„ " & XMOSM.text
 '   cHead2 = " „‰  «—ÌŒ " & Format(xDate1.Text, "DD-MM-YYYY") & " ≈·Ï  «—ÌŒ " & Format(xDate2.Text, "DD-MM-YYYY")
     Load PrintGrd
-    PrintGrd.DOPRINT Me.grid1, 0.9, -2, cHead1, cHead2, , False, True, 8
+    PrintGrd.doprint Me.grid1, 0.9, -2, cHead1, cHead2, , False, True, 8
     PrintGrd.Show 1
 End Sub
 Private Sub CmdExit_Click()
@@ -550,8 +550,8 @@ End Sub
 Private Sub CmdUndo_Click()
     Unload Me
 End Sub
-Private Sub CmdGo_Click()
-    If xMosm.BoundText = "" Then
+Private Sub cmdgo_Click()
+    If XMOSM.BoundText = "" Then
         MsgBox "ÌÃ»  ÕœÌœ „Ê”„ "
         Exit Sub
     End If
@@ -562,7 +562,7 @@ Private Sub Command1_Click()
     Dim cHead1 As String
     Dim cHead2 As String
     cHead1 = "»Ì«‰ »Ì«‰ »«·œ›⁄«  ··„Ê—œÌ‰"
-    cHead2 = " ·„Ê”„ " & xMosm.text
+    cHead2 = " ·„Ê”„ " & XMOSM.text
     For nRow = 2 To grid1.Rows - 1
         If Val(grid1.TextMatrix(nRow, 10)) = 0 Then grid1.RowHidden(nRow) = True
     Next nRow
@@ -572,7 +572,7 @@ Private Sub Command1_Click()
     grid1.ColHidden(11) = True
     grid1.ColHidden(12) = False
     Load PrintGrd
-    PrintGrd.DOPRINT Me.grid1, 1, -2, cHead1, cHead2, , False, , 10
+    PrintGrd.doprint Me.grid1, 1, -2, cHead1, cHead2, , False, , 10
     PrintGrd.Show 1
 
     For nRow = 2 To grid1.Rows - 1
@@ -590,33 +590,33 @@ Private Sub Command2_Click()
 If MsgBox("≈·€«¡ ﬂ· «·œ›⁄«  «·„”Ã·…", vbOKCancel) = vbOK Then
     With grid1
         con.Execute " DELETE FROM SUBCASH "
-        For I = 2 To .Rows - 1
-            .TextMatrix(I, 11) = ""
-        Next I
+        For i = 2 To .Rows - 1
+            .TextMatrix(i, 11) = ""
+        Next i
     End With
     Inform " „ Õ–› «·ﬂ· "
     FIXGRID
 End If
 End Sub
 Private Sub Form_Load()
-    openCon con
+    OpenCon con
 '    xDate2.Text = Format(Date, "dd-mm-yyyy")
     
-    data1.ConnectionString = strCon
+    data1.connectionString = strCon
     data1.RecordSource = "SELECT * FROM FILE4_50 "
     Set xGrCust.RowSource = data1
     xGrCust.ListField = "Desca"
     xGrCust.BoundColumn = "Code"
     
-    DATA3.ConnectionString = strCon
-    DATA3.RecordSource = "SELECT * FROM MOSM"
-    Set xMosm.RowSource = DATA3
-    xMosm.ListField = "Desca"
-    xMosm.BoundColumn = "mosm"
-    xMosm.BoundText = cPMosm
+    data3.connectionString = strCon
+    data3.RecordSource = "SELECT * FROM MOSM"
+    Set XMOSM.RowSource = data3
+    XMOSM.ListField = "Desca"
+    XMOSM.BoundColumn = "mosm"
+    XMOSM.BoundText = cPMosm
     
     Set grid1.DataSource = DATA2
-    DATA2.ConnectionString = strCon
+    DATA2.connectionString = strCon
     
     grid1.Rows = 1
     FIXGRID
@@ -629,13 +629,13 @@ Dim cString As String, cW1 As String
     
     cField0 = myiif("type = '6' " & cW1, "  ([out] - [in]) * FILE1_11.COST * ((100-FILE4_10.DISC ) /100)") & " AS COST_sal   "
     cStr1 = " SELECT FILE1_10.code , SUM((FILE1_11.[IN] - FILE1_11.OUT) * FILE1_10.COST * ((100-FILE4_10.DISC ) /100) ) AS cost_bal , " & cField0 & " FROM FILE1_11 INNER JOIN FILE1_10 ON FILE1_11.ITEM = FILE1_10.ITEM INNER JOIN FILE4_10 ON FILE1_10.CODE = FILE4_10.CODE "
-    If xMosm.BoundText <> "" Then cStr1 = cStr1 & " WHERE  FILE1_10.[MOSM] = " & MyParn(xMosm.BoundText)
+    If XMOSM.BoundText <> "" Then cStr1 = cStr1 & " WHERE  FILE1_10.[MOSM] = " & MyParn(XMOSM.BoundText)
     cStr1 = cStr1 & " GROUP BY FILE1_10.code , FILE4_10.DISC "
     
     If TSalesTable.State = adStateOpen Then TSalesTable.Close
     TSalesTable.Open cStr1, con, adOpenStatic, adLockReadOnly, adCmdText
     
-    cWhere = " MOSM =  " & MyParn(xMosm.BoundText)
+    cWhere = " MOSM =  " & MyParn(XMOSM.BoundText)
     cField2 = myiif(cWhere & turn(cWhere, " And ") & " (TYPE = '1' )", "[SAL]") & " AS F_BAL "
     cWhere = ""
     cField3 = myiif(cWhere & turn(cWhere, " And ") & " (TYPE = '4' OR TYPE = '5' )", "[sal]- [PAY]") & " AS net_sal"
@@ -652,7 +652,7 @@ Dim cString As String, cW1 As String
                 cField8 & " , " & cField9 & _
                 " FROM (FILE4_11 inner JOIN FILE4_10 ON FILE4_11.CODE = FILE4_10.CODE) WHERE (FILE4_11.[pay]+ FILE4_11.[sal]) <> 0 "
     If xGrCust.BoundText <> "" Then cString = cString & turn(cString) & " file4_10.[group]  = " & MyParn(xGrCust.BoundText)
-    If xMosm.BoundText <> "" Then cString = cString & turn(cString) & " FILE4_11.[MOSM] = " & MyParn(xMosm.BoundText)
+    If XMOSM.BoundText <> "" Then cString = cString & turn(cString) & " FILE4_11.[MOSM] = " & MyParn(XMOSM.BoundText)
     cString = cString & " GROUP BY FILE4_10.DESCA , FILE4_10.CODE , FILE4_10.isonest "
     DATA2.RecordSource = cString
     DATA2.Refresh
@@ -724,7 +724,7 @@ End Sub
 Private Sub Form_Unload(Cancel As Integer)
 closeCon con
 End Sub
-Private Sub grid1_AfterEdit(ByVal Row As Long, ByVal Col As Long)
+Private Sub Grid1_AfterEdit(ByVal Row As Long, ByVal Col As Long)
 With grid1
     For nCol = 2 To .Cols - 3
         .ColDataType(nCol) = flexDTDouble
@@ -738,8 +738,8 @@ Private Sub grid1_DblClick()
     If grid1.Row <= 3 Then
         Load supMovefrm
         supMovefrm.xCode.text = grid1.TextMatrix(grid1.Row, 0)
-        supMovefrm.XDESCA.Caption = grid1.TextMatrix(grid1.Row, 1)
-        supMovefrm.xMosm.Caption = xMosm.BoundText
+        supMovefrm.xDescA.Caption = grid1.TextMatrix(grid1.Row, 1)
+        supMovefrm.XMOSM.Caption = XMOSM.BoundText
         supMovefrm.Fillgrd
         supMovefrm.LoadSuplData
         supMovefrm.Show
@@ -747,14 +747,14 @@ Private Sub grid1_DblClick()
 
     If grid1.Row > 3 Then
         VsTItem.xSupp.BoundText = grid1.TextMatrix(grid1.Row, 0)
-        VsTItem.xMosm.BoundText = xMosm.BoundText
+        VsTItem.XMOSM.BoundText = XMOSM.BoundText
     End If
 
 End Sub
 Private Sub xCode_KeyDown(KeyCode As Integer, Shift As Integer)
     If KeyCode = 112 Then CardLookup
 End Sub
-Private Sub xCode_LostFocus()
+Private Sub xcode_LostFocus()
 xCustName.Caption = ""
 If xCode.text = "" Then Exit Sub
 xCode.text = RetZero(xCode.text, 6)
@@ -798,18 +798,18 @@ Private Sub grid1_EnterCell()
         End If
     End With
 End Sub
-Private Sub Grid1_ValidateEdit(ByVal Row As Long, ByVal Col As Long, Cancel As Boolean)
+Private Sub grid1_ValidateEdit(ByVal Row As Long, ByVal Col As Long, Cancel As Boolean)
     With grid1
-        If GetDesca("select code from subcash where CODE = " & MyParn(.TextMatrix(.Row, 0)) & " AND MOSM = " & MyParn(xMosm.BoundText), con) = "" Then
+        If GetDesca("select code from subcash where CODE = " & MyParn(.TextMatrix(.Row, 0)) & " AND MOSM = " & MyParn(XMOSM.BoundText), con) = "" Then
             con.Execute " INSERT INTO SUBCASH (MOSM,CODE,CASH) " & _
                    "Values(" & _
-                   addstring(xMosm.BoundText) & "," & _
+                   addstring(XMOSM.BoundText) & "," & _
                    addstring(.TextMatrix(.Row, 0)) & "," & _
                    Val(.EditText) & _
                    ")"
         Else
             con.Execute " UPDATE SUBCASH SET CASH = " & Val(.EditText) & _
-                        " WHERE CODE = " & MyParn(.TextMatrix(.Row, 0)) & " AND MOSM = " & MyParn(xMosm.BoundText)
+                        " WHERE CODE = " & MyParn(.TextMatrix(.Row, 0)) & " AND MOSM = " & MyParn(XMOSM.BoundText)
         End If
     End With
 End Sub

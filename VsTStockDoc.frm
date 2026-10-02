@@ -531,7 +531,7 @@ Private Sub cmdPrint_Click()
     cHead2 = " „‰  «—ÌŒ " & Format(xDate1.text, "DD-MM-YYYY") & " ≈·Ï  «—ÌŒ " & Format(xDate2.text, "DD-MM-YYYY")
     
     Load PrintGrd
-    PrintGrd.DOPRINT Me.grid1, 1, -2, cHead1, cHead2, , False, , 9
+    PrintGrd.doprint Me.grid1, 1, -2, cHead1, cHead2, , False, , 9
     PrintGrd.Show 1
 End Sub
 Private Sub CmdExit_Click()
@@ -541,7 +541,7 @@ End Sub
 Private Sub CmdUndo_Click()
     Unload Me
 End Sub
-Private Sub CmdGo_Click()
+Private Sub cmdgo_Click()
     myload
 End Sub
 
@@ -550,8 +550,8 @@ Private Sub Form_Load()
     xDate1.text = "1-1-" & Year(Date)
     xDate2.text = Format(Date, "dd-mm-yyyy")
 
-    openCon con
-    data1.ConnectionString = strCon
+    OpenCon con
+    data1.connectionString = strCon
     data1.RecordSource = "Select Code,DescA From File0_40 order by Desca"
     Set xStore.RowSource = data1
     xStore.ListField = "Desca"
@@ -562,7 +562,7 @@ Private Sub Form_Load()
     End If
     
     Set grid1.DataSource = DATA4
-    DATA4.ConnectionString = strCon
+    DATA4.connectionString = strCon
     
     FIXGRID
     grid1.Rows = 1

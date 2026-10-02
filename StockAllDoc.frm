@@ -272,7 +272,7 @@ Begin VB.Form StockAllDoc
          EndProperty
          CheckBox        =   -1  'True
          DateIsNull      =   -1  'True
-         Format          =   443547649
+         Format          =   440270849
          CurrentDate     =   43098.0832986111
       End
       Begin MSComCtl2.DTPicker XDATE2 
@@ -295,7 +295,7 @@ Begin VB.Form StockAllDoc
          EndProperty
          CheckBox        =   -1  'True
          DateIsNull      =   -1  'True
-         Format          =   443547649
+         Format          =   440270849
          CurrentDate     =   43098.0832986111
       End
       Begin VB.Label Label2 
@@ -797,7 +797,7 @@ Private Sub cmdPrint_Click()
     cHead1 = "≈Ã„«·Ï  ”ÊÌ«  «·Ã—œ " & xStore.text
     cHead2 = " „‰  «—ÌŒ " & Format(xDate1.Value, "DD-MM-YYYY") & " ≈·Ï  «—ÌŒ " & Format(xDate2.Value, "DD-MM-YYYY")
     Load PrintGrd
-    PrintGrd.DOPRINT Me.grid1, 1, -2, cHead1, cHead2, , False, , 9
+    PrintGrd.doprint Me.grid1, 1, -2, cHead1, cHead2, , False, , 9
     PrintGrd.Show 1
 End Sub
 
@@ -812,16 +812,16 @@ End Sub
 Private Sub CmdUndo_Click()
     Unload Me
 End Sub
-Private Sub CmdGo_Click()
+Private Sub cmdgo_Click()
     myload
 End Sub
 Private Sub Form_Load()
     xDate1.Value = "1-1-" & Year(Date)
     xDate2.Value = Format(Date, "dd-mm-yyyy")
 
-    openCon con
+    OpenCon con
     
-    Set data1.Recordset = myRecordSet("Select Code,DescA From File0_40 order by Desca", con)
+    Set data1.RecordSet = myRecordSet("Select Code,DescA From File0_40 order by Desca", con)
     Set xStore.RowSource = data1
     xStore.ListField = "Desca"
     xStore.BoundColumn = "Code"
@@ -842,13 +842,13 @@ With grid1
     If xFact.BoundText <> "" Then cString = cString & " and file1_10.[fact]  = " & MyParn(xFact.BoundText)
     If xGroup.BoundText <> "" Then cString = cString & " and file1_10.[group]= " & MyParn(xGroup.BoundText)
     If XSECTION.BoundText <> "" Then cString = cString & " and file1_10.[section]= " & Val(XSECTION.BoundText)
-    If xMosm.BoundText <> "" Then cString = cString & " and file1_10.[mosm]= " & MyParn(xMosm.BoundText)
+    If XMOSM.BoundText <> "" Then cString = cString & " and file1_10.[mosm]= " & MyParn(XMOSM.BoundText)
     If xStore.BoundText <> "" Then cString = cString & " and file0_10h.[store]= " & MyParn(xStore.BoundText)
-    If xitem.text <> "" Then cString = cString & " and file0_100.[item]= " & Val(xitem.text)
+    If xItem.text <> "" Then cString = cString & " and file0_100.[item]= " & Val(xItem.text)
     If xModelFact.text <> "" Then cString = cString & " and file1_10.[modelfact0]= " & MyParn(xModelFact.text)
     
     cString = cString & " order by FILE1_10.MOSM , FACT.DESCA  ,FILE1_10.modelfact0, FILE1_10.COLOR , FILE1_10.SCAL"
-    Set DATA4.Recordset = myRecordSet(cString, con)
+    Set DATA4.RecordSet = myRecordSet(cString, con)
 End With
 FIXGRID
 End Sub
@@ -912,7 +912,7 @@ Private Sub Form_Unload(Cancel As Integer)
     closeCon con
 End Sub
 Private Sub grid1_DblClick()
-    ModelMove.xitem.text = grid1.TextMatrix(grid1.Row, 3)
+    ModelMove.xItem.text = grid1.TextMatrix(grid1.Row, 3)
     ModelMove.xStore.BoundText = xStore.BoundText
     ModelMove.Show
 End Sub

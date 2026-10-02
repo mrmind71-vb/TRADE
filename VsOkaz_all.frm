@@ -621,28 +621,28 @@ Private Sub CMD_PRINT_Click()
     cHead1 = "»Ì«‰ ‰”»… Œ’„ «·«Êﬂ«“ÊÌ‰ «·≈Ã„«·Ì… "
     
     Set printGrd3.grid1 = grid1
-    Set printGrd3.myform = Me
-    printGrd3.DOPRINT 1.2, 0, cHead1, xMosm.text, XSEC.text, False, False, 12, , 0, , True
+    Set printGrd3.myForm = Me
+    printGrd3.doprint 1.2, 0, cHead1, XMOSM.text, XSEC.text, False, False, 12, , 0, , True
     printGrd3.Show 1
 End Sub
 Private Sub CmdExit_Click()
     Unload Me
 End Sub
-Private Sub CmdGo_Click()
+Private Sub cmdgo_Click()
     myload
 End Sub
 Private Sub Form_Load()
-    openCon con
+    OpenCon con
     
-    DATA4.ConnectionString = strCon
+    DATA4.connectionString = strCon
     DATA4.RecordSource = "Select mosm ,descA From mosm ORDER BY date DESC "
-    Set xMosm.RowSource = DATA4
-    xMosm.ListField = "Desca"
-    xMosm.BoundColumn = "MOSM"
-    xMosm.BoundText = cPMosm
+    Set XMOSM.RowSource = DATA4
+    XMOSM.ListField = "Desca"
+    XMOSM.BoundColumn = "MOSM"
+    XMOSM.BoundText = cPMosm
     
     Set grid1.DataSource = DATA6
-    DATA6.ConnectionString = strCon
+    DATA6.connectionString = strCon
     
     grid1.Rows = 1
     grid1.Cols = 9
@@ -652,7 +652,7 @@ Private Sub myload()
     Dim cWhere As String
     Dim cStr2 As String
     
-    If xMosm.BoundText <> "" Then cStr2 = cStr2 & " AND FILE1_10.MOSM = " & MyParn(xMosm.BoundText)
+    If XMOSM.BoundText <> "" Then cStr2 = cStr2 & " AND FILE1_10.MOSM = " & MyParn(XMOSM.BoundText)
     If XSEC.text <> "" Then cStr2 = cStr2 & " AND FILE1_10.[Sec] = " & MyParn(XSEC.text)
     
     If Check1.Value = 1 Then

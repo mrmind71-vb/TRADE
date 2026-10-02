@@ -734,7 +734,7 @@ Private Sub CMD_PRINT_Click()
     cHead1 = Me.Caption & xStore.text
     cHead2 = " „‰  «—ÌŒ " & Format(xDate1.text, "DD-MM-YYYY") & " Õ Ï  «—ÌŒ " & Format(xDate2.text, "DD-MM-YYYY")
     Load PrintGrd
-    PrintGrd.DOPRINT grid1, 1, , cHead1, cHead2, , , False, 10
+    PrintGrd.doprint grid1, 1, , cHead1, cHead2, , , False, 10
     PrintGrd.Show 1
 End Sub
 Private Sub CmdExit_Click()
@@ -744,17 +744,17 @@ End Sub
 Private Sub CmdUndo_Click()
     Unload Me
 End Sub
-Private Sub CmdGo_Click()
+Private Sub cmdgo_Click()
     myload
 End Sub
 Private Sub Form_Load()
-    openCon con
+    OpenCon con
     
     
     Set grid1.DataSource = DATA6
-    DATA6.ConnectionString = strCon
+    DATA6.connectionString = strCon
     
-    DATA7.ConnectionString = strCon
+    DATA7.connectionString = strCon
     DATA7.RecordSource = "Select Code,DescA From File0_40 WHERE " & cUserStore
     Set xStore.RowSource = DATA7
     xStore.ListField = "Desca"
@@ -770,7 +770,7 @@ Private Sub Form_Load()
     FIXGRID
 End Sub
 Private Sub myload()
-Dim I As Double
+Dim i As Double
 Dim cString  As String, cStr2 As String
 cF1 = " , SUM( CASE WHEN FILE1_10.MOSM <> '000' THEN QUANT ELSE 0 END ) "
 With grid1

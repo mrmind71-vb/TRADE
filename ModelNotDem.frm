@@ -246,7 +246,7 @@ Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 Dim con As New ADODB.Connection
-Public pDoc_No As String
+Public pDoc_no As String
 
 Private Sub cmd_excel_Click()
     ToFileExel2 grid1, , , , , 1.1, , , , , , Me
@@ -256,7 +256,7 @@ End Sub
 Private Sub CMD_PRINT_Click()
     Dim cHead1 As String
     Load PrintGrd
-    PrintGrd.DOPRINT Me.grid1, 1, -2, Me.Caption, ArbString(xhead.Caption), , False, False, 8
+    PrintGrd.doprint Me.grid1, 1, -2, Me.Caption, ArbString(xhead.Caption), , False, False, 8
     PrintGrd.Show 1
 End Sub
 
@@ -269,9 +269,9 @@ Private Sub Form_Load()
     grid1.FixedRows = 1
     grid1.Rows = 1
     cString = " SELECT  SUB7_20.DOC_NO, FILE0_40.DESCA , FACT.DESCA, FILE1_10.MOSM, FILE1_10.MODELFACT0, FILE1_10.DESCA ,FILE1_10.SCAL, FILE1_10.COLOR, SUB7_20.QUANT,SUB7_20.Q_DEM " & _
-              " FROM    SUB7_20 INNER JOIN FILE1_10 ON SUB7_20.ITEM = FILE1_10.ITEM INNER JOIN FACT ON FILE1_10.code = FACT.CODE LEFT OUTER JOIN FILE0_40 ON SUB7_20.store = FILE0_40.CODE WHERE SUB7_20.DOC_NO = " & MyParn(pDoc_No)
+              " FROM    SUB7_20 INNER JOIN FILE1_10 ON SUB7_20.ITEM = FILE1_10.ITEM INNER JOIN FACT ON FILE1_10.code = FACT.CODE LEFT OUTER JOIN FILE0_40 ON SUB7_20.store = FILE0_40.CODE WHERE SUB7_20.DOC_NO = " & MyParn(pDoc_no)
     Set grid1.DataSource = data1
-    data1.ConnectionString = strCon
+    data1.connectionString = strCon
     data1.RecordSource = cString
     data1.Refresh
     FIXGRID

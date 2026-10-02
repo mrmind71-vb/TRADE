@@ -1,4 +1,5 @@
 VERSION 5.00
+Object = "{065E6FD1-1BF9-11D2-BAE8-00104B9E0792}#3.0#0"; "ssa3d30.ocx"
 Object = "{00025600-0000-0000-C000-000000000046}#5.2#0"; "Crystl32.OCX"
 Begin VB.MDIForm main 
    BackColor       =   &H008F4100&
@@ -12,9 +13,106 @@ Begin VB.MDIForm main
    RightToLeft     =   -1  'True
    StartUpPosition =   1  'CenterOwner
    WindowState     =   2  'Maximized
+   Begin VB.PictureBox Picture1 
+      Align           =   1  'Align Top
+      Appearance      =   0  'Flat
+      BackColor       =   &H00FFFFFF&
+      BorderStyle     =   0  'None
+      ForeColor       =   &H80000008&
+      Height          =   330
+      Left            =   0
+      RightToLeft     =   -1  'True
+      ScaleHeight     =   330
+      ScaleWidth      =   13260
+      TabIndex        =   0
+      Top             =   0
+      Visible         =   0   'False
+      Width           =   13260
+      Begin Threed.SSCommand cmd_tmsales 
+         Height          =   330
+         Left            =   45
+         TabIndex        =   1
+         TabStop         =   0   'False
+         Top             =   0
+         Visible         =   0   'False
+         Width           =   1365
+         _ExtentX        =   2408
+         _ExtentY        =   582
+         _Version        =   196610
+         CaptionStyle    =   1
+         BackColor       =   -2147483643
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Arial"
+            Size            =   11.25
+            Charset         =   178
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Caption         =   "„»Ì⁄« "
+         ButtonStyle     =   3
+         PictureAlignment=   9
+         ShapeSize       =   1
+      End
+      Begin Threed.SSCommand cmd_tm_box_day 
+         Height          =   330
+         Left            =   1440
+         TabIndex        =   2
+         TabStop         =   0   'False
+         Top             =   0
+         Visible         =   0   'False
+         Width           =   1365
+         _ExtentX        =   2408
+         _ExtentY        =   582
+         _Version        =   196610
+         CaptionStyle    =   1
+         BackColor       =   -2147483643
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Arial"
+            Size            =   11.25
+            Charset         =   178
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Caption         =   "ÌÊ„Ì… Œ“‰…"
+         ButtonStyle     =   3
+         PictureAlignment=   9
+         ShapeSize       =   1
+      End
+      Begin Threed.SSCommand cmd_tm_grdBalancePrice 
+         Height          =   330
+         Left            =   2835
+         TabIndex        =   3
+         TabStop         =   0   'False
+         Top             =   0
+         Visible         =   0   'False
+         Width           =   2265
+         _ExtentX        =   3995
+         _ExtentY        =   582
+         _Version        =   196610
+         CaptionStyle    =   1
+         BackColor       =   -2147483643
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Arial"
+            Size            =   11.25
+            Charset         =   178
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Caption         =   " ﬁÌÌ„ «·—’Ìœ »«·«”⁄«— „Ã„⁄"
+         ButtonStyle     =   3
+         PictureAlignment=   9
+         ShapeSize       =   1
+      End
+   End
    Begin Crystal.CrystalReport REPORT1 
-      Left            =   2700
-      Top             =   180
+      Left            =   4230
+      Top             =   1575
       _ExtentX        =   741
       _ExtentY        =   741
       _Version        =   348160
@@ -100,6 +198,9 @@ Begin VB.MDIForm main
       End
       Begin VB.Menu tm_list_price 
          Caption         =   "ﬁ«∆„… «”⁄«— «·⁄„·«¡"
+      End
+      Begin VB.Menu tm_grd_InvCollect 
+         Caption         =   "≈Ã„«·Ì  Õ’Ì· Œ·«· › —…"
       End
    End
    Begin VB.Menu mnVendorsx 
@@ -744,6 +845,18 @@ Case "XEXIT"
     Unload Me
 End Select
 End Sub
+
+Private Sub cmd_tm_box_day_Click()
+tm_box_day_Click
+End Sub
+
+Private Sub cmd_tm_grdBalancePrice_Click()
+tm_grdBalancePrice_Click
+End Sub
+Private Sub cmd_tmsales_Click()
+tmsales_Click
+End Sub
+
 Private Sub MDIForm_Load()
 Dim TableAddress As New ADODB.RecordSet
 
@@ -1038,6 +1151,7 @@ tmbranchdata.Visible = bSupermode And cBranch = "00"
 nCountBranch = Val(GetDesca("SELECT MAX(CODE ) FROM BRANCH ", con) & "")
 nCountBranch_fr = Val(GetDesca("SELECT MAX(CODE ) FROM BRANCH_FR ", con) & "")
 
+FixCommand
 If Not lServerOnLine Then
     'checkCopy
 End If
@@ -1258,6 +1372,10 @@ End Sub
 
 Private Sub tm_grd_input_Click()
 grdMonthInput.Show
+End Sub
+
+Private Sub tm_grd_InvCollect_Click()
+grdInvCollect.Show
 End Sub
 
 Private Sub tm_grd_store_profit_Click()
@@ -1931,7 +2049,7 @@ Private Sub tmmodelokazgr_Click()
     ModelOkazin.Show
 End Sub
 Private Sub tmmodels_Click()
-    items.Show
+items.Show
 End Sub
 Private Sub tmmodelshow_Click()
     VsModelShow.Show
@@ -2291,10 +2409,7 @@ End Sub
 Private Sub tmsales_barcode_Click()
     VsTSales_BARCODE.Show
 End Sub
-
 Private Sub tmsales_Click()
-'    salesfrm.lNotBranch = False
-'    salesfrm.Show
 sales_wholefrm.Show
 End Sub
 Private Sub tmsalesstore_Click()
@@ -3464,5 +3579,39 @@ Do Until sb.length = 0
     con.Execute sb.GetBefore(sMarker, True)
 Loop
 Err.Clear
+End Sub
+Private Sub FixCommand()
+Dim aCommand As Variant
+Dim aCommandSub As Variant
+aCommandSub = AddFlag(Empty, "name", cmd_tmsales.Name)
+aCommandSub = AddFlag(aCommandSub, "control", tmsales.Name)
+aCommandSub = AddFlag(aCommandSub, "visible", tmsales.Visible)
+aCommand = AddFlag(aCommand, aCommandSub)
+
+aCommandSub = AddFlag(Empty, "name", cmd_tm_box_day.Name)
+aCommandSub = AddFlag(aCommandSub, "control", tm_box_day.Name)
+aCommandSub = AddFlag(aCommandSub, "visible", tm_box_day.Visible)
+aCommand = AddFlag(aCommand, aCommandSub)
+
+aCommandSub = AddFlag(Empty, "name", cmd_tm_grdBalancePrice.Name)
+aCommandSub = AddFlag(aCommandSub, "control", tm_grdBalancePrice.Name)
+aCommandSub = AddFlag(aCommandSub, "visible", tm_grdBalancePrice.Visible)
+aCommand = AddFlag(aCommand, aCommandSub)
+
+Dim nLeft As Long, nColor As Byte
+nLeft = 50
+
+For i = 0 To UBound(aCommand)
+    If retFlag(aCommand(i), "visible") Then
+        Main(retFlag(aCommand(i), "name")).Visible = True
+        Main(retFlag(aCommand(i), "name")).Left = nLeft
+        nLeft = nLeft + Main(retFlag(aCommand(i), "name")).Width + 50
+        Main(retFlag(aCommand(i), "name")).BackColor = IIf(nColor = 0, vbWhite, &H80000004)
+        nColor = IIf(nColor = 0, 1, 0)
+        If Not Picture1.Visible Then Picture1.Visible = True
+    Else
+        Main(retFlag(aCommand(i), "name")).Visible = False
+    End If
+Next
 End Sub
 

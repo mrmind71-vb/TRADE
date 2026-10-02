@@ -629,7 +629,7 @@ Private Sub CMD_PRINT_Click()
     If XSTORE2.BoundText <> "" Then cHead3 = cHead3 & " Åáì ÝÑÚ " & XSTORE2.text
     
     Load PrintGrd
-    PrintGrd.DOPRINT grid1, 0.8, , cHead1, cHead2, , , True, 7
+    PrintGrd.doprint grid1, 0.8, , cHead1, cHead2, , , True, 7
     PrintGrd.Show 1
 End Sub
 Private Sub CmdExit_Click()
@@ -639,35 +639,35 @@ End Sub
 Private Sub CmdUndo_Click()
     Unload Me
 End Sub
-Private Sub CmdGo_Click()
+Private Sub cmdgo_Click()
     myload
 End Sub
 Private Sub Form_Load()
-    openCon con
+    OpenCon con
     
     
-    data1.ConnectionString = strCon
+    data1.connectionString = strCon
     data1.RecordSource = "Select Code,DescA From File0_40 order by Desca"
     Set xStore1.RowSource = data1
     xStore1.ListField = "Desca"
     xStore1.BoundColumn = "Code"
     
     
-    DATA2.ConnectionString = strCon
+    DATA2.connectionString = strCon
     DATA2.RecordSource = "Select code ,desca From file0_40 ORDER BY code "
     Set XSTORE2.RowSource = DATA2
     XSTORE2.ListField = "Desca"
     XSTORE2.BoundColumn = "Code"
     
     Set grid1.DataSource = DATA6
-    DATA6.ConnectionString = strCon
+    DATA6.connectionString = strCon
     
     grid1.Rows = 2
     grid1.Cols = 9
     FIXGRID
 End Sub
 Private Sub myload()
-Dim I As Double
+Dim i As Double
 Dim cString  As String, cStr2 As String
 With grid1
    
@@ -718,9 +718,9 @@ With grid1
     Next nCol
     
     .SubtotalPosition = flexSTAbove
-    For I = 4 To .Cols - 1
-        .Subtotal flexSTSum, -1, I, "#0", vbRed, vbYellow, True, "  "
-    Next I
+    For i = 4 To .Cols - 1
+        .Subtotal flexSTSum, -1, i, "#0", vbRed, vbYellow, True, "  "
+    Next i
     .Cell(flexcpAlignment, 1, 0, .Rows - 1, .Cols - 1) = 7
     End With
 End Sub

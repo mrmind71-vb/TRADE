@@ -537,10 +537,10 @@ Private Sub CMD_PRINT_Click()
     Dim cHead1 As String
     Dim cHead2 As String
     cHead1 = Me.Caption
-    cHead2 = " ·„Ê”„ " & xMosm.text
+    cHead2 = " ·„Ê”„ " & XMOSM.text
     
     Load PrintGrd
-    PrintGrd.DOPRINT Me.grid1, 1, 2, cHead1, cHead2, , False, True, 9
+    PrintGrd.doprint Me.grid1, 1, 2, cHead1, cHead2, , False, True, 9
     PrintGrd.Show 1
 End Sub
 Private Sub CmdExit_Click()
@@ -550,33 +550,33 @@ End Sub
 Private Sub CmdUndo_Click()
     Unload Me
 End Sub
-Private Sub CmdGo_Click()
-    If xMosm.BoundText = "" Or Not IsDate(xDate1.text) Or Not IsDate(xDate2.text) Then
+Private Sub cmdgo_Click()
+    If XMOSM.BoundText = "" Or Not IsDate(xDate1.text) Or Not IsDate(xDate2.text) Then
         MsgBox "ÌÃ»  ÕœÌœ „Ê”„ - «· «—ÌŒ "
         Exit Sub
     End If
     myload
 End Sub
 Private Sub Form_Load()
-    openCon con
+    OpenCon con
     xDate1.text = "1-1-" & Year(Date)
     xDate2.text = Format(Date, "dd-mm-yyyy")
     
-    data1.ConnectionString = strCon
+    data1.connectionString = strCon
     data1.RecordSource = "SELECT * FROM FILE4_50 "
     Set xGrCust.RowSource = data1
     xGrCust.ListField = "Desca"
     xGrCust.BoundColumn = "Code"
     
-    DATA3.ConnectionString = strCon
-    DATA3.RecordSource = "SELECT * FROM MOSM"
-    Set xMosm.RowSource = DATA3
-    xMosm.ListField = "Desca"
-    xMosm.BoundColumn = "mosm"
-    xMosm.BoundText = cPMosm
+    data3.connectionString = strCon
+    data3.RecordSource = "SELECT * FROM MOSM"
+    Set XMOSM.RowSource = data3
+    XMOSM.ListField = "Desca"
+    XMOSM.BoundColumn = "mosm"
+    XMOSM.BoundText = cPMosm
     
     Set grid1.DataSource = DATA2
-    DATA2.ConnectionString = strCon
+    DATA2.connectionString = strCon
     Me.Caption = "«—»«Õ «·„Ê—œÌ‰"
     FIXGRID
     grid1.Rows = 1
@@ -584,16 +584,16 @@ End Sub
 Private Sub myload()
 Dim cString As String
     
-    cW1 = " file4_11disc.mosm = " & MyParn(xMosm.BoundText) & " AND file4_11disc.CODE = FILE4_10.CODE "
+    cW1 = " file4_11disc.mosm = " & MyParn(XMOSM.BoundText) & " AND file4_11disc.CODE = FILE4_10.CODE "
     cField2 = "(SELECT SUM(T_ITEM)                  FROM    file4_11disc WHERE " & cW1 & " )  "
     cField3 = "(SELECT SUM(T_DISC + T_DISC2 )       FROM    file4_11disc WHERE " & cW1 & " ) "
     cField4 = myiif(cWhere & turn(cWhere, " And ") & " (TYPE = '4' OR TYPE = '5' )", "[sal]- [PAY]") & " AS net_sal"
 
-    cField5 = " (SELECT SUM  ( QALL_SALES.QUANT * QALL_SALES.COST  )                FROM  QALL_SALES inner join file1_10 on  QALL_SALES.item = file1_10.item WHERE file1_10.MOSM = " & MyParn(xMosm.BoundText) & " AND file1_10.CODE = FILE4_10.CODE )   "
-    cField6 = " (SELECT SUM  ( QALL_SALES.TOTAL  * ((100- QALL_SALES.RATE )/100) )  FROM  QALL_SALES inner join file1_10 on  QALL_SALES.item = file1_10.item WHERE file1_10.MOSM = " & MyParn(xMosm.BoundText) & " AND file1_10.CODE = FILE4_10.CODE )   "
+    cField5 = " (SELECT SUM  ( QALL_SALES.QUANT * QALL_SALES.COST  )                FROM  QALL_SALES inner join file1_10 on  QALL_SALES.item = file1_10.item WHERE file1_10.MOSM = " & MyParn(XMOSM.BoundText) & " AND file1_10.CODE = FILE4_10.CODE )   "
+    cField6 = " (SELECT SUM  ( QALL_SALES.TOTAL  * ((100- QALL_SALES.RATE )/100) )  FROM  QALL_SALES inner join file1_10 on  QALL_SALES.item = file1_10.item WHERE file1_10.MOSM = " & MyParn(XMOSM.BoundText) & " AND file1_10.CODE = FILE4_10.CODE )   "
 
     cField8 = myiif(cWhere & turn(cWhere, " And ") & " (TYPE = '9')", "[PAY]") & " AS T_CASH0 "
-    cField10 = "(SELECT  sum(([in]-[out]) * file1_10.costITEM )   from file1_11 inner join file1_10 on file1_10.item = file1_11.item  where file1_10.code = file4_10.code and file1_10.mosm = " & MyParn(xMosm.BoundText) & " and date <= " & DateSq(xDate2.text) & " ) "
+    cField10 = "(SELECT  sum(([in]-[out]) * file1_10.costITEM )   from file1_11 inner join file1_10 on file1_10.item = file1_11.item  where file1_10.code = file4_10.code and file1_10.mosm = " & MyParn(XMOSM.BoundText) & " and date <= " & DateSq(xDate2.text) & " ) "
 
     cField11 = myiif(cWhere, "[sal]- [pay] ") & " AS C_BAL"
 
@@ -604,7 +604,7 @@ With grid1
                 cField6 & " , ' ' AS N7 , " & cField8 & " , ' ' as N9 , " & cField10 & " , " & cField11 & _
                 " FROM (FILE4_11 inner JOIN file4_10 ON FILE4_11.CODE = FILE4_10.CODE) LEFT JOIN file4_50 ON FILE4_10.[group] = file4_50.CODE WHERE FILE4_10.CODE IS NOT NULL "
     If xGrCust.BoundText <> "" Then cString = cString & turn(cString) & " file4_10.[group]  = " & MyParn(xGrCust.BoundText)
-    If xMosm.BoundText <> "" Then cString = cString & turn(cString) & " FILE4_11.[MOSM] = " & MyParn(xMosm.BoundText)
+    If XMOSM.BoundText <> "" Then cString = cString & turn(cString) & " FILE4_11.[MOSM] = " & MyParn(XMOSM.BoundText)
     cString = cString & " GROUP BY FILE4_10.DESCA , FILE4_10.CODE "
     DATA2.RecordSource = cString
     DATA2.Refresh
@@ -675,9 +675,9 @@ Sub FIXGRID()
     Next nCol
     
     .SubtotalPosition = flexSTAbove
-    For I = 2 To .Cols - 1
-        .Subtotal flexSTSum, -1, I, "#0", vbRed, vbYellow, True, "  "
-    Next I
+    For i = 2 To .Cols - 1
+        .Subtotal flexSTSum, -1, i, "#0", vbRed, vbYellow, True, "  "
+    Next i
     .ExplorerBar = flexExSort
     If .Rows > 1 Then
         .Cell(flexcpAlignment, 0, 0, .Rows - 1, .Cols - 1) = 4
@@ -699,7 +699,7 @@ End Sub
 Private Sub xCode_KeyDown(KeyCode As Integer, Shift As Integer)
 '    If KeyCode = 112 Then CardLookup
 End Sub
-Private Sub xCode_LostFocus()
+Private Sub xcode_LostFocus()
 xCustName.Caption = ""
 If xCode.text = "" Then Exit Sub
 xCode.text = RetZero(xCode.text, 6)

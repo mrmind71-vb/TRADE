@@ -30,236 +30,364 @@ Begin VB.Form BoxDayfrm
    WhatsThisButton =   -1  'True
    WhatsThisHelp   =   -1  'True
    WindowState     =   2  'Maximized
+   Begin VB.PictureBox Picture1 
+      Align           =   2  'Align Bottom
+      BorderStyle     =   0  'None
+      Height          =   645
+      Left            =   0
+      RightToLeft     =   -1  'True
+      ScaleHeight     =   645
+      ScaleWidth      =   18330
+      TabIndex        =   29
+      Top             =   8280
+      Width           =   18330
+      Begin VB.Frame Frame8 
+         Height          =   645
+         Left            =   45
+         RightToLeft     =   -1  'True
+         TabIndex        =   42
+         Top             =   45
+         Width           =   3255
+         Begin Threed.SSCommand cmdLast 
+            CausesValidation=   0   'False
+            Height          =   465
+            Left            =   45
+            TabIndex        =   43
+            Top             =   135
+            Width           =   780
+            _ExtentX        =   1376
+            _ExtentY        =   820
+            _Version        =   196610
+            PictureFrames   =   1
+            BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+               Name            =   "Arial"
+               Size            =   11.25
+               Charset         =   178
+               Weight          =   700
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            Picture         =   "box_day.frx":0000
+            Caption         =   "«ŒÌ—"
+            Alignment       =   4
+            PictureAlignment=   9
+            PictureDisabledFrames=   1
+            PictureDisabled =   "box_day.frx":21D0
+         End
+         Begin Threed.SSCommand cmdNext 
+            CausesValidation=   0   'False
+            Height          =   465
+            Left            =   825
+            TabIndex        =   44
+            Top             =   135
+            Width           =   780
+            _ExtentX        =   1376
+            _ExtentY        =   820
+            _Version        =   196610
+            PictureFrames   =   1
+            BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+               Name            =   "Arial"
+               Size            =   11.25
+               Charset         =   178
+               Weight          =   700
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            Picture         =   "box_day.frx":4318
+            Caption         =   "·«Õﬁ "
+            Alignment       =   4
+            PictureAlignment=   9
+            PictureDisabledFrames=   1
+            PictureDisabled =   "box_day.frx":64E0
+         End
+         Begin Threed.SSCommand cmdPrevious 
+            CausesValidation=   0   'False
+            Height          =   465
+            Left            =   1605
+            TabIndex        =   45
+            Top             =   135
+            Width           =   825
+            _ExtentX        =   1455
+            _ExtentY        =   820
+            _Version        =   196610
+            PictureFrames   =   1
+            BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+               Name            =   "Arial"
+               Size            =   11.25
+               Charset         =   178
+               Weight          =   700
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            Picture         =   "box_day.frx":862F
+            Caption         =   "”«»ﬁ"
+            Alignment       =   4
+            PictureAlignment=   9
+            PictureDisabledFrames=   1
+            PictureDisabled =   "box_day.frx":A80F
+         End
+         Begin Threed.SSCommand cmdFirst 
+            CausesValidation=   0   'False
+            Height          =   465
+            Left            =   2430
+            TabIndex        =   46
+            Top             =   135
+            Width           =   780
+            _ExtentX        =   1376
+            _ExtentY        =   820
+            _Version        =   196610
+            PictureFrames   =   1
+            BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+               Name            =   "Arial"
+               Size            =   11.25
+               Charset         =   178
+               Weight          =   700
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            Picture         =   "box_day.frx":C96A
+            Caption         =   "√Ê·"
+            Alignment       =   4
+            PictureAlignment=   9
+            PictureDisabledFrames=   1
+            PictureDisabled =   "box_day.frx":EB26
+         End
+      End
+      Begin VB.Frame Frame5 
+         Height          =   645
+         Left            =   5445
+         RightToLeft     =   -1  'True
+         TabIndex        =   30
+         Top             =   0
+         Width           =   14955
+         Begin VB.CheckBox chkBalance 
+            Alignment       =   1  'Right Justify
+            Appearance      =   0  'Flat
+            ForeColor       =   &H80000008&
+            Height          =   240
+            Left            =   135
+            RightToLeft     =   -1  'True
+            TabIndex        =   31
+            Top             =   225
+            Value           =   1  'Checked
+            Width           =   195
+         End
+         Begin VB.Label lblBalance1 
+            Caption         =   "—’Ìœ ”«»ﬁ"
+            BeginProperty Font 
+               Name            =   "Arial"
+               Size            =   11.25
+               Charset         =   178
+               Weight          =   700
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            Height          =   240
+            Left            =   13815
+            RightToLeft     =   -1  'True
+            TabIndex        =   41
+            Top             =   225
+            Width           =   975
+         End
+         Begin VB.Label xBalanceBefore 
+            Alignment       =   1  'Right Justify
+            Appearance      =   0  'Flat
+            BorderStyle     =   1  'Fixed Single
+            BeginProperty Font 
+               Name            =   "Arial"
+               Size            =   11.25
+               Charset         =   178
+               Weight          =   700
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            ForeColor       =   &H80000008&
+            Height          =   330
+            Left            =   12150
+            RightToLeft     =   -1  'True
+            TabIndex        =   40
+            Top             =   180
+            Width           =   1515
+         End
+         Begin VB.Label Label7 
+            Caption         =   "«Ìœ«⁄« "
+            BeginProperty Font 
+               Name            =   "Arial"
+               Size            =   11.25
+               Charset         =   178
+               Weight          =   700
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            Height          =   240
+            Left            =   11250
+            RightToLeft     =   -1  'True
+            TabIndex        =   39
+            Top             =   225
+            Width           =   570
+         End
+         Begin VB.Label xPlus 
+            Alignment       =   1  'Right Justify
+            Appearance      =   0  'Flat
+            BorderStyle     =   1  'Fixed Single
+            BeginProperty Font 
+               Name            =   "Arial"
+               Size            =   11.25
+               Charset         =   178
+               Weight          =   700
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            ForeColor       =   &H80000008&
+            Height          =   330
+            Left            =   9630
+            RightToLeft     =   -1  'True
+            TabIndex        =   38
+            Top             =   180
+            Width           =   1470
+         End
+         Begin VB.Label lblBalance2 
+            Caption         =   "—’Ìœ Œ «„Ì"
+            BeginProperty Font 
+               Name            =   "Arial"
+               Size            =   11.25
+               Charset         =   178
+               Weight          =   700
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            Height          =   240
+            Left            =   2700
+            RightToLeft     =   -1  'True
+            TabIndex        =   37
+            Top             =   225
+            Width           =   1110
+         End
+         Begin VB.Label xBalanceLast 
+            Alignment       =   1  'Right Justify
+            Appearance      =   0  'Flat
+            BorderStyle     =   1  'Fixed Single
+            BeginProperty Font 
+               Name            =   "Arial"
+               Size            =   11.25
+               Charset         =   178
+               Weight          =   700
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            ForeColor       =   &H80000008&
+            Height          =   330
+            Left            =   1035
+            RightToLeft     =   -1  'True
+            TabIndex        =   36
+            Top             =   180
+            Width           =   1515
+         End
+         Begin VB.Label xMinus 
+            Alignment       =   1  'Right Justify
+            Appearance      =   0  'Flat
+            BorderStyle     =   1  'Fixed Single
+            BeginProperty Font 
+               Name            =   "Arial"
+               Size            =   11.25
+               Charset         =   178
+               Weight          =   700
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            ForeColor       =   &H80000008&
+            Height          =   330
+            Left            =   6750
+            RightToLeft     =   -1  'True
+            TabIndex        =   35
+            Top             =   180
+            Width           =   1515
+         End
+         Begin VB.Label Label11 
+            Caption         =   "„”ÕÊ»« "
+            BeginProperty Font 
+               Name            =   "Arial"
+               Size            =   11.25
+               Charset         =   178
+               Weight          =   700
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            Height          =   240
+            Left            =   8415
+            RightToLeft     =   -1  'True
+            TabIndex        =   34
+            Top             =   225
+            Width           =   750
+         End
+         Begin VB.Label xBalance 
+            Alignment       =   1  'Right Justify
+            Appearance      =   0  'Flat
+            BorderStyle     =   1  'Fixed Single
+            BeginProperty Font 
+               Name            =   "Arial"
+               Size            =   11.25
+               Charset         =   178
+               Weight          =   700
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            ForeColor       =   &H80000008&
+            Height          =   330
+            Left            =   4140
+            RightToLeft     =   -1  'True
+            TabIndex        =   33
+            Top             =   180
+            Width           =   1515
+         End
+         Begin VB.Label Label13 
+            Caption         =   "’«›Ì"
+            BeginProperty Font 
+               Name            =   "Arial"
+               Size            =   11.25
+               Charset         =   178
+               Weight          =   700
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            Height          =   240
+            Left            =   5805
+            RightToLeft     =   -1  'True
+            TabIndex        =   32
+            Top             =   225
+            Width           =   750
+         End
+      End
+   End
    Begin VB.CommandButton cmdCheckBalance 
       Caption         =   "check Box Balance"
       Height          =   510
       Left            =   -270
       RightToLeft     =   -1  'True
-      TabIndex        =   43
+      TabIndex        =   27
       Top             =   405
       Visible         =   0   'False
       Width           =   1905
    End
-   Begin VB.Frame Frame5 
-      Height          =   645
-      Left            =   3330
-      RightToLeft     =   -1  'True
-      TabIndex        =   30
-      Top             =   8190
-      Width           =   14955
-      Begin VB.CheckBox chkBalance 
-         Alignment       =   1  'Right Justify
-         Appearance      =   0  'Flat
-         ForeColor       =   &H80000008&
-         Height          =   240
-         Left            =   135
-         RightToLeft     =   -1  'True
-         TabIndex        =   44
-         Top             =   225
-         Value           =   1  'Checked
-         Width           =   195
-      End
-      Begin VB.Label Label13 
-         Caption         =   "’«›Ì"
-         BeginProperty Font 
-            Name            =   "Arial"
-            Size            =   11.25
-            Charset         =   178
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   240
-         Left            =   5805
-         RightToLeft     =   -1  'True
-         TabIndex        =   41
-         Top             =   225
-         Width           =   750
-      End
-      Begin VB.Label xBalance 
-         Alignment       =   1  'Right Justify
-         Appearance      =   0  'Flat
-         BorderStyle     =   1  'Fixed Single
-         BeginProperty Font 
-            Name            =   "Arial"
-            Size            =   11.25
-            Charset         =   178
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         ForeColor       =   &H80000008&
-         Height          =   330
-         Left            =   4140
-         RightToLeft     =   -1  'True
-         TabIndex        =   40
-         Top             =   180
-         Width           =   1515
-      End
-      Begin VB.Label Label11 
-         Caption         =   "„”ÕÊ»« "
-         BeginProperty Font 
-            Name            =   "Arial"
-            Size            =   11.25
-            Charset         =   178
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   240
-         Left            =   8415
-         RightToLeft     =   -1  'True
-         TabIndex        =   39
-         Top             =   225
-         Width           =   750
-      End
-      Begin VB.Label xMinus 
-         Alignment       =   1  'Right Justify
-         Appearance      =   0  'Flat
-         BorderStyle     =   1  'Fixed Single
-         BeginProperty Font 
-            Name            =   "Arial"
-            Size            =   11.25
-            Charset         =   178
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         ForeColor       =   &H80000008&
-         Height          =   330
-         Left            =   6750
-         RightToLeft     =   -1  'True
-         TabIndex        =   38
-         Top             =   180
-         Width           =   1515
-      End
-      Begin VB.Label xBalanceLast 
-         Alignment       =   1  'Right Justify
-         Appearance      =   0  'Flat
-         BorderStyle     =   1  'Fixed Single
-         BeginProperty Font 
-            Name            =   "Arial"
-            Size            =   11.25
-            Charset         =   178
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         ForeColor       =   &H80000008&
-         Height          =   330
-         Left            =   1035
-         RightToLeft     =   -1  'True
-         TabIndex        =   36
-         Top             =   180
-         Width           =   1515
-      End
-      Begin VB.Label lblBalance2 
-         Caption         =   "—’Ìœ Œ «„Ì"
-         BeginProperty Font 
-            Name            =   "Arial"
-            Size            =   11.25
-            Charset         =   178
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   240
-         Left            =   2700
-         RightToLeft     =   -1  'True
-         TabIndex        =   35
-         Top             =   225
-         Width           =   1110
-      End
-      Begin VB.Label xPlus 
-         Alignment       =   1  'Right Justify
-         Appearance      =   0  'Flat
-         BorderStyle     =   1  'Fixed Single
-         BeginProperty Font 
-            Name            =   "Arial"
-            Size            =   11.25
-            Charset         =   178
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         ForeColor       =   &H80000008&
-         Height          =   330
-         Left            =   9630
-         RightToLeft     =   -1  'True
-         TabIndex        =   34
-         Top             =   180
-         Width           =   1470
-      End
-      Begin VB.Label Label7 
-         Caption         =   "«Ìœ«⁄« "
-         BeginProperty Font 
-            Name            =   "Arial"
-            Size            =   11.25
-            Charset         =   178
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   240
-         Left            =   11250
-         RightToLeft     =   -1  'True
-         TabIndex        =   33
-         Top             =   225
-         Width           =   570
-      End
-      Begin VB.Label xBalanceBefore 
-         Alignment       =   1  'Right Justify
-         Appearance      =   0  'Flat
-         BorderStyle     =   1  'Fixed Single
-         BeginProperty Font 
-            Name            =   "Arial"
-            Size            =   11.25
-            Charset         =   178
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         ForeColor       =   &H80000008&
-         Height          =   330
-         Left            =   12150
-         RightToLeft     =   -1  'True
-         TabIndex        =   32
-         Top             =   180
-         Width           =   1515
-      End
-      Begin VB.Label lblBalance1 
-         Caption         =   "—’Ìœ ”«»ﬁ"
-         BeginProperty Font 
-            Name            =   "Arial"
-            Size            =   11.25
-            Charset         =   178
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   240
-         Left            =   13815
-         RightToLeft     =   -1  'True
-         TabIndex        =   31
-         Top             =   225
-         Width           =   975
-      End
-   End
    Begin VB.Frame Frame20 
       Height          =   1095
-      Left            =   9585
+      Left            =   11700
       RightToLeft     =   -1  'True
-      TabIndex        =   24
+      TabIndex        =   19
       Top             =   945
       Width           =   2580
       Begin VB.CheckBox xDone 
@@ -279,7 +407,7 @@ Begin VB.Form BoxDayfrm
          Height          =   270
          Left            =   1575
          RightToLeft     =   -1  'True
-         TabIndex        =   29
+         TabIndex        =   24
          Top             =   225
          Width           =   780
       End
@@ -297,7 +425,7 @@ Begin VB.Form BoxDayfrm
          Height          =   420
          Left            =   90
          RightToLeft     =   -1  'True
-         TabIndex        =   27
+         TabIndex        =   22
          Top             =   135
          Width           =   1095
       End
@@ -318,7 +446,7 @@ Begin VB.Form BoxDayfrm
          Height          =   270
          Left            =   1305
          RightToLeft     =   -1  'True
-         TabIndex        =   26
+         TabIndex        =   21
          Top             =   720
          Width           =   1050
       End
@@ -336,16 +464,16 @@ Begin VB.Form BoxDayfrm
          Height          =   420
          Left            =   90
          RightToLeft     =   -1  'True
-         TabIndex        =   25
+         TabIndex        =   20
          Top             =   585
          Width           =   1095
       End
    End
    Begin VB.Frame Frame4 
       Height          =   645
-      Left            =   7470
+      Left            =   9585
       RightToLeft     =   -1  'True
-      TabIndex        =   21
+      TabIndex        =   16
       Top             =   1395
       Width           =   2085
       Begin VB.CheckBox chkClosed 
@@ -365,7 +493,7 @@ Begin VB.Form BoxDayfrm
          Height          =   375
          Left            =   90
          RightToLeft     =   -1  'True
-         TabIndex        =   23
+         TabIndex        =   18
          TabStop         =   0   'False
          Top             =   180
          Width           =   1815
@@ -373,17 +501,17 @@ Begin VB.Form BoxDayfrm
    End
    Begin VB.Frame Frame1 
       Height          =   690
-      Left            =   12825
+      Left            =   14940
       RightToLeft     =   -1  'True
-      TabIndex        =   14
+      TabIndex        =   9
       Top             =   0
       Width           =   5415
       Begin VB.CommandButton CmdInform 
          Height          =   510
          Left            =   4140
-         Picture         =   "box_day.frx":0000
+         Picture         =   "box_day.frx":10C75
          Style           =   1  'Graphical
-         TabIndex        =   18
+         TabIndex        =   13
          TabStop         =   0   'False
          Top             =   135
          Width           =   1230
@@ -392,10 +520,10 @@ Begin VB.Form BoxDayfrm
          Height          =   510
          Left            =   2775
          MaskColor       =   &H00FFFFFF&
-         Picture         =   "box_day.frx":27D3
+         Picture         =   "box_day.frx":13448
          RightToLeft     =   -1  'True
          Style           =   1  'Graphical
-         TabIndex        =   17
+         TabIndex        =   12
          TabStop         =   0   'False
          Top             =   135
          UseMaskColor    =   -1  'True
@@ -405,10 +533,10 @@ Begin VB.Form BoxDayfrm
          Height          =   510
          Left            =   1395
          MaskColor       =   &H00FFFFFF&
-         Picture         =   "box_day.frx":4D7F
+         Picture         =   "box_day.frx":159F4
          RightToLeft     =   -1  'True
          Style           =   1  'Graphical
-         TabIndex        =   16
+         TabIndex        =   11
          TabStop         =   0   'False
          Top             =   135
          UseMaskColor    =   -1  'True
@@ -418,135 +546,19 @@ Begin VB.Form BoxDayfrm
          Height          =   510
          Left            =   45
          MaskColor       =   &H00FFFFFF&
-         Picture         =   "box_day.frx":7619
+         Picture         =   "box_day.frx":1828E
          RightToLeft     =   -1  'True
          Style           =   1  'Graphical
-         TabIndex        =   15
+         TabIndex        =   10
          TabStop         =   0   'False
          Top             =   135
          UseMaskColor    =   -1  'True
          Width           =   1365
       End
    End
-   Begin VB.Frame Frame8 
-      Height          =   645
-      Left            =   45
-      RightToLeft     =   -1  'True
-      TabIndex        =   9
-      Top             =   8190
-      Width           =   3255
-      Begin Threed.SSCommand cmdLast 
-         CausesValidation=   0   'False
-         Height          =   465
-         Left            =   45
-         TabIndex        =   10
-         Top             =   135
-         Width           =   780
-         _ExtentX        =   1376
-         _ExtentY        =   820
-         _Version        =   196610
-         PictureFrames   =   1
-         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-            Name            =   "Arial"
-            Size            =   11.25
-            Charset         =   178
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Picture         =   "box_day.frx":9A37
-         Caption         =   "«ŒÌ—"
-         Alignment       =   4
-         PictureAlignment=   9
-         PictureDisabledFrames=   1
-         PictureDisabled =   "box_day.frx":BC07
-      End
-      Begin Threed.SSCommand cmdNext 
-         CausesValidation=   0   'False
-         Height          =   465
-         Left            =   825
-         TabIndex        =   11
-         Top             =   135
-         Width           =   780
-         _ExtentX        =   1376
-         _ExtentY        =   820
-         _Version        =   196610
-         PictureFrames   =   1
-         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-            Name            =   "Arial"
-            Size            =   11.25
-            Charset         =   178
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Picture         =   "box_day.frx":DD4F
-         Caption         =   "·«Õﬁ "
-         Alignment       =   4
-         PictureAlignment=   9
-         PictureDisabledFrames=   1
-         PictureDisabled =   "box_day.frx":FF17
-      End
-      Begin Threed.SSCommand cmdPrevious 
-         CausesValidation=   0   'False
-         Height          =   465
-         Left            =   1605
-         TabIndex        =   12
-         Top             =   135
-         Width           =   825
-         _ExtentX        =   1455
-         _ExtentY        =   820
-         _Version        =   196610
-         PictureFrames   =   1
-         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-            Name            =   "Arial"
-            Size            =   11.25
-            Charset         =   178
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Picture         =   "box_day.frx":12066
-         Caption         =   "”«»ﬁ"
-         Alignment       =   4
-         PictureAlignment=   9
-         PictureDisabledFrames=   1
-         PictureDisabled =   "box_day.frx":14246
-      End
-      Begin Threed.SSCommand cmdFirst 
-         CausesValidation=   0   'False
-         Height          =   465
-         Left            =   2430
-         TabIndex        =   13
-         Top             =   135
-         Width           =   780
-         _ExtentX        =   1376
-         _ExtentY        =   820
-         _Version        =   196610
-         PictureFrames   =   1
-         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-            Name            =   "Arial"
-            Size            =   11.25
-            Charset         =   178
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Picture         =   "box_day.frx":163A1
-         Caption         =   "√Ê·"
-         Alignment       =   4
-         PictureAlignment=   9
-         PictureDisabledFrames=   1
-         PictureDisabled =   "box_day.frx":1855D
-      End
-   End
    Begin VB.Frame Frame2 
       Height          =   1365
-      Left            =   13545
+      Left            =   15660
       RightToLeft     =   -1  'True
       TabIndex        =   7
       Top             =   675
@@ -636,7 +648,7 @@ Begin VB.Form BoxDayfrm
          Height          =   330
          Left            =   90
          RightToLeft     =   -1  'True
-         TabIndex        =   45
+         TabIndex        =   28
          Top             =   540
          Width           =   1680
       End
@@ -656,7 +668,7 @@ Begin VB.Form BoxDayfrm
          Height          =   270
          Left            =   3240
          RightToLeft     =   -1  'True
-         TabIndex        =   20
+         TabIndex        =   15
          Top             =   945
          Width           =   480
       End
@@ -676,7 +688,7 @@ Begin VB.Form BoxDayfrm
          Height          =   270
          Left            =   3285
          RightToLeft     =   -1  'True
-         TabIndex        =   19
+         TabIndex        =   14
          Top             =   585
          Width           =   510
       End
@@ -701,7 +713,7 @@ Begin VB.Form BoxDayfrm
    End
    Begin VB.Frame Frame3 
       Height          =   1095
-      Left            =   12195
+      Left            =   14310
       RightToLeft     =   -1  'True
       TabIndex        =   5
       Top             =   945
@@ -841,7 +853,7 @@ Begin VB.Form BoxDayfrm
       Align           =   2  'Align Bottom
       Height          =   345
       Left            =   0
-      TabIndex        =   22
+      TabIndex        =   17
       Top             =   8925
       Width           =   18330
       _ExtentX        =   32332
@@ -884,13 +896,13 @@ Begin VB.Form BoxDayfrm
       EndProperty
    End
    Begin VSFlex7Ctl.VSFlexGrid grid1 
-      Height          =   6090
+      Height          =   6945
       Left            =   45
       TabIndex        =   3
       Top             =   2070
-      Width           =   18150
-      _cx             =   32015
-      _cy             =   10742
+      Width           =   20265
+      _cx             =   35745
+      _cy             =   12250
       _ConvInfo       =   1
       Appearance      =   0
       BorderStyle     =   1
@@ -928,7 +940,7 @@ Begin VB.Form BoxDayfrm
       GridLinesFixed  =   1
       GridLineWidth   =   1
       Rows            =   1
-      Cols            =   9
+      Cols            =   15
       FixedRows       =   1
       FixedCols       =   0
       RowHeightMin    =   0
@@ -980,7 +992,7 @@ Begin VB.Form BoxDayfrm
    Begin VSFlex7Ctl.VSFlexGrid GRID2 
       Height          =   6090
       Left            =   -16425
-      TabIndex        =   42
+      TabIndex        =   26
       Top             =   1080
       Visible         =   0   'False
       Width           =   16530
@@ -1089,7 +1101,7 @@ Begin VB.Form BoxDayfrm
       Height          =   330
       Left            =   6480
       RightToLeft     =   -1  'True
-      TabIndex        =   37
+      TabIndex        =   25
       Top             =   720
       Visible         =   0   'False
       Width           =   1515
@@ -1113,7 +1125,7 @@ Begin VB.Form BoxDayfrm
       Height          =   330
       Left            =   4860
       RightToLeft     =   -1  'True
-      TabIndex        =   28
+      TabIndex        =   23
       Top             =   585
       Visible         =   0   'False
       Width           =   1635
@@ -1127,11 +1139,12 @@ Attribute VB_Exposed = False
 Public myPublic As Byte
 Dim rsStore As New ADODB.RecordSet
 Dim rsBox As New ADODB.RecordSet
+Dim sListMan As String
 Dim cm As New command
 Dim bSuperUser As Boolean
 Dim aPrm As Variant
 Dim bChangeBal As Boolean
-Dim CLIST As String, cList2 As String, cList3 As String
+Dim cList As String, cList2 As String, cList3 As String
 Dim CardTable As ADODB.RecordSet
 Dim cFile As String, cFileHeader As String
 Dim oSearch As New Search3, oSearchCode As New Search3, oSearchGrd As New Search_abd, oSearchDoc As New Search_abd
@@ -1161,7 +1174,7 @@ aInsert = AddFlag(aInsert, IIf(Me.Tag = DefineMode, "[USERNAME]", "[USERNAME2]")
 aInsert = AddFlag(aInsert, IIf(Me.Tag = DefineMode, "[TIME]", "[TIME2]"), "getdate()")
 
 con.BeginTrans
-On Error GoTo myerror
+On Error GoTo myError
 If Me.Tag = DefineMode Then
 '    If cBranch > "60" Then
 '        xDoc_No.text = NewflagBranch(cFileHeader, "doc_no", "00", con)
@@ -1170,7 +1183,7 @@ If Me.Tag = DefineMode Then
 '    End If
     xDoc_No.text = NewflagBox
     aInsert = AddFlag(aInsert, "DOC_NO", addstring(xDoc_No.text))
-    aInsert = AddFlag(aInsert, "[BRANCH]", addstring(XBRANCH.Caption))
+    aInsert = AddFlag(aInsert, "[BRANCH]", addstring(xbranch.Caption))
     con.Execute addInsert(aInsert, "ACCOUNT_H")
 Else
     con.Execute addUpdate(aInsert, "ACCOUNT_H", "doc_no = " & addstring(xDoc_No.text))
@@ -1179,7 +1192,7 @@ myreplaceGrd Row
 con.CommitTrans
 myreplace = True
 Exit Function
-myerror:
+myError:
 MsgBox Err.Description
 con.RollbackTrans
 Err.Clear
@@ -1201,6 +1214,7 @@ With grid1
         aInsert = AddFlag(aInsert, "[VALUE2]", Val(grid1.TextMatrix(i, 7)))
         aInsert = AddFlag(aInsert, "[BRANCH]", addstring(grid1.TextMatrix(i, 9)))
         aInsert = AddFlag(aInsert, "[INV_NO]", addstring(grid1.TextMatrix(i, 12)))
+        aInsert = AddFlag(aInsert, "[MAN]", addstring(grid1.TextMatrix(i, 13)))
         sCode = Mid(Trim(grid1.TextMatrix(i, 2)), 2)
         
         aInsert = AddFlag(aInsert, "[CUSTOMER]", IIf(Val(grid1.TextMatrix(i, 1)) = 1, addstring(sCode), "NULL"))
@@ -1240,6 +1254,8 @@ If ActiveControl.Name = grid1.Name Then
         
         If grid1.TextMatrix(grid1.Row, 1) = "3" And grid1.TextMatrix(grid1.Row, grid1.Cols - 1) = "" Then
             fixBox oSearchGrd.grid1.TextMatrix(oSearchGrd.grid1.Row, 0)
+        ElseIf grid1.TextMatrix(grid1.Row, 1) = "1" Then
+            grid1.TextMatrix(grid1.Row, 13) = oSearchGrd.grid1.TextMatrix(oSearchGrd.grid1.Row, 3)
         End If
         
         Unload oSearchGrd
@@ -1257,11 +1273,12 @@ If ActiveControl.Name = grid1.Name Then
         CellPos 13, grid1.Row, grid1.Col
     ElseIf grid1.Col = 12 Then
         grid1.TextMatrix(grid1.Row, 12) = oSearchBalance.grid1.TextMatrix(oSearchBalance.grid1.Row, 0)
+        grid1.TextMatrix(grid1.Row, 13) = oSearchBalance.grid1.TextMatrix(oSearchBalance.grid1.Row, 8)
         Unload oSearchBalance
         Grid1_AfterEdit grid1.Row, grid1.Col
         CellPos 13, grid1.Row, grid1.Col
     End If
-ElseIf ActiveControl.Name = cmdInform.Name Then
+ElseIf ActiveControl.Name = CmdInform.Name Then
     openCardTable tbMode.tbFind, oSearchDoc.grid1.TextMatrix(oSearchDoc.grid1.Row, 0)
     Unload oSearchDoc
 ElseIf ActiveControl.Name = xBox.Name Then
@@ -1289,7 +1306,7 @@ myUndo
 End Sub
 Private Sub cmdDelinv_Click()
 If MsgBox("Õ–› «·„” ‰œ »«·ﬂ«„·  ?, Â· «‰  „Ê«›ﬁ ø", vbOKCancel + vbDefaultButton2) = vbOK Then
-    On Error GoTo myerror
+    On Error GoTo myError
     
     Dim nCount As Long
     nCount = Val(myField("select count(*) from ACCOUNT_D  INNER JOIN ACCOUNT_P ON ACCOUNT_P.ID_CASH = ACCOUNT_D.ID WHERE ACCOUNT_D.DOC_NO = " & MyParn(xDoc_No.text), con) & "")
@@ -1312,12 +1329,12 @@ If MsgBox("Õ–› «·„” ‰œ »«·ﬂ«„·  ?, Â· «‰  „Ê«›ﬁ ø", vbOKCancel + vbDefaultButton
     End If
 End If
 Exit Sub
-myerror:
+myError:
 If TransCount(con) > 0 Then con.RollbackTrans
 MsgBox Err.Description
 Err.Clear
 End Sub
-Private Sub cmdExit_Click()
+Private Sub CmdExit_Click()
 Unload Me
 End Sub
 Private Sub CardLookup()
@@ -1386,7 +1403,7 @@ myDefine
 End Sub
 Private Sub cmdSave_Click()
 If FoundDay Then Exit Sub
-If Not myValid Then Exit Sub
+If Not MYVALID Then Exit Sub
 If Not myreplace Then Exit Sub
 Inform " „ Õ›Ÿ «·„” ‰œ »‰Ã«Õ"
 If Not openCardTable(tbMode.tbFind, xDoc_No.text) Then
@@ -1402,21 +1419,21 @@ Set loctable = cmd("SELECT BOXMOVE.BOX,SUM(BOXMOVE.PLUS) AS PLUS,SUM(BOXMOVE.MIN
 
 Dim cm As New ADODB.command
 
-For i = 0 To grid2.Cols - 1
-    grid2.ColWidth(i) = 2000
+For i = 0 To GRID2.Cols - 1
+    GRID2.ColWidth(i) = 2000
 Next
 
-grid2.Rows = 1
+GRID2.Rows = 1
 i = 0
 Do Until loctable.EOF
     i = i + 1
     Me.Caption = i
-    grid2.AddItem ""
-    grid2.TextMatrix(grid2.Rows - 1, 0) = loctable!BOX
-    grid2.TextMatrix(grid2.Rows - 1, 1) = Round(loctable!plus, 2)
+    GRID2.AddItem ""
+    GRID2.TextMatrix(GRID2.Rows - 1, 0) = loctable!BOX
+    GRID2.TextMatrix(GRID2.Rows - 1, 1) = Round(loctable!plus, 2)
     
     
-    grid2.TextMatrix(grid2.Rows - 1, 3) = Round(loctable!Minus, 2)
+    GRID2.TextMatrix(GRID2.Rows - 1, 3) = Round(loctable!Minus, 2)
     
     Dim aPrm As Variant
     aPrm = AddFlag(aPrm, "BOX", loctable!BOX)
@@ -1424,11 +1441,11 @@ Do Until loctable.EOF
     Set cm = cmd("sp_BOX_BAL", con, adStoredProc, aPrm)
     
     cm.Execute
-    grid2.TextMatrix(grid2.Rows - 1, 2) = Round(cm.Parameters("@PLUS").Value, 2)
-    grid2.TextMatrix(grid2.Rows - 1, 4) = Round(cm.Parameters("@MINUS").Value, 2)
-    grid2.TextMatrix(grid2.Rows - 1, 5) = Round(grid2.ValueMatrix(grid2.Rows - 1, 1) - grid2.ValueMatrix(grid2.Rows - 1, 3), 2)
-    grid2.TextMatrix(grid2.Rows - 1, 6) = Round(grid2.ValueMatrix(grid2.Rows - 1, 2) - grid2.ValueMatrix(grid2.Rows - 1, 4), 2)
-    grid2.TextMatrix(grid2.Rows - 1, 7) = Round(grid2.ValueMatrix(grid2.Rows - 1, 5) - grid2.ValueMatrix(grid2.Rows - 1, 6), 2)
+    GRID2.TextMatrix(GRID2.Rows - 1, 2) = Round(cm.Parameters("@PLUS").Value, 2)
+    GRID2.TextMatrix(GRID2.Rows - 1, 4) = Round(cm.Parameters("@MINUS").Value, 2)
+    GRID2.TextMatrix(GRID2.Rows - 1, 5) = Round(GRID2.ValueMatrix(GRID2.Rows - 1, 1) - GRID2.ValueMatrix(GRID2.Rows - 1, 3), 2)
+    GRID2.TextMatrix(GRID2.Rows - 1, 6) = Round(GRID2.ValueMatrix(GRID2.Rows - 1, 2) - GRID2.ValueMatrix(GRID2.Rows - 1, 4), 2)
+    GRID2.TextMatrix(GRID2.Rows - 1, 7) = Round(GRID2.ValueMatrix(GRID2.Rows - 1, 5) - GRID2.ValueMatrix(GRID2.Rows - 1, 6), 2)
     
     
     loctable.MoveNext
@@ -1460,10 +1477,10 @@ If KeyCode = 13 Then
 End If
 End Sub
 Private Sub Form_Load()
-openCon con
+OpenCon con
 openConDoc con_image
 
-bedit = True
+bEdit = True
 
 cFileHeader = "ACCOUNT_H"
 If bSupermode Then
@@ -1478,17 +1495,26 @@ End If
 
 Set rsBox = createRs(cmd("select * from file0_50", con).Execute)
 
-Set data1.RecordSet = mycmd("SELECT * FROM FILE0_50 ORDER BY DESCA", con)
-Set xBox.RowSource = data1
+Set DATA1.RecordSet = mycmd("SELECT * FROM FILE0_50 ORDER BY DESCA", con)
+Set xBox.RowSource = DATA1
 xBox.ListField = "Desca"
 xBox.BoundColumn = "Code"
 
 
-CLIST = StrList2("Select code,Desca from account  ORDER BY CODE", con)
-Set grid1.DataSource = DATA11
+cList = StrList2("Select code,Desca from account  ORDER BY CODE", con)
+sListMan = strList("Select code,Desca from FILE6_25  ORDER BY DESCA", con)
+Set grid1.DataSource = data11
 
 If Not openCardTable Then myDefine
 End Sub
+Private Sub Form_Resize()
+Dim nHeight As Long
+nHeight = Me.Height - (grid1.Top + 1500)
+If nHeight > 3000 Then
+    grid1.Height = nHeight
+End If
+End Sub
+
 Private Sub Form_Unload(Cancel As Integer)
 On Error Resume Next
 'SaveText Me, , Array(xYear.Name)
@@ -1502,11 +1528,11 @@ Private Sub Grid1_AfterEdit(ByVal Row As Long, ByVal Col As Long)
 
 If FoundDay Then Exit Sub
 
-If Not myValid(True) Then
+If Not MYVALID(True) Then
     On Error Resume Next
     grid1.SetFocus
     Err.Clear
-    myLoadGrd
+    myloadgrd
     If Row < grid1.Rows - 1 Then
         grid1.Select Row, Col
     Else
@@ -1536,13 +1562,13 @@ If myreplace(Row) Then
     If Me.Tag = DefineMode Then
         openCardTable tbMode.tbFind, xDoc_No.text, True
     ElseIf grid1.TextMatrix(Row, grid1.Cols - 1) = "" Then
-        myLoadGrd
+        myloadgrd
         grid1.ShowCell grid1.Rows - 1, 0
     Else
         CalcTotals
     End If
 Else
-    myLoadGrd
+    myloadgrd
 End If
 End With
 End Sub
@@ -1566,9 +1592,9 @@ ElseIf Col = 8 Then
 ElseIf Col = 10 Then
     cash_document.sId_cash = grid1.TextMatrix(grid1.Row, grid1.Cols - 1)
     cash_document.sDoc_no = xDoc_No.text
-    cash_document.bedit = cmdSave.Enabled
+    cash_document.bEdit = cmdSave.Enabled
     cash_document.Show 1
-    myLoadGrd
+    myloadgrd
 ElseIf Col = 12 Then
     SalesBalanceLook Me, oSearchBalance, "FILE6_20H.CODE = " & MyParn(Mid(Trim(grid1.TextMatrix(grid1.Row, 2)), 2)), , IIf(grid1.TextMatrix(grid1.Row, 12) = "", "", "»œÊ‰ ›« Ê—…")
 ElseIf grid1.TextMatrix(grid1.Row, 1) = "1" Then
@@ -1610,7 +1636,9 @@ ElseIf grid1.TextMatrix(grid1.Row, 2) = "" Then
 ElseIf grid1.Col = 8 And grid1.ValueMatrix(grid1.Row, 11) = 0 Then
     grid1.Editable = flexEDNone
 ElseIf grid1.Col = 12 And grid1.Row = grid1.Rows - 1 Then
-    grid1.Editable = flexEDNone
+    grid1.Editable = IIf(grid1.TextMatrix(grid1.Row, 1) = "1", flexEDKbdMouse, flexEDNone)
+ElseIf grid1.Col = 13 Then
+    grid1.Editable = IIf(grid1.TextMatrix(grid1.Row, 1) = "1", flexEDKbdMouse, flexEDNone)
 Else
     grid1.Editable = flexEDKbdMouse
 End If
@@ -1619,7 +1647,7 @@ End Sub
 Private Sub grid1_GotFocus()
 grid1_EnterCell
 End Sub
-Private Function myValid(Optional bIgMsg As Boolean = False) As Boolean
+Private Function MYVALID(Optional bIgMsg As Boolean = False) As Boolean
 If Not IsDate(xDate.text) Then
     If Not bIgMsg Then MsgBox "«· «—ÌŒ €Ì— „”Ã·"
     Exit Function
@@ -1628,7 +1656,7 @@ If Not xBox.MatchedWithList Then
     If Not bIgMsg Then MsgBox "«·Œ“‰… €Ì— „”Ã·…"
     Exit Function
 End If
-myValid = True
+MYVALID = True
 End Function
 Private Sub myload(Optional bRefresh As Boolean = False)
 bChangeBal = True
@@ -1649,9 +1677,9 @@ ChangeBalance
 
 
 XFLAG.Caption = CardTable!Flag
-XBRANCH.Caption = CardTable!branch & ""
+xbranch.Caption = CardTable!branch & ""
 bigCheck = True
-xClosed.Value = IIf(CardTable!CLOSED, 1, 0)
+xclosed.Value = IIf(CardTable!CLOSED, 1, 0)
 xDone.Value = IIf(CardTable!DONE, 1, 0)
 bigCheck = False
 
@@ -1664,7 +1692,7 @@ If Not IsNull(CardTable!USERNAME2) Then
 End If
 
 Handlecontrols LoadMode
-myLoadGrd
+myloadgrd
 
 If Not bRefresh Then
     CellPos 13, grid1.Rows - 2, grid1.Cols - 1
@@ -1673,7 +1701,7 @@ If Not bRefresh Then
     Err.Clear
 End If
 End Sub
-Private Sub myLoadGrd()
+Private Sub myloadgrd()
 Dim cString As String
 With grid1
     cString = "SELECT " & _
@@ -1690,13 +1718,14 @@ With grid1
               " [dbo].[fn_doc_count](ID) AS DOCUMENT," & _
               " ACCOUNT.WITH_BRANCH," & _
               " ACCOUNT_D.INV_NO," & _
+              " ACCOUNT_D.MAN," & _
               " ACCOUNT_D.ID " & _
               " FROM ACCOUNT_D " & _
               " INNER JOIN ACCOUNT_CODES ON ACCOUNT_D.CODE =  ACCOUNT_CODES.CODE" & _
               " INNER JOIN ACCOUNT ON ACCOUNT_D.ACCOUNT = ACCOUNT.CODE" & _
               " LEFT JOIN BRANCH ON ACCOUNT_D.BRANCH = BRANCH.CODE" & _
               " WHERE DOC_NO = " & MyParn(xDoc_No.text)
-    Set DATA11.RecordSet = myRecordSet(cString, con)
+    Set data11.RecordSet = myRecordSet(cString, con)
     myAddItem
 End With
 CalcTotals
@@ -1720,10 +1749,10 @@ xBox.BoundText = Sbox
 ChangeBalance
 
 bLoadDate = False
-XBRANCH.Caption = cBranch
+xbranch.Caption = cBranch
 xBranchDesca.Caption = rsBranch!DESCA
 bigCheck = True
-xClosed.Value = 0
+xclosed.Value = 0
 xDone.Value = 0
 bCheck = False
 fixGrd
@@ -1744,7 +1773,7 @@ End If
 Err.Clear
 End Sub
 Private Sub Handlecontrols(nMode)
-bEditRecord = bedit And xClosed.Value = 0
+bEditRecord = bEdit And xclosed.Value = 0
 xBox.Enabled = bEditRecord And nMode = DefineMode
 xBox.Enabled = xBox.Enabled And nUser >= enUser.Super And Sbox = ""
 xDate.Enabled = bEditRecord And nMode = DefineMode
@@ -1753,19 +1782,19 @@ If nUser = enUser.User Then
     bEditRecord = bEditRecord And xDone.Value = 0
     'xDone.Enabled = nMode = LoadMode And xDone.Value = 0
     xDone.Enabled = False
-    xClosed.Enabled = False
+    xclosed.Enabled = False
 ElseIf nUser = enUser.Super Then
-    xDone.Enabled = nMode = LoadMode And xClosed.Value = 0
-    xClosed.Enabled = nMode = LoadMode And xDone.Value = 1 And (xClosed.Value = 0 Or bSuperUser)
+    xDone.Enabled = nMode = LoadMode And xclosed.Value = 0
+    xclosed.Enabled = nMode = LoadMode And xDone.Value = 1 And (xclosed.Value = 0 Or bSuperUser)
 ElseIf nUser = enUser.Admin Then
-    xDone.Enabled = nMode = LoadMode And xClosed.Value = 0
-    xClosed.Enabled = nMode = LoadMode And xDone.Value = 1
+    xDone.Enabled = nMode = LoadMode And xclosed.Value = 0
+    xclosed.Enabled = nMode = LoadMode And xDone.Value = 1
 End If
 
 cmdClosePeriod.Enabled = nUser = enUser.Admin
 cmdOpenPeriod.Enabled = nUser = enUser.Admin
 
-cmdNewInv.Enabled = nMode = LoadMode And bedit
+cmdNewInv.Enabled = nMode = LoadMode And bEdit
 cmdSave.Enabled = bEditRecord
 CmdDelInv.Enabled = nMode = LoadMode And bEditRecord
 
@@ -1791,7 +1820,7 @@ If KeyCode = 13 Then
 ElseIf Not bEditRecord Then
 ElseIf KeyCode = 46 And grid1.Row <> grid1.Rows - 1 And grid1.Rows > 3 Then
     If MsgBox("„‰ «·„” ‰œ ?", vbOKCancel + vbDefaultButton2) = vbOK Then
-        On Error GoTo myerror
+        On Error GoTo myError
         If grid1.TextMatrix(grid1.Row, grid1.Cols - 1) <> "" Then
             Dim nCount As Long
             nCount = Val(myField("select count(*) from account_p where account_p.id_Cash = " & grid1.TextMatrix(grid1.Row, grid1.Cols - 1), con) & "")
@@ -1809,16 +1838,19 @@ ElseIf KeyCode = 46 And grid1.Row <> grid1.Rows - 1 And grid1.Rows > 3 Then
     End If
 End If
 Exit Sub
-myerror:
+myError:
 MsgBox Err.Description
 Err.Clear
 End Sub
 Private Sub grid1_KeyUpEdit(ByVal Row As Long, ByVal Col As Long, KeyCode As Integer, ByVal Shift As Integer)
+    If Col = 9 And grid1.TextMatrix(Row, Col) = "" Then Exit Sub
 If KeyCode = 13 Then
     If Col = 0 And grid1.TextMatrix(Row, 1) = "" Then Exit Sub
     If Col = 3 And grid1.TextMatrix(Row, Col) = "" Then Exit Sub
     If Col = 8 And grid1.TextMatrix(Row, Col) = "" Then Exit Sub
     If Col = 9 And grid1.TextMatrix(Row, Col) = "" Then Exit Sub
+    If Col = 13 And grid1.TextMatrix(Row, Col) = "" Then Exit Sub
+    
     CellPos KeyCode, Row, Col
 End If
 End Sub
@@ -1828,6 +1860,7 @@ If KeyAscii = 13 Then
     If grid1.Col = 3 And grid1.TextMatrix(grid1.Row, grid1.Col) = "" Then Exit Sub
     If grid1.Col = 8 And grid1.TextMatrix(grid1.Row, grid1.Col) = "" Then Exit Sub
     If grid1.Col = 9 And grid1.TextMatrix(grid1.Row, grid1.Col) = "" Then Exit Sub
+    If grid1.Col = 13 And grid1.TextMatrix(grid1.Row, grid1.Col) = "" Then Exit Sub
     KeyAscii = 0
 End If
 End Sub
@@ -1838,7 +1871,6 @@ If Col = 0 Then
 '    Else
 '        'if rsField(rsaccount,grid1.edittext,"code","desca")
 '    End If
-        
 ElseIf Col = 6 Then
     If Val(grid1.EditText) <> 0 And grid1.ValueMatrix(Row, 7) <> 0 Then
         grid1.TextMatrix(Row, 7) = ""
@@ -1846,6 +1878,10 @@ ElseIf Col = 6 Then
 ElseIf Col = 7 Then
     If Val(grid1.EditText) <> 0 And grid1.ValueMatrix(Row, 6) <> 0 Then
         grid1.TextMatrix(Row, 6) = ""
+    End If
+ElseIf Col = 13 Then
+    If grid1.EditText <> "" And grid1.ComboData(grid1.ComboIndex) = "" Then
+        grid1.EditText = ""
     End If
 End If
 End Sub
@@ -1882,10 +1918,10 @@ If sBranchCode <> "00" Then
 End If
 
 cString = cString & " ORDER BY DESCA"
-If data1.RecordSource <> cString Then
+If DATA1.RecordSource <> cString Then
     Dim sBound As String
     sBound = xBox.BoundText
-    Set data1.RecordSet = mycmd(cString, con)
+    Set DATA1.RecordSet = mycmd(cString, con)
 
     xBox.BoundText = sBound
     If Not xBox.MatchedWithList Then xBox.BoundText = ""
@@ -1902,22 +1938,22 @@ End Sub
 Private Sub xbox_LostFocus()
 Dim cString As String
 cString = "SELECT * FROM FILE0_50 ORDER BY DESCA"
-If data1.RecordSet.Source <> cString Then
+If DATA1.RecordSet.Source <> cString Then
     Dim sBound As String
     sBound = xBox.BoundText
-    Set data1.RecordSet = mycmd(cString, con)
+    Set DATA1.RecordSet = mycmd(cString, con)
     xBox.BoundText = sBound
     If Not xBox.MatchedWithList Then xBox.BoundText = ""
 End If
 End Sub
 Private Sub xClosed_Click()
 If bigCheck Then Exit Sub
-On Error GoTo myerror
-con.Execute " update " & cFileHeader & " set CLOSED = " & xClosed.Value & " WHERE doc_no = " & MyParn(xDoc_No.text)
+On Error GoTo myError
+con.Execute " update " & cFileHeader & " set CLOSED = " & xclosed.Value & " WHERE doc_no = " & MyParn(xDoc_No.text)
 myUndo
-Inform " „ " & IIf(xClosed.Value = 1, "«€·«ﬁ", "› Õ") & " «·„” ‰œ »‰Ã«Õ"
+Inform " „ " & IIf(xclosed.Value = 1, "«€·«ﬁ", "› Õ") & " «·„” ‰œ »‰Ã«Õ"
 Exit Sub
-myerror:
+myError:
 MsgBox Err.Description
 Err.Clear
 End Sub
@@ -1939,17 +1975,30 @@ Private Sub fixGrd()
 With grid1
 .MergeCells = flexMergeFree
 .MergeRow(0) = True
-.FormatString = "‰Ê⁄ «·Õ—ﬂ…|" & "‰Ê⁄ «·Õ—ﬂ…|" & "«·ﬂÊœ|" & "«·«”„|" & "«· «—ÌŒ|" & "«·»Ì«‰|" & "«Ìœ«⁄« |" & "„”ÕÊ»« |" & "«·›—⁄|" & "«·›—⁄|" & "„” ‰œ« |" & "»›—⁄|" & "„” ‰œ|"
+
+'              " BRANCH.DESCA," & _
+'              " ACCOUNT_D.BRANCH," & _
+'              " [dbo].[fn_doc_count](ID) AS DOCUMENT," & _
+'              " ACCOUNT.WITH_BRANCH," & _
+'              " ACCOUNT_D.INV_NO," & _
+'              " ACCOUNT_D.MAN," & _
+'              " ACCOUNT_D.ID " & _
+
+
+.FormatString = "‰Ê⁄ «·Õ—ﬂ…|" & "‰Ê⁄ «·Õ—ﬂ…|" & "«·ﬂÊœ|" & "«·«”„|" & "«· «—ÌŒ|" & "«·»Ì«‰|" & "«Ìœ«⁄« |" & "„”ÕÊ»« |" & "«·›—⁄|" & "«·›—⁄|" & "„” ‰œ« |" & "»›—⁄|" & "—ﬁ„ «·›« Ê—…|" & "«·„‰œÊ»|"
 .ColWidth(0) = 2000
 .ColWidth(2) = 1200
 .ColWidth(3) = 3200
 .ColWidth(4) = 1400
-.ColWidth(5) = 5000
+.ColWidth(5) = 4500
 .ColWidth(6) = 1400
 .ColWidth(7) = 1400
 .ColWidth(8) = 1600
 .ColWidth(10) = 900
-.ColWidth(12) = 2300
+.ColWidth(11) = 800
+.ColWidth(12) = 2000
+.ColWidth(13) = 2000
+
 .ColComboList(8) = "..."
 .ColComboList(10) = "..."
 .ColComboList(12) = "..."
@@ -1961,21 +2010,21 @@ With grid1
 
 '.ColHidden(.Cols - 3) = True
 .ColHidden(9) = True
-.ColHidden(.Cols - 3) = True
 .ColHidden(.Cols - 1) = True
 For i = 0 To .Cols - 1
     .ColAlignment(i) = flexAlignRightCenter
 Next
-'.ColComboList(0) = CLIST
+
 .ColComboList(0) = "..."
 .ColComboList(3) = "..."
+.ColComboList(13) = sListMan
 End With
 End Sub
-Private Function openCardTable(Optional pMode As Integer = tbMode.tblast, Optional pDoc_No As String = "", Optional bRefresh As Boolean = False) As Boolean
+Private Function openCardTable(Optional pMode As Integer = tbMode.tblast, Optional pDoc_no As String = "", Optional bRefresh As Boolean = False) As Boolean
 Dim cString As String
 Dim cWhere As String
 Dim cOrder As String
-If (pMode = tbMode.tbFind Or pMode = tbMode.tbNext Or pMode = tbMode.tbPrevious) And Trim(pDoc_No) = "" Then
+If (pMode = tbMode.tbFind Or pMode = tbMode.tbNext Or pMode = tbMode.tbPrevious) And Trim(pDoc_no) = "" Then
     Exit Function
 End If
 
@@ -2011,12 +2060,12 @@ If pMode = tbMode.tbFirst Then
 ElseIf pMode = tbMode.tblast Then
     cOrder = "Order by FLAG DESC"
 ElseIf pMode = tbMode.tbFind Then
-    cWhere = "Doc_no = " & MyParn(pDoc_No)
+    cWhere = "Doc_no = " & MyParn(pDoc_no)
 ElseIf pMode = tbMode.tbPrevious Then
-    cWhere = "FLAG < " & MyParn(pDoc_No)
+    cWhere = "FLAG < " & MyParn(pDoc_no)
     cOrder = "Order by FLAG desc"
 ElseIf pMode = tbMode.tbNext Then
-    cWhere = "FLAG > " & MyParn(pDoc_No)
+    cWhere = "FLAG > " & MyParn(pDoc_no)
     cOrder = "Order by FLAG"
 End If
 
@@ -2039,7 +2088,7 @@ End If
 
 Me.MousePointer = 0
 Exit Function
-myerror:
+myError:
 Me.MousePointer = vbNormal
 MsgBox Err.Description
 Err.Clear
@@ -2111,7 +2160,7 @@ End Sub
 Private Sub xDoc_No_GotFocus()
 myGotFocus xDoc_No
 End Sub
-Private Sub xDate_GotFocus()
+Private Sub xdate_GotFocus()
 myGotFocus xDate
 End Sub
 Private Sub xDate_LostFocus()
@@ -2185,12 +2234,12 @@ FoundDay = True
 End Function
 Private Sub xDone_Click()
 If bigCheck Then Exit Sub
-On Error GoTo myerror
+On Error GoTo myError
 con.Execute " update " & cFileHeader & " set DONE = " & xDone.Value & " WHERE doc_no = " & MyParn(xDoc_No.text)
 myUndo
-Inform " „ " & IIf(xClosed.Value = 1, "«·€«¡ «‰ Â«¡", "«·«‰ Â«¡ ") & " «·„” ‰œ »‰Ã«Õ"
+Inform " „ " & IIf(xclosed.Value = 1, "«·€«¡ «‰ Â«¡", "«·«‰ Â«¡ ") & " «·„” ‰œ »‰Ã«Õ"
 Exit Sub
-myerror:
+myError:
 MsgBox Err.Description
 Err.Clear
 End Sub

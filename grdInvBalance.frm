@@ -38,15 +38,15 @@ Begin VB.Form grdInvBalance
          Strikethrough   =   0   'False
       EndProperty
       Height          =   735
-      Left            =   2025
+      Left            =   1800
       RightToLeft     =   -1  'True
-      TabIndex        =   13
-      Top             =   360
+      TabIndex        =   16
+      Top             =   720
       Width           =   5145
       Begin Threed.SSCommand cmdExit 
          Height          =   555
          Left            =   45
-         TabIndex        =   14
+         TabIndex        =   17
          TabStop         =   0   'False
          Top             =   135
          Width           =   1230
@@ -75,7 +75,7 @@ Begin VB.Form grdInvBalance
       Begin Threed.SSCommand cmdPrint 
          Height          =   555
          Left            =   1305
-         TabIndex        =   15
+         TabIndex        =   18
          TabStop         =   0   'False
          Top             =   135
          Width           =   1230
@@ -103,7 +103,7 @@ Begin VB.Form grdInvBalance
       Begin Threed.SSCommand cmdGo 
          Height          =   555
          Left            =   3870
-         TabIndex        =   5
+         TabIndex        =   9
          Top             =   135
          Width           =   1230
          _ExtentX        =   2170
@@ -130,7 +130,7 @@ Begin VB.Form grdInvBalance
       Begin Threed.SSCommand cmdExcel 
          Height          =   555
          Left            =   2565
-         TabIndex        =   16
+         TabIndex        =   19
          Top             =   135
          Width           =   1275
          _ExtentX        =   2249
@@ -166,12 +166,37 @@ Begin VB.Form grdInvBalance
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Height          =   1005
-      Left            =   7200
+      Height          =   1365
+      Left            =   6975
       RightToLeft     =   -1  'True
-      TabIndex        =   6
+      TabIndex        =   10
       Top             =   90
-      Width           =   12975
+      Width           =   13200
+      Begin VB.TextBox xdate_Due 
+         Alignment       =   1  'Right Justify
+         Appearance      =   0  'Flat
+         BackColor       =   &H00FFFFFF&
+         Height          =   330
+         Left            =   10080
+         RightToLeft     =   -1  'True
+         TabIndex        =   6
+         Top             =   900
+         Width           =   1815
+      End
+      Begin VB.CheckBox ckhBalanceOnly 
+         Alignment       =   1  'Right Justify
+         Appearance      =   0  'Flat
+         BackColor       =   &H80000005&
+         Caption         =   "›Ê« Ì— ·Â« —’Ìœ"
+         ForeColor       =   &H80000008&
+         Height          =   375
+         Left            =   180
+         RightToLeft     =   -1  'True
+         TabIndex        =   8
+         TabStop         =   0   'False
+         Top             =   540
+         Width           =   1725
+      End
       Begin VB.CheckBox chkDue 
          Alignment       =   1  'Right Justify
          Appearance      =   0  'Flat
@@ -181,8 +206,9 @@ Begin VB.Form grdInvBalance
          Height          =   375
          Left            =   180
          RightToLeft     =   -1  'True
-         TabIndex        =   24
-         Top             =   540
+         TabIndex        =   7
+         TabStop         =   0   'False
+         Top             =   135
          Value           =   1  'Checked
          Width           =   1725
       End
@@ -190,19 +216,10 @@ Begin VB.Form grdInvBalance
          Alignment       =   1  'Right Justify
          Appearance      =   0  'Flat
          BackColor       =   &H00FFFFFF&
-         BeginProperty Font 
-            Name            =   "Tahoma"
-            Size            =   8.25
-            Charset         =   178
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
          Height          =   330
          Left            =   10710
          RightToLeft     =   -1  'True
-         TabIndex        =   2
+         TabIndex        =   3
          Top             =   540
          Width           =   1185
       End
@@ -210,15 +227,6 @@ Begin VB.Form grdInvBalance
          Alignment       =   1  'Right Justify
          Appearance      =   0  'Flat
          BackColor       =   &H00FFFFFF&
-         BeginProperty Font 
-            Name            =   "Tahoma"
-            Size            =   8.25
-            Charset         =   178
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
          Height          =   330
          Left            =   10095
          RightToLeft     =   -1  'True
@@ -230,15 +238,6 @@ Begin VB.Form grdInvBalance
          Alignment       =   1  'Right Justify
          Appearance      =   0  'Flat
          BackColor       =   &H00FFFFFF&
-         BeginProperty Font 
-            Name            =   "Tahoma"
-            Size            =   8.25
-            Charset         =   178
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
          Height          =   330
          Left            =   8235
          RightToLeft     =   -1  'True
@@ -249,7 +248,7 @@ Begin VB.Form grdInvBalance
       Begin MSDataListLib.DataCombo xGroup 
          Height          =   315
          Left            =   2565
-         TabIndex        =   4
+         TabIndex        =   5
          Top             =   540
          Width           =   3255
          _ExtentX        =   5741
@@ -272,7 +271,7 @@ Begin VB.Form grdInvBalance
          CausesValidation=   0   'False
          Height          =   315
          Left            =   2565
-         TabIndex        =   3
+         TabIndex        =   2
          Top             =   180
          Width           =   3255
          _ExtentX        =   5741
@@ -291,6 +290,18 @@ Begin VB.Form grdInvBalance
             Strikethrough   =   0   'False
          EndProperty
       End
+      Begin VB.Label Label3 
+         AutoSize        =   -1  'True
+         BackColor       =   &H80000005&
+         BackStyle       =   0  'Transparent
+         Caption         =   " «—ÌŒ  Õ’Ì· "
+         ForeColor       =   &H00000000&
+         Height          =   270
+         Left            =   12060
+         TabIndex        =   27
+         Top             =   945
+         Width           =   1035
+      End
       Begin VB.Label Label12 
          Alignment       =   1  'Right Justify
          AutoSize        =   -1  'True
@@ -299,7 +310,7 @@ Begin VB.Form grdInvBalance
          Height          =   270
          Left            =   5895
          RightToLeft     =   -1  'True
-         TabIndex        =   23
+         TabIndex        =   26
          Top             =   225
          Width           =   600
       End
@@ -309,20 +320,11 @@ Begin VB.Form grdInvBalance
          BackColor       =   &H80000005&
          BackStyle       =   0  'Transparent
          BorderStyle     =   1  'Fixed Single
-         BeginProperty Font 
-            Name            =   "Tahoma"
-            Size            =   8.25
-            Charset         =   178
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
          ForeColor       =   &H80000008&
          Height          =   330
          Left            =   8235
          RightToLeft     =   -1  'True
-         TabIndex        =   10
+         TabIndex        =   4
          Top             =   540
          Width           =   2445
       End
@@ -335,7 +337,7 @@ Begin VB.Form grdInvBalance
          Height          =   270
          Index           =   1
          Left            =   12015
-         TabIndex        =   9
+         TabIndex        =   13
          Top             =   585
          Width           =   690
       End
@@ -346,7 +348,7 @@ Begin VB.Form grdInvBalance
          Index           =   0
          Left            =   5940
          RightToLeft     =   -1  'True
-         TabIndex        =   8
+         TabIndex        =   12
          Top             =   630
          Width           =   1230
       End
@@ -358,7 +360,7 @@ Begin VB.Form grdInvBalance
          ForeColor       =   &H00000000&
          Height          =   270
          Left            =   12030
-         TabIndex        =   7
+         TabIndex        =   11
          Top             =   225
          Width           =   660
       End
@@ -458,14 +460,14 @@ Begin VB.Form grdInvBalance
       _Version        =   393216
    End
    Begin VSFlex7Ctl.VSFlexGrid grid1 
-      Height          =   7485
+      Height          =   7260
       Left            =   855
-      TabIndex        =   11
+      TabIndex        =   14
       TabStop         =   0   'False
-      Top             =   1125
+      Top             =   1485
       Width           =   19320
       _cx             =   34078
-      _cy             =   13203
+      _cy             =   12806
       _ConvInfo       =   1
       Appearance      =   0
       BorderStyle     =   1
@@ -556,7 +558,7 @@ Begin VB.Form grdInvBalance
       Align           =   2  'Align Bottom
       Height          =   465
       Left            =   0
-      TabIndex        =   17
+      TabIndex        =   20
       Top             =   9900
       Width           =   20370
       _ExtentX        =   35930
@@ -578,7 +580,7 @@ Begin VB.Form grdInvBalance
          Height          =   405
          Index           =   0
          Left            =   0
-         TabIndex        =   18
+         TabIndex        =   21
          Top             =   45
          Width           =   4005
          _ExtentX        =   7064
@@ -602,7 +604,7 @@ Begin VB.Form grdInvBalance
          Height          =   330
          Index           =   1
          Left            =   4095
-         TabIndex        =   19
+         TabIndex        =   22
          Top             =   45
          Width           =   4005
          _ExtentX        =   7064
@@ -626,7 +628,7 @@ Begin VB.Form grdInvBalance
          Height          =   330
          Index           =   2
          Left            =   8100
-         TabIndex        =   20
+         TabIndex        =   23
          Top             =   45
          Width           =   4000
          _ExtentX        =   7064
@@ -650,7 +652,7 @@ Begin VB.Form grdInvBalance
          Height          =   330
          Index           =   3
          Left            =   12150
-         TabIndex        =   21
+         TabIndex        =   24
          Top             =   45
          Width           =   3960
          _ExtentX        =   6985
@@ -674,7 +676,7 @@ Begin VB.Form grdInvBalance
          Height          =   330
          Index           =   4
          Left            =   16155
-         TabIndex        =   22
+         TabIndex        =   25
          Top             =   45
          Width           =   4185
          _ExtentX        =   7382
@@ -699,7 +701,7 @@ Begin VB.Form grdInvBalance
       Align           =   2  'Align Bottom
       Height          =   195
       Left            =   0
-      TabIndex        =   12
+      TabIndex        =   15
       Top             =   9705
       Visible         =   0   'False
       Width           =   20370
@@ -715,9 +717,9 @@ Attribute VB_GlobalNameSpace = False
 Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
-Dim aHeader(3)
+Dim aHeader(5)
 Dim oSearch As New Search_abd
-Dim con As New ADODB.Connection
+Dim oSearchTotal As New Search_total
 Private Sub cmdExcel_Click()
 Me.MousePointer = 11
 If grid1.Rows > 1 Then
@@ -731,7 +733,7 @@ ToFileExelNew grid1, , , aRow, Array(1), 0.9, , , , , , Me, Array(Me.Caption, re
 Me.MousePointer = 0
 End Sub
 
-Private Sub cmdExit_Click()
+Private Sub CmdExit_Click()
 Unload Me
 
 End Sub
@@ -751,20 +753,20 @@ myPrint
 End Sub
 
 Private Sub Form_Load()
-    
     xDate1.text = myFormat_p("1-1-" & Year(Date))
     xDate2.text = myFormat_p(Date)
     
     Dim db As New clsDb
-    Set xGroup.RowSource = db.myRs("SELECT * FROM FILE3_50 ")
-    xGroup.ListField = "Desca"
-    xGroup.BoundColumn = "Code"
-            
-    Set xMan.RowSource = db.myRs("SELECT * FROM FILE6_25  WHERE isstop = 0  ORDER BY FILE6_25.DESCA")
-    xMan.ListField = "Desca"
-    xMan.BoundColumn = "Code"
-            
-    fixGrd
+        Set xGroup.RowSource = db.myRs("SELECT * FROM FILE3_50")
+        xGroup.ListField = "Desca"
+        xGroup.BoundColumn = "Code"
+                
+        Set xman.RowSource = db.myRs("SELECT * FROM FILE6_25  WHERE isstop = 0  ORDER BY FILE6_25.DESCA")
+        xman.ListField = "Desca"
+        xman.BoundColumn = "Code"
+                
+        xDate_due.text = myFormat_p(Date)
+        fixGrd
     Set db = Nothing
 End Sub
 Private Sub myload()
@@ -776,8 +778,8 @@ strSql = "SELECT  FILE6_20H.DOC_NO," & _
          "FILE3_10.DESCA," & _
          "FILE6_25.DESCA," & _
          "FILE6_20H.TOTAL_ITEM + FILE6_20H.tax - FILE6_20H.DISCOUNT AS TOTAL," & _
-         "V.PAID," & _
-         "v.BALANCE" & _
+         " V.PAID," & _
+         " v.BALANCE" & _
          " FROM  FILE6_20H" & _
          " INNER JOIN FILE3_10 ON FILE6_20H.code = FILE3_10.CODE" & _
          " INNER JOIN FILE0_40 ON FILE6_20H.store = FILE0_40.CODE" & _
@@ -795,8 +797,8 @@ If IsDate(xDate2.text) Then
     aHeader(0) = BetweenString(xDate1.text, xDate2.text)
 End If
 
-If Trim(Xcode.text) <> "" Then
-    cWhere = cWhere & Tr(cWhere) & " FILE6_20.CODE = " & MyParn(Xcode.text)
+If Trim(xCode.text) <> "" Then
+    cWhere = cWhere & Tr(cWhere) & " FILE6_20.CODE = " & MyParn(xCode.text)
     aHeader(1) = "«·⁄„Ì· : " & xCustName.Caption
 End If
 
@@ -805,14 +807,27 @@ If xGroup.MatchedWithList Then
     aHeader(2) = "«·„Ã„Ê⁄… : " & xGroup.text
 End If
 
-If xMan.MatchedWithList Then
-    cWhere = cWhere & Tr(cWhere) & " FILE6_20H.[MAN] = " & MyParn(xMan.BoundText)
-    aHeader(3) = "«·„‰œÊ» : " & xMan.text
+If xman.MatchedWithList Then
+    cWhere = cWhere & Tr(cWhere) & " FILE6_20H.[MAN] = " & MyParn(xman.BoundText)
+    aHeader(3) = "«·„‰œÊ» : " & xman.text
 End If
 
 If chkDue.Value = 1 Then
     cWhere = cWhere & Tr(cWhere) & " FILE6_20H.[DATE_DUE] IS NOT NULL"
 End If
+
+If IsDate(xDate_due.text) Then
+    cWhere = cWhere & Tr(cWhere) & " FILE6_20H.[DATE_DUE] <= " & DateSq(xDate_due.text)
+    aHeader(4) = " «—ÌÕ  Õ’Ì· Õ Ì : " & myFormat_p(xDate_due.text)
+End If
+
+If ckhBalanceOnly.Value = 1 Then
+    cWhere = cWhere & Tr(cWhere) & "v.Balance <> 0"
+    aHeader(5) = "›Ê« Ì— »—’Ìœ ›ﬁÿ"
+End If
+
+
+
 
 If cWhere <> "" Then
     strSql = strSql & " WHERE " & cWhere
@@ -838,7 +853,7 @@ Sub fixGrd()
     .TextMatrix(0, 6) = "«·„‰œ»"
     .TextMatrix(0, 7) = "≈Ã„«·Ì «·›« Ê—…"
     .TextMatrix(0, 8) = "„”œœ"
-    .TextMatrix(0, 9) = "—’Ìœ "
+    .TextMatrix(0, 9) = "—’Ìœ"
         
     .ColWidth(0) = 800
     .ColWidth(1) = 1800
@@ -884,32 +899,42 @@ grid1.Height = IIf(Me.Height - grid1.Top - 1000 < 3000, 3000, Me.Height - grid1.
 End Sub
 
 Private Sub Form_Unload(Cancel As Integer)
-closeCon con
-Set grdcust_balancefrm = Nothing
+Set grdInvBalance = Nothing
 End Sub
 Private Sub grid1_DblClick()
     If grid1.Row > 1 Then
-        sales_wholefrm.sDoc_no = grid1.TextMatrix(grid1.Row, 1)
-        sales_wholefrm.Show
+        If grid1.Col = 8 Then
+            PayLookup
+        Else
+            sales_wholefrm.sDoc_no = grid1.TextMatrix(grid1.Row, 1)
+            sales_wholefrm.Show
+        End If
     End If
 End Sub
 Private Sub xCode_KeyDown(KeyCode As Integer, Shift As Integer)
-'If KeyCode = 112 Then CLIENTLOOKUP Me, oSearch
+If KeyCode = 112 Then CLIENTLOOKUP Me, oSearch
 End Sub
 Private Sub xcode_LostFocus()
-myLostFocus Xcode
+myLostFocus xCode
 xCustName.Caption = ""
-If Xcode.text = "" Then Exit Sub
-Xcode.text = RetZero(Xcode.text, 4)
-xCustName.Caption = GetDesca("select desca from FILE3_10 where code = " & MyParn(Xcode.text), con) & ""
+If xCode.text = "" Then Exit Sub
+xCode.text = RetZero(xCode.text, 4)
+Dim db As New clsDb
+xCustName.Caption = db.rsField("select desca from FILE3_10 where code = " & MyParn(xCode.text)) & ""
+Set db = Nothing
 End Sub
-Sub myProc()
-ActiveControl.text = oSearch.grid1.TextMatrix(Search.grid1.Row, 0)
-oSearch.Hide
+Public Sub myProc(sFlag As String)
+If ActiveControl.Name = xCode.Name Then
+    xCode.text = oSearch.grid1.TextMatrix(oSearch.grid1.Row, 0)
+    Me.xCustName.Caption = oSearch.grid1.TextMatrix(oSearch.grid1.Row, 1)
+    Unload oSearch
+ElseIf sFlag = "PAYMENT" Then
+    'Unload oSearchTotal
+End If
 End Sub
 
 Private Sub xcode_GotFocus()
-myGotFocus Xcode
+myGotFocus xCode
 End Sub
 Private Sub xDate1_GotFocus()
 myGotFocus xDate1
@@ -924,6 +949,13 @@ End Sub
 Private Sub xDate2_LostFocus()
 myLostFocus xDate2
 myValidDate xDate2
+End Sub
+Private Sub xDate_due_GotFocus()
+myGotFocus xDate_due
+End Sub
+Private Sub xDate_due_LostFocus()
+myLostFocus xDate_due
+myValidDate xDate_due
 End Sub
 Private Sub xGroup_GotFocus()
 myGotFocus xGroup
@@ -949,6 +981,62 @@ Else
 End If
 'PrintGrdNew.Show 1
 'Unload PrintGrdNew
+End Sub
+Private Sub PayLookup()
+Dim Generalarray(5)
+Dim listarray(0, 5)
+Dim GrdArray(2, 3)
+Set Generalarray(0) = Me
+
+Dim sb As New ChilkatStringBuilder
+
+sb.Append "SELECT '”œ«œ ﬂ«‘' ," & _
+          " FORMAT(FILE6_20H.DATE,'yyyy/M/d') AS DATE_PAID," & _
+          " FILE6_20H.[CASH] AS PAID" & _
+          " From FILE6_20H" & _
+          " WHERE FILE6_20H.DOC_NO = " & MyParn(grid1.TextMatrix(grid1.Row, 1)) & _
+          " AND FILE6_20H.CASH <> 0"
+
+sb.Append " UNION ALL "
+
+sb.Append "SELECT '”œ«œ ›Ì“«' ," & _
+          " FORMAT(FILE6_20H.DATE,'yyyy/M/d')," & _
+          " FILE6_20H.[VISA] AS PAID" & _
+          " From FILE6_20H" & _
+          " WHERE FILE6_20H.DOC_NO = " & MyParn(grid1.TextMatrix(grid1.Row, 1)) & _
+          " AND FILE6_20H.VISA <> 0"
+
+sb.Append " UNION ALL "
+sb.Append "SELECT '”œ«œ ¬Ã·' ," & _
+          " FORMAT(ACCOUNT_H.DATE,'yyyy/M/d')," & _
+          " ACCOUNT_D.[VALUE] AS PAID" & _
+          " From ACCOUNT_D" & _
+          " INNER JOIN ACCOUNT_H ON ACCOUNT_D.DOC_NO = ACCOUNT_H.DOC_NO" & _
+          " Where ACCOUNT_D.Account = 1" & _
+          " AND ACCOUNT_D.INV_NO = " & MyParn(grid1.TextMatrix(grid1.Row, 1))
+
+Generalarray(1) = sb.GetAsString
+Generalarray(2) = ""
+Generalarray(3) = 5000
+Generalarray(5) = False
+
+listarray(0, 0) = " «—ÌŒ «·”œ«œ"
+listarray(0, 1) = "(%%DATE_PAID%%)"
+
+GrdArray(0, 0) = "‰Ê⁄ «·”œ«œ"
+GrdArray(0, 1) = 4000
+
+GrdArray(1, 0) = "«· «—ÌŒ"
+GrdArray(1, 1) = 1300
+
+GrdArray(2, 0) = "«·„»·€"
+GrdArray(2, 1) = 1000
+GrdArray(2, 3) = True
+
+searchArray = Array(Generalarray, listarray, GrdArray)
+oSearchTotal.sFlag = "PAYMENT"
+oSearchTotal.Caption = "«” ⁄·«„ ”œ«œ «·›Ê« Ì—"
+oSearchTotal.Show 1
 End Sub
 
 

@@ -1758,9 +1758,9 @@ Private Sub CMD_PRINT_Click()
     If xGroup.BoundText <> "" Then cHead3 = cHead3 & " „Ã„Ê⁄…" & xGroup.text & "  " & xage.text & "  " & xsex.text
     If XSECTION.text <> "" Then cHead3 = cHead3 & " ﬁ”„ " & XSECTION.text
     
-    If xMosm.BoundText <> "" Then cHead3 = cHead3 & " „Ê”„ " & xMosm.text
+    If XMOSM.BoundText <> "" Then cHead3 = cHead3 & " „Ê”„ " & XMOSM.text
     
-    PrintGrdNew.DOPRINT grid1, 1, , cHead1, cHead2, cHead3, , False, 8
+    PrintGrdNew.doprint grid1, 1, , cHead1, cHead2, cHead3, , False, 8
     PrintGrdNew.Show 1
 End Sub
 Private Sub CmdExit_Click()
@@ -1770,47 +1770,47 @@ End Sub
 Private Sub CmdUndo_Click()
     Unload Me
 End Sub
-Private Sub CmdGo_Click()
+Private Sub cmdgo_Click()
 '    On Error GoTo myerror
     myload
     Exit Sub
-myerror:
+myError:
     MsgBox Err.Description
 End Sub
 Private Sub Form_Load()
-    openCon con
+    OpenCon con
     
     xmosm22.AddItem " "
     xmosm22.AddItem "S"
     xmosm22.AddItem "W"
     xmosm22.AddItem "M"
     
-    Set DATA11.Recordset = myRecordSet("Select Code,DescA From File0_82  order by Desca", con)
+    Set DATA11.RecordSet = myRecordSet("Select Code,DescA From File0_82  order by Desca", con)
     Set xage.RowSource = DATA11
     xage.ListField = "Desca"
     xage.BoundColumn = "Code"
     
-    Set data12.Recordset = myRecordSet("Select Code,DescA From File0_81  order by Desca", con)
-    Set xsex.RowSource = data12
+    Set DATA12.RecordSet = myRecordSet("Select Code,DescA From File0_81  order by Desca", con)
+    Set xsex.RowSource = DATA12
     xsex.ListField = "Desca"
     xsex.BoundColumn = "Code"
     
-    Set data9.Recordset = myRecordSet("Select Code,DescA From File3_10  order by Desca", con)
+    Set data9.RecordSet = myRecordSet("Select Code,DescA From File3_10  order by Desca", con)
     Set xcust.RowSource = data9
     xcust.ListField = "Desca"
     xcust.BoundColumn = "Code"
     
-    Set data1.Recordset = myRecordSet("SELECT * FROM FILE4_50 ", con)
+    Set data1.RecordSet = myRecordSet("SELECT * FROM FILE4_50 ", con)
     Set xGrCust.RowSource = data1
     xGrCust.ListField = "Desca"
     xGrCust.BoundColumn = "Code"
     
-    Set data8.Recordset = myRecordSet("Select Code,DescA From File1_10SC order by Desca", con)
+    Set data8.RecordSet = myRecordSet("Select Code,DescA From File1_10SC order by Desca", con)
     Set XSECTION.RowSource = data8
     XSECTION.ListField = "Desca"
     XSECTION.BoundColumn = "Code"
     
-    Set DATA7.Recordset = myRecordSet("Select Code,DescA From STORE_BR WHERE " & cUserStore, con)
+    Set DATA7.RecordSet = myRecordSet("Select Code,DescA From STORE_BR WHERE " & cUserStore, con)
     Set xStore.RowSource = DATA7
     xStore.ListField = "Desca"
     xStore.BoundColumn = "Code"
@@ -1819,31 +1819,31 @@ Private Sub Form_Load()
         xStore.Enabled = False
     End If
     
-    Set DATA2.Recordset = myRecordSet("Select Code,DescA From File4_10 order by Desca", con)
+    Set DATA2.RecordSet = myRecordSet("Select Code,DescA From File4_10 order by Desca", con)
     Set xSupp.RowSource = DATA2
     xSupp.ListField = "Desca"
     xSupp.BoundColumn = "Code"
     
-    Set DATA3.Recordset = myRecordSet("Select Code,DescA From File1_50 ORDER BY DESCA", con)
-    Set xGroup.RowSource = DATA3
+    Set data3.RecordSet = myRecordSet("Select Code,DescA From File1_50 ORDER BY DESCA", con)
+    Set xGroup.RowSource = data3
     xGroup.ListField = "Desca"
     xGroup.BoundColumn = "Code"
     
-    Set DATA4.Recordset = myRecordSet("Select mosm ,descA From mosm ORDER BY date DESC ", con)
-    Set xMosm.RowSource = DATA4
-    xMosm.ListField = "Desca"
-    xMosm.BoundColumn = "MOSM"
+    Set DATA4.RecordSet = myRecordSet("Select mosm ,descA From mosm ORDER BY date DESC ", con)
+    Set XMOSM.RowSource = DATA4
+    XMOSM.ListField = "Desca"
+    XMOSM.BoundColumn = "MOSM"
     
     
-    Set DATA5.Recordset = myRecordSet("Select code ,desca From fact ORDER BY DESCA ", con)
-    Set xFact.RowSource = DATA5
+    Set data5.RecordSet = myRecordSet("Select code ,desca From fact ORDER BY DESCA ", con)
+    Set xFact.RowSource = data5
     xFact.ListField = "Desca"
     xFact.BoundColumn = "Code"
     
-    Set DATA13.Recordset = myRecordSet("Select DOC_NO ,DescA From File0_90H order by DOC_NO DESC ", con)
-    Set xDOC_DISC.RowSource = DATA13
-    xDOC_DISC.ListField = "Desca"
-    xDOC_DISC.BoundColumn = "DOC_NO"
+    Set DATA13.RecordSet = myRecordSet("Select DOC_NO ,DescA From File0_90H order by DOC_NO DESC ", con)
+    Set xdoc_disc.RowSource = DATA13
+    xdoc_disc.ListField = "Desca"
+    xdoc_disc.BoundColumn = "DOC_NO"
     
     Set grid1.DataSource = DATA6
 
@@ -1852,7 +1852,7 @@ Private Sub Form_Load()
     FIXGRID
 End Sub
 Private Sub myload()
-Dim I As Double
+Dim i As Double
 Dim cString  As String, cStr2 As String
 With grid1
 '                           0               1                 2                3               4                5
@@ -1866,7 +1866,7 @@ With grid1
             " SUM(QFILE6_20.QUANT) AS t_q, SUM(QFILE6_20.TOTAL * ((100-QFILE6_20.RATE )/100)) AS t_sales, SUM(QFILE6_20.QUANT * QFILE6_20.cost) AS t_cost, SUM((QFILE6_20.TOTAL * ((100-QFILE6_20.RATE )/100))  - (QFILE6_20.QUANT * QFILE6_20.cost)) AS t_proft , ' ' , SUM((QFILE6_20.QUANT * QFILE6_20.price_c )-QFILE6_20.total ) , SUM(QFILE6_20.TOTAL * ((QFILE6_20.RATE )/100)) , SUM(QFILE6_20.QUANT * QFILE6_20.PRICE_C)" & _
             " FROM FILE1_10 INNER JOIN QFILE6_20 ON FILE1_10.ITEM = QFILE6_20.ITEM INNER JOIN FACT ON FILE1_10.FACT = FACT.CODE inner join file4_10 on file4_10.code = file1_10.code WHERE FILE1_10.MODELNO IS NOT NULL "
     If xcust.BoundText <> "" Then cStr2 = cStr2 & " AND QFILE6_20.code = " & MyParn(xcust.BoundText)
-    If xMosm.BoundText <> "" Then cStr2 = cStr2 & " AND FILE1_10.MOSM = " & MyParn(xMosm.BoundText)
+    If XMOSM.BoundText <> "" Then cStr2 = cStr2 & " AND FILE1_10.MOSM = " & MyParn(XMOSM.BoundText)
     
     If XMOSM2.text <> "W" Then
         If XMOSM2.text <> "" Then cStr2 = cStr2 & " AND SUBSTRING(FILE1_10.MOSM ,1,1) = " & MyParn(XMOSM2.text)
@@ -1877,7 +1877,7 @@ With grid1
     If xsex.BoundText <> "" Then cStr2 = cStr2 & " AND FILE1_10.MODELSEX = " & MyParn(xsex.BoundText)
     If xage.BoundText <> "" Then cStr2 = cStr2 & " AND FILE1_10.MODELAGE = " & MyParn(xage.BoundText)
     
-    If xDOC_DISC.BoundText <> "" Then cStr2 = cStr2 & " AND QFILE6_20.DOC_DISC = " & MyParn(xDOC_DISC.BoundText)
+    If xdoc_disc.BoundText <> "" Then cStr2 = cStr2 & " AND QFILE6_20.DOC_DISC = " & MyParn(xdoc_disc.BoundText)
     
     If XOutlet.Value <> 0 Then cStr2 = cStr2 & " AND file1_10.Outlet = 1 "
     
@@ -1902,7 +1902,7 @@ With grid1
     If xonest(1).Value <> 0 Then cStr2 = cStr2 & " AND FILE1_10.ISONEST = 1 "
     
     cString = cString & cStr2 & " GROUP BY file1_10.ModelNo, FACT.desca , file1_10.mosm, file1_10.MODELFACT0, file1_10.desca  ORDER BY t_sales DESC "
-    Set DATA6.Recordset = myRecordSet(cString, con)
+    Set DATA6.RecordSet = myRecordSet(cString, con)
 End With
 FIXGRID
 'If grid1.Rows > 0 Then ' grid1.TextMatrix(1, 1) = "«·≈Ã„«·Ï"
@@ -1978,12 +1978,12 @@ With grid1
         Next nRow
     Next nCol
     .SubtotalPosition = flexSTBelow
-    For I = 6 To .Cols - 1
-        .Subtotal flexSTSum, -1, I, "#0", vbRed, vbYellow, True, "  "
+    For i = 6 To .Cols - 1
+        .Subtotal flexSTSum, -1, i, "#0", vbRed, vbYellow, True, "  "
         If Check1.Value = 0 Then
-            .Subtotal flexSTSum, 0, I, "#0", vbRed, vbYellow, True, "  "
+            .Subtotal flexSTSum, 0, i, "#0", vbRed, vbYellow, True, "  "
         End If
-    Next I
+    Next i
     If .Rows > 1 Then
         nRow = .Rows - 1
         nRate = 0
@@ -1999,12 +1999,12 @@ Private Sub Form_Unload(Cancel As Integer)
 End Sub
 Private Sub grid1_DblClick()
     If Not xall(1).Value Then
-        ModelMove.XMODEL.text = grid1.TextMatrix(grid1.Row, 2)
+        ModelMove.xModel.text = grid1.TextMatrix(grid1.Row, 2)
         ModelMove.xStore.BoundText = xStore.BoundText
         ModelMove.xDate = xDate1.text
         ModelMove.Show
     Else
-        ModelMove_FR.XMODEL.text = grid1.TextMatrix(grid1.Row, 2)
+        ModelMove_FR.xModel.text = grid1.TextMatrix(grid1.Row, 2)
         ModelMove_FR.xStore.BoundText = xStore.BoundText
         ModelMove.xDate = xDate1.text
         ModelMove_FR.Show
@@ -2021,16 +2021,16 @@ Private Sub XDOC_DISC_KeyUp(KeyCode As Integer, Shift As Integer)
     End If
 End Sub
 Private Sub xSection_LostFocus()
-    DATA3.ConnectionString = strCon
+    data3.connectionString = strCon
     If XSECTION.BoundText = "" Then
-        DATA3.RecordSource = "Select Code,DescA From File1_50 ORDER BY DESCA"
+        data3.RecordSource = "Select Code,DescA From File1_50 ORDER BY DESCA"
     Else
-        DATA3.RecordSource = "Select Code,DescA From File1_50 where [group] = " & Val(XSECTION.BoundText) & " ORDER BY DESCA"
+        data3.RecordSource = "Select Code,DescA From File1_50 where [group] = " & Val(XSECTION.BoundText) & " ORDER BY DESCA"
     End If
-    Set xGroup.RowSource = DATA3
+    Set xGroup.RowSource = data3
     xGroup.ListField = "Desca"
     xGroup.BoundColumn = "Code"
-    DATA3.Refresh
+    data3.Refresh
 End Sub
 
 Private Sub xSupp_KeyUp(KeyCode As Integer, Shift As Integer)
@@ -2045,8 +2045,8 @@ If ActiveControl.Name = xFact.Name Then
     xFact.BoundText = Search3.grid1.TextMatrix(Search3.grid1.Row, 0)
     Unload Search3
 End If
-If ActiveControl.Name = xDOC_DISC.Name Then
-    xDOC_DISC.BoundText = Search31.grid1.TextMatrix(Search31.grid1.Row, 0)
+If ActiveControl.Name = xdoc_disc.Name Then
+    xdoc_disc.BoundText = Search31.grid1.TextMatrix(Search31.grid1.Row, 0)
     Unload Search31
 End If
 
@@ -2081,11 +2081,11 @@ Search3.Show 1
 End If
 End Sub
 Private Sub LoadPhoto(sModelNo As String)
-On Error GoTo myerror
-imgx1.Images.Clear
-imgx1.Import.FromFile retFile(sModelNo)
+On Error GoTo myError
+ImgX1.Images.Clear
+ImgX1.Import.FromFile retFile(sModelNo)
 Exit Sub
-myerror:
+myError:
 Err.Clear
 End Sub
 

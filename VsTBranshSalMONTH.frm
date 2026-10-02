@@ -934,7 +934,7 @@ Attribute VB_GlobalNameSpace = False
 Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
-Dim StoreTable As New ADODB.Recordset
+Dim StoreTable As New ADODB.RecordSet
 Dim cString As String
 Dim cStr1 As String, cStr2 As String
 Dim con As New ADODB.Connection
@@ -961,7 +961,7 @@ Private Sub CMD_PRINT_Click()
 '    printGrd3.Show 1
     
     Load PrintGrd
-    PrintGrd.DOPRINT grid1, 1, , cHead1, cHead2, cHead3, , True, 10
+    PrintGrd.doprint grid1, 1, , cHead1, cHead2, cHead3, , True, 10
     PrintGrd.Show 1
 End Sub
 Private Sub CmdExit_Click()
@@ -971,7 +971,7 @@ End Sub
 Private Sub CmdUndo_Click()
     Unload Me
 End Sub
-Private Sub CmdGo_Click()
+Private Sub cmdgo_Click()
     If StoreTable.State = adStateOpen Then StoreTable.Close
     If xall(0).Value <> 0 Then
         If bOpt5 Then
@@ -997,53 +997,53 @@ Private Sub CmdGo_Click()
     myload
 End Sub
 Private Sub Form_Load()
-    openCon con
+    OpenCon con
     
     
     xDate1.text = Format("1-1-" & Year(Date), "dd-mm-yyyy")
     xDate2.text = Format(Date, "dd-mm-yyyy")
     
-    data1.ConnectionString = strCon
+    data1.connectionString = strCon
     data1.RecordSource = "Select Code,DescA From File1_10SC order by Desca"
     Set XSECTION.RowSource = data1
     XSECTION.ListField = "Desca"
     XSECTION.BoundColumn = "Code"
     
-    DATA2.ConnectionString = strCon
+    DATA2.connectionString = strCon
     DATA2.RecordSource = "Select Code,DescA From File4_10 order by Desca"
     Set xSupp.RowSource = DATA2
     xSupp.ListField = "Desca"
     xSupp.BoundColumn = "Code"
     
-    DATA3.ConnectionString = strCon
-    DATA3.RecordSource = "Select Code,DescA From File1_50 ORDER BY DESCA"
-    Set xGroup.RowSource = DATA3
+    data3.connectionString = strCon
+    data3.RecordSource = "Select Code,DescA From File1_50 ORDER BY DESCA"
+    Set xGroup.RowSource = data3
     xGroup.ListField = "Desca"
     xGroup.BoundColumn = "Code"
     
-    DATA4.ConnectionString = strCon
+    DATA4.connectionString = strCon
     DATA4.RecordSource = "Select mosm ,descA From mosm ORDER BY date DESC "
-    Set xMosm.RowSource = DATA4
-    xMosm.ListField = "Desca"
-    xMosm.BoundColumn = "MOSM"
+    Set XMOSM.RowSource = DATA4
+    XMOSM.ListField = "Desca"
+    XMOSM.BoundColumn = "MOSM"
     
 '    xMosm.BoundText = cPMosm
     
-    DATA5.ConnectionString = strCon
-    DATA5.RecordSource = "Select code ,desca From fact ORDER BY code "
-    Set xFact.RowSource = DATA5
+    data5.connectionString = strCon
+    data5.RecordSource = "Select code ,desca From fact ORDER BY code "
+    Set xFact.RowSource = data5
     xFact.ListField = "Desca"
     xFact.BoundColumn = "Code"
     
     Set grid1.DataSource = DATA6
-    DATA6.ConnectionString = strCon
+    DATA6.connectionString = strCon
     grid1.Rows = 2
     grid1.FixedRows = 2
     grid1.Cols = 2
 '    FixGrid
 End Sub
 Private Sub myload()
-Dim I As Double
+Dim i As Double
 Dim cStrall  As String
 
 grid1.Rows = 0
@@ -1054,7 +1054,7 @@ grid1.Cols = 7
 Dim lOk As Boolean
 StoreTable.MoveFirst
 Do Until StoreTable.EOF
-    cWhere = " STORE = " & MyParn(StoreTable!CODE)
+    cWhere = " STORE = " & MyParn(StoreTable!code)
     cField2 = cField2 & turnFound(cField2, ",") & myiif(cWhere, "QUANT")
     cField2 = cField2 & turnFound(cField2, ",") & myiif(cWhere, "(TOTAL * ((100-QFILE6_20.RATE)/100))")
     StoreTable.MoveNext
@@ -1065,7 +1065,7 @@ With grid1
     cStrall = " SELECT    YEAR(DATE ) , MONTH( [DATE])  , SUM(QUANT) , SUM(TOTAL * ((100-QFILE6_20.RATE)/100))  , " & _
                 cField2 & _
             " FROM  QFILE6_20 INNER JOIN FILE1_10 ON FILE1_10.ITEM = QFILE6_20.ITEM WHERE file1_10.item is not null "
-    If xMosm.BoundText <> "" Then cStrall = cStrall & " AND FILE1_10.MOSM = " & MyParn(xMosm.BoundText)
+    If XMOSM.BoundText <> "" Then cStrall = cStrall & " AND FILE1_10.MOSM = " & MyParn(XMOSM.BoundText)
     If xSupp.BoundText <> "" Then cStrall = cStrall & " AND FILE1_10.CODE = " & MyParn(xSupp.BoundText)
     If xGroup.BoundText <> "" Then cStrall = cStrall & " AND FILE1_10.[GROUP] = " & MyParn(xGroup.BoundText)
     If xFact.BoundText <> "" Then cStrall = cStrall & " AND FILE1_10.FACT = " & MyParn(xFact.BoundText)
@@ -1144,10 +1144,10 @@ With grid1
         Next nCol
     Next nRow
     .SubtotalPosition = flexSTAbove
-    For I = 2 To .Cols - 1
-        .Subtotal flexSTSum, -1, I, "#0", vbRed, vbYellow, True, "  "
-        If Val(.TextMatrix(2, I)) = 0 Then .ColHidden(I) = True
-    Next I
+    For i = 2 To .Cols - 1
+        .Subtotal flexSTSum, -1, i, "#0", vbRed, vbYellow, True, "  "
+        If Val(.TextMatrix(2, i)) = 0 Then .ColHidden(i) = True
+    Next i
     End With
 End Sub
 Private Sub Form_Unload(Cancel As Integer)

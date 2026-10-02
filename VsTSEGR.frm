@@ -212,7 +212,7 @@ Begin VB.Form VsTSEGR
          EndProperty
          CheckBox        =   -1  'True
          DateIsNull      =   -1  'True
-         Format          =   441647105
+         Format          =   438566913
          CurrentDate     =   43098.0816782407
       End
       Begin VB.Label Label1 
@@ -722,7 +722,7 @@ Attribute VB_Exposed = False
 Dim oSearch As New Search3
 Public cMyModel As String
 Dim con As New ADODB.Connection
-Dim StoreTable As New ADODB.Recordset
+Dim StoreTable As New ADODB.RecordSet
 Private Sub cmd_excel_Click()
     ToFileExel2 grid1, , , , , 1.1, , , , , , Me
 End Sub
@@ -733,31 +733,31 @@ Private Sub CMD_PRINT_Click()
     
     Load PrintGrd
     If grid1.Cols > 8 Then
-        PrintGrd.DOPRINT Me.grid1, 1, -2, cHead1, xStore.text, , False, True, 10, , Array(1)
+        PrintGrd.doprint Me.grid1, 1, -2, cHead1, xStore.text, , False, True, 10, , Array(1)
     Else
-        PrintGrd.DOPRINT Me.grid1, 1, -2, cHead1, xStore.text, , False, False, 10, , Array(1)
+        PrintGrd.doprint Me.grid1, 1, -2, cHead1, xStore.text, , False, False, 10, , Array(1)
     End If
     PrintGrd.Show 1
 End Sub
 Private Sub CmdExit_Click()
     Unload Me
 End Sub
-Private Sub CmdGo_Click()
+Private Sub cmdgo_Click()
     myload
 End Sub
 Private Sub Form_Load()
-    openCon con
+    OpenCon con
     
     xDate1.Value = Date
     
-    DATA7.ConnectionString = strCon
+    DATA7.connectionString = strCon
     DATA7.RecordSource = "Select Code,DescA From STORE_BR ORDER BY CODE "
     Set xStore.RowSource = DATA7
     xStore.ListField = "Desca"
     xStore.BoundColumn = "Code"
     
     Set grid1.DataSource = DATA6
-    DATA6.ConnectionString = strCon
+    DATA6.connectionString = strCon
     
     grid1.Rows = 2
     grid1.FixedRows = 2
@@ -767,21 +767,21 @@ End Sub
 Private Sub myload()
     Dim cWhere As String
     Dim cStr2 As String
-    Dim DataMosmTable As New ADODB.Recordset
-    On Error GoTo myerror
+    Dim DataMosmTable As New ADODB.RecordSet
+    On Error GoTo myError
     cStr1 = " SELECT CODE , DESCA FROM STORE_BR   ORDER BY CODE "
     DataMosmTable.Open cStr1, con, adOpenStatic, adLockReadOnly, adCmdText
     DataMosmTable.MoveFirst
     cField2 = ""
     Do Until DataMosmTable.EOF
         If xall(0).Value <> 0 Then
-            cWhere = " FILE1_11.[STORE] = " & MyParn(DataMosmTable!CODE)
+            cWhere = " FILE1_11.[STORE] = " & MyParn(DataMosmTable!code)
         End If
         If xall(1).Value <> 0 Then
-            cWhere = " FR1_11.[STORE] = " & MyParn(DataMosmTable!CODE)
+            cWhere = " FR1_11.[STORE] = " & MyParn(DataMosmTable!code)
         End If
         If xall(2).Value <> 0 Then
-            cWhere = " FILE1_11_ALL.[STORE] = " & MyParn(DataMosmTable!CODE)
+            cWhere = " FILE1_11_ALL.[STORE] = " & MyParn(DataMosmTable!code)
         End If
         cField2 = cField2 & turnFound(cField2, ",") & myiif(cWhere, "([IN] - [OUT]) ")
         If xall(1).Value Then
@@ -811,13 +811,13 @@ Private Sub myload()
     DATA6.Refresh
     FIXGRID
     Exit Sub
-myerror:
+myError:
     MsgBox Err.Description
     Err.Clear
 End Sub
 Sub FIXGRID()
     Dim nTRow As Double
-    Dim DataMosmTable As New ADODB.Recordset
+    Dim DataMosmTable As New ADODB.RecordSet
     cStr1 = " SELECT CODE , DESCA FROM STORE_BR   ORDER BY CODE "
     DataMosmTable.Open cStr1, con, adOpenStatic, adLockReadOnly, adCmdText
     DataMosmTable.MoveFirst

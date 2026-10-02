@@ -803,7 +803,7 @@ Attribute VB_Exposed = False
 Dim oSearch As New Search3
 Public cMyModel As String
 Dim con As New ADODB.Connection
-Dim StoreTable As New ADODB.Recordset
+Dim StoreTable As New ADODB.RecordSet
 
 Private Sub cmd_excel_Click()
 ToFileExel2 grid1, , , , , 1.1, , , , , , Me
@@ -816,21 +816,21 @@ Private Sub CMD_PRINT_Click()
     cHead2 = " Õ Ï   «—ÌŒ " & Format(xDate1.text, "DD-MM-YYYY")
     
     Load PrintGrd
-    PrintGrd.DOPRINT Me.grid1, 0.75, -2, cHead1, cHead2, , False, True, 6
+    PrintGrd.doprint Me.grid1, 0.75, -2, cHead1, cHead2, , False, True, 6
     PrintGrd.Show 1
 End Sub
 Private Sub CmdExit_Click()
     Unload Me
 End Sub
-Private Sub CmdGo_Click()
+Private Sub cmdgo_Click()
     myload
 End Sub
 Private Sub Form_Load()
-    openCon con
+    OpenCon con
     StoreTable.Open "STORE_BR", con, adOpenStatic, adLockReadOnly, adCmdTable
     xDate1.text = Format(Date, "dd-mm-yyyy")
     
-    DATA7.ConnectionString = strCon
+    DATA7.connectionString = strCon
     DATA7.RecordSource = "Select Code,DescA From STORE_BR ORDER BY DESCA"
     Set xStore.RowSource = DATA7
     xStore.ListField = "Desca"
@@ -842,23 +842,23 @@ Private Sub Form_Load()
         Frame2.Visible = False
     End If
     
-    DATA2.ConnectionString = strCon
+    DATA2.connectionString = strCon
     DATA2.RecordSource = "Select Code,DescA From File4_10 order by Desca"
     Set xSupp.RowSource = DATA2
     xSupp.ListField = "Desca"
     xSupp.BoundColumn = "Code"
     
     
-    DATA4.ConnectionString = strCon
+    DATA4.connectionString = strCon
     DATA4.RecordSource = "Select mosm ,descA From mosm ORDER BY date DESC "
-    Set xMosm.RowSource = DATA4
-    xMosm.ListField = "Desca"
-    xMosm.BoundColumn = "MOSM"
-    xMosm.BoundText = cPMosm
+    Set XMOSM.RowSource = DATA4
+    XMOSM.ListField = "Desca"
+    XMOSM.BoundColumn = "MOSM"
+    XMOSM.BoundText = cPMosm
     
     
     Set grid1.DataSource = DATA6
-    DATA6.ConnectionString = strCon
+    DATA6.connectionString = strCon
     
     grid1.Rows = 1
     grid1.Cols = 9
@@ -867,9 +867,9 @@ End Sub
 Private Sub myload()
     Dim cWhere As String
     Dim cStr2 As String
-    On Error GoTo myerror
+    On Error GoTo myError
     If xall(0).Value <> 0 Then
-        If xMosm.BoundText <> "" Then cStr2 = cStr2 & " AND FILE1_10.MOSM = " & MyParn(xMosm.BoundText)
+        If XMOSM.BoundText <> "" Then cStr2 = cStr2 & " AND FILE1_10.MOSM = " & MyParn(XMOSM.BoundText)
         If xSupp.BoundText <> "" Then cStr2 = cStr2 & " AND FILE1_10.CODE = " & MyParn(xSupp.BoundText)
         If xStore.BoundText <> "" Then cStr2 = cStr2 & " AND FILE1_11.store = " & MyParn(xStore.BoundText)
         If xStore.BoundText <> "" Then
@@ -880,7 +880,7 @@ Private Sub myload()
             cField7 = " SUM ( case when (type = '2' OR  type = '7') THEN (([IN] - [OUT]) * FILE1_11.COST )  else 0 end ) AS VAL_PURCH     , "
         End If
         cField4 = " (SELECT COUNT(DISTINCT FILE1_10_2.MODELNO ) FROM FILE1_11 AS FILE1_11_2 INNER JOIN FILE1_10 AS FILE1_10_2 ON FILE1_11_2.ITEM = FILE1_10_2.ITEM WHERE FILE1_11_2.TYPE = '6' AND FILE1_10_2.[SECTION] = FILE1_10SC.CODE "
-        If xMosm.BoundText <> "" Then cField4 = cField4 & " AND FILE1_10_2.MOSM = " & MyParn(xMosm.BoundText)
+        If XMOSM.BoundText <> "" Then cField4 = cField4 & " AND FILE1_10_2.MOSM = " & MyParn(XMOSM.BoundText)
         If xSupp.BoundText <> "" Then cField4 = cField4 & " AND FILE1_10_2.CODE = " & MyParn(xSupp.BoundText)
         cField4 = cField4 & " )   AS CountSALES   , "
         cField5 = " SUM ( case when (type = '6' )                THEN ([out] )  else 0 end ) AS t_sal     , "
@@ -898,7 +898,7 @@ Private Sub myload()
         cString = cString & cStr2 & " group BY FILE1_10SC.CODE , FILE1_10SC.DESCA ORDER BY FILE1_10SC.CODE "
     End If
     If xall(1).Value <> 0 Then
-        If xMosm.BoundText <> "" Then cStr2 = cStr2 & " AND FILE1_10.MOSM = " & MyParn(xMosm.BoundText)
+        If XMOSM.BoundText <> "" Then cStr2 = cStr2 & " AND FILE1_10.MOSM = " & MyParn(XMOSM.BoundText)
         If xSupp.BoundText <> "" Then cStr2 = cStr2 & " AND FILE1_10.CODE = " & MyParn(xSupp.BoundText)
         If xStore.BoundText <> "" Then cStr2 = cStr2 & " AND FR1_11.store = " & MyParn(xStore.BoundText)
         If xStore.BoundText <> "" Then
@@ -909,7 +909,7 @@ Private Sub myload()
             cField7 = " SUM ( case when (type = '2' OR  type = '7') THEN (([IN] - [OUT]) * FR1_11.COST )  else 0 end ) AS VAL_PURCH     , "
         End If
         cField4 = " (SELECT COUNT(DISTINCT FILE1_10_2.MODELNO ) FROM FR1_11 AS FR1_11_2 INNER JOIN FILE1_10 AS FILE1_10_2 ON FR1_11_2.ITEM = FILE1_10_2.ITEM WHERE FR1_11_2.TYPE = '6' AND FILE1_10_2.[SECTION] = FILE1_10SC.CODE "
-        If xMosm.BoundText <> "" Then cField4 = cField4 & " AND FILE1_10_2.MOSM = " & MyParn(xMosm.BoundText)
+        If XMOSM.BoundText <> "" Then cField4 = cField4 & " AND FILE1_10_2.MOSM = " & MyParn(XMOSM.BoundText)
         If xSupp.BoundText <> "" Then cField4 = cField4 & " AND FILE1_10_2.CODE = " & MyParn(xSupp.BoundText)
         cField4 = cField4 & " )   AS CountSALES   , "
         cField5 = " SUM ( case when (type = '6' )                THEN ([out] )  else 0 end ) AS t_sal     , "
@@ -928,7 +928,7 @@ Private Sub myload()
     End If
     
     If xall(2).Value <> 0 Then
-        If xMosm.BoundText <> "" Then cStr2 = cStr2 & " AND FILE1_10.MOSM = " & MyParn(xMosm.BoundText)
+        If XMOSM.BoundText <> "" Then cStr2 = cStr2 & " AND FILE1_10.MOSM = " & MyParn(XMOSM.BoundText)
         If xSupp.BoundText <> "" Then cStr2 = cStr2 & " AND FILE1_10.CODE = " & MyParn(xSupp.BoundText)
         If xStore.BoundText <> "" Then cStr2 = cStr2 & " AND FILE1_11_ALL.store = " & MyParn(xStore.BoundText)
         If xStore.BoundText <> "" Then
@@ -939,7 +939,7 @@ Private Sub myload()
             cField7 = " SUM ( case when (type = '2' OR  type = '7') THEN (([IN] - [OUT]) * FILE1_11_ALL.COST )  else 0 end ) AS VAL_PURCH     , "
         End If
         cField4 = " (SELECT COUNT(DISTINCT FILE1_10_2.MODELNO ) FROM FILE1_11_ALL AS FILE1_11_ALL_2 INNER JOIN FILE1_10 AS FILE1_10_2 ON FILE1_11_ALL_2.ITEM = FILE1_10_2.ITEM WHERE FILE1_11_ALL_2.TYPE = '6' AND FILE1_10_2.[SECTION] = FILE1_10SC.CODE "
-        If xMosm.BoundText <> "" Then cField4 = cField4 & " AND FILE1_10_2.MOSM = " & MyParn(xMosm.BoundText)
+        If XMOSM.BoundText <> "" Then cField4 = cField4 & " AND FILE1_10_2.MOSM = " & MyParn(XMOSM.BoundText)
         If xSupp.BoundText <> "" Then cField4 = cField4 & " AND FILE1_10_2.CODE = " & MyParn(xSupp.BoundText)
         cField4 = cField4 & " )   AS CountSALES   , "
         cField5 = " SUM ( case when (type = '6' )                THEN ([out] )  else 0 end ) AS t_sal     , "
@@ -963,7 +963,7 @@ Private Sub myload()
     
     FIXGRID
     Exit Sub
-myerror:
+myError:
     MsgBox Err.Description
     Err.Clear
 End Sub
@@ -1041,14 +1041,14 @@ Private Sub grid1_DblClick()
 With grid1
     If cBranch = "00" Then
         VsTItem.xGroup.BoundText = .TextMatrix(.Row, 0)
-        VsTItem.xMosm.BoundText = xMosm.BoundText
+        VsTItem.XMOSM.BoundText = XMOSM.BoundText
         VsTItem.xDate1.text = xDate1.text
         'VsTItem.XSEC.Text = XSEC.Text
         VsTItem.xSupp.BoundText = xSupp.BoundText
         VsTItem.Show
     Else
         VsTitemShop.xGroup.BoundText = .TextMatrix(.Row, 0)
-        VsTitemShop.xMosm.BoundText = xMosm.BoundText
+        VsTitemShop.XMOSM.BoundText = XMOSM.BoundText
         VsTitemShop.xDate1.text = xDate1.text
         VsTitemShop.xSupp.BoundText = xSupp.BoundText
         VsTitemShop.xStore.BoundText = xStore.BoundText

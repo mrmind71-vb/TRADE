@@ -562,7 +562,7 @@ Attribute VB_GlobalNameSpace = False
 Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
-Dim LastSalTable As New ADODB.Recordset
+Dim LastSalTable As New ADODB.RecordSet
 Dim cString As String
 Dim cStr1 As String, cStr2 As String
 Dim con As New ADODB.Connection
@@ -579,7 +579,7 @@ End Sub
 Private Sub CmdUndo_Click()
     Unload Me
 End Sub
-Private Sub CmdGo_Click()
+Private Sub cmdgo_Click()
     If IsDate(xDate1.text) And IsDate(xDate2.text) Then
         myload
     Else
@@ -594,31 +594,31 @@ Private Sub cmdPrint_Click()
     If xGrCust.text <> "" Then cHead1 = cHead1 & xGrCust.text
     cHead2 = " ãä ÊÇÑíÎ " & Format(xDate1.text, "DD-MM-YYYY") & " Åáì ÊÇÑíÎ " & Format(xDate2.text, "DD-MM-YYYY")
     Load PrintGrd
-    PrintGrd.DOPRINT Me.grid1, 0.9, -1, cHead1, cHead2, , False, True, 9
+    PrintGrd.doprint Me.grid1, 0.9, -1, cHead1, cHead2, , False, True, 9
     PrintGrd.Show 1
 
 End Sub
 
 Private Sub Form_Load()
-    openCon con
+    OpenCon con
     If nWidthScreen > 1 Then grid1.Width = 20000
     xDate1.text = "1-1-" & Year(Date)
     xDate2.text = Format(Date, "dd-mm-yyyy")
     
-    data1.ConnectionString = strCon
+    data1.connectionString = strCon
     data1.RecordSource = "SELECT * FROM FILE4_50 "
     Set xGrCust.RowSource = data1
     xGrCust.ListField = "Desca"
     xGrCust.BoundColumn = "Code"
     
-    DATA3.ConnectionString = strCon
-    DATA3.RecordSource = "SELECT * FROM MOSM ORDER BY DATE DESC "
-    Set xMosm.RowSource = DATA3
-    xMosm.ListField = "Desca"
-    xMosm.BoundColumn = "MOSM"
+    data3.connectionString = strCon
+    data3.RecordSource = "SELECT * FROM MOSM ORDER BY DATE DESC "
+    Set XMOSM.RowSource = data3
+    XMOSM.ListField = "Desca"
+    XMOSM.BoundColumn = "MOSM"
     
     Set grid1.DataSource = DATA2
-    DATA2.ConnectionString = strCon
+    DATA2.connectionString = strCon
     
     FIXGRID
     grid1.Rows = 1
@@ -760,7 +760,7 @@ Private Sub grid1_DblClick()
     If grid1.Row > 0 Then
         Load Supler_Move
         Supler_Move.xCode.text = grid1.TextMatrix(grid1.Row, 0)
-        Supler_Move.XDESCA.Caption = grid1.TextMatrix(grid1.Row, 1)
+        Supler_Move.xDescA.Caption = grid1.TextMatrix(grid1.Row, 1)
         Supler_Move.xDate1.text = xDate1.text
         Supler_Move.xDate2.text = xDate2.text
         Supler_Move.Fillgrd
@@ -770,7 +770,7 @@ End Sub
 Private Sub xCode_KeyDown(KeyCode As Integer, Shift As Integer)
 If KeyCode = 112 Then CardLookup
 End Sub
-Private Sub xCode_LostFocus()
+Private Sub xcode_LostFocus()
 xCustName.Caption = ""
 If xCode.text = "" Then Exit Sub
 xCode.text = RetZero(xCode.text, 3)
@@ -809,7 +809,7 @@ Search3.Show 1
 End Sub
 
 Private Sub xMosm_LostFocus()
-If xMosm.BoundText <> "" Then
+If XMOSM.BoundText <> "" Then
     xDate1.text = ""
     xDate2.text = ""
 End If

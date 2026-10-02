@@ -331,11 +331,11 @@ Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 Dim con As New ADODB.Connection
 
-Private Sub CmdGo_Click()
+Private Sub cmdgo_Click()
 '                           0               1                 2                3               4                        5
     cStrall = " SELECT FILE0_100.DOC_NO , FILE0_100.ITEM , FACT.DESCA , FILE1_10.MOSM , FILE1_10.MODELFACT0 , FILE1_10.DESCA , FILE1_10.COLOR , FILE1_10.SCAL , FILE0_100.RealBal " & _
             " FROM  FILE0_10H INNER JOIN FILE0_100 ON FILE0_10H.DOC_NO = FILE0_100.DOC_NO INNER JOIN FILE1_10 ON FILE1_10.ITEM = FILE0_100.ITEM INNER JOIN FACT ON FILE1_10.FACT = FACT.CODE WHERE FILE0_10H.DATE = " & DateSq(StockFrm.xDate.text) & " AND FILE0_10H.STORE = " & MyParn(StockFrm.xStore.BoundText)
-    If xitem.text <> "" Then cStrall = cStrall & " AND FILE0_100.ITEM = " & Val(xitem.text)
+    If xItem.text <> "" Then cStrall = cStrall & " AND FILE0_100.ITEM = " & Val(xItem.text)
     If xModelFact.text <> "" Then cStrall = cStrall & " AND FILE1_10.MODELFACT0 = " & MyParn(xModelFact.text)
     
     cStrall = cStrall & " ORDER BY FILE0_100.DOC_NO , FILE0_100.ITEM"
@@ -346,9 +346,9 @@ Private Sub CmdGo_Click()
 End Sub
 
 Private Sub Form_Load()
-    openCon con
+    OpenCon con
     Set grid1.DataSource = data1
-    data1.ConnectionString = strCon
+    data1.connectionString = strCon
     
     
     FIXGRID

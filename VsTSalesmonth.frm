@@ -621,7 +621,7 @@ Private Sub CMD_PRINT_Click()
 '    If xMosm.BoundText <> "" Then cHead3 = cHead3 & " „Ê”„ " & xMosm.Text
     
     Load PrintGrd
-    PrintGrd.DOPRINT grid1, 1, , cHead1, cHead2, , , True, 10
+    PrintGrd.doprint grid1, 1, , cHead1, cHead2, , , True, 10
     PrintGrd.Show 1
 End Sub
 Private Sub CmdExit_Click()
@@ -631,14 +631,14 @@ End Sub
 Private Sub CmdUndo_Click()
     Unload Me
 End Sub
-Private Sub CmdGo_Click()
+Private Sub cmdgo_Click()
     myload
 End Sub
 Private Sub Command1_Click()
 Dim aHeader(1)
-If Not MYVALID Then Exit Sub
-Dim temptable As New ADODB.Recordset
-Dim sourcetable As New ADODB.Recordset
+If Not myValid Then Exit Sub
+Dim temptable As New ADODB.RecordSet
+Dim sourcetable As New ADODB.RecordSet
 
 contemp.Execute "DELETE * FROM TEMP"
 temptable.Open "temp", contemp, adOpenStatic, adLockOptimistic, adCmdTable
@@ -655,7 +655,7 @@ End If
 sourcetable.Open cString, con, adOpenStatic, adLockReadOnly, adCmdText
 Do Until sourcetable.EOF
     temptable.AddNew
-    temptable!str1 = sourcetable!CODE
+    temptable!str1 = sourcetable!code
     temptable!str2 = sourcetable![DESCA]
     temptable!str3 = sourcetable![Group]
     
@@ -680,9 +680,9 @@ Set temptable = Nothing
 End Sub
 
 Private Sub Form_Load()
-    openCon con
+    OpenCon con
     
-    DATA7.ConnectionString = strCon
+    DATA7.connectionString = strCon
     DATA7.RecordSource = "Select Code,DescA From File0_40 WHERE " & cUserStore
     Set xStore.RowSource = DATA7
     xStore.ListField = "Desca"
@@ -694,14 +694,14 @@ Private Sub Form_Load()
     End If
     
     Set grid1.DataSource = DATA6
-    DATA6.ConnectionString = strCon
+    DATA6.connectionString = strCon
     
     grid1.Rows = 1
     grid1.Cols = 9
     FIXGRID
 End Sub
 Private Sub myload()
-Dim I As Double
+Dim i As Double
 Dim cString  As String, cStr2 As String
 With grid1
 '                           0               1                 2                3               4                5
@@ -759,9 +759,9 @@ With grid1
     Next nCol
     
     .SubtotalPosition = flexSTAbove
-    For I = 3 To .Cols - 1
-        .Subtotal flexSTSum, -1, I, "#0", vbRed, vbYellow, True, "  "
-    Next I
+    For i = 3 To .Cols - 1
+        .Subtotal flexSTSum, -1, i, "#0", vbRed, vbYellow, True, "  "
+    Next i
     End With
 End Sub
 Private Sub Form_Unload(Cancel As Integer)

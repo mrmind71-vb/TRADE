@@ -220,7 +220,7 @@ Begin VB.Form VsTSECmosm
          EndProperty
          CheckBox        =   -1  'True
          DateIsNull      =   -1  'True
-         Format          =   441647105
+         Format          =   438566913
          CurrentDate     =   43098.0821990741
       End
       Begin VB.Label Label2 
@@ -734,30 +734,30 @@ Attribute VB_Exposed = False
 Dim oSearch As New Search3
 Public cMyModel As String
 Dim con As New ADODB.Connection
-Dim StoreTable As New ADODB.Recordset
+Dim StoreTable As New ADODB.RecordSet
 Private Sub cmd_excel_Click()
     ToFileExel2 grid1, , , , , 1.1, , , , , , Me
 End Sub
 Private Sub CMD_PRINT_Click()
     Dim cHead1 As String
     Dim cHead2 As String
-    cHead1 = "ÈíÇä ÅÌãÇáì ÑÕíÏ ÇáÇÞÓÇã ãæÒÚ Úáì ÇáãæÇÓã " & xMosm.text
+    cHead1 = "ÈíÇä ÅÌãÇáì ÑÕíÏ ÇáÇÞÓÇã ãæÒÚ Úáì ÇáãæÇÓã " & XMOSM.text
     Load PrintGrd
     If grid1.Cols > 8 Then
-        PrintGrd.DOPRINT Me.grid1, 1, -2, cHead1, , , False, True, 11
+        PrintGrd.doprint Me.grid1, 1, -2, cHead1, , , False, True, 11
     Else
-        PrintGrd.DOPRINT Me.grid1, 1, -2, cHead1, , , False, False, 11
+        PrintGrd.doprint Me.grid1, 1, -2, cHead1, , , False, False, 11
     End If
     PrintGrd.Show 1
 End Sub
 Private Sub CmdExit_Click()
     Unload Me
 End Sub
-Private Sub CmdGo_Click()
+Private Sub cmdgo_Click()
     myload
 End Sub
 Private Sub Form_Load()
-    openCon con
+    OpenCon con
     StoreTable.Open "select * from STORE_BR order by code ", con, adOpenStatic, adLockReadOnly, adCmdText
     xDate1.Value = Date
 '    DATA2.ConnectionString = strCon
@@ -774,14 +774,14 @@ Private Sub Form_Load()
 '    xFact.BoundColumn = "Code"
     
     
-    DATA5.ConnectionString = strCon
-    DATA5.RecordSource = "Select mosm ,descA From mosm ORDER BY date DESC "
-    Set xMosm.RowSource = DATA5
-    xMosm.ListField = "Desca"
-    xMosm.BoundColumn = "MOSM"
+    data5.connectionString = strCon
+    data5.RecordSource = "Select mosm ,descA From mosm ORDER BY date DESC "
+    Set XMOSM.RowSource = data5
+    XMOSM.ListField = "Desca"
+    XMOSM.BoundColumn = "MOSM"
     
     Set grid1.DataSource = DATA6
-    DATA6.ConnectionString = strCon
+    DATA6.connectionString = strCon
     
     grid1.Rows = 1
     grid1.Cols = 1
@@ -790,7 +790,7 @@ End Sub
 Private Sub myload()
     Dim cWhere As String
     Dim cStr2 As String
-    Dim DataMosmTable As New ADODB.Recordset
+    Dim DataMosmTable As New ADODB.RecordSet
     If xall(0).Value Then
         cStr1 = " SELECT FILE1_11.STORE , STORE_BR.desca FROM FILE1_10 INNER JOIN FILE1_11 ON FILE1_11.ITEM = FILE1_10.ITEM INNER JOIN STORE_BR ON STORE_BR.CODE = FILE1_11.STORE "
         cStr1 = cStr1 & " GROUP BY FILE1_11.STORE ,STORE_BR.desca ORDER BY STORE_BR.desca "
@@ -838,7 +838,7 @@ Private Sub myload()
 End Sub
 Sub FIXGRID()
     Dim nTRow As Double
-    Dim DataMosmTable As New ADODB.Recordset
+    Dim DataMosmTable As New ADODB.RecordSet
     
     If xall(0).Value Then
         cStr1 = " SELECT FILE1_11.STORE , STORE_BR.desca FROM FILE1_10 INNER JOIN FILE1_11 ON FILE1_11.ITEM = FILE1_10.ITEM INNER JOIN STORE_BR ON STORE_BR.CODE = FILE1_11.STORE "
@@ -857,7 +857,7 @@ Sub FIXGRID()
     DataMosmTable.MoveFirst
     
     With grid1
-    .ColComboList(0) = StrList("SELECT CODE , DESCA FROM FILE1_10SC", con)
+    .ColComboList(0) = strList("SELECT CODE , DESCA FROM FILE1_10SC", con)
     If .Cols = 1 Then Exit Sub
     .FrozenCols = 1
     .ExplorerBar = flexExSortShow
@@ -905,7 +905,7 @@ End Sub
 Private Sub grid1_DblClick()
 With grid1
     Load VsTItem
-    VsTItem.xMosm.BoundText = .TextMatrix(0, .Col)
+    VsTItem.XMOSM.BoundText = .TextMatrix(0, .Col)
 '    VsTItem.xBal.Value = True
     VsTItem.Show
 End With

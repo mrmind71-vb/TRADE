@@ -1031,16 +1031,16 @@ Dim con As New ADODB.Connection
 Private Sub cmd_excel_Click()
     
    If SSTab1.Tab = 1 Then ToFileExel2 grid1, , , , , 1.1, , , , , , Me
-   If SSTab1.Tab = 0 Then ToFileExel2 GRID2, , , , , 1.1, , , , , , Me
+   If SSTab1.Tab = 0 Then ToFileExel2 grid2, , , , , 1.1, , , , , , Me
 End Sub
 Private Sub CMD_PRINT_Click()
     Dim cHead1 As String
     Dim cHead2 As String
     Dim cHead3 As String
-    cHead1 = Me.Caption & "  " & xCharge.text
+    cHead1 = Me.Caption & "  " & XCHARGE.text
     cHead2 = " „‰  «—ÌŒ " & Format(xDate1.text, "DD-MM-YYYY") & " Õ Ï  «—ÌŒ " & Format(xDate2.text, "DD-MM-YYYY")
     Load PrintGrd
-    PrintGrd.DOPRINT grid1, 1, , cHead1, cHead2, , , True, 11
+    PrintGrd.doprint grid1, 1, , cHead1, cHead2, , , True, 11
     PrintGrd.Show 1
 End Sub
 Private Sub CmdExit_Click()
@@ -1050,7 +1050,7 @@ End Sub
 Private Sub CmdUndo_Click()
     Unload Me
 End Sub
-Private Sub CmdGo_Click()
+Private Sub cmdgo_Click()
     If XYEAR1.text = "" Or XYEAR2.text = "" Then Exit Sub
     If xDate1.text = "" Then xDate1.text = "1-1"
     If xDate2.text = "" Then xDate2.text = "31-12"
@@ -1063,36 +1063,36 @@ End Sub
 
 
 Private Sub Form_Load()
-    openCon con
+    OpenCon con
     
     XYEAR1.text = 2017
     XYEAR2.text = Year(Date)
     
     
-    data1.ConnectionString = strCon
+    data1.connectionString = strCon
     data1.RecordSource = "Select Code,DescA From FILE8_52 ORDER BY DESCA "
-    Set xCharge.RowSource = data1
-    xCharge.ListField = "Desca"
-    xCharge.BoundColumn = "Code"
+    Set XCHARGE.RowSource = data1
+    XCHARGE.ListField = "Desca"
+    XCHARGE.BoundColumn = "Code"
     
     Set grid1.DataSource = DATA2
-    DATA2.ConnectionString = strCon
+    DATA2.connectionString = strCon
     
-    Set GRID2.DataSource = DATA3
-    DATA3.ConnectionString = strCon
+    Set grid2.DataSource = data3
+    data3.connectionString = strCon
     
     grid1.Rows = 2
     grid1.Cols = 3
     FIXGRID
 
 
-    GRID2.Rows = 2
-    GRID2.Cols = 5
+    grid2.Rows = 2
+    grid2.Cols = 5
     FixGrid2
 
 End Sub
 Private Sub myload()
-Dim I As Double, nYear As Double
+Dim i As Double, nYear As Double
 Dim cString  As String, cStr2 As String, DDate1 As Date, DDate2 As Date
 With grid1
 '                           0               1                 2                3               4                5
@@ -1103,10 +1103,10 @@ With grid1
         cString = cString & " , SUM(CASE WHEN DATE >= " & DateSq(DDate1) & " AND DATE <= " & DateSq(DDate2) & " THEN acc_charge.VALUE ELSE 0 END ) "
     Next nYear
     cString = cString & " FROM acc_charge INNER JOIN BRANCH ON acc_charge.BRANCH = BRANCH.CODE  INNER JOIN FILE8_51 ON acc_charge.CHARGE = FILE8_51.CODE WHERE DOC_NO IS NOT NULL "
-    If xCharge.BoundText <> "" Then cString = cString & " AND FILE8_51.MAINGROUP = " & MyParn(xCharge.BoundText)
+    If XCHARGE.BoundText <> "" Then cString = cString & " AND FILE8_51.MAINGROUP = " & MyParn(XCHARGE.BoundText)
     cString = cString & " GROUP BY BRANCH.[CODE] , BRANCH.DESCA  ORDER BY BRANCH.[CODE] "
     If Check1.Value = 0 Then
-        Set DATA2.Recordset = myRecordSet(cString, con)
+        Set DATA2.RecordSet = myRecordSet(cString, con)
     Else
         textquery.text = cString
     End If
@@ -1157,9 +1157,9 @@ With grid1
     .ExplorerBar = flexExSort
     .Cell(flexcpAlignment, 0, 0, .Rows - 1, .Cols - 1) = 4
     .SubtotalPosition = flexSTAbove
-    For I = 2 To .Cols - 1
-        .Subtotal flexSTSum, -1, I, "#0", vbRed, vbYellow, True, "  "
-    Next I
+    For i = 2 To .Cols - 1
+        .Subtotal flexSTSum, -1, i, "#0", vbRed, vbYellow, True, "  "
+    Next i
     .Cell(flexcpAlignment, 1, 0, .Rows - 1, .Cols - 1) = 7
     End With
 End Sub
@@ -1170,9 +1170,9 @@ End Sub
 
 
 Private Sub MYLOAD2()
-Dim I As Double, nYear As Double
+Dim i As Double, nYear As Double
 Dim cString  As String, cStr2 As String, DDate1 As Date, DDate2 As Date
-With GRID2
+With grid2
 '                           0               1                 2                3               4                5
     cString = " SELECT BRANCH.[CODE] , BRANCH.DESCA  , FILE8_52.DESCA , FILE8_51.DESCA "
     For nYear = Val(XYEAR1.text) To Val(XYEAR2.text)
@@ -1181,21 +1181,21 @@ With GRID2
         cString = cString & " , SUM(CASE WHEN DATE >= " & DateSq(DDate1) & " AND DATE <= " & DateSq(DDate2) & " THEN acc_charge.VALUE ELSE 0 END ) "
     Next nYear
     cString = cString & " FROM acc_charge INNER JOIN BRANCH ON acc_charge.BRANCH = BRANCH.CODE  INNER JOIN FILE8_51 ON acc_charge.CHARGE = FILE8_51.CODE INNER JOIN FILE8_52 ON FILE8_52.CODE = FILE8_51.MAINGROUP  WHERE DOC_NO IS NOT NULL "
-    If xCharge.BoundText <> "" Then cString = cString & " AND FILE8_51.MAINGROUP = " & MyParn(xCharge.BoundText)
+    If XCHARGE.BoundText <> "" Then cString = cString & " AND FILE8_51.MAINGROUP = " & MyParn(XCHARGE.BoundText)
     cString = cString & " GROUP BY BRANCH.[CODE] , BRANCH.DESCA  , FILE8_52.DESCA , FILE8_51.DESCA ORDER BY BRANCH.[CODE] , FILE8_52.DESCA , FILE8_51.DESCA "
 
     If Check1.Value = 0 Then
-        Set DATA3.Recordset = myRecordSet(cString, con)
+        Set data3.RecordSet = myRecordSet(cString, con)
     Else
         textquery.text = cString
     End If
 
 End With
 FixGrid2
-If GRID2.Rows > 0 Then GRID2.TextMatrix(1, 1) = "«·≈Ã„«·Ï"
+If grid2.Rows > 0 Then grid2.TextMatrix(1, 1) = "«·≈Ã„«·Ï"
 End Sub
 Sub FixGrid2()
-With GRID2
+With grid2
     .RowHeight(0) = 500
     .RowHeight(1) = 700
     .WordWrap = True
@@ -1243,9 +1243,9 @@ With GRID2
     .ExplorerBar = flexExSort
     .Cell(flexcpAlignment, 0, 0, .Rows - 1, .Cols - 1) = 4
     .SubtotalPosition = flexSTAbove
-    For I = 4 To .Cols - 1
-        .Subtotal flexSTSum, -1, I, "#0", vbRed, vbYellow, True, "  "
-    Next I
+    For i = 4 To .Cols - 1
+        .Subtotal flexSTSum, -1, i, "#0", vbRed, vbYellow, True, "  "
+    Next i
     .Cell(flexcpAlignment, 1, 0, .Rows - 1, .Cols - 1) = 7
     End With
 End Sub

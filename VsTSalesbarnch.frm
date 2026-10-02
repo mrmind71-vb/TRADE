@@ -903,7 +903,7 @@ Private Sub CMD_PRINT_Click()
     cHead2 = " ãä ÊÇÑíÎ " & Format(xDate1.text, "DD-MM-YYYY") & " ÍÊì ÊÇÑíÎ " & Format(xDate2.text, "DD-MM-YYYY")
     
     Load PrintGrd
-        PrintGrd.DOPRINT grid1, 1, , cHead1, cHead2, cHead3, , True, 10
+        PrintGrd.doprint grid1, 1, , cHead1, cHead2, cHead3, , True, 10
     PrintGrd.Show 1
 End Sub
 Private Sub CmdExit_Click()
@@ -913,45 +913,45 @@ End Sub
 Private Sub CmdUndo_Click()
     Unload Me
 End Sub
-Private Sub CmdGo_Click()
+Private Sub cmdgo_Click()
     myload
 End Sub
 Private Sub Form_Load()
-    openCon con
-    DATA2.ConnectionString = strCon
+    OpenCon con
+    DATA2.connectionString = strCon
     DATA2.RecordSource = "Select Code,DescA From STORE_BR WHERE " & cUserStore
     Set xSupp.RowSource = DATA2
     xSupp.ListField = "Desca"
     xSupp.BoundColumn = "Code"
     
-    DATA3.ConnectionString = strCon
-    DATA3.RecordSource = "Select Code,DescA From File1_50 ORDER BY DESCA"
-    Set xGroup.RowSource = DATA3
+    data3.connectionString = strCon
+    data3.RecordSource = "Select Code,DescA From File1_50 ORDER BY DESCA"
+    Set xGroup.RowSource = data3
     xGroup.ListField = "Desca"
     xGroup.BoundColumn = "Code"
     
-    DATA4.ConnectionString = strCon
+    DATA4.connectionString = strCon
     DATA4.RecordSource = "Select mosm ,descA From mosm ORDER BY date DESC "
-    Set xMosm.RowSource = DATA4
-    xMosm.ListField = "Desca"
-    xMosm.BoundColumn = "MOSM"
+    Set XMOSM.RowSource = DATA4
+    XMOSM.ListField = "Desca"
+    XMOSM.BoundColumn = "MOSM"
     
-    DATA5.ConnectionString = strCon
-    DATA5.RecordSource = "Select code ,desca From fact ORDER BY DESCA "
-    Set xFact.RowSource = DATA5
+    data5.connectionString = strCon
+    data5.RecordSource = "Select code ,desca From fact ORDER BY DESCA "
+    Set xFact.RowSource = data5
     xFact.ListField = "Desca"
     xFact.BoundColumn = "Code"
     
     
     Set grid1.DataSource = DATA6
-    DATA6.ConnectionString = strCon
+    DATA6.connectionString = strCon
     
     grid1.Rows = 1
     grid1.Cols = 9
     FIXGRID
 End Sub
 Private Sub myload()
-Dim I As Double
+Dim i As Double
 Dim cString  As String, cStr2 As String
 With grid1
 '                           0               1                 2                3               4                5
@@ -1043,10 +1043,10 @@ With grid1
     .ColHidden(13) = Not bOpt10
     
     .SubtotalPosition = flexSTBelow
-    For I = 3 To .Cols - 1
-        .Subtotal flexSTSum, -1, I, "#0", vbRed, vbYellow, True, "  "
-        .Subtotal flexSTSum, 0, I, "#0", vbGreen, , True, "  "
-    Next I
+    For i = 3 To .Cols - 1
+        .Subtotal flexSTSum, -1, i, "#0", vbRed, vbYellow, True, "  "
+        .Subtotal flexSTSum, 0, i, "#0", vbGreen, , True, "  "
+    Next i
     If .Rows > 1 Then
         nRow = .Rows - 1
         .TextMatrix(nRow, 8) = Round(Val(.TextMatrix(nRow, 6)) + Val(.TextMatrix(nRow, 7)), 0)

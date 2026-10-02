@@ -180,7 +180,7 @@ End Sub
 Public Sub SalesBalanceLook(oForm As Form, oSearch As Form, Optional cFilter As String = "", Optional bFilter As Boolean = False, Optional sAddRow As String = "")
 Dim Generalarray(5)
 Dim listarray(3, 5)
-Dim GrdArray(7, 1)
+Dim GrdArray(8, 1)
 Dim cWhere As String
 Set Generalarray(0) = oForm
 
@@ -192,7 +192,8 @@ Generalarray(1) = "SELECT " & _
                   " FILE6_20H.TOTAL_ITEM - FILE6_20H.DISCOUNT," & _
                   " v.BALANCE," & _
                   " INV_TYPE_CODES.DESCA," & _
-                  " FILE6_20H.NOTES" & _
+                  " FILE6_20H.NOTES," & _
+                  " FILE6_20H.MAN" & _
                   " FROM FILE6_20H" & _
                   " INNER JOIN FILE3_10 ON FILE6_20H.CODE = FILE3_10.CODE" & _
                   " INNER JOIN INV_TYPE_CODES ON FILE6_20H.INV_TYPE = INV_TYPE_CODES.CODE" & _
@@ -247,6 +248,9 @@ GrdArray(6, 1) = 1500
 GrdArray(7, 0) = "«·»Ì«‰"
 GrdArray(7, 1) = 2500
 
+GrdArray(8, 0) = "«·„‰œÊ»"
+GrdArray(8, 1) = 0
+
 
 searchArray = Array(Generalarray, listarray, GrdArray)
 If bFilter Then
@@ -271,14 +275,12 @@ End Sub
 Public Sub PriceListLook(oForm As Form, oSearch As Form, Optional cFilter As String = "", Optional bFilter As Boolean = False, Optional sAddRow As String = "")
 Dim Generalarray(5)
 Dim listarray(0, 5)
-Dim GrdArray(2, 1)
+Dim GrdArray(1, 1)
 Set Generalarray(0) = oForm
 Generalarray(1) = "SELECT  " & _
                   " FILE6_53H.DOC_NO ," & _
-                  " FILE6_53H.NOTES," & _
-                  " FILE3_10.DESCA" & _
-                  " FROM FILE6_53H" & _
-                  " INNER JOIN FILE3_10 ON FILE6_53H.CODE = FILE3_10.CODE"
+                  " FILE6_53H.NOTES" & _
+                  " FROM FILE6_53H"
 
 If cFilter <> "" Then
     Generalarray(1) = Generalarray(1) & " WHERE " & cFilter
@@ -288,18 +290,15 @@ Generalarray(2) = "Order by doc_no DESC"
 Generalarray(3) = 6000
 Generalarray(5) = False
 
-listarray(0, 0) = "«·⁄„Ì·"
-listarray(0, 1) = "(%%FILE3_10.DESCA%%)"
+listarray(0, 0) = "»Ì«‰ «·ﬁ«∆„…"
+listarray(0, 1) = "(%%NOTES%%)"
 
 
 GrdArray(0, 0) = "—ﬁ„ «·„” ‰œ"
 GrdArray(0, 1) = 1200
 
 GrdArray(1, 0) = "≈”„ «·ﬁ«∆„…"
-GrdArray(1, 1) = 3500
-
-GrdArray(2, 0) = "«·⁄„Ì·"
-GrdArray(2, 1) = 6500
+GrdArray(1, 1) = 6500
 
 searchArray = Array(Generalarray, listarray, GrdArray)
 If bFilter Then

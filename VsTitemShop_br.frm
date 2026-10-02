@@ -5,7 +5,7 @@ Object = "{F0D2F211-CCB0-11D0-A316-00AA00688B10}#1.0#0"; "MSDATLST.OCX"
 Object = "{6B7E6392-850A-101B-AFC0-4210102A8DA7}#1.3#0"; "COMCTL32.OCX"
 Object = "{065E6FD1-1BF9-11D2-BAE8-00104B9E0792}#3.0#0"; "ssa3d30.ocx"
 Object = "{BF5DA8BB-099C-41DC-88F2-87E2D46819E4}#3.3#0"; "ImgX61.ocx"
-Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCTL.OCX"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.2#0"; "MSCOMCTL.OCX"
 Begin VB.Form VsTitemShop_br 
    BorderStyle     =   1  'Fixed Single
    Caption         =   "„ «»⁄… «·„ÊœÌ·« "
@@ -1777,7 +1777,7 @@ Dim confact As New ADODB.Connection
 Dim oSearch As New Search3
 Public cMyModel As String
 Dim con As New ADODB.Connection
-Dim StoreTable As New ADODB.Recordset, clistsec As String
+Dim StoreTable As New ADODB.RecordSet, clistsec As String
 Private Sub CMD_EX2_Click()
     With grid1
     .ColHidden(5) = True
@@ -1824,7 +1824,7 @@ Private Sub CMD_PRINT_Click()
     cHead1 = "«—’œ… Ê ÿ·»Ì…  ﬂ—«— «·„ÊœÌ·«  „‰ «·„’‰⁄ "
     cHead2 = " Õ Ï   «—ÌŒ " & Format(xDate1.text, "DD-MM-YYYY")
     Load PrintGrd
-    PrintGrd.DOPRINT Me.grid1, 0.85, -2, cHead1, cHead2, , False, False, 8
+    PrintGrd.doprint Me.grid1, 0.85, -2, cHead1, cHead2, , False, False, 8
     PrintGrd.Show 1
     grid1.ColHidden(17) = False
 End Sub
@@ -1907,7 +1907,7 @@ End Sub
 
 Private Sub cmdBarCode_Click()
 con.BeginTrans
-On Error GoTo myerror
+On Error GoTo myError
 If xModelNo.Caption = "" Then Exit Sub
 cString = "INSERT INTO ADDPRINT(ITEM,BRANCH,QUANT,ISPRINT)"
 cString = cString & _
@@ -1917,7 +1917,7 @@ con.Execute cString
 con.CommitTrans
 Inform " „ «· ÕÊÌ· »‰Ã«Õ"
 Exit Sub
-myerror:
+myError:
 con.RollbackTrans
 MsgBox Err.Description
 Err.Clear
@@ -1926,7 +1926,7 @@ End Sub
 Private Sub CmdExit_Click()
     Unload Me
 End Sub
-Private Sub CmdGo_Click()
+Private Sub cmdgo_Click()
     If xStore.BoundText = "" Then Exit Sub
     If Not IsDate(xDate1.text) Then
         xDate1.text = Format(GetDesca("select min(date) from FR1_11", con))
@@ -1943,7 +1943,7 @@ Private Sub Command1_Click()
 End Sub
 
 Private Sub Form_Load()
-    openCon con
+    OpenCon con
     xDate1.text = Format(GetDesca("select min(date) from FR1_11", con))
     xDate2.text = Format(Date, "dd-mm-yyyy")
     XMOSM2.AddItem ""
@@ -1956,13 +1956,13 @@ Private Sub Form_Load()
 '        con.Execute " update model_dem set Branch = brach where brach is not null "
     End If
     
-    data1.ConnectionString = strCon
+    data1.connectionString = strCon
     data1.RecordSource = "Select Code,DescA From File1_10SC order by Desca"
     Set XSECTION.RowSource = data1
     XSECTION.ListField = "Desca"
     XSECTION.BoundColumn = "Code"
     
-    DATA11.ConnectionString = strCon
+    DATA11.connectionString = strCon
     DATA11.RecordSource = "Select DATE   AS DATE From model_dem GROUP BY DATE  order by DATE  DESC "
     Set XDATEDEM1.RowSource = DATA11
     XDATEDEM1.ListField = "DATE"
@@ -1972,7 +1972,7 @@ Private Sub Form_Load()
     XDATEDEM2.ListField = "DATE"
     XDATEDEM2.BoundColumn = "DATE"
     
-    data10.ConnectionString = strCon
+    data10.connectionString = strCon
     data10.RecordSource = "Select Code,DescA From branch_FR  order by CODE "
     Set xStore.RowSource = data10
     xStore.ListField = "Desca"
@@ -1980,34 +1980,34 @@ Private Sub Form_Load()
     
     XALLNEW.Visible = bopt2
     
-    DATA2.ConnectionString = strCon
+    DATA2.connectionString = strCon
     DATA2.RecordSource = "Select Code,DescA From File4_10 order by Desca"
     Set xSupp.RowSource = DATA2
     xSupp.ListField = "Desca"
     xSupp.BoundColumn = "Code"
     
-    DATA3.ConnectionString = strCon
-    DATA3.RecordSource = "Select Code,DescA From File1_50 ORDER BY DESCA"
-    Set xGroup.RowSource = DATA3
+    data3.connectionString = strCon
+    data3.RecordSource = "Select Code,DescA From File1_50 ORDER BY DESCA"
+    Set xGroup.RowSource = data3
     xGroup.ListField = "Desca"
     xGroup.BoundColumn = "Code"
     
-    DATA4.ConnectionString = strCon
+    DATA4.connectionString = strCon
     DATA4.RecordSource = "Select mosm ,descA From mosm ORDER BY date DESC "
-    Set xMosm.RowSource = DATA4
-    xMosm.ListField = "Desca"
-    xMosm.BoundColumn = "MOSM"
-    xMosm.BoundText = cPMosm
+    Set XMOSM.RowSource = DATA4
+    XMOSM.ListField = "Desca"
+    XMOSM.BoundColumn = "MOSM"
+    XMOSM.BoundText = cPMosm
     
-    DATA5.ConnectionString = strCon
-    DATA5.RecordSource = "Select code ,desca From fact ORDER BY DESCA "
-    Set xFact.RowSource = DATA5
+    data5.connectionString = strCon
+    data5.RecordSource = "Select code ,desca From fact ORDER BY DESCA "
+    Set xFact.RowSource = data5
     xFact.ListField = "Desca"
     xFact.BoundColumn = "Code"
     
     
     Set grid1.DataSource = DATA6
-    DATA6.ConnectionString = strCon
+    DATA6.connectionString = strCon
     grid1.Rows = 2
     grid1.Cols = 19
     FIXGRID
@@ -2050,7 +2050,7 @@ Private Sub myload()
         If XMOSM2.text <> "" Then cStr2 = cStr2 & " AND FILE1_10.MOSM2 <> " & MyParn(XMOSM2.text)
     End If
     If xStore.BoundText <> "" Then cStr2 = cStr2 & " AND FR1_11.STORE = " & MyParn(xStore.BoundText)
-    If xMosm.BoundText <> "" Then cStr2 = cStr2 & " AND FILE1_10.MOSM = " & MyParn(xMosm.BoundText)
+    If XMOSM.BoundText <> "" Then cStr2 = cStr2 & " AND FILE1_10.MOSM = " & MyParn(XMOSM.BoundText)
     If xModelFact.text <> "" Then cStr2 = cStr2 & " AND FILE1_10.MODELFACT0 = " & MyParn(xModelFact.text)
     If Check5.Value <> 0 Then cStr2 = cStr2 & " AND  ( FILE1_10.[ISNODEM] = 0  AND FILE1_10.[ISSTOP] = 0) "
     If xbarcode.text <> "" Then cStr2 = cStr2 & " AND FILE1_10.item = " & xbarcode.text
@@ -2058,7 +2058,7 @@ Private Sub myload()
     If xGroup.BoundText <> "" Then cStr2 = cStr2 & " AND FILE1_10.[GROUP] = " & MyParn(xGroup.BoundText)
     If xFact.BoundText <> "" Then cStr2 = cStr2 & " AND FILE1_10.FACT = " & MyParn(xFact.BoundText)
     If XSECTION.BoundText <> "" Then cStr2 = cStr2 & " AND FILE1_10.[Section] = " & XSECTION.BoundText
-    If XDESCA.text <> "" Then cStr2 = cStr2 & " AND file1_10.DESCA LIKE ('%" & XDESCA.text & "%')   "
+    If xDescA.text <> "" Then cStr2 = cStr2 & " AND file1_10.DESCA LIKE ('%" & xDescA.text & "%')   "
     If IsDate(xDate2.text) Then cStr2 = cStr2 & " AND FR1_11.[DATE] <= " & DateSq(xDate2.text)
     If Check4.Value <> 0 Then
         If Check2.Value = 0 Then
@@ -2092,7 +2092,7 @@ Private Sub myload()
     FIXGRID
 End Sub
 Sub FIXGRID()
-    Dim CodeModelTable As New ADODB.Recordset
+    Dim CodeModelTable As New ADODB.RecordSet
     Dim nTIn As Double
     With grid1
     .ExplorerBar = flexExSortShow
@@ -2187,12 +2187,12 @@ Sub FIXGRID()
     .Cell(flexcpAlignment, 0, 0, 0, .Cols - 1) = 4
     .Subtotal flexSTClear
     If .Rows > 2 Then
-        For I = 2 To .Rows - 1
+        For i = 2 To .Rows - 1
             nRate = 0
-            nTIn = Val(.TextMatrix(I, 5)) + Val(.TextMatrix(I, 6)) + Val(.TextMatrix(I, 7))
-            If nTIn > 0 Then nRat = Format(Val(.TextMatrix(I, 9)) / nTIn * 100, "#0.00")
-            .TextMatrix(I, 11) = Format(nRat, "##0.00")
-        Next I
+            nTIn = Val(.TextMatrix(i, 5)) + Val(.TextMatrix(i, 6)) + Val(.TextMatrix(i, 7))
+            If nTIn > 0 Then nRat = Format(Val(.TextMatrix(i, 9)) / nTIn * 100, "#0.00")
+            .TextMatrix(i, 11) = Format(nRat, "##0.00")
+        Next i
     End If
     
     .Subtotal flexSTSum, -1, 5, "##0", , RGB(255, 0, 0), True, "≈Ã„«·Ï"
@@ -2219,7 +2219,7 @@ End Sub
 Private Sub Form_Unload(Cancel As Integer)
     closeCon con
 End Sub
-Private Sub grid1_AfterEdit(ByVal Row As Long, ByVal Col As Long)
+Private Sub Grid1_AfterEdit(ByVal Row As Long, ByVal Col As Long)
 With grid1
     If .Col = 21 Then
         con.Execute " UPDATE model_dem set [ISPRINTED] =  " & Val(.TextMatrix(.Row, 21)) & " WHERE MODELNO = " & MyParn(xModelNo.Caption), nRec
@@ -2254,7 +2254,7 @@ Private Sub grid1_DblClick()
         End If
         Load ModelMove_FR
         ModelMove_FR_FR.xDate.text = xDate1.text
-        ModelMove_FR.XMODEL.text = cMyModel
+        ModelMove_FR.xModel.text = cMyModel
         ModelMove_FR.xStore.BoundText = xStore.BoundText
         ModelMove_FR.Show
     End If
@@ -2267,7 +2267,7 @@ Private Sub grid1_DblClick()
         End If
         Load ModelMove_FR
         ModelMove_FR.xDate.text = xDate1.text
-        ModelMove_FR.XMODEL.text = cMyModel
+        ModelMove_FR.xModel.text = cMyModel
         ModelMove_FR.xStore.BoundText = xStore.BoundText
         ModelMove_FR.Show
     End If
@@ -2307,7 +2307,7 @@ End Sub
 
 Private Sub XSTORE_LostFocus()
     If xStore.BoundText <> "" Then
-        DATA11.ConnectionString = strCon
+        DATA11.connectionString = strCon
         DATA11.RecordSource = "Select DATE From model_dem WHERE STORE = " & MyParn(xStore.BoundText) & " GROUP BY DATE   order by DATE  DESC "
         Set XDATEDEM1.RowSource = DATA11
         XDATEDEM1.ListField = "DATE"
@@ -2363,7 +2363,7 @@ End If
 End Sub
 Private Sub doprint1()
 Dim aHeader(2)
-Dim temptable As New ADODB.Recordset
+Dim temptable As New ADODB.RecordSet
 
 contemp.Execute "DELETE * FROM TEMP"
 temptable.Open "temp", contemp, adOpenStatic, adLockOptimistic, adCmdTable
@@ -2382,7 +2382,7 @@ With grid1
                 temptable!VAL1 = Val(.TextMatrix(nRow, 13))
                 temptable!val5 = Val(.TextMatrix(nRow, 13)) * Val(.TextMatrix(nRow, 17))
             End If
-            temptable!val2 = Val(.TextMatrix(nRow, 10))
+            temptable!VAL2 = Val(.TextMatrix(nRow, 10))
             temptable!STR7 = "ÿ·»Ì…  » «—ÌŒ " & Format(Date, "DD-MM-YYYY") & "  " & xStore.text
             temptable.Update
         End If
@@ -2407,15 +2407,15 @@ Set temptable = Nothing
 End Sub
 Private Sub doprint2()
 Dim aHeader(2)
-Dim temptable As New ADODB.Recordset
-Dim sourcetable As New ADODB.Recordset
+Dim temptable As New ADODB.RecordSet
+Dim sourcetable As New ADODB.RecordSet
 contemp.Execute "DELETE * FROM TEMP"
 temptable.Open "temp", contemp, adOpenStatic, adLockOptimistic, adCmdTable
     
     cStr1 = "SELECT model_dem.ITEM , model_dem.QUANT , FILE1_10.DESCA , FILE1_10.COLOR , FILE1_10.SCAL , FILE1_10.C_SCAL , FILE1_10.MOSM , FILE1_10.MODELFACT0 , FILE1_10.MODEL , FILE1_10.COST , FILE1_10.PRICE , FACT.DESCA AS FACTDESCA FROM model_dem INNER JOIN FILE1_10 ON model_dem.ITEM = FILE1_10.ITEM INNER JOIN FACT ON FACT.CODE = FILE1_10.FACT WHERE FILE1_10.MODELNO IS NOT NULL "
     
     If xStore.BoundText <> "" Then cStr2 = cStr2 & " AND model_dem.STORE = " & MyParn(xStore.BoundText)
-    If xMosm.BoundText <> "" Then cStr2 = cStr2 & " AND FILE1_10.MOSM = " & MyParn(xMosm.BoundText)
+    If XMOSM.BoundText <> "" Then cStr2 = cStr2 & " AND FILE1_10.MOSM = " & MyParn(XMOSM.BoundText)
     If xModelFact.text <> "" Then cStr2 = cStr2 & " AND FILE1_10.MODELFACT0 = " & MyParn(xModelFact.text)
     If xbarcode.text <> "" Then cStr2 = cStr2 & " AND FILE1_10.item = " & xbarcode.text
     If xSupp.BoundText <> "" Then cStr2 = cStr2 & " AND FILE1_10.CODE = " & MyParn(xSupp.BoundText)
@@ -2426,7 +2426,7 @@ temptable.Open "temp", contemp, adOpenStatic, adLockOptimistic, adCmdTable
     If IsDate(XDATEDEM1.text) Then cStr2 = cStr2 & " AND DATE  >= " & DateSq(XDATEDEM1.text)
     If IsDate(XDATEDEM2.text) Then cStr2 = cStr2 & " AND DATE  <= " & DateSq(XDATEDEM2.text)
     
-    If XDESCA.text <> "" Then cStr2 = cStr2 & " AND file1_10.DESCA LIKE ('%" & XDESCA.text & "%')   "
+    If xDescA.text <> "" Then cStr2 = cStr2 & " AND file1_10.DESCA LIKE ('%" & xDescA.text & "%')   "
     cStr1 = cStr1 & cStr2
     sourcetable.Open cStr1, con, adOpenStatic, adLockReadOnly, adCmdText
 
@@ -2436,10 +2436,10 @@ temptable.Open "temp", contemp, adOpenStatic, adLockOptimistic, adCmdTable
         temptable!str11 = !MODEL
         temptable!str15 = !FACTDESCA
         temptable!str16 = !MOSM
-        temptable!str1 = !modelfact0
+        temptable!str1 = !MODELFACT0
         temptable!str2 = !DESCA
         
-        temptable!str12 = Trim(!scal)
+        temptable!str12 = Trim(!SCAL)
         temptable!str13 = Trim(!color)
         temptable!val12 = !C_SCAL
         
@@ -2463,7 +2463,7 @@ temptable.Open "temp", contemp, adOpenStatic, adLockOptimistic, adCmdTable
 
 If Check3.Value <> 0 And xStore.BoundText = "" Then
     cStr1 = "SELECT model_dem.STORE , FILE0_40.DESCA AS STORENAME , model_dem.ITEM , model_dem.QUANT , FILE1_10.DESCA , FILE1_10.COLOR , FILE1_10.SCAL , FILE1_10.C_SCAL , FILE1_10.MOSM , FILE1_10.MODELFACT0 , FILE1_10.MODEL , FILE1_10.COST , FILE1_10.PRICE , FACT.DESCA AS FACTDESCA FROM model_dem INNER JOIN FILE1_10 ON model_dem.ITEM = FILE1_10.ITEM INNER JOIN FACT ON FACT.CODE = FILE1_10.FACT INNER JOIN FILE0_40 ON FILE0_40.CODE = model_dem.STORE WHERE FILE1_10.MODELNO IS NOT NULL "
-    If xMosm.BoundText <> "" Then cStr2 = cStr2 & " AND FILE1_10.MOSM = " & MyParn(xMosm.BoundText)
+    If XMOSM.BoundText <> "" Then cStr2 = cStr2 & " AND FILE1_10.MOSM = " & MyParn(XMOSM.BoundText)
     If xModelFact.text <> "" Then cStr2 = cStr2 & " AND FILE1_10.MODELFACT0 = " & MyParn(xModelFact.text)
     If xbarcode.text <> "" Then cStr2 = cStr2 & " AND FILE1_10.item = " & xbarcode.text
     If xSupp.BoundText <> "" Then cStr2 = cStr2 & " AND FILE1_10.CODE = " & MyParn(xSupp.BoundText)
@@ -2474,7 +2474,7 @@ If Check3.Value <> 0 And xStore.BoundText = "" Then
     If IsDate(XDATEDEM1.text) Then cStr2 = cStr2 & " AND DATE  >= " & DateSq(XDATEDEM1.text)
     If IsDate(XDATEDEM2.text) Then cStr2 = cStr2 & " AND DATE  <= " & DateSq(XDATEDEM2.text)
     
-    If XDESCA.text <> "" Then cStr2 = cStr2 & " AND file1_10.DESCA LIKE ('%" & XDESCA.text & "%')   "
+    If xDescA.text <> "" Then cStr2 = cStr2 & " AND file1_10.DESCA LIKE ('%" & xDescA.text & "%')   "
     cStr1 = cStr1 & cStr2
     sourcetable.Close
     
@@ -2488,10 +2488,10 @@ If Check3.Value <> 0 And xStore.BoundText = "" Then
         temptable!str11 = !MODEL
         temptable!str15 = !FACTDESCA
         temptable!str16 = !MOSM
-        temptable!str1 = !modelfact0
+        temptable!str1 = !MODELFACT0
         temptable!str2 = !DESCA
         
-        temptable!str12 = Trim(!scal)
+        temptable!str12 = Trim(!SCAL)
         temptable!str13 = Trim(!color)
         temptable!val12 = !C_SCAL
         
@@ -2540,12 +2540,12 @@ If XALLNEW.Value <> 0 Then con.Execute " UPDATE model_dem SET ISNEW = 1 "
 SendOrder
 Inform " „  —ÕÌ· «·ÿ·»Ì… ··≈œ«—…"
 Exit Sub
-myerror:
+myError:
 MsgBox Err.Description
 Err.Clear
 End Sub
 Function openConFACT(ByRef pCon As ADODB.Connection, Optional ByVal pString As String = "") As String
-On Error GoTo myerror
+On Error GoTo myError
 Dim cString As String
 If pString = "" Then cString = strConfact Else cString = pString
 If pCon.State = adStateOpen Then pCon.Close
@@ -2553,7 +2553,7 @@ pCon.CursorLocation = adUseClient
 pCon.Open cString
 openConFACT = "ok"
 Exit Function
-myerror:
+myError:
 openConFACT = Err.Description
 Err.Clear
 End Function
@@ -2577,7 +2577,7 @@ Private Function SendOrder() As Long
 'On Error GoTo myerror
 Dim cFile As String
 cString = "SELECT * FROM model_dem WHERE ISNEW = 1 "
-Dim loctable As New ADODB.Recordset
+Dim loctable As New ADODB.RecordSet
 loctable.Open cString, con, adOpenStatic, adLockReadOnly, adCmdText
 Dim aInsert As Variant
 prog1.Value = 0
@@ -2608,7 +2608,7 @@ Loop
 lastsub:
 prog1.Visible = False
 Exit Function
-myerror:
+myError:
 MsgBox Err.Description
 Err.Clear
 sendItems = -1
@@ -2616,11 +2616,11 @@ GoTo lastsub
 End Function
 
 Private Sub LoadPhoto(sModelNo As String)
-On Error GoTo myerror
-imgx1.Images.Clear
-imgx1.Import.FromFile retFile(sModelNo)
+On Error GoTo myError
+ImgX1.Images.Clear
+ImgX1.Import.FromFile retFile(sModelNo)
 Exit Sub
-myerror:
+myError:
 Err.Clear
 End Sub
 
@@ -2628,17 +2628,17 @@ End Sub
 Private Sub myLoadPicture(pModel As String)
 On Error Resume Next
     If Not lServerPict Then Exit Sub
-    imgx1.Images.Clear
+    ImgX1.Images.Clear
     If pModel = "" Then Exit Sub
     If conPict Is Nothing Then Exit Sub
-    Dim loctable As Recordset
+    Dim loctable As RecordSet
     Dim bytes() As Byte, nSize As Long
-    imgx1.Images.Clear
+    ImgX1.Images.Clear
     Set loctable = myRecordSet("select PICT,size from PICT where MODELNO = " & MyParn(pModel), conPict)
     If loctable.EOF Then Exit Sub
     nSize = CLng(loctable("size").Value)
     bytes = loctable("PICT").GetChunk(nSize)
-    imgx1.Import.FromMemoryFile bytes, ixmfJPG
+    ImgX1.Import.FromMemoryFile bytes, ixmfJPG
     Err.Clear
 End Sub
 Private Sub grid1_AfterRowColChange(ByVal OldRow As Long, ByVal OldCol As Long, ByVal NewRow As Long, ByVal NewCol As Long)
@@ -2665,21 +2665,21 @@ Private Sub del_dem_Click()
     Inform "  „ Õ–› ··›—Ê⁄ ⁄œœ " & nRec
 End Sub
 Sub PrintScalDem()
-Dim temptable As ADODB.Recordset
-Dim sourcetable As ADODB.Recordset, nBalance As Single
-Dim ModelsTable As New ADODB.Recordset
-Dim ScalTable As New ADODB.Recordset
-Dim BranchTable As New ADODB.Recordset
+Dim temptable As ADODB.RecordSet
+Dim sourcetable As ADODB.RecordSet, nBalance As Single
+Dim ModelsTable As New ADODB.RecordSet
+Dim ScalTable As New ADODB.RecordSet
+Dim BranchTable As New ADODB.RecordSet
 
 Dim aHeader(2)
 contemp.Execute "delete * from temp"
-Set temptable = New ADODB.Recordset
+Set temptable = New ADODB.RecordSet
 temptable.Open "temp", contemp, adOpenKeyset, adLockOptimistic, adCmdTable
 
     cStr1 = "  SELECT  FILE1_10.MODEL, FILE1_10.desca  , FILE1_10.COLOR , FILE1_10.MODELFACT0 " & _
                   " FROM  FILE1_10 INNER JOIN MODEL_DEM ON FILE1_10.ITEM = MODEL_DEM.ITEM WHERE FILE1_10.MODEL IS NOT NULL  "
     If xStore.BoundText <> "" Then cStr1 = cStr1 & " AND MODEL_DEM.STORE = " & MyParn(xStore.BoundText)
-    If xMosm.BoundText <> "" Then cStr1 = cStr1 & " AND FILE1_10.MOSM = " & MyParn(xMosm.BoundText)
+    If XMOSM.BoundText <> "" Then cStr1 = cStr1 & " AND FILE1_10.MOSM = " & MyParn(XMOSM.BoundText)
     If XISNOMOSM2.Value = 0 Then
         If XMOSM2.text <> "" Then cStr1 = cStr1 & " AND FILE1_10.MOSM2 = " & MyParn(XMOSM2.text)
     Else
@@ -2694,11 +2694,11 @@ temptable.Open "temp", contemp, adOpenKeyset, adLockOptimistic, adCmdTable
     If Check2.Value <> 0 Then cStr1 = cStr1 & " AND [ISPRINTED] = 0  "
     If IsDate(XDATEDEM1.text) Then cStr1 = cStr1 & " AND DATE  >= " & DateSq(XDATEDEM1.text)
     If IsDate(XDATEDEM2.text) Then cStr1 = cStr1 & " AND DATE  <= " & DateSq(XDATEDEM2.text)
-    If XDESCA.text <> "" Then cStr1 = cStr1 & " AND file1_10.DESCA LIKE ('%" & XDESCA.text & "%')   "
+    If xDescA.text <> "" Then cStr1 = cStr1 & " AND file1_10.DESCA LIKE ('%" & xDescA.text & "%')   "
     cStr1 = cStr1 & " GROUP BY FILE1_10.MODEL, FILE1_10.desca  , FILE1_10.COLOR , FILE1_10.MODELFACT0  "
     ModelsTable.Open cStr1, con, adOpenStatic, adLockReadOnly, adCmdText
     Dim cModel As String, cColor As String, cModelFact As String
-    Dim TModelDem As New Recordset
+    Dim TModelDem As New RecordSet
     Dim nTotal As Double
     Dim nCol As Double
     If ModelsTable.RecordCount = 0 Then
@@ -2709,13 +2709,13 @@ temptable.Open "temp", contemp, adOpenKeyset, adLockOptimistic, adCmdTable
     prog1.Max = ModelsTable.RecordCount
     prog1.Min = 0
     prog1.Visible = True
-    I = 0
+    i = 0
     ModelsTable.MoveFirst
     Do While Not ModelsTable.EOF
-        I = I + 1
-        prog1.Value = I
+        i = i + 1
+        prog1.Value = i
         cModel = ModelsTable!MODEL
-        cModelFact = ModelsTable!modelfact0
+        cModelFact = ModelsTable!MODELFACT0
         cColor = ModelsTable!color
     
         If ScalTable.State = adStateOpen Then ScalTable.Close
@@ -2739,8 +2739,8 @@ temptable.Open "temp", contemp, adOpenKeyset, adLockOptimistic, adCmdTable
                 nCol = 2
                 Do While Not ScalTable.EOF
                     nCol = nCol + 1
-                    .Fields("STR" & nCol) = ScalTable!scal
-                    nItem = Val(GetDesca("SELECT ITEM FROM FILE1_10 WHERE MODEL = " & MyParn(cModel) & " AND COLOR = " & MyParn(cColor) & " AND SCAL = " & MyParn(ScalTable!scal), con) & "")
+                    .Fields("STR" & nCol) = ScalTable!SCAL
+                    nItem = Val(GetDesca("SELECT ITEM FROM FILE1_10 WHERE MODEL = " & MyParn(cModel) & " AND COLOR = " & MyParn(cColor) & " AND SCAL = " & MyParn(ScalTable!SCAL), con) & "")
                     If nItem > 0 Then
                         .Fields("VAL" & nCol) = Val(GetDesca("SELECT QUANT FROM MODEL_DEM WHERE ITEM = " & nItem & " AND STORE = " & MyParn(BranchTable!STORE), con) & "")
                         nTotal = nTotal + Val((.Fields("VAL" & nCol)) & "")
@@ -2748,7 +2748,7 @@ temptable.Open "temp", contemp, adOpenKeyset, adLockOptimistic, adCmdTable
                     ScalTable.MoveNext
                 Loop
                 !str16 = BranchTable!DESCA
-                !VAL13 = nTotal
+                !val13 = nTotal
                 .Update
                 BranchTable.MoveNext
             Loop

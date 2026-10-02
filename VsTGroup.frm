@@ -834,7 +834,7 @@ Attribute VB_Exposed = False
 Dim oSearch As New Search3
 Public cMyModel As String
 Dim con As New ADODB.Connection
-Dim StoreTable As New ADODB.Recordset
+Dim StoreTable As New ADODB.RecordSet
 
 Private Sub cmd_excel_Click()
     ToFileExel2 grid1, , , , , 1.1, , , , , , Me
@@ -847,21 +847,21 @@ Private Sub CMD_PRINT_Click()
     cHead2 = " Õ Ï   «—ÌŒ " & Format(xDate1.text, "DD-MM-YYYY")
     
     Load PrintGrd
-    PrintGrd.DOPRINT Me.grid1, 0.75, -2, cHead1, cHead2, , False, True, 6
+    PrintGrd.doprint Me.grid1, 0.75, -2, cHead1, cHead2, , False, True, 6
     PrintGrd.Show 1
 End Sub
 Private Sub CmdExit_Click()
     Unload Me
 End Sub
-Private Sub CmdGo_Click()
+Private Sub cmdgo_Click()
     myload
 End Sub
 Private Sub Form_Load()
-    openCon con
+    OpenCon con
     StoreTable.Open "SELECT * FROM STORE_BR ORDER BY CODE ", con, adOpenStatic, adLockReadOnly, adCmdText
     xDate1.text = Format(Date, "dd-mm-yyyy")
     
-    DATA7.ConnectionString = strCon
+    DATA7.connectionString = strCon
     DATA7.RecordSource = "Select Code,DescA From STORE_BR ORDER BY CODE "
     Set xStore.RowSource = DATA7
     xStore.ListField = "Desca"
@@ -873,28 +873,28 @@ Private Sub Form_Load()
         Frame2.Visible = False
     End If
     
-    DATA2.ConnectionString = strCon
+    DATA2.connectionString = strCon
     DATA2.RecordSource = "Select Code,DescA From File4_10 order by Desca"
     Set xSupp.RowSource = DATA2
     xSupp.ListField = "Desca"
     xSupp.BoundColumn = "Code"
     
     
-    DATA4.ConnectionString = strCon
+    DATA4.connectionString = strCon
     DATA4.RecordSource = "Select mosm ,descA From mosm ORDER BY date DESC "
-    Set xMosm.RowSource = DATA4
-    xMosm.ListField = "Desca"
-    xMosm.BoundColumn = "MOSM"
-    xMosm.BoundText = cPMosm
+    Set XMOSM.RowSource = DATA4
+    XMOSM.ListField = "Desca"
+    XMOSM.BoundColumn = "MOSM"
+    XMOSM.BoundText = cPMosm
     
-    DATA5.ConnectionString = strCon
-    DATA5.RecordSource = "Select code ,desca From FILE1_10SC ORDER BY code "
-    Set XSECTION.RowSource = DATA5
+    data5.connectionString = strCon
+    data5.RecordSource = "Select code ,desca From FILE1_10SC ORDER BY code "
+    Set XSECTION.RowSource = data5
     XSECTION.ListField = "Desca"
     XSECTION.BoundColumn = "Code"
     
     Set grid1.DataSource = DATA6
-    DATA6.ConnectionString = strCon
+    DATA6.connectionString = strCon
     
     grid1.Rows = 1
     grid1.Cols = 9
@@ -904,7 +904,7 @@ Private Sub myload()
     Dim cWhere As String
     Dim cStr2 As String
     
-    If xMosm.BoundText <> "" Then cStr2 = cStr2 & " AND FILE1_10.MOSM = " & MyParn(xMosm.BoundText)
+    If XMOSM.BoundText <> "" Then cStr2 = cStr2 & " AND FILE1_10.MOSM = " & MyParn(XMOSM.BoundText)
     If xSupp.BoundText <> "" Then cStr2 = cStr2 & " AND FILE1_10.CODE = " & MyParn(xSupp.BoundText)
     If XSECTION.BoundText <> "" Then cStr2 = cStr2 & " AND FILE1_10.[SECTION] = " & Val(XSECTION.BoundText)
     If xStore.BoundText <> "" Then cStr2 = cStr2 & " AND store = " & MyParn(xStore.BoundText)
@@ -949,7 +949,7 @@ Private Sub myload()
         cField8 = " SUM ( case when (type = '6' )                THEN (([OUT]) * FILE1_11_ALL.COST )  else 0 end ) AS VAL_SAL , "
     End If
     
-    If xMosm.BoundText <> "" Then cField4 = cField4 & " AND FILE1_10_2.MOSM = " & MyParn(xMosm.BoundText)
+    If XMOSM.BoundText <> "" Then cField4 = cField4 & " AND FILE1_10_2.MOSM = " & MyParn(XMOSM.BoundText)
     If xSupp.BoundText <> "" Then cField4 = cField4 & " AND FILE1_10_2.CODE = " & MyParn(xSupp.BoundText)
     If XSECTION.BoundText <> "" Then cField4 = cField4 & " AND FILE1_10_2.[SECTION] = " & Val(XSECTION.BoundText)
     cField4 = cField4 & " )   AS CountSALES   , "
@@ -1060,14 +1060,14 @@ Private Sub grid1_DblClick()
 With grid1
     If cBranch = "00" Then
         VsTItem.xGroup.BoundText = .TextMatrix(.Row, 0)
-        VsTItem.xMosm.BoundText = xMosm.BoundText
+        VsTItem.XMOSM.BoundText = XMOSM.BoundText
         VsTItem.xDate1.text = xDate1.text
         'VsTItem.XSEC.Text = XSEC.Text
         VsTItem.xSupp.BoundText = xSupp.BoundText
         VsTItem.Show
     Else
         VsTitemShop.xGroup.BoundText = .TextMatrix(.Row, 0)
-        VsTitemShop.xMosm.BoundText = xMosm.BoundText
+        VsTitemShop.XMOSM.BoundText = XMOSM.BoundText
         VsTitemShop.xDate1.text = xDate1.text
         VsTitemShop.xSupp.BoundText = xSupp.BoundText
         VsTitemShop.xStore.BoundText = xStore.BoundText

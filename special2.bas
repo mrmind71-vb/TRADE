@@ -1,9 +1,9 @@
 Attribute VB_Name = "special2"
-Public rsBranch As ADODB.Recordset
-Public rsMall As ADODB.Recordset
-Public rsBranches As ADODB.Recordset
-Public rsUser As ADODB.Recordset
-Public rsAddress As ADODB.Recordset
+Public rsBranch As ADODB.RecordSet
+Public rsMall As ADODB.RecordSet
+Public rsBranches As ADODB.RecordSet
+Public rsUser As ADODB.RecordSet
+Public rsAddress As ADODB.RecordSet
 Public Function openConDoc(ByRef con As ADODB.Connection, Optional pCatalog As String = "TRADE_DOCS") As String
 Dim cServerName As String
 Dim cUserId As String
@@ -19,7 +19,7 @@ cString = "provider=SQLOLEDB;data source=" & cServerName & ";initial " _
                 ";Encrypt=True" & _
                 ";TrustServerCertificate=False" & _
                 ";Timeout=10"
-openConDoc = openCon(con, cString)
+openConDoc = OpenCon(con, cString)
 End Function
 Public Function ConDocString(Optional pCatalog As String = "TRADE_DOCS", Optional pTimeOut As Integer = 3) As String
 Dim cServerName As String
@@ -147,12 +147,17 @@ End Sub
 Sub CLIENTLOOKUP(oForm As Form, oSearch As Form, Optional cFilter As String = "", Optional bFilter As Boolean = False, Optional sAddRow As String = "")
 Dim Generalarray(5)
 Dim listarray(0, 5)
-Dim GrdArray(2, 1)
+Dim GrdArray(3, 1)
 Dim cWhere As String
 Set Generalarray(0) = oForm
 
 '                       0                   1                   2                   3                   4               5
-cString = "SELECT FILE3_10.CODE, FILE3_10.desca, FILE3_50.DESCA FROM  FILE3_10 LEFT JOIN FILE3_50 ON FILE3_10.[GROUP] = FILE3_50.CODE"
+cString = "SELECT FILE3_10.CODE," & _
+          "FILE3_10.desca," & _
+          "FILE3_50.DESCA, " & _
+          "FILE3_10.MAN " & _
+          " FROM  FILE3_10 " & _
+          " LEFT JOIN FILE3_50 ON FILE3_10.[GROUP] = FILE3_50.CODE"
 If cFilter <> "" Then cWhere = cWhere & Tr(cWhere) & cFilter
 If cWhere <> "" Then cString = cString & " WHERE " & cWhere
 Generalarray(1) = cString
@@ -173,6 +178,9 @@ GrdArray(1, 1) = 4000
 
 GrdArray(2, 0) = "«·„Ã„Ê⁄…"
 GrdArray(2, 1) = 2000
+
+GrdArray(3, 0) = "«·„‰œÊ»"
+GrdArray(3, 1) = 0
 
 searchArray = Array(Generalarray, listarray, GrdArray)
 If bFilter Then
@@ -571,7 +579,7 @@ oSearch.nMax_records = 1000
 oSearch.Caption = "≈” ⁄·«„ «·Õ”«»« "
 oSearch.Show 1
 End Sub
-Public Function accountRs(con As ADODB.Connection, Optional id_image As String, Optional id_cash As String) As ADODB.Recordset
+Public Function accountRs(con As ADODB.Connection, Optional id_image As String, Optional id_cash As String) As ADODB.RecordSet
 Dim aPrm As Variant
 If id_image <> "" Then
     aPrm = AddFlag(aPrm, "id_image", id_image)
@@ -586,7 +594,7 @@ Dim TextLine As String, cText As String, aLocal, nFoundTimes As Integer
 Dim fs As New FileSystemObject
 If cFile = "" Then cFile = cPathConf & "\CONF.TXT"
 Dim FileNumber
-On Error GoTo myerror
+On Error GoTo myError
 If fs.FileExists(cFile) Then
     FileNumber = FreeFile()
     Open cFile For Input As #FileNumber   ' Open file.
@@ -623,7 +631,7 @@ End If
 Close #FileNumber
 addText = True
 Exit Function
-myerror:
+myError:
 Err.Clear
 End Function
 Function isNum(pNumber As Variant) As Boolean
@@ -645,7 +653,7 @@ For i = pMonth To 1 Step -1
 Next
 End Function
 Public Function get_Id(con As ADODB.Connection) As String
-Dim loctable As New ADODB.Recordset
+Dim loctable As New ADODB.RecordSet
 Set loctable = cmd("select SCOPE_IDENTITY() AS ID", con).Execute
 If Not loctable.EOF Then
     get_Id = loctable!ID & ""
@@ -654,7 +662,7 @@ End If
 loctable.Close
 Set loctable = Nothing
 End Function
-Sub ItemsLook(oForm As Form, oSearch As Search_abd, Optional pOrderNo As String = "", Optional pOffer As String = "", Optional bUnLoad As Boolean = False)
+Sub ItemsLook(oForm As Form, oSearch As Search_abd, Optional pOrderNo As String = "", Optional pOffer As String = "", Optional bUnload As Boolean = False)
 Dim Generalarray(5)
 Dim listarray(3, 5)
 Dim GrdArray(9, 1)
@@ -730,17 +738,17 @@ GrdArray(9, 0) = " ”⁄— «Êﬂ«“ÊÌ‰"
 GrdArray(9, 1) = 1000
 
 searchArray = Array(Generalarray, listarray, GrdArray)
-oSearch.bUnLoad = bUnLoad
+oSearch.bUnload = bUnload
 oSearch.bNoRef = True
 oSearch.sCaption = "≈” ⁄·«„ „ÊœÌ·«  "
 oSearch.Show 1
 End Sub
-Function IncData(sTable As String, sField As String, con As ADODB.Connection, Optional pwhere As String = "", Optional pDefault As String) As String
-Dim loctable As New ADODB.Recordset
+Function IncData(sTable As String, sField As String, con As ADODB.Connection, Optional pWhere As String = "", Optional pDefault As String) As String
+Dim loctable As New ADODB.RecordSet
 Dim cString As String
 cString = "Select Max(" & sField & ") as Maxof " & _
        " FROM " & sTable
-If pwhere <> "" Then cString = cString & " where " & pwhere
+If pWhere <> "" Then cString = cString & " where " & pWhere
 Set loctable = cmd(cString, con).Execute
 If Not (loctable.EOF) Then
     If IsNull(loctable!maxOf) Then
@@ -753,27 +761,27 @@ loctable.Close
 Set loctable = Nothing
 End Function
 Public Function IncrementString(ByVal currentStr As String) As String
-    Dim Length As Integer
+    Dim length As Integer
     Dim numericPart As String
     Dim alphaPart As String
     Dim maxNumeric As Long
     Dim currentNum As Double
     Dim i As Integer
-    Length = Len(currentStr)
+    length = Len(currentStr)
     If IsNumeric(currentStr) Then
-        Length = Len(currentStr)
+        length = Len(currentStr)
         currentNum = Val(currentStr) + 1
         
         ' ??? ????? ????? ???? ?????? (??? 999)? ???? ?? A01
-        If Len(CStr(currentNum)) > Length Then
-            If Length = 1 Then
+        If Len(CStr(currentNum)) > length Then
+            If length = 1 Then
                 IncrementString = "A"
             Else
-                IncrementString = "A" & Format(1, String(Length - 1, "0"))
+                IncrementString = "A" & Format(1, String(length - 1, "0"))
             End If
         Else
             ' ????? ????? ?? ?????? ??? ??????? (Replicate Zeros)
-            IncrementString = Format(currentNum, String(Length, "0"))
+            IncrementString = Format(currentNum, String(length, "0"))
         End If
         Exit Function
     End If
@@ -781,13 +789,13 @@ Public Function IncrementString(ByVal currentStr As String) As String
     
     
     ' ??? ????? ????? ?? ?????? ?? ??????
-    i = Length
+    i = length
     Do While i > 0 And IsNumeric(Mid(currentStr, i, 1))
         i = i - 1
     Loop
     
     alphaPart = Left(currentStr, i)
-    numericPart = Right(currentStr, Length - i)
+    numericPart = Right(currentStr, length - i)
     maxNumeric = (10 ^ Len(numericPart)) - 1
     
     ' ?????? ??????: ??? ??? ????? ?????? ??? ?? ???? ??????
@@ -799,14 +807,14 @@ Public Function IncrementString(ByVal currentStr As String) As String
     Else
         ' ??? ??? ?????? ????? ??? (??? 999) ????? ??? A01
         If alphaPart = "" Then
-            IncrementString = "A" & Right(String(Length - 1, "0") & "1", Length - 1)
+            IncrementString = "A" & Right(String(length - 1, "0") & "1", length - 1)
         Else
             ' ????? ????? ????? (A -> B ?? Z -> AA)
             alphaPart = IncrementAlpha(alphaPart)
-            If Len(alphaPart) > Length Then
+            If Len(alphaPart) > length Then
                 IncrementString = Left(currentStr, i)
             Else
-                IncrementString = Left(alphaPart & Right(String(Length, "0") & "1", Length - Len(alphaPart)), Length)
+                IncrementString = Left(alphaPart & Right(String(length, "0") & "1", length - Len(alphaPart)), length)
             End If
         End If
     End If
@@ -1010,7 +1018,7 @@ Public Function IsDgt(ByVal strData As String) As Boolean
     ' The String(Len(strData), "#") creates a pattern like "####"
     IsDgt = (Trim(strData) Like String(Len(Trim(strData)), "#"))
 End Function
-Sub SaveImageToRs(pPic As Picture, rs As ADODB.Recordset, pColName As String)
+Sub SaveImageToRs(pPic As Picture, rs As ADODB.RecordSet, pColName As String)
 Dim pb As PropertyBag
 Set pb = New PropertyBag
 pb.WriteProperty "MyImage", pPic, 100
@@ -1019,9 +1027,9 @@ rs.Update
 Set pb = Nothing
 End Sub
 Public Function SaveImageToDB(ByVal FilePath As String, ByVal ImgX1 As Variant, Optional ByVal TableName As String, Optional ByVal FieldName As String, Optional ByVal IDNAME As String, Optional ByVal IDValue As Long, Optional con As ADODB.Connection) As Boolean
-    Dim rs As New ADODB.Recordset
+    Dim rs As New ADODB.RecordSet
     Dim mstream As New ADODB.Stream
-    Dim sql As String
+    Dim Sql As String
     
     ' 1. Open the stream and load the image file
     Dim bytes() As Byte
@@ -1033,8 +1041,8 @@ Public Function SaveImageToDB(ByVal FilePath As String, ByVal ImgX1 As Variant, 
         ImgX1.Export.ToMemoryFile bytes, ixmfJPG
     End If
     ' 2. Fetch the record you want to update
-    sql = "SELECT " & FieldName & " FROM " & TableName & " WHERE " & IDNAME & " = " & IDValue
-    rs.Open sql, con, adOpenStatic, adLockOptimistic
+    Sql = "SELECT " & FieldName & " FROM " & TableName & " WHERE " & IDNAME & " = " & IDValue
+    rs.Open Sql, con, adOpenStatic, adLockOptimistic
     
     If Not rs.EOF Then
         ' 3. Assign the stream's contents to the varbinary field
@@ -1054,6 +1062,46 @@ Public Function SaveImageToDB(ByVal FilePath As String, ByVal ImgX1 As Variant, 
     Set mstream = Nothing
     Set rs = Nothing
 End Function
+Sub ColorLook(oForm As Form, oSearch As Form, Optional cFilter As String = "", Optional bFilter As Boolean = False, Optional sAddRow As String = "")
+Dim Generalarray(5)
+Dim listarray(0, 5)
+Dim GrdArray(1, 1)
+Dim cWhere As String
+Set Generalarray(0) = oForm
+
+Generalarray(1) = "SELECT [C_COLOR]," & _
+                   "[COLOR]" & _
+                   "  FROM FILE1_10"
+
+If cFilter <> "" Then cWhere = cWhere & Tr(cWhere) & cFilter
+If cWhere <> "" Then Generalarray(1) = Generalarray(1) & " WHERE " & cWhere
+
+Generalarray(2) = "Order by C_COLOR"
+Generalarray(3) = 4500
+Generalarray(5) = True
+
+listarray(0, 0) = "COLOR"
+listarray(0, 1) = "(%%COLOR%%)"
+
+GrdArray(0, 0) = "ﬂÊœ «··Ê‰"
+GrdArray(0, 1) = 0
+
+GrdArray(1, 0) = "«··Ê‰"
+GrdArray(1, 1) = 5000
+
+searchArray = Array(Generalarray, listarray, GrdArray)
+Dim aRow As Variant
+If sAddRow <> "" Then
+    aRow = AddFlag(Empty, "text", sAddRow)
+    aRow = AddFlag(aRow, "col", 1)
+End If
+oSearch.aAddRow = aRow
+
+searchArray = Array(Generalarray, listarray, GrdArray)
+oSearch.nMax_records = 1000
+oSearch.Caption = "≈” ⁄·«„ «·«·Ê«‰"
+oSearch.Show 1
+End Sub
 
 
 

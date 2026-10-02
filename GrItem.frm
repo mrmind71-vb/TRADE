@@ -347,21 +347,21 @@ Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 Dim con As New ADODB.Connection
-Public aPublic, bedit As Boolean
+Public aPublic, bEdit As Boolean
 Dim nZeros As Integer
-Dim GrdTable As New ADODB.Recordset
+Dim GrdTable As New ADODB.RecordSet
 Dim CTABLE As String, CGROUP As String
 Private Sub myloadOLD()
 Dim cFilter As String
 GrdTable.Requery
 If Trim(xName.text) <> "" Then cFilter = MyParnAnd(xName.text, "DESCA")
-If Trim(XSECTION.BoundText) <> "" Then cFilter = " [GROUP] = " & Val(XSECTION.BoundText)
+If Trim(xSection.BoundText) <> "" Then cFilter = " [GROUP] = " & Val(xSection.BoundText)
 GrdTable.Filter = cFilter
-I = 0
+i = 0
 grid1.Rows = 1
 Do Until GrdTable.EOF
     grid1.AddItem ""
-    grid1.TextMatrix(grid1.Rows - 1, 0) = GrdTable!CODE
+    grid1.TextMatrix(grid1.Rows - 1, 0) = GrdTable!code
     grid1.TextMatrix(grid1.Rows - 1, 1) = GrdTable!DESCA & ""
     grid1.TextMatrix(grid1.Rows - 1, 2) = GrdTable!descaA & ""
     grid1.TextMatrix(grid1.Rows - 1, 3) = GrdTable!Group & ""
@@ -389,7 +389,7 @@ Set FlagFrm = Nothing
     closeCon con
 Err.Clear
 End Sub
-Private Sub grid1_AfterEdit(ByVal Row As Long, ByVal Col As Long)
+Private Sub Grid1_AfterEdit(ByVal Row As Long, ByVal Col As Long)
 With grid1
 con.BeginTrans
 If Trim(grid1.TextMatrix(Row, 0)) <> "" Then
@@ -448,10 +448,10 @@ con.Execute " UPDATE FILE1_50 SET CODE_0 = CODE WHERE CODE_0 IS NULL "
 con.Execute " UPDATE FILE1_50 SET CODE_0 = '0' + CODE WHERE LEN(CODE) = 2 "
 con.Execute " UPDATE FILE1_50 SET CODE_0 = '00' + CODE WHERE LEN(CODE) = 1 "
 
-Set DATA2.Recordset = myRecordSet("SELECT * FROM file1_10sc ORDER BY desca ", con)
-Set XSECTION.RowSource = DATA2
-XSECTION.ListField = "DESCA"
-XSECTION.BoundColumn = "CODE"
+Set data2.RecordSet = myRecordSet("SELECT * FROM file1_10sc ORDER BY desca ", con)
+Set xSection.RowSource = data2
+xSection.ListField = "DESCA"
+xSection.BoundColumn = "CODE"
 
 Set grid1.DataSource = data1
 
@@ -466,7 +466,7 @@ End Sub
 Private Sub xcountry_code_KeyPress(KeyAscii As Integer)
 If KeyAscii = 13 Then myload
 End Sub
-Private Sub Grid1_ValidateEdit(ByVal Row As Long, ByVal Col As Long, Cancel As Boolean)
+Private Sub grid1_ValidateEdit(ByVal Row As Long, ByVal Col As Long, Cancel As Boolean)
 If Col = 1 Then
     If Trim(grid1.EditText) = "" Then
         MsgBox "description required"
@@ -483,10 +483,10 @@ End Sub
 Private Sub myload()
 Dim cString As String
 cString = " SELECT FILE1_50.CODE , FILE1_50.DESCA , FILE1_50.DESCAA , FILE1_50.[GROUP] , file1_10sc.desca FROM FILE1_50 left join file1_10sc on file1_10sc.code = file1_50.[group] WHERE FILE1_50.CODE IS NOT NULL  "
-If Trim(xName.text) <> "" Then cString = cString & " AND " & MyParnAnd(xName.text, "DESCA")
-If Trim(XSECTION.BoundText) <> "" Then cString = cString & " AND  [GROUP] = " & Val(XSECTION.BoundText)
+If Trim(xName.text) <> "" Then cString = cString & " AND " & MyParnAnd(xName.text, "FILE1_50.DESCA")
+If Trim(xSection.BoundText) <> "" Then cString = cString & " AND  [GROUP] = " & Val(xSection.BoundText)
 cString = cString & " ORDER BY FILE1_50.CODE_0 "
-Set data1.Recordset = myRecordSet(cString, con)
+Set data1.RecordSet = myRecordSet(cString, con)
 grid1.AddItem ""
 FIXGRID
 XTEXT1.text = cString
@@ -499,7 +499,7 @@ With grid1
     .ColWidth(2) = 2500
     .ColWidth(3) = 2000
     .ColWidth(4) = 0
-    .ColComboList(3) = StrList("SELECT CODE , DESCA FROM FILE1_10SC ORDER BY DESCA ", con)
+    .ColComboList(3) = strList("SELECT CODE , DESCA FROM FILE1_10SC ORDER BY DESCA ", con)
     .RowHeight(0) = 1000
     .WordWrap = True
     

@@ -1007,10 +1007,10 @@ Private Sub CMD_PRINT_Click()
     If xSupp.BoundText <> "" Then cHead3 = cHead3 & " „Ê—œ " & xSupp.text
     If xGroup.BoundText <> "" Then cHead3 = cHead3 & " „Ã„Ê⁄…" & xGroup.text
 
-    If xMosm.BoundText <> "" Then cHead3 = cHead3 & " „Ê”„ " & xMosm.text
+    If XMOSM.BoundText <> "" Then cHead3 = cHead3 & " „Ê”„ " & XMOSM.text
     
     Load PrintGrd
-    PrintGrd.DOPRINT grid1, 1, , cHead1, cHead2, cHead3, , True, 9
+    PrintGrd.doprint grid1, 1, , cHead1, cHead2, cHead3, , True, 9
     PrintGrd.Show 1
 End Sub
 Private Sub CmdExit_Click()
@@ -1020,18 +1020,18 @@ End Sub
 Private Sub CmdUndo_Click()
     Unload Me
 End Sub
-Private Sub CmdGo_Click()
+Private Sub cmdgo_Click()
     myload
 End Sub
 Private Sub Form_Load()
-    openCon con
+    OpenCon con
     
     XMOSM2.AddItem " "
     XMOSM2.AddItem "S"
     XMOSM2.AddItem "W"
     XMOSM2.AddItem "M"
     
-    DATA7.ConnectionString = strCon
+    DATA7.connectionString = strCon
     DATA7.RecordSource = "Select Code,DescA From STORE_BR WHERE " & cUserStore
     Set xStore.RowSource = DATA7
     xStore.ListField = "Desca"
@@ -1043,47 +1043,47 @@ Private Sub Form_Load()
         xStore.Enabled = False
     End If
     
-    data1.ConnectionString = strCon
+    data1.connectionString = strCon
     data1.RecordSource = "Select Code,DescA From File1_10SC order by Desca"
     Set XSECTION.RowSource = data1
     XSECTION.ListField = "Desca"
     XSECTION.BoundColumn = "Code"
     
     
-    DATA2.ConnectionString = strCon
+    DATA2.connectionString = strCon
     DATA2.RecordSource = "Select Code,DescA From File4_10 order by Desca"
     Set xSupp.RowSource = DATA2
     xSupp.ListField = "Desca"
     xSupp.BoundColumn = "Code"
     
-    DATA3.ConnectionString = strCon
-    DATA3.RecordSource = "Select Code,DescA From File1_50 ORDER BY DESCA"
-    Set xGroup.RowSource = DATA3
+    data3.connectionString = strCon
+    data3.RecordSource = "Select Code,DescA From File1_50 ORDER BY DESCA"
+    Set xGroup.RowSource = data3
     xGroup.ListField = "Desca"
     xGroup.BoundColumn = "Code"
     
-    DATA4.ConnectionString = strCon
+    DATA4.connectionString = strCon
     DATA4.RecordSource = "Select mosm ,descA From mosm ORDER BY date DESC "
-    Set xMosm.RowSource = DATA4
-    xMosm.ListField = "Desca"
-    xMosm.BoundColumn = "MOSM"
+    Set XMOSM.RowSource = DATA4
+    XMOSM.ListField = "Desca"
+    XMOSM.BoundColumn = "MOSM"
 '    xMosm.BoundText = cPMosm
     
-    DATA5.ConnectionString = strCon
-    DATA5.RecordSource = "Select code ,desca From fact ORDER BY DESCA "
-    Set xFact.RowSource = DATA5
+    data5.connectionString = strCon
+    data5.RecordSource = "Select code ,desca From fact ORDER BY DESCA "
+    Set xFact.RowSource = data5
     xFact.ListField = "Desca"
     xFact.BoundColumn = "Code"
     
     Set grid1.DataSource = DATA6
-    DATA6.ConnectionString = strCon
+    DATA6.connectionString = strCon
     
     grid1.Rows = 1
     grid1.Cols = 9
     FIXGRID
 End Sub
 Private Sub myload()
-Dim I As Double
+Dim i As Double
 Dim cString  As String, cStr2 As String
 With grid1
 '                           0               1                 2                3               4                5
@@ -1098,7 +1098,7 @@ With grid1
                 " , SUM(QFILE6_20.QUANT * QFILE6_20.cost) AS t_cost " & _
                 " , SUM((QFILE6_20.TOTAL * ((100-QFILE6_20.RATE )/100))  - (QFILE6_20.QUANT * QFILE6_20.cost)) AS t_proft " & _
             " FROM  FILE1_10 INNER JOIN QFILE6_20 ON FILE1_10.ITEM = QFILE6_20.ITEM WHERE FILE1_10.MODELNO IS NOT NULL "
-    If xMosm.BoundText <> "" Then cStr2 = cStr2 & " AND FILE1_10.MOSM = " & MyParn(xMosm.BoundText)
+    If XMOSM.BoundText <> "" Then cStr2 = cStr2 & " AND FILE1_10.MOSM = " & MyParn(XMOSM.BoundText)
     If XMOSM2.text <> "" Then cStr2 = cStr2 & " AND FILE1_10.MOSM2 = " & MyParn(XMOSM2.text)
     If XSECTION.BoundText <> "" Then cStr2 = cStr2 & " AND FILE1_10.[Section] = " & Val(XSECTION.BoundText)
     If xSupp.BoundText <> "" Then cStr2 = cStr2 & " AND FILE1_10.CODE = " & MyParn(xSupp.BoundText)
@@ -1182,9 +1182,9 @@ With grid1
     Next nCol
     
     .SubtotalPosition = flexSTAbove
-    For I = 3 To .Cols - 1
-        .Subtotal flexSTSum, -1, I, "#0", vbRed, vbYellow, True, "  "
-    Next I
+    For i = 3 To .Cols - 1
+        .Subtotal flexSTSum, -1, i, "#0", vbRed, vbYellow, True, "  "
+    Next i
     For nRow = 2 To .Rows - 1
 '        .TextMatrix(nRow, 1) = ArabicDay(.TextMatrix(nRow, 0))
     Next nRow

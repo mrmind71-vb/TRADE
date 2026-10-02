@@ -1280,9 +1280,9 @@ Private Sub CMD_PRINT_Click()
     If xGroup.BoundText <> "" Then cHead3 = cHead3 & " „Ã„Ê⁄…" & xGroup.text
     If XSECTION.text <> "" Then cHead3 = cHead3 & " ﬁ”„ " & XSECTION.text
     
-    If xMosm.BoundText <> "" Then cHead3 = cHead3 & " „Ê”„ " & xMosm.text
+    If XMOSM.BoundText <> "" Then cHead3 = cHead3 & " „Ê”„ " & XMOSM.text
     
-    PrintGrdNew.DOPRINT grid1, 1, , cHead1, cHead2, cHead3, , False, 8
+    PrintGrdNew.doprint grid1, 1, , cHead1, cHead2, cHead3, , False, 8
     PrintGrdNew.Show 1
 End Sub
 Private Sub CmdExit_Click()
@@ -1292,35 +1292,35 @@ End Sub
 Private Sub CmdUndo_Click()
     Unload Me
 End Sub
-Private Sub CmdGo_Click()
+Private Sub cmdgo_Click()
 '    On Error GoTo myerror
     myload
     Exit Sub
-myerror:
+myError:
     MsgBox Err.Description
 End Sub
 Private Sub Form_Load()
-    openCon con
+    OpenCon con
     
     xmosm22.AddItem " "
     xmosm22.AddItem "S"
     xmosm22.AddItem "W"
     xmosm22.AddItem "M"
     
-    data1.ConnectionString = strCon
+    data1.connectionString = strCon
     data1.RecordSource = "SELECT * FROM FILE4_50 "
     Set xGrCust.RowSource = data1
     xGrCust.ListField = "Desca"
     xGrCust.BoundColumn = "Code"
     
     
-    data8.ConnectionString = strCon
+    data8.connectionString = strCon
     data8.RecordSource = "Select Code,DescA From File1_10SC order by Desca"
     Set XSECTION.RowSource = data8
     XSECTION.ListField = "Desca"
     XSECTION.BoundColumn = "Code"
     
-    DATA7.ConnectionString = strCon
+    DATA7.connectionString = strCon
     DATA7.RecordSource = "Select Code,DescA From STORE_BR WHERE " & cUserStore
     Set xStore.RowSource = DATA7
     xStore.ListField = "Desca"
@@ -1330,33 +1330,33 @@ Private Sub Form_Load()
         xStore.Enabled = False
     End If
     
-    DATA2.ConnectionString = strCon
+    DATA2.connectionString = strCon
     DATA2.RecordSource = "Select Code,DescA From File4_10 order by Desca"
     Set xSupp.RowSource = DATA2
     xSupp.ListField = "Desca"
     xSupp.BoundColumn = "Code"
     
-    DATA3.ConnectionString = strCon
-    DATA3.RecordSource = "Select Code,DescA From File1_50 ORDER BY DESCA"
-    Set xGroup.RowSource = DATA3
+    data3.connectionString = strCon
+    data3.RecordSource = "Select Code,DescA From File1_50 ORDER BY DESCA"
+    Set xGroup.RowSource = data3
     xGroup.ListField = "Desca"
     xGroup.BoundColumn = "Code"
     
-    DATA4.ConnectionString = strCon
+    DATA4.connectionString = strCon
     DATA4.RecordSource = "Select mosm ,descA From mosm ORDER BY date DESC "
-    Set xMosm.RowSource = DATA4
-    xMosm.ListField = "Desca"
-    xMosm.BoundColumn = "MOSM"
+    Set XMOSM.RowSource = DATA4
+    XMOSM.ListField = "Desca"
+    XMOSM.BoundColumn = "MOSM"
     
     
-    DATA5.ConnectionString = strCon
-    DATA5.RecordSource = "Select code ,desca From fact ORDER BY DESCA "
-    Set xFact.RowSource = DATA5
+    data5.connectionString = strCon
+    data5.RecordSource = "Select code ,desca From fact ORDER BY DESCA "
+    Set xFact.RowSource = data5
     xFact.ListField = "Desca"
     xFact.BoundColumn = "Code"
     
     Set grid1.DataSource = DATA6
-    DATA6.ConnectionString = strCon
+    DATA6.connectionString = strCon
     
     
     grid1.Rows = 2
@@ -1364,7 +1364,7 @@ Private Sub Form_Load()
     FIXGRID
 End Sub
 Private Sub myload()
-Dim I As Double
+Dim i As Double
 Dim cString  As String, cStr2 As String
 With grid1
 '                           0               1                 2                3               4                5
@@ -1382,7 +1382,7 @@ With grid1
         If XMOSM2.text <> "" Then cStr2 = cStr2 & " AND ( SUBSTRING(FILE1_10.MOSM ,1,1) = 'W' OR SUBSTRING(FILE1_10.MOSM ,1,1) = 'M') "
     End If
     If xmosm22.text <> "" Then cStr2 = cStr2 & " AND FILE1_10.MOSM2 = " & MyParn(xmosm22.text)
-    If xMosm.BoundText <> "" Then cStr2 = cStr2 & " AND FILE1_10.MOSM = " & MyParn(xMosm.BoundText)
+    If XMOSM.BoundText <> "" Then cStr2 = cStr2 & " AND FILE1_10.MOSM = " & MyParn(XMOSM.BoundText)
     If xSupp.BoundText <> "" Then cStr2 = cStr2 & " AND FILE1_10.CODE = " & MyParn(xSupp.BoundText)
     If xGrCust.BoundText <> "" Then cStr2 = cStr2 & " AND FILE4_10.[group] = " & MyParn(xGrCust.BoundText)
     If xGroup.BoundText <> "" Then cStr2 = cStr2 & " AND FILE1_10.[GROUP] = " & MyParn(xGroup.BoundText)
@@ -1450,9 +1450,9 @@ With grid1
         Next nRow
     Next nCol
     .SubtotalPosition = flexSTBelow
-    For I = 2 To .Cols - 1
-        .Subtotal flexSTSum, -1, I, "#0", vbRed, vbYellow, True, "  "
-    Next I
+    For i = 2 To .Cols - 1
+        .Subtotal flexSTSum, -1, i, "#0", vbRed, vbYellow, True, "  "
+    Next i
     For nRow = 1 To .Rows - 1
         If .IsSubtotal(nRow) Then
             nRate = 0

@@ -210,7 +210,7 @@ Begin VB.Form VsTInpit_Tab
          EndProperty
          CheckBox        =   -1  'True
          DateIsNull      =   -1  'True
-         Format          =   445317121
+         Format          =   442433537
          CurrentDate     =   43097
       End
       Begin MSComCtl2.DTPicker xdate2 
@@ -234,7 +234,7 @@ Begin VB.Form VsTInpit_Tab
          EndProperty
          CheckBox        =   -1  'True
          DateIsNull      =   -1  'True
-         Format          =   445317121
+         Format          =   442433537
          CurrentDate     =   43097
       End
       Begin MSDataListLib.DataCombo xage 
@@ -2658,13 +2658,13 @@ Private Sub cmdExel_Click()
         Case 1
             ToFileExel2 grid1, , , , , 1.1, , , , , , Me
         Case 2
-            ToFileExel2 GRID2, , , , , 1.1, , , , , , Me
+            ToFileExel2 grid2, , , , , 1.1, , , , , , Me
         Case 3
-            ToFileExel2 GRID3, , , , , 1.1, , , , , , Me
+            ToFileExel2 grid3, , , , , 1.1, , , , , , Me
         Case 4
-            ToFileExel2 GRID4, , , , , 1.1, , , , , , Me
+            ToFileExel2 grid4, , , , , 1.1, , , , , , Me
         Case 5
-            ToFileExel2 GRID5, , , , , 1.1, , , , , , Me
+            ToFileExel2 grid5, , , , , 1.1, , , , , , Me
         Case 6
             ToFileExel2 grid6, , , , , 1.1, , , , , , Me
         Case 7
@@ -2678,7 +2678,7 @@ End Sub
 Private Sub CmdUndo_Click()
     Unload Me
 End Sub
-Private Sub CmdGo_Click()
+Private Sub cmdgo_Click()
     
     Select Case SSTab1.Tab
         Case 0
@@ -2721,12 +2721,12 @@ Private Sub cmdPrint_Click()
     If xSupp.MatchedWithList Then cHead3 = cHead3 & " „Ê—œ " & xSupp.text
     If xGroup.MatchedWithList Then cHead3 = cHead3 & " „Ã„Ê⁄…" & xGroup.text
     If XSECTION.text <> "" Then cHead3 = cHead3 & " ﬁ”„ " & XSECTION.text
-    If xMosm.MatchedWithList Then cHead3 = cHead3 & " „Ê”„ " & xMosm.text
-    PrintGrdNew.DOPRINT grid1, 0.8, -2, cHead1, cHead2, , , , False, 9
+    If XMOSM.MatchedWithList Then cHead3 = cHead3 & " „Ê”„ " & XMOSM.text
+    PrintGrdNew.doprint grid1, 0.8, -2, cHead1, cHead2, , , , False, 9
     PrintGrdNew.Show 1
 End Sub
 Private Sub Form_Load()
-    openCon con
+    OpenCon con
     
     textquery.Visible = bSupermode And lSupperVisor
     Check1.Visible = bSupermode And lSupperVisor
@@ -2736,17 +2736,17 @@ Private Sub Form_Load()
     xmosm20.AddItem "W"
     xmosm20.AddItem "M"
     
-    Set data8.Recordset = myRecordSet("Select Code,DescA From File0_82  order by Desca", con)
+    Set data8.RecordSet = myRecordSet("Select Code,DescA From File0_82  order by Desca", con)
     Set xage.RowSource = data8
     xage.ListField = "Desca"
     xage.BoundColumn = "Code"
     
-    Set DATA6.Recordset = myRecordSet("Select Code,DescA From File0_81  order by Desca", con)
+    Set DATA6.RecordSet = myRecordSet("Select Code,DescA From File0_81  order by Desca", con)
     Set xsex.RowSource = DATA6
     xsex.ListField = "Desca"
     xsex.BoundColumn = "Code"
     
-    Set DATA7.Recordset = myRecordSet("Select Code,DescA From STORE_ALL WHERE " & cUserStore, con)
+    Set DATA7.RecordSet = myRecordSet("Select Code,DescA From STORE_ALL WHERE " & cUserStore, con)
     Set xStore.RowSource = DATA7
     xStore.ListField = "Desca"
     xStore.BoundColumn = "Code"
@@ -2755,48 +2755,48 @@ Private Sub Form_Load()
         xStore.Enabled = False
     End If
     
-    Set data1.Recordset = myRecordSet("Select Code,DescA From File1_10SC ORDER BY code ", con)
+    Set data1.RecordSet = myRecordSet("Select Code,DescA From File1_10SC ORDER BY code ", con)
     Set XSECTION.RowSource = data1
     XSECTION.ListField = "Desca"
     XSECTION.BoundColumn = "Code"
     
-    Set DATA2.Recordset = myRecordSet("Select Code,DescA From File4_10 order by Desca", con)
+    Set DATA2.RecordSet = myRecordSet("Select Code,DescA From File4_10 order by Desca", con)
     Set xSupp.RowSource = DATA2
     xSupp.ListField = "Desca"
     xSupp.BoundColumn = "Code"
     
-    Set DATA3.Recordset = myRecordSet("Select Code,DescA From File1_50 ORDER BY DESCA", con)
-    Set xGroup.RowSource = DATA3
+    Set data3.RecordSet = myRecordSet("Select Code,DescA From File1_50 ORDER BY DESCA", con)
+    Set xGroup.RowSource = data3
     xGroup.ListField = "Desca"
     xGroup.BoundColumn = "Code"
     
-    Set DATA4.Recordset = myRecordSet("Select mosm ,descA From mosm ORDER BY date DESC ", con)
-    Set xMosm.RowSource = DATA4
-    xMosm.ListField = "Desca"
-    xMosm.BoundColumn = "MOSM"
-    xMosm.BoundText = cPMosm
+    Set DATA4.RecordSet = myRecordSet("Select mosm ,descA From mosm ORDER BY date DESC ", con)
+    Set XMOSM.RowSource = DATA4
+    XMOSM.ListField = "Desca"
+    XMOSM.BoundColumn = "MOSM"
+    XMOSM.BoundText = cPMosm
     
     
-    Set DATA5.Recordset = myRecordSet("Select code ,desca From fact ORDER BY DESCA ", con)
-    Set xFact.RowSource = DATA5
+    Set data5.RecordSet = myRecordSet("Select code ,desca From fact ORDER BY DESCA ", con)
+    Set xFact.RowSource = data5
     xFact.ListField = "Desca"
     xFact.BoundColumn = "Code"
     
     GRID0.Rows = 2
     grid1.Rows = 2
-    GRID2.Rows = 2
-    GRID3.Rows = 2
-    GRID4.Rows = 2
-    GRID5.Rows = 2
+    grid2.Rows = 2
+    grid3.Rows = 2
+    grid4.Rows = 2
+    grid5.Rows = 2
     grid6.Rows = 2
     grid7.Rows = 2
 
     Set GRID0.DataSource = data10
     Set grid1.DataSource = DATA11
-    Set GRID2.DataSource = data12
-    Set GRID3.DataSource = DATA13
-    Set GRID4.DataSource = DATA14
-    Set GRID5.DataSource = DATA15
+    Set grid2.DataSource = DATA12
+    Set grid3.DataSource = DATA13
+    Set grid4.DataSource = DATA14
+    Set grid5.DataSource = DATA15
     Set grid6.DataSource = DATA16
     Set grid7.DataSource = DATA17
 
@@ -2852,7 +2852,7 @@ With GRID0
                 " WHERE file1_10.ISNOITEM = 0 "
     
     If chkStoped.Value = 0 Then cWhere = "STORE_BR.ISSTOP = 0"
-    If xMosm.MatchedWithList Then cWhere = cWhere & Tr(cWhere) & " FILE1_10.MOSM = " & MyParn(xMosm.BoundText)
+    If XMOSM.MatchedWithList Then cWhere = cWhere & Tr(cWhere) & " FILE1_10.MOSM = " & MyParn(XMOSM.BoundText)
     
     If XMOSM2.text <> "W" Then
         If XMOSM2.text <> "" Then cWhere = cWhere & Tr(cWhere) & " ( SUBSTRING(FILE1_10.MOSM ,1,1) = " & MyParn(XMOSM2.text) & " OR FILE1_10.MOSM  = '000'  )"
@@ -2886,7 +2886,7 @@ With GRID0
         cString = cString & " AND " & cWhere
     End If
     cString = cString & " GROUP BY FILE4_10.CODE, FILE4_10.DESCA, FACT.DESCA, FILE1_10.MOSM, FILE1_10.MODELFACT0, FILE1_10.desca , FILE1_10.MODELNO ORDER BY FILE4_10.CODE, FILE4_10.DESCA, FACT.DESCA, FILE1_10.MOSM, FILE1_10.MODELFACT0 "
-    Set data10.Recordset = myRecordSet(cString, con)
+    Set data10.RecordSet = myRecordSet(cString, con)
 End With
 FIXGRID0
 If GRID0.Rows > 0 Then GRID0.TextMatrix(1, 1) = "«·≈Ã„«·Ï"
@@ -2978,9 +2978,9 @@ With GRID0
         If Val(.TextMatrix(nRow, 15)) <> Val(.TextMatrix(nRow, 16)) Then .Cell(flexcpBackColor, nRow, 15, nRow, 16) = vbGreen
     Next nRow
     .SubtotalPosition = flexSTAbove
-    For I = 5 To .Cols - 1
-        .Subtotal flexSTSum, -1, I, "#0", vbRed, vbYellow, True, "  "
-    Next I
+    For i = 5 To .Cols - 1
+        .Subtotal flexSTSum, -1, i, "#0", vbRed, vbYellow, True, "  "
+    Next i
     .Subtotal flexSTCount, -1, 3, "#0", vbRed, vbYellow, True, "  "
     If .Rows > 2 Then
         nRow = 2
@@ -3011,11 +3011,11 @@ End If
 End Sub
 Private Sub xSection_LostFocus()
 If XSECTION.BoundText = "" Then
-    Set DATA3.Recordset = myCmd("Select Code,DescA From File1_50 ORDER BY DESCA", con)
+    Set data3.RecordSet = mycmd("Select Code,DescA From File1_50 ORDER BY DESCA", con)
 Else
-    Set DATA3.Recordset = myCmd("Select Code,DescA From File1_50 where [group] = " & Val(XSECTION.BoundText) & " ORDER BY DESCA", con)
+    Set data3.RecordSet = mycmd("Select Code,DescA From File1_50 where [group] = " & Val(XSECTION.BoundText) & " ORDER BY DESCA", con)
 End If
-Set xGroup.RowSource = DATA3
+Set xGroup.RowSource = data3
 xGroup.ListField = "Desca"
 xGroup.BoundColumn = "Code"
 End Sub
@@ -3027,8 +3027,8 @@ If ActiveControl.Name = xModelFact.Name Then
     xModelFact.text = oSearchItem.grid1.TextMatrix(oSearchItem.grid1.Row, 2)
     Unload oSearchItem
 End If
-If ActiveControl.Name = XGRMODEL.Name Then
-    XGRMODEL.text = oSearchItem.grid1.TextMatrix(oSearchItem.grid1.Row, 0)
+If ActiveControl.Name = xGrModel.Name Then
+    xGrModel.text = oSearchItem.grid1.TextMatrix(oSearchItem.grid1.Row, 0)
     Unload oSearchItem
 End If
 
@@ -3140,7 +3140,7 @@ With grid1
     End If
     
     If chkStoped.Value = 0 Then cWhere = "STORE_BR.ISSTOP = 0"
-    If xMosm.MatchedWithList Then cWhere = cWhere & Tr(cWhere) & " FILE1_10.MOSM = " & MyParn(xMosm.BoundText)
+    If XMOSM.MatchedWithList Then cWhere = cWhere & Tr(cWhere) & " FILE1_10.MOSM = " & MyParn(XMOSM.BoundText)
     If XMOSM2.text <> "W" Then
         If XMOSM2.text <> "" Then cWhere = cWhere & Tr(cWhere) & " ( SUBSTRING(FILE1_10.MOSM ,1,1) = " & MyParn(XMOSM2.text) & " OR FILE1_10.MOSM  = '000'  )"
     Else
@@ -3180,7 +3180,7 @@ With grid1
     ElseIf SEC(3).Value Then
         cString = cString & " GROUP BY FILE4_10.CODE , FILE4_10.DESCA , FILE1_10.FACT, FACT.DESCA ORDER BY FILE4_10.CODE "
     End If
-    Set DATA11.Recordset = myCmd(cString, con)
+    Set DATA11.RecordSet = mycmd(cString, con)
 End With
 FixGrid1
 If grid1.Rows > 0 Then grid1.TextMatrix(1, 1) = "«·≈Ã„«·Ï"
@@ -3275,9 +3275,9 @@ With grid1
         If Val(.TextMatrix(nRow, 9)) <> 0 Then .TextMatrix(nRow, 11) = Round((Val(.TextMatrix(nRow, 12)) / Val(.TextMatrix(nRow, 9))) * 100, 2)
     Next nRow
     .SubtotalPosition = flexSTAbove
-    For I = 5 To .Cols - 1
-        .Subtotal flexSTSum, -1, I, "#0", vbRed, vbYellow, True, "  "
-    Next I
+    For i = 5 To .Cols - 1
+        .Subtotal flexSTSum, -1, i, "#0", vbRed, vbYellow, True, "  "
+    Next i
     nRow = 2
     If .Rows > 2 Then
         If Val(.TextMatrix(nRow, 9)) <> 0 Then .TextMatrix(nRow, 11) = Round((Val(.TextMatrix(nRow, 12)) / Val(.TextMatrix(nRow, 9))) * 100, 2)
@@ -3286,10 +3286,10 @@ With grid1
     End With
 End Sub
 Private Sub MYLOAD2()
-Dim I As Double
+Dim i As Double
 Dim cString  As String, cField As String
 Dim cWhere As String, cWhereField As String
-With GRID2
+With grid2
     If IsDate(xDate1.Value) Then
         cWhereField = " AND DATE >= " & DateSq(xDate1.Value)
     End If
@@ -3351,7 +3351,7 @@ With GRID2
     End If
     
     If chkStoped.Value = 0 Then cWhere = "STORE_BR.ISSTOP = 0"
-    If xMosm.MatchedWithList Then cWhere = cWhere & Tr(cWhere) & " FILE1_10.MOSM = " & MyParn(xMosm.BoundText)
+    If XMOSM.MatchedWithList Then cWhere = cWhere & Tr(cWhere) & " FILE1_10.MOSM = " & MyParn(XMOSM.BoundText)
     If XMOSM2.text <> "W" Then
         If XMOSM2.text <> "" Then cWhere = cWhere & Tr(cWhere) & " ( SUBSTRING(FILE1_10.MOSM ,1,1) = " & MyParn(XMOSM2.text) & " OR FILE1_10.MOSM  = '000'  )"
     Else
@@ -3392,13 +3392,13 @@ With GRID2
     ElseIf SEC(3).Value Then
         cString = cString & " GROUP BY FILE1_10SC.CODE , FILE1_10SC.DESCA ORDER BY FILE1_10SC.CODE "
     End If
-    Set data12.Recordset = myCmd(cString, con)
+    Set DATA12.RecordSet = mycmd(cString, con)
 End With
 FixGrid2
-If GRID2.Rows > 0 Then GRID2.TextMatrix(1, 1) = "«·≈Ã„«·Ï"
+If grid2.Rows > 0 Then grid2.TextMatrix(1, 1) = "«·≈Ã„«·Ï"
 End Sub
 Sub FixGrid2()
-With GRID2
+With grid2
     .Cols = 17
     .RowHeight(0) = 1000
     .RowHidden(1) = True
@@ -3487,9 +3487,9 @@ With GRID2
         If Val(.TextMatrix(nRow, 9)) <> 0 Then .TextMatrix(nRow, 11) = Round((Val(.TextMatrix(nRow, 12)) / Val(.TextMatrix(nRow, 9))) * 100, 2)
     Next nRow
     .SubtotalPosition = flexSTAbove
-    For I = 5 To .Cols - 1
-        .Subtotal flexSTSum, -1, I, "#0", vbRed, vbYellow, True, "  "
-    Next I
+    For i = 5 To .Cols - 1
+        .Subtotal flexSTSum, -1, i, "#0", vbRed, vbYellow, True, "  "
+    Next i
     If .Rows > 2 Then
         nRow = 2
         If Val(.TextMatrix(nRow, 9)) <> 0 Then .TextMatrix(nRow, 11) = Round((Val(.TextMatrix(nRow, 12)) / Val(.TextMatrix(nRow, 9))) * 100, 2)
@@ -3498,10 +3498,10 @@ With GRID2
     End With
 End Sub
 Private Sub MYLOAD3()
-Dim I As Double, cCountM As String
+Dim i As Double, cCountM As String
 Dim cString  As String
 Dim cField As String, cWhere As String, cWhereField As String
-With GRID3
+With grid3
 
     If IsDate(xDate1.Value) Then
         cWhereField = " AND DATE >= " & DateSq(xDate1.Value)
@@ -3533,8 +3533,8 @@ With GRID3
         
     cWhereField = ""
     
-    If xMosm.MatchedWithList Then
-        cWhereField = cWhereField & " AND FILE1_10_2.MOSM = " & MyParn(xMosm.BoundText)
+    If XMOSM.MatchedWithList Then
+        cWhereField = cWhereField & " AND FILE1_10_2.MOSM = " & MyParn(XMOSM.BoundText)
     End If
     
     If XMOSM2.text <> "W" Then
@@ -3594,7 +3594,7 @@ With GRID3
     End If
     
     If chkStoped.Value = 0 Then cWhere = "STORE_BR.ISSTOP = 0"
-    If xMosm.MatchedWithList Then cWhere = cWhere & Tr(cWhere) & " FILE1_10.MOSM = " & MyParn(xMosm.BoundText)
+    If XMOSM.MatchedWithList Then cWhere = cWhere & Tr(cWhere) & " FILE1_10.MOSM = " & MyParn(XMOSM.BoundText)
     If XMOSM2.text <> "W" Then
         If XMOSM2.text <> "" Then cWhere = cWhere & Tr(cWhere) & " ( SUBSTRING(FILE1_10.MOSM ,1,1) = " & MyParn(XMOSM2.text) & " OR FILE1_10.MOSM  = '000'  )"
     Else
@@ -3633,13 +3633,13 @@ With GRID3
     ElseIf SEC(3).Value Then
         cString = cString & " GROUP BY FILE1_50.CODE , FILE1_50.DESCA ORDER BY FILE1_50.CODE "
     End If
-    Set DATA13.Recordset = myCmd(cString, con)
+    Set DATA13.RecordSet = mycmd(cString, con)
 End With
 FixGrid3
-If GRID3.Rows > 0 Then GRID3.TextMatrix(1, 1) = "«·≈Ã„«·Ï"
+If grid3.Rows > 0 Then grid3.TextMatrix(1, 1) = "«·≈Ã„«·Ï"
 End Sub
 Sub FixGrid3()
-With GRID3
+With grid3
     .Cols = 18
     .RowHeight(0) = 1000
     .RowHidden(1) = True
@@ -3733,9 +3733,9 @@ With GRID3
         If Val(.TextMatrix(nRow, 9)) <> 0 Then .TextMatrix(nRow, 11) = Round((Val(.TextMatrix(nRow, 12)) / Val(.TextMatrix(nRow, 9))) * 100, 2)
     Next nRow
     .SubtotalPosition = flexSTAbove
-    For I = 5 To .Cols - 1
-        .Subtotal flexSTSum, -1, I, "#0", vbRed, vbYellow, True, "  "
-    Next I
+    For i = 5 To .Cols - 1
+        .Subtotal flexSTSum, -1, i, "#0", vbRed, vbYellow, True, "  "
+    Next i
     If .Rows > 2 Then
         nRow = 2
         If Val(.TextMatrix(nRow, 9)) <> 0 Then .TextMatrix(nRow, 11) = Round((Val(.TextMatrix(nRow, 12)) / Val(.TextMatrix(nRow, 9))) * 100, 2)
@@ -3746,7 +3746,7 @@ End Sub
 Private Sub MYLOAD4()
 Dim cString  As String
 Dim cField As String, cFieldCount As String, cWhere As String, cWhereField As String
-With GRID4
+With grid4
     If IsDate(xDate1.Value) Then
         cWhereField = " AND DATE >= " & DateSq(xDate1.Value)
     End If
@@ -3778,7 +3778,7 @@ With GRID4
     ' Count Field
         
     cWhereField = ""
-    If xMosm.MatchedWithList Then cWhereField = cWhereField & " AND FILE1_10_2.MOSM = " & MyParn(xMosm.BoundText)
+    If XMOSM.MatchedWithList Then cWhereField = cWhereField & " AND FILE1_10_2.MOSM = " & MyParn(XMOSM.BoundText)
     If XMOSM2.text <> "W" Then
         If XMOSM2.text <> "" Then cWhereField = cWhereField & " AND ( SUBSTRING(FILE1_10_2.MOSM ,1,1) = " & MyParn(XMOSM2.text) & " OR FILE1_10_2.MOSM  = '000'  )"
     Else
@@ -3833,7 +3833,7 @@ With GRID4
     End If
     
     If chkStoped.Value = 0 Then cWhere = "STORE_BR.ISSTOP = 0"
-    If xMosm.MatchedWithList Then cWhere = cWhere & Tr(cWhere) & " FILE1_10.MOSM = " & MyParn(xMosm.BoundText)
+    If XMOSM.MatchedWithList Then cWhere = cWhere & Tr(cWhere) & " FILE1_10.MOSM = " & MyParn(XMOSM.BoundText)
     If XMOSM2.text <> "W" Then
         If XMOSM2.text <> "" Then cWhere = cWhere & Tr(cWhere) & " ( SUBSTRING(FILE1_10.MOSM ,1,1) = " & MyParn(XMOSM2.text) & " OR FILE1_10.MOSM  = '000'  )"
     Else
@@ -3869,13 +3869,13 @@ With GRID4
     ElseIf SEC(3).Value Then
         cString = cString & " GROUP BY FILE0_82.CODE , FILE0_82.DESCA ORDER BY FILE0_82.CODE "
     End If
-    Set DATA14.Recordset = myCmd(cString, con)
+    Set DATA14.RecordSet = mycmd(cString, con)
 End With
 FIXGRID4
-If GRID4.Rows > 0 Then GRID4.TextMatrix(1, 1) = "«·≈Ã„«·Ï"
+If grid4.Rows > 0 Then grid4.TextMatrix(1, 1) = "«·≈Ã„«·Ï"
 End Sub
 Sub FIXGRID4()
-With GRID4
+With grid4
     .Cols = 18
     .RowHeight(0) = 1000
     .RowHidden(1) = True
@@ -3971,9 +3971,9 @@ With GRID4
         If Val(.TextMatrix(nRow, 9)) <> 0 Then .TextMatrix(nRow, 11) = Round((Val(.TextMatrix(nRow, 12)) / Val(.TextMatrix(nRow, 9))) * 100, 2)
     Next nRow
     .SubtotalPosition = flexSTAbove
-    For I = 5 To .Cols - 1
-        .Subtotal flexSTSum, -1, I, "#0", vbRed, vbYellow, True, "  "
-    Next I
+    For i = 5 To .Cols - 1
+        .Subtotal flexSTSum, -1, i, "#0", vbRed, vbYellow, True, "  "
+    Next i
     If .Rows > 2 Then
         nRow = 2
         If Val(.TextMatrix(nRow, 9)) <> 0 Then .TextMatrix(nRow, 11) = Round((Val(.TextMatrix(nRow, 12)) / Val(.TextMatrix(nRow, 9))) * 100, 2)
@@ -4046,7 +4046,7 @@ With grid6
     End If
     
     If chkStoped.Value = 0 Then cWhere = "STORE_BR.ISSTOP = 0"
-    If xMosm.MatchedWithList Then cWhere = cWhere & Tr(cWhere) & " FILE1_10.MOSM = " & MyParn(xMosm.BoundText)
+    If XMOSM.MatchedWithList Then cWhere = cWhere & Tr(cWhere) & " FILE1_10.MOSM = " & MyParn(XMOSM.BoundText)
     If XMOSM2.text <> "W" Then
         If XMOSM2.text <> "" Then cWhere = cWhere & Tr(cWhere) & " ( SUBSTRING(FILE1_10.MOSM ,1,1) = " & MyParn(XMOSM2.text) & " OR FILE1_10.MOSM  = '000'  )"
     Else
@@ -4084,7 +4084,7 @@ With grid6
     ElseIf SEC(3).Value Then
         cString = cString & " GROUP BY STORE_ALL.CODE , STORE_ALL.DESCA ORDER BY STORE_ALL.CODE "
     End If
-    Set DATA16.Recordset = myCmd(cString, con)
+    Set DATA16.RecordSet = mycmd(cString, con)
 End With
 FIXGRID6
 If grid6.Rows > 0 Then grid6.TextMatrix(1, 1) = "«·≈Ã„«·Ï"
@@ -4182,9 +4182,9 @@ With grid6
         If Val(.TextMatrix(nRow, 9)) <> 0 Then .TextMatrix(nRow, 11) = Round((Val(.TextMatrix(nRow, 12)) / Val(.TextMatrix(nRow, 9))) * 100, 2)
     Next nRow
     .SubtotalPosition = flexSTAbove
-    For I = 5 To .Cols - 1
-        .Subtotal flexSTSum, -1, I, "#0", vbRed, vbYellow, True, "  "
-    Next I
+    For i = 5 To .Cols - 1
+        .Subtotal flexSTSum, -1, i, "#0", vbRed, vbYellow, True, "  "
+    Next i
     If .Rows > 2 Then
         nRow = 2
         If Val(.TextMatrix(nRow, 9)) <> 0 Then .TextMatrix(nRow, 11) = Round((Val(.TextMatrix(nRow, 12)) / Val(.TextMatrix(nRow, 9))) * 100, 2)
@@ -4252,8 +4252,8 @@ With grid7
     
     If chkStoped.Value = 0 Then cWhere = "STORE_BR.ISSTOP = 0"
 
-    If xMosm.MatchedWithList Then
-        cWhere = cWhere & Tr(cWhere) & " FILE1_10.MOSM = " & MyParn(xMosm.BoundText)
+    If XMOSM.MatchedWithList Then
+        cWhere = cWhere & Tr(cWhere) & " FILE1_10.MOSM = " & MyParn(XMOSM.BoundText)
     ElseIf XMOSM2.text <> "W" Then
         If XMOSM2.text <> "" Then cWhere = cWhere & Tr(cWhere) & " ( SUBSTRING(FILE1_10.MOSM ,1,1) = " & MyParn(XMOSM2.text) & " OR FILE1_10.MOSM  = '000'  )"
     Else
@@ -4288,7 +4288,7 @@ With grid7
     ElseIf SEC(1).Value Then
         cString = cString & " GROUP BY FILE4_10.CODE, FILE4_10.DESCA, FACT.DESCA, FILE0_81.DESCA , FILE1_10.GRMODEL ORDER BY FILE4_10.CODE, FILE4_10.DESCA, FACT.DESCA, FILE0_81.DESCA, FILE1_10.GRMODEL "
     End If
-    Set DATA17.Recordset = myCmd(cString, con)
+    Set DATA17.RecordSet = mycmd(cString, con)
 End With
 FIXGRID7
 If grid7.Rows > 0 Then grid7.TextMatrix(1, 1) = "«·≈Ã„«·Ï"
@@ -4389,9 +4389,9 @@ With grid7
         If Val(.TextMatrix(nRow, 9)) <> 0 Then .TextMatrix(nRow, 11) = Round((Val(.TextMatrix(nRow, 12)) / Val(.TextMatrix(nRow, 9))) * 100, 2)
     Next nRow
     .SubtotalPosition = flexSTAbove
-    For I = 5 To .Cols - 2
-        .Subtotal flexSTSum, -1, I, "#0", vbRed, vbYellow, True, "  "
-    Next I
+    For i = 5 To .Cols - 2
+        .Subtotal flexSTSum, -1, i, "#0", vbRed, vbYellow, True, "  "
+    Next i
     If .Rows > 2 Then
         nRow = 2
         If Val(.TextMatrix(nRow, 9)) <> 0 Then .TextMatrix(nRow, 11) = Round((Val(.TextMatrix(nRow, 12)) / Val(.TextMatrix(nRow, 9))) * 100, 2)
@@ -4402,7 +4402,7 @@ End Sub
 Private Sub myload5()
 Dim cString  As String
 Dim cField As String, cWhere As String, cWhereField As String
-With GRID5
+With grid5
     cField = cField & "," & _
             myiif("(type = '2' or type = '7' or type = 't' or type = 'f'  )", "([IN]) ")
     
@@ -4455,7 +4455,7 @@ With GRID5
                 " INNER JOIN STORE_BR ON FILE1_11_ALL.STORE = STORE_BR.CODE"
     
     If chkStoped.Value = 0 Then cWhere = "STORE_BR.ISSTOP = 0"
-    If xMosm.MatchedWithList Then cWhere = cWhere & Tr(cWhere) & " FILE1_10.MOSM = " & MyParn(xMosm.BoundText)
+    If XMOSM.MatchedWithList Then cWhere = cWhere & Tr(cWhere) & " FILE1_10.MOSM = " & MyParn(XMOSM.BoundText)
     If XMOSM2.text <> "W" Then
         If XMOSM2.text <> "" Then cWhere = cWhere & Tr(cWhere) & " ( SUBSTRING(FILE1_10.MOSM ,1,1) = " & MyParn(XMOSM2.text) & " OR FILE1_10.MOSM  = '000'  )"
     Else
@@ -4499,17 +4499,17 @@ With GRID5
     If Check1.Value = 1 Then
         textquery.text = cString
     Else
-        Set DATA15.Recordset = myRecordSet(cString, con)
+        Set DATA15.RecordSet = myRecordSet(cString, con)
     End If
        
 End With
 FIXGRID5
-If GRID5.Rows > 0 Then GRID5.TextMatrix(1, 1) = "«·≈Ã„«·Ï"
+If grid5.Rows > 0 Then grid5.TextMatrix(1, 1) = "«·≈Ã„«·Ï"
 End Sub
 
 
 Sub FIXGRID5()
-With GRID5
+With grid5
     .Cols = 28
     .RowHeight(0) = 1000
     .RowHidden(1) = True
@@ -4620,9 +4620,9 @@ With GRID5
     Next nCol
         
     .SubtotalPosition = flexSTAbove
-    For I = 6 To 20
-        .Subtotal flexSTSum, -1, I, "#0", vbRed, vbYellow, True, "  "
-    Next I
+    For i = 6 To 20
+        .Subtotal flexSTSum, -1, i, "#0", vbRed, vbYellow, True, "  "
+    Next i
     .Cell(flexcpAlignment, 1, 0, .Rows - 1, .Cols - 1) = 7
     End With
 End Sub

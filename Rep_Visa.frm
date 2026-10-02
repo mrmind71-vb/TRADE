@@ -902,7 +902,7 @@ Private Sub CMD_PRINT_Click()
     cHead3 = ""
     
     Load PrintGrd
-    PrintGrd.DOPRINT grid1, 1, , cHead1, cHead2, , , True, 9
+    PrintGrd.doprint grid1, 1, , cHead1, cHead2, , , True, 9
     PrintGrd.Show 1
 End Sub
 Private Sub CmdExit_Click()
@@ -912,16 +912,16 @@ End Sub
 Private Sub CmdUndo_Click()
     Unload Me
 End Sub
-Private Sub CmdGo_Click()
+Private Sub cmdgo_Click()
     myload
 End Sub
 Private Sub Form_Load()
-    openCon con
+    OpenCon con
     
     
     Set grid1.DataSource = DATA6
     
-    Set data1.Recordset = myRecordSet("SELECT * FROM FILE0_40", con)
+    Set data1.RecordSet = myRecordSet("SELECT * FROM FILE0_40", con)
     Set xStore.RowSource = data1
     xStore.ListField = "Desca"
     xStore.BoundColumn = "Code"
@@ -931,7 +931,7 @@ Private Sub Form_Load()
         xStore.Enabled = False
     End If
     
-    Set DATA2.Recordset = myRecordSet("SELECT * FROM VISA WHERE branch = '00' order by code ", con)
+    Set DATA2.RecordSet = myRecordSet("SELECT * FROM VISA WHERE branch = '00' order by code ", con)
     Set xvisa.RowSource = DATA2
     xvisa.ListField = "Desca"
     xvisa.BoundColumn = "Code"
@@ -942,7 +942,7 @@ Private Sub Form_Load()
 End Sub
 Private Sub myload()
 'On Error GoTo myerror
-Dim I As Double
+Dim i As Double
 Dim cString  As String, cStr2 As String
 Dim cF1 As String, cF2 As String, cF3 As String, cF4 As String, cF5 As String
 
@@ -952,20 +952,20 @@ With grid1
             " FROM   Q_VISA_DOC  INNER JOIN FILE0_40 ON FILE0_40.CODE = Q_VISA_DOC.STORE LEFT JOIN VISA ON Q_VISA_DOC.CODE = VISA.CODE  WHERE Q_VISA_DOC.DOC_NO IS NOT NULL "
     If IsDate(xDate1.text) Then cString = cString & " AND [DATE] >= " & DateSq(xDate1.text)
     If IsDate(xDate2.text) Then cString = cString & " AND [DATE] <= " & DateSq(xDate2.text)
-    If xphone.text <> "" Then cString = cString & " AND PHONE = " & MyParn(xphone.text)
+    If xPhone.text <> "" Then cString = cString & " AND PHONE = " & MyParn(xPhone.text)
     If xvisa.BoundText <> "" Then cString = cString & " AND VISA.CODE = " & MyParn(xvisa.BoundText)
     If xStore.text <> "" Then cString = cString & " AND store = " & MyParn(xStore.BoundText)
     If Check1.Value <> 0 Then cString = cString & " AND visa <> 0 "
     If Check2.Value <> 0 Then cString = cString & " AND POINT <> 0 "
     cString = cString & " group by Q_VISA_DOC.CODE , STORE , VISA.DESCA ,date, FILE0_40.DESCA, DOC_NO2 , PHONE ,  TSALES , CASH, PAY, rest, POINT , Comm_Visa , Q_VISA_DOC.DESCA "
     cString = cString & " ORDER BY Q_VISA_DOC.CODE , DATE , STORE , DOC_NO2 "
-    Set DATA6.Recordset = myRecordSet(cString, con)
+    Set DATA6.RecordSet = myRecordSet(cString, con)
 End With
 FIXGRID
 If grid1.Rows > 1 Then grid1.TextMatrix(1, 1) = "«·≈Ã„«·Ï"
 grid1.Cell(flexcpAlignment, 0, 0, grid1.Rows - 1, grid1.Cols - 1) = 7
 Exit Sub
-myerror:
+myError:
 MsgBox Err.Description
 Err.Clear
 End Sub
@@ -1014,10 +1014,10 @@ With grid1
         Next nCol
     Next nRow
     .SubtotalPosition = flexSTAbove
-    For I = 5 To .Cols - 2
+    For i = 5 To .Cols - 2
         .ColDataType(nCol) = flexDTDouble
-        .Subtotal flexSTSum, -1, I, "#0.00", vbRed, vbYellow, True, "  "
-    Next I
+        .Subtotal flexSTSum, -1, i, "#0.00", vbRed, vbYellow, True, "  "
+    Next i
     End With
 End Sub
 Private Sub Form_Unload(Cancel As Integer)

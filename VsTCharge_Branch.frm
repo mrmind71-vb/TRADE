@@ -779,10 +779,10 @@ Private Sub CMD_PRINT_Click()
     Dim cHead1 As String
     Dim cHead2 As String
     Dim cHead3 As String
-    cHead1 = Me.Caption & "  " & xCharge.text
+    cHead1 = Me.Caption & "  " & XCHARGE.text
     cHead2 = " „‰  «—ÌŒ " & Format(xDate1.text, "DD-MM-YYYY") & " Õ Ï  «—ÌŒ " & Format(xDate2.text, "DD-MM-YYYY")
     Load PrintGrd
-    PrintGrd.DOPRINT grid1, 1, , cHead1, cHead2, , , True, 11
+    PrintGrd.doprint grid1, 1, , cHead1, cHead2, , , True, 11
     PrintGrd.Show 1
 End Sub
 Private Sub CmdExit_Click()
@@ -792,33 +792,33 @@ End Sub
 Private Sub CmdUndo_Click()
     Unload Me
 End Sub
-Private Sub CmdGo_Click()
+Private Sub cmdgo_Click()
     myload
 End Sub
 
 
 Private Sub Form_Load()
-    openCon con
+    OpenCon con
     
     
     
-    data1.ConnectionString = strCon
+    data1.connectionString = strCon
     data1.RecordSource = "Select Code,DescA From FILE8_52 ORDER BY DESCA "
-    Set xCharge.RowSource = data1
-    xCharge.ListField = "Desca"
-    xCharge.BoundColumn = "Code"
+    Set XCHARGE.RowSource = data1
+    XCHARGE.ListField = "Desca"
+    XCHARGE.BoundColumn = "Code"
     
     Set grid1.DataSource = DATA2
-    DATA2.ConnectionString = strCon
+    DATA2.connectionString = strCon
     
     grid1.Rows = 2
     grid1.Cols = 3
     FIXGRID
 End Sub
 Private Sub myload()
-Dim I As Double, nYear As Double
+Dim i As Double, nYear As Double
 Dim cString  As String, cStr2 As String, DDate1 As Date, DDate2 As Date
-Dim ChargTable As New ADODB.Recordset
+Dim ChargTable As New ADODB.RecordSet
 cStr1 = " SELECT FILE8_52.CODE , FILE8_52.DESCA FROM acc_charge LEFT JOIN  FILE8_51 ON acc_charge.CHARGE = FILE8_51.CODE LEFT JOIN FILE8_52 ON FILE8_52.CODE = FILE8_51.MAINGROUP WHERE File8_51.ISasset = 0 "
 If IsDate(xDate1.text) Then cStr1 = cStr1 & " AND acc_charge.DATE >= " & DateSq(xDate1.text)
 If IsDate(xDate2.text) Then cStr1 = cStr1 & " AND acc_charge.DATE <= " & DateSq(xDate2.text)
@@ -829,15 +829,15 @@ With grid1
 '                           0               1                 2                3               4                5
     cString = " SELECT BRANCH.CODE , BRANCH.DESCA "
     Do While Not ChargTable.EOF
-        cString = cString & " , SUM(CASE WHEN FILE8_51.MAINGROUP = " & MyParn(ChargTable!CODE) & " THEN acc_charge.VALUE ELSE 0 END ) AS '" & ChargTable!DESCA & " ' "
+        cString = cString & " , SUM(CASE WHEN FILE8_51.MAINGROUP = " & MyParn(ChargTable!code) & " THEN acc_charge.VALUE ELSE 0 END ) AS '" & ChargTable!DESCA & " ' "
         ChargTable.MoveNext
     Loop
     cString = cString & " FROM acc_charge INNER JOIN BRANCH ON acc_charge.BRANCH = BRANCH.CODE  INNER JOIN FILE8_51 ON acc_charge.CHARGE = FILE8_51.CODE WHERE File8_51.ISasset = 0"
-    If xCharge.BoundText <> "" Then cString = cString & " AND FILE8_51.MAINGROUP = " & MyParn(xCharge.BoundText)
+    If XCHARGE.BoundText <> "" Then cString = cString & " AND FILE8_51.MAINGROUP = " & MyParn(XCHARGE.BoundText)
     If IsDate(xDate1.text) Then cString = cString & " AND acc_charge.DATE >= " & DateSq(xDate1.text)
     If IsDate(xDate2.text) Then cString = cString & " AND acc_charge.DATE <= " & DateSq(xDate2.text)
     cString = cString & " GROUP BY BRANCH.CODE , BRANCH.DESCA ORDER BY BRANCH.CODE "
-    Set DATA2.Recordset = myRecordSet(cString, con)
+    Set DATA2.RecordSet = myRecordSet(cString, con)
 End With
 FIXGRID
 If grid1.Rows > 0 Then grid1.TextMatrix(1, 1) = "«·≈Ã„«·Ï"
@@ -881,9 +881,9 @@ With grid1
     .ExplorerBar = flexExSort
     .Cell(flexcpAlignment, 0, 0, .Rows - 1, .Cols - 1) = 4
     .SubtotalPosition = flexSTAbove
-    For I = 2 To .Cols - 1
-        .Subtotal flexSTSum, -1, I, "#0", vbRed, vbYellow, True, "  "
-    Next I
+    For i = 2 To .Cols - 1
+        .Subtotal flexSTSum, -1, i, "#0", vbRed, vbYellow, True, "  "
+    Next i
     .Cell(flexcpAlignment, 1, 0, .Rows - 1, .Cols - 1) = 7
     End With
 End Sub

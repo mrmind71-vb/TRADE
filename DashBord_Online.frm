@@ -2,7 +2,7 @@ VERSION 5.00
 Object = "{D76D7128-4A96-11D3-BD95-D296DC2DD072}#1.0#0"; "Vsflex7.ocx"
 Object = "{67397AA1-7FB1-11D0-B148-00A0C922E820}#6.0#0"; "MSADODC.OCX"
 Object = "{065E6FD1-1BF9-11D2-BAE8-00104B9E0792}#3.0#0"; "ssa3d30.ocx"
-Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCTL.OCX"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.2#0"; "MSCOMCTL.OCX"
 Begin VB.Form DashBord_Online 
    BackColor       =   &H00E0E0E0&
    Caption         =   "dashboard ONLINE"
@@ -1126,7 +1126,7 @@ End Sub
 Private Sub CmdExit_Click()
     Unload Me
 End Sub
-Private Sub CmdGo_Click()
+Private Sub cmdgo_Click()
     MyLOadTotal
     MYLOAD1
     MYLOAD2
@@ -1135,25 +1135,25 @@ Private Sub CmdGo_Click()
     myload5
 End Sub
 Private Sub Form_Load()
-    openCon con
+    OpenCon con
         
     xDate1.text = Format(DateValue("1-" & Month(Date) & "-" & Year(Date)), "DD-MM-YYYY")
     xDate2.text = DateAdd("D", -1, DateAdd("M", 1, DateValue(xDate1.text)))
     
     Set GridTotal.DataSource = data1
     Set grid1.DataSource = DATA2
-    Set GRID2.DataSource = DATA3
-    Set GRID3.DataSource = DATA4
-    Set GRID4.DataSource = DATA5
-    Set GRID5.DataSource = DATA6
+    Set grid2.DataSource = data3
+    Set grid3.DataSource = DATA4
+    Set grid4.DataSource = data5
+    Set grid5.DataSource = DATA6
     
     
     GridTotal.Rows = 2
     grid1.Rows = 2
-    GRID2.Rows = 2
-    GRID3.Rows = 2
-    GRID4.Rows = 2
-    GRID5.Rows = 2
+    grid2.Rows = 2
+    grid3.Rows = 2
+    grid4.Rows = 2
+    grid5.Rows = 2
     
     fixGrdTotal
     FixGrid1
@@ -1329,7 +1329,7 @@ cString = " SELECT  COUNT(DISTINCT DOC_NO) AS COUNT1 , SUM(QUANT) AS QTY1 , SUM(
             " , 0 " & _
             " FROM QFILE6_90 WHERE DOC_NO IS NOT NULL " & cWhere
 
-Set data1.Recordset = myRecordSet(cString, con)
+Set data1.RecordSet = myRecordSet(cString, con)
 fixGrdTotal
 End Sub
 Sub MYLOAD1()
@@ -1340,7 +1340,7 @@ If IsDate(xDate2.text) Then cWhere = cWhere & " AND DATE <= " & DateSq(xDate2.te
 cString = " SELECT  Shipping_City ,   COUNT(DOC_NO) , SUM(QUANT) , SUM(TOTALITEM) FROM            QFILE6_90 " & _
             " WHERE DOC_NO IS NOT NULL " & cWhere & _
             " GROUP BY Shipping_City ORDER BY COUNT(DOC_NO) DESC"
-Set DATA2.Recordset = myRecordSet(cString, con)
+Set DATA2.RecordSet = myRecordSet(cString, con)
 FixGrid1
 End Sub
 Private Sub FixGrid1()
@@ -1384,11 +1384,11 @@ If IsDate(xDate1.text) Then cWhere = " AND DATE >= " & DateSq(xDate1.text)
 If IsDate(xDate2.text) Then cWhere = cWhere & " AND DATE <= " & DateSq(xDate2.text)
 cString = " SELECT        FACT.DESCA, FILE1_10.MOSM, FILE1_10.MODELFACT0, FILE1_10.desca, SUM(FILE6_90.QUANT) FROM            FACT INNER JOIN FILE1_10 ON FACT.CODE = FILE1_10.code INNER JOIN FILE6_90 ON FILE1_10.ITEM = FILE6_90.ITEM INNER JOIN FILE6_90H ON FILE6_90.DOC_NO = FILE6_90H.DOC_NO WHERE MODELFACT0 IS NOT NULL " & cWhere & _
             " GROUP BY FACT.DESCA, FILE1_10.MODELFACT0, FILE1_10.desca, FILE1_10.MOSM  ORDER BY SUM(FILE6_90.QUANT ) DESC"
-Set DATA3.Recordset = myRecordSet(cString, con)
+Set data3.RecordSet = myRecordSet(cString, con)
 FixGrid2
 End Sub
 Private Sub FixGrid2()
-With GRID2
+With grid2
 .Cols = 6
 .RowHeight(0) = 500
 
@@ -1429,11 +1429,11 @@ If IsDate(xDate1.text) Then cWhere = " AND DATE >= " & DateSq(xDate1.text)
 If IsDate(xDate2.text) Then cWhere = cWhere & " AND DATE <= " & DateSq(xDate2.text)
 cString = " SELECT  FILE1_10SC.DESCA, SUM(FILE6_90.QUANT) FROM  FILE1_10SC INNER JOIN FILE1_10 ON FILE1_10SC.[CODE] = FILE1_10.[SECTION] INNER JOIN FILE6_90 ON FILE1_10.ITEM = FILE6_90.ITEM INNER JOIN FILE6_90H ON FILE6_90.DOC_NO = FILE6_90H.DOC_NO WHERE MODELFACT0 IS NOT NULL " & cWhere & _
             " GROUP BY FILE1_10SC.DESCA  ORDER BY SUM(FILE6_90.QUANT) DESC"
-Set DATA4.Recordset = myRecordSet(cString, con)
+Set DATA4.RecordSet = myRecordSet(cString, con)
 FixGrid3
 End Sub
 Private Sub FixGrid3()
-With GRID3
+With grid3
 .Cols = 3
 .RowHeight(0) = 500
 
@@ -1467,11 +1467,11 @@ Dim cString As String
             " FROM QFILE6_90 LEFT JOIN FILE0_40 ON FILE0_40.CODE = QFILE6_90.STORE " & _
             " Where DelOrder_Date Is Null And SALES_DOC Is Null " & _
             " GROUP BY file0_40.desca , file0_40.CODE  ORDER BY file0_40.CODE"
-    Set DATA5.Recordset = myRecordSet(cString, con)
+    Set data5.RecordSet = myRecordSet(cString, con)
     FIXGRID4
 End Sub
 Private Sub FIXGRID4()
-With GRID4
+With grid4
 .Cols = 3
 .RowHeight(0) = 500
 
@@ -1527,11 +1527,11 @@ Dim cString As String
             "   AND DATE <= " & DateSq(xDate2.text) & _
             "   GROUP BY Q_DATE_ORDER.date " & _
             "   ORDER BY Q_DATE_ORDER.date "
-    Set DATA6.Recordset = myRecordSet(cString, con)
+    Set DATA6.RecordSet = myRecordSet(cString, con)
     FIXGRID5
 End Sub
 Private Sub FIXGRID5_old()
-    With GRID5
+    With grid5
     .Cols = 6
     .RowHeight(0) = 500
     .WordWrap = True
@@ -1564,7 +1564,7 @@ Private Sub FIXGRID5_old()
 End Sub
 
 Private Sub FIXGRID5()
-    With GRID5
+    With grid5
     .Cols = 4
     .RowHeight(0) = 500
     .WordWrap = True
@@ -1615,7 +1615,7 @@ Dim cString As String
             "   AND DATE <= " & DateSq(xDate2.text) & _
             "   GROUP BY Q_DATE_ORDER.date " & _
             "   ORDER BY Q_DATE_ORDER.date "
-    Set DATA6.Recordset = myRecordSet(cString, con)
+    Set DATA6.RecordSet = myRecordSet(cString, con)
     FIXGRID5
 End Sub
 

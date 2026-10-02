@@ -837,7 +837,7 @@ Private Sub CMD_PRINT_Click()
     cHead2 = " „‰  «—ÌŒ " & Format(xDate1.text, "DD-MM-YYYY") & " Õ Ï  «—ÌŒ " & Format(xDate2.text, "DD-MM-YYYY")
     
     Load PrintGrd
-        PrintGrd.DOPRINT grid1, 1, , cHead1, cHead2, cHead3, , True, 10
+        PrintGrd.doprint grid1, 1, , cHead1, cHead2, cHead3, , True, 10
     PrintGrd.Show 1
 End Sub
 Private Sub CmdExit_Click()
@@ -847,7 +847,7 @@ End Sub
 Private Sub CmdUndo_Click()
     Unload Me
 End Sub
-Private Sub CmdGo_Click()
+Private Sub cmdgo_Click()
     If IsDate(xDate1.text) And IsDate(xDate2.text) Then
         myload
     Else
@@ -855,19 +855,19 @@ Private Sub CmdGo_Click()
     End If
 End Sub
 Private Sub Form_Load()
-    openCon con
+    OpenCon con
     
     
     
     Set grid1.DataSource = DATA6
-    DATA6.ConnectionString = strCon
+    DATA6.connectionString = strCon
     
     grid1.Rows = 1
     grid1.Cols = 9
     FIXGRID
 End Sub
 Private Sub myload()
-Dim I As Double
+Dim i As Double
 Dim cString  As String, cStr2 As String
 With grid1
 '                           0               1                 2                3               4                5

@@ -806,10 +806,10 @@ Private Sub CMD_PRINT_Click()
     Dim cHead1 As String
     Dim cHead2 As String
     Dim cHead3 As String
-    cHead1 = Me.Caption & xStore.text & " " & xSupp.text & " " & xMosm.text & " " & XSECTION.text
+    cHead1 = Me.Caption & xStore.text & " " & xSupp.text & " " & XMOSM.text & " " & XSECTION.text
     cHead2 = " „‰  «—ÌŒ " & Format(xDate1.text, "DD-MM-YYYY") & " Õ Ï  «—ÌŒ " & Format(xDate2.text, "DD-MM-YYYY")
     Load PrintGrd
-    PrintGrd.DOPRINT grid1, 1, , cHead1, cHead2, , , False, 10
+    PrintGrd.doprint grid1, 1, , cHead1, cHead2, , , False, 10
     PrintGrd.Show 1
 End Sub
 Private Sub CmdExit_Click()
@@ -819,14 +819,14 @@ End Sub
 Private Sub CmdUndo_Click()
     Unload Me
 End Sub
-Private Sub CmdGo_Click()
+Private Sub cmdgo_Click()
     myload
 End Sub
 Private Sub Form_Load()
-    openCon con
+    OpenCon con
     
     
-    DATA7.ConnectionString = strCon
+    DATA7.connectionString = strCon
     DATA7.RecordSource = "Select Code,DescA From STORE_BR where " & cUserStore
     Set xStore.RowSource = DATA7
     xStore.ListField = "Desca"
@@ -837,33 +837,33 @@ Private Sub Form_Load()
         xStore.Enabled = False
     End If
     
-    data1.ConnectionString = strCon
+    data1.connectionString = strCon
     data1.RecordSource = "Select Code,DescA From File1_10SC order by Desca"
     Set XSECTION.RowSource = data1
     XSECTION.ListField = "Desca"
     XSECTION.BoundColumn = "Code"
     
-    DATA2.ConnectionString = strCon
+    DATA2.connectionString = strCon
     DATA2.RecordSource = "Select Code,DescA From File4_10 order by Desca"
     Set xSupp.RowSource = DATA2
     xSupp.ListField = "Desca"
     xSupp.BoundColumn = "Code"
     
-    DATA4.ConnectionString = strCon
+    DATA4.connectionString = strCon
     DATA4.RecordSource = "Select mosm ,descA From mosm ORDER BY date DESC "
-    Set xMosm.RowSource = DATA4
-    xMosm.ListField = "Desca"
-    xMosm.BoundColumn = "MOSM"
+    Set XMOSM.RowSource = DATA4
+    XMOSM.ListField = "Desca"
+    XMOSM.BoundColumn = "MOSM"
     
     Set grid1.DataSource = DATA6
-    DATA6.ConnectionString = strCon
+    DATA6.connectionString = strCon
     
     grid1.Rows = 1
     grid1.Cols = 9
     FIXGRID
 End Sub
 Private Sub myload()
-Dim I As Double
+Dim i As Double
 Dim cString  As String, cStr2 As String
 cF1 = " , SUM( CASE WHEN FILE1_10.MOSM <> '000' THEN QUANT ELSE 0 END ) "
 With grid1
@@ -872,7 +872,7 @@ With grid1
             " SUM(QFILE6_20.QUANT) AS t_q, SUM(QFILE6_20.TOTAL * ((100-QFILE6_20.RATE )/100)) AS t_sales, COUNT(DISTINCT QFILE6_20.DOC_NO) " & _
             " FROM QFILE6_20 INNER JOIN file4_10 ON qFILE6_20.code = file4_10.code WHERE QFILE6_20.doc_no IS NOT NULL "
     If xStore.BoundText <> "" Then cStr2 = cStr2 & " AND qFILE6_20.STORE = " & MyParn(xStore.BoundText)
-    If xMosm.BoundText <> "" Then cStr2 = cStr2 & " AND qFILE6_20.mosm = " & MyParn(xMosm.BoundText)
+    If XMOSM.BoundText <> "" Then cStr2 = cStr2 & " AND qFILE6_20.mosm = " & MyParn(XMOSM.BoundText)
     If xSupp.BoundText <> "" Then cStr2 = cStr2 & " AND qFILE6_20.code = " & MyParn(xSupp.BoundText)
     If XSECTION.BoundText <> "" Then cStr2 = cStr2 & " AND qFILE6_20.[Section] = " & Val(XSECTION.BoundText)
     

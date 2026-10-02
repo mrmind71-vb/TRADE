@@ -148,7 +148,7 @@ Begin VB.Form VsTCashDay
          EndProperty
          CheckBox        =   -1  'True
          DateIsNull      =   -1  'True
-         Format          =   441778177
+         Format          =   442564609
          CurrentDate     =   43098.0832986111
       End
       Begin MSComCtl2.DTPicker XDATE2 
@@ -171,7 +171,7 @@ Begin VB.Form VsTCashDay
          EndProperty
          CheckBox        =   -1  'True
          DateIsNull      =   -1  'True
-         Format          =   441778177
+         Format          =   442564609
          CurrentDate     =   43098.0832986111
       End
       Begin MSDataListLib.DataCombo xbranch 
@@ -517,7 +517,7 @@ End Sub
 Private Sub CmdUndo_Click()
     Unload Me
 End Sub
-Private Sub CmdGo_Click()
+Private Sub cmdgo_Click()
     If IsDate(xDate1.Value) And IsDate(xDate2.Value) Then
         myload
     Else
@@ -525,16 +525,16 @@ Private Sub CmdGo_Click()
     End If
 End Sub
 Private Sub Form_Load()
-    openCon con
+    OpenCon con
     Check1.Visible = (cBranch < "60")
     grid1.Rows = 1
     Set grid1.DataSource = data1
-    data1.ConnectionString = strCon
+    data1.connectionString = strCon
     
     Label2(1).Visible = (cBranch = "00" And cBranch < "60")
     XBRANCH.Visible = (cBranch = "00" And cBranch < "60")
     
-    DATA2.ConnectionString = strCon
+    DATA2.connectionString = strCon
     DATA2.RecordSource = "Select Code,DescA From branch   ORDER BY code "
     Set XBRANCH.RowSource = DATA2
     XBRANCH.ListField = "Desca"
@@ -557,7 +557,7 @@ With grid1
 '    .TextMatrix(0, 11) = "„”ÕÊ»«  ‘—ﬂ«¡"
 '    .TextMatrix(0, 12) = "≈Ìœ«⁄«  »‰ﬂÌ…"
 
-Dim sourcetable As New ADODB.Recordset, nBalance As Double
+Dim sourcetable As New ADODB.RecordSet, nBalance As Double
 
 '--------------  Ê«—œ
 cWhere = " AND DATE < " & DateSq(xDate1.Value)
@@ -722,7 +722,7 @@ Private Sub Form_Unload(Cancel As Integer)
     closeCon con
 End Sub
 Sub FixGridBranch()
-    Dim BranchTable As New ADODB.Recordset
+    Dim BranchTable As New ADODB.RecordSet
     If XBRANCH.BoundText = "" Then
         BranchTable.Open "SELECT * FROM BRANCH WHERE ipsql IS NOT NULL AND CODE <> '00' ORDER BY CODE  ", con, adOpenStatic, adLockReadOnly, adCmdText
     Else
@@ -730,11 +730,11 @@ Sub FixGridBranch()
     End If
     With BranchTable
     Do While Not .EOF
-        cDataShop = !data
-        strConShop = LoadConStringshop(!IPsql, !data)
+        cDataShop = !Data
+        strConShop = LoadConStringshop(!IPsql, !Data)
         If openConShop(conShop, strConShop) = "ok" Then
             grid1.AddItem ""
-            LoadBalBranch !CODE, conShop
+            LoadBalBranch !code, conShop
         End If
         .MoveNext
     Loop
@@ -743,7 +743,7 @@ Sub FixGridBranch()
 End Sub
 
 Sub FixGridBranch_2()
-    Dim BranchTable As New ADODB.Recordset
+    Dim BranchTable As New ADODB.RecordSet
     BranchTable.Open "SELECT * FROM BRANCH ", con, adOpenStatic, adLockReadOnly, adCmdText
     With BranchTable
     Do While Not .EOF
@@ -770,7 +770,7 @@ LoadConStringshop = "provider=SQLOLEDB;data source=" & pServer & ";initial " _
             & "catalog=" & pData & ";user id = " & cUserId & ";" & "password = " & cPassword & ";Timeout=10"
 End Function
 Function openConShop(ByRef pCon As ADODB.Connection, Optional ByVal pString As String = "") As String
-On Error GoTo myerror
+On Error GoTo myError
 Dim cString As String
 If pString = "" Then cString = strConShop Else cString = pString
 If pCon.State = adStateOpen Then pCon.Close
@@ -778,12 +778,12 @@ pCon.CursorLocation = adUseClient
 pCon.Open cString
 openConShop = "ok"
 Exit Function
-myerror:
+myError:
 openConShop = Err.Description
 Err.Clear
 End Function
 Sub LoadBalBranch(pstore, pConShop)
-Dim sourcetable As New ADODB.Recordset, nBalance As Double
+Dim sourcetable As New ADODB.RecordSet, nBalance As Double
 
 '--------------  Ê«—œ
 cWhere = " AND DATE < " & DateSq(xDate1.Value)
@@ -846,7 +846,7 @@ If sourcetable.RecordCount > 0 Then
     With grid1
         Do While Not sourcetable.EOF
             .AddItem ""
-            .TextMatrix(.Rows - 1, 0) = sourcetable!CODE
+            .TextMatrix(.Rows - 1, 0) = sourcetable!code
             .TextMatrix(.Rows - 1, 1) = sourcetable!DESCA
             .TextMatrix(.Rows - 1, 2) = sourcetable!First_Balance & ""
             .TextMatrix(.Rows - 1, 3) = sourcetable!sales & ""

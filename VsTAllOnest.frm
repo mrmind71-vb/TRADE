@@ -1193,8 +1193,8 @@ Private Sub CMD_PRINT_Click()
     cHead3 = ""
     If xSupp.BoundText <> "" Then cHead3 = cHead3 & " „Ê—œ " & xSupp.text & "  " & xGrCust.text
     If XSECTION.text <> "" Then cHead3 = cHead3 & " ﬁ”„ " & XSECTION.text
-    If xMosm.BoundText <> "" Then cHead3 = cHead3 & " „Ê”„ " & xMosm.text
-    PrintGrdNew.DOPRINT grid1, 1, , cHead1, cHead2, cHead3, , False, 8
+    If XMOSM.BoundText <> "" Then cHead3 = cHead3 & " „Ê”„ " & XMOSM.text
+    PrintGrdNew.doprint grid1, 1, , cHead1, cHead2, cHead3, , False, 8
     PrintGrdNew.Show 1
 End Sub
 Private Sub CmdExit_Click()
@@ -1203,27 +1203,27 @@ End Sub
 Private Sub CmdUndo_Click()
     Unload Me
 End Sub
-Private Sub CmdGo_Click()
+Private Sub cmdgo_Click()
 '    On Error GoTo myerror
     myload
     Exit Sub
-myerror:
+myError:
     MsgBox Err.Description
 End Sub
 Private Sub Form_Load()
-    openCon con
+    OpenCon con
     xmosm22.AddItem " "
     xmosm22.AddItem "S"
     xmosm22.AddItem "W"
     xmosm22.AddItem "M"
     
-    data8.ConnectionString = strCon
+    data8.connectionString = strCon
     data8.RecordSource = "Select Code,DescA From File1_10SC order by Desca"
     Set XSECTION.RowSource = data8
     XSECTION.ListField = "Desca"
     XSECTION.BoundColumn = "Code"
     
-    DATA7.ConnectionString = strCon
+    DATA7.connectionString = strCon
     DATA7.RecordSource = "Select Code,DescA From STORE_BR ORDER BY code "
     Set xStore.RowSource = DATA7
     xStore.ListField = "Desca"
@@ -1233,27 +1233,27 @@ Private Sub Form_Load()
         xStore.Enabled = False
     End If
     
-    DATA2.ConnectionString = strCon
+    DATA2.connectionString = strCon
     DATA2.RecordSource = "Select Code,DescA From File4_10 order by Desca"
     Set xSupp.RowSource = DATA2
     xSupp.ListField = "Desca"
     xSupp.BoundColumn = "Code"
     
-    DATA4.ConnectionString = strCon
+    DATA4.connectionString = strCon
     DATA4.RecordSource = "Select mosm ,descA From mosm ORDER BY date DESC "
-    Set xMosm.RowSource = DATA4
-    xMosm.ListField = "Desca"
-    xMosm.BoundColumn = "MOSM"
+    Set XMOSM.RowSource = DATA4
+    XMOSM.ListField = "Desca"
+    XMOSM.BoundColumn = "MOSM"
     
     Set grid1.DataSource = DATA6
-    DATA6.ConnectionString = strCon
+    DATA6.connectionString = strCon
     
     grid1.Rows = 2
     grid1.Cols = 10
     FIXGRID
 End Sub
 Private Sub myload()
-Dim I As Double
+Dim i As Double
 Dim cString  As String, cStr2 As String
 With grid1
 
@@ -1290,7 +1290,7 @@ If xall(0).Value <> 0 Then
             " SUM(Q_ONEST.[PURCH]) , SUM(Q_ONEST.[RET]) , SUM(Q_ONEST.[purch]-Q_ONEST.[RET]) " & cF11 & cf12 & cf13 & cf14 & cf15
     cString = cString & " FROM FILE1_10 INNER JOIN Q_ONEST ON FILE1_10.ITEM = Q_ONEST.ITEM WHERE FILE1_10.ITEM IS NOT NULL "
     
-    If xMosm.BoundText <> "" Then cStr2 = cStr2 & " AND FILE1_10.MOSM = " & MyParn(xMosm.BoundText)
+    If XMOSM.BoundText <> "" Then cStr2 = cStr2 & " AND FILE1_10.MOSM = " & MyParn(XMOSM.BoundText)
     If xSupp.BoundText <> "" Then cStr2 = cStr2 & " AND FILE1_10.CODE = " & MyParn(xSupp.BoundText)
     If xSupp.BoundText <> "" Then cStr2 = cStr2 & " AND Q_ONEST.CODE = " & MyParn(xSupp.BoundText)
     If xStore.BoundText <> "" Then cStr2 = cStr2 & " AND STORE = " & MyParn(xStore.BoundText)
@@ -1309,7 +1309,7 @@ Else
             " SUM(Q_ONEST_2.[PURCH]) , SUM(Q_ONEST_2.[RET]) , SUM(Q_ONEST_2.[purch]-Q_ONEST_2.[RET]) " & cF11 & cf12 & cf13 & cf14 & cf15
     cString = cString & " FROM FILE1_10 INNER JOIN Q_ONEST_2 ON FILE1_10.ITEM = Q_ONEST_2.ITEM WHERE FILE1_10.ITEM IS NOT NULL "
     
-    If xMosm.BoundText <> "" Then cStr2 = cStr2 & " AND FILE1_10.MOSM = " & MyParn(xMosm.BoundText)
+    If XMOSM.BoundText <> "" Then cStr2 = cStr2 & " AND FILE1_10.MOSM = " & MyParn(XMOSM.BoundText)
     If xSupp.BoundText <> "" Then cStr2 = cStr2 & " AND FILE1_10.CODE = " & MyParn(xSupp.BoundText)
     If xSupp.BoundText <> "" Then cStr2 = cStr2 & " AND Q_ONEST_2.CODE = " & MyParn(xSupp.BoundText)
     If xStore.BoundText <> "" Then cStr2 = cStr2 & " AND STORE = " & MyParn(xStore.BoundText)
@@ -1388,12 +1388,12 @@ With grid1
         .ColDataType(nCol) = flexDTDouble
     Next nCol
     .SubtotalPosition = flexSTBelow
-    For I = 8 To .Cols - 1
+    For i = 8 To .Cols - 1
         If Check1.Value = 0 Then
-            .Subtotal flexSTSum, 0, I, "#0", &H8000000F, , True, "  "
+            .Subtotal flexSTSum, 0, i, "#0", &H8000000F, , True, "  "
         End If
-        .Subtotal flexSTSum, -1, I, "#0", &H8000000F, , True, "  "
-    Next I
+        .Subtotal flexSTSum, -1, i, "#0", &H8000000F, , True, "  "
+    Next i
     For nRow = 1 To .Rows - 1
         If Val(.TextMatrix(nRow, 10)) >= Val(.TextMatrix(nRow, 15)) Then
 '            If Val(.TextMatrix(nRow, 15)) >= 0 Then
@@ -1414,12 +1414,12 @@ With grid1
         .TextMatrix(nRow, 18) = Round(Val(.TextMatrix(nRow, 13)) * nRate, 0)
         .TextMatrix(nRow, 19) = Round(Val(.TextMatrix(nRow, 14)) * nRate, 0)
     Next nRow
-    For I = 8 To .Cols - 1
+    For i = 8 To .Cols - 1
         If Check1.Value = 0 Then
-            .Subtotal flexSTSum, 0, I, "#0", &H8000000F, , True, "  "
+            .Subtotal flexSTSum, 0, i, "#0", &H8000000F, , True, "  "
         End If
-        .Subtotal flexSTSum, -1, I, "#0", &H8000000F, , True, "  "
-    Next I
+        .Subtotal flexSTSum, -1, i, "#0", &H8000000F, , True, "  "
+    Next i
     .Cell(flexcpAlignment, 0, 0, .Rows - 1, .Cols - 1) = 7
     End With
 End Sub
@@ -1486,11 +1486,11 @@ Search3.Show 1
 End If
 End Sub
 Private Sub LoadPhoto(sModelNo As String)
-On Error GoTo myerror
-imgx1.Images.Clear
-imgx1.Import.FromFile retFile(sModelNo)
+On Error GoTo myError
+ImgX1.Images.Clear
+ImgX1.Import.FromFile retFile(sModelNo)
 Exit Sub
-myerror:
+myError:
 Err.Clear
 End Sub
 

@@ -1345,7 +1345,7 @@ Private Sub CMD_SEND_Click()
             End If
         End If
         myload
-        GRID2.Rows = 2
+        grid2.Rows = 2
     End If
 End Sub
 
@@ -1359,28 +1359,28 @@ End Sub
 Private Sub CmdUndo_Click()
     Unload Me
 End Sub
-Private Sub CmdGo_Click()
+Private Sub cmdgo_Click()
     myload
 End Sub
 Private Sub Form_Load()
 '    On Error GoTo myerror
      
-    openCon con_SERVER, LoadConString_OnLine
-    If cBranch <> "00" Then openCon con_MyShop
+    OpenCon con_SERVER, LoadConString_OnLine
+    If cBranch <> "00" Then OpenCon con_MyShop
     
     Set grid1.DataSource = data1
-    Set GRID2.DataSource = DATA2
+    Set grid2.DataSource = DATA2
     
     Frame2.Visible = (cBranch = "00")
     Check1.Visible = (cBranch = "00")
     cmd_addexel.Visible = (cBranch = "00")
     
-    Set DATA3.Recordset = myRecordSet("SELECT Payment_Method FROM file6_90h GROUP BY Payment_Method ", con_SERVER)
-    Set xPay.RowSource = DATA3
-    xPay.ListField = "Payment_Method"
-    xPay.BoundColumn = "Payment_Method"
+    Set data3.RecordSet = myRecordSet("SELECT Payment_Method FROM file6_90h GROUP BY Payment_Method ", con_SERVER)
+    Set xpay.RowSource = data3
+    xpay.ListField = "Payment_Method"
+    xpay.BoundColumn = "Payment_Method"
     
-    Set DATA4.Recordset = myRecordSet("SELECT CODE , DESCA FROM FILE0_40 WHERE online =  1 ORDER BY CODE ", con_SERVER)
+    Set DATA4.RecordSet = myRecordSet("SELECT CODE , DESCA FROM FILE0_40 WHERE online =  1 ORDER BY CODE ", con_SERVER)
     Set xStore.RowSource = DATA4
     xStore.ListField = "Desca"
     xStore.BoundColumn = "Code"
@@ -1393,19 +1393,19 @@ Private Sub Form_Load()
     End If
     
     CMD_SEND.Visible = (cBranch <> "00") And lIsBoxOnline And cManBox <> "" And Not lSupperVisor
-    If cBranch <> "00" Then GRID2.Width = GRID2.Width - 3000
+    If cBranch <> "00" Then grid2.Width = grid2.Width - 3000
     grid1.Rows = 1
     grid1.Cols = 9
     FIXGRID
     XBRANCH.Caption = GetDesca("SELECT DESCA FROM BRANCH WHERE CODE = " & MyParn(cBranch), con_SERVER)
     Exit Sub
-myerror:
+myError:
     MsgBox Err.Description
     Err.Clear
 End Sub
 Private Sub myload()
 'On Error GoTo myerror
-Dim I As Double
+Dim i As Double
 Dim cString  As String, cStr2 As String
 Dim cF1 As String, cF2 As String, cF3 As String, cF4 As String, cF5 As String
 Dim cSubTotal As String
@@ -1417,8 +1417,8 @@ With grid1
 '                           0     1     2     3        4            5           6                7        8                  9           10              11            12       13          14           15                 16                      17         18           19      20              21
     cString = " SELECT DOC_NO, DATE, NAME, PHONE, Shipping_City, STREET , " & cSubTotal & " , DISCOUNT, DISCOUNT_CODE, SHIPPING , " & cTotal & " , Payment_Method , STORE , SEND_USER ,  SEND_TIME , NOTES_ORDER  , SUBSTRING(SALES_DOC,7,20) , SALES_DATE , SHIP_NO  , NOTES , DelOrder_Date , DelOrder_Date2  FROM FILE6_90H WHERE  DOC_NO IS NOT NULL "
     If xDoc_No.text <> "" Then cString = cString & " AND [DOC_NO] = " & MyParn(xDoc_No.text)
-    If xphone.text <> "" Then cString = cString & " AND [phone] = " & MyParn(xphone.text)
-    If xPay.BoundText <> "" Then cString = cString & " AND [Payment_Method] = " & MyParn(xPay.text)
+    If xPhone.text <> "" Then cString = cString & " AND [phone] = " & MyParn(xPhone.text)
+    If xpay.BoundText <> "" Then cString = cString & " AND [Payment_Method] = " & MyParn(xpay.text)
     If xStore.BoundText <> "" Then cString = cString & " AND [STORE] = " & MyParn(xStore.BoundText)
     If IsDate(xDate1.text) Then cString = cString & " AND [DATE] >= " & DateSq(xDate1.text)
     If IsDate(xDate2.text) Then cString = cString & " AND [DATE] <= " & DateSq(xDate2.text)
@@ -1434,13 +1434,13 @@ With grid1
     
     If RET_NOTSHIP.Value <> 0 Then cString = cString & " AND DelOrder_Date IS NOT NULL AND DelOrder_Date2 IS NULL "
     cString = cString & " ORDER BY DOC_NO "
-    Set data1.Recordset = myRecordSet(cString, con_SERVER)
+    Set data1.RecordSet = myRecordSet(cString, con_SERVER)
 
 End With
 FIXGRID
 grid1.Cell(flexcpAlignment, 0, 0, grid1.Rows - 1, grid1.Cols - 1) = 7
 Exit Sub
-myerror:
+myError:
 MsgBox Err.Description
 Err.Clear
 End Sub
@@ -1555,12 +1555,12 @@ Sub AddFromExel()
             Set xlwbook = xl.Workbooks.Open(cFileName)
             Set xlsheet = xlwbook.Sheets.Item(1)
             With grid1
-            I = 1
+            i = 1
             Do While True
-                I = I + 1
-                Me.Caption = I
-                If (xlsheet.Cells(I, 1)) <> "" Then
-                    nCount = I
+                i = i + 1
+                Me.Caption = i
+                If (xlsheet.Cells(i, 1)) <> "" Then
+                    nCount = i
                 Else
                     Exit Do
                 End If
@@ -1662,7 +1662,7 @@ Sub AddFromExel()
                         Next nCol
                         
                         cItem = ""
-                        Dim loctable As ADODB.Recordset
+                        Dim loctable As ADODB.RecordSet
                         If Len(cSku) > 8 Then
                             Set loctable = ItemFind_BARCODE(cSku, con_SERVER)
                             If loctable.RecordCount > 0 Then cItem = loctable!Item
@@ -1680,7 +1680,7 @@ Sub AddFromExel()
         End If
     End If
 End Sub
-Private Sub grid1_AfterEdit(ByVal Row As Long, ByVal Col As Long)
+Private Sub Grid1_AfterEdit(ByVal Row As Long, ByVal Col As Long)
 If cBranch <> "00" Then Exit Sub
 With grid1
     Select Case Col
@@ -1698,9 +1698,9 @@ End Sub
 Private Sub grid1_DblClick()
     MYLOAD2 grid1.TextMatrix(grid1.Row, 0)
 End Sub
-Private Sub MYLOAD2(pDoc_No)
+Private Sub MYLOAD2(pDoc_no)
 'On Error GoTo myerror
-Dim StoreTable As New ADODB.Recordset
+Dim StoreTable As New ADODB.RecordSet
 Dim cBalNotShip As String
 If cBranch = "00" Then
     If Check1.Value = 0 Then
@@ -1713,33 +1713,33 @@ Else
 End If
 Dim cString  As String, cStrStore As String
 With StoreTable
-    cStrStore = " , (SELECT SUM(BALITEM) FROM [BAL_ITEM_ORDERONLINE] WHERE [BAL_ITEM_ORDERONLINE].ITEM = FILE6_90.ITEM AND [BAL_ITEM_ORDERONLINE].STORE  = " & MyParn(StoreTable!CODE) & " ) AS 'Total All Order' "
+    cStrStore = " , (SELECT SUM(BALITEM) FROM [BAL_ITEM_ORDERONLINE] WHERE [BAL_ITEM_ORDERONLINE].ITEM = FILE6_90.ITEM AND [BAL_ITEM_ORDERONLINE].STORE  = " & MyParn(StoreTable!code) & " ) AS 'Total All Order' "
     Do While Not .EOF
-        cStrStore = cStrStore & " , (SELECT SUM([IN]-[OUT]) FROM FILE1_11 WHERE FILE1_11.ITEM = FILE6_90.ITEM AND FILE1_11.STORE  = " & MyParn(StoreTable!CODE) & " ) AS '" & StoreTable!DESCA & "'"
+        cStrStore = cStrStore & " , (SELECT SUM([IN]-[OUT]) FROM FILE1_11 WHERE FILE1_11.ITEM = FILE6_90.ITEM AND FILE1_11.STORE  = " & MyParn(StoreTable!code) & " ) AS '" & StoreTable!DESCA & "'"
         .MoveNext
     Loop
 End With
 
-GRID2.Rows = 2
-GRID2.FixedRows = 2
+grid2.Rows = 2
+grid2.FixedRows = 2
 
 cBalNotShip = " ,(SELECT SUM(QUANT ) FROM Q_BAL_NOTSHIP WHERE Q_BAL_NOTSHIP.ITEM = FILE6_90.ITEM)"
 With grid1
 '                               0           1               2           3                                                                                   4               5               6            7                  8                   9           10          11
-    cString = " SELECT    FILE6_90.ITEM, FILE6_90.SKU, FACT.DESCA , CASE WHEN FILE1_10.desca IS NULL THEN FILE6_90.ITEM_NAME ELSE FILE1_10.desca END , FILE1_10.COLOR, FILE1_10.SCAL, FILE6_90.QUANT, FILE6_90.PRICE, file6_90.ITEM_NAME, FILE6_90.ID " & cStrStore & cBalNotShip & " FROM            FILE6_90 LEFT  JOIN FILE1_10 ON FILE6_90.ITEM = FILE1_10.ITEM left  JOIN  FACT ON FILE1_10.code = FACT.CODE WHERE DOC_NO =  " & MyParn(pDoc_No)
-    Set DATA2.Recordset = myRecordSet(cString, con_SERVER)
+    cString = " SELECT    FILE6_90.ITEM, FILE6_90.SKU, FACT.DESCA , CASE WHEN FILE1_10.desca IS NULL THEN FILE6_90.ITEM_NAME ELSE FILE1_10.desca END , FILE1_10.COLOR, FILE1_10.SCAL, FILE6_90.QUANT, FILE6_90.PRICE, file6_90.ITEM_NAME, FILE6_90.ID " & cStrStore & cBalNotShip & " FROM            FILE6_90 LEFT  JOIN FILE1_10 ON FILE6_90.ITEM = FILE1_10.ITEM left  JOIN  FACT ON FILE1_10.code = FACT.CODE WHERE DOC_NO =  " & MyParn(pDoc_no)
+    Set DATA2.RecordSet = myRecordSet(cString, con_SERVER)
 End With
 FixGrid2
-GRID2.Cell(flexcpAlignment, 0, 0, GRID2.Rows - 1, GRID2.Cols - 1) = 7
+grid2.Cell(flexcpAlignment, 0, 0, grid2.Rows - 1, grid2.Cols - 1) = 7
 Exit Sub
-myerror:
+myError:
 MsgBox Err.Description
 Err.Clear
 End Sub
 
 Sub FixGrid2()
 Dim LShowColAll As Boolean, LShowCol As Boolean
-With GRID2
+With grid2
         
     .FixedRows = 2
     .RowHeight(0) = 1000
@@ -1813,7 +1813,7 @@ With GRID2
         .ColWidth(.Cols - 1) = 1200
         .TextMatrix(0, .Cols - 1) = "—’Ìœ «·›—⁄"
         For nRow = 2 To .Rows - 1
-            .TextMatrix(nRow, .Cols - 1) = LastBalance(GRID2.TextMatrix(nRow, 0), cBranchStore, con_MyShop)
+            .TextMatrix(nRow, .Cols - 1) = LastBalance(grid2.TextMatrix(nRow, 0), cBranchStore, con_MyShop)
         Next nRow
     End If
     .ExplorerBar = flexExSort
@@ -2019,18 +2019,18 @@ Private Function myreplace_Sales() As String
     con_MyShop.BeginTrans
     con_MyShop.Execute CreateInsert(aInsert, "FILE6_20H")
     
-    For nRow = 2 To GRID2.Rows - 2
+    For nRow = 2 To grid2.Rows - 2
         aInsert2(0, 0) = "Doc_No"
         aInsert2(0, 1) = addstring(cDoc)
         
         aInsert2(1, 0) = "ITEM"
-        aInsert2(1, 1) = addvalue(GRID2.TextMatrix(nRow, 0))
+        aInsert2(1, 1) = addvalue(grid2.TextMatrix(nRow, 0))
         
         aInsert2(2, 0) = "QUANT"
-        aInsert2(2, 1) = Val(GRID2.ValueMatrix(nRow, 6))
+        aInsert2(2, 1) = Val(grid2.ValueMatrix(nRow, 6))
         
         aInsert2(3, 0) = "PRICE"
-        aInsert2(3, 1) = Val(GRID2.ValueMatrix(nRow, 7))
+        aInsert2(3, 1) = Val(grid2.ValueMatrix(nRow, 7))
 
         aInsert2(4, 0) = "row"
         aInsert2(4, 1) = nRow
@@ -2042,13 +2042,13 @@ Private Function myreplace_Sales() As String
         aInsert2(6, 1) = addstring(GetComputerNamecIpName)
 
         aInsert2(7, 0) = "Price_C2"
-        aInsert2(7, 1) = Val(GRID2.ValueMatrix(nRow, 7))
+        aInsert2(7, 1) = Val(grid2.ValueMatrix(nRow, 7))
         
         aInsert2(8, 0) = "DESCA2"
-        aInsert2(8, 1) = addstring(GRID2.TextMatrix(nRow, 8))
+        aInsert2(8, 1) = addstring(grid2.TextMatrix(nRow, 8))
         
         aInsert2(9, 0) = "SKU"
-        aInsert2(9, 1) = addstring(GRID2.TextMatrix(nRow, 1))
+        aInsert2(9, 1) = addstring(grid2.TextMatrix(nRow, 1))
         
         con_MyShop.Execute CreateInsert(aInsert2, "FILE6_20")
             
@@ -2058,7 +2058,7 @@ Private Function myreplace_Sales() As String
     con_SERVER.Execute " UPDATE FILE6_90H SET SALES_DOC = " & addstring(cDoc) & " , SALES_DATE = " & addDate(dSalesDate) & " WHERE DOC_NO = " & MyParn(grid1.TextMatrix(grid1.Row, 0))
     myreplace_Sales = cDoc
 Exit Function
-myerror:
+myError:
 MsgBox Err.Description
 con_MyShop.RollbackTrans
 Err.Clear
@@ -2075,20 +2075,20 @@ Private Sub grid2_AfterEdit(ByVal Row As Long, ByVal Col As Long)
 '    .TextMatrix(0, 6) = "«·ﬂ„Ì…"
 '    .TextMatrix(0, 7) = "«·”⁄—"
 
-With GRID2
+With grid2
     If grid1.TextMatrix(grid1.Row, 16) = "" Then
         If .Col = 0 Then
-            Dim loctable As ADODB.Recordset
+            Dim loctable As ADODB.RecordSet
             Set loctable = ItemFind(Val(.TextMatrix(Row, 0)), con_SERVER)
             If Not (loctable.EOF And loctable.BOF) Then
-                GRID2.TextMatrix(Row, 1) = loctable!BARCODE13 & ""
-                GRID2.TextMatrix(Row, 3) = loctable!DESCA & ""
-                GRID2.TextMatrix(Row, 7) = loctable!price & ""
+                grid2.TextMatrix(Row, 1) = loctable!BARCODE13 & ""
+                grid2.TextMatrix(Row, 3) = loctable!DESCA & ""
+                grid2.TextMatrix(Row, 7) = loctable!price & ""
                             
                 If Val(.TextMatrix(Row, 9)) <> 0 Then
                     con_SERVER.Execute " UPDATE FILE6_90 SET ITEM = " & addvalue(.TextMatrix(Row, 0)) & " , ITEM_NAME = " & addstring(.TextMatrix(Row, 3)) & " , PRICE = " & Val(.TextMatrix(Row, 7)) & " , SKU = " & addstring(.TextMatrix(Row, 1)) & " WHERE ID = " & Val(.TextMatrix(Row, 9))
                 Else
-                    GRID2.TextMatrix(Row, 6) = 1
+                    grid2.TextMatrix(Row, 6) = 1
                     cStr1 = "INSERT INTO FILE6_90 ( doc_no , sku , item , item_name , price , quant )" & _
                                 "VALUES( " & _
                                 addstring(grid1.TextMatrix(grid1.Row, 0)) & "," & _
@@ -2117,7 +2117,7 @@ End With
 End Sub
 
 Private Sub grid2_EnterCell()
-With GRID2
+With grid2
     If (.Col = 0 Or .Col = 7 Or .Col = 6) And cBranch = "00" Then
         .Editable = flexEDKbdMouse
     Else
@@ -2126,45 +2126,45 @@ With GRID2
 End With
 End Sub
 Private Sub Grid2_KeyUp(KeyCode As Integer, Shift As Integer)
-With GRID2
+With grid2
     If .Col = 0 And cBranch = "00" Then
         If KeyCode = 112 Then ItemsLookupAll Me, oSearchItem
     End If
     If KeyCode = 45 And cBranch = "00" And Col = 0 Then
-        GRID2.AddItem GRID2.Row
-        GRID2.TextMatrix(GRID2.Row, 0) = ""
+        grid2.AddItem grid2.Row
+        grid2.TextMatrix(grid2.Row, 0) = ""
     End If
     If KeyCode = 46 And cBranch = "00" And grid1.TextMatrix(grid1.Row, 16) = "" Then
         If MsgBox("  Õ–›  «·’‰› „‰ «·ÿ·»Ì… ", vbYesNo + vbDefaultButton2) = vbYes Then
-            con_SERVER.Execute " DELETE FROM FILE6_90 WHERE ID = " & Val(GRID2.TextMatrix(GRID2.Row, 9))
-            .RemoveItem GRID2.Row
+            con_SERVER.Execute " DELETE FROM FILE6_90 WHERE ID = " & Val(grid2.TextMatrix(grid2.Row, 9))
+            .RemoveItem grid2.Row
         End If
     End If
 End With
 End Sub
 Sub myProc()
-On Error GoTo myerror
-If ActiveControl.Name = GRID2.Name Then
-    GRID2.TextMatrix(GRID2.Row, 0) = oSearchItem.grid1.TextMatrix(oSearchItem.grid1.Row, 0)
-    grid2_AfterEdit GRID2.Row, 0
+On Error GoTo myError
+If ActiveControl.Name = grid2.Name Then
+    grid2.TextMatrix(grid2.Row, 0) = oSearchItem.grid1.TextMatrix(oSearchItem.grid1.Row, 0)
+    grid2_AfterEdit grid2.Row, 0
     Unload oSearchItem
 End If
 Exit Sub
-myerror:
+myError:
 MsgBox Err.Description
 Err.Clear
 End Sub
 Private Sub doprint_day()
 Dim aHeader(1)
 'f Not MYVALID Then Exit Sub
-Dim temptable As New ADODB.Recordset
-Dim SourchTable As New ADODB.Recordset, I As Double
+Dim temptable As New ADODB.RecordSet
+Dim SourchTable As New ADODB.RecordSet, i As Double
 contemp.Execute "DELETE * FROM TEMP"
 temptable.Open "temp", contemp, adOpenStatic, adLockOptimistic, adCmdTable
 cString = " SELECT        FILE6_90H.DOC_NO, FILE1_10.MODELFACT0 ,FILE6_90H.NAME,FILE6_90H.PHONE ,FILE1_10.MOSM,FILE6_90H.DATE, FILE6_90H.STREET, FILE6_90H.CITY, FILE6_90H.Shipping_City, FILE6_90H.Payment_Method, FILE6_90.ITEM, FACT.DESCA AS FACT_NAME , FILE1_10.[GROUP], FILE1_10.COLOR,  FILE1_10.SCAL, FILE6_90.PRICE, FILE6_90.QUANT , FILE1_10.DESCA , FILE6_90H.NOTES , FILE0_40.DESCA AS STORENAME  " & _
             " FROM          FILE6_90H INNER JOIN FILE6_90 ON FILE6_90H.DOC_NO = FILE6_90.DOC_NO INNER JOIN FILE1_10 ON FILE6_90.ITEM = FILE1_10.ITEM INNER JOIN FACT ON FILE1_10.code = FACT.CODE LEFT JOIN FILE0_40 ON FILE0_40.CODE = FILE6_90H.STORE WHERE  SALES_DOC IS NULL  "
     If xDoc_No.text <> "" Then cString = cString & " AND [DOC_NO] = " & MyParn(xDoc_No.text)
-    If xPay.BoundText <> "" Then cString = cString & " AND [Payment_Method] = " & MyParn(xPay.text)
+    If xpay.BoundText <> "" Then cString = cString & " AND [Payment_Method] = " & MyParn(xpay.text)
     If xStore.BoundText <> "" Then cString = cString & " AND [STORE] = " & MyParn(xStore.BoundText)
     If IsDate(xDate1.text) Then cString = cString & " AND [DATE] >= " & DateSq(xDate1.text)
     If IsDate(xDate2.text) Then cString = cString & " AND [DATE] <= " & DateSq(xDate2.text)
@@ -2191,13 +2191,13 @@ End If
 prog1.Max = nCount
 With SourchTable
     Do While Not .EOF
-        I = I + 1
-        prog1.Value = I
+        i = i + 1
+        prog1.Value = i
         temptable.AddNew
-        temptable!str4 = !doc_no
+        temptable!STR4 = !doc_no
         temptable!Date1 = !Date
         temptable!STR7 = !Name
-        temptable!str6 = !phone
+        temptable!STR6 = !phone
         
         temptable!str14 = !Shipping_City
         temptable!str15 = !Street
@@ -2207,16 +2207,16 @@ With SourchTable
         temptable!str1 = !Item
         temptable!str11 = !MOSM
         temptable!str12 = !fact_name
-        temptable!str13 = !modelfact0
+        temptable!str13 = !MODELFACT0
         temptable!str3 = !DESCA
         temptable!str9 = !NOTES
         temptable!str2 = !STORENAME
         
         temptable!str8 = !color
-        temptable!str5 = !scal
+        temptable!STR5 = !SCAL
         
         temptable!VAL1 = !Quant
-        temptable!val3 = !price
+        temptable!VAL3 = !price
         If cBranch <> "00" Then temptable!VAL4 = LastBalance(!Item, cBranchStore, con_MyShop)
         temptable!STR19 = " ÿ·»«  «Ê‰ ·«Ì‰  €Ì— „‰›–… " & xStore.text
         

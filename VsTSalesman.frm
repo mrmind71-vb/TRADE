@@ -996,10 +996,10 @@ Private Sub CMD_PRINT_Click()
     If XSECTION.BoundText <> "" Then cHead3 = cHead3 & " ﬁ”„ " & XSECTION.text
     If xSupp.BoundText <> "" Then cHead3 = cHead3 & " „Ê—œ " & xSupp.text
     If xGroup.BoundText <> "" Then cHead3 = cHead3 & " „Ã„Ê⁄…" & xGroup.text
-    If xMosm.BoundText <> "" Then cHead3 = cHead3 & " „Ê”„ " & xMosm.text
+    If XMOSM.BoundText <> "" Then cHead3 = cHead3 & " „Ê”„ " & XMOSM.text
         
     Load PrintGrd
-    PrintGrd.DOPRINT grid1, 1.1, , cHead1, cHead2, , , True, 10
+    PrintGrd.doprint grid1, 1.1, , cHead1, cHead2, , , True, 10
     PrintGrd.Show 1
 End Sub
 Private Sub CmdExit_Click()
@@ -1009,50 +1009,50 @@ End Sub
 Private Sub CmdUndo_Click()
     Unload Me
 End Sub
-Private Sub CmdGo_Click()
+Private Sub cmdgo_Click()
     myload
 End Sub
 Private Sub Form_Load()
-    openCon con
+    OpenCon con
     
-    DATA2.ConnectionString = strCon
+    DATA2.connectionString = strCon
     DATA2.RecordSource = "Select Code,DescA From File4_10 order by Desca"
     Set xSupp.RowSource = DATA2
     xSupp.ListField = "Desca"
     xSupp.BoundColumn = "Code"
     
-    DATA3.ConnectionString = strCon
-    DATA3.RecordSource = "Select Code,DescA From File1_50 ORDER BY DESCA"
-    Set xGroup.RowSource = DATA3
+    data3.connectionString = strCon
+    data3.RecordSource = "Select Code,DescA From File1_50 ORDER BY DESCA"
+    Set xGroup.RowSource = data3
     xGroup.ListField = "Desca"
     xGroup.BoundColumn = "Code"
     
-    DATA4.ConnectionString = strCon
+    DATA4.connectionString = strCon
     DATA4.RecordSource = "Select mosm ,descA From mosm ORDER BY date DESC "
-    Set xMosm.RowSource = DATA4
-    xMosm.ListField = "Desca"
-    xMosm.BoundColumn = "MOSM"
+    Set XMOSM.RowSource = DATA4
+    XMOSM.ListField = "Desca"
+    XMOSM.BoundColumn = "MOSM"
     
-    DATA5.ConnectionString = strCon
-    DATA5.RecordSource = "Select code ,desca From FILE1_10SC ORDER BY DESCA "
-    Set XSECTION.RowSource = DATA5
+    data5.connectionString = strCon
+    data5.RecordSource = "Select code ,desca From FILE1_10SC ORDER BY DESCA "
+    Set XSECTION.RowSource = data5
     XSECTION.ListField = "Desca"
     XSECTION.BoundColumn = "Code"
     
     Set grid1.DataSource = DATA6
-    DATA6.ConnectionString = strCon
+    DATA6.connectionString = strCon
     
-    DATA7.ConnectionString = strCon
+    DATA7.connectionString = strCon
     DATA7.RecordSource = "Select Code,DescA From File0_40 WHERE " & cUserStore
     Set xStore.RowSource = DATA7
     xStore.ListField = "Desca"
     xStore.BoundColumn = "Code"
     
-    data8.ConnectionString = strCon
+    data8.connectionString = strCon
     data8.RecordSource = "Select Code,DescA From File6_25 ORDER BY DESCA "
-    Set xMan.RowSource = data8
-    xMan.ListField = "Desca"
-    xMan.BoundColumn = "Code"
+    Set xman.RowSource = data8
+    xman.ListField = "Desca"
+    xman.BoundColumn = "Code"
     
     If cBranch <> "00" Then
         xStore.BoundText = cBranchStore
@@ -1064,7 +1064,7 @@ Private Sub Form_Load()
     FIXGRID
 End Sub
 Private Sub myload()
-Dim I As Double
+Dim i As Double
 Dim cString  As String, cStr2 As String
 With grid1
 '                           0               1                 2                3               4                5
@@ -1082,12 +1082,12 @@ With grid1
                 " FROM FILE1_10 INNER JOIN QFILE6_20 ON FILE1_10.ITEM = QFILE6_20.ITEM LEFT JOIN FILE1_10SC ON FILE1_10.[SECTION] = FILE1_10SC.CODE  INNER JOIN file6_25 ON QFILE6_20.man = file6_25.CODE INNER JOIN FILE0_40 ON FILE0_40.CODE = QFILE6_20.STORE WHERE QFILE6_20.iSBRANCH = 1 "
     End If
     
-    If xMosm.BoundText <> "" Then cStr2 = cStr2 & " AND FILE1_10.MOSM = " & MyParn(xMosm.BoundText)
+    If XMOSM.BoundText <> "" Then cStr2 = cStr2 & " AND FILE1_10.MOSM = " & MyParn(XMOSM.BoundText)
     If xSupp.BoundText <> "" Then cStr2 = cStr2 & " AND FILE1_10.CODE = " & MyParn(xSupp.BoundText)
     If xGroup.BoundText <> "" Then cStr2 = cStr2 & " AND FILE1_10.[GROUP] = " & MyParn(xGroup.BoundText)
     If XSECTION.BoundText <> "" Then cStr2 = cStr2 & " AND FILE1_10.[SECTION] = " & Val(XSECTION.BoundText)
     If xStore.BoundText <> "" Then cStr2 = cStr2 & " AND QFILE6_20.STORE = " & MyParn(xStore.BoundText)
-    If xMan.BoundText <> "" Then cStr2 = cStr2 & " AND QFILE6_20.MAN = " & MyParn(xMan.BoundText)
+    If xman.BoundText <> "" Then cStr2 = cStr2 & " AND QFILE6_20.MAN = " & MyParn(xman.BoundText)
     If Not bOpt5 Then cStr2 = cStr2 & " AND [store] IN (SELECT STORE FROM USERSHOP WHERE CODE = " & nusercode & " ) "
     
     If IsDate(xDate1.text) Then cStr2 = cStr2 & " AND QFILE6_20.[DATE] >= " & DateSq(xDate1.text)
@@ -1186,7 +1186,7 @@ End Sub
 
 Private Sub Command1_Click()
 Dim aHeader(1)
-Dim temptable As New ADODB.Recordset
+Dim temptable As New ADODB.RecordSet
 contemp.Execute "DELETE * FROM TEMP"
 temptable.Open "temp", contemp, adOpenStatic, adLockOptimistic, adCmdTable
 With grid1

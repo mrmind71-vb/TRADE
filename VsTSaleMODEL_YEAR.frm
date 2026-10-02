@@ -1212,9 +1212,9 @@ Private Sub CMD_PRINT_Click()
     If xGroup.BoundText <> "" Then cHead3 = cHead3 & " „Ã„Ê⁄…" & xGroup.text
     If XSECTION.text <> "" Then cHead3 = cHead3 & " ﬁ”„ " & XSECTION.text
     If xStore.BoundText <> "" Then cHead3 = cHead3 & " ›—⁄" & xStore.text
-    If xMosm.BoundText <> "" Then cHead3 = cHead3 & " „Ê”„ " & xMosm.text
+    If XMOSM.BoundText <> "" Then cHead3 = cHead3 & " „Ê”„ " & XMOSM.text
     Load PrintGrd
-    PrintGrd.DOPRINT grid1, 1, , cHead1, cHead2, cHead3, , True, 11
+    PrintGrd.doprint grid1, 1, , cHead1, cHead2, cHead3, , True, 11
     PrintGrd.Show 1
 End Sub
 Private Sub CmdExit_Click()
@@ -1224,7 +1224,7 @@ End Sub
 Private Sub CmdUndo_Click()
     Unload Me
 End Sub
-Private Sub CmdGo_Click()
+Private Sub cmdgo_Click()
     If XYEAR1.text = "" Or XYEAR2.text = "" Then Exit Sub
     If xDate1.text = "" Then xDate1.text = "1-1"
     If xDate2.text = "" Then xDate2.text = "31-12"
@@ -1233,7 +1233,7 @@ End Sub
 
 Private Sub Command1_Click()
 Dim aHeader(1)
-Dim temptable As New ADODB.Recordset
+Dim temptable As New ADODB.RecordSet
 contemp.Execute "DELETE * FROM TEMP"
 temptable.Open "temp", contemp, adOpenStatic, adLockOptimistic, adCmdTable
 With grid1
@@ -1258,14 +1258,14 @@ temptable.Close
 Set temptable = Nothing
 End Sub
 Private Sub Form_Load()
-    openCon con
+    OpenCon con
     XYEAR1.text = 2017
     XYEAR2.text = Year(Date)
     xmosm22.AddItem " "
     xmosm22.AddItem "S"
     xmosm22.AddItem "W"
     xmosm22.AddItem "M"
-    DATA7.ConnectionString = strCon
+    DATA7.connectionString = strCon
     DATA7.RecordSource = "Select Code,DescA From STORE_BR WHERE " & cUserStore
     Set xStore.RowSource = DATA7
     xStore.ListField = "Desca"
@@ -1273,46 +1273,46 @@ Private Sub Form_Load()
     xStore.BoundText = cBranchStore
     xStore.Enabled = (cBranch = "00")
     
-    DATA2.ConnectionString = strCon
+    DATA2.connectionString = strCon
     DATA2.RecordSource = "Select Code,DescA From File4_10 order by Desca"
     Set xSupp.RowSource = DATA2
     xSupp.ListField = "Desca"
     xSupp.BoundColumn = "Code"
     
-    DATA3.ConnectionString = strCon
-    DATA3.RecordSource = "Select Code,DescA From File1_50 ORDER BY DESCA"
-    Set xGroup.RowSource = DATA3
+    data3.connectionString = strCon
+    data3.RecordSource = "Select Code,DescA From File1_50 ORDER BY DESCA"
+    Set xGroup.RowSource = data3
     xGroup.ListField = "Desca"
     xGroup.BoundColumn = "Code"
     
-    DATA4.ConnectionString = strCon
+    DATA4.connectionString = strCon
     DATA4.RecordSource = "Select mosm ,descA From mosm ORDER BY date DESC "
-    Set xMosm.RowSource = DATA4
-    xMosm.ListField = "Desca"
-    xMosm.BoundColumn = "MOSM"
+    Set XMOSM.RowSource = DATA4
+    XMOSM.ListField = "Desca"
+    XMOSM.BoundColumn = "MOSM"
 '    xMosm.BoundText = cPMosm
     
-    DATA5.ConnectionString = strCon
-    DATA5.RecordSource = "Select code ,desca From fact ORDER BY DESCA "
-    Set xFact.RowSource = DATA5
+    data5.connectionString = strCon
+    data5.RecordSource = "Select code ,desca From fact ORDER BY DESCA "
+    Set xFact.RowSource = data5
     xFact.ListField = "Desca"
     xFact.BoundColumn = "Code"
     
-    data8.ConnectionString = strCon
+    data8.connectionString = strCon
     data8.RecordSource = "Select code ,desca From file1_10sc ORDER BY DESCA "
     Set XSECTION.RowSource = data8
     XSECTION.ListField = "Desca"
     XSECTION.BoundColumn = "Code"
     
     Set grid1.DataSource = DATA6
-    DATA6.ConnectionString = strCon
+    DATA6.connectionString = strCon
     
     grid1.Rows = 2
     grid1.Cols = 3
     FIXGRID
 End Sub
 Private Sub myload()
-Dim I As Double, nYear As Double
+Dim i As Double, nYear As Double
 Dim cString  As String, cStr2 As String, DDate1 As Date, DDate2 As Date
 With grid1
 '                           0               1                 2                3               4                5
@@ -1325,9 +1325,9 @@ With grid1
         Next nYear
         cString = cString & " FROM FILE1_10 INNER JOIN QFILE6_20 ON FILE1_10.ITEM = QFILE6_20.ITEM WHERE FILE1_10.MODELNO IS NOT NULL "
     
-    If xMosm.BoundText <> "" Then cStr2 = cStr2 & " AND FILE1_10.MOSM = " & MyParn(xMosm.BoundText)
+    If XMOSM.BoundText <> "" Then cStr2 = cStr2 & " AND FILE1_10.MOSM = " & MyParn(XMOSM.BoundText)
     If xmosm22.text <> "" Then cStr2 = cStr2 & " AND FILE1_10.MOSM2 = " & MyParn(xmosm22.text)
-    If XMODEL.text <> "" Then cStr2 = cStr2 & " AND FILE1_10.modelno = " & MyParn(XMODEL.text)
+    If xModel.text <> "" Then cStr2 = cStr2 & " AND FILE1_10.modelno = " & MyParn(xModel.text)
     If XMOSM2.text <> "W" Then
         If XMOSM2.text <> "" Then cStr2 = cStr2 & " AND SUBSTRING(FILE1_10.MOSM ,1,1) = " & MyParn(XMOSM2.text)
     Else
@@ -1391,9 +1391,9 @@ With grid1
     .ExplorerBar = flexExSort
     .Cell(flexcpAlignment, 0, 0, .Rows - 1, .Cols - 1) = 4
     .SubtotalPosition = flexSTAbove
-    For I = 3 To .Cols - 1
-        .Subtotal flexSTSum, -1, I, "#0", vbRed, vbYellow, True, "  "
-    Next I
+    For i = 3 To .Cols - 1
+        .Subtotal flexSTSum, -1, i, "#0", vbRed, vbYellow, True, "  "
+    Next i
     .Cell(flexcpAlignment, 1, 0, .Rows - 1, .Cols - 1) = 7
     End With
 End Sub
@@ -1406,7 +1406,7 @@ Private Sub grid1_DblClick()
     VsTSales.xDate1.text = xDate1.text
     VsTSales.xDate2.text = xDate2.text
     VsTSales.xDate2.text = xDate2.text
-    VsTSales.xMosm.BoundText = xMosm.BoundText
+    VsTSales.XMOSM.BoundText = XMOSM.BoundText
 '    VsTSales.XSEC.Text = grid1.TextMatrix(grid1.Row, 0)
     VsTSales.Show
 End Sub
@@ -1426,9 +1426,9 @@ If ActiveControl.Name = xFact.Name Then
     xFact.BoundText = Search3.grid1.TextMatrix(Search3.grid1.Row, 0)
     Unload Search3
 End If
-If ActiveControl.Name = XMODEL.Name Then
+If ActiveControl.Name = xModel.Name Then
     ActiveControl.text = oSearchItem.grid1.TextMatrix(oSearchItem.grid1.Row, 0)
-    XDESCA.Caption = oSearchItem.grid1.TextMatrix(oSearchItem.grid1.Row, 1) & " / " & oSearchItem.grid1.TextMatrix(oSearchItem.grid1.Row, 2) & " / " & oSearchItem.grid1.TextMatrix(oSearchItem.grid1.Row, 4)
+    xDescA.Caption = oSearchItem.grid1.TextMatrix(oSearchItem.grid1.Row, 1) & " / " & oSearchItem.grid1.TextMatrix(oSearchItem.grid1.Row, 2) & " / " & oSearchItem.grid1.TextMatrix(oSearchItem.grid1.Row, 4)
     oSearchItem.Hide
 End If
 

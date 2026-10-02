@@ -36,7 +36,7 @@ Begin VB.Form price_listfrm
       Left            =   0
       ScaleHeight     =   1080
       ScaleWidth      =   20355
-      TabIndex        =   35
+      TabIndex        =   32
       Top             =   9315
       Width           =   20355
       Begin VB.Frame Frame6 
@@ -53,13 +53,13 @@ Begin VB.Form price_listfrm
          Height          =   645
          Left            =   45
          RightToLeft     =   -1  'True
-         TabIndex        =   36
+         TabIndex        =   33
          Top             =   0
          Width           =   3525
          Begin Threed.SSCommand cmdFirst 
             Height          =   420
             Left            =   2610
-            TabIndex        =   37
+            TabIndex        =   34
             TabStop         =   0   'False
             Top             =   135
             Width           =   825
@@ -88,7 +88,7 @@ Begin VB.Form price_listfrm
          Begin Threed.SSCommand cmdPrevious 
             Height          =   420
             Left            =   1710
-            TabIndex        =   38
+            TabIndex        =   35
             TabStop         =   0   'False
             Top             =   135
             Width           =   870
@@ -117,7 +117,7 @@ Begin VB.Form price_listfrm
          Begin Threed.SSCommand cmdNext 
             Height          =   420
             Left            =   855
-            TabIndex        =   39
+            TabIndex        =   36
             TabStop         =   0   'False
             Top             =   135
             Width           =   825
@@ -146,7 +146,7 @@ Begin VB.Form price_listfrm
          Begin Threed.SSCommand cmdLast 
             Height          =   420
             Left            =   45
-            TabIndex        =   40
+            TabIndex        =   37
             TabStop         =   0   'False
             Top             =   135
             Width           =   780
@@ -178,7 +178,7 @@ Begin VB.Form price_listfrm
          Height          =   690
          Left            =   3645
          RightToLeft     =   -1  'True
-         TabIndex        =   42
+         TabIndex        =   39
          Top             =   -45
          Width           =   6360
          Begin VB.TextBox txtModel 
@@ -188,7 +188,7 @@ Begin VB.Form price_listfrm
             Left            =   90
             MaxLength       =   10
             RightToLeft     =   -1  'True
-            TabIndex        =   44
+            TabIndex        =   41
             TabStop         =   0   'False
             Tag             =   "1"
             Top             =   225
@@ -201,7 +201,7 @@ Begin VB.Form price_listfrm
             Left            =   3420
             MaxLength       =   10
             RightToLeft     =   -1  'True
-            TabIndex        =   43
+            TabIndex        =   40
             TabStop         =   0   'False
             Tag             =   "1"
             Top             =   225
@@ -213,7 +213,7 @@ Begin VB.Form price_listfrm
             Height          =   285
             Left            =   2250
             RightToLeft     =   -1  'True
-            TabIndex        =   46
+            TabIndex        =   43
             Top             =   225
             Width           =   825
          End
@@ -223,7 +223,7 @@ Begin VB.Form price_listfrm
             Height          =   285
             Left            =   5535
             RightToLeft     =   -1  'True
-            TabIndex        =   45
+            TabIndex        =   42
             Top             =   270
             Width           =   645
          End
@@ -231,7 +231,7 @@ Begin VB.Form price_listfrm
       Begin Threed.SSCommand cmdClient 
          Height          =   555
          Left            =   10035
-         TabIndex        =   41
+         TabIndex        =   38
          Top             =   90
          Width           =   4065
          _ExtentX        =   7170
@@ -252,14 +252,14 @@ Begin VB.Form price_listfrm
          ButtonStyle     =   3
       End
       Begin ComctlLib.ProgressBar prog1 
-         Height          =   375
+         Height          =   150
          Left            =   45
-         TabIndex        =   47
-         Top             =   675
+         TabIndex        =   44
+         Top             =   900
          Visible         =   0   'False
-         Width           =   14100
-         _ExtentX        =   24871
-         _ExtentY        =   661
+         Width           =   20265
+         _ExtentX        =   35745
+         _ExtentY        =   265
          _Version        =   327682
          BorderStyle     =   1
          Appearance      =   0
@@ -269,13 +269,13 @@ Begin VB.Form price_listfrm
       BackColor       =   &H00FFFFFF&
       Height          =   735
       Left            =   10530
-      TabIndex        =   34
+      TabIndex        =   31
       Top             =   -90
       Width           =   4110
       Begin Threed.SSCommand cmdExcel 
          Height          =   510
          Left            =   45
-         TabIndex        =   48
+         TabIndex        =   45
          Top             =   180
          Width           =   1905
          _ExtentX        =   3360
@@ -303,7 +303,7 @@ Begin VB.Form price_listfrm
       Begin Threed.SSCommand cmdCSV 
          Height          =   510
          Left            =   1935
-         TabIndex        =   49
+         TabIndex        =   46
          Top             =   180
          Width           =   2130
          _ExtentX        =   3757
@@ -340,7 +340,7 @@ Begin VB.Form price_listfrm
       EndProperty
       Height          =   5235
       Left            =   -4005
-      TabIndex        =   9
+      TabIndex        =   8
       Top             =   11070
       Visible         =   0   'False
       Width           =   10725
@@ -349,7 +349,7 @@ Begin VB.Form price_listfrm
          Height          =   450
          Left            =   135
          Style           =   1  'Graphical
-         TabIndex        =   10
+         TabIndex        =   9
          Top             =   270
          Width           =   2310
       End
@@ -361,7 +361,7 @@ Begin VB.Form price_listfrm
          Height          =   270
          Left            =   1035
          RightToLeft     =   -1  'True
-         TabIndex        =   25
+         TabIndex        =   24
          Top             =   1080
          Width           =   525
       End
@@ -382,7 +382,7 @@ Begin VB.Form price_listfrm
          Height          =   375
          Left            =   0
          RightToLeft     =   -1  'True
-         TabIndex        =   24
+         TabIndex        =   23
          Top             =   1035
          Width           =   1005
       End
@@ -395,7 +395,7 @@ Begin VB.Form price_listfrm
          ForeColor       =   &H000000C0&
          Height          =   330
          Left            =   2610
-         TabIndex        =   14
+         TabIndex        =   13
          Top             =   990
          Width           =   1950
       End
@@ -408,7 +408,7 @@ Begin VB.Form price_listfrm
          ForeColor       =   &H000000C0&
          Height          =   330
          Left            =   2610
-         TabIndex        =   13
+         TabIndex        =   12
          Top             =   1350
          Width           =   1950
       End
@@ -429,7 +429,7 @@ Begin VB.Form price_listfrm
          EndProperty
          Height          =   285
          Left            =   675
-         TabIndex        =   12
+         TabIndex        =   11
          Top             =   765
          Width           =   960
       End
@@ -450,7 +450,7 @@ Begin VB.Form price_listfrm
          EndProperty
          Height          =   285
          Left            =   3195
-         TabIndex        =   11
+         TabIndex        =   10
          Top             =   720
          Width           =   735
       End
@@ -466,17 +466,17 @@ Begin VB.Form price_listfrm
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Height          =   1320
+      Height          =   1275
       Index           =   4
-      Left            =   6165
+      Left            =   9225
       RightToLeft     =   -1  'True
-      TabIndex        =   21
-      Top             =   675
+      TabIndex        =   20
+      Top             =   315
       Width           =   1275
       Begin Threed.SSCommand cmdSave 
          Height          =   555
          Left            =   45
-         TabIndex        =   22
+         TabIndex        =   21
          Top             =   135
          Width           =   1185
          _ExtentX        =   2090
@@ -507,7 +507,7 @@ Begin VB.Form price_listfrm
       Begin Threed.SSCommand cmdUndo 
          Height          =   510
          Left            =   45
-         TabIndex        =   23
+         TabIndex        =   22
          TabStop         =   0   'False
          Top             =   720
          Width           =   1185
@@ -541,13 +541,13 @@ Begin VB.Form price_listfrm
       Height          =   735
       Left            =   14670
       RightToLeft     =   -1  'True
-      TabIndex        =   15
+      TabIndex        =   14
       Top             =   -90
       Width           =   5595
       Begin Threed.SSCommand cmdInform 
          Height          =   510
          Left            =   4500
-         TabIndex        =   16
+         TabIndex        =   15
          TabStop         =   0   'False
          Top             =   180
          Width           =   1050
@@ -578,7 +578,7 @@ Begin VB.Form price_listfrm
       Begin Threed.SSCommand cmdNewInv 
          Height          =   510
          Left            =   3375
-         TabIndex        =   17
+         TabIndex        =   16
          TabStop         =   0   'False
          Top             =   180
          Width           =   1095
@@ -609,7 +609,7 @@ Begin VB.Form price_listfrm
       Begin Threed.SSCommand cmddel 
          Height          =   510
          Left            =   2250
-         TabIndex        =   18
+         TabIndex        =   17
          TabStop         =   0   'False
          Top             =   180
          Width           =   1095
@@ -640,7 +640,7 @@ Begin VB.Form price_listfrm
       Begin Threed.SSCommand cmdExit 
          Height          =   510
          Left            =   45
-         TabIndex        =   19
+         TabIndex        =   18
          TabStop         =   0   'False
          Top             =   180
          Width           =   1050
@@ -669,7 +669,7 @@ Begin VB.Form price_listfrm
       Begin Threed.SSCommand cmdPrint 
          Height          =   510
          Left            =   1125
-         TabIndex        =   20
+         TabIndex        =   19
          TabStop         =   0   'False
          Top             =   180
          Width           =   1095
@@ -746,7 +746,7 @@ Begin VB.Form price_listfrm
       Align           =   2  'Align Bottom
       Height          =   465
       Left            =   0
-      TabIndex        =   28
+      TabIndex        =   25
       Top             =   10395
       Width           =   20355
       _ExtentX        =   35904
@@ -768,7 +768,7 @@ Begin VB.Form price_listfrm
          Height          =   405
          Index           =   0
          Left            =   0
-         TabIndex        =   29
+         TabIndex        =   26
          Top             =   45
          Width           =   4005
          _ExtentX        =   7064
@@ -792,7 +792,7 @@ Begin VB.Form price_listfrm
          Height          =   330
          Index           =   1
          Left            =   4095
-         TabIndex        =   30
+         TabIndex        =   27
          Top             =   45
          Width           =   4005
          _ExtentX        =   7064
@@ -816,7 +816,7 @@ Begin VB.Form price_listfrm
          Height          =   330
          Index           =   2
          Left            =   8100
-         TabIndex        =   31
+         TabIndex        =   28
          Top             =   45
          Width           =   4000
          _ExtentX        =   7064
@@ -840,7 +840,7 @@ Begin VB.Form price_listfrm
          Height          =   330
          Index           =   3
          Left            =   12150
-         TabIndex        =   32
+         TabIndex        =   29
          Top             =   45
          Width           =   3960
          _ExtentX        =   6985
@@ -864,7 +864,7 @@ Begin VB.Form price_listfrm
          Height          =   330
          Index           =   4
          Left            =   16155
-         TabIndex        =   33
+         TabIndex        =   30
          Top             =   45
          Width           =   4185
          _ExtentX        =   7382
@@ -896,11 +896,11 @@ Begin VB.Form price_listfrm
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Height          =   1365
-      Left            =   7470
-      TabIndex        =   5
+      Height          =   960
+      Left            =   10530
+      TabIndex        =   4
       Top             =   630
-      Width           =   12750
+      Width           =   9690
       Begin VB.TextBox xDoc_No 
          Alignment       =   1  'Right Justify
          Appearance      =   0  'Flat
@@ -914,25 +914,13 @@ Begin VB.Form price_listfrm
             Strikethrough   =   0   'False
          EndProperty
          Height          =   330
-         Left            =   10485
+         Left            =   7425
          Locked          =   -1  'True
          MaxLength       =   12
          TabIndex        =   0
          TabStop         =   0   'False
          Tag             =   "2"
          Top             =   180
-         Width           =   1185
-      End
-      Begin VB.TextBox xCode 
-         Alignment       =   1  'Right Justify
-         Appearance      =   0  'Flat
-         BackColor       =   &H00FFFFFF&
-         Height          =   330
-         Left            =   10485
-         MaxLength       =   10
-         RightToLeft     =   -1  'True
-         TabIndex        =   1
-         Top             =   540
          Width           =   1185
       End
       Begin VB.TextBox xCode2 
@@ -954,7 +942,7 @@ Begin VB.Form price_listfrm
          Left            =   5355
          MaxLength       =   15
          PasswordChar    =   "*"
-         TabIndex        =   4
+         TabIndex        =   3
          Top             =   2460
          Visible         =   0   'False
          Width           =   1185
@@ -964,41 +952,19 @@ Begin VB.Form price_listfrm
          Appearance      =   0  'Flat
          BackColor       =   &H00FFFFFF&
          Height          =   330
-         Left            =   6975
+         Left            =   90
          MaxLength       =   200
-         TabIndex        =   2
-         Top             =   900
-         Width           =   4695
-      End
-      Begin VB.Label xCodeDesca 
-         Alignment       =   1  'Right Justify
-         Appearance      =   0  'Flat
-         BorderStyle     =   1  'Fixed Single
-         ForeColor       =   &H80000008&
-         Height          =   330
-         Left            =   6975
-         TabIndex        =   27
+         TabIndex        =   1
          Top             =   540
-         Width           =   3480
-      End
-      Begin VB.Label Label16 
-         AutoSize        =   -1  'True
-         BackColor       =   &H80000005&
-         Caption         =   "«·⁄„Ì·"
-         Height          =   270
-         Left            =   11745
-         RightToLeft     =   -1  'True
-         TabIndex        =   26
-         Top             =   585
-         Width           =   450
+         Width           =   8520
       End
       Begin VB.Label Label1 
          BackColor       =   &H00FFFFFF&
          Caption         =   "—ﬁ„ „” ‰œ"
          Height          =   285
-         Left            =   11745
+         Left            =   8685
          RightToLeft     =   -1  'True
-         TabIndex        =   6
+         TabIndex        =   5
          Top             =   225
          Width           =   750
       End
@@ -1018,7 +984,7 @@ Begin VB.Form price_listfrm
          Index           =   0
          Left            =   6615
          RightToLeft     =   -1  'True
-         TabIndex        =   8
+         TabIndex        =   7
          Top             =   2430
          Visible         =   0   'False
          Width           =   900
@@ -1028,18 +994,18 @@ Begin VB.Form price_listfrm
          BackColor       =   &H00FFFFFF&
          Caption         =   "«·»Ì«‰"
          Height          =   270
-         Left            =   11745
+         Left            =   8685
          RightToLeft     =   -1  'True
-         TabIndex        =   7
-         Top             =   990
+         TabIndex        =   6
+         Top             =   540
          Width           =   420
       End
    End
    Begin VSFlex7Ctl.VSFlexGrid grid1 
       Height          =   7215
-      Left            =   90
-      TabIndex        =   3
-      Top             =   2025
+      Left            =   0
+      TabIndex        =   2
+      Top             =   1620
       Width           =   20220
       _cx             =   35666
       _cy             =   12726
@@ -1162,32 +1128,39 @@ ItemsLookupAll Me, oSearchItem
 End Sub
 Function myreplace(Optional Row As Long = -1) As Boolean
 Dim aInsert As Variant
-aInsert = AddFlag(aInsert, "CODE", addstring(xCode.text))
 aInsert = AddFlag(aInsert, "[NOTES]", addstring(xNotes.text))
-On Error GoTo myerror
+On Error GoTo myError
 con.BeginTrans
-If xDoc_No.Tag = DefineMode Then
-    xDoc_No.text = NewFlag("FILE6_53H", "DOC_NO", con)
-    aInsert = AddFlag(aInsert, "DOC_NO", xDoc_No.text)
+If xdoc_no.Tag = DefineMode Then
+    xdoc_no.text = NewFlag("FILE6_53H", "DOC_NO", con)
+    aInsert = AddFlag(aInsert, "DOC_NO", xdoc_no.text)
     aInsert = AddFlag(aInsert, "[USERNAME]", addstring(cusername))
     con.Execute addInsert(aInsert, "FILE6_53H")
 Else
     aInsert = AddFlag(aInsert, "[USERNAME2]", addstring(cusername))
-    con.Execute addUpdate(aInsert, "FILE6_53H", "DOC_NO = " & addstring(xDoc_No.text))
+    con.Execute addUpdate(aInsert, "FILE6_53H", "DOC_NO = " & addstring(xdoc_no.text))
 End If
 If Row > 0 Then myreplaceGrd Row
 con.CommitTrans
 myreplace = True
 Exit Function
-myerror:
+myError:
 'prog1.Visible = False
 MsgBox Err.Description
 con.RollbackTrans
 Err.Clear
 End Function
 Sub myProc()
-'On Error GoTo myerror
+On Error GoTo myError
 If ActiveControl.Name = grid1.Name Then
+    If grid1.TextMatrix(grid1.Row, grid1.Cols - 1) <> "" Then Exit Sub
+    Dim nFound As Long
+    nFound = grid1.FindRow(oSearchItem.grid1.TextMatrix(oSearchItem.grid1.Row, 0), , 1)
+    If nFound <> -1 Then
+        MsgBox "«·’‰› „ÊÃÊœ ›Ï «·”ÿ— —ﬁ„ " & nFound
+        Exit Sub
+    End If
+        
     Dim bNew As Boolean
     bNew = grid1.Row = grid1.Rows - 1
     grid1.TextMatrix(grid1.Row, 1) = oSearchItem.grid1.TextMatrix(oSearchItem.grid1.Row, 0)
@@ -1195,11 +1168,11 @@ If ActiveControl.Name = grid1.Name Then
     GrdDesc grid1.TextMatrix(grid1.Row, 1), grid1.Row
     Grid1_AfterEdit grid1.Row, grid1.Col
 ElseIf ActiveControl.Name = cmdInform.Name Then
-    xDoc_No.text = oSearchDoc.grid1.TextMatrix(oSearchDoc.grid1.Row, 0)
+    xdoc_no.text = oSearchDoc.grid1.TextMatrix(oSearchDoc.grid1.Row, 0)
     Unload oSearchDoc
     myUndo
-ElseIf ActiveControl.Name = xCode.Name Then
-    xCode.text = oSearchClientLook.grid1.TextMatrix(oSearchClientLook.grid1.Row, 0)
+ElseIf ActiveControl.Name = Xcode.Name Then
+    Xcode.text = oSearchClientLook.grid1.TextMatrix(oSearchClientLook.grid1.Row, 0)
     oSearchClientLook.Hide
     SendKeys "{tab}"
 ElseIf ActiveControl.Name = cmdClient.Name Then
@@ -1210,13 +1183,13 @@ ElseIf ActiveControl.Name = cmdClient.Name Then
         cmdClient.Tag = osearchClient.grid1.TextMatrix(osearchClient.grid1.Row, 0)
         cmdClient.Caption = osearchClient.grid1.TextMatrix(osearchClient.grid1.Row, 1)
     End If
-    If Not openCardTable(tbMode.tbFind, xDoc_No.text) Then
+    If Not openCardTable(tbMode.tbFind, xdoc_no.text) Then
         If Not openCardTable Then myDefine
     End If
     osearchClient.Hide
 End If
 Exit Sub
-myerror:
+myError:
 MsgBox Err.Description
 Err.Clear
 End Sub
@@ -1241,17 +1214,17 @@ If MsgBox("Õ–› «·„” ‰œ »«·ﬂ«„·  ?, Â· «‰  „Ê«›ﬁ ø", vbOKCancel + vbDefaultButton
 End If
 
 con.BeginTrans
-con.Execute "Delete  From FILE6_53 where Doc_No = " & xDoc_No.text
-con.Execute "Delete  From FILE6_53H where Doc_No = " & xDoc_No.text
+con.Execute "Delete  From FILE6_53 where Doc_No = " & xdoc_no.text
+con.Execute "Delete  From FILE6_53H where Doc_No = " & xdoc_no.text
 con.CommitTrans
     
-If Not openCardTable(tbMode.tbPrevious, xDoc_No.text) Then
+If Not openCardTable(tbMode.tbPrevious, xdoc_no.text) Then
     If Not openCardTable(tbMode.tbFirst) Then
         myDefine
     End If
 End If
 Exit Sub
-myerror:
+myError:
 con.RollbackTrans
 MsgBox Err.Description
 Err.Clear
@@ -1266,12 +1239,15 @@ Dim aRow As Variant
         aSub = AddFlag(aSub, "back_color", 19)
         aRow = AddFlag(aRow, aSub)
     End If
-    ToFileExelNew grid1, , , aRow, , 0.9, , , , , , Me, Array("⁄—÷ ”⁄— —ﬁ„ : " & xDoc_No.text, "«·⁄„Ì· : " & xCodeDesca.Caption, "«· «—ÌŒ : " & xDate.text)
-
+    grid1.Redraw = flexRDNone
+    grid1.RowHidden(grid1.Rows - 1) = True
+    ToFileExelNew grid1, , , aRow, , 0.9, , , , , , Me, Array("⁄—÷ ﬁ«∆„… ”⁄— : " & xNotes.text)
+    grid1.RowHidden(grid1.Rows - 1) = False
+    grid1.Redraw = flexRDBuffered
 Me.MousePointer = 0
 End Sub
 
-Private Sub cmdExit_Click()
+Private Sub CmdExit_Click()
 Unload Me
 End Sub
 Private Sub CmdInform_Click()
@@ -1285,14 +1261,14 @@ End Sub
 Private Sub CmdNewInv_Click()
 myDefine
 On Error Resume Next
-xCode.SetFocus
+Xcode.SetFocus
 Err.Clear
 End Sub
 Private Sub cmdSave_Click()
 If myreplace Then
-    MsgBox " „ «·Õ›Ÿ »‰Ã«Õ"
+    Inform " „ «·Õ›Ÿ »‰Ã«Õ"
 End If
-If Not openCardTable(tbMode.tbFind, xDoc_No.text) Then
+If Not openCardTable(tbMode.tbFind, xdoc_no.text) Then
     If Not openCardTable Then myDefine
 End If
 End Sub
@@ -1301,12 +1277,12 @@ myUndo
 End Sub
 Private Sub Form_Activate()
 If Not bAct Then
-    If xDoc_No.Tag = LoadMode Then
+    If xdoc_no.Tag = LoadMode Then
         On Error Resume Next
         grid1.SetFocus
         CellPos 13, grid1.Rows - 2, grid1.Cols - 1
     Else
-       xCode.SetFocus
+       xNotes.SetFocus
     End If
 End If
 End Sub
@@ -1326,7 +1302,7 @@ ElseIf KeyCode = 116 And cmdSave.Enabled Then
 End If
 End Sub
 Private Sub Form_Load()
-'On Error GoTo myerror
+On Error GoTo myError
 bEdit = True
 
 OpenCon con
@@ -1334,7 +1310,7 @@ nRound = 0
 
 If Not openCardTable Then myDefine
 Exit Sub
-myerror:
+myError:
 MsgBox Err.Description
 Err.Clear
 End Sub
@@ -1361,11 +1337,11 @@ Public Sub Grid1_AfterEdit(ByVal Row As Long, ByVal Col As Long)
 'On Error GoTo myerror
 Dim bNew As Boolean
 With grid1
-If Not myValid(True) Then
+If Not MYVALID(True) Then
     On Error Resume Next
     grid1.SetFocus
     Err.Clear
-    myLoadGrd
+    myloadgrd
     If Row < grid1.Rows - 1 Then
         grid1.Select Row, Col
     Else
@@ -1385,8 +1361,8 @@ If Row = grid1.Rows - 1 Then
 End If
 
 If myreplace(Row) Then
-    If xDoc_No.Tag = DefineMode Then
-        openCardTable tbMode.tbFind, xDoc_No.text
+    If xdoc_no.Tag = DefineMode Then
+        openCardTable tbMode.tbFind, xdoc_no.text
     ElseIf grid1.TextMatrix(Row, grid1.Cols - 1) = "" Then
         grid1.TextMatrix(Row, grid1.Cols - 1) = get_Id(con)
     End If
@@ -1397,7 +1373,7 @@ If myreplace(Row) Then
 End If
 End With
 Exit Sub
-myerror:
+myError:
 MsgBox Err.Description
 Err.Clear
 End Sub
@@ -1405,7 +1381,9 @@ Private Sub grid1_EnterCell()
 With grid1
     If Not bEditRecord Then
         .Editable = flexEDNone
-    ElseIf .Col = 1 Or .Col = 11 Then
+    ElseIf .Col = 1 Then
+        .Editable = IIf(grid1.TextMatrix(grid1.Row, grid1.Cols - 1) = "", flexEDKbdMouse, flexEDNone)
+    ElseIf .Col = 11 Then
         .Editable = flexEDKbdMouse
     Else
         .Editable = flexEDNone
@@ -1439,6 +1417,15 @@ With grid1
             Exit Sub
         End If
     ElseIf Col = 1 Then
+        If ValidInt(.EditText) Then
+            Dim nFound As Long
+            nFound = grid1.FindRow(grid1.EditText, , 1)
+            If nFound <> -1 Then
+                MsgBox "«·’‰› „ÊÃÊœ ›Ï «·”ÿ— —ﬁ„ " & nFound
+                Cancel = True
+                Exit Sub
+            End If
+        End If
         If Not GrdDesc(.EditText, Row) Then
             Cancel = True
         Else
@@ -1469,28 +1456,22 @@ End Sub
 Private Sub xDate_Validate(Cancel As Boolean)
 If Not IsDate(xDate.text) Then Cancel = True
 End Sub
-Private Function myValid(Optional bIgMsg As Boolean = False, Optional bIgMan As Boolean = False) As Boolean
-If Trim(xCode.text) = "" Then
-    MsgBox "·« ÌÊÃœ ﬂÊœ ⁄„Ì· «Ê ﬂÊœ „Ê—œ"
+Private Function MYVALID(Optional bIgMsg As Boolean = False, Optional bIgMan As Boolean = False) As Boolean
+If Trim(xNotes.text) = "" Then
+    MsgBox "»Ì«‰ ﬁ«∆„… «·”⁄—"
     Exit Function
 End If
 
-If xCodeDesca.Caption = "" Then
-    If Not bIgMsg Then MsgBox "·« ÌÊÃœ ﬂÊœ ⁄„Ì·"
-    Exit Function
-End If
-myValid = True
+MYVALID = True
 End Function
 Private Sub myload()
-xDoc_No.text = CardTable!doc_no
-xNotes.text = CardTable!notes & ""
-xCode.text = CardTable!code & ""
-xCodeDesca.Caption = CardTable!ClientDesca & ""
+xdoc_no.text = CardTable!doc_no
+xNotes.text = CardTable!NOTES & ""
 panel1(0).Caption = CardTable!UserName & ""
 
 Handlecontrols LoadMode
 
-myLoadGrd
+myloadgrd
 CellPos 13, grid1.Rows - 2, grid1.Cols - 1
 Exit Sub
 On Error Resume Next
@@ -1498,11 +1479,7 @@ grid1.SetFocus
 Err.Clear
 End Sub
 Private Sub myDefine()
-xDoc_No.text = NewFlag("FILE6_53H", "DOC_NO", con)
-
-xCode.text = ""
-xCodeDesca.Caption = ""
-
+xdoc_no.text = NewFlag("FILE6_53H", "DOC_NO", con)
 
 xNotes.text = ""
 panel1(1).Caption = GetComputerName
@@ -1511,7 +1488,7 @@ panel1(2).Caption = cusername
 grid1.Rows = 1
 myAddItem
 
-fixGrd
+Fixgrd
 
 Handlecontrols DefineMode
 
@@ -1524,14 +1501,14 @@ Private Sub Handlecontrols(nMode)
 bEditRecord = bEdit
 cmdNewInv.Enabled = bEdit And nMode = LoadMode
 
-xDoc_No.Tag = nMode
+xdoc_no.Tag = nMode
 
 
 cmdSave.Enabled = bEditRecord
 cmddel.Enabled = (bEditRecord Or bDelRecord) And nMode = LoadMode
 
 Dim nRecord As Long, nRecords As Long
-retRecords xDoc_No.text, nRecords, nRecord
+retRecords xdoc_no.text, nRecords, nRecord
 
 cmdNext.Enabled = nRecord < nRecords And nRecords <> 0 And nMode = LoadMode
 cmdPrevious.Enabled = nRecord <> 1 And nRecords <> 0 And nMode = LoadMode
@@ -1599,36 +1576,31 @@ End Function
 Private Sub CardLookup(Optional pFilter As String = "")
 Dim Generalarray(5)
 Dim listarray(0, 5)
-Dim GrdArray(2, 1)
+Dim GrdArray(1, 1)
 Set Generalarray(0) = Me
 
 Generalarray(1) = "SELECT TOP 1000 " & _
                   " FILE6_53H.DOC_NO ," & _
-                  " FILE3_10.DESCA," & _
                   " FILE6_53H.NOTES" & _
-                  " FROM FILE6_53H" & _
-                  " INNER JOIN FILE3_10 ON FILE6_53H.CODE = FILE3_10.CODE"
+                  " FROM FILE6_53H"
 
 If cFilter <> "" Then
     Generalarray(1) = Generalarray(1) & " WHERE " & cFilter
 End If
 
 Generalarray(2) = "Order by doc_no DESC"
-Generalarray(3) = 6000
+Generalarray(3) = 5000
 Generalarray(5) = False
 
 listarray(0, 0) = "«·⁄„Ì·"
-listarray(0, 1) = "(%%FILE3_10.DESCA%%)"
+listarray(0, 1) = "(%%NOTES%%)"
 
 
 GrdArray(0, 0) = "—ﬁ„ «·„” ‰œ"
 GrdArray(0, 1) = 1200
 
-GrdArray(1, 0) = "«·⁄„Ì·"
+GrdArray(1, 0) = "≈”„ «·ﬁ«∆„…"
 GrdArray(1, 1) = 6500
-
-GrdArray(2, 0) = "≈”„ «·ﬁ«∆„…"
-GrdArray(2, 1) = 3500
 
 searchArray = Array(Generalarray, listarray, GrdArray)
 oSearchDoc.Caption = "«” ⁄·«„"
@@ -1636,9 +1608,9 @@ oSearchDoc.Show 1
 End Sub
 Private Sub xPrinted_Click()
 If bIg Then Exit Sub
-con.Execute "update FILE6_53h set printed = " & xPrinted.Value & ",closed = " & xPrinted.Value & " from FILE6_53h where doc_no = " & MyParn(xDoc_No.text)
+con.Execute "update FILE6_53h set printed = " & xPrinted.Value & ",closed = " & xPrinted.Value & " from FILE6_53h where doc_no = " & MyParn(xdoc_no.text)
 MsgBox " „ › Õ «·›« Ê—… »‰Ã«Õ"
-If Not openCardTable(tbMode.tbFind, xDoc_No.text) Then
+If Not openCardTable(tbMode.tbFind, xdoc_no.text) Then
     If Not openCardTable Then
         myDefine
     End If
@@ -1649,7 +1621,7 @@ For i = 1 To grid1.Rows - 1
     grid1.TextMatrix(i, 0) = i
 Next
 End Sub
-Private Sub fixGrd()
+Private Sub Fixgrd()
 With grid1
 '                 0         1          2         3         4          5             6          7          8               9          10              11
 .FormatString = "„.|" & "»«—ﬂÊœ|" & "„Ê”„|" & "„’‰⁄|" & "„ﬂ »|" & "—ﬁ„ „ÊœÌ·|" & "«·’‰›|" & "„ﬁ«”|" & "«··Ê‰|" & "”⁄— „” Â·ﬂ|" & "”⁄— Ã„·…|" & "”⁄—|"
@@ -1683,13 +1655,13 @@ If MsgBox("Õ–› «·’‰› „‰ «·„” ‰œ ?, Â· «‰  „Ê«›ﬁ ø", vbOKCancel) <> vbOK Then
 End If
 
 If grid1.TextMatrix(Row, grid1.Cols - 1) <> "" Then
-    On Error GoTo myerror
+    On Error GoTo myError
     con.Execute "Delete  From FILE6_53 where id = " & grid1.TextMatrix(Row, grid1.Cols - 1)
 End If
 grid1.RemoveItem Row
 RemoveItem = True
 Exit Function
-myerror:
+myError:
 MsgBox Err.Description
 Err.Clear
 End Function
@@ -1700,7 +1672,7 @@ With grid1
         aInsert = AddFlag(Empty, "ITEM", addstring(grid1.TextMatrix(i, 1)))
         aInsert = AddFlag(aInsert, "PRICE", .ValueMatrix(i, 11))
         If grid1.TextMatrix(i, grid1.Cols - 1) = "" Then
-            aInsert = AddFlag(aInsert, "DOC_NO", addstring(xDoc_No.text))
+            aInsert = AddFlag(aInsert, "DOC_NO", addstring(xdoc_no.text))
             con.Execute addInsert(aInsert, "FILE6_53")
         Else
             con.Execute addUpdate(aInsert, "FILE6_53", "ID = " & grid1.TextMatrix(i, .Cols - 1))
@@ -1709,9 +1681,8 @@ With grid1
 End With
 myreplaceGrd = True
 End Function
-Private Sub myLoadGrd()
+Private Sub myloadgrd()
 Dim strSql As String
-
 strSql = "SELECT FILE6_53.ITEM," & _
          "FILE1_10.MOSM," & _
          "FACT.DESCA," & _
@@ -1728,20 +1699,20 @@ strSql = "SELECT FILE6_53.ITEM," & _
          "INNER JOIN FILE1_10 " & _
          " ON FILE6_53.ITEM = FILE1_10.ITEM" & _
          " LEFT JOIN FACT ON FACT.CODE = FILE1_10.FACT" & _
-         " WHERE FILE6_53.DOC_NO = " & xDoc_No.text & _
+         " WHERE FILE6_53.DOC_NO = " & xdoc_no.text & _
          " ORDER BY FILE6_53.ID"
 Set grid1.DataSource = cmd(strSql, con).Execute
 myAddItem
-fixGrd
+Fixgrd
 End Sub
 Private Function mysave() As Boolean
 
-If Not myValid Then Exit Function
+If Not MYVALID Then Exit Function
 
 If Not myreplace Then Exit Function
 
 Inform " „ Õ›Ÿ «·„” ‰œ »‰Ã«Õ"
-If Not openCardTable(tbMode.tbFind, xDoc_No.text) Then
+If Not openCardTable(tbMode.tbFind, xdoc_no.text) Then
     If Not openCardTable Then myDefine
 End If
                     
@@ -1770,25 +1741,25 @@ grid1.AddItem ""
 MakeSerial
 End Sub
 Private Sub myUndo()
-If xDoc_No.Tag = DefineMode Then
+If xdoc_no.Tag = DefineMode Then
     If Not openCardTable Then
         CmdNewInv_Click
     End If
 Else
-    If Not openCardTable(tbMode.tbFind, xDoc_No.text) Then
+    If Not openCardTable(tbMode.tbFind, xdoc_no.text) Then
         If Not openCardTable Then
             myDefine
         End If
     End If
 End If
 Exit Sub
-myerror:
+myError:
 MsgBox Err.Description
 Err.Clear
 End Sub
 Private Sub CmdNext_Click()
 'If Not openCardTable(tbMode.tbNext, xdoc_no_flag.Caption) Then
-If Not openCardTable(tbMode.tbNext, xDoc_No.text) Then
+If Not openCardTable(tbMode.tbNext, xdoc_no.text) Then
     If Not openCardTable(tbMode.tblast) Then
         myDefine
     End If
@@ -1796,7 +1767,7 @@ End If
 End Sub
 Private Sub CmdPrevious_Click()
 'If Not openCardTable(tbMode.tbPrevious, xdoc_no_flag.Caption) Then
-If Not openCardTable(tbMode.tbPrevious, xDoc_No.text) Then
+If Not openCardTable(tbMode.tbPrevious, xdoc_no.text) Then
     If Not openCardTable(tbMode.tbFirst) Then
         myDefine
     End If
@@ -1827,8 +1798,7 @@ Else
     cString = "SELECT Count(FILE6_53H.DOC_NO) AS records,0 as record"
 End If
 
-cString = cString & " FROM FILE6_53H " & _
-                    " INNER JOIN FILE3_10 ON FILE6_53H.CODE = FILE3_10.CODE"
+cString = cString & " FROM FILE6_53H"
 
 If cFilter <> "" Then
     cString = cString & " WHERE " & cFilter
@@ -1883,40 +1853,25 @@ Private Sub xDate_LostFocus()
 myLostFocus xDate
 myValidDate xDate
 End Sub
-Private Sub xcode_GotFocus()
-myGotFocus xCode
-End Sub
-Private Sub xcode_LostFocus()
-myLostFocus xCode
-xCodeDesca.Caption = ""
-If Trim(xCode.text) = "" Then Exit Sub
-xCode.text = RetZero(xCode.text, 4)
-If xCode.text = "0000" Then Exit Sub
-
-Dim loctable As New ADODB.RecordSet
-Set loctable = cmd("SELECT * FROM FILE3_10 WHERE CODE = " & MyParn(xCode.text), con).Execute
-If loctable.EOF Then Exit Sub
-xCodeDesca.Caption = loctable!DESCA & ""
-End Sub
 Private Sub xDoc_No_GotFocus()
-myGotFocus xDoc_No
+myGotFocus xdoc_no
 End Sub
 Private Sub xDoc_No_LostFocus()
-myLostFocus xDoc_No
-If Not ValidNum(xDoc_No.text) Then
-     If xDoc_No.Tag = LoadMode Then
+myLostFocus xdoc_no
+If Not ValidNum(xdoc_no.text) Then
+     If xdoc_no.Tag = LoadMode Then
         myDefine
     Else
-        xDoc_No.text = ""
+        xdoc_no.text = ""
     End If
 Else
-    If (Not (CardTable.EOF)) And xDoc_No.Tag = LoadMode Then
-        If CardTable!doc_no = xDoc_No.text Then
+    If (Not (CardTable.EOF)) And xdoc_no.Tag = LoadMode Then
+        If CardTable!doc_no = xdoc_no.text Then
             Exit Sub
         End If
     End If
     
-    If Not openCardTable(tbMode.tbFind, xDoc_No.text) Then
+    If Not openCardTable(tbMode.tbFind, xdoc_no.text) Then
         If Not openCardTable Then
             myDefine
         End If
@@ -1979,7 +1934,7 @@ cString = "SELECT FILE6_53H.DOC_NO," & _
           " INNER JOIN FILE1_10 ON FILE6_53.ITEM = FILE1_10.ITEM" & _
           " INNER JOIN FILE3_10 ON FILE6_53H.CODE = FILE3_10.CODE" & _
           " LEFT JOIN FACT ON FACT.CODE = FILE1_10.[FACT]" & _
-          " WHERE  FILE6_53.DOC_NO = " & MyParn(xDoc_No.text)
+          " WHERE  FILE6_53.DOC_NO = " & MyParn(xdoc_no.text)
 Set loctable = cmd(cString, con).Execute
 
 Dim con_image As New ADODB.Connection
@@ -2119,7 +2074,7 @@ cString = "SELECT FILE1_10.MODEL," & _
             " INNER JOIN FILE1_10 ON FILE1_10.ITEM = FILE6_53.ITEM" & _
             " INNER JOIN FILE3_10 ON FILE6_53H.CODE = FILE3_10.CODE" & _
             " LEFT JOIN FACT ON FACT.CODE = FILE1_10.[FACT]" & _
-            " WHERE FILE6_53H.DOC_NO = " & MyParn(xDoc_No.text)
+            " WHERE FILE6_53H.DOC_NO = " & MyParn(xdoc_no.text)
  
  cString = cString & _
             " GROUP BY FILE6_53H.DOC_NO," & _
@@ -2248,11 +2203,9 @@ Me.MousePointer = vbHourglass
 cFilter = retFilter
 
 Set CardTable = New ADODB.RecordSet
-cString = "SELECT TOP 1 FILE6_53H.*," & _
-          " FILE3_10.DESCA AS CLIENTDESCA " & _
-          " FROM FILE6_53H " & _
-          " INNER JOIN FILE3_10 ON FILE3_10.CODE = FILE6_53H.code"
-  
+cString = "SELECT TOP 1 FILE6_53H.*" & _
+          " FROM FILE6_53H "
+   
 If pMode = tbMode.tbFirst Then
     'cOrder = "Order by FILE6_53H.DOC_NO_FLAG"
     cOrder = "Order by FILE6_53H.DOC_NO"
@@ -2291,7 +2244,7 @@ If (Not CardTable.EOF) Then
 End If
 Me.MousePointer = vbNormal
 Exit Function
-myerror:
+myError:
 Me.MousePointer = vbNormal
 MsgBox Err.Description
 Err.Clear
@@ -2327,7 +2280,7 @@ If cSv.NumRows < 1 Then Exit Function
 
 If myloadCSV(cSv) Then
     Inform " „  «÷«›… «·«’‰«› »‰Ã«Õ"
-    myLoadGrd
+    myloadgrd
 End If
 End Function
 Private Function myloadCSV(ByRef cSv As ChilkatCsv) As Boolean
@@ -2364,7 +2317,7 @@ Set ItemTable = db.myRs(strSql): If ItemTable Is Nothing Then GoTo CleanUp
 
 Dim nquant As Double
 prog1.Visible = True
-For i = 1 To cSv.NumRows - 1
+For i = 0 To cSv.NumRows - 1
     Me.Caption = sCaption & " - " & "”Ã· " & (i + 1) & " „‰ " & cSv.NumRows
     prog1.Value = Round(i / (cSv.NumRows), 2) * 100
         
@@ -2377,14 +2330,14 @@ For i = 1 To cSv.NumRows - 1
             If nPrice > 0 Then
                 strSql = "update file6_53 " & _
                               "set file6_53.price = " & nPrice & _
-                              " where doc_no = " & MyParn(xDoc_No.text) & _
+                              " where doc_no = " & MyParn(xdoc_no.text) & _
                               " and item  = " & MyParn(sitem)
                 
                 If Not db.Execute(strSql, nAffect) Then GoTo CleanUp
                 
                 If nAffect = 0 Then
                     strSql = "INSERT INTO FILE6_53(DOC_NO,ITEM,PRICE)" & _
-                             "VALUES(" & xDoc_No.text & "," & _
+                             "VALUES(" & xdoc_no.text & "," & _
                              addstring(sitem) & "," & _
                              nPrice & ")"
                     If Not db.Execute(strSql) Then GoTo CleanUp
