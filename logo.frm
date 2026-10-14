@@ -6,7 +6,7 @@ Object = "{F9043C88-F6F2-101A-A3C9-08002B2F49FB}#1.2#0"; "Comdlg32.ocx"
 Begin VB.Form logofrm 
    BackColor       =   &H00FFFFFF&
    Caption         =   "‘⁄«— «·‘—ﬂ…"
-   ClientHeight    =   6390
+   ClientHeight    =   6855
    ClientLeft      =   420
    ClientTop       =   405
    ClientWidth     =   8175
@@ -25,20 +25,20 @@ Begin VB.Form logofrm
    LinkTopic       =   "Form1"
    PaletteMode     =   1  'UseZOrder
    RightToLeft     =   -1  'True
-   ScaleHeight     =   6390
+   ScaleHeight     =   6855
    ScaleWidth      =   8175
    Begin VB.Frame Frame7 
       BackColor       =   &H00FFFFFF&
       Height          =   735
       Left            =   45
       RightToLeft     =   -1  'True
-      TabIndex        =   14
+      TabIndex        =   16
       Top             =   90
       Width           =   7890
       Begin Threed.SSCommand cmdSave 
          Height          =   510
          Left            =   3960
-         TabIndex        =   15
+         TabIndex        =   17
          Top             =   180
          Width           =   1275
          _ExtentX        =   2249
@@ -68,7 +68,7 @@ Begin VB.Form logofrm
       Begin Threed.SSCommand cmdExit 
          Height          =   510
          Left            =   45
-         TabIndex        =   16
+         TabIndex        =   18
          TabStop         =   0   'False
          Top             =   180
          Width           =   1275
@@ -97,7 +97,7 @@ Begin VB.Form logofrm
       Begin Threed.SSCommand cmddel 
          Height          =   510
          Left            =   1350
-         TabIndex        =   17
+         TabIndex        =   19
          TabStop         =   0   'False
          Top             =   180
          Width           =   1275
@@ -128,7 +128,7 @@ Begin VB.Form logofrm
       Begin Threed.SSCommand cmdUndo 
          Height          =   510
          Left            =   2655
-         TabIndex        =   18
+         TabIndex        =   20
          TabStop         =   0   'False
          Top             =   180
          Width           =   1275
@@ -159,7 +159,7 @@ Begin VB.Form logofrm
       Begin Threed.SSCommand cmdAdd 
          Height          =   510
          Left            =   5265
-         TabIndex        =   19
+         TabIndex        =   21
          TabStop         =   0   'False
          Top             =   180
          Width           =   1275
@@ -190,7 +190,7 @@ Begin VB.Form logofrm
       Begin Threed.SSCommand cmdInform 
          Height          =   510
          Left            =   6570
-         TabIndex        =   20
+         TabIndex        =   22
          TabStop         =   0   'False
          Top             =   180
          Width           =   1275
@@ -221,18 +221,18 @@ Begin VB.Form logofrm
    End
    Begin VB.Frame Frame2 
       BackColor       =   &H00FFFFFF&
-      Height          =   645
+      Height          =   600
       Left            =   45
       RightToLeft     =   -1  'True
-      TabIndex        =   9
-      Top             =   5310
+      TabIndex        =   11
+      Top             =   5670
       Width           =   3480
       Begin Threed.SSCommand cmdFirst 
          Height          =   420
          Left            =   2610
-         TabIndex        =   10
+         TabIndex        =   12
          TabStop         =   0   'False
-         Top             =   180
+         Top             =   135
          Width           =   825
          _ExtentX        =   1455
          _ExtentY        =   741
@@ -259,9 +259,9 @@ Begin VB.Form logofrm
       Begin Threed.SSCommand cmdPrevious 
          Height          =   420
          Left            =   1710
-         TabIndex        =   11
+         TabIndex        =   13
          TabStop         =   0   'False
-         Top             =   180
+         Top             =   135
          Width           =   870
          _ExtentX        =   1535
          _ExtentY        =   741
@@ -288,9 +288,9 @@ Begin VB.Form logofrm
       Begin Threed.SSCommand cmdNext 
          Height          =   420
          Left            =   855
-         TabIndex        =   12
+         TabIndex        =   14
          TabStop         =   0   'False
-         Top             =   180
+         Top             =   135
          Width           =   825
          _ExtentX        =   1455
          _ExtentY        =   741
@@ -317,9 +317,9 @@ Begin VB.Form logofrm
       Begin Threed.SSCommand cmdLast 
          Height          =   420
          Left            =   45
-         TabIndex        =   13
+         TabIndex        =   15
          TabStop         =   0   'False
-         Top             =   180
+         Top             =   135
          Width           =   780
          _ExtentX        =   1376
          _ExtentY        =   741
@@ -349,13 +349,13 @@ Begin VB.Form logofrm
       Height          =   3480
       Left            =   45
       RightToLeft     =   -1  'True
-      TabIndex        =   5
-      Top             =   1845
+      TabIndex        =   7
+      Top             =   2205
       Width           =   7845
       Begin Threed.SSCommand cmdScan 
          Height          =   555
          Left            =   3285
-         TabIndex        =   6
+         TabIndex        =   8
          TabStop         =   0   'False
          Top             =   2835
          Width           =   1725
@@ -386,7 +386,7 @@ Begin VB.Form logofrm
       Begin Threed.SSCommand cmdDelPhoto 
          Height          =   555
          Left            =   90
-         TabIndex        =   7
+         TabIndex        =   9
          TabStop         =   0   'False
          Top             =   2835
          Width           =   1590
@@ -417,7 +417,7 @@ Begin VB.Form logofrm
       Begin Threed.SSCommand cmdPhoto 
          Height          =   555
          Left            =   1710
-         TabIndex        =   8
+         TabIndex        =   10
          TabStop         =   0   'False
          Top             =   2835
          Width           =   1500
@@ -448,7 +448,7 @@ Begin VB.Form logofrm
       Begin ImgXCtrl6.ImgXCtrl ImgX1 
          Height          =   2580
          Left            =   90
-         TabIndex        =   25
+         TabIndex        =   27
          Top             =   180
          Width           =   7665
          _ExtentX        =   13520
@@ -466,12 +466,54 @@ Begin VB.Form logofrm
    End
    Begin VB.Frame Frame1 
       BackColor       =   &H00FFFFFF&
-      Height          =   1005
+      Height          =   1365
       Left            =   45
       RightToLeft     =   -1  'True
-      TabIndex        =   2
+      TabIndex        =   4
       Top             =   810
       Width           =   7845
+      Begin VB.TextBox xHeight 
+         Alignment       =   1  'Right Justify
+         Appearance      =   0  'Flat
+         BeginProperty Font 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   178
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   330
+         Left            =   2025
+         MaxLength       =   6
+         RightToLeft     =   -1  'True
+         TabIndex        =   3
+         Tag             =   "2"
+         Top             =   900
+         Width           =   1320
+      End
+      Begin VB.TextBox xWidth 
+         Alignment       =   1  'Right Justify
+         Appearance      =   0  'Flat
+         BeginProperty Font 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   178
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   330
+         Left            =   5400
+         MaxLength       =   6
+         RightToLeft     =   -1  'True
+         TabIndex        =   2
+         Tag             =   "2"
+         Top             =   900
+         Width           =   1320
+      End
       Begin VB.TextBox xDescA 
          Alignment       =   1  'Right Justify
          Appearance      =   0  'Flat
@@ -514,6 +556,48 @@ Begin VB.Form logofrm
          Top             =   180
          Width           =   1320
       End
+      Begin VB.Label Label2 
+         AutoSize        =   -1  'True
+         BackColor       =   &H00FFFFFF&
+         BackStyle       =   0  'Transparent
+         Caption         =   "«— ›«⁄"
+         BeginProperty Font 
+            Name            =   "Arial"
+            Size            =   11.25
+            Charset         =   178
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   270
+         Left            =   3420
+         RightToLeft     =   -1  'True
+         TabIndex        =   29
+         Top             =   945
+         Width           =   465
+      End
+      Begin VB.Label Label1 
+         AutoSize        =   -1  'True
+         BackColor       =   &H00FFFFFF&
+         BackStyle       =   0  'Transparent
+         Caption         =   "⁄—÷"
+         BeginProperty Font 
+            Name            =   "Arial"
+            Size            =   11.25
+            Charset         =   178
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   270
+         Left            =   6795
+         RightToLeft     =   -1  'True
+         TabIndex        =   28
+         Top             =   945
+         Width           =   450
+      End
       Begin VB.Label Label15 
          AutoSize        =   -1  'True
          BackColor       =   &H00FFFFFF&
@@ -531,7 +615,7 @@ Begin VB.Form logofrm
          Height          =   270
          Left            =   6795
          RightToLeft     =   -1  'True
-         TabIndex        =   4
+         TabIndex        =   6
          Top             =   225
          Width           =   255
       End
@@ -552,7 +636,7 @@ Begin VB.Form logofrm
          Height          =   270
          Left            =   6795
          RightToLeft     =   -1  'True
-         TabIndex        =   3
+         TabIndex        =   5
          Top             =   585
          Width           =   840
       End
@@ -796,8 +880,8 @@ Begin VB.Form logofrm
       Align           =   2  'Align Bottom
       Height          =   375
       Left            =   0
-      TabIndex        =   21
-      Top             =   6015
+      TabIndex        =   23
+      Top             =   6480
       Width           =   8175
       _ExtentX        =   14420
       _ExtentY        =   661
@@ -809,7 +893,7 @@ Begin VB.Form logofrm
          Height          =   270
          Index           =   0
          Left            =   0
-         TabIndex        =   22
+         TabIndex        =   24
          Top             =   45
          Width           =   3420
          _ExtentX        =   6033
@@ -833,7 +917,7 @@ Begin VB.Form logofrm
          Height          =   330
          Index           =   1
          Left            =   3465
-         TabIndex        =   23
+         TabIndex        =   25
          Top             =   45
          Width           =   3465
          _ExtentX        =   6112
@@ -857,7 +941,7 @@ Begin VB.Form logofrm
          Height          =   330
          Index           =   2
          Left            =   6975
-         TabIndex        =   24
+         TabIndex        =   26
          Top             =   45
          Width           =   3465
          _ExtentX        =   6112
@@ -942,14 +1026,14 @@ Dim con As New ADODB.Connection
 Dim cFilter As String
 Dim formMode As Byte
 Dim oSearch As New Search_abd
-Dim CardTable As ADODB.Recordset
+Dim CardTable As ADODB.RecordSet
 Dim WithEvents twain As ImgXTwain
 Attribute twain.VB_VarHelpID = -1
 Const LoadMode = 1, DefineMode = 2
 
 Private Sub cmdDelPhoto_Click()
 On Error GoTo myerror
-con.Execute "UPDATE LOGO_CODES SET IMAGE = NULL WHERE CODE = " & xCode.text
+con.Execute "UPDATE LOGO_CODES SET IMAGE = NULL WHERE CODE = " & Xcode.text
 ImgX1.Images.Clear
 Exit Sub
 myerror:
@@ -966,7 +1050,7 @@ Private Sub cmdPhoto_Click()
     If Common1.FileTitle <> "" Then
         cFile = Common1.FileName
         If cFile <> "" Then
-            myReplaceImage xCode.text, cFile
+            myReplaceImage Xcode.text, cFile
         End If
     End If
 End Sub
@@ -993,7 +1077,7 @@ Private Sub Twain_ImageAcquired(Image As ImgX_Image)
 ImgX1.Images.Replace Image, , False
 ImgX1.TIFCompression = ixtcJPEGCompression
 
-myReplaceImage xCode.text
+myReplaceImage Xcode.text
 End Sub
 Private Sub Twain_TwainError(ByVal erNum As Long, ByVal erSource As String, ByVal Description As String)
 MsgBox "Error Number:  " & erNum & vbCrLf & Description, vbInformation, erSource
@@ -1011,7 +1095,7 @@ Else
     myReplaceImage = SaveImageToDB("", ImgX1, "LOGO_CODES", "IMAGE", "CODE", sCode, con)
 End If
 
-If Not openCardTable(tbMode.tbFind, xCode.text) Then
+If Not openCardTable(tbMode.tbFind, Xcode.text) Then
     If Not openCardTable Then
         myDefine
     End If
@@ -1026,7 +1110,7 @@ If KeyAscii = 13 Then
 End If
 End Sub
 Private Sub Form_Load()
-openCon con
+OpenCon con
         
 If Not openCardTable Then myDefine
 End Sub
@@ -1037,8 +1121,8 @@ End Sub
 Private Sub CmdDel_Click()
 On Error GoTo myerror
 If MsgBox("«·€«¡ «·”Ã· «·Õ«·Ï : Â· «‰  „Ê«›ﬁ ø", vbOKCancel + vbDefaultButton2) = vbOK Then
-    con.Execute "Delete  From logo_codes  Where code = " & MyParn(xCode.text)
-    If Not openCardTable(tbMode.tbPrevious, xCode.text) Then
+    con.Execute "Delete  From logo_codes  Where code = " & MyParn(Xcode.text)
+    If Not openCardTable(tbMode.tbPrevious, Xcode.text) Then
         If Not openCardTable(tbMode.tbFirst) Then
             myDefine
         End If
@@ -1049,14 +1133,14 @@ myerror:
     MsgBox Err.Description
     Err.Clear
 End Sub
-Private Sub cmdExit_Click()
+Private Sub CmdExit_Click()
 Unload Me
 End Sub
 Private Sub cmdSave_Click()
-If Not myValid Then Exit Sub
+If Not MYVALID Then Exit Sub
 If Not myreplace Then Exit Sub
-Inform " „ Õ›Ÿ »Ì«‰«  «·„Ê—œ »‰Ã«Õ"
-If Not openCardTable(tbMode.tbFind, xCode.text) Then
+Inform " „ Õ›Ÿ »Ì«‰«  «··ÊÃÊ »‰Ã«Õ"
+If Not openCardTable(tbMode.tbFind, Xcode.text) Then
     If Not openCardTable Then myDefine
 End If
 End Sub
@@ -1077,14 +1161,14 @@ If Not openCardTable Then
 End If
 End Sub
 Private Sub CmdNext_Click()
-If Not openCardTable(tbMode.tbNext, xCode.text) Then
+If Not openCardTable(tbMode.tbNext, Xcode.text) Then
     If Not openCardTable(tbMode.tblast) Then
         myDefine
     End If
 End If
 End Sub
 Private Sub CmdPrevious_Click()
-If Not openCardTable(tbMode.tbPrevious, xCode.text) Then
+If Not openCardTable(tbMode.tbPrevious, Xcode.text) Then
        If Not openCardTable(tbMode.tbFirst) Then
         myDefine
     End If
@@ -1098,9 +1182,9 @@ cmdScan.Enabled = nMode = LoadMode
 cmdPhoto.Enabled = nMode = LoadMode
 cmdDelPhoto.Enabled = nMode = LoadMode
 
-xCode.Tag = nMode
+Xcode.Tag = nMode
 Dim nRecord As Long, nRecords As Long
-retRecords xCode.text, nRecords, nRecord
+retRecords Xcode.text, nRecords, nRecord
 
 If nMode = LoadMode Then
     panel1(0).Caption = ArbString("”Ã· " & nRecord & " „‰ " & nRecords)
@@ -1141,15 +1225,19 @@ End Sub
 Sub myDefine()
 Dim sCodeNew As String
 
-xCode.text = Newflag("LOGO_CODES", "CODE", con) & ""
+Xcode.text = Newflag("LOGO_CODES", "CODE", con) & ""
+xWidth.text = ""
+xHeight.text = ""
 xDescA.text = ""
 ImgX1.Images.Clear
 
 Handlecontrols DefineMode
 End Sub
 Sub myload()
-xCode.text = CardTable!code & ""
-xDescA.text = CardTable!desca
+Xcode.text = CardTable!code & ""
+xDescA.text = CardTable!DESCA
+xWidth.text = CardTable!Width
+xHeight.text = CardTable!Height
 If IsNull(CardTable!Image) Then
     ImgX1.Images.Clear
 Else
@@ -1160,14 +1248,16 @@ End Sub
 Private Function myreplace() As Boolean
 Dim aInsert As Variant
 aInsert = AddFlag(Empty, "DESCA", addstring(xDescA.text))
+aInsert = AddFlag(aInsert, "WIDTH", Val(xWidth.text))
+aInsert = AddFlag(aInsert, "HEIGHT", Val(xHeight.text))
 On Error GoTo myerror
-If xCode.Tag = DefineMode Then
+If Xcode.Tag = DefineMode Then
     Dim sCodeNew As String
-    xCode.text = Newflag("LOGO_CODES", "CODE", con) & ""
-    aInsert = AddFlag(aInsert, "CODE", addstring(xCode.text))
+    Xcode.text = Newflag("LOGO_CODES", "CODE", con) & ""
+    aInsert = AddFlag(aInsert, "CODE", addstring(Xcode.text))
     con.Execute addInsert(aInsert, "LOGO_CODES")
 Else
-    con.Execute addUpdate(aInsert, "LOGO_CODES", "code = " & addstring(xCode.text))
+    con.Execute addUpdate(aInsert, "LOGO_CODES", "code = " & addstring(Xcode.text))
 End If
 myreplace = True
 Exit Function
@@ -1190,21 +1280,21 @@ Err.Clear
 End Sub
 
 Private Sub xcode_LostFocus()
-myLostFocus xCode
-If Trim(xCode.text) = "" Or Not IsDgt(xCode.text) Then
-     If xCode.Tag = LoadMode Then
+myLostFocus Xcode
+If Trim(Xcode.text) = "" Or Not IsDgt(Xcode.text) Then
+     If Xcode.Tag = LoadMode Then
         myDefine
     End If
 Else
-    If Not openCardTable(tbMode.tbFind, xCode.text) Then
-       If xCode.Tag = LoadMode Then
+    If Not openCardTable(tbMode.tbFind, Xcode.text) Then
+       If Xcode.Tag = LoadMode Then
             myDefine
        End If
     End If
 End If
 End Sub
-Function myValid() As Boolean
-If Not IsDgt(xCode.text) Then
+Function MYVALID() As Boolean
+If Not IsDgt(Xcode.text) Then
     MsgBox "«·ﬂÊœ ·« Ì„ﬂ‰ «‰ ÌﬂÊ‰ Œ«·Ì«"
     Exit Function
 End If
@@ -1215,15 +1305,15 @@ If xDescA.text = "" Then
     Exit Function
 End If
 
-myValid = True
+MYVALID = True
 End Function
 Private Sub myUndo()
-If xCode.Tag = DefineMode Then
+If Xcode.Tag = DefineMode Then
     If Not openCardTable Then
         myDefine
     End If
 Else
-    If Not openCardTable(tbMode.tbFind, xCode.text) Then
+    If Not openCardTable(tbMode.tbFind, Xcode.text) Then
         If Not openCardTable Then
             myDefine
         End If
@@ -1287,7 +1377,7 @@ MsgBox Err.Description
 Err.Clear
 End Function
 Private Function retRecords(pCode, ByRef nRecords As Long, ByRef nRecord As Long) As Variant
-Dim cString As String, loctable As New ADODB.Recordset
+Dim cString As String, locTable As New ADODB.RecordSet
 If pCode <> "" Then
     cString = "SELECT Count(*) AS records,COUNT(CASE WHEN CODE <= " & pCode & " THEN 1 END) AS record"
 Else
@@ -1297,10 +1387,10 @@ End If
 cString = cString & " FROM logo_codes"
 If cFilter <> "" Then cString = cString & " WHERE " & cFilter
 
-Set loctable = mycmd(cString, con)
-If Not loctable.EOF Then
-    nRecords = loctable!RECORDS
-    nRecord = Val(loctable!Record & "")
+Set locTable = mycmd(cString, con)
+If Not locTable.EOF Then
+    nRecords = locTable!RECORDS
+    nRecord = Val(locTable!Record & "")
 End If
 End Function
 Private Sub xDescA_GotFocus()
@@ -1319,5 +1409,5 @@ Private Sub xcode_KeyPress(KeyAscii As Integer)
     End If
 End Sub
 Private Sub xcode_GotFocus()
-myGotFocus xCode
+myGotFocus Xcode
 End Sub

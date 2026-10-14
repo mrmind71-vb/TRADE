@@ -3,7 +3,7 @@ Object = "{D76D7128-4A96-11D3-BD95-D296DC2DD072}#1.0#0"; "Vsflex7.ocx"
 Object = "{67397AA1-7FB1-11D0-B148-00A0C922E820}#6.0#0"; "MSADODC.OCX"
 Object = "{F0D2F211-CCB0-11D0-A316-00AA00688B10}#1.0#0"; "MSDATLST.OCX"
 Object = "{065E6FD1-1BF9-11D2-BAE8-00104B9E0792}#3.0#0"; "ssa3d30.ocx"
-Begin VB.Form Search_rs 
+Begin VB.Form SearchDb 
    BackColor       =   &H00FFFFFF&
    BorderStyle     =   3  'Fixed Dialog
    Caption         =   "«” ⁄·«„"
@@ -442,7 +442,7 @@ Begin VB.Form Search_rs
       End
    End
 End
-Attribute VB_Name = "Search_rs"
+Attribute VB_Name = "SearchDb"
 Attribute VB_GlobalNameSpace = False
 Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
@@ -462,7 +462,7 @@ Unload Me
 End Sub
 Private Sub cmbLookup_Change(index As Integer)
 If (cmbLookup(index).MatchedWithList Or Trim(cmbLookup(index).BoundText) = "") And (Not bEnter) Then
-    myLoadGrd
+    myloadgrd
 End If
 End Sub
 Private Sub cmbLookup_GotFocus(index As Integer)
@@ -480,7 +480,7 @@ Private Sub txtlookup_KeyUp(index As Integer, KeyCode As Integer, Shift As Integ
 If (KeyCode = 13 Or KeyCode = 40 Or KeyCode = 38) And (bEnterwork Or xEnter.Value = 1 Or KeyCode = 40 Or KeyCode = 38) Then
     KeyCode = 0
     csource = Ado1.RecordSource
-    If bEnter Then myLoadGrd
+    If bEnter Then myloadgrd
     
     If grid1.Rows = 2 And csource = Ado1.RecordSource Then
         'grid1.Row = 1
@@ -497,7 +497,7 @@ Private Sub cmbLookup_KeyUp(index As Integer, KeyCode As Integer, Shift As Integ
 If KeyCode = 13 And bEnterwork Then
     KeyCode = 0
     csource = Ado1.RecordSource
-    If bEnter Then myLoadGrd
+    If bEnter Then myloadgrd
     If grid1.Rows = 2 And csource = Ado1.RecordSource Then
         'grid1.Row = 1
         grid1_DblClick
@@ -514,7 +514,7 @@ Private Sub cmbLookup_LostFocus(index As Integer)
 myLostFocus cmbLookup(index)
 If (Not cmbLookup(index).MatchedWithList) And Trim(cmbLookup(index).BoundText) <> "" Then
     cmbLookup(index).BoundText = ""
-    If Not bEnter Then myLoadGrd
+    If Not bEnter Then myloadgrd
 End If
 If index = UBound(listarray) + 1 Then
     grid1.SetFocus
@@ -557,7 +557,7 @@ End Sub
 Private Sub Form_Activate()
 If bAct And (Not bNoRef) Then
     LoadArrays
-    myLoadGrd
+    myloadgrd
 End If
 
 bAct = True
@@ -608,10 +608,10 @@ xBegin.Value = IIf(retFlag(aValue, "begin"), 1, 0)
 
 If nFontSize <> 0 Then grid1.Font.Size = nFontSize
 If UBound(Generalarray) = 3 Then
-    myLoadGrd
+    myloadgrd
 Else
     If UBound(Generalarray) >= 4 Then
-        If Not Generalarray(4) Then myLoadGrd Else Fixgrd
+        If Not Generalarray(4) Then myloadgrd Else fixGrd
     End If
 End If
 cmdFilter.Visible = retFlag(aFilter, "filter")
@@ -635,7 +635,7 @@ If sid <> "" Then
     addSetting "left", Me.Left, TempSave(Me, sid)
     addSetting "top", Me.Top, TempSave(Me, sid)
 End If
-Set Search_rs = Nothing
+Set SearchDb = Nothing
 End Sub
 Private Sub grid1_DblClick()
 If grid1.Row > 0 Then
@@ -650,7 +650,7 @@ Private Sub grid1_GotFocus()
 'Next
 'If grid1.Rows > 1 Then grid1.Select 1, I
 End Sub
-Sub myLoadGrd()
+Sub myloadgrd()
 Dim cString As String, nRow As Long
 On Error GoTo myerror
 cString = Generalarray(1)
@@ -684,11 +684,11 @@ For i = 0 To UBound(listarray)
 Next
 cString = cString & Space(1) & Generalarray(2)
 
-Dim db As New clsDb
-Set grid1.DataSource = db.myRs(cString)
+Dim db As New clsData
+Set grid1.DataSource = db.rs(cString)
 Set db = Nothing
 
-Fixgrd
+fixGrd
 chkRecords
 
 If Not IsEmpty(aAddRow) Then
@@ -699,7 +699,7 @@ End If
 
 If grid1.Rows > 1 Then
     grid1.Select 1, NextVisible(grid1, 1, 0, grid1.Cols - 1)
-    grid1.ShowCell grid1.Row, grid1.col
+    grid1.ShowCell grid1.Row, grid1.Col
 End If
 Exit Sub
 myerror:
@@ -708,7 +708,7 @@ Err.Clear
 End Sub
 Private Sub Handlecontrols()
 End Sub
-Private Sub Fixgrd()
+Private Sub fixGrd()
 For i = 0 To grid1.Cols - 1
    grid1.TextMatrix(0, i) = GrdArray(i, 0)
    grid1.ColWidth(i) = GrdArray(i, 1)
@@ -732,7 +732,7 @@ End Sub
 Private Sub LoadControls()
 nVSpace = 420
 nFrame = Frame2.Height
-Dim db As New clsDb
+Dim db As New clsData
 For i = 0 To UBound(listarray)
     nRow = nRow + 1
     Frame2.Height = nFrame + (nVSpace * (nRow - 1))
@@ -751,7 +751,7 @@ For i = 0 To UBound(listarray)
         cmbLookup(nRow).Top = cmbLookup(0).Top + (nVSpace * (nRow - 1))
         
         On Error GoTo myerror
-        Set cmbLookup(nRow).RowSource = db.myRs(listarray(i, 2) & "")
+        Set cmbLookup(nRow).RowSource = db.rs(listarray(i, 2) & "")
         cmbLookup(nRow).BoundColumn = listarray(i, 3)
         cmbLookup(nRow).ListField = listarray(i, 4)
         If mySplit(listarray(i, 5), 1, ":") = "last_clicked" Then
@@ -781,13 +781,13 @@ For i = 1 To Label1.Count - 1
     Label1(i).Top = Label1(i).Top
     Label1(i).Visible = True
 Next
-cleanup:
+cleanUp:
 Set db = Nothing
 Exit Sub
 myerror:
 MsgBox Err.Description
 Err.Clear
-GoTo cleanup
+GoTo cleanUp
 End Sub
 Private Sub grid1_KeyUp(KeyCode As Integer, Shift As Integer)
 If KeyCode = 13 And bEnterwork Then
@@ -806,7 +806,7 @@ End If
 End Sub
 
 Private Sub txtlookup_Change(index As Integer)
-If xEnter.Value = 0 Then myLoadGrd
+If xEnter.Value = 0 Then myloadgrd
 txtlookup(index).Tag = txtlookup(index).text
 End Sub
 Private Sub txtlookup_GotFocus(index As Integer)
@@ -947,14 +947,14 @@ Generalarray = searchArray(0)
 listarray = searchArray(1)
 GrdArray = searchArray(2)
 End Sub
-Private Sub grid1_AfterSort(ByVal col As Long, Order As Integer)
+Private Sub grid1_AfterSort(ByVal Col As Long, Order As Integer)
 If Not IsEmpty(aAddRow) Then
     grid1.AddItem "", 1
     grid1.TextMatrix(1, Val(retFlag(aAddRow, "col"))) = retFlag(aAddRow, "text") & ""
     grid1.Cell(flexcpBackColor, 1, 0, , grid1.Cols - 1) = &HE0E0E0
 End If
 End Sub
-Private Sub grid1_BeforeSort(ByVal col As Long, Order As Integer)
+Private Sub grid1_BeforeSort(ByVal Col As Long, Order As Integer)
 If Not IsEmpty(aAddRow) Then
     grid1.RemoveItem 1
 End If
@@ -969,7 +969,7 @@ End If
 End Sub
 Private Sub xRecords_KeyPress(KeyAscii As Integer)
 If KeyAscii = 13 Then
-    myLoadGrd
+    myloadgrd
 End If
 End Sub
 Private Sub xrecords_GotFocus()

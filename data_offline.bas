@@ -1,13 +1,13 @@
 Attribute VB_Name = "data_offline"
-Public Function myRs(pString As String, Optional con As ADODB.Connection, Optional ByVal pConString As String, Optional pType As cmType = adText, Optional aParam As Variant = Empty, Optional nTimeOut As Integer = 300, Optional nConTimeout As Integer = 3) As ADODB.Recordset
+Public Function myRs(pString As String, Optional con As ADODB.Connection, Optional ByVal pConString As String, Optional pType As cmType = adText, Optional aParam As Variant = Empty, Optional nTimeOut As Integer = 300, Optional nConTimeout As Integer = 3) As ADODB.RecordSet
 Dim bClose As Boolean
 If con Is Nothing Then
     Set con = New ADODB.Connection
     If pConString = "" Then
-        If openCon(con, , nConTimeout) <> "ok" Then
+        If OpenCon(con, , nConTimeout) <> "ok" Then
             Exit Function
         End If
-    ElseIf openCon(con, pConString, nConTimeout) <> "ok" Then
+    ElseIf OpenCon(con, pConString, nConTimeout) <> "ok" Then
         Exit Function
     End If
     bClose = True
@@ -25,7 +25,7 @@ If Not IsEmpty(aParam) Then
     Next
 End If
 
-Set myRs = New ADODB.Recordset
+Set myRs = New ADODB.RecordSet
 myRs.CursorLocation = adUseClient
 Set myRs = cmd.Execute
 Set myRs.ActiveConnection = Nothing
@@ -48,18 +48,18 @@ rsFunc = rsValue(cString, con)
 End Function
 Public Function rsValue(pString As String, Optional con As ADODB.Connection, Optional ByVal pConString As String, Optional pType As cmType = adText, Optional aParam As Variant = Empty, Optional pDef As Variant = Null, Optional nTimeOut As Integer = 300, Optional nConTimeout = 3) As Variant
 On Error GoTo myerror:
-Dim loctable As ADODB.Recordset
-Set loctable = myRs(pString, con, pConString, pType, aParam, nTimeOut)
-If Not loctable.EOF Then
-    rsValue = loctable.Fields(0).Value
+Dim locTable As ADODB.RecordSet
+Set locTable = myRs(pString, con, pConString, pType, aParam, nTimeOut)
+If Not locTable.EOF Then
+    rsValue = locTable.Fields(0).Value
 ElseIf Not IsEmpty(pDef) Then
     rsValue = pDef
 Else
     rsValue = Null
 End If
-If loctable.State = adStateOpen Then loctable.Close
+If locTable.State = adStateOpen Then locTable.Close
 Finally:
-Set loctable = Nothing
+Set locTable = Nothing
 Exit Function
 myerror:
 MsgBox Err.Description
@@ -68,13 +68,13 @@ rsValue = Null
 GoTo Finally
 End Function
 Public Function rsValues(pString As String, Optional con As ADODB.Connection, Optional ByVal pConString As String, Optional pType As cmType = adText, Optional aParam As Variant = Empty, Optional nTimeOut As Integer = 300, Optional nConTimeout As Integer = 3) As Variant
-Dim loctable As ADODB.Recordset
-Set loctable = myRs(pString, con, pConString, pType, aParam, nTimeOut, nConTimeout)
-If Not (loctable.BOF And loctable.EOF) Then
-    For i = 0 To loctable.Fields.Count - 1
-        rsValues = AddFlag(rsValues, LCase(loctable.Fields(i).Name), loctable.Fields(i).Value)
+Dim locTable As ADODB.RecordSet
+Set locTable = myRs(pString, con, pConString, pType, aParam, nTimeOut, nConTimeout)
+If Not (locTable.BOF And locTable.EOF) Then
+    For i = 0 To locTable.Fields.Count - 1
+        rsValues = AddFlag(rsValues, LCase(locTable.Fields(i).Name), locTable.Fields(i).Value)
     Next
 End If
-loctable.Close
-Set loctable = Nothing
+locTable.Close
+Set locTable = Nothing
 End Function

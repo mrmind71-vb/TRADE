@@ -1,19 +1,19 @@
 Attribute VB_Name = "abd"
-Public bedit As Boolean
-Public rdItem As New ADODB.Recordset
+Public bEdit As Boolean
+Public rdItem As New ADODB.RecordSet
 Public contemp As New ADODB.Connection, consec As New ADODB.Connection, condef As New ADODB.Connection
 Public bSupermode As Boolean
 Public aBranch As Variant
 Public searchArray
 Function Newflag(sTable, cField, pCon As ADODB.Connection) As Long
-Dim loctable As New ADODB.Recordset
-loctable.Open "Select Max(" & cField & ") as Maxof From " & sTable, pCon, adOpenStatic, adLockReadOnly, adCmdText
-If Not (loctable.EOF And loctable.BOF) Then Newflag = Val(loctable!maxOf & "") + 1
-loctable.Close
-Set loctable = Nothing
+Dim locTable As New ADODB.RecordSet
+locTable.Open "Select Max(" & cField & ") as Maxof From " & sTable, pCon, adOpenStatic, adLockReadOnly, adCmdText
+If Not (locTable.EOF And locTable.BOF) Then Newflag = Val(locTable!maxOf & "") + 1
+locTable.Close
+Set locTable = Nothing
 End Function
 Function NewflagDoc(sDate As String, sStore As String, pCon As ADODB.Connection) As String
-Dim loctable As New ADODB.Recordset, cString As String
+Dim locTable As New ADODB.RecordSet, cString As String
 If cBranch <> "00" Then
     If Len(sStore) = 2 Then
         cString = "Select MAX(SUBSTRING(DOC_NO2,3,3)) as MaxofDocNo FROM FILE6_20H "
@@ -22,13 +22,13 @@ If cBranch <> "00" Then
     End If
     cString = cString & turn(cString) & "[DATE] = " & DateSq(sDate)
     cString = cString & turn(cString) & "[BOX] = " & MyParn(cBranchBox)
-    loctable.Open cString, pCon, adOpenStatic, adLockReadOnly, adCmdText
+    locTable.Open cString, pCon, adOpenStatic, adLockReadOnly, adCmdText
     If Len(sStore) = 2 Then sStore = Val(sStore)
     If Len(sStore) = 3 Then sStore = Val(sStore)
-    If Not loctable.EOF Then cString = sStore & RetZero(Val(loctable!maxOfDocNo & "") + 1, 3) Else cString = sStore & RetZero(1, 3)
+    If Not locTable.EOF Then cString = sStore & RetZero(Val(locTable!maxOfDocNo & "") + 1, 3) Else cString = sStore & RetZero(1, 3)
     NewflagDoc = RetZero(Day(sDate), 2) & RetZero(Month(sDate), 2) & RetZero(Format(sDate, "YY"), 2) & cString
-    loctable.Close
-    Set loctable = Nothing
+    locTable.Close
+    Set locTable = Nothing
 Else
     NewflagDoc = IncRec(GetDesca("select max(doc_no) from file6_20h where ISINVOICE = 0 AND  branch = '00' ", pCon))
     If NewflagDoc = "" Then NewflagDoc = RetZero("1", 11)
@@ -70,51 +70,51 @@ Next
 MyParnAnd = cString2
 End Function
 Function aGetDesca(pString, pCon As ADODB.Connection) As Variant
-Dim loctable As New ADODB.Recordset
+Dim locTable As New ADODB.RecordSet
 'If pcon Is Nothing Then
 '    loctable.Open pString, GetCon, adOpenStatic, adLockReadOnly, adCmdText
 'Else
-    loctable.Open pString, pCon, adOpenStatic, adLockReadOnly, adCmdText
+    locTable.Open pString, pCon, adOpenStatic, adLockReadOnly, adCmdText
 'End If
 ReDim aRet(0)
-If Not (loctable.BOF And loctable.EOF) Then
-    ReDim aRet(loctable.Fields.Count)
-    For i = 0 To loctable.Fields.Count - 1
-        aRet(i + 1) = loctable.Fields(i).Value
+If Not (locTable.BOF And locTable.EOF) Then
+    ReDim aRet(locTable.Fields.Count)
+    For i = 0 To locTable.Fields.Count - 1
+        aRet(i + 1) = locTable.Fields(i).Value
     Next
 End If
 aGetDesca = aRet
-loctable.Close
-Set loctable = Nothing
+locTable.Close
+Set locTable = Nothing
 End Function
 Function GetDesca(pString, pCon As ADODB.Connection) As String
-Dim loctable As New ADODB.Recordset
-loctable.CursorLocation = adUseClient
+Dim locTable As New ADODB.RecordSet
+locTable.CursorLocation = adUseClient
 'If pcon Is Nothing Then
 '     loctable.Open pString, GetCon, adOpenStatic, adLockReadOnly, adCmdText
 'Else
-    loctable.Open pString, pCon, adOpenStatic, adLockReadOnly, adCmdText
+    locTable.Open pString, pCon, adOpenStatic, adLockReadOnly, adCmdText
 'End If
-If Not (loctable.BOF And loctable.EOF) Then GetDesca = loctable(0) & ""
-loctable.Close
-Set loctable = Nothing
+If Not (locTable.BOF And locTable.EOF) Then GetDesca = locTable(0) & ""
+locTable.Close
+Set locTable = Nothing
 End Function
 Function GetBoolean(pString, pCon As ADODB.Connection) As Integer
-Dim loctable As New ADODB.Recordset
-loctable.CursorLocation = adUseClient
+Dim locTable As New ADODB.RecordSet
+locTable.CursorLocation = adUseClient
 'If pcon Is Nothing Then
 '    loctable.Open pString, GetCon, adOpenStatic, adLockReadOnly, adCmdTextElse
 'Else
-    loctable.Open pString, pCon, adOpenStatic, adLockReadOnly, adCmdText
+    locTable.Open pString, pCon, adOpenStatic, adLockReadOnly, adCmdText
 'End If
 
-If Not (loctable.BOF And loctable.EOF) Then
-    GetBoolean = IIf(loctable(0), 1, 0)
+If Not (locTable.BOF And locTable.EOF) Then
+    GetBoolean = IIf(locTable(0), 1, 0)
 Else
     GetBoolean = -1
 End If
-loctable.Close
-Set loctable = Nothing
+locTable.Close
+Set locTable = Nothing
 End Function
 Function addDate(pValue) As String
 If Not IsDate(pValue) Then
@@ -155,8 +155,8 @@ End Function
 
 
 Sub grdMake(pString As String, pFieldBound, pFieldList, pCon As ADODB.Connection, grid1 As VSFlexGrid, Optional pRows As Integer = 10)
-Dim rstLocal As ADODB.Recordset, cString As String
-Set rstLocal = New ADODB.Recordset
+Dim rstLocal As ADODB.RecordSet, cString As String
+Set rstLocal = New ADODB.RecordSet
 grid1.Rows = 0
 grid1.Rows = pRows
 rstLocal.Open pString, pCon, adOpenStatic, adLockReadOnly, adCmdText
@@ -184,7 +184,7 @@ For i = 0 To pGrid.Rows - 1
 Next
 GrdTitle = cString
 End Function
-Function retFilter(pTable As ADODB.Recordset, pFilter)
+Function retFilter(pTable As ADODB.RecordSet, pFilter)
 Dim aFilter
 ReDim aFilter(pTable.Fields.Count - 1)
 pTable.Filter = pFilter
@@ -276,17 +276,17 @@ End If
 Err.Clear
 End Function
 Function DefGet(sFlag, sFlagDesca) As String
-Dim loctable As New ADODB.Recordset
+Dim locTable As New ADODB.RecordSet
 cString = "Select * From defTable " & _
           " where Flag = " & MyParn(sFlag) & _
           " and FlagDesca = " & MyParn(sFlagDesca)
-loctable.Open cString, condef, adOpenStatic, adLockReadOnly, adCmdText
-If Not (loctable.BOF And loctable.EOF) Then DefGet = loctable!FlagVAlue & ""
-loctable.Close
-Set loctable = Nothing
+locTable.Open cString, condef, adOpenStatic, adLockReadOnly, adCmdText
+If Not (locTable.BOF And locTable.EOF) Then DefGet = locTable!FlagVAlue & ""
+locTable.Close
+Set locTable = Nothing
 End Function
 Function StrList(cString, pCon As ADODB.Connection)
-Dim listTable As New ADODB.Recordset
+Dim listTable As New ADODB.RecordSet
 listTable.Open cString, pCon, adOpenStatic, adLockReadOnly, adCmdText
 Do Until listTable.EOF
     StrList = StrList & "|#" & listTable.Fields(0) & ";" & listTable.Fields(1)
@@ -294,7 +294,7 @@ Do Until listTable.EOF
 Loop
 End Function
 Function StrListA(cString, pCon As ADODB.Connection)
-Dim listTable As New ADODB.Recordset
+Dim listTable As New ADODB.RecordSet
 StrListA = "|#" & "" & ";" & ""
 listTable.Open cString, pCon, adOpenStatic, adLockReadOnly, adCmdText
 Do Until listTable.EOF
@@ -333,7 +333,7 @@ myNear = (nNumber) - (nNum1 / 100) + IIf(nNum1 > 0, nMode, 0)
 End Function
 Function RetSetting(cSearch As String, Optional cFile As String) As String
 Dim TextLine As String
-On Error GoTo myerror
+On Error GoTo myError
 If cFile = "" Then cFile = App.Path & "\conf.txt"
 Open cFile For Input As #1   ' Open file.
 Do While Not EOF(1)   ' Loop until end of file.
@@ -345,7 +345,7 @@ Do While Not EOF(1)   ' Loop until end of file.
 Loop
 Close #1   ' Close file.
 Exit Function
-myerror:
+myError:
 Err.Clear
 RetSetting = ""
 End Function
@@ -353,7 +353,7 @@ Function addSetting(cField, cValue, Optional cFile As String) As Boolean
 Dim TextLine As String, cText As String, aLocal, nFoundTimes As Integer
 Dim fs As New FileSystemObject
 If cFile = "" Then cFile = App.Path & "\conf.txt"
-On Error GoTo myerror
+On Error GoTo myError
 If fs.FileExists(cFile) Then
     Open cFile For Input As #1   ' Open file.
     Do While Not EOF(1)   ' Loop until end of file.
@@ -386,7 +386,7 @@ End If
 Close #2
 addSetting = True
 Exit Function
-myerror:
+myError:
 Err.Clear
 End Function
 Function turn(ByVal cString, Optional ByVal strFind, Optional ByVal caseFound, Optional ByVal CaseNotfound) As String
@@ -454,16 +454,16 @@ InformOkfrm.Label1.Caption = Mcaption
 InformOkfrm.Show 1
 Err.Clear
 End Sub
-Function myRecordSet(pString As String, pCon As ADODB.Connection, Optional pType As Integer = adCmdText) As ADODB.Recordset
-Dim loctable As New ADODB.Recordset
+Function myRecordSet(pString As String, pCon As ADODB.Connection, Optional pType As Integer = adCmdText) As ADODB.RecordSet
+Dim locTable As New ADODB.RecordSet
 Dim cmd As New ADODB.command
 cmd.CommandType = pType
 cmd.CommandTimeout = 600
 'If pcon Is Nothing Then cmd.ActiveConnection = GetCon Else
 cmd.ActiveConnection = pCon
 cmd.CommandText = pString
-Set loctable = cmd.Execute
-Set myRecordSet = loctable
+Set locTable = cmd.Execute
+Set myRecordSet = locTable
 Set rdTable = Nothing
 End Function
 Sub myGotFocus(ByRef pControl As Variant, Optional bStart As Boolean = True)
@@ -532,6 +532,22 @@ Else
             & "catalog=" & sCatalog & ";user id = " & cUserId & ";" & "password = " & cPassword
 End If
 End Function
+Public Function loadConStringDoc()
+Dim cServerName As String
+Dim cUserId As String
+Dim cPassword As String
+
+cServerName = RetSetting("server", App.Path & "\CONF.TXT")
+cUserId = decrypt(RetSetting("userId", App.Path & "\CONF.TXT"), "dr")
+cPassword = decrypt(RetSetting("Password", App.Path & "\CONF.TXT"), "dr")
+
+loadConStringDoc = "provider=SQLOLEDB;data source=" & cServerName & _
+                ";initial catalog= TRADE_DOCS" & _
+                ";user id=" & cUserId & _
+                ";password=" & cPassword & _
+                ";Encrypt=True" & _
+                ";TrustServerCertificate=False"
+End Function
 Function ReplaceStr(TextIn, ByVal SearchStr As String, _
                         ByVal Replacement As String, _
                         ByVal CompMode As Integer)
@@ -564,14 +580,14 @@ Function ReplaceStr(TextIn, ByVal SearchStr As String, _
      temp = ReplaceStr(TextIn, "'", "' & chr(39) & '", 0)
      FindFirstFixup = ReplaceStr(temp, "|", "' & chr(124) & '", 0)
    End Function
-Function emptyRow(pGrid As Variant, Row As Long, Optional col As Long = -1) As Boolean
-For i = IIf(col = -1, pGrid.FixedCols, col) To pGrid.Cols - 1
+Function emptyRow(pGrid As Variant, Row As Long, Optional Col As Long = -1) As Boolean
+For i = IIf(Col = -1, pGrid.FixedCols, Col) To pGrid.Cols - 1
     If Trim(pGrid.TextMatrix(Row, i)) <> "" Then Exit Function
 Next
 emptyRow = True
 End Function
 Function createCommand(pString As String, pCon As ADODB.Connection) As Boolean
-On Error GoTo myerror
+On Error GoTo myError
 Dim FS1 As New ADODB.command
 FS1.CommandType = adCmdText
 Set FS1.ActiveConnection = pCon
@@ -581,7 +597,7 @@ Set FS1 = Nothing
 Exit Function
 Err.Clear
 Set FS1 = Nothing
-myerror:
+myError:
 Set FS1 = Nothing
 
 Err.Clear
@@ -594,23 +610,23 @@ nValue1 = (Int(nValue1 / 1000)) * 100
 RetDiscount = nValue1 - nValue2
 End Function
 Function validPhoto(cPhoto) As Boolean
-On Error GoTo myerror
+On Error GoTo myError
 If Dir(cPhoto) = "" Or cPhoto = "" Then Exit Function
 myPhoto = LoadPicture(cPhoto)
 validPhoto = True
 Exit Function
-myerror:
+myError:
 Err.Clear
 End Function
 Sub MyLoadPhoto(sModelNo As String, pimgX As ImgXCtrl)
-On Error GoTo myerror
+On Error GoTo myError
 pimgX.Images.Clear
 pimgX.Import.FromFile retFile(sModelNo)
 Exit Sub
-myerror:
+myError:
 Err.Clear
 End Sub
-Function AddFlag(ByVal aString As Variant, ByVal cFlag As Variant, Optional ByVal cFlagValue As Variant, Optional bedit As Boolean = False) As Variant
+Function AddFlag(ByVal aString As Variant, ByVal cFlag As Variant, Optional ByVal cFlagValue As Variant, Optional bEdit As Boolean = False) As Variant
 If IsEmpty(aString) Then aString = Array()
 If IsMissing(cFlagValue) Then
     ReDim Preserve aString(UBound(aString) + 1)
@@ -619,7 +635,7 @@ If IsMissing(cFlagValue) Then
     Exit Function
 End If
 
-If bedit Then
+If bEdit Then
     If UBound(aString) > 0 Then
         For i = 0 To UBound(aString) Step 2
             If Trim(LCase(aString(i))) = Trim(LCase(cFlag)) Then
@@ -700,89 +716,89 @@ aRet = RetPrinter(sPrinter)
 If Not IsEmpty(aRet) Then RetPrinterByType = sPrinter
 End Function
 Function GetFields(pString, pCon As ADODB.Connection) As Variant
-Dim loctable As New ADODB.Recordset
+Dim locTable As New ADODB.RecordSet
 'If pcon Is Nothing Then
 '    loctable.Open pString, GetCon, adOpenStatic, adLockReadOnly, adCmdText
 'Else
-    loctable.Open pString, pCon, adOpenStatic, adLockReadOnly, adCmdText
+    locTable.Open pString, pCon, adOpenStatic, adLockReadOnly, adCmdText
 'End If
-If Not (loctable.BOF And loctable.EOF) Then
-    For i = 0 To loctable.Fields.Count - 1
-        GetFields = AddFlag(GetFields, LCase(loctable.Fields(i).Name), loctable.Fields(i).Value)
+If Not (locTable.BOF And locTable.EOF) Then
+    For i = 0 To locTable.Fields.Count - 1
+        GetFields = AddFlag(GetFields, LCase(locTable.Fields(i).Name), locTable.Fields(i).Value)
     Next
 End If
-loctable.Close
-Set loctable = Nothing
+locTable.Close
+Set locTable = Nothing
 End Function
 Function GetField(pString, pCon As ADODB.Connection) As Variant
-Dim loctable As New ADODB.Recordset
+Dim locTable As New ADODB.RecordSet
 'If pcon Is Nothing Then
 '    loctable.Open pString, GetCon, adOpenStatic, adLockReadOnly, adCmdText
 'Else
-    loctable.Open pString, pCon, adOpenStatic, adLockReadOnly, adCmdText
+    locTable.Open pString, pCon, adOpenStatic, adLockReadOnly, adCmdText
 'End If
-If Not (loctable.BOF And loctable.EOF) Then
-    GetField = loctable(0).Value
+If Not (locTable.BOF And locTable.EOF) Then
+    GetField = locTable(0).Value
 End If
-loctable.Close
-Set loctable = Nothing
+locTable.Close
+Set locTable = Nothing
 End Function
 Function GetRows(pString, pCon As ADODB.Connection) As Variant
-Dim loctable As New ADODB.Recordset
+Dim locTable As New ADODB.RecordSet
 'If pcon Is Nothing Then
 '    loctable.Open pString, GetCon, adOpenStatic, adLockReadOnly, adCmdText
 'Else
-    loctable.Open pString, pCon, adOpenStatic, adLockReadOnly, adCmdText
+    locTable.Open pString, pCon, adOpenStatic, adLockReadOnly, adCmdText
 'End If
 
-If Not (loctable.BOF And loctable.EOF) Then
+If Not (locTable.BOF And locTable.EOF) Then
     Dim aRet
     aRet = Array()
-    Do Until loctable.EOF
+    Do Until locTable.EOF
         ReDim Preserve aRet(UBound(aRet) + 1)
     
-        For i = 0 To loctable.Fields.Count - 1
-            aRet(UBound(aRet)) = AddFlag(aRet(UBound(aRet)), LCase(loctable.Fields(i).Name), loctable.Fields(i).Value)
+        For i = 0 To locTable.Fields.Count - 1
+            aRet(UBound(aRet)) = AddFlag(aRet(UBound(aRet)), LCase(locTable.Fields(i).Name), locTable.Fields(i).Value)
         Next
-        loctable.MoveNext
+        locTable.MoveNext
     Loop
     GetRows = aRet
 End If
-loctable.Close
-Set loctable = Nothing
+locTable.Close
+Set locTable = Nothing
 End Function
 
 
-Sub LoadText(myform As Form, Optional bForAll As Boolean = False, Optional sFlag As String)
+Sub LoadText(myForm As Form, Optional bForAll As Boolean = False, Optional sFlag As String)
 Dim cFilesave As String, cText As String
-If bForAll Then cFilesave = App.Path & "\" & myform.Name & turn(sFlag, "_") & sFlag & ".txt" Else cFilesave = tempPath & "\" & myform.Name & turn(sFlag, "_") & sFlag & ".txt"
-For i = 0 To myform.Count - 1
-    If TypeOf myform(i) Is TextBox Then
-        myform(i).text = RetSetting(myform(i).Name, cFilesave)
-    ElseIf TypeOf myform(i) Is DataCombo Then
-        myform(i).BoundText = RetSetting(myform(i).Name, cFilesave)
-    ElseIf TypeOf myform(i) Is CheckBox Then
-        If RetSetting(myform(i).Name, cFilesave) <> "" Then myform(i).Value = RetSetting(myform(i).Name, cFilesave)
+If bForAll Then cFilesave = App.Path & "\" & myForm.Name & turn(sFlag, "_") & sFlag & ".txt" Else cFilesave = tempPath & "\" & myForm.Name & turn(sFlag, "_") & sFlag & ".txt"
+For i = 0 To myForm.Count - 1
+    If TypeOf myForm(i) Is TextBox Then
+        myForm(i).text = RetSetting(myForm(i).Name, cFilesave)
+    ElseIf TypeOf myForm(i) Is DataCombo Then
+        myForm(i).BoundText = RetSetting(myForm(i).Name, cFilesave)
+    ElseIf TypeOf myForm(i) Is CheckBox Then
+        If RetSetting(myForm(i).Name, cFilesave) <> "" Then myForm(i).Value = RetSetting(myForm(i).Name, cFilesave)
     End If
 Next
 End Sub
 
-Sub SaveText(myform As Form, Optional bForAll As Boolean = False, Optional aText As Variant, Optional sFlag As String = "")
+Sub SaveText(myForm As Form, Optional bForAll As Boolean = False, Optional aText As Variant, Optional sFlag As String = "")
 Dim cFilesave As String
-If bForAll Then cFilesave = App.Path & "\" & myform.Name & turn(sFlag, "_") & sFlag & ".txt" Else cFilesave = tempPath & "\" & myform.Name & turn(sFlag, "_") & sFlag & ".txt"
+If bForAll Then cFilesave = App.Path & "\" & myForm.Name & turn(sFlag, "_") & sFlag & ".txt" Else cFilesave = tempPath & "\" & myForm.Name & turn(sFlag, "_") & sFlag & ".txt"
 If Not IsMissing(aText) Then
     For i = 0 To UBound(aText)
         cText = cText & turn(cText, "", "@") & LCase(aText(i)) & "@"
     Next
 End If
-For i = 0 To myform.Count - 1
-    If InStr(1, cText, "@" & LCase(myform(i).Name) & "@") > 0 Or IsMissing(aText) Then
-        If TypeOf myform(i) Is TextBox Then
-            addSetting myform(i).Name, myform(i).text, cFilesave
-        ElseIf TypeOf myform(i) Is DataCombo Then
-            addSetting myform(i).Name, myform(i).BoundText, cFilesave
-        ElseIf TypeOf myform(i) Is CheckBox Then
-            addSetting myform(i).Name, myform(i).Value, cFilesave
+For i = 0 To myForm.Count - 1
+    If InStr(1, cText, "@" & LCase(myForm(i).Name) & "@") > 0 Or IsMissing(aText) Then
+        If TypeOf myForm(i) Is TextBox Then
+            addSetting myForm(i).Name, myForm(i).text, cFilesave
+        ElseIf TypeOf myForm(i) Is DataCombo Then
+            addSetting myForm(i).Name, myForm(i).BoundText, cFilesave
+        ElseIf TypeOf myForm(i) Is CheckBox Then
+            addSetting myForm(i).Name, myForm(i).Value, cFilesave
         End If
     End If
 Next
@@ -800,7 +816,7 @@ End Function
 Public Function Tr(pString As Variant, Optional pReturn As String = " AND ") As String
 Tr = IIf(Trim(pString & "") = "", "", pReturn)
 End Function
-Sub SaveImageToAccess(pPic As Picture, rs As ADODB.Recordset, pColName As String)
+Sub SaveImageToAccess(pPic As Picture, rs As ADODB.RecordSet, pColName As String)
 Dim pb As PropertyBag
 Set pb = New PropertyBag
 pb.WriteProperty "MyImage", pPic
@@ -808,7 +824,7 @@ rs.Fields(pColName).AppendChunk pb.Contents
 rs.Update
 Set pb = Nothing
 End Sub
-Function GetPictureFromRecordset(rs As ADODB.Recordset, _
+Function GetPictureFromRecordset(rs As ADODB.RecordSet, _
                                          pColName As String) As Picture
     Dim pb As PropertyBag
 

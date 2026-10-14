@@ -1329,7 +1329,7 @@ Dim oSearch As New Search3, lIsBoxOnline As Boolean
 Dim cString As String
 Dim CLIST As String
 Dim oSearchMan As New Search_abd
-Dim oSearchStage As New Search_rs
+Dim oSearchStage As New SearchDb
 Dim cStr1 As String, cStr2 As String
 Dim oSearchItem As New Search3
 Private Sub cmdCSV_Click()
@@ -1339,7 +1339,7 @@ End Sub
 Private Sub cmdExcel_Click()
 ToFileExelNew grid1, , , aRow, Array(1), 0.9, , , , , , Me, Array(Me.Caption)
 End Sub
-Private Sub cmdExit_Click()
+Private Sub CmdExit_Click()
     Unload Me
 End Sub
 Private Sub CmdUndo_Click()
@@ -1360,13 +1360,13 @@ onlineCSVfrm.Show 1
 End Sub
 Private Sub Form_Load()
 Dim db As New clsDb
-Set xPay.RowSource = db.myRs("SELECT Payment_type " & _
+Set xpay.RowSource = db.myRs("SELECT Payment_type " & _
                              "FROM file6_90h " & _
                              "where payment_type is not null  " & _
                              " GROUP BY Payment_type")
 
-xPay.ListField = "Payment_type"
-xPay.BoundColumn = "Payment_type"
+xpay.ListField = "Payment_type"
+xpay.BoundColumn = "Payment_type"
 Set xman.RowSource = db.myRs("SELECT CODE,DESCA FROM FILE6_25 WHERE FILE6_25.BRANCH IN (SELECT FILE0_40.BRANCH FROM FILE0_40 WHERE FILE0_40.online =  1) AND FILE6_25.ISSTOP = 0 ORDER BY CODE")
 xman.ListField = "Desca"
 xman.BoundColumn = "Code"
@@ -1429,16 +1429,16 @@ cString = cString & _
                  " OR (FILE6_90H.DOC_NO IN(SELECT ORDER_NO FROM FILE6_90BH WHERE FILE6_90BH.STAGE = " & cmdStage.Tag & ")))"
     End If
     
-    If xdoc_no.text <> "" Then
-        cWhere = cWhere & Tr(cWhere) & " [DOC_NO] = " & MyParn(xdoc_no.text)
+    If xDoc_No.text <> "" Then
+        cWhere = cWhere & Tr(cWhere) & " [DOC_NO] = " & MyParn(xDoc_No.text)
     End If
     
-    If xphone.text <> "" Then
-        cWhere = cWhere & Tr(cWhere) & " [phone] = " & MyParn(xphone.text)
+    If xPhone.text <> "" Then
+        cWhere = cWhere & Tr(cWhere) & " [phone] = " & MyParn(xPhone.text)
     End If
     
-    If xPay.BoundText <> "" Then
-        cWhere = cWhere & Tr(cWhere) & " [Payment_type] = " & MyParn(xPay.text)
+    If xpay.BoundText <> "" Then
+        cWhere = cWhere & Tr(cWhere) & " [Payment_type] = " & MyParn(xpay.text)
     End If
     
     
@@ -1450,8 +1450,8 @@ cString = cString & _
         cWhere = cWhere & Tr(cWhere) & " [DATE] >= " & DateSq(xDate1.text)
     End If
     
-    If IsDate(xdate2.text) Then
-        cWhere = cWhere & Tr(cWhere) & " [DATE] <= " & DateSq(xdate2.text)
+    If IsDate(xDate2.text) Then
+        cWhere = cWhere & Tr(cWhere) & " [DATE] <= " & DateSq(xDate2.text)
     End If
     
     'If xSales(0).Value <> 0 Then cWhere = cWhere & Tr(cWhere) & " SALES_DOC IS NULL"
@@ -1584,7 +1584,7 @@ Private Sub Form_Unload(Cancel As Integer)
     On Error Resume Next
     'closeCon con
     'If cBranch <> "00" Then closeCon con_MyShop
-    SaveText Me, , Array(xDate1.Name, xdate2.Name)
+    SaveText Me, , Array(xDate1.Name, xDate2.Name)
 End Sub
 Private Sub grid1_DblClick()
 If grid1.Row < 1 Or grid1.Row = grid1.Rows - 1 Then Exit Sub
@@ -1641,23 +1641,23 @@ Private Sub SSCommand1_Click()
 End Sub
 
 Private Sub xPhone_GotFocus()
-myGotFocus xphone
+myGotFocus xPhone
 End Sub
 Private Sub XPHONE_LostFocus()
-myLostFocus xphone
+myLostFocus xPhone
 End Sub
 Private Sub xDoc_No_GotFocus()
-myGotFocus xdoc_no
+myGotFocus xDoc_No
 End Sub
 Private Sub xDoc_No_LostFocus()
-myLostFocus xdoc_no
+myLostFocus xDoc_No
 End Sub
 Private Sub xDate2_GotFocus()
-myGotFocus xdate2
+myGotFocus xDate2
 End Sub
 Private Sub xDate2_LostFocus()
-myLostFocus xdate2
-myValidDate xdate2
+myLostFocus xDate2
+myValidDate xDate2
 End Sub
 Private Sub xDate1_GotFocus()
 myGotFocus xDate1
@@ -1667,74 +1667,74 @@ myLostFocus xDate1
 myValidDate xDate1
 End Sub
 Private Sub xPay_GotFocus()
-myGotFocus xPay
+myGotFocus xpay
 End Sub
 Private Sub xPay_LostFocus()
-myLostFocus xPay
-If Not xPay.MatchedWithList Then xPay.BoundText = ""
+myLostFocus xpay
+If Not xpay.MatchedWithList Then xpay.BoundText = ""
 End Sub
 Private Sub XSTORE_GotFocus()
-myGotFocus XSTORE
+myGotFocus xStore
 End Sub
 Private Sub XSTORE_LostFocus()
-myLostFocus XSTORE
-If Not XSTORE.MatchedWithList Then XSTORE.BoundText = ""
+myLostFocus xStore
+If Not xStore.MatchedWithList Then xStore.BoundText = ""
 End Sub
 Private Sub grid1_KeyPress(KeyAscii As Integer)
 If KeyAscii = 13 Then
-    If grid1.col = 12 And grid1.TextMatrix(grid1.Row, grid1.col) = "" Then Exit Sub
-    If grid1.col = 13 And grid1.TextMatrix(grid1.Row, grid1.col) = "" Then Exit Sub
-    If grid1.col = 19 + 1 Then Exit Sub
-    If grid1.col = 21 + 1 And grid1.TextMatrix(grid1.Row, grid1.col) = "" Then Exit Sub
-    If grid1.col = 24 + 1 And grid1.TextMatrix(grid1.Row, grid1.col) = "" Then Exit Sub
+    If grid1.Col = 12 And grid1.TextMatrix(grid1.Row, grid1.Col) = "" Then Exit Sub
+    If grid1.Col = 13 And grid1.TextMatrix(grid1.Row, grid1.Col) = "" Then Exit Sub
+    If grid1.Col = 19 + 1 Then Exit Sub
+    If grid1.Col = 21 + 1 And grid1.TextMatrix(grid1.Row, grid1.Col) = "" Then Exit Sub
+    If grid1.Col = 24 + 1 And grid1.TextMatrix(grid1.Row, grid1.Col) = "" Then Exit Sub
     KeyAscii = 0
 End If
 End Sub
-Private Sub grid1_KeyUpEdit(ByVal Row As Long, ByVal col As Long, KeyCode As Integer, ByVal Shift As Integer)
+Private Sub grid1_KeyUpEdit(ByVal Row As Long, ByVal Col As Long, KeyCode As Integer, ByVal Shift As Integer)
 If KeyCode = 13 Then
-    If col = 12 And grid1.TextMatrix(Row, col) = "" Then Exit Sub
-    If col = 13 And grid1.TextMatrix(Row, col) = "" Then Exit Sub
-    If col = 19 + 1 Then Exit Sub
-    If col = 21 + 1 And grid1.TextMatrix(Row, col) = "" Then Exit Sub
-    If col = 24 + 1 And grid1.TextMatrix(Row, col) = "" Then Exit Sub
-    CellPos KeyCode, Row, col
+    If Col = 12 And grid1.TextMatrix(Row, Col) = "" Then Exit Sub
+    If Col = 13 And grid1.TextMatrix(Row, Col) = "" Then Exit Sub
+    If Col = 19 + 1 Then Exit Sub
+    If Col = 21 + 1 And grid1.TextMatrix(Row, Col) = "" Then Exit Sub
+    If Col = 24 + 1 And grid1.TextMatrix(Row, Col) = "" Then Exit Sub
+    CellPos KeyCode, Row, Col
 End If
 End Sub
-Private Sub CellPos(ByRef KeyCode, ByVal Row As Long, ByVal col As Long)
+Private Sub CellPos(ByRef KeyCode, ByVal Row As Long, ByVal Col As Long)
 KeyCode = 0
-If col < 2 Then
-    grid1.col = 2
-ElseIf col > 2 And col < 5 Then
-    grid1.col = grid1.col + 1
-ElseIf col < 12 Then
-    grid1.col = 12
-    grid1.ShowCell Row, grid1.col
-ElseIf col < 13 Then
-    grid1.col = 13
-    grid1.ShowCell Row, grid1.col
+If Col < 2 Then
+    grid1.Col = 2
+ElseIf Col > 2 And Col < 5 Then
+    grid1.Col = grid1.Col + 1
+ElseIf Col < 12 Then
+    grid1.Col = 12
+    grid1.ShowCell Row, grid1.Col
+ElseIf Col < 13 Then
+    grid1.Col = 13
+    grid1.ShowCell Row, grid1.Col
 'ElseIf Col < 19 And cBranch = "00" Then
 '    grid1.Col = 19
 '    grid1.ShowCell Row, grid1.Col
-ElseIf col < 22 + 1 And cBranch = "00" Then
-    grid1.col = 22 + 1
-    grid1.ShowCell Row, grid1.col
-ElseIf col < 23 + 1 And cBranch <> "00" Then
-    grid1.col = 23 + 1
+ElseIf Col < 22 + 1 And cBranch = "00" Then
+    grid1.Col = 22 + 1
+    grid1.ShowCell Row, grid1.Col
+ElseIf Col < 23 + 1 And cBranch <> "00" Then
+    grid1.Col = 23 + 1
     grid1.Row = Row
-    grid1.ShowCell Row, grid1.col
-ElseIf col < 24 + 1 Then
-    grid1.col = 24 + 1
+    grid1.ShowCell Row, grid1.Col
+ElseIf Col < 24 + 1 Then
+    grid1.Col = 24 + 1
     grid1.Row = Row
-    grid1.ShowCell Row, grid1.col
+    grid1.ShowCell Row, grid1.Col
 ElseIf Row < grid1.Rows - 1 Then
     grid1.Select Row + 1, NextEmpty(grid1, Row + 1, 1, 2)
     grid1.ShowCell grid1.Row, 0
 Else
-    grid1.Select Row, col
+    grid1.Select Row, Col
 End If
 End Sub
-Private Sub grid1_ValidateEdit(ByVal Row As Long, ByVal col As Long, Cancel As Boolean)
-If col = 4 Then
+Private Sub grid1_ValidateEdit(ByVal Row As Long, ByVal Col As Long, Cancel As Boolean)
+If Col = 4 Then
     If Val(grid1.EditText) = 0 Then
         Cancel = True
         Exit Sub
@@ -1747,7 +1747,7 @@ If col = 4 Then
         Cancel = True
         Exit Sub
     End If
-ElseIf col = 19 Then
+ElseIf Col = 19 Then
     If (Not IsDate(grid1.EditText)) And Trim(grid1.EditText) <> "" Then
         Cancel = True
     Else
@@ -1757,6 +1757,6 @@ End If
 End Sub
 Private Sub grid1_KeyUp(KeyCode As Integer, Shift As Integer)
 If KeyCode = 13 Then
-    CellPos KeyCode, grid1.Row, grid1.col
+    CellPos KeyCode, grid1.Row, grid1.Col
 End If
 End Sub

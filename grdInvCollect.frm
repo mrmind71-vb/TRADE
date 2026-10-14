@@ -44,6 +44,7 @@ Begin VB.Form grdInvCollect
       TabPicture(0)   =   "grdInvCollect.frx":0000
       Tab(0).ControlEnabled=   0   'False
       Tab(0).Control(0)=   "grid2"
+      Tab(0).Control(0).Enabled=   0   'False
       Tab(0).ControlCount=   1
       TabCaption(1)   =   "≈Ã„«·Ì ⁄„·«¡"
       TabPicture(1)   =   "grdInvCollect.frx":001C
@@ -789,7 +790,7 @@ Attribute VB_Exposed = False
 Dim aHeader(5)
 Dim cWhere As String
 Dim oSearch As New Search_abd
-Dim oSearchtotal As New Search_total
+Dim oSearchTotal As New Search_total
 Dim oSearchMan As New Search_total
 Private Sub cmdExcel_Click()
 Me.MousePointer = 11
@@ -825,7 +826,7 @@ Private Sub CmdUndo_Click()
 End Sub
 Private Sub cmdGo_Click()
     myload
-    myload2
+    MYLOAD2
 
 End Sub
 
@@ -933,7 +934,7 @@ With grid1
     panel1(0).Caption = IIf(.Rows = 1, "·«  ÊÃœ ”Ã·«  ", "⁄œœ «·”Ã·«  : " & .Rows - 2)
     End With
 End Sub
-Private Sub myload2()
+Private Sub MYLOAD2()
 Dim strSql As String
 strSql = "SELECT  v.man," & _
          "FILE6_25.[DESCA]," & _
@@ -1021,7 +1022,7 @@ If grid1.Row > 1 Then
 End If
 End Sub
 
-Private Sub grid2_DblClick()
+Private Sub Grid2_dblClick()
 If grid2.Row > 1 Then
     PayManLookup
 End If
@@ -1143,9 +1144,9 @@ GrdArray(3, 1) = 1000
 GrdArray(3, 3) = True
 
 searchArray = Array(Generalarray, listarray, GrdArray)
-oSearchtotal.sFlag = "PAYMENT"
-oSearchtotal.Caption = "«” ⁄·«„  ›’Ì·Ì «· Õ’Ì·"
-oSearchtotal.Show 1
+oSearchTotal.sFlag = "PAYMENT"
+oSearchTotal.Caption = "«” ⁄·«„  ›’Ì·Ì «· Õ’Ì·"
+oSearchTotal.Show 1
 End Sub
 Private Sub PayManLookup()
 Dim Generalarray(5)
@@ -1165,6 +1166,10 @@ If grid2.TextMatrix(grid2.Row, 1) <> "" Then
     sb.Append " WHERE v.MAN = " & MyParn(grid2.TextMatrix(grid2.Row, 1))
 Else
     sb.Append " WHERE v.MAN IS NULL"
+End If
+
+If cWhere <> "" Then
+    sb.Append " AND " & cWhere
 End If
 
 Generalarray(1) = sb.GetAsString

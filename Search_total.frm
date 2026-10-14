@@ -49,10 +49,9 @@ Begin VB.Form Search_total
          Width           =   4380
          Begin Threed.SSCommand cmdPrint 
             Height          =   285
-            Left            =   3510
+            Left            =   2700
             TabIndex        =   4
             Top             =   90
-            Visible         =   0   'False
             Width           =   780
             _ExtentX        =   1376
             _ExtentY        =   503
@@ -73,10 +72,9 @@ Begin VB.Form Search_total
          End
          Begin Threed.SSCommand cmdExcel 
             Height          =   285
-            Left            =   2745
+            Left            =   3510
             TabIndex        =   5
             Top             =   90
-            Visible         =   0   'False
             Width           =   735
             _ExtentX        =   1296
             _ExtentY        =   503
@@ -225,15 +223,24 @@ Public sFlag As String, bEnter As Boolean
 Private Sub CmdExit_Click()
 Unload Me
 End Sub
-Private Sub CmdGo_Click()
+Private Sub cmdGo_Click()
 myloadgrd
-Fixgrd
+fixGrd
 If grid1.Rows > 1 Then
     grid1.SetFocus
 End If
 End Sub
 Private Sub cmdExcel_Click()
-ToFileExel grid1
+Me.MousePointer = 11
+If grid1.Rows > 1 Then
+    aSub = AddFlag(Empty, "row", 1)
+    aSub = AddFlag(aSub, "bold", True)
+    aSub = AddFlag(aSub, "word_wrap", False)
+    aSub = AddFlag(aSub, "back_color", 19)
+    aRow = AddFlag(aRow, aSub)
+End If
+ToFileExelNew grid1, , , aRow, , 0.9, , , , , , Me, Array(Me.Caption)
+Me.MousePointer = 0
 End Sub
 
 Private Sub cmdFilter_Click()
@@ -286,7 +293,7 @@ If UBound(Generalarray) = 3 Then
     myloadgrd
 Else
     If UBound(Generalarray) >= 4 Then
-        If Not Generalarray(4) Then myloadgrd Else Fixgrd
+        If Not Generalarray(4) Then myloadgrd Else fixGrd
     End If
 End If
 
@@ -319,13 +326,13 @@ cString = cString & Space(1) & Generalarray(2)
 Dim db As New clsDb
 Set grid1.DataSource = db.myRs(cString)
 Set db = Nothing
-Fixgrd
+fixGrd
 Exit Sub
 myError:
 MsgBox Err.Description
 Err.Clear
 End Sub
-Private Sub Fixgrd()
+Private Sub fixGrd()
 For i = 0 To grid1.Cols - 1
     grid1.TextMatrix(0, i) = GrdArray(i, 0)
     grid1.ColWidth(i) = GrdArray(i, 1)
@@ -336,6 +343,7 @@ For i = 0 To grid1.Cols - 1
     End If
     If GrdArray(i, 3) Then
         bTotal = True
+        grid1.ColDataType(i) = flexDTDouble
         grid1.SubtotalPosition = flexSTAbove
         grid1.Subtotal flexSTSum, -1, i, "#0.00", &HC0FFC0, vbBlack, True, "≈Ã„«·Ï"
     End If

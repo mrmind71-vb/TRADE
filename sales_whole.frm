@@ -31,6 +31,140 @@ Begin VB.Form sales_wholefrm
    WhatsThisButton =   -1  'True
    WhatsThisHelp   =   -1  'True
    WindowState     =   2  'Maximized
+   Begin VB.Frame Frame3 
+      BackColor       =   &H00FFFFFF&
+      Height          =   735
+      Left            =   90
+      RightToLeft     =   -1  'True
+      TabIndex        =   154
+      Top             =   -90
+      Width           =   8160
+      Begin Threed.SSCommand cmdScan 
+         Height          =   465
+         Left            =   4050
+         TabIndex        =   155
+         TabStop         =   0   'False
+         Top             =   180
+         Width           =   1680
+         _ExtentX        =   2963
+         _ExtentY        =   820
+         _Version        =   196610
+         ForeColor       =   0
+         BackColor       =   16777215
+         PictureFrames   =   1
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Arial"
+            Size            =   11.25
+            Charset         =   178
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Picture         =   "sales_whole.frx":0000
+         Caption         =   "„”Õ ··»Ê·Ì’…"
+         ButtonStyle     =   2
+         PictureAlignment=   10
+         BevelWidth      =   0
+         PictureDisabledFrames=   1
+         ShapeSize       =   1
+         PictureDisabled =   "sales_whole.frx":238F
+      End
+      Begin Threed.SSCommand cmdRotate 
+         Height          =   465
+         Left            =   2250
+         TabIndex        =   156
+         TabStop         =   0   'False
+         Top             =   180
+         Width           =   1770
+         _ExtentX        =   3122
+         _ExtentY        =   820
+         _Version        =   196610
+         ForeColor       =   0
+         BackColor       =   16777215
+         PictureFrames   =   1
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Arial"
+            Size            =   11.25
+            Charset         =   178
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Picture         =   "sales_whole.frx":45F6
+         Caption         =   "’Ê—… „‰ „·›"
+         Alignment       =   1
+         ButtonStyle     =   2
+         PictureAlignment=   9
+         BevelWidth      =   0
+         PictureDisabledFrames=   1
+         ShapeSize       =   1
+         PictureDisabled =   "sales_whole.frx":6976
+      End
+      Begin Threed.SSCommand cmdDelPhoto 
+         Height          =   465
+         Left            =   90
+         TabIndex        =   157
+         TabStop         =   0   'False
+         Top             =   180
+         Width           =   2130
+         _ExtentX        =   3757
+         _ExtentY        =   820
+         _Version        =   196610
+         ForeColor       =   255
+         BackColor       =   16777215
+         PictureFrames   =   1
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Arial"
+            Size            =   11.25
+            Charset         =   178
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Picture         =   "sales_whole.frx":8BAF
+         Caption         =   "Õ–› ’Ê—… «·»Ê·Ì’…"
+         ButtonStyle     =   2
+         PictureAlignment=   10
+         BevelWidth      =   0
+         PictureDisabledFrames=   1
+         ShapeSize       =   1
+         PictureDisabled =   "sales_whole.frx":AEEE
+      End
+      Begin Threed.SSCommand cmdShowPhoto 
+         Height          =   465
+         Left            =   5760
+         TabIndex        =   158
+         TabStop         =   0   'False
+         Top             =   180
+         Width           =   2310
+         _ExtentX        =   4075
+         _ExtentY        =   820
+         _Version        =   196610
+         ForeColor       =   0
+         BackColor       =   16777215
+         PictureFrames   =   1
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Arial"
+            Size            =   11.25
+            Charset         =   178
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Picture         =   "sales_whole.frx":D127
+         Caption         =   "⁄—÷ ’Ê—… «·»Ê·Ì’…"
+         ButtonStyle     =   2
+         PictureAlignment=   10
+         BevelWidth      =   0
+         PictureDisabledFrames=   1
+         ShapeSize       =   1
+         PictureDisabled =   "sales_whole.frx":F562
+      End
+   End
    Begin VB.Frame Frame14 
       Caption         =   "Frame14"
       BeginProperty Font 
@@ -44,7 +178,7 @@ Begin VB.Form sales_wholefrm
       EndProperty
       Height          =   4875
       Left            =   -8460
-      TabIndex        =   26
+      TabIndex        =   30
       Top             =   10890
       Visible         =   0   'False
       Width           =   9285
@@ -52,7 +186,7 @@ Begin VB.Form sales_wholefrm
          BackColor       =   &H00FFFFFF&
          Height          =   690
          Left            =   0
-         TabIndex        =   138
+         TabIndex        =   142
          Top             =   0
          Width           =   3660
          Begin VB.TextBox XDATESALES1 
@@ -62,7 +196,7 @@ Begin VB.Form sales_wholefrm
             Left            =   1665
             MaxLength       =   10
             RightToLeft     =   -1  'True
-            TabIndex        =   140
+            TabIndex        =   144
             TabStop         =   0   'False
             Top             =   225
             Width           =   1230
@@ -74,7 +208,7 @@ Begin VB.Form sales_wholefrm
             Left            =   360
             MaxLength       =   10
             RightToLeft     =   -1  'True
-            TabIndex        =   139
+            TabIndex        =   143
             TabStop         =   0   'False
             Top             =   225
             Width           =   1275
@@ -88,7 +222,7 @@ Begin VB.Form sales_wholefrm
             Index           =   1
             Left            =   2970
             RightToLeft     =   -1  'True
-            TabIndex        =   141
+            TabIndex        =   145
             Top             =   270
             Width           =   510
          End
@@ -97,7 +231,7 @@ Begin VB.Form sales_wholefrm
          Caption         =   "Check1"
          Height          =   270
          Left            =   360
-         TabIndex        =   125
+         TabIndex        =   129
          Top             =   765
          Width           =   1365
       End
@@ -108,7 +242,7 @@ Begin VB.Form sales_wholefrm
          Left            =   1935
          MaxLength       =   6
          RightToLeft     =   -1  'True
-         TabIndex        =   43
+         TabIndex        =   47
          TabStop         =   0   'False
          Top             =   3825
          Visible         =   0   'False
@@ -128,7 +262,7 @@ Begin VB.Form sales_wholefrm
          EndProperty
          Height          =   285
          Left            =   2745
-         TabIndex        =   37
+         TabIndex        =   41
          Top             =   1170
          Visible         =   0   'False
          Width           =   195
@@ -146,7 +280,7 @@ Begin VB.Form sales_wholefrm
          EndProperty
          Height          =   285
          Left            =   3555
-         TabIndex        =   36
+         TabIndex        =   40
          Top             =   2070
          Width           =   195
       End
@@ -166,7 +300,7 @@ Begin VB.Form sales_wholefrm
          ScaleHeight     =   118
          ScaleMode       =   3  'Pixel
          ScaleWidth      =   151
-         TabIndex        =   28
+         TabIndex        =   32
          Top             =   4095
          Visible         =   0   'False
          Width           =   2325
@@ -503,7 +637,7 @@ Begin VB.Form sales_wholefrm
       Begin Threed.SSCommand SSCommand1 
          Height          =   330
          Left            =   3330
-         TabIndex        =   126
+         TabIndex        =   130
          Top             =   405
          Width           =   2130
          _ExtentX        =   3757
@@ -531,7 +665,7 @@ Begin VB.Form sales_wholefrm
          ForeColor       =   &H80000008&
          Height          =   330
          Left            =   2655
-         TabIndex        =   120
+         TabIndex        =   124
          Top             =   1485
          Width           =   1545
       End
@@ -551,7 +685,7 @@ Begin VB.Form sales_wholefrm
          ForeColor       =   &H00000040&
          Height          =   375
          Left            =   3735
-         TabIndex        =   42
+         TabIndex        =   46
          Top             =   1035
          Visible         =   0   'False
          Width           =   1455
@@ -561,7 +695,7 @@ Begin VB.Form sales_wholefrm
          Caption         =   "«·„” Œœ„"
          Height          =   285
          Left            =   0
-         TabIndex        =   41
+         TabIndex        =   45
          Top             =   0
          Width           =   555
       End
@@ -581,7 +715,7 @@ Begin VB.Form sales_wholefrm
          ForeColor       =   &H00000040&
          Height          =   375
          Left            =   360
-         TabIndex        =   40
+         TabIndex        =   44
          Top             =   2385
          Visible         =   0   'False
          Width           =   1455
@@ -594,7 +728,7 @@ Begin VB.Form sales_wholefrm
          Index           =   0
          Left            =   2805
          RightToLeft     =   -1  'True
-         TabIndex        =   39
+         TabIndex        =   43
          Top             =   3285
          Width           =   540
       End
@@ -614,7 +748,7 @@ Begin VB.Form sales_wholefrm
          ForeColor       =   &H00000040&
          Height          =   555
          Left            =   4950
-         TabIndex        =   38
+         TabIndex        =   42
          Top             =   855
          Width           =   2535
       End
@@ -627,7 +761,7 @@ Begin VB.Form sales_wholefrm
          ForeColor       =   &H000000C0&
          Height          =   315
          Left            =   1440
-         TabIndex        =   27
+         TabIndex        =   31
          Top             =   405
          Visible         =   0   'False
          Width           =   675
@@ -637,7 +771,7 @@ Begin VB.Form sales_wholefrm
       Height          =   4335
       Left            =   -3960
       RightToLeft     =   -1  'True
-      TabIndex        =   134
+      TabIndex        =   138
       Top             =   11025
       Visible         =   0   'False
       Width           =   12075
@@ -651,14 +785,14 @@ Begin VB.Form sales_wholefrm
          Left            =   225
          ScaleHeight     =   945
          ScaleWidth      =   1125
-         TabIndex        =   135
+         TabIndex        =   139
          Top             =   360
          Width           =   1125
       End
       Begin ImgXCtrl6.ImgXCtrl imgxPrint 
          Height          =   2040
          Left            =   7920
-         TabIndex        =   136
+         TabIndex        =   140
          Top             =   225
          Width           =   3165
          _ExtentX        =   5583
@@ -670,7 +804,7 @@ Begin VB.Form sales_wholefrm
       Begin ImgXCtrl6.ImgXCtrl ImgxPrint2 
          Height          =   945
          Left            =   3420
-         TabIndex        =   137
+         TabIndex        =   141
          Top             =   1035
          Width           =   1125
          _ExtentX        =   1984
@@ -682,7 +816,7 @@ Begin VB.Form sales_wholefrm
       Begin Threed.SSCommand cmdPurchase 
          Height          =   510
          Left            =   0
-         TabIndex        =   145
+         TabIndex        =   149
          Top             =   0
          Width           =   2085
          _ExtentX        =   3678
@@ -709,9 +843,9 @@ Begin VB.Form sales_wholefrm
    Begin VB.Frame Frame9 
       BackColor       =   &H00FFFFFF&
       Height          =   690
-      Left            =   3510
-      TabIndex        =   131
-      Top             =   -45
+      Left            =   45
+      TabIndex        =   135
+      Top             =   1260
       Width           =   1815
       Begin VB.CheckBox chkNoBalance 
          Alignment       =   1  'Right Justify
@@ -722,7 +856,7 @@ Begin VB.Form sales_wholefrm
          Height          =   285
          Left            =   180
          RightToLeft     =   -1  'True
-         TabIndex        =   132
+         TabIndex        =   136
          TabStop         =   0   'False
          Top             =   270
          Value           =   1  'Checked
@@ -732,18 +866,18 @@ Begin VB.Form sales_wholefrm
    Begin VB.Frame Frame7 
       BackColor       =   &H00FFFFFF&
       Height          =   735
-      Left            =   10080
-      TabIndex        =   127
-      Top             =   -90
-      Width           =   2400
+      Left            =   10440
+      TabIndex        =   131
+      Top             =   -135
+      Width           =   2580
       Begin Threed.SSCommand CMD_ADD_RECEVD 
          Height          =   510
          Left            =   45
-         TabIndex        =   128
+         TabIndex        =   132
          TabStop         =   0   'False
          Top             =   180
-         Width           =   2310
-         _ExtentX        =   4075
+         Width           =   2490
+         _ExtentX        =   4392
          _ExtentY        =   900
          _Version        =   196610
          ForeColor       =   0
@@ -773,7 +907,7 @@ Begin VB.Form sales_wholefrm
       Height          =   285
       Left            =   -1170
       RightToLeft     =   -1  'True
-      TabIndex        =   122
+      TabIndex        =   126
       TabStop         =   0   'False
       Top             =   1575
       Visible         =   0   'False
@@ -796,7 +930,7 @@ Begin VB.Form sales_wholefrm
       Left            =   -2430
       Locked          =   -1  'True
       MaxLength       =   12
-      TabIndex        =   121
+      TabIndex        =   125
       TabStop         =   0   'False
       Top             =   630
       Visible         =   0   'False
@@ -814,18 +948,18 @@ Begin VB.Form sales_wholefrm
          Strikethrough   =   0   'False
       EndProperty
       Height          =   645
-      Left            =   90
-      TabIndex        =   112
-      Top             =   945
-      Width           =   8700
+      Left            =   45
+      TabIndex        =   116
+      Top             =   585
+      Width           =   8205
       Begin Threed.SSCommand cmdSign 
          Height          =   330
-         Left            =   1890
-         TabIndex        =   113
+         Left            =   1530
+         TabIndex        =   117
          TabStop         =   0   'False
          Top             =   180
-         Width           =   1725
-         _ExtentX        =   3043
+         Width           =   1410
+         _ExtentX        =   2487
          _ExtentY        =   582
          _Version        =   196610
          ForeColor       =   0
@@ -839,7 +973,7 @@ Begin VB.Form sales_wholefrm
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Caption         =   "«—”«· ›« Ê—…  ›’Ì·Ì…"
+         Caption         =   "›« Ê—…  ›’Ì·Ì…"
          ButtonStyle     =   3
          PictureAlignment=   11
          BevelWidth      =   0
@@ -848,11 +982,11 @@ Begin VB.Form sales_wholefrm
       Begin Threed.SSCommand cmdSignGroup 
          Height          =   330
          Left            =   90
-         TabIndex        =   116
+         TabIndex        =   120
          TabStop         =   0   'False
          Top             =   180
-         Width           =   1770
-         _ExtentX        =   3122
+         Width           =   1410
+         _ExtentX        =   2487
          _ExtentY        =   582
          _Version        =   196610
          ForeColor       =   0
@@ -866,7 +1000,7 @@ Begin VB.Form sales_wholefrm
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Caption         =   "«—”«· ›« Ê—… «Ã„«·Ì…"
+         Caption         =   "›« Ê—… «Ã„«·Ì…"
          ButtonStyle     =   3
          PictureAlignment=   11
          BevelWidth      =   0
@@ -876,9 +1010,9 @@ Begin VB.Form sales_wholefrm
          BackColor       =   &H00FFFFFF&
          Caption         =   "›« Ê—… «·Ìﬂ —Ê‰Ì…"
          Height          =   285
-         Left            =   7290
+         Left            =   6795
          RightToLeft     =   -1  'True
-         TabIndex        =   115
+         TabIndex        =   119
          Top             =   225
          Width           =   1290
       End
@@ -897,27 +1031,27 @@ Begin VB.Form sales_wholefrm
          EndProperty
          ForeColor       =   &H000000C0&
          Height          =   345
-         Left            =   3690
+         Left            =   2970
          RightToLeft     =   -1  'True
-         TabIndex        =   114
+         TabIndex        =   118
          Top             =   180
-         Width           =   3495
+         Width           =   3765
       End
    End
    Begin VB.Frame fmTransTax 
       BackColor       =   &H00FFFFFF&
-      Height          =   735
-      Left            =   5355
-      TabIndex        =   102
-      Top             =   -90
-      Width           =   4695
+      Height          =   690
+      Left            =   1890
+      TabIndex        =   106
+      Top             =   1260
+      Width           =   5145
       Begin Threed.SSCommand cmdTaxInv 
          Height          =   330
-         Left            =   135
-         TabIndex        =   104
+         Left            =   90
+         TabIndex        =   108
          Top             =   225
-         Width           =   1545
-         _ExtentX        =   2725
+         Width           =   960
+         _ExtentX        =   1693
          _ExtentY        =   582
          _Version        =   196610
          BackColor       =   16777215
@@ -930,7 +1064,7 @@ Begin VB.Form sales_wholefrm
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Caption         =   " ÕÊÌ· «·Ì"
+         Caption         =   " ÕÊÌ·"
          TagVariant      =   "«Œ «— «·„Œ“‰"
          ButtonStyle     =   3
       End
@@ -940,21 +1074,21 @@ Begin VB.Form sales_wholefrm
          BorderStyle     =   1  'Fixed Single
          ForeColor       =   &H80000008&
          Height          =   330
-         Left            =   1755
-         TabIndex        =   111
+         Left            =   1080
+         TabIndex        =   115
          Top             =   225
-         Width           =   1545
+         Width           =   2625
       End
       Begin VB.Label Label7 
          BackColor       =   &H00FFFFFF&
          Caption         =   "›« Ê—… ÷—Ì»Ì…"
          Height          =   240
          Index           =   2
-         Left            =   3375
+         Left            =   3780
          RightToLeft     =   -1  'True
-         TabIndex        =   103
+         TabIndex        =   107
          Top             =   270
-         Width           =   1170
+         Width           =   1125
       End
    End
    Begin VB.PictureBox Picture1 
@@ -965,14 +1099,14 @@ Begin VB.Form sales_wholefrm
       Left            =   0
       ScaleHeight     =   1725
       ScaleWidth      =   20355
-      TabIndex        =   62
+      TabIndex        =   66
       Top             =   8700
       Width           =   20355
       Begin VB.Frame fmCollect 
          BackColor       =   &H00FFFFFF&
          Height          =   645
          Left            =   135
-         TabIndex        =   123
+         TabIndex        =   127
          Top             =   -45
          Width           =   1725
          Begin VB.CheckBox chkTotal 
@@ -984,7 +1118,7 @@ Begin VB.Form sales_wholefrm
             Height          =   285
             Left            =   90
             RightToLeft     =   -1  'True
-            TabIndex        =   124
+            TabIndex        =   128
             TabStop         =   0   'False
             Top             =   270
             Width           =   1455
@@ -994,7 +1128,7 @@ Begin VB.Form sales_wholefrm
          BackColor       =   &H00FFFFFF&
          Height          =   645
          Left            =   1890
-         TabIndex        =   118
+         TabIndex        =   122
          Top             =   -45
          Visible         =   0   'False
          Width           =   1725
@@ -1007,7 +1141,7 @@ Begin VB.Form sales_wholefrm
             Height          =   285
             Left            =   135
             RightToLeft     =   -1  'True
-            TabIndex        =   119
+            TabIndex        =   123
             TabStop         =   0   'False
             Top             =   270
             Width           =   1455
@@ -1017,7 +1151,7 @@ Begin VB.Form sales_wholefrm
          BackColor       =   &H00FFFFFF&
          Height          =   690
          Left            =   3645
-         TabIndex        =   98
+         TabIndex        =   102
          Top             =   -45
          Width           =   11715
          Begin VB.OptionButton optType 
@@ -1030,7 +1164,7 @@ Begin VB.Form sales_wholefrm
             Index           =   1
             Left            =   9930
             RightToLeft     =   -1  'True
-            TabIndex        =   110
+            TabIndex        =   114
             Top             =   270
             Width           =   645
          End
@@ -1044,7 +1178,7 @@ Begin VB.Form sales_wholefrm
             Index           =   6
             Left            =   45
             RightToLeft     =   -1  'True
-            TabIndex        =   109
+            TabIndex        =   113
             Top             =   270
             Width           =   2175
          End
@@ -1058,7 +1192,7 @@ Begin VB.Form sales_wholefrm
             Index           =   5
             Left            =   2535
             RightToLeft     =   -1  'True
-            TabIndex        =   108
+            TabIndex        =   112
             Top             =   270
             Width           =   1995
          End
@@ -1072,7 +1206,7 @@ Begin VB.Form sales_wholefrm
             Index           =   4
             Left            =   4845
             RightToLeft     =   -1  'True
-            TabIndex        =   107
+            TabIndex        =   111
             Top             =   270
             Width           =   1590
          End
@@ -1086,7 +1220,7 @@ Begin VB.Form sales_wholefrm
             Index           =   3
             Left            =   6750
             RightToLeft     =   -1  'True
-            TabIndex        =   106
+            TabIndex        =   110
             Top             =   270
             Width           =   1320
          End
@@ -1100,7 +1234,7 @@ Begin VB.Form sales_wholefrm
             Index           =   2
             Left            =   8385
             RightToLeft     =   -1  'True
-            TabIndex        =   100
+            TabIndex        =   104
             Top             =   270
             Width           =   1230
          End
@@ -1113,7 +1247,7 @@ Begin VB.Form sales_wholefrm
             Height          =   270
             Index           =   0
             Left            =   10890
-            TabIndex        =   99
+            TabIndex        =   103
             Top             =   270
             Value           =   -1  'True
             Width           =   690
@@ -1133,13 +1267,13 @@ Begin VB.Form sales_wholefrm
          Height          =   645
          Left            =   135
          RightToLeft     =   -1  'True
-         TabIndex        =   73
+         TabIndex        =   77
          Top             =   1080
          Width           =   3525
          Begin Threed.SSCommand cmdFirst 
             Height          =   420
             Left            =   2610
-            TabIndex        =   74
+            TabIndex        =   78
             TabStop         =   0   'False
             Top             =   135
             Width           =   825
@@ -1157,18 +1291,18 @@ Begin VB.Form sales_wholefrm
                Italic          =   0   'False
                Strikethrough   =   0   'False
             EndProperty
-            Picture         =   "sales_whole.frx":0000
+            Picture         =   "sales_whole.frx":117C9
             Caption         =   "√Ê·"
             ButtonStyle     =   3
             PictureAlignment=   10
             BevelWidth      =   0
             PictureDisabledFrames=   1
-            PictureDisabled =   "sales_whole.frx":21A7
+            PictureDisabled =   "sales_whole.frx":13970
          End
          Begin Threed.SSCommand cmdPrevious 
             Height          =   420
             Left            =   1710
-            TabIndex        =   75
+            TabIndex        =   79
             TabStop         =   0   'False
             Top             =   135
             Width           =   870
@@ -1186,18 +1320,18 @@ Begin VB.Form sales_wholefrm
                Italic          =   0   'False
                Strikethrough   =   0   'False
             EndProperty
-            Picture         =   "sales_whole.frx":41EE
+            Picture         =   "sales_whole.frx":159B7
             Caption         =   "”«»ﬁ"
             ButtonStyle     =   3
             PictureAlignment=   10
             BevelWidth      =   0
             PictureDisabledFrames=   1
-            PictureDisabled =   "sales_whole.frx":62D9
+            PictureDisabled =   "sales_whole.frx":17AA2
          End
          Begin Threed.SSCommand cmdNext 
             Height          =   420
             Left            =   855
-            TabIndex        =   76
+            TabIndex        =   80
             TabStop         =   0   'False
             Top             =   135
             Width           =   825
@@ -1215,18 +1349,18 @@ Begin VB.Form sales_wholefrm
                Italic          =   0   'False
                Strikethrough   =   0   'False
             EndProperty
-            Picture         =   "sales_whole.frx":82D3
+            Picture         =   "sales_whole.frx":19A9C
             Caption         =   "·«Õﬁ"
             ButtonStyle     =   3
             PictureAlignment=   9
             BevelWidth      =   0
             PictureDisabledFrames=   1
-            PictureDisabled =   "sales_whole.frx":A3E4
+            PictureDisabled =   "sales_whole.frx":1BBAD
          End
          Begin Threed.SSCommand cmdLast 
             Height          =   420
             Left            =   45
-            TabIndex        =   77
+            TabIndex        =   81
             TabStop         =   0   'False
             Top             =   135
             Width           =   780
@@ -1244,13 +1378,13 @@ Begin VB.Form sales_wholefrm
                Italic          =   0   'False
                Strikethrough   =   0   'False
             EndProperty
-            Picture         =   "sales_whole.frx":C3DE
+            Picture         =   "sales_whole.frx":1DBA7
             Caption         =   "√ŒÌ—"
             ButtonStyle     =   3
             PictureAlignment=   9
             BevelWidth      =   0
             PictureDisabledFrames=   1
-            PictureDisabled =   "sales_whole.frx":E602
+            PictureDisabled =   "sales_whole.frx":1FDCB
          End
       End
       Begin VB.Frame Frame12 
@@ -1258,7 +1392,7 @@ Begin VB.Form sales_wholefrm
          Height          =   1095
          Left            =   3690
          RightToLeft     =   -1  'True
-         TabIndex        =   90
+         TabIndex        =   94
          Top             =   585
          Width           =   3255
          Begin VB.TextBox txtModel 
@@ -1268,7 +1402,7 @@ Begin VB.Form sales_wholefrm
             Left            =   90
             MaxLength       =   10
             RightToLeft     =   -1  'True
-            TabIndex        =   92
+            TabIndex        =   96
             TabStop         =   0   'False
             Tag             =   "1"
             Top             =   270
@@ -1281,7 +1415,7 @@ Begin VB.Form sales_wholefrm
             Left            =   90
             MaxLength       =   10
             RightToLeft     =   -1  'True
-            TabIndex        =   91
+            TabIndex        =   95
             TabStop         =   0   'False
             Tag             =   "1"
             Top             =   675
@@ -1293,7 +1427,7 @@ Begin VB.Form sales_wholefrm
             Height          =   285
             Left            =   2205
             RightToLeft     =   -1  'True
-            TabIndex        =   94
+            TabIndex        =   98
             Top             =   315
             Width           =   825
          End
@@ -1303,7 +1437,7 @@ Begin VB.Form sales_wholefrm
             Height          =   285
             Left            =   2250
             RightToLeft     =   -1  'True
-            TabIndex        =   93
+            TabIndex        =   97
             Top             =   720
             Width           =   645
          End
@@ -1321,7 +1455,7 @@ Begin VB.Form sales_wholefrm
          EndProperty
          Height          =   1680
          Left            =   15390
-         TabIndex        =   78
+         TabIndex        =   82
          Top             =   0
          Width           =   4920
          Begin VB.TextBox xRate_Tax 
@@ -1333,7 +1467,7 @@ Begin VB.Form sales_wholefrm
             Height          =   330
             Left            =   1575
             MaxLength       =   10
-            TabIndex        =   96
+            TabIndex        =   100
             Top             =   900
             Width           =   555
          End
@@ -1345,7 +1479,7 @@ Begin VB.Form sales_wholefrm
             Height          =   330
             Left            =   2160
             MaxLength       =   15
-            TabIndex        =   95
+            TabIndex        =   99
             Top             =   900
             Width           =   1410
          End
@@ -1358,7 +1492,7 @@ Begin VB.Form sales_wholefrm
             Height          =   330
             Left            =   1575
             MaxLength       =   10
-            TabIndex        =   80
+            TabIndex        =   84
             Top             =   540
             Width           =   555
          End
@@ -1370,7 +1504,7 @@ Begin VB.Form sales_wholefrm
             Height          =   330
             Left            =   2160
             MaxLength       =   15
-            TabIndex        =   79
+            TabIndex        =   83
             Top             =   540
             Width           =   1410
          End
@@ -1382,7 +1516,7 @@ Begin VB.Form sales_wholefrm
             Height          =   270
             Left            =   3645
             RightToLeft     =   -1  'True
-            TabIndex        =   97
+            TabIndex        =   101
             Top             =   945
             Width           =   600
          End
@@ -1398,7 +1532,7 @@ Begin VB.Form sales_wholefrm
             BorderStyle     =   1  'Fixed Single
             Height          =   330
             Left            =   1575
-            TabIndex        =   87
+            TabIndex        =   91
             Top             =   1260
             Width           =   1995
          End
@@ -1410,7 +1544,7 @@ Begin VB.Form sales_wholefrm
             Height          =   270
             Left            =   3645
             RightToLeft     =   -1  'True
-            TabIndex        =   86
+            TabIndex        =   90
             Top             =   1305
             Width           =   1095
          End
@@ -1422,7 +1556,7 @@ Begin VB.Form sales_wholefrm
             Height          =   270
             Left            =   3645
             RightToLeft     =   -1  'True
-            TabIndex        =   85
+            TabIndex        =   89
             Top             =   585
             Width           =   900
          End
@@ -1432,7 +1566,7 @@ Begin VB.Form sales_wholefrm
             BorderStyle     =   1  'Fixed Single
             Height          =   330
             Left            =   2115
-            TabIndex        =   84
+            TabIndex        =   88
             Top             =   180
             Width           =   1455
          End
@@ -1444,7 +1578,7 @@ Begin VB.Form sales_wholefrm
             Height          =   270
             Left            =   3645
             RightToLeft     =   -1  'True
-            TabIndex        =   83
+            TabIndex        =   87
             Top             =   225
             Width           =   900
          End
@@ -1454,7 +1588,7 @@ Begin VB.Form sales_wholefrm
             BorderStyle     =   1  'Fixed Single
             Height          =   330
             Left            =   135
-            TabIndex        =   82
+            TabIndex        =   86
             Top             =   180
             Width           =   825
          End
@@ -1466,7 +1600,7 @@ Begin VB.Form sales_wholefrm
             Height          =   270
             Left            =   1035
             RightToLeft     =   -1  'True
-            TabIndex        =   81
+            TabIndex        =   85
             Top             =   225
             Width           =   630
          End
@@ -1484,7 +1618,7 @@ Begin VB.Form sales_wholefrm
          EndProperty
          Height          =   645
          Left            =   9945
-         TabIndex        =   67
+         TabIndex        =   71
          Top             =   585
          Width           =   5415
          Begin VB.CheckBox chkDay 
@@ -1496,7 +1630,7 @@ Begin VB.Form sales_wholefrm
             Height          =   285
             Left            =   90
             RightToLeft     =   -1  'True
-            TabIndex        =   68
+            TabIndex        =   72
             TabStop         =   0   'False
             Top             =   270
             Width           =   1230
@@ -1504,7 +1638,7 @@ Begin VB.Form sales_wholefrm
          Begin MSDataListLib.DataCombo xYear 
             Height          =   330
             Left            =   3465
-            TabIndex        =   69
+            TabIndex        =   73
             TabStop         =   0   'False
             Top             =   225
             Width           =   1275
@@ -1528,7 +1662,7 @@ Begin VB.Form sales_wholefrm
          Begin MSDataListLib.DataCombo xMonth 
             Height          =   330
             Left            =   1530
-            TabIndex        =   70
+            TabIndex        =   74
             TabStop         =   0   'False
             Top             =   225
             Width           =   870
@@ -1554,7 +1688,7 @@ Begin VB.Form sales_wholefrm
             Caption         =   "«·‘Â—"
             Height          =   330
             Left            =   2385
-            TabIndex        =   72
+            TabIndex        =   76
             Tag             =   "Color"
             Top             =   270
             Width           =   555
@@ -1565,7 +1699,7 @@ Begin VB.Form sales_wholefrm
             Caption         =   "«·”‰…"
             Height          =   285
             Left            =   4725
-            TabIndex        =   71
+            TabIndex        =   75
             Tag             =   "Color"
             Top             =   270
             Width           =   510
@@ -1584,7 +1718,7 @@ Begin VB.Form sales_wholefrm
          EndProperty
          Height          =   645
          Left            =   6975
-         TabIndex        =   63
+         TabIndex        =   67
          Top             =   585
          Width           =   2940
          Begin VB.TextBox xdate_filter 
@@ -1595,14 +1729,14 @@ Begin VB.Form sales_wholefrm
             Left            =   720
             MaxLength       =   10
             RightToLeft     =   -1  'True
-            TabIndex        =   64
+            TabIndex        =   68
             Top             =   180
             Width           =   1455
          End
          Begin Threed.SSCommand DAYALL1 
             Height          =   375
             Left            =   90
-            TabIndex        =   65
+            TabIndex        =   69
             TabStop         =   0   'False
             Top             =   180
             Width           =   555
@@ -1621,14 +1755,14 @@ Begin VB.Form sales_wholefrm
                Italic          =   0   'False
                Strikethrough   =   0   'False
             EndProperty
-            Picture         =   "sales_whole.frx":106D3
+            Picture         =   "sales_whole.frx":21E9C
             Alignment       =   8
             ButtonStyle     =   3
             PictureAlignment=   11
             BevelWidth      =   0
             PictureDisabledFrames=   1
             ShapeSize       =   1
-            PictureDisabled =   "sales_whole.frx":128D5
+            PictureDisabled =   "sales_whole.frx":2409E
          End
          Begin VB.Label Label7 
             BackColor       =   &H00FFFFFF&
@@ -1636,7 +1770,7 @@ Begin VB.Form sales_wholefrm
             Height          =   285
             Index           =   0
             Left            =   2340
-            TabIndex        =   66
+            TabIndex        =   70
             Tag             =   "Color"
             Top             =   225
             Width           =   555
@@ -1645,7 +1779,7 @@ Begin VB.Form sales_wholefrm
       Begin Threed.SSCommand cmdStore 
          Height          =   375
          Left            =   11070
-         TabIndex        =   88
+         TabIndex        =   92
          Top             =   1305
          Width           =   4290
          _ExtentX        =   7567
@@ -1668,7 +1802,7 @@ Begin VB.Form sales_wholefrm
       Begin Threed.SSCommand cmdClient 
          Height          =   375
          Left            =   6975
-         TabIndex        =   89
+         TabIndex        =   93
          Top             =   1305
          Width           =   4065
          _ExtentX        =   7170
@@ -1692,7 +1826,7 @@ Begin VB.Form sales_wholefrm
          BackColor       =   &H00FFFFFF&
          Height          =   600
          Left            =   135
-         TabIndex        =   129
+         TabIndex        =   133
          Top             =   495
          Width           =   3435
          Begin VB.CheckBox chkNoTax 
@@ -1704,7 +1838,7 @@ Begin VB.Form sales_wholefrm
             Height          =   285
             Left            =   945
             RightToLeft     =   -1  'True
-            TabIndex        =   130
+            TabIndex        =   134
             TabStop         =   0   'False
             Top             =   225
             Width           =   2400
@@ -1714,14 +1848,14 @@ Begin VB.Form sales_wholefrm
    Begin VB.Frame Frame4 
       BackColor       =   &H00FFFFFF&
       Height          =   735
-      Left            =   5310
-      TabIndex        =   58
-      Top             =   1530
+      Left            =   3555
+      TabIndex        =   62
+      Top             =   1890
       Width           =   3480
       Begin Threed.SSCommand cmdCsv 
          Height          =   510
          Left            =   1890
-         TabIndex        =   59
+         TabIndex        =   63
          Top             =   180
          Width           =   1545
          _ExtentX        =   2725
@@ -1740,7 +1874,7 @@ Begin VB.Form sales_wholefrm
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Picture         =   "sales_whole.frx":149F1
+         Picture         =   "sales_whole.frx":261BA
          Caption         =   "”Õ» „‰ „·›"
          ButtonStyle     =   4
          PictureAlignment=   9
@@ -1750,7 +1884,7 @@ Begin VB.Form sales_wholefrm
       Begin Threed.SSCommand cmdExcel 
          Height          =   510
          Left            =   45
-         TabIndex        =   60
+         TabIndex        =   64
          Top             =   180
          Width           =   1815
          _ExtentX        =   3201
@@ -1768,7 +1902,7 @@ Begin VB.Form sales_wholefrm
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Picture         =   "sales_whole.frx":16E9F
+         Picture         =   "sales_whole.frx":28668
          Caption         =   " ÕÊÌ· «·Ì „·› "
          ButtonStyle     =   3
          PictureAlignment=   9
@@ -1779,10 +1913,10 @@ Begin VB.Form sales_wholefrm
    Begin VB.Frame fmPrice 
       BackColor       =   &H00FFFFFF&
       Height          =   735
-      Left            =   2205
-      TabIndex        =   55
-      Top             =   1530
-      Width           =   3075
+      Left            =   45
+      TabIndex        =   59
+      Top             =   1890
+      Width           =   3480
       Begin VB.OptionButton optPrice 
          Alignment       =   1  'Right Justify
          Appearance      =   0  'Flat
@@ -1793,7 +1927,7 @@ Begin VB.Form sales_wholefrm
          Index           =   1
          Left            =   135
          RightToLeft     =   -1  'True
-         TabIndex        =   57
+         TabIndex        =   61
          Top             =   270
          Width           =   1275
       End
@@ -1805,9 +1939,9 @@ Begin VB.Form sales_wholefrm
          ForeColor       =   &H80000008&
          Height          =   330
          Index           =   0
-         Left            =   1845
+         Left            =   2250
          RightToLeft     =   -1  'True
-         TabIndex        =   56
+         TabIndex        =   60
          Top             =   270
          Value           =   -1  'True
          Width           =   1050
@@ -1825,7 +1959,7 @@ Begin VB.Form sales_wholefrm
       EndProperty
       Height          =   5235
       Left            =   -4005
-      TabIndex        =   20
+      TabIndex        =   24
       Top             =   11070
       Visible         =   0   'False
       Width           =   10725
@@ -1834,7 +1968,7 @@ Begin VB.Form sales_wholefrm
          Height          =   450
          Left            =   135
          Style           =   1  'Graphical
-         TabIndex        =   21
+         TabIndex        =   25
          Top             =   270
          Width           =   2310
       End
@@ -1846,7 +1980,7 @@ Begin VB.Form sales_wholefrm
          Height          =   270
          Left            =   1035
          RightToLeft     =   -1  'True
-         TabIndex        =   45
+         TabIndex        =   49
          Top             =   1080
          Width           =   525
       End
@@ -1867,7 +2001,7 @@ Begin VB.Form sales_wholefrm
          Height          =   375
          Left            =   0
          RightToLeft     =   -1  'True
-         TabIndex        =   44
+         TabIndex        =   48
          Top             =   1035
          Width           =   1005
       End
@@ -1880,7 +2014,7 @@ Begin VB.Form sales_wholefrm
          ForeColor       =   &H000000C0&
          Height          =   330
          Left            =   2610
-         TabIndex        =   25
+         TabIndex        =   29
          Top             =   990
          Width           =   1950
       End
@@ -1893,7 +2027,7 @@ Begin VB.Form sales_wholefrm
          ForeColor       =   &H000000C0&
          Height          =   330
          Left            =   2610
-         TabIndex        =   24
+         TabIndex        =   28
          Top             =   1350
          Width           =   1950
       End
@@ -1914,7 +2048,7 @@ Begin VB.Form sales_wholefrm
          EndProperty
          Height          =   285
          Left            =   675
-         TabIndex        =   23
+         TabIndex        =   27
          Top             =   765
          Width           =   960
       End
@@ -1935,7 +2069,7 @@ Begin VB.Form sales_wholefrm
          EndProperty
          Height          =   285
          Left            =   3195
-         TabIndex        =   22
+         TabIndex        =   26
          Top             =   720
          Width           =   735
       End
@@ -1953,15 +2087,15 @@ Begin VB.Form sales_wholefrm
       EndProperty
       Height          =   1275
       Index           =   4
-      Left            =   8820
+      Left            =   7065
       RightToLeft     =   -1  'True
-      TabIndex        =   35
-      Top             =   990
+      TabIndex        =   39
+      Top             =   1350
       Width           =   1230
       Begin Threed.SSCommand cmdSave 
          Height          =   555
          Left            =   45
-         TabIndex        =   11
+         TabIndex        =   15
          Top             =   135
          Width           =   1140
          _ExtentX        =   2011
@@ -1980,19 +2114,19 @@ Begin VB.Form sales_wholefrm
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Picture         =   "sales_whole.frx":19309
+         Picture         =   "sales_whole.frx":2AAD2
          Alignment       =   8
          ButtonStyle     =   2
          PictureAlignment=   11
          BevelWidth      =   0
          PictureDisabledFrames=   1
          ShapeSize       =   1
-         PictureDisabled =   "sales_whole.frx":1BC2E
+         PictureDisabled =   "sales_whole.frx":2D3F7
       End
       Begin Threed.SSCommand cmdUndo 
          Height          =   510
          Left            =   45
-         TabIndex        =   12
+         TabIndex        =   16
          TabStop         =   0   'False
          Top             =   720
          Width           =   1140
@@ -2011,14 +2145,14 @@ Begin VB.Form sales_wholefrm
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Picture         =   "sales_whole.frx":1E482
+         Picture         =   "sales_whole.frx":2FC4B
          Alignment       =   8
          ButtonStyle     =   2
          PictureAlignment=   11
          BevelWidth      =   0
          PictureDisabledFrames=   1
          ShapeSize       =   1
-         PictureDisabled =   "sales_whole.frx":205E2
+         PictureDisabled =   "sales_whole.frx":31DAB
       End
    End
    Begin VB.Frame Frame1 
@@ -2026,13 +2160,13 @@ Begin VB.Form sales_wholefrm
       Height          =   690
       Left            =   14625
       RightToLeft     =   -1  'True
-      TabIndex        =   29
+      TabIndex        =   33
       Top             =   -90
       Width           =   5685
       Begin Threed.SSCommand cmdInform 
          Height          =   465
          Left            =   4545
-         TabIndex        =   30
+         TabIndex        =   34
          TabStop         =   0   'False
          Top             =   180
          Width           =   1095
@@ -2051,19 +2185,19 @@ Begin VB.Form sales_wholefrm
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Picture         =   "sales_whole.frx":228CF
+         Picture         =   "sales_whole.frx":34098
          Alignment       =   8
          ButtonStyle     =   3
          PictureAlignment=   11
          BevelWidth      =   0
          PictureDisabledFrames=   1
          ShapeSize       =   1
-         PictureDisabled =   "sales_whole.frx":24C9A
+         PictureDisabled =   "sales_whole.frx":36463
       End
       Begin Threed.SSCommand cmdNewInv 
          Height          =   465
          Left            =   3420
-         TabIndex        =   31
+         TabIndex        =   35
          TabStop         =   0   'False
          Top             =   180
          Width           =   1095
@@ -2082,19 +2216,19 @@ Begin VB.Form sales_wholefrm
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Picture         =   "sales_whole.frx":26D43
+         Picture         =   "sales_whole.frx":3850C
          Alignment       =   8
          ButtonStyle     =   3
          PictureAlignment=   11
          BevelWidth      =   0
          PictureDisabledFrames=   1
          ShapeSize       =   1
-         PictureDisabled =   "sales_whole.frx":28D4B
+         PictureDisabled =   "sales_whole.frx":3A514
       End
       Begin Threed.SSCommand cmddel 
          Height          =   465
          Left            =   2295
-         TabIndex        =   32
+         TabIndex        =   36
          TabStop         =   0   'False
          Top             =   180
          Width           =   1095
@@ -2113,19 +2247,19 @@ Begin VB.Form sales_wholefrm
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Picture         =   "sales_whole.frx":2AD02
+         Picture         =   "sales_whole.frx":3C4CB
          Alignment       =   8
          ButtonStyle     =   3
          PictureAlignment=   11
          BevelWidth      =   0
          PictureDisabledFrames=   1
          ShapeSize       =   1
-         PictureDisabled =   "sales_whole.frx":2D49E
+         PictureDisabled =   "sales_whole.frx":3EC67
       End
       Begin Threed.SSCommand cmdExit 
          Height          =   465
          Left            =   45
-         TabIndex        =   33
+         TabIndex        =   37
          TabStop         =   0   'False
          Top             =   180
          Width           =   1050
@@ -2144,7 +2278,7 @@ Begin VB.Form sales_wholefrm
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Picture         =   "sales_whole.frx":2F932
+         Picture         =   "sales_whole.frx":410FB
          Alignment       =   8
          ButtonStyle     =   3
          PictureAlignment=   11
@@ -2154,7 +2288,7 @@ Begin VB.Form sales_wholefrm
       Begin Threed.SSCommand cmdPrint 
          Height          =   465
          Left            =   1125
-         TabIndex        =   34
+         TabIndex        =   38
          TabStop         =   0   'False
          Top             =   180
          Width           =   1140
@@ -2172,17 +2306,17 @@ Begin VB.Form sales_wholefrm
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Picture         =   "sales_whole.frx":31C55
+         Picture         =   "sales_whole.frx":4341E
          ButtonStyle     =   3
          PictureAlignment=   11
          BevelWidth      =   0
          PictureDisabledFrames=   1
-         PictureDisabled =   "sales_whole.frx":33FCB
+         PictureDisabled =   "sales_whole.frx":45794
       End
    End
    Begin Crystal.CrystalReport REPORT1 
       Left            =   1440
-      Top             =   675
+      Top             =   1035
       _ExtentX        =   741
       _ExtentY        =   741
       _Version        =   348160
@@ -2309,7 +2443,7 @@ Begin VB.Form sales_wholefrm
    Begin MSAdodcLib.Adodc DATA13 
       Height          =   330
       Left            =   900
-      Top             =   1755
+      Top             =   2115
       Visible         =   0   'False
       Width           =   1200
       _ExtentX        =   2117
@@ -2357,7 +2491,7 @@ Begin VB.Form sales_wholefrm
       Align           =   2  'Align Bottom
       Height          =   465
       Left            =   0
-      TabIndex        =   49
+      TabIndex        =   53
       Top             =   10620
       Width           =   20355
       _ExtentX        =   35904
@@ -2379,7 +2513,7 @@ Begin VB.Form sales_wholefrm
          Height          =   405
          Index           =   0
          Left            =   0
-         TabIndex        =   50
+         TabIndex        =   54
          Top             =   45
          Width           =   4005
          _ExtentX        =   7064
@@ -2403,7 +2537,7 @@ Begin VB.Form sales_wholefrm
          Height          =   330
          Index           =   1
          Left            =   4095
-         TabIndex        =   51
+         TabIndex        =   55
          Top             =   45
          Width           =   4005
          _ExtentX        =   7064
@@ -2427,7 +2561,7 @@ Begin VB.Form sales_wholefrm
          Height          =   330
          Index           =   2
          Left            =   8100
-         TabIndex        =   52
+         TabIndex        =   56
          Top             =   45
          Width           =   4000
          _ExtentX        =   7064
@@ -2451,7 +2585,7 @@ Begin VB.Form sales_wholefrm
          Height          =   330
          Index           =   3
          Left            =   12150
-         TabIndex        =   53
+         TabIndex        =   57
          Top             =   45
          Width           =   3960
          _ExtentX        =   6985
@@ -2475,7 +2609,7 @@ Begin VB.Form sales_wholefrm
          Height          =   330
          Index           =   4
          Left            =   16155
-         TabIndex        =   54
+         TabIndex        =   58
          Top             =   45
          Width           =   4185
          _ExtentX        =   7382
@@ -2498,7 +2632,7 @@ Begin VB.Form sales_wholefrm
    End
    Begin MSComDlg.CommonDialog Common1 
       Left            =   585
-      Top             =   990
+      Top             =   1350
       _ExtentX        =   847
       _ExtentY        =   847
       _Version        =   393216
@@ -2507,7 +2641,7 @@ Begin VB.Form sales_wholefrm
       Align           =   2  'Align Bottom
       Height          =   195
       Left            =   0
-      TabIndex        =   61
+      TabIndex        =   65
       Top             =   10425
       Visible         =   0   'False
       Width           =   20355
@@ -2516,101 +2650,6 @@ Begin VB.Form sales_wholefrm
       _Version        =   327682
       BorderStyle     =   1
       Appearance      =   0
-   End
-   Begin VSFlex7Ctl.VSFlexGrid grdError 
-      Height          =   6135
-      Left            =   45
-      TabIndex        =   10
-      Top             =   2295
-      Visible         =   0   'False
-      Width           =   20265
-      _cx             =   35745
-      _cy             =   10821
-      _ConvInfo       =   1
-      Appearance      =   0
-      BorderStyle     =   1
-      Enabled         =   -1  'True
-      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-         Name            =   "Arial"
-         Size            =   11.25
-         Charset         =   178
-         Weight          =   700
-         Underline       =   0   'False
-         Italic          =   0   'False
-         Strikethrough   =   0   'False
-      EndProperty
-      MousePointer    =   0
-      BackColor       =   -2147483643
-      ForeColor       =   -2147483640
-      BackColorFixed  =   16576
-      ForeColorFixed  =   16777215
-      BackColorSel    =   12648447
-      ForeColorSel    =   -2147483630
-      BackColorBkg    =   -2147483636
-      BackColorAlternate=   -2147483643
-      GridColor       =   12632256
-      GridColorFixed  =   -2147483632
-      TreeColor       =   -2147483632
-      FloodColor      =   192
-      SheetBorder     =   -2147483642
-      FocusRect       =   2
-      HighLight       =   1
-      AllowSelection  =   -1  'True
-      AllowBigSelection=   0   'False
-      AllowUserResizing=   0
-      SelectionMode   =   0
-      GridLines       =   1
-      GridLinesFixed  =   1
-      GridLineWidth   =   1
-      Rows            =   1
-      Cols            =   3
-      FixedRows       =   1
-      FixedCols       =   0
-      RowHeightMin    =   0
-      RowHeightMax    =   0
-      ColWidthMin     =   0
-      ColWidthMax     =   0
-      ExtendLastCol   =   0   'False
-      FormatString    =   ""
-      ScrollTrack     =   0   'False
-      ScrollBars      =   2
-      ScrollTips      =   0   'False
-      MergeCells      =   0
-      MergeCompare    =   0
-      AutoResize      =   0   'False
-      AutoSizeMode    =   0
-      AutoSearch      =   0
-      AutoSearchDelay =   2
-      MultiTotals     =   -1  'True
-      SubtotalPosition=   1
-      OutlineBar      =   0
-      OutlineCol      =   0
-      Ellipsis        =   0
-      ExplorerBar     =   0
-      PicturesOver    =   0   'False
-      FillStyle       =   0
-      RightToLeft     =   -1  'True
-      PictureType     =   0
-      TabBehavior     =   1
-      OwnerDraw       =   0
-      Editable        =   0
-      ShowComboButton =   -1  'True
-      WordWrap        =   0   'False
-      TextStyle       =   0
-      TextStyleFixed  =   0
-      OleDragMode     =   0
-      OleDropMode     =   0
-      DataMode        =   0
-      VirtualData     =   -1  'True
-      DataMember      =   ""
-      ComboSearch     =   3
-      AutoSizeMouse   =   0   'False
-      FrozenRows      =   0
-      FrozenCols      =   0
-      AllowUserFreezing=   0
-      BackColorFrozen =   0
-      ForeColorFrozen =   0
-      WallPaperAlignment=   9
    End
    Begin VB.Frame Frame2 
       BackColor       =   &H00FFFFFF&
@@ -2623,11 +2662,23 @@ Begin VB.Form sales_wholefrm
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Height          =   1680
-      Left            =   10080
-      TabIndex        =   15
+      Height          =   2040
+      Left            =   8325
+      TabIndex        =   19
       Top             =   585
-      Width           =   10230
+      Width           =   11985
+      Begin VB.TextBox xShip_no 
+         Alignment       =   1  'Right Justify
+         Appearance      =   0  'Flat
+         BackColor       =   &H00FFFFFF&
+         Height          =   330
+         Left            =   5085
+         MaxLength       =   10
+         RightToLeft     =   -1  'True
+         TabIndex        =   13
+         Top             =   1620
+         Width           =   2670
+      End
       Begin VB.TextBox xDate_due 
          Alignment       =   1  'Right Justify
          Appearance      =   0  'Flat
@@ -2644,7 +2695,7 @@ Begin VB.Form sales_wholefrm
          Alignment       =   1  'Right Justify
          Appearance      =   0  'Flat
          Height          =   330
-         Left            =   3510
+         Left            =   5085
          MaxLength       =   50
          RightToLeft     =   -1  'True
          TabIndex        =   1
@@ -2657,7 +2708,7 @@ Begin VB.Form sales_wholefrm
          Appearance      =   0  'Flat
          BackColor       =   &H00FFFFFF&
          Height          =   330
-         Left            =   7920
+         Left            =   9495
          MaxLength       =   10
          RightToLeft     =   -1  'True
          TabIndex        =   4
@@ -2683,7 +2734,7 @@ Begin VB.Form sales_wholefrm
          Left            =   5355
          MaxLength       =   15
          PasswordChar    =   "*"
-         TabIndex        =   14
+         TabIndex        =   18
          Top             =   2460
          Visible         =   0   'False
          Width           =   1185
@@ -2693,7 +2744,7 @@ Begin VB.Form sales_wholefrm
          Appearance      =   0  'Flat
          BackColor       =   &H00FFFFFF&
          Height          =   330
-         Left            =   3510
+         Left            =   5085
          MaxLength       =   200
          RightToLeft     =   -1  'True
          TabIndex        =   8
@@ -2708,7 +2759,6 @@ Begin VB.Form sales_wholefrm
          MaxLength       =   10
          RightToLeft     =   -1  'True
          TabIndex        =   2
-         TabStop         =   0   'False
          Top             =   180
          Width           =   1230
       End
@@ -2762,7 +2812,7 @@ Begin VB.Form sales_wholefrm
       Begin MSDataListLib.DataCombo xLogo 
          CausesValidation=   0   'False
          Height          =   315
-         Left            =   7290
+         Left            =   8865
          TabIndex        =   7
          Top             =   900
          Width           =   1860
@@ -2807,8 +2857,8 @@ Begin VB.Form sales_wholefrm
       End
       Begin Threed.SSCommand xPrice_list 
          Height          =   330
-         Left            =   3510
-         TabIndex        =   147
+         Left            =   5085
+         TabIndex        =   10
          Top             =   1260
          Width           =   5640
          _ExtentX        =   9948
@@ -2827,15 +2877,60 @@ Begin VB.Form sales_wholefrm
          ButtonStyle     =   2
          BevelWidth      =   0
       End
+      Begin MSDataListLib.DataCombo xShip 
+         CausesValidation=   0   'False
+         Height          =   315
+         Left            =   8775
+         TabIndex        =   12
+         Top             =   1620
+         Width           =   1950
+         _ExtentX        =   3440
+         _ExtentY        =   556
+         _Version        =   393216
+         Appearance      =   0
+         Text            =   ""
+         RightToLeft     =   -1  'True
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   178
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+      End
+      Begin VB.Label Label20 
+         AutoSize        =   -1  'True
+         BackColor       =   &H80000005&
+         Caption         =   "«·»Ê·Ì’…"
+         Height          =   270
+         Left            =   7875
+         RightToLeft     =   -1  'True
+         TabIndex        =   153
+         Top             =   1665
+         Width           =   675
+      End
+      Begin VB.Label Label19 
+         AutoSize        =   -1  'True
+         BackStyle       =   0  'Transparent
+         Caption         =   "‘—ﬂ… «·‘Õ‰"
+         Height          =   270
+         Left            =   10800
+         RightToLeft     =   -1  'True
+         TabIndex        =   152
+         Top             =   1665
+         Width           =   945
+      End
       Begin VB.Label Label18 
          Alignment       =   1  'Right Justify
          AutoSize        =   -1  'True
          BackStyle       =   0  'Transparent
          Caption         =   "«·‰Ê⁄"
          Height          =   270
-         Left            =   2745
+         Left            =   2700
          RightToLeft     =   -1  'True
-         TabIndex        =   149
+         TabIndex        =   151
          Top             =   1260
          Width           =   405
       End
@@ -2848,7 +2943,7 @@ Begin VB.Form sales_wholefrm
          ForeColor       =   &H000000C0&
          Height          =   330
          Left            =   90
-         TabIndex        =   148
+         TabIndex        =   11
          Top             =   1260
          Width           =   2535
          WordWrap        =   -1  'True
@@ -2858,9 +2953,9 @@ Begin VB.Form sales_wholefrm
          BackStyle       =   0  'Transparent
          Caption         =   "ﬁ«∆„… «·”⁄—"
          Height          =   270
-         Left            =   9225
+         Left            =   10800
          RightToLeft     =   -1  'True
-         TabIndex        =   146
+         TabIndex        =   150
          Top             =   1305
          Width           =   855
       End
@@ -2872,7 +2967,7 @@ Begin VB.Form sales_wholefrm
          Height          =   270
          Left            =   2700
          RightToLeft     =   -1  'True
-         TabIndex        =   144
+         TabIndex        =   148
          Top             =   900
          Width           =   600
       End
@@ -2881,9 +2976,9 @@ Begin VB.Form sales_wholefrm
          BackStyle       =   0  'Transparent
          Caption         =   "«·‘⁄«—"
          Height          =   270
-         Left            =   9225
+         Left            =   10800
          RightToLeft     =   -1  'True
-         TabIndex        =   133
+         TabIndex        =   137
          Top             =   945
          Width           =   480
       End
@@ -2892,9 +2987,9 @@ Begin VB.Form sales_wholefrm
          Caption         =   "—ﬁ„ ÿ·»Ì… "
          Height          =   240
          Index           =   1
-         Left            =   6255
+         Left            =   7830
          RightToLeft     =   -1  'True
-         TabIndex        =   101
+         TabIndex        =   105
          Top             =   225
          Width           =   855
       End
@@ -2904,7 +2999,7 @@ Begin VB.Form sales_wholefrm
          BorderStyle     =   1  'Fixed Single
          ForeColor       =   &H80000008&
          Height          =   330
-         Left            =   7920
+         Left            =   9495
          TabIndex        =   0
          Tag             =   "2"
          Top             =   180
@@ -2916,8 +3011,8 @@ Begin VB.Form sales_wholefrm
          BorderStyle     =   1  'Fixed Single
          ForeColor       =   &H80000008&
          Height          =   330
-         Left            =   3510
-         TabIndex        =   48
+         Left            =   5085
+         TabIndex        =   52
          Top             =   540
          Width           =   4380
       End
@@ -2926,9 +3021,9 @@ Begin VB.Form sales_wholefrm
          BackColor       =   &H80000005&
          Caption         =   "«·⁄„Ì·"
          Height          =   270
-         Left            =   9315
+         Left            =   10890
          RightToLeft     =   -1  'True
-         TabIndex        =   47
+         TabIndex        =   51
          Top             =   585
          Width           =   450
       End
@@ -2940,7 +3035,7 @@ Begin VB.Form sales_wholefrm
          Height          =   270
          Left            =   2700
          RightToLeft     =   -1  'True
-         TabIndex        =   46
+         TabIndex        =   50
          Top             =   585
          Width           =   540
       End
@@ -2948,9 +3043,9 @@ Begin VB.Form sales_wholefrm
          BackColor       =   &H00FFFFFF&
          Caption         =   "—ﬁ„ „” ‰œ"
          Height          =   285
-         Left            =   9270
+         Left            =   10845
          RightToLeft     =   -1  'True
-         TabIndex        =   16
+         TabIndex        =   20
          Top             =   225
          Width           =   750
       End
@@ -2970,7 +3065,7 @@ Begin VB.Form sales_wholefrm
          Index           =   0
          Left            =   6615
          RightToLeft     =   -1  'True
-         TabIndex        =   19
+         TabIndex        =   23
          Top             =   2430
          Visible         =   0   'False
          Width           =   900
@@ -2980,9 +3075,9 @@ Begin VB.Form sales_wholefrm
          BackColor       =   &H00FFFFFF&
          Caption         =   "„·«ÕŸ« "
          Height          =   270
-         Left            =   6345
+         Left            =   7920
          RightToLeft     =   -1  'True
-         TabIndex        =   18
+         TabIndex        =   22
          Top             =   990
          Width           =   660
       End
@@ -2995,20 +3090,20 @@ Begin VB.Form sales_wholefrm
          Index           =   0
          Left            =   2700
          RightToLeft     =   -1  'True
-         TabIndex        =   17
+         TabIndex        =   21
          Top             =   180
          Width           =   510
       End
    End
    Begin VSFlex7Ctl.VSFlexGrid grid2 
-      Height          =   5640
+      Height          =   5280
       Left            =   90
-      TabIndex        =   117
-      Top             =   2295
+      TabIndex        =   121
+      Top             =   2655
       Visible         =   0   'False
       Width           =   20220
       _cx             =   35666
-      _cy             =   9948
+      _cy             =   9313
       _ConvInfo       =   1
       Appearance      =   0
       BorderStyle     =   1
@@ -3096,13 +3191,13 @@ Begin VB.Form sales_wholefrm
       WallPaperAlignment=   9
    End
    Begin VSFlex7Ctl.VSFlexGrid grid1 
-      Height          =   6180
+      Height          =   5280
       Left            =   90
-      TabIndex        =   13
-      Top             =   2295
+      TabIndex        =   17
+      Top             =   2655
       Width           =   20220
       _cx             =   35666
-      _cy             =   10901
+      _cy             =   9313
       _ConvInfo       =   1
       Appearance      =   0
       BorderStyle     =   1
@@ -3192,22 +3287,137 @@ Begin VB.Form sales_wholefrm
    Begin VB.Frame Frame10 
       BackColor       =   &H00FFFFFF&
       Height          =   690
-      Left            =   12555
-      TabIndex        =   142
+      Left            =   13050
+      TabIndex        =   146
       Top             =   -90
-      Width           =   2040
+      Width           =   1545
       Begin VB.CheckBox chkImage 
          Appearance      =   0  'Flat
          BackColor       =   &H80000005&
          Caption         =   "ÿ»«⁄… »’Ê—"
          ForeColor       =   &H80000008&
          Height          =   270
-         Left            =   540
-         TabIndex        =   143
+         Left            =   135
+         TabIndex        =   147
          Top             =   270
          Value           =   1  'Checked
          Width           =   1320
       End
+   End
+   Begin VSFlex7Ctl.VSFlexGrid grdError 
+      Height          =   5280
+      Left            =   45
+      TabIndex        =   14
+      Top             =   2655
+      Visible         =   0   'False
+      Width           =   20265
+      _cx             =   35745
+      _cy             =   9313
+      _ConvInfo       =   1
+      Appearance      =   0
+      BorderStyle     =   1
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Arial"
+         Size            =   11.25
+         Charset         =   178
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      MousePointer    =   0
+      BackColor       =   -2147483643
+      ForeColor       =   -2147483640
+      BackColorFixed  =   16576
+      ForeColorFixed  =   16777215
+      BackColorSel    =   12648447
+      ForeColorSel    =   -2147483630
+      BackColorBkg    =   -2147483636
+      BackColorAlternate=   -2147483643
+      GridColor       =   12632256
+      GridColorFixed  =   -2147483632
+      TreeColor       =   -2147483632
+      FloodColor      =   192
+      SheetBorder     =   -2147483642
+      FocusRect       =   2
+      HighLight       =   1
+      AllowSelection  =   -1  'True
+      AllowBigSelection=   0   'False
+      AllowUserResizing=   0
+      SelectionMode   =   0
+      GridLines       =   1
+      GridLinesFixed  =   1
+      GridLineWidth   =   1
+      Rows            =   1
+      Cols            =   3
+      FixedRows       =   1
+      FixedCols       =   0
+      RowHeightMin    =   0
+      RowHeightMax    =   0
+      ColWidthMin     =   0
+      ColWidthMax     =   0
+      ExtendLastCol   =   0   'False
+      FormatString    =   ""
+      ScrollTrack     =   0   'False
+      ScrollBars      =   2
+      ScrollTips      =   0   'False
+      MergeCells      =   0
+      MergeCompare    =   0
+      AutoResize      =   0   'False
+      AutoSizeMode    =   0
+      AutoSearch      =   0
+      AutoSearchDelay =   2
+      MultiTotals     =   -1  'True
+      SubtotalPosition=   1
+      OutlineBar      =   0
+      OutlineCol      =   0
+      Ellipsis        =   0
+      ExplorerBar     =   0
+      PicturesOver    =   0   'False
+      FillStyle       =   0
+      RightToLeft     =   -1  'True
+      PictureType     =   0
+      TabBehavior     =   1
+      OwnerDraw       =   0
+      Editable        =   0
+      ShowComboButton =   -1  'True
+      WordWrap        =   0   'False
+      TextStyle       =   0
+      TextStyleFixed  =   0
+      OleDragMode     =   0
+      OleDropMode     =   0
+      DataMode        =   0
+      VirtualData     =   -1  'True
+      DataMember      =   ""
+      ComboSearch     =   3
+      AutoSizeMouse   =   0   'False
+      FrozenRows      =   0
+      FrozenCols      =   0
+      AllowUserFreezing=   0
+      BackColorFrozen =   0
+      ForeColorFrozen =   0
+      WallPaperAlignment=   9
+   End
+   Begin ImgXCtrl6.ImgXCtrl ImgX1 
+      Height          =   5370
+      Left            =   45
+      TabIndex        =   159
+      Top             =   675
+      Visible         =   0   'False
+      Width           =   6045
+      _ExtentX        =   10663
+      _ExtentY        =   9472
+      BackColor       =   16777215
+      BorderStyle     =   4
+      AutoZoom        =   -1  'True
+      SelectionLineType=   4
+      Center          =   -1  'True
+      ImageBorderThickness=   1
+      AutoZoomType    =   2
+      DoubleBuffer    =   -1  'True
+      LicenseUserName =   "mrmind"
+      LicenseRegCode  =   "íß“ªª•≤≥Ω≠∞“±≤ß´¥©ÆØOOHH-FAOOYNJB-EQCF6gI"
    End
    Begin VB.Label xinv_type 
       Alignment       =   1  'Right Justify
@@ -3215,10 +3425,10 @@ Begin VB.Form sales_wholefrm
       BorderStyle     =   1  'Fixed Single
       ForeColor       =   &H00000000&
       Height          =   330
-      Left            =   -270
+      Left            =   -225
       RightToLeft     =   -1  'True
-      TabIndex        =   105
-      Top             =   1035
+      TabIndex        =   109
+      Top             =   3870
       Visible         =   0   'False
       Width           =   2355
    End
@@ -3228,6 +3438,8 @@ Attribute VB_GlobalNameSpace = False
 Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
+Dim WithEvents twain As ImgXTwain
+Attribute twain.VB_VarHelpID = -1
 Dim bAct As Boolean
 Dim cFilter As String
 Dim bIg As Boolean
@@ -3243,7 +3455,7 @@ Dim oSearchStoreLook As New Search_abd
 Dim oSearchClientLook As New Search_abd
 Dim oSearchList As New Search_abd
 Dim oSearchStore As New Search_abd
-Dim bEdit As Boolean
+Dim bedit As Boolean
 Dim bEditRecord As Boolean
 Dim con As New ADODB.Connection
 Dim formMode
@@ -3257,6 +3469,8 @@ aInsert = AddFlag(aInsert, "CODE", addstring(xCode.text))
 aInsert = AddFlag(aInsert, "[DATE]", addDate(xDate.text))
 aInsert = AddFlag(aInsert, "[DATE_DUE]", addDate(xDate_due.text))
 aInsert = AddFlag(aInsert, "STORE", addstring(xStore.BoundText))
+aInsert = AddFlag(aInsert, "SHIP", addstring(xShip.BoundText))
+aInsert = AddFlag(aInsert, "SHIP_NO", addstring(xShip_no.text))
 aInsert = AddFlag(aInsert, "MAN", addstring(xman.BoundText))
 aInsert = AddFlag(aInsert, "LOGO", addvalue(xLogo.BoundText))
 aInsert = AddFlag(aInsert, "[PO_NO]", addstring(xpo_no.text))
@@ -3268,7 +3482,7 @@ aInsert = AddFlag(aInsert, "[PRICE_LIST]", addvalue(xPrice_list.Tag))
 'aInsert = AddFlag(aInsert, "[DATESALES1]", addstring(XDATESALES1.text))
 'aInsert = AddFlag(aInsert, "[DATESALES2]", addstring(XDATESALES2.text))
 aInsert = AddFlag(aInsert, "[BRANCH]", addstring("00"))
-On Error GoTo myError
+On Error GoTo myerror
 con.BeginTrans
 If xDoc_No.Tag = DefineMode Then
     xDoc_No.text = addNewDoc
@@ -3285,14 +3499,14 @@ If Row > 0 Then myreplaceGrd Row
 con.CommitTrans
 myreplace = True
 Exit Function
-myError:
+myerror:
 prog1.Visible = False
 MsgBox Err.Description
 con.RollbackTrans
 Err.Clear
 End Function
 Sub myProc()
-On Error GoTo myError
+On Error GoTo myerror
 If ActiveControl.Name = grid1.Name Then
     If Not xStore.MatchedWithList Then
         MsgBox "«·„Œ“‰ €Ì— „”Ã·"
@@ -3372,7 +3586,7 @@ ElseIf ActiveControl.Name = xPrice_list.Name Then
     End If
 End If
 Exit Sub
-myError:
+myerror:
 MsgBox Err.Description
 Err.Clear
 End Sub
@@ -3444,12 +3658,18 @@ If MsgBox("Õ–› «·„” ‰œ »«·ﬂ«„·  ?, Â· «‰  „Ê«›ﬁ ø", vbOKCancel + vbDefaultButton
 End If
 
 con.BeginTrans
+On Error GoTo myerror
 con.Execute "Delete  From FILE6_20 where Doc_No = " & MyParn(xDoc_No.text)
 con.Execute "UPDATE FILE6_20H SET" & _
              " FILE6_20H.DOC_NO_TAX = NULL " & _
              " FROM FILE6_20H WHERE FILE6_20H.DOC_NO_TAX = " & MyParn(xDoc_No.text)
 con.Execute "Delete  From FILE6_20H where Doc_No = " & MyParn(xDoc_No.text)
+
+Dim db As New clsData
+db.ConnectionString = strConDoc
+db.Execute "delete from ship_docs where doc_no = " & MyParn(xDoc_No.text)
 con.CommitTrans
+Set db = Nothing
     
 'If Not openCardTable(tbMode.tbPrevious, xdoc_no_flag.Caption) Then
 If Not openCardTable(tbMode.tbPrevious, xDoc_No.text) Then
@@ -3458,8 +3678,30 @@ If Not openCardTable(tbMode.tbPrevious, xDoc_No.text) Then
     End If
 End If
 Exit Sub
-myError:
+myerror:
 con.RollbackTrans
+MsgBox Err.Description
+Set db = Nothing
+Err.Clear
+End Sub
+
+Private Sub cmdDelPhoto_Click()
+On Error GoTo myerror
+If MsgBox("Õ–› ’Ê—… «·»Ê·Ì’…", vbDefaultButton2 + vbOKCancel) <> vbOK Then Exit Sub
+
+Dim db As New clsData
+db.ConnectionString = strConDoc
+db.Execute "delete from ship_docs where doc_no = " & MyParn(xDoc_No.text)
+Set db = Nothing
+
+Inform " „ Õ–› ’Ê—… »Ê·Ì’… «·‘Õ‰ »‰Ã«Õ"
+If Not openCardTable(tbMode.tbFind, xDoc_No.text) Then
+    If Not openCardTable Then
+        myDefine
+    End If
+End If
+Exit Sub
+myerror:
 MsgBox Err.Description
 Err.Clear
 End Sub
@@ -3529,6 +3771,27 @@ Private Sub cmdPurchase_Click()
     End If
 End Sub
 
+Private Sub cmdRotate_Click()
+Dim cFile As String, cNewFile As String
+Common1.FileName = ""
+Common1.Filter = "JPEG Images (*.jpg;*.jpeg;*.png)|*.jpg;*.jpeg;*.png"
+Common1.ShowOpen
+If Common1.FileTitle <> "" Then
+    cFile = Common1.FileName
+    If cFile <> "" Then
+        If myReplaceImage(xDoc_No.text, cFile) Then
+            Inform " „  «÷«›… «·’Ê—… »‰Ã«Õ"
+        End If
+    End If
+End If
+
+If Not openCardTable(tbMode.tbFind, xDoc_No.text) Then
+    If Not openCardTable Then
+        myDefine
+    End If
+End If
+End Sub
+
 Private Sub cmdSave_Click()
 If Not myreplace Then Exit Sub
     
@@ -3538,6 +3801,25 @@ If Not openCardTable(tbMode.tbFind, xDoc_No.text) Then
     If Not openCardTable Then myDefine
 End If
 End Sub
+Private Sub cmdScan_Click()
+nOption = 0
+ScanImage
+
+If Not openCardTable(tbMode.tbFind, xDoc_No.text) Then
+    If Not openCardTable Then
+        myDefine
+    End If
+End If
+End Sub
+
+Private Sub cmdShowPhoto_Click()
+Dim db As New clsData
+db.ConnectionString = strConDoc
+ship_documentfrm.ImgX1.Import.FromMemoryFile (db.rsField("select image from ship_docs where doc_no = " & MyParn(xDoc_No.text)))
+ship_documentfrm.Show 1
+Set db = Nothing
+End Sub
+
 Private Sub cmdStore_Click()
 StoreLookup Me, oSearchStore, "CODE IN(SELECT STORE FROM FILE6_20H WHERE INV_TYPE >= 2)", , IIf(cmdStore.Tag = "", "", "ﬂ· «·„Œ«“‰")
 End Sub
@@ -3600,7 +3882,7 @@ ElseIf KeyCode = 116 And cmdSave.Enabled Then
 End If
 End Sub
 Private Sub Form_Load()
-On Error GoTo myError
+On Error GoTo myerror
 OpenCon con
 nRound = 0
 
@@ -3626,6 +3908,10 @@ Set xMonth.RowSource = DATA3
 xMonth.ListField = "CODE"
 xMonth.BoundColumn = "CODE"
 
+Set xShip.RowSource = cmd("SELECT * FROM SHIP", con).Execute
+xShip.ListField = "Desca"
+xShip.BoundColumn = "Code"
+
 Set xLogo.RowSource = myRs("SELECT * FROM LOGO_CODES", con)
 xLogo.ListField = "Desca"
 xLogo.BoundColumn = "Code"
@@ -3636,7 +3922,7 @@ Set grid1.DataSource = DATA11
 Set grid2.DataSource = data12
 If Not openCardTable Then myDefine
 Exit Sub
-myError:
+myerror:
 MsgBox Err.Description
 Err.Clear
 End Sub
@@ -3662,7 +3948,7 @@ Err.Clear
 End Sub
 
 Public Sub Grid1_AfterEdit(ByVal Row As Long, ByVal Col As Long)
-On Error GoTo myError
+On Error GoTo myerror
 Dim bNew As Boolean
 With grid1
 If Not MYVALID(True) Then
@@ -3706,7 +3992,7 @@ If myreplace(Row) Then
 End If
 End With
 Exit Sub
-myError:
+myerror:
 MsgBox Err.Description
 Err.Clear
 End Sub
@@ -3779,7 +4065,11 @@ End With
 End Sub
 Private Sub cmdPrint_Click()
 If grid1.Rows = 2 Then Exit Sub
-doprint
+If chkImage.Value = 1 Then
+    doPrintModel
+Else
+    doprint
+End If
 End Sub
 Private Sub optclosed_Click(index As Integer)
 If Not openCardTable(tbMode.tbFind, xDoc_No.text) Then
@@ -3803,7 +4093,7 @@ If MsgBox(" ÕÊÌ· «·Ì " & IIf(index = 0, "”⁄— Ã„·…", "”⁄— „” Â·ﬂ"), vbOKCancel + 
     bIg = False
 Else
     Me.MousePointer = vbHourglass
-    On Error GoTo myError
+    On Error GoTo myerror
     con.Execute "UPDATE FILE6_20  SET " & _
               " FILE6_20.PRICE_C = FILE1_10." & IIf(optPrice(0).Value, "COST2", "PRICE") & "," & _
               " FILE6_20.PRICE = FILE1_10." & IIf(optPrice(0).Value, "COST2", "PRICE") & _
@@ -3816,7 +4106,7 @@ Else
     CellPos 13, grid1.Rows - 2, grid1.Cols - 1
 End If
 Exit Sub
-myError:
+myerror:
 MsgBox Err.Description
 Err.Clear
 Me.MousePointer = vbNormal
@@ -3829,6 +4119,10 @@ If Not openCardTable(tbMode.tbFind, xDoc_No.text) Then
         myDefine
     End If
 End If
+End Sub
+
+Private Sub SSCommand2_Click()
+
 End Sub
 
 Private Sub txtBarcode_Change()
@@ -3894,6 +4188,7 @@ If Val(xinv_type.Caption) < 2 Then
     If Not bIgMsg Then MsgBox "·« ÌÊÃœ ‰Ê⁄ ›« Ê—…"
     Exit Function
 End If
+
 If Val(xinv_type.Caption) <> 2 Then
     If (Not ValidQuant) Then
         MsgBox "ﬂ„Ì… „ÊÃ»… Êﬂ„Ì… ”«·»… ›Ï ‰›” «·›« Ê—…"
@@ -3913,6 +4208,10 @@ xdoc_no_flag.Caption = CardTable!DOC_NO_FLAG & ""
 XISINVOICE.Value = IIf(CardTable!ISINVOICE, 1, 0)
 xIs_collect.Value = IIf(CardTable!IS_COLLECT, 1, 0)
 xLogo.BoundText = CardTable!logo & ""
+
+xShip.BoundText = CardTable!SHIP & ""
+xShip_no.text = CardTable!ship_no & ""
+
 xman.BoundText = CardTable!MAN & ""
 xPrice_list.Tag = CardTable!price_list & ""
 xPrice_list.Caption = CardTable!LIST_DESCA & ""
@@ -3959,6 +4258,8 @@ Private Sub myDefine()
 xDoc_No.text = addNewDoc
 xDoc_no2.Caption = Mid(xDoc_No.text, 7, 6)
 xDate_due.text = ""
+xShip.BoundText = ""
+xShip_no.text = ""
 xinv_Tax.Caption = ""
 xman.BoundText = ""
 xLogo.BoundText = "1"
@@ -4030,17 +4331,17 @@ grid1.SetFocus
 Err.Clear
 End Sub
 Private Sub Handlecontrols(nMode)
-bEdit = True
+bedit = True
 If optType(0).Value Or optType(4).Value Then
     cmdNewInv.Enabled = False
 Else
-    cmdNewInv.Enabled = bEdit And nMode = LoadMode
+    cmdNewInv.Enabled = bedit And nMode = LoadMode
 End If
 
 xDoc_No.Tag = nMode
 
 
-bEditRecord = bEdit And xinv_Tax.Caption = "" And xdoc_no_tax.Caption = ""
+bEditRecord = bedit And xinv_Tax.Caption = "" And xdoc_no_tax.Caption = ""
 bEditRecord = bEditRecord And (xIs_collect.Value = 0 Or nMode = LoadMode)
 bEditRecord = xinv_type.Caption <> ""
 
@@ -4066,7 +4367,21 @@ xRate_Tax.Enabled = bEditRecord And Val(xinv_type.Caption) > 2 And xIs_collect.V
 cmdPurchase.Enabled = Val(xinv_type.Caption) = 2 And xIs_collect.Value = 0
 
 cmdCsv.Enabled = bEditRecord And nMode = LoadMode
-
+If nMode = LoadMode Then
+    Dim db As New clsData
+    db.ConnectionString = strConDoc
+    nImages = db.rsField("select count(*) from SHIP_DOCS where doc_no = " & MyParn(xDoc_No.text))
+    Set db = Nothing
+    cmdDelPhoto.Enabled = nImages > 0
+    cmdShowPhoto.Enabled = nImages > 0
+    cmdScan.Enabled = True
+    cmdRotate.Enabled = True
+Else
+    cmdDelPhoto.Enabled = False
+    cmdShowPhoto.Enabled = False
+    cmdScan.Enabled = False
+    cmdRotate.Enabled = False
+End If
 fmTransTax.Visible = Val(xinv_type.Caption) = 2 And nMode = LoadMode
 fmShowTotal.Visible = Val(xinv_type.Caption) > 2 And nMode = LoadMode
 fmE_Invoice.Visible = Val(xinv_type.Caption) > 2 And nMode = LoadMode
@@ -4127,18 +4442,18 @@ End If
 
 
 If xPrice_list.Tag <> "" Then
-    Dim loctable As New ADODB.RecordSet
-    Set loctable = mycmd("Select price " & _
+    Dim locTable As New ADODB.RecordSet
+    Set locTable = mycmd("Select price " & _
                     " from file6_53  " & _
                      " where doc_no = " & xPrice_list.Tag & _
                      " and item = " & MyParn(cm.Parameters("@ITEM").Value), con)
-    If loctable.EOF Then
+    If locTable.EOF Then
         MsgBox "«·’‰› €Ì— „ÊÃÊœ ›Ï ﬁ«∆„… «·”⁄—"
         Exit Function
     Else
-        grid1.TextMatrix(Row, 11) = loctable!price
+        grid1.TextMatrix(Row, 11) = locTable!price
     End If
-    Set loctable = Nothing
+    Set locTable = Nothing
 Else
     grid1.TextMatrix(Row, 11) = IIf(optPrice(0).Value, cm.Parameters("@COST2").Value, cm.Parameters("@PRICE").Value)
 End If
@@ -4314,6 +4629,7 @@ If MsgBox("«·”„«Õ »„— Ã⁄ ··›« Ê—…", vbYesNo + vbDefaultButton2) = vbYes Then
     If nRec = 1 Then MsgBox "  „  ⁄œÌ· «·„” ‰œ "
 End If
 End Sub
+
 Private Sub xMan_GotFocus()
 myGotFocus xman
 End Sub
@@ -4406,7 +4722,7 @@ oSearchOrder.sCaption = "«” ⁄·«„ «·ÿ·»Ì« "
 oSearchOrder.Show 1
 End Sub
 
-Private Sub xPrice_list_Click()
+Private Sub xprice_list_Click()
 PriceListLook Me, oSearchList, , , IIf(xPrice_list.Tag <> "", "»œÊ‰ ﬁ«∆„… ”⁄—", "")
 End Sub
 
@@ -4526,7 +4842,7 @@ End Sub
 Private Sub xSendRc_Click()
 If bIgClick Then Exit Sub
 If xDoc_No.text <> "" Then
-    On Error GoTo myError
+    On Error GoTo myerror
     If xUUID_RC.Caption <> "" Then
         If Not IsEmpty(myField("select doc_no from file6_20h where PREVIOUS_UUID = " & MyParn(xUUID_RC.Caption), con)) Then
             MsgBox "—ﬁ„ „”·”· „—Ã⁄Ì ”«»ﬁ ··›« Ê—… —ﬁ„ " & MyParn(xDoc_No.text)
@@ -4539,7 +4855,7 @@ End If
 Finaly:
 Handlecontrols xDoc_No.Tag
 Exit Sub
-myError:
+myerror:
 MsgBox Err.Description
 Err.Clear
 bIgClick = True
@@ -4575,13 +4891,13 @@ If MsgBox("Õ–› «·’‰› „‰ «·„” ‰œ ?, Â· «‰  „Ê«›ﬁ ø", vbOKCancel) <> vbOK Then
 End If
 
 If grid1.TextMatrix(Row, grid1.Cols - 1) <> "" Then
-    On Error GoTo myError
+    On Error GoTo myerror
     con.Execute "Delete  From FILE6_20 where id = " & grid1.TextMatrix(Row, grid1.Cols - 1)
 End If
 grid1.RemoveItem Row
 RemoveItem = True
 Exit Function
-myError:
+myerror:
 MsgBox Err.Description
 Err.Clear
 End Function
@@ -4792,7 +5108,7 @@ Else
     End If
 End If
 Exit Sub
-myError:
+myerror:
 MsgBox Err.Description
 Err.Clear
 End Sub
@@ -4830,7 +5146,7 @@ End If
 validOpen = True
 End Function
 Private Function retRecords(pDoc_no, ByRef nRecords As Long, ByRef nRecord As Long) As Variant
-Dim cString As String, loctable As New ADODB.RecordSet
+Dim cString As String, locTable As New ADODB.RecordSet
 If pDoc_no <> "" Then
     'cString = "SELECT Count(FILE6_20H.DOC_NO) AS records,COUNT(CASE WHEN FILE6_20H.DOC_NO_FLAG <= " & MyParn(pDoc_no) & " THEN 1 END) AS record"
     cString = "SELECT Count(FILE6_20H.DOC_NO) AS records,COUNT(CASE WHEN FILE6_20H.DOC_NO <= " & MyParn(pDoc_no) & " THEN 1 END) AS record"
@@ -4845,10 +5161,10 @@ If cFilter <> "" Then
     cString = cString & " WHERE " & cFilter
 End If
 
-Set loctable = cmd(cString, con).Execute
-If Not loctable.EOF Then
-    nRecords = loctable!RECORDS
-    nRecord = Val(loctable!Record & "")
+Set locTable = cmd(cString, con).Execute
+If Not locTable.EOF Then
+    nRecords = locTable!RECORDS
+    nRecord = Val(locTable!Record & "")
 End If
 End Function
 Private Function retFilter()
@@ -4940,6 +5256,13 @@ End Sub
 Private Sub xcode_GotFocus()
 myGotFocus xCode
 End Sub
+Private Sub xship_no_GotFocus()
+myGotFocus xShip_no
+End Sub
+Private Sub xship_no_LostFocus()
+myLostFocus xShip_no
+End Sub
+
 Private Sub xcode_LostFocus()
 myLostFocus xCode
 xCodeDesca.Caption = ""
@@ -4947,21 +5270,21 @@ If Trim(xCode.text) = "" Then Exit Sub
 xCode.text = RetZero(xCode.text, 4)
 If xCode.text = "0000" Then Exit Sub
 
-Dim loctable As New ADODB.RecordSet
-Set loctable = cmd("SELECT FILE3_10.*," & _
+Dim locTable As New ADODB.RecordSet
+Set locTable = cmd("SELECT FILE3_10.*," & _
                   "FILE6_53H.NOTES AS PRICE_LIST_DESCA" & _
                   " FROM FILE3_10 " & _
                   " LEFT JOIN FILE6_53H ON FILE3_10.PRICE_LIST = FILE6_53H.DOC_NO" & _
                   " WHERE FILE3_10.CODE = " & MyParn(xCode.text), con).Execute
 
-If loctable.EOF Then Exit Sub
-xCodeDesca.Caption = loctable!DESCA & ""
+If locTable.EOF Then Exit Sub
+xCodeDesca.Caption = locTable!DESCA & ""
 
 If xPrice_list.Tag = "" Then
-    xPrice_list.Tag = loctable!price_list & ""
-    xPrice_list.Caption = loctable!price_list_desca & ""
+    xPrice_list.Tag = locTable!price_list & ""
+    xPrice_list.Caption = locTable!price_list_desca & ""
 End If
-Set loctable = Nothing
+Set locTable = Nothing
 End Sub
 Private Sub xDoc_No_GotFocus()
 myGotFocus xDoc_No
@@ -4976,8 +5299,23 @@ Private Sub XSTORE_LostFocus()
 myLostFocus xStore
 If Not xStore.MatchedWithList Then xStore.BoundText = ""
 End Sub
+Private Sub XLogo_GotFocus()
+myGotFocus xLogo
+End Sub
+Private Sub XLogo_LostFocus()
+myLostFocus xLogo
+If Not xLogo.MatchedWithList Then xLogo.BoundText = ""
+End Sub
+Private Sub xship_GotFocus()
+myGotFocus xShip
+End Sub
+Private Sub xship_LostFocus()
+myLostFocus xShip
+If Not xShip.MatchedWithList Then xShip.BoundText = ""
+End Sub
+
 Private Sub HandleInit()
-bEdit = True
+bedit = True
 fixGrdError
 End Sub
 Private Sub xTotalItemDiscount_Change()
@@ -4991,53 +5329,39 @@ End Sub
 Private Sub doprint()
 Dim temptable As New ADODB.RecordSet
 Dim sourcetable As New ADODB.RecordSet
-Dim lPrice As Boolean
-Dim nFBal As Double
-Dim nPay As Double
-Dim nBal As Double
-' ???? ????? ??? ?????? ??????
 
-
-Dim con_image As New ADODB.Connection
-openConDoc con_image
- 
-'picPrint.Picture = LoadPicture("")
-imgxPrint.Images.Clear
- 
- 
-'Picture3.Picture = LoadPicture(RetPhoto(xCode.text))
-'aRet = retDimImg(Picture3.Width, Picture3.Height, 2500 / 15, 2500 / 15)
-
-'Set imgx2.Picture = LoadPicture(RetPhoto(xCode.text))
-'imgx2.Effects.Resize Val(retFlag(aRet, "width")), Val(retFlag(aRet, "height"))
- 
- 
 Dim nWidth As Long, nHeight As Long
-Dim imageTable As New ADODB.RecordSet
+Dim ImageTable As New ADODB.RecordSet
+ 
+imgxPrint.Images.Clear
+
+Dim db As New clsData
+Dim dbImg As New clsData
+dbImg.ConnectionString = strConDoc
+
 If xLogo.MatchedWithList Then
-    Set imageTable = cmd("select * from logo_codes where code = " & IIf(xLogo.MatchedWithList, xLogo.BoundText, 1), con).Execute
+    Set ImageTable = db.rs("select * from logo_codes where code = " & IIf(xLogo.MatchedWithList, xLogo.BoundText, 1))
     
-    If Not imageTable.EOF Then
-        If Not IsNull(imageTable!Image) Then
+    If Not ImageTable.EOF Then
+        If Not IsNull(ImageTable!Image) Then
 
-            Set picPrint.DataSource = imageTable
+            Set picPrint.DataSource = ImageTable
             picPrint.DataField = "image"
+            
+            aRet = retDimImg(picPrint.Width, picPrint.Height, IIf(ImageTable!Width = 0, 600, ImageTable!Width), IIf(ImageTable!Height = 0, 200, ImageTable!Height))
 
-            'GetNewSize picPrint.Width, picPrint.Height, 500, nHeight
-            aRet = retDimImg(picPrint.Width, picPrint.Height, 600, 300)
-
-            imgxPrint.Import.FromMemoryFile (imageTable!Image)
-            'imgxPrint.Effects.Resize  500, nHeight
+            imgxPrint.Import.FromMemoryFile (ImageTable!Image)
             imgxPrint.Effects.Resize retFlag(aRet, "width"), retFlag(aRet, "height")
         End If
     End If
 End If
 
+
 contemp.Execute "DELETE * FROM TEMP"
 temptable.Open "temp", contemp, adOpenStatic, adLockOptimistic, adCmdTable
 
 
-Dim loctable As New ADODB.RecordSet, cString As String
+Dim locTable As New ADODB.RecordSet, cString As String
 cString = "SELECT FILE6_20H.DOC_NO2," & _
           " FILE6_20H.DATE," & _
           " FILE6_20H.DISCOUNT," & _
@@ -5055,61 +5379,41 @@ cString = "SELECT FILE6_20H.DOC_NO2," & _
           " FILE1_10.COLOR," & _
           " FILE1_10.C_COLOR," & _
           " FILE1_10.SCAL," & _
-          " FILE1_10.MODEL" & _
+          " FILE1_10.MODEL," & _
+          " FILE3_10.PHONE1,FILE3_10.ADDRESS" & _
           " FROM FILE6_20 " & _
           " INNER JOIN FILE6_20H ON FILE6_20.DOC_NO = FILE6_20H.DOC_NO" & _
           " INNER JOIN FILE1_10 ON FILE6_20.ITEM = FILE1_10.ITEM" & _
           " INNER JOIN FILE3_10 ON FILE6_20H.CODE = FILE3_10.CODE" & _
           " LEFT JOIN FACT ON FACT.CODE = FILE1_10.[FACT]" & _
           " WHERE  FILE6_20.DOC_NO = " & MyParn(xDoc_No.text)
-Set loctable = cmd(cString, con).Execute
+Set locTable = db.rs(cString)
 
 
-Do While Not loctable.EOF
+Do While Not locTable.EOF
     temptable.AddNew
     
     cString = " select top 1 * " & _
-             " from MODEL_IMAGES where model = " & MyParn(loctable!model) & _
-             " AND (C_COLOR = " & loctable!c_Color & _
+             " from MODEL_IMAGES where model = " & MyParn(locTable!MODEL) & _
+             " AND (C_COLOR = " & locTable!c_Color & _
              " OR C_COLOR IS NULL)" & _
              " ORDER BY C_COLOR,ID"
      
-'    If chkImage.Value = 1 Then
-'        Set imageTable = cmd(cString, con_image).Execute
-'        ImgxPrint2.Images.Clear
-'        If Not imageTable.EOF Then
-'            If Not IsNull(imageTable!Image) Then
-'                Set picPrint.Picture = LoadPicture("")
-'                Set picPrint.DataSource = imageTable
-'                picPrint.DataField = "image"
-'
-'                'GetNewSize picPrint.Width, picPrint.Height, nWidth, 200
-'
-'                aRet = retDimImg(picPrint.Width, picPrint.Height, 300, 300)
-'
-'                ImgxPrint2.Import.FromMemoryFile (imageTable!Image)
-'                ImgxPrint2.Effects.Resize retFlag(aRet, "width"), retFlag(aRet, "height")
-'
-'                SaveImageToRs ImgxPrint2.Picture, temptable, "picture2"
-'            End If
-'        End If
-'    End If
     
-    If chkImage.Value = 1 Then
-        Set imageTable = cmd(cString, con_image).Execute
-        ImgxPrint2.Images.Clear
-        If Not imageTable.EOF Then
-            If Not IsNull(imageTable!Image) Then
-                ' Skip picPrint binding completely if it causes errors
-                ImgxPrint2.Import.FromMemoryFile (imageTable!Image)
-                
-                ' Get dimensions directly from the third-party control instead of picPrint
-                ' (Note: check your control's documentation for exact property names like .Width or .ImageWidth)
-                aRet = retDimImg(ImgxPrint2.Width, ImgxPrint2.Height, 300, 300)
-                
-                ImgxPrint2.Effects.Resize retFlag(aRet, "width"), retFlag(aRet, "height")
-                SaveImageToRs ImgxPrint2.Picture, temptable, "picture2"
-            End If
+    Set ImageTable = dbImg.rs(cString)
+    ImgxPrint2.Images.Clear
+    
+    If Not ImageTable.EOF Then
+        If Not IsNull(ImageTable!Image) Then
+            ' Skip picPrint binding completely if it causes errors
+            ImgxPrint2.Import.FromMemoryFile (ImageTable!Image)
+            
+            ' Get dimensions directly from the third-party control instead of picPrint
+            ' (Note: check your control's documentation for exact property names like .Width or .ImageWidth)
+            aRet = retDimImg(ImgxPrint2.Width, ImgxPrint2.Height, 300, 300)
+            
+            ImgxPrint2.Effects.Resize retFlag(aRet, "width"), retFlag(aRet, "height")
+            SaveImageToRs ImgxPrint2.Picture, temptable, "picture2"
         End If
     End If
     
@@ -5117,30 +5421,191 @@ Do While Not loctable.EOF
         SaveImageToRs imgxPrint.Picture, temptable, "picture1"
     End If
         
-    temptable!STR6 = RetZero(loctable!Doc_no2, 6)
-    temptable!Date1 = myFormat_p(loctable!Date)
-    temptable!STR7 = loctable!CODE_desca
-    temptable!str8 = loctable!NOTES
+    temptable!STR6 = RetZero(locTable!Doc_no2, 6)
+    temptable!Date1 = myFormat_p(locTable!Date)
+    temptable!STR7 = locTable!CODE_desca
+    temptable!str8 = locTable!NOTES
     
-    temptable!str2 = loctable!FACTDESCA
-    temptable!str1 = loctable!Item
-    temptable!str13 = TurnValue(DelZero(loctable!modelfact))
+    temptable!str2 = locTable!FACTDESCA
+    temptable!str1 = locTable!Item
+    temptable!str13 = TurnValue(DelZero(locTable!modelfact))
     
-    temptable!str3 = loctable!ITEM_DESCA
-    temptable!STR4 = loctable!color
-    temptable!STR5 = loctable!SCAL
-    temptable!str16 = loctable!model
+    temptable!str3 = locTable!ITEM_DESCA
+    temptable!STR4 = locTable!color
+    temptable!STR5 = locTable!SCAL
+    temptable!str16 = locTable!MODEL
+    temptable!str9 = locTable!Address
+    temptable!str11 = locTable!PHONE1
     
-    temptable!VAL3 = loctable!Quant
-    temptable!VAL1 = loctable!price
-    temptable!VAL4 = loctable!TOTAL
-    temptable!val5 = loctable!discount
-    temptable!VAL7 = loctable!TOTAL_ITEM - loctable!discount
+    temptable!VAL3 = locTable!Quant
+    temptable!VAL1 = locTable!price
+    temptable!VAL4 = locTable!TOTAL
+    temptable!val5 = locTable!discount
+    temptable!VAL7 = locTable!TOTAL_ITEM - locTable!discount
     
     
     temptable!VAL14 = i
     temptable.Update
-    loctable.MoveNext
+    locTable.MoveNext
+Loop
+
+Set db = Nothing
+
+If temptable.EOF And temptable.BOF Then
+    MsgBox "·«  ÊÃœ »Ì«‰«  »«· ﬁ—Ì—"
+    Exit Sub
+End If
+contemp.BeginTrans
+contemp.CommitTrans
+REPORT1.Destination = crptToWindow
+
+If chkImage.Value = 1 Then
+    REPORT1.ReportFileName = App.Path & "\Reports\Print_SALES_images.rpt"
+Else
+    REPORT1.ReportFileName = App.Path & "\Reports\Print_SALES.rpt"
+End If
+Set db = Nothing
+Set dbImg = Nothing
+REPORT1.DataFiles(0) = "c:\tempmrshd\temp.mdb"
+REPORT1.Action = 1
+temptable.Close
+Set temptable = Nothing
+
+End Sub
+Private Sub doPrintModel()
+Dim temptable As New ADODB.RecordSet
+Dim sourcetable As New ADODB.RecordSet
+Dim lPrice As Boolean
+Dim nFBal As Double
+Dim nPay As Double
+Dim nBal As Double
+' ???? ????? ??? ?????? ??????
+
+
+'picPrint.Picture = LoadPicture("")
+imgxPrint.Images.Clear
+ 
+Dim nWidth As Long, nHeight As Long
+Dim ImageTable As New ADODB.RecordSet
+
+Dim db As New clsData
+Dim dbImg As New clsData
+dbImg.ConnectionString = strConDoc
+
+If xLogo.MatchedWithList Then
+    Set ImageTable = db.rs("select * from logo_codes where code = " & IIf(xLogo.MatchedWithList, xLogo.BoundText, 1))
+    
+    If Not ImageTable.EOF Then
+        If Not IsNull(ImageTable!Image) Then
+
+            Set picPrint.DataSource = ImageTable
+            picPrint.DataField = "image"
+            
+            aRet = retDimImg(picPrint.Width, picPrint.Height, IIf(ImageTable!Width = 0, 600, ImageTable!Width), IIf(ImageTable!Height = 0, 200, ImageTable!Height))
+
+            imgxPrint.Import.FromMemoryFile (ImageTable!Image)
+            imgxPrint.Effects.Resize retFlag(aRet, "width"), retFlag(aRet, "height")
+        End If
+    End If
+End If
+
+contemp.Execute "DELETE * FROM TEMP"
+temptable.Open "temp", contemp, adOpenStatic, adLockOptimistic, adCmdTable
+
+
+Dim locTable As New ADODB.RecordSet, cString As String
+cString = "SELECT FILE6_20H.DOC_NO2," & _
+          " FILE6_20H.DATE," & _
+          " FILE6_20H.DISCOUNT," & _
+          " FILE6_20H.DISCOUNT_RATE," & _
+          " FILE6_20H.TOTAL_ITEM," & _
+          " FILE3_10.DESCA AS CODE_DESCA," & _
+          " FILE6_20H.NOTES," & _
+          " SUM(FILE6_20.QUANT) AS QUANT," & _
+          " FILE6_20.PRICE," & _
+          " MAX(FILE1_10.DESCA) AS ITEM_DESCA," & _
+          " SUM(FILE6_20.TOTAL) AS TOTAL," & _
+          " file1_10.modelfact," & _
+          " FACT.DESCA AS FACTDESCA," & _
+          " FILE3_10.PHONE1," & _
+          " FILE3_10.ADDRESS," & _
+          " FILE1_10.MODEL" & _
+          " FROM FILE6_20 " & _
+          " INNER JOIN FILE6_20H ON FILE6_20.DOC_NO = FILE6_20H.DOC_NO" & _
+          " INNER JOIN FILE1_10 ON FILE6_20.ITEM = FILE1_10.ITEM" & _
+          " INNER JOIN FILE3_10 ON FILE6_20H.CODE = FILE3_10.CODE" & _
+          " LEFT JOIN FACT ON FACT.CODE = FILE1_10.[FACT]" & _
+          " WHERE  FILE6_20.DOC_NO = " & MyParn(xDoc_No.text)
+          
+cString = cString & " GROUP BY " & _
+          " FILE6_20H.DOC_NO2," & _
+          " FILE6_20H.DATE," & _
+          " FILE6_20H.DISCOUNT," & _
+          " FILE6_20H.DISCOUNT_RATE," & _
+          " FILE6_20H.TOTAL_ITEM," & _
+          " FILE3_10.DESCA," & _
+          " FILE3_10.PHONE1," & _
+          " FILE3_10.ADDRESS," & _
+          " FILE6_20H.NOTES," & _
+          " FILE6_20.PRICE," & _
+          " file1_10.modelfact," & _
+          " FACT.DESCA," & _
+          " FILE1_10.MODEL"
+
+Set locTable = cmd(cString, con).Execute
+
+
+Do While Not locTable.EOF
+    temptable.AddNew
+    cString = " select top 1 * " & _
+             " from MODEL_IMAGES where model = " & MyParn(locTable!MODEL) & _
+             " ORDER BY C_COLOR"
+     
+    Set ImageTable = dbImg.rs(cString)
+    ImgxPrint2.Images.Clear
+    
+    If Not ImageTable.EOF Then
+        If Not IsNull(ImageTable!Image) Then
+            ' Skip picPrint binding completely if it causes errors
+            ImgxPrint2.Import.FromMemoryFile (ImageTable!Image)
+            
+            ' Get dimensions directly from the third-party control instead of picPrint
+            ' (Note: check your control's documentation for exact property names like .Width or .ImageWidth)
+            aRet = retDimImg(ImgxPrint2.Width, ImgxPrint2.Height, 300, 300)
+            
+            ImgxPrint2.Effects.Resize retFlag(aRet, "width"), retFlag(aRet, "height")
+            SaveImageToRs ImgxPrint2.Picture, temptable, "picture2"
+        End If
+    End If
+    
+    If imgxPrint.Images.Count > 0 Then
+        SaveImageToRs imgxPrint.Picture, temptable, "picture1"
+    End If
+                  
+    temptable!STR6 = RetZero(locTable!Doc_no2, 6)
+    temptable!Date1 = myFormat_p(locTable!Date)
+    temptable!STR7 = locTable!CODE_desca
+    temptable!str8 = locTable!NOTES
+    
+    temptable!str2 = locTable!FACTDESCA
+    temptable!str1 = locTable!MODEL
+    temptable!str13 = TurnValue(DelZero(locTable!modelfact))
+    
+    temptable!str3 = locTable!ITEM_DESCA
+    temptable!str16 = locTable!MODEL
+    temptable!str11 = locTable!PHONE1
+    temptable!str3 = locTable!ITEM_DESCA
+            
+    temptable!VAL3 = locTable!Quant
+    temptable!VAL1 = locTable!price
+    temptable!VAL4 = locTable!TOTAL
+    temptable!val5 = locTable!discount
+    temptable!VAL7 = locTable!TOTAL_ITEM - locTable!discount
+    
+    
+    temptable!VAL14 = i
+    temptable.Update
+    locTable.MoveNext
 Loop
 If temptable.EOF And temptable.BOF Then
     MsgBox "·«  ÊÃœ »Ì«‰«  »«· ﬁ—Ì—"
@@ -5149,17 +5614,15 @@ End If
 contemp.BeginTrans
 contemp.CommitTrans
 REPORT1.Destination = crptToWindow
-If chkImage.Value = 1 Then
-    REPORT1.ReportFileName = App.Path & "\Reports\Print_SALES_images.rpt"
-Else
-    REPORT1.ReportFileName = App.Path & "\Reports\Print_SALES.rpt"
-End If
+
+REPORT1.ReportFileName = App.Path & "\Reports\Print_sales_images_model.rpt"
+
 REPORT1.DataFiles(0) = "c:\tempmrshd\temp.mdb"
 REPORT1.Action = 1
 temptable.Close
 Set temptable = Nothing
+Set db = Nothing
 End Sub
-
 Private Sub xYear_Change()
 If bIg Then Exit Sub
 If chkDay.Value = 1 Or IsDate(xdate_filter.text) Then Exit Sub
@@ -5200,7 +5663,7 @@ If cSv.NumRows < 1 Then Exit Function
 
 Dim Tb As New ChilkatStringBuilder
 Dim cString As New ChilkatStringBuilder
-Dim loctable As New ADODB.RecordSet
+Dim locTable As New ADODB.RecordSet
 
 prog1.Visible = True
 
@@ -5255,7 +5718,7 @@ For i = 0 To cSv.NumRows - 1
             End If
         
             nAdd = nAdd + 1
-            If cString.length = 0 Then
+            If cString.Length = 0 Then
                 cString.Append "insert into FILE6_20(" & _
                     "DOC_NO," & _
                     "ITEM," & _
@@ -5288,14 +5751,14 @@ If grdError.Rows > 1 Then
 End If
 
 
-If cString.length > 0 Then
+If cString.Length > 0 Then
     cString.Shorten 1
     strTab.Append cString.GetAsString()
 End If
 
 nCount = 1
 con.BeginTrans
-On Error GoTo myError
+On Error GoTo myerror
 
 For i = 0 To strTab.Count - 1 Step nCount
     Me.Caption = sCaption & " - " & IIf(i + nCount > strTab.Count, strTab.Count, i + nCount) & " „‰ " & strTab.Count
@@ -5310,7 +5773,7 @@ Finally:
 prog1.Visible = False
 Me.Caption = sCaption
 Exit Function
-myError:
+myerror:
 MsgBox Err.Description
 Err.Clear
 If TransCount(con) > 0 Then con.RollbackTrans
@@ -5345,7 +5808,7 @@ If cSv.NumRows < 1 Then Exit Function
 
 Dim Tb As New ChilkatStringBuilder
 Dim cString As New ChilkatStringBuilder
-Dim loctable As New ADODB.RecordSet
+Dim locTable As New ADODB.RecordSet
 
 prog1.Visible = True
 
@@ -5406,7 +5869,7 @@ For i = 0 To cSv.NumRows - 1
             End If
         
             nAdd = nAdd + 1
-            If cString.length = 0 Then
+            If cString.Length = 0 Then
                 cString.Append "insert into FILE6_20(" & _
                     "DOC_NO," & _
                     "ITEM," & _
@@ -5432,7 +5895,7 @@ For i = 0 To cSv.NumRows - 1
     
     End If
 Next
-If cString.length > 0 Then
+If cString.Length > 0 Then
     cString.Shorten 1
     con.Execute cString.GetAsString()
     'UpdateInvTotal xDoc_No.text, con
@@ -5443,7 +5906,7 @@ getCSV = True
 Finaly:
 prog1.Visible = False
 Exit Function
-myError:
+myerror:
 MsgBox Err.Description
 Err.Clear
 If TransCount(con) > 0 Then con.RollbackTrans
@@ -5563,7 +6026,7 @@ Next
 ValidQuant = True
 End Function
 Private Function TransToTaxInv() As Boolean
-Dim loctable As New ADODB.RecordSet
+Dim locTable As New ADODB.RecordSet
 
 Dim cString As String
 cString = "SELECT ID" & _
@@ -5575,32 +6038,32 @@ cString = "SELECT ID" & _
           " GROUP BY ID" & _
           " HAVING MAX(NetQty) > 0 AND MIN(NetQty) < 0"
 
-Set loctable = cmd(cString, con).Execute
-If Not loctable.EOF Then
+Set locTable = cmd(cString, con).Execute
+If Not locTable.EOF Then
     MsgBox "«·›« Ê—…  Õ ÊÌ ⁄·Ì ﬂ„Ì… ”«·Ì… Ê„ÊÃ»…"
     Exit Function
 End If
 
-loctable.Close
+locTable.Close
 cString = "SELECT TOP 1 FILE6_20H.*" & _
           " FROM FILE6_20 " & _
           " INNER JOIN FILE6_20H ON FILE6_20.DOC_NO = FILE6_20H.DOC_NO " & _
           " WHERE FILE6_20.DOC_NO = " & MyParn(xDoc_No.text)
 
-Set loctable = cmd(cString, con).Execute
-If loctable.EOF Then
+Set locTable = cmd(cString, con).Execute
+If locTable.EOF Then
     MsgBox "·«  ÊÃœ ”Ã·«  · ÕÊÌ·Â«"
     Exit Function
 End If
 
-If loctable!INV_TYPE & "" <> 2 Then
+If locTable!INV_TYPE & "" <> 2 Then
     MsgBox "«·„” ‰œ«  ·Ì” «–‰"
     Exit Function
 End If
 
 Dim aInsert As Variant
 Dim sNewDoc As String
-If loctable!TOTAL_ITEM >= 0 Then
+If locTable!TOTAL_ITEM >= 0 Then
     sNewDoc = IncData("FILE6_20H", "DOC_NO", con, "FILE6_20H.INV_TYPE = 3")
     If sNewDoc = "" Then sNewDoc = "1" & RetZero("1", 11)
 Else
@@ -5610,13 +6073,13 @@ End If
 
 aInsert = AddFlag(Empty, "DOC_NO", addstring(sNewDoc))
 aInsert = AddFlag(aInsert, "DATE", addDate(myFormat(Date)))
-aInsert = AddFlag(aInsert, "CODE", addstring(loctable!code))
-aInsert = AddFlag(aInsert, "PO_NO", addstring(loctable!po_no))
+aInsert = AddFlag(aInsert, "CODE", addstring(locTable!code))
+aInsert = AddFlag(aInsert, "PO_NO", addstring(locTable!po_no))
 aInsert = AddFlag(aInsert, "USERNAME", addstring(cusername))
 aInsert = AddFlag(aInsert, "BRANCH", addstring("00"))
 aInsert = AddFlag(aInsert, "ISINVOICE", "1")
-aInsert = AddFlag(aInsert, "STORE", addstring(loctable!STORE))
-aInsert = AddFlag(aInsert, "NOTES", addstring(loctable!doc_no))
+aInsert = AddFlag(aInsert, "STORE", addstring(locTable!STORE))
+aInsert = AddFlag(aInsert, "NOTES", addstring(locTable!doc_no))
 
 con.BeginTrans
 con.Execute addInsert(aInsert, "FILE6_20H")
@@ -5639,7 +6102,7 @@ con.Execute "INSERT INTO FILE6_20(" & _
             " FILE6_20.COST" & _
             " FROM FILE6_20 " & _
             " INNER JOIN FILE6_20H ON FILE6_20.DOC_NO = FILE6_20H.DOC_NO" & _
-            " WHERE FILE6_20.DOC_NO = " & MyParn(loctable!doc_no)
+            " WHERE FILE6_20.DOC_NO = " & MyParn(locTable!doc_no)
             
 con.Execute "UPDATE FILE6_20H SET " & _
             " FILE6_20H.TAX = ROUND(FILE6_20H.TOTAL_ITEM * 0.14,2)" & _
@@ -5649,12 +6112,12 @@ con.Execute "UPDATE FILE6_20H SET " & _
             " FILE6_20H.DOC_NO_TAX = " & addstring(sNewDoc) & "," & _
             " FILE6_20H.DISCOUNT = 0," & _
             " FILE6_20H.TAX = 0" & _
-            " FROM FILE6_20H WHERE FILE6_20H.DOC_NO = " & MyParn(loctable!doc_no)
+            " FROM FILE6_20H WHERE FILE6_20H.DOC_NO = " & MyParn(locTable!doc_no)
 
-con.Execute "DELETE FROM FILE6_20 WHERE DOC_NO = " & MyParn(loctable!doc_no)
+con.Execute "DELETE FROM FILE6_20 WHERE DOC_NO = " & MyParn(locTable!doc_no)
 con.CommitTrans
 TransToTaxInv = True
-If loctable!TOTAL_ITEM >= 0 Then
+If locTable!TOTAL_ITEM >= 0 Then
     optType(5).Value = True
 Else
     optType(6).Value = True
@@ -5666,7 +6129,7 @@ If Not openCardTable(tbMode.tbFind, sNewDoc) Then
 End If
 End Function
 Private Function TransToTaxInvOld()
-Dim loctable As New ADODB.RecordSet
+Dim locTable As New ADODB.RecordSet
 
 Dim cString As String
 cString = "SELECT ID" & _
@@ -5678,32 +6141,32 @@ cString = "SELECT ID" & _
           " GROUP BY ID" & _
           " HAVING MAX(NetQty) > 0 AND MIN(NetQty) < 0"
 
-Set loctable = cmd(cString, con).Execute
-If Not loctable.EOF Then
+Set locTable = cmd(cString, con).Execute
+If Not locTable.EOF Then
     MsgBox "«·›« Ê—…  Õ ÊÌ ⁄·Ì ﬂ„Ì… ”«·Ì… Ê„ÊÃ»…"
     Exit Function
 End If
 
-loctable.Close
+locTable.Close
 cString = "SELECT TOP 1 FILE6_20H.*" & _
           " FROM FILE6_20 " & _
           " INNER JOIN FILE6_20H ON FILE6_20.DOC_NO = FILE6_20H.DOC_NO " & _
           " WHERE FILE6_20.DOC_NO = " & MyParn(xDoc_No.text)
 
-Set loctable = cmd(cString, con).Execute
-If loctable.EOF Then
+Set locTable = cmd(cString, con).Execute
+If locTable.EOF Then
     MsgBox "·«  ÊÃœ ”Ã·«  · ÕÊÌ·Â«"
     Exit Function
 End If
 
-If loctable!INV_TYPE & "" <> 2 Then
+If locTable!INV_TYPE & "" <> 2 Then
     MsgBox "«·„” ‰œ«  ·Ì” «–‰"
     Exit Function
 End If
 
 Dim aInsert As Variant
 Dim sNewDoc As String
-If loctable!TOTAL_ITEM >= 0 Then
+If locTable!TOTAL_ITEM >= 0 Then
     sNewDoc = IncData("FILE6_20H", "DOC_NO", con, "FILE6_20H.INV_TYPE = 3")
     If sNewDoc = "" Then sNewDoc = "1" & RetZero("1", 11)
 Else
@@ -5712,12 +6175,12 @@ Else
 End If
 aInsert = AddFlag(Empty, "DOC_NO", addstring(sNewDoc))
 aInsert = AddFlag(aInsert, "DATE", addDate(myFormat(Date)))
-aInsert = AddFlag(aInsert, "CODE", addstring(loctable!code))
-aInsert = AddFlag(aInsert, "PO_NO", addstring(loctable!po_no))
+aInsert = AddFlag(aInsert, "CODE", addstring(locTable!code))
+aInsert = AddFlag(aInsert, "PO_NO", addstring(locTable!po_no))
 aInsert = AddFlag(aInsert, "BRANCH", addstring("00"))
 aInsert = AddFlag(aInsert, "ISINVOICE", "1")
-aInsert = AddFlag(aInsert, "STORE", addstring(loctable!STORE))
-aInsert = AddFlag(aInsert, "NOTES", addstring(loctable!doc_no))
+aInsert = AddFlag(aInsert, "STORE", addstring(locTable!STORE))
+aInsert = AddFlag(aInsert, "NOTES", addstring(locTable!doc_no))
 
 con.BeginTrans
 con.Execute addInsert(aInsert, "FILE6_20H")
@@ -5739,7 +6202,7 @@ con.Execute "INSERT INTO FILE6_20(" & _
             " COST" & _
             " FROM FILE6_20 " & _
             " INNER JOIN FILE6_20H ON FILE6_20.DOC_NO = FILE6_20H.DOC_NO" & _
-            " WHERE FILE6_20.DOC_NO = " & MyParn(loctable!doc_no)
+            " WHERE FILE6_20.DOC_NO = " & MyParn(locTable!doc_no)
 
 con.Execute "UPDATE FILE6_20H SET " & _
             " FILE6_20H.TAX = ROUND(FILE6_20H.TOTAL_ITEM * 0.14,2)" & _
@@ -5749,11 +6212,11 @@ con.Execute "UPDATE FILE6_20H SET " & _
             " FILE6_20H.DOC_NO_TAX = " & addstring(sNewDoc) & "," & _
             " FILE6_20H.DISCOUNT = 0," & _
             " FILE6_20H.TAX = 0" & _
-            " FROM FILE6_20H WHERE FILE6_20H.DOC_NO = " & MyParn(loctable!doc_no)
-con.Execute "DELETE FROM FILE6_20 WHERE DOC_NO = " & MyParn(loctable!doc_no)
+            " FROM FILE6_20H WHERE FILE6_20H.DOC_NO = " & MyParn(locTable!doc_no)
+con.Execute "DELETE FROM FILE6_20 WHERE DOC_NO = " & MyParn(locTable!doc_no)
 con.CommitTrans
 
-If loctable!TOTAL_ITEM >= 0 Then
+If locTable!TOTAL_ITEM >= 0 Then
     optType(5).Value = True
 Else
     optType(6).Value = True
@@ -5921,7 +6384,7 @@ End If
 Me.MousePointer = vbHourglass
 
 
-'On Error GoTo myerror
+On Error GoTo myerror
 cFilter = retFilter
 
 Set CardTable = New ADODB.RecordSet
@@ -5972,7 +6435,7 @@ If (Not CardTable.EOF) Then
 End If
 Me.MousePointer = vbNormal
 Exit Function
-myError:
+myerror:
 Me.MousePointer = vbNormal
 MsgBox Err.Description
 Err.Clear
@@ -5980,7 +6443,7 @@ End Function
 Private Function ChangePriceList() As Boolean
 Dim db As New clsDb
 Dim rsPrice As New ADODB.RecordSet
-Set rsPrice = db.myRs("select * from file6_53 where doc_no = " & xPrice_list.Tag): If rsPrice Is Nothing Then GoTo CleanUp
+Set rsPrice = db.myRs("select * from file6_53 where doc_no = " & xPrice_list.Tag): If rsPrice Is Nothing Then GoTo cleanUP
 
 sCaption = Me.Caption
 prog1.Visible = True
@@ -6001,11 +6464,70 @@ Next
 db.Sql = "UPDATE FILE6_20H " & _
          " SET PRICE_LIST = " & addvalue(xPrice_list.Tag) & _
          " WHERE DOC_NO = " & MyParn(xDoc_No.text)
-If Not db.ExecuteTransaction Then GoTo CleanUp
+If Not db.ExecuteTransaction Then GoTo cleanUP
 ChangePriceList = True
-CleanUp:
+cleanUP:
 Set db = Nothing
 prog1.Visible = False
 Me.Caption = sCaption
+End Function
+Private Sub ScanImage()
+On Error GoTo myerror
+Set twain = New ImgXTwain
+twain.OpenTwain Me.hwnd
+If twain.QuerySupport(ixtcResolution) Then
+     twain.Resolution = 150
+End If
+twain.Acquire False, Me.hwnd
+Exit Sub
+myerror:
+MsgBox Err.Number & vbCrLf & Err.Description
+Err.Clear
+End Sub
+Private Sub Twain_ImageAcquired(Image As ImgX_Image)
+ImgX1.Images.Replace Image, , False
+ImgX1.TIFCompression = ixtcJPEGCompression
+
+If myReplaceImage(xDoc_No.text) Then
+    Inform " „ „”Õ «·„” ‰œ »‰Ã«Õ"
+End If
+End Sub
+Private Sub Twain_CanCloseTwain()
+    ' This event is called after you call Acquire.
+    ' It let's you know when it's safe to call CloseTwain.
+    twain.CloseTwain
+    ' Steps menu
+End Sub
+Private Function myReplaceImage(sDoc_no As String, Optional pFile As String = "") As Boolean
+Dim mstream As ADODB.Stream
+Set mstream = New ADODB.Stream
+
+mstream.Type = adTypeBinary ' Set the stream type to binary data
+mstream.Open
+
+On Error GoTo myerror
+Dim command As ADODB.command
+Dim aPrm As Variant
+aPrm = AddFlag(aPrm, "DOC_NO", sDoc_no)
+If pFile <> "" Then
+    mstream.LoadFromFile pFile
+    aPrm = AddFlag(aPrm, "IMAGE", mstream.Read)
+Else
+    Dim bytes() As Byte
+    ImgX1.Export.ToMemoryFile bytes, ixmfJPG
+    aPrm = AddFlag(aPrm, "IMAGE", bytes)
+End If
+
+Dim db As New clsData
+db.ConnectionString = strConDoc
+Set cm = db.cmd("dbo.sp_add_ship_doc", adStoredProc, aPrm)
+
+cleanUP:
+ImgX1.Images.Clear
+Set db = Nothing
+Exit Function
+myerror:
+Err.Clear
+Resume cleanUP
 End Function
 

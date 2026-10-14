@@ -193,11 +193,14 @@ Begin VB.MDIForm main
       Begin VB.Menu tmmovecust 
          Caption         =   "Õ—ﬂ… ⁄„·«¡ √Ã·"
       End
-      Begin VB.Menu tm_grid_inv_balance 
-         Caption         =   " ﬁ—Ì— «—’œ… «·›Ê« Ì—"
-      End
       Begin VB.Menu tm_list_price 
          Caption         =   "ﬁ«∆„… «”⁄«— «·⁄„·«¡"
+      End
+      Begin VB.Menu tm_grid_inv_balance 
+         Caption         =   " ›’Ì·Ì «—’œ… «·›Ê« Ì—"
+      End
+      Begin VB.Menu tm_grid_inv_balance_dtl 
+         Caption         =   "≈Ã„«·Ì «—’œ… «·›Ê« Ì—"
       End
       Begin VB.Menu tm_grd_InvCollect 
          Caption         =   "≈Ã„«·Ì  Õ’Ì· Œ·«· › —…"
@@ -1261,7 +1264,7 @@ aPublic(2) = "Desca"
 aPublic(3) = "ﬂÊœ «·„’—Ê›"
 aPublic(4) = "»Ì«‰ "
 aPublic(5) = "√ﬂÊ«œ „’«—Ì› ≈” Ì—«œÌ…"
-FlagFrm.bEdit = True
+FlagFrm.bedit = True
 FlagFrm.aPublic = aPublic
 FlagFrm.Show 1
 
@@ -1394,6 +1397,14 @@ Private Sub tm_grid_inv_balance_Click()
 grdInvBalance.Show
 End Sub
 
+Private Sub tm_grid_inv_balance_dtl_Click()
+On Error Resume Next
+grdInvBalanceTotal.Show
+Exit Sub
+myerror:
+MsgBox "Tested"
+End Sub
+
 Private Sub tm_list_price_Click()
 price_listfrm.Show
 End Sub
@@ -1448,7 +1459,7 @@ Private Sub tmagecode_Click()
     aLocal(4) = "»Ì«‰ "
     aLocal(5) = " ”ÃÌ· «·›∆«  «·⁄„—Ì…"
     aLocal(6) = 2
-    FlagFrm2.bEdit = True
+    FlagFrm2.bedit = True
     FlagFrm2.myPublic = aLocal
     FlagFrm2.Show 1
 End Sub
@@ -1556,7 +1567,7 @@ Private Sub tmbaltot_Click()
 End Sub
 
 Private Sub tmBankData_Click()
-    bankfrm.bEdit = True
+    bankfrm.bedit = True
     bankfrm.Show
 End Sub
 Private Sub tmbankDtl1_Click()
@@ -1570,12 +1581,12 @@ aPublic(2) = "Desca"
 aPublic(3) = "ﬂÊœ «·„Ã„Ê⁄…"
 aPublic(4) = "≈”„ «·„Ã„Ê⁄…"
 aPublic(5) = "„Ã„Ê⁄«  «·»‰Êﬂ"
-FlagFrm.bEdit = True
+FlagFrm.bedit = True
 FlagFrm.aPublic = aPublic
 FlagFrm.Show 1
 End Sub
 Private Sub tmBankInout_Click()
-    BankInOutfrm.bEdit = True
+    BankInOutfrm.bedit = True
     BankInOutfrm.Show
 End Sub
 Private Sub tmBankItems_Click()
@@ -1586,7 +1597,7 @@ aPublic(2) = "Desca"
 aPublic(3) = "ﬂÊœ «·Õ—ﬂ…"
 aPublic(4) = "≈”„ «·Õ—ﬂ…"
 aPublic(5) = "«ﬂÊ«œ Õ—ﬂ… «·»‰Êﬂ"
-FlagFrm.bEdit = True
+FlagFrm.bedit = True
 FlagFrm.aPublic = aPublic
 FlagFrm.Show
 End Sub
@@ -1615,7 +1626,7 @@ Private Sub tmbarcode2_Click()
     barcodefrm_2.Show
 End Sub
 Private Sub tmbox_Click()
-    Boxfrm.bEdit = True
+    Boxfrm.bedit = True
     Boxfrm.Show
 End Sub
 Private Sub tmboxbal_Click()
@@ -1623,10 +1634,10 @@ Private Sub tmboxbal_Click()
 End Sub
 Private Sub tmboxtrans_Click()
     If lIsBranchStore Then
-        boxtrans_2.bEdit = True
+        boxtrans_2.bedit = True
         boxtrans_2.Show
     Else
-        boxtransfrm.bEdit = True
+        boxtransfrm.bedit = True
         boxtransfrm.Show
     End If
 End Sub
@@ -1655,7 +1666,7 @@ Private Sub tmcash11_Click()
 End Sub
 
 Private Sub tmcashbranch_Click()
-    chargefrm.bEdit = True
+    chargefrm.bedit = True
     chargefrm.myPublic = 3
     chargefrm.Show
 End Sub
@@ -1665,13 +1676,13 @@ Private Sub tmcashser_Click()
 End Sub
 
 Private Sub tmcharge_Click()
-    chargefrm.bEdit = True
+    chargefrm.bedit = True
     chargefrm.myPublic = 1
     chargefrm.Show
 End Sub
 
 Private Sub tmcharge2_Click()
-    chargefrm.bEdit = True
+    chargefrm.bedit = True
     chargefrm.myPublic = 4
     chargefrm.Show
 End Sub
@@ -1679,7 +1690,7 @@ Private Sub tmchargecode_Click()
 '    chargecodefrm.bEdit = True
 '    chargecodefrm.myPublic = 1
 '    chargecodefrm.Show 1
-chargeCodesfrm.bEdit = True
+chargeCodesfrm.bedit = True
 chargeCodesfrm.myPublic = 1
 chargeCodesfrm.Show 1
 End Sub
@@ -1692,7 +1703,7 @@ aPublic(3) = "ﬂÊœ «·„’—Ê›"
 aPublic(4) = "»Ì«‰ «·„’—Ê›"
 aPublic(5) = "„’«—Ì› —∆Ì”Ì…"
 aPublic(6) = 3
-FlagFrm2.bEdit = True
+FlagFrm2.bedit = True
 FlagFrm2.myPublic = aPublic
 FlagFrm2.Show 1
 End Sub
@@ -1711,12 +1722,12 @@ End Sub
 Private Sub tmChqIn_Click()
 
     publicFlag = 1
-    bEdit = True
+    bedit = True
     chqClientfrm.Show 1
 End Sub
 Private Sub tmChqOut_Click()
 publicFlag = 2
-bEdit = True
+bedit = True
 chqsupfrm.Show 1
 End Sub
 Private Sub tmChqRep_Click()
@@ -1727,14 +1738,14 @@ Private Sub tmClientReport_Click()
 End Sub
 
 Private Sub tmcolor_Click()
-colorfrm.bEdit = True
+colorfrm.bedit = True
 colorfrm.Show
 End Sub
 Private Sub TMCustImp_Click()
 CustSalesImp.Show
 End Sub
 Private Sub tmCut_Click()
-Cutfrm.bEdit = True
+Cutfrm.bedit = True
 Cutfrm.Show
 End Sub
 Private Sub tmDamage_Click()
@@ -1904,7 +1915,7 @@ Private Sub tmgroupsection_Click()
     VsTGroup.Show
 End Sub
 Private Sub tmimpcost_Click()
-    impcostfrm.bEdit = True
+    impcostfrm.bedit = True
     impcostfrm.Show
 End Sub
 
@@ -1916,13 +1927,13 @@ Private Sub tminAGE_Click()
     VsAllTransage.Show
 End Sub
 Private Sub tmincome_Click()
-    chargefrm.bEdit = True
+    chargefrm.bedit = True
     chargefrm.myPublic = 2
     chargefrm.Show
 End Sub
 Private Sub tmincomecode_Click()
 chargeCodesfrm.myPublic = 2
-chargeCodesfrm.bEdit = True
+chargeCodesfrm.bedit = True
 chargeCodesfrm.Show 1
 End Sub
 Private Sub tmincomemaincode_Click()
@@ -1934,7 +1945,7 @@ aPublic(3) = "ﬂÊœ «·«Ì—«œ"
 aPublic(4) = "»Ì«‰ «·«Ì—«œ"
 aPublic(5) = "«Ì—«œ«  —∆Ì”Ì…"
 aPublic(6) = 3
-FlagFrm2.bEdit = True
+FlagFrm2.bedit = True
 FlagFrm2.myPublic = aPublic
 FlagFrm2.Show 1
 End Sub
@@ -1978,7 +1989,7 @@ aPublic(2) = "Desca"
 aPublic(3) = "«·ﬂÊœ"
 aPublic(4) = "«·»Ì«‰"
 aPublic(5) = "«·„Ã„Ê⁄… «·—∆Ì”Ì…"
-FlagFrm.bEdit = True
+FlagFrm.bedit = True
 FlagFrm.aPublic = aPublic
 FlagFrm.Show
 End Sub
@@ -1995,7 +2006,7 @@ aPublic(2) = "Desca"
 aPublic(3) = "«·ﬂÊœ"
 aPublic(4) = "«·»Ì«‰"
 aPublic(5) = "«·„Ã„Ê⁄… «·—∆Ì”Ì…"
-FlagFrm.bEdit = True
+FlagFrm.bedit = True
 FlagFrm.aPublic = aPublic
 FlagFrm.Show
 End Sub
@@ -2137,22 +2148,22 @@ Private Sub tmorderreponline_Click()
 End Sub
 
 Private Sub tmpart_Click()
-    Partfrm.bEdit = True
+    Partfrm.bedit = True
     Partfrm.Show
 End Sub
 Private Sub tmPath_Click()
     SettingFrm.Show 1
 End Sub
 Private Sub tmproduct_Click()
-    productfrm.bEdit = True
+    productfrm.bedit = True
     productfrm.Show
 End Sub
 Private Sub tmRawitem_Click()
-    itemrawfrm.bEdit = True
+    itemrawfrm.bedit = True
     itemrawfrm.Show 1
 End Sub
 Private Sub tmsection_Click()
-    sectionfrm.bEdit = True
+    sectionfrm.bedit = True
     sectionfrm.Show
 End Sub
 
@@ -2165,7 +2176,7 @@ aLocal(3) = "ﬂÊœ «·‘—Ìﬂ"
 aLocal(4) = "»Ì«‰ «·‘—Ìﬂ"
 aLocal(5) = " ”ÃÌ· «·‘—ﬂ«¡"
 aLocal(6) = 2
-FlagFrm2.bEdit = True
+FlagFrm2.bedit = True
 FlagFrm2.myPublic = aLocal
 FlagFrm2.Show
 End Sub
@@ -2561,7 +2572,7 @@ Private Sub tmsexcode_Click()
     aLocal(4) = "»Ì«‰ "
     aLocal(5) = " ”ÃÌ· «·‰Ê⁄"
     aLocal(6) = 2
-    FlagFrm2.bEdit = True
+    FlagFrm2.bedit = True
     FlagFrm2.myPublic = aLocal
     FlagFrm2.Show 1
 End Sub
@@ -2575,7 +2586,7 @@ aLocal(3) = "ﬂÊœ "
 aLocal(4) = "»Ì«‰ "
 aLocal(5) = "‘—ﬂ«  «·‘Õ‰"
 aLocal(6) = 2
-FlagFrm2.bEdit = True
+FlagFrm2.bedit = True
 FlagFrm2.myPublic = aLocal
 FlagFrm2.Show 1
 
@@ -2625,7 +2636,7 @@ aLocal(3) = "ﬂÊœ „Ã„Ê⁄…"
 aLocal(4) = "»Ì«‰ „Ã„Ê⁄« "
 aLocal(5) = "„Ã„Ê⁄«  „Ê—œÌ‰"
 aLocal(6) = 2
-FlagFrm2.bEdit = True
+FlagFrm2.bedit = True
 FlagFrm2.myPublic = aLocal
 FlagFrm2.Show 1
 End Sub
@@ -2647,12 +2658,12 @@ Private Sub tmTargetBr_Click()
 End Sub
 
 Private Sub tmtrans_br_Click()
-    trans_FR.bEdit = True
+    trans_FR.bedit = True
     trans_FR.Show
 End Sub
 
 Private Sub tmtrans_Click()
-    transfrm.bEdit = True
+    transfrm.bedit = True
     transfrm.Show
 End Sub
 
@@ -2669,7 +2680,7 @@ Private Sub tmtransbarcode_Click()
 End Sub
 
 Private Sub tmtranscode2_Click()
-    boxtrans_2.bEdit = True
+    boxtrans_2.bedit = True
     boxtrans_2.Show
 End Sub
 
@@ -2745,7 +2756,7 @@ aLocal(3) = "ﬂÊœ "
 aLocal(4) = "»Ì«‰ «·„‰«ÿﬁ"
 aLocal(5) = " ”ÃÌ· «·„‰«ÿﬁ"
 aLocal(6) = 1
-FlagFrm2.bEdit = True
+FlagFrm2.bedit = True
 FlagFrm2.myPublic = aLocal
 FlagFrm2.Show 1
 End Sub
@@ -2806,7 +2817,7 @@ Private Sub xItemMoveFR_Click()
 End Sub
 
 Private Sub xmcash3_Click()
-    bEdit = True
+    bedit = True
     Cashfrm.myPublic = 4
     Cashfrm.Show
 End Sub
@@ -2847,7 +2858,7 @@ aLocal(3) = "ﬂÊœ «·„Œ“‰"
 aLocal(4) = "»Ì«‰ «·„Œ“‰"
 aLocal(5) = " ”ÃÌ· « ·„Œ«“‰"
 aLocal(6) = 2
-FlagFrm2.bEdit = True
+FlagFrm2.bedit = True
 FlagFrm2.myPublic = aLocal
 FlagFrm2.Show 1
 End Sub
@@ -2918,7 +2929,7 @@ aLocal(3) = "ﬂÊœ"
 aLocal(4) = "≈”„ «·„Ã„Ê⁄…"
 aLocal(5) = " ”ÃÌ· «·⁄„·«¡"
 aLocal(6) = 2
-FlagFrm2.bEdit = True
+FlagFrm2.bedit = True
 FlagFrm2.myPublic = aLocal
 FlagFrm2.Show 1
 End Sub
@@ -3046,7 +3057,7 @@ aLocal(3) = "ﬂÊœ"
 aLocal(4) = "≈”„ «·„Ã„Ê⁄…"
 aLocal(5) = " ”ÃÌ· «·„Ê—œ"
 aLocal(6) = 2
-FlagFrm2.bEdit = True
+FlagFrm2.bedit = True
 FlagFrm2.myPublic = aLocal
 FlagFrm2.Show 1
 End Sub
@@ -3144,8 +3155,8 @@ Sub FixStoreCode()
 
 End Sub
 Sub Show_NewDoc()
-    Set grid1.DataSource = data1
-    data1.connectionString = strCon
+    Set grid1.DataSource = DATA1
+    DATA1.ConnectionString = strCon
     grid1.Rows = 1
     fixGrd
     myload
@@ -3154,8 +3165,8 @@ End Sub
 Private Sub myload()
     Dim cWhere As String
     cString = " SELECT     flag, desca, DOC_NO, DATE, [name], QUANT, USERSEND, TIMESEND FROM         Q_DATA_SEND "
-    data1.RecordSource = cString
-    data1.Refresh
+    DATA1.RecordSource = cString
+    DATA1.Refresh
     fixGrd
 End Sub
 Sub fixGrd()
@@ -3384,187 +3395,6 @@ cCatalog2 = RetSetting("CATALOG", App.Path & "\conf.txt")
 LoadConStringServer = "provider=SQLOLEDB;data source=" & cServerName & ";initial " _
             & "catalog=" & cCatalog2 & ";user id = " & cUserId & ";" & "password = " & cPassword & ";Timeout=10"
 End Function
-Sub FixData_ALL()
-Dim cString As String
-OpenCon con
-On Error Resume Next
-
-
-'cString = " ALTER TABLE [dbo].[FILE6_20] ADD    [S_OKAZ_2] [decimal](18, 2) NULL "
-'createCommand cString, con
-'
-'    cString = " DROP TABLE Q_RETBAL_ITEM"
-'    createCommand cString, con
-'''''
-'    cString = " CREATE TABLE [dbo].[Q_RETBAL_ITEM]( [DOC_NO] [varchar](12) NOT NULL,    [store] [nvarchar](3) NULL, [date] [datetime] NULL, [ITEM] [int] NULL,  [QUANT] [decimal](18, 2) NULL,  [QUANT_RET] [int] NOT NULL, [PRICE] [numeric](38, 6) NULL,  [TOTAL] [numeric](38, 5) NULL,  [rate] [decimal](18, 2) NOT NULL,   [PRICE_SALES] [numeric](38, 6) NULL,    [MAN] [nvarchar](5) NULL,   [DOC_DISC] [nvarchar](6) NULL) ON [PRIMARY]"
-'    createCommand cString, con
-'''''
-'    cString = " CREATE PROCEDURE [dbo].[retDOC_NO]  @DOC_NO  nVarChar(15), @RETURN NVARCHAR(15)  OUTPUT AS BEGIN DECLARE @MYDOC_NO NVARCHAR(15) SELECT @MYDOC_NO = QFILE6_20.DOC_NO  From QFILE6_20 where QFILE6_20.DOC_NO  = @DOC_NO  SET @RETURN = @MYDOC_NO END"
-'    createCommand cString, con
-'''''
-'    cString = " CREATE PROCEDURE [dbo].[SALES_DOC_FIND]     @DOC_NO NVARCHAR(15) AS BEGIN   SELECT  QFILE6_20H.* From QFILE6_20H WHERE DOC_NO = @DOC_NO END"
-'    createCommand cString, con
-'''''
-'    cString = " ALTER TABLE [dbo].[Q_RETBAL_ITEM] ADD   [S_OKAZ] [int] NULL"
-'    createCommand cString, con
-'''''
-'    cString = "ALTER TABLE [dbo].[FILE1_10]       ADD  [ISONLINE] [bit] NOT NULL CONSTRAINT [DF_FILE1_10_ISONLINE] DEFAULT ((0)) "
-'    createCommand cString, con
-'''''
-'    cString = "ALTER TABLE [dbo].[FILE1_10H]       ADD  [ISONLINE] [bit] NOT NULL CONSTRAINT [DF_FILE1_10H_ISONLINE] DEFAULT ((0)) "
-'    createCommand cString, con
-'''''
-'    cString = "ALTER TABLE [dbo].[FILE0_40]       ADD  [online] [bit] NOT NULL CONSTRAINT [DF_FILE0_40_online] DEFAULT ((0)) "
-'    createCommand cString, con
-'
-'    cString = " ALTER TABLE [dbo].[ADDRESS] ADD     [DATE1_DISC] [nvarchar](50) NULL,   [DATE2_DISC] [nvarchar](50) NULL,   [DISC] [numeric](18, 2) NULL     "
-'    createCommand cString, con
-'''''
-'
-'
-'    cString = " alter TABLE [dbo].[FILE6_20H] add   [note_ret] [nvarchar](100) NULL     "
-'    createCommand cString, con
-'''''
-'
-'
-'    cString = "ALTER TABLE [dbo].[FILE0_50]  ADD  [ISBOXONLINE] [bit] NOT NULL CONSTRAINT [DF_FILE0_50_ISBOXONLINE] DEFAULT ((0)) "
-'    createCommand cString, con
-'
-'
-'    cString = " alter TABLE [dbo].[FILE6_20H] add   [ONLINE_DOC] [nvarchar](10) NULL     "
-'    createCommand cString, con
-'
-'    cString = " alter TABLE [dbo].[FILE6_20H] add   [Shipping_City] [nvarchar](1000) NULL     "
-'    createCommand cString, con
-'
-'    cString = " alter TABLE [dbo].[FILE6_20H] add   [CITY] [nvarchar](1000) NULL     "
-'    createCommand cString, con
-'
-'    cString = " alter TABLE [dbo].[FILE6_20H] add   [STREET] [nvarchar](1000) NULL     "
-'    createCommand cString, con
-'
-'    cString = " alter TABLE [dbo].[FILE6_20H] add   [Payment_Method] [nvarchar](100) NULL     "
-'    createCommand cString, con
-'
-'    cString = " alter TABLE [dbo].[FILE6_20] add   [DESCA2] [nvarchar](1000) NULL     "
-'    createCommand cString, con
-'
-'    cString = " alter TABLE [dbo].[FILE6_20] add   [SKU] [nvarchar](20) NULL     "
-'    createCommand cString, con
-'
-'    If cBranch = "00" Then
-'        cString = " alter TABLE [dbo].[FILE6_90H] add   [SHIP_NO] [nvarchar](100) NULL     "
-'        createCommand cString, con
-'    End If
-'
-'    cString = " CREATE  PROCEDURE [dbo].[Ret_Phone]     @PHONE Varchar(15),     @RETURN NVARCHAR(200)  OUTPUT AS BEGIN  DECLARE @DESCA NVARCHAR(200)    SELECT TOP 1 @DESCA = DESCA From SUBCUST where PHONE  = @PHONE  SET @RETURN = @DESCA END    "
-'    createCommand cString, con
-'
-'    cString = " ALTER TABLE [dbo].[FILE6_20H] ADD   [ISNODEL] [bit] NOT NULL CONSTRAINT [DF_FILE6_20H_ISNODEL]  DEFAULT ((0))     "
-'    createCommand cString, con
-'
-'    cString = " ALTER TABLE [dbo].[FILE0_40] ADD   [ISNOGRDISC] [bit] NOT NULL CONSTRAINT [DF_FILE0_40_ISNOGRDISC]  DEFAULT ((0))     "
-'    createCommand cString, con
-'
-'    cString = " ALTER TABLE [dbo].[file6_20h] ADD [NORET_CHARGE1] [bit] NOT NULL CONSTRAINT [DF_file6_20H_NORET_CHARGE1] DEFAULT ((0))"
-'    createCommand cString, con
-'
-'    cString = ReadFile(App.Path & "\TXT\Q_SHIP.TXT")
-'    createCommand cString, con
-'
-'    cString = " alter TABLE [dbo].[FILE7_20H] add   [Notes] [nvarchar](100) NULL     "
-'    createCommand cString, con
-'
-'    cString = " alter TABLE [dbo].[FILE7_10H] add   [Notes] [nvarchar](100) NULL     "
-'    createCommand cString, con
-'
-'    cString = " alter TABLE [dbo].[FILE6_20H] add   [CARD_DISC] [nvarchar](10) NULL     "
-'    createCommand cString, con
-'
-'    cString = " alter TABLE [dbo].[FILE6_20H] add   [CARD_DOC] [nvarchar](6) NULL     "
-'    createCommand cString, con
-'
-'    cString = " alter TABLE [dbo].[FILE6_20H] add   [CARD_DESCA] [nvarchar](100) NULL     "
-'    createCommand cString, con
-'
-'    cString = " alter TABLE [dbo].[FILE6_20H] add   [CARD_VALUE] [numeric](18, 2) NULL   "
-'    createCommand cString, con
-'
-'    If cBranch = "00" Then
-'        cString = " alter TABLE [dbo].[FR6_20H] add   [CARD_DISC] [nvarchar](10) NULL     "
-'        createCommand cString, con
-'
-'        cString = " alter TABLE [dbo].[FR6_20H] add   [CARD_DOC] [nvarchar](6) NULL     "
-'        createCommand cString, con
-'
-'        cString = " alter TABLE [dbo].[FR6_20H] add   [CARD_DESCA] [nvarchar](100) NULL     "
-'        createCommand cString, con
-'
-'        cString = " alter TABLE [dbo].[FR6_20H] add   [CARD_VALUE] [numeric](18, 2) NULL   "
-'        createCommand cString, con
-'    End If
-'
-'    cString = " ALTER TABLE [dbo].[FILE6_20] ADD    [TIME_ADD] [datetime] NOT NULL CONSTRAINT [DF_FILE6_20_TIME_ADD]  DEFAULT (getdate())     "
-'    createCommand cString, con
-'
-'    cString = "ALTER TABLE [dbo].[SUB_USER]       ADD  [ISRETURN] [bit] NOT NULL CONSTRAINT [DF_SUB_USER_ISRETURN] DEFAULT ((0)) "
-'    createCommand cString, con
-'
-'    If lServerOnLine And cBranch = "00" Then
-'        cString = " CREATE view  [dbo].[QFILE7_20H] AS " & _
-'                    " SELECT        FILE7_20H.DOC_NO, FILE7_20H.store, FILE7_20H.date, SUM(FILE7_20.QUANT) AS QUANT , SUM(FILE7_20.TOTAL) AS TOTAL , FILE7_20H.discount, FILE7_20H.code, 1 AS iSBRANCH  , inv_no , FILE7_20H.MOSM AS MOSMINV , TAX FROM            FILE7_20H INNER JOIN FILE7_20 ON FILE7_20H.DOC_NO = FILE7_20.DOC_NO GROUP BY FILE7_20H.DOC_NO, FILE7_20H.store, FILE7_20H.date, FILE7_20H.discount, FILE7_20H.code, file7_20H.DISCOUNT , inv_no , FILE7_20H.MOSM , TAX " & _
-'                    " UNION ALL SELECT        FILE7_10H.DOC_NO, FILE7_10H.store, FILE7_10H.date,  SUM(FILE7_10.QUANT * -1 ) AS QUANT , SUM(FILE7_10.TOTAL * -1 ) AS TOTAL , FILE7_10H.discount * -1 , FILE7_10H.code, 1 AS iSBRANCH  , inv_no , FILE7_10H.MOSM AS MOSMINV , TAX * -1  AS TAX FROM            FILE7_10H INNER JOIN FILE7_10 ON FILE7_10H.DOC_NO = FILE7_10.DOC_NO GROUP BY FILE7_10H.DOC_NO, FILE7_10H.store, FILE7_10H.date, FILE7_10.ITEM, FILE7_10H.discount, FILE7_10H.code, file7_10H.DISCOUNT , inv_no , FILE7_10H.MOSM , TAX"
-'    createCommand cString, con
-'    End If
-'
-'    cString = " alter TABLE [dbo].[FR6_20] add   [MAN2] [nvarchar](10) NULL     "
-'    createCommand cString, con
-'    cString = " alter TABLE [dbo].[FILE6_20] add   [MAN2] [nvarchar](10) NULL     "
-'    createCommand cString, con
-'
-'    If cBranch <> "00" And Not lServerOnLine Then
-'        cString = " alter TABLE [dbo].[file1_10] add   [Outlet] [bit] NOT NULL CONSTRAINT [DF_1_10_Outlet] DEFAULT ((0))  "
-'        createCommand cString, con
-'
-'        cString = "  ALTER VIEW [dbo].[QFILE6_20] AS  SELECT        FILE6_20H.DOC_NO, FILE6_20H.store, FILE6_20H.date, FILE6_20H.CASH, FILE6_20H.VISA, FILE6_20H.BOX, FILE6_20H.PAY, FILE6_20H.branch, FILE6_20H.username_disc, FILE6_20.ITEM, FILE6_20.QUANT, (FILE6_20.PRICE ) AS PRICE, (FILE6_20.TOTAL ) AS TOTAL, FILE6_20H.discount, FILE6_20H.rate, FILE6_20.cost, FILE6_20.PRICE_C, FILE6_20.MAN, FILE6_20.ISDISC2_1,                          FILE6_20.S_OKAZ, FILE1_10.MODEL, FILE1_10.[GROUP], FILE1_10.code, FILE1_10.MOSM, FILE1_10.SECTION, 1 AS iSBRANCH, FILE6_20H.SALES_RET, FILE6_20H.username_ret, FILE6_20H.PHONE, FILE1_10.Outlet,                          FILE6_20H.DOC_DISC, FILE6_20H.CODE AS CUST, FILE6_20H.ISRET, FILE6_20H.ONLINE , SHIP , (FILE6_20H.cash + FILE6_20H.visa + FILE6_20H.point + FILE6_20H.late )  as T_BOON   , FILE6_20.MAN2 " & _
-'                    " FROM    FILE6_20H INNER JOIN FILE6_20 ON FILE6_20H.DOC_NO = FILE6_20.DOC_NO INNER JOIN FILE1_10 ON FILE6_20.ITEM = FILE1_10.ITEM"
-'        createCommand cString, con
-'
-'        cString = " CREATE VIEW [dbo].[STORE_ALL] AS SELECT        CODE, DESCA, BRANCH AS S_BRANCH , ISSTOP FROM            FILE0_40"
-'        createCommand cString, con
-'
-'        cString = " alter TABLE [dbo].[ADDRESS] add   [back] [nvarchar](6) NULL     "
-'        createCommand cString, con
-'
-'    End If
-'
-'    cString = " alter TABLE [dbo].[FILE6_20H]  add  [visa3] [decimal](18, 2) NOT NULL CONSTRAINT [DF_FILE6_20H_visa3]  DEFAULT ((0)),  [CODEVISA3] [nvarchar](6) NULL,     [TYPEVISA3] [nvarchar](3) NULL,     [VISADOC3] [nvarchar](50) NULL, [visa3_2] [decimal](18, 2) NOT NULL CONSTRAINT [DF_FILE6_20H_visa3_2]  DEFAULT ((0))  "
-'    createCommand cString, con
-'
-''    cString = ReadFile(App.Path & "\TXT\QQFILE6_20.TXT")
-''    createCommand cString, con
-''
-''    cString = ReadFile(App.Path & "\TXT\QQFILE6_20H.TXT")
-''    createCommand cString, con
-''
-''    cString = ReadFile(App.Path & "\TXT\QSALES_MODEL.TXT")
-''    createCommand cString, con
-''
-''    cString = ReadFile(App.Path & "\TXT\QSALESDTL.TXT")
-''    createCommand cString, con
-''
-''    cString = ReadFile(App.Path & "\TXT\QT_SALESDOC.TXT")
-''    createCommand cString, con
-
-    
-'    cString = "ALTER TABLE [dbo].[FILE0_00] ADD    [OKAZ_ITEM2] [bit] NULL"
-'    createCommand cString, con
-'    cString = "ALTER TABLE [dbo].[FILE0_00] DROP  COLUMN [OKAZ_ITEM]"
-'    createCommand cString, con
-'
-closeCon con
-Err.Clear
-End Sub
 Private Sub CheckData()
 If lServerOnLine Then Exit Sub
 If LCase(App.EXEName) <> LCase("JENUR_SHOP_TEMP") Then Exit Sub
@@ -3575,7 +3405,7 @@ Dim success As Long
 Dim sb As New ChilkatStringBuilder
 success = sb.LoadFile(App.Path & "\fix.sql", "utf-8")
 sMarker = "GO"
-Do Until sb.length = 0
+Do Until sb.Length = 0
     con.Execute sb.GetBefore(sMarker, True)
 Loop
 Err.Clear

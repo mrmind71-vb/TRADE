@@ -1168,11 +1168,11 @@ Attribute VB_GlobalNameSpace = False
 Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
-Public cDoc_No As String, myform As Form, nColItem As Integer, nColQuant As Long, sStore As String
+Public cDoc_No As String, myForm As Form, nColItem As Integer, nColQuant As Long, sStore As String
 Public sModel As String
 Public sSection As String
 Public bshowBal As Boolean, bshowcost As Boolean, bAddItem As Boolean
-Public SMosm As String, sSupp As String, SFact As String, SModelFact As String, Sdiscount As String
+Public sMosm As String, sSupp As String, sFact As String, SModelFact As String, Sdiscount As String
 Public bCost1 As Boolean
 Dim con As New ADODB.Connection
 Public strModel As String
@@ -1183,19 +1183,19 @@ Private Sub Check1_MouseUp(Button As Integer, Shift As Integer, X As Single, Y A
 If Check1.Value = 1 Then
     xMosm.BoundText = "000"
 Else
-    xMosm.BoundText = SMosm
+    xMosm.BoundText = sMosm
 End If
 End Sub
 Private Sub cmdAddItem_Click()
 If Not myValidAdd Then Exit Sub
 items.bAddModel = True
-items.bedit = True
+items.bEdit = True
 items.sModel = XMODEL.Caption
-items.sSupp = xSupp.Caption
-items.SFact = xFact.BoundText
-items.SMosm = xMosm.BoundText
+'items.sSupp = xSupp.Caption
+items.sFact = xFact.BoundText
+items.sMosm = xMosm.BoundText
 items.SModelFact = xModelFact.text
-items.sCode = purchasefrm.xCode.text
+items.sCode = purchasefrm.Xcode.text
 items.sSection = purchasefrm.xSection.BoundText
 items.Show 1
 If Not myload Then
@@ -1209,7 +1209,7 @@ Else
     Err.Clear
 End If
 End Sub
-Private Sub cmdExit_Click()
+Private Sub CmdExit_Click()
 Unload Me
 End Sub
 Private Sub cmdSave_Click()
@@ -1217,7 +1217,7 @@ If grid1.Cols <= 2 Then
     MsgBox "·«  ÊÃœ „ÊœÌ·«  ·«÷«› Â«"
     Exit Sub
 End If
-myform.myProcAddModel
+myForm.myProcAddModel
 xModelFact.text = ""
 myDefine
 On Error Resume Next
@@ -1238,7 +1238,7 @@ aPublic(2) = "Desca"
 aPublic(3) = "ﬂÊœ"
 aPublic(4) = "«·»Ì«‰"
 aPublic(5) = "«·„Õ·ÊŸ« "
-FlagFrm.bedit = True
+FlagFrm.bEdit = True
 FlagFrm.aPublic = aPublic
 FlagFrm.Show 1
 DATA3.Refresh
@@ -1257,39 +1257,39 @@ Private Sub Form_KeyUp(KeyCode As Integer, Shift As Integer)
 End Sub
 Private Sub Form_Load()
 Me.Top = 0: Me.Left = 0
-openCon con
+OpenCon con
 Set GRID20.DataSource = data20
-data20.ConnectionString = strCon
+data20.connectionString = strCon
 
-Set data1.Recordset = myRecordSet("SELECT CODE, DESCA FROM FACT ORDER BY DESCA ", con)
+Set data1.RecordSet = myRecordSet("SELECT CODE, DESCA FROM FACT ORDER BY DESCA ", con)
 Set xFact.RowSource = data1
 xFact.ListField = "DESCA"
 xFact.BoundColumn = "CODE"
 
-Set data2.Recordset = myRecordSet("SELECT * FROM MOSM ORDER BY DATE DESC ", con)
-Set xMosm.RowSource = data2
+Set DATA2.RecordSet = myRecordSet("SELECT * FROM MOSM ORDER BY DATE DESC ", con)
+Set xMosm.RowSource = DATA2
 xMosm.ListField = "MOSM"
 xMosm.BoundColumn = "MOSM"
 If xMosm.BoundText = "" Then xMosm.BoundText = purchasefrm.xMosm.BoundText
 
-Set DATA3.Recordset = myRecordSet("SELECT * FROM REMARK ORDER BY DESCA", con)
+Set DATA3.RecordSet = myRecordSet("SELECT * FROM REMARK ORDER BY DESCA", con)
 Set xRemark.RowSource = DATA3
 xRemark.ListField = "DESCA"
 xRemark.BoundColumn = "DESCA"
 xRemark.BoundText = purchasefrm.xMosm.BoundText
 
 myDefineGrd
-Fixgrd
+fixGrd
 
 Fixgrd2
 
 GRID20.Visible = (purchasefrm.myPublic = 0 Or purchasefrm.myPublic = 1)
 
 XMODEL.Caption = sModel
-xMosm.BoundText = SMosm
-xSupp.Caption = sSupp
-xFact.BoundText = SFact
-xCodeSub.Caption = SFact
+xMosm.BoundText = sMosm
+'xSupp.Caption = sSupp
+xFact.BoundText = sFact
+xCodeSub.Caption = sFact
 xModelFact.text = SModelFact
 xDiscount.text = Sdiscount
 Handlecontrols
@@ -1328,11 +1328,11 @@ cFieldas = aRet(1)
 
 FillItem cFieldas, cField
 FixCost cFieldas, cField
-Fixgrd
+fixGrd
 CalcTotals
 myLoadModelgrd = True
 End Function
-Private Sub Fixgrd()
+Private Sub fixGrd()
 With grid1
 .ColHidden(0) = True
 '.ColWidth(0) = 500
@@ -1349,8 +1349,8 @@ End With
 End Sub
 Private Sub myDefineGrd()
 GRID20.Rows = 1
-GRID2.Rows = 3
-GRID2.Cols = 2
+grid2.Rows = 3
+grid2.Cols = 2
 
 grid1.Rows = 3
 grid1.Cols = 2
@@ -1385,7 +1385,7 @@ Else
               "(" & cField & ")" & _
               ") as pvt  "
 End If
-Dim loctable As New ADODB.Recordset
+Dim loctable As New ADODB.RecordSet
 loctable.Open cString, con, adOpenStatic, adLockReadOnly, adCmdText
 If Not loctable.EOF Then
     For nCol = 2 To grid1.Cols - 1
@@ -1415,14 +1415,14 @@ Set loctable = Nothing
 End Sub
 Private Function retFields()
 Dim aRet(1) As String
-Dim FieldTable As New ADODB.Recordset
+Dim FieldTable As New ADODB.RecordSet
 '  ⁄—Ì› «·«⁄„œ…
 Dim cString As String, cWhere As String
 FieldTable.Open "Select SCAL from file1_10 where model = " & MyParn(XMODEL.Caption) & " GROUP BY SCAL,C_SCAL order by c_scal", con, adOpenStatic, adLockReadOnly
 Do Until FieldTable.EOF
-    If Not IsNull(FieldTable!scal) Then
-        cFieldas = cFieldas & turn(cField, ",") & "[" & FieldTable!scal & "]" & " as " & "[" & FieldTable!scal & "]"
-        cField = cField & turn(cField, ",") & "[" & FieldTable!scal & "]"
+    If Not IsNull(FieldTable!SCAL) Then
+        cFieldas = cFieldas & turn(cField, ",") & "[" & FieldTable!SCAL & "]" & " as " & "[" & FieldTable!SCAL & "]"
+        cField = cField & turn(cField, ",") & "[" & FieldTable!SCAL & "]"
     End If
     FieldTable.MoveNext
 Loop
@@ -1435,7 +1435,7 @@ FieldTable.Close
 Set FieldTable = Nothing
 End Function
 Private Sub FillItem(cFieldas, cField)
-Dim GrdTable As New ADODB.Recordset, cString As String
+Dim GrdTable As New ADODB.RecordSet, cString As String
 ' „·∆ «·ÃœÊ·
 cString = "Select c_color as [—ﬁ„ «··Ê‰] ,color as [«··Ê‰] " & turn(cFieldas, ",") & cFieldas & _
           " From " & _
@@ -1448,25 +1448,25 @@ cString = "Select c_color as [—ﬁ„ «··Ê‰] ,color as [«··Ê‰] " & turn(cFieldas, ",
           " order by pvt.C_color"
 
 GrdTable.Open cString, con, adOpenStatic, adLockReadOnly, adCmdText
-grid1.Cols = GrdTable.Fields.Count: GRID2.Cols = GrdTable.Fields.Count
+grid1.Cols = GrdTable.Fields.Count: grid2.Cols = GrdTable.Fields.Count
 
 For nCol = 2 To GrdTable.Fields.Count - 1
     grid1.TextMatrix(0, nCol) = GrdTable.Fields(nCol).Name
 Next
 xedit.Value = 0
 Do Until GrdTable.EOF
-    GRID2.AddItem ""
+    grid2.AddItem ""
     grid1.AddItem ""
     For nCol = 0 To GrdTable.Fields.Count - 1
         If nCol <= 1 Then
-            grid1.TextMatrix(GRID2.Rows - 1, nCol) = GrdTable.Fields(nCol).Value & ""
+            grid1.TextMatrix(grid2.Rows - 1, nCol) = GrdTable.Fields(nCol).Value & ""
         Else
-            GRID2.TextMatrix(GRID2.Rows - 1, nCol) = GrdTable.Fields(nCol).Value & ""
-            nFoundRow = myform.grid1.FindRow(GrdTable.Fields(nCol).Value & "", , nColItem)
+            grid2.TextMatrix(grid2.Rows - 1, nCol) = GrdTable.Fields(nCol).Value & ""
+            nFoundRow = myForm.grid1.FindRow(GrdTable.Fields(nCol).Value & "", , nColItem)
             If nFoundRow <> -1 Then
                 xedit.Value = 1
-                 grid1.TextMatrix(grid1.Rows - 1, nCol) = Myvalue(myform.grid1.TextMatrix(nFoundRow, nColQuant))
-                 If Val(myform.grid1.TextMatrix(nFoundRow, myform.grid1.Cols - 1)) Then xTrust_model.Value = 1
+                 grid1.TextMatrix(grid1.Rows - 1, nCol) = Myvalue(myForm.grid1.TextMatrix(nFoundRow, nColQuant))
+                 If Val(myForm.grid1.TextMatrix(nFoundRow, myForm.grid1.Cols - 1)) Then xTrust_model.Value = 1
              Else
                  grid1.TextMatrix(grid1.Rows - 1, nCol) = ""
              End If
@@ -1478,21 +1478,21 @@ GrdTable.Close
 Set GrdTable = Nothing
 End Sub
 Private Sub myDefine()
-XDESCA.Caption = ""
+xDescA.Caption = ""
 XMODEL.Caption = ""
-XDESCA.Caption = ""
+xDescA.Caption = ""
 xTrust_model.Value = 0
 xDiscount.text = ""
 myLoadPicture ""
 myDefineGrd
 Handlecontrols
 End Sub
-Private Sub grid1_AfterEdit(ByVal Row As Long, ByVal Col As Long)
+Private Sub Grid1_AfterEdit(ByVal Row As Long, ByVal Col As Long)
 If Col >= 2 And Row = 3 Then
     If emptyRow(grid1, Row, Col + 1) Then
         If xedit.Value = 0 Then
-            For I = Col To grid1.Cols - 1
-                grid1.TextMatrix(Row, I) = grid1.TextMatrix(Row, Col)
+            For i = Col To grid1.Cols - 1
+                grid1.TextMatrix(Row, i) = grid1.TextMatrix(Row, Col)
             Next
         End If
     End If
@@ -1505,7 +1505,7 @@ If bshowBal And grid1.Cols > 2 And grid1.Rows > 3 And strStore <> "" Then
     'xBalance_Item.Caption = Balance_sales(Grid2.TextMatrix(grid1.Row, grid1.Col), strStore, con)
 End If
 End Sub
-Private Sub Grid1_GotFocus()
+Private Sub grid1_GotFocus()
 With grid1
     If .Cols > 2 And .Rows > 3 Then
         .Select 3, 2
@@ -1535,7 +1535,7 @@ If KeyCode = 13 Then
 End If
 End Sub
 
-Private Sub Grid1_ValidateEdit(ByVal Row As Long, ByVal Col As Long, Cancel As Boolean)
+Private Sub grid1_ValidateEdit(ByVal Row As Long, ByVal Col As Long, Cancel As Boolean)
 If (Not IsNumeric(grid1.EditText)) Then
     Cancel = True
     Exit Sub
@@ -1564,7 +1564,7 @@ Private Sub XModel_LostFocus()
 myLostFocus XMODEL
 End Sub
 Sub myProc()
-On Error GoTo myerror
+On Error GoTo myError
 If ActiveControl.Name = CMD_MODEL.Name Then
     XMODEL.Caption = oSearchItem.grid1.TextMatrix(oSearchItem.grid1.Row, 0)
     Unload oSearchItem
@@ -1582,17 +1582,17 @@ Else
     Unload oSearchRemark
 End If
 Exit Sub
-myerror:
+myError:
 End Sub
 Private Function myloadModel() As Boolean
 myDefineGrd
-GRID2.Rows = 1
+grid2.Rows = 1
 If Trim(XMODEL.Caption) = "" Then Exit Function
-Dim loctable As New ADODB.Recordset, cString As String
+Dim loctable As New ADODB.RecordSet, cString As String
 Set loctable = ModelFind(Mid(XMODEL.Caption, 1, 16), con)
 If Not (loctable.EOF And loctable.BOF) Then
     XMODEL.Caption = loctable!MODEL
-    XDESCA.Caption = loctable!DESCA & ""
+    xDescA.Caption = loctable!DESCA & ""
     xFact.BoundText = loctable!Fact
     xCodeSub.Caption = xFact.BoundText
     xMosm.BoundText = loctable!MOSM
@@ -1615,9 +1615,9 @@ Next
 xTotal.Caption = Myvalue(nTotal)
 End Sub
 
-Private Sub xbarcode_KeyPress(KeyAscii As Integer)
+Private Sub XBARCODE_KeyPress(KeyAscii As Integer)
 If KeyAscii = 13 And xbarcode.text <> "" Then
-    aRet = aGetDesca("select model , modelfact , fact , mosm from file1_10 where code = " & MyParn(purchasefrm.xCode.text) & " and item = " & Val(xbarcode.text), con)
+    aRet = aGetDesca("select model , modelfact , fact , mosm from file1_10 where code = " & MyParn(purchasefrm.Xcode.text) & " and item = " & Val(xbarcode.text), con)
     If UBound(aRet) > 0 Then
         xModelFact.text = aRet(2)
         xFact.BoundText = aRet(3)
@@ -1691,7 +1691,8 @@ End Sub
 Private Function myload() As Boolean
 Dim sSubMosm As String
 If xMosm.MatchedWithList And xFact.MatchedWithList And Trim(xModelFact.text) <> "" Then
-    If XMODEL.Caption = "" Then XMODEL.Caption = xFact.BoundText & xMosm.text & RetZero(xModelFact.text, 10) & retCode(purchasefrm.xCode.text, con)
+    'If XMODEL.Caption = "" Then XMODEL.Caption = xFact.BoundText & xMosm.text & RetZero(xModelFact.text, 10) & retCode(purchasefrm.Xcode.text, con)
+    XMODEL.Caption = xFact.BoundText & xMosm.text & RetZero(xModelFact.text, 10)
 '        Dim loctable As ADODB.Recordset
 '        Set loctable = ItemFind(sitem, con)
 '        If Not (loctable.EOF And loctable.BOF) Then
@@ -1703,7 +1704,7 @@ If xMosm.MatchedWithList And xFact.MatchedWithList And Trim(xModelFact.text) <> 
             If sSubMosm <> "" And sSubMosm <> xMosm.BoundText Then
                 If MsgBox(" «·„ÊœÌ· „”Ã· ⁄·Ï „Ê”„ „Õ ·› -  ”ÃÌ· «·„ÊœÌ· " & xMosm.BoundText, vbYesNo) = vbYes Then
                     xMosm.BoundText = sSubMosm
-                    XMODEL.Caption = xFact.BoundText & xMosm.text & RetZero(xModelFact.text, 10) & retCode(purchasefrm.xCode.text, con)
+                    XMODEL.Caption = xFact.BoundText & xMosm.text & RetZero(xModelFact.text, 10)
                 End If
             End If
         End If
@@ -1717,7 +1718,7 @@ myload = myloadModel
 End Function
 Private Sub Handlecontrols()
 'xModelFact.Enabled = sModelFact = ""
-xFact.Enabled = SFact = ""
+xFact.Enabled = sFact = ""
 End Sub
 Private Sub xMosm_Validate(Cancel As Boolean)
 myload
@@ -1770,11 +1771,11 @@ End If
 myValidAdd = True
 End Function
 Private Sub LoadPhoto(sModelNo As String)
-On Error GoTo myerror
+On Error GoTo myError
 ImgX1.Images.Clear
 If Trim(sModelNo) <> "" Then ImgX1.Import.FromFile retFile(sModelNo)
 Exit Sub
-myerror:
+myError:
 Err.Clear
 End Sub
 Sub myloadgrd2()
@@ -1788,7 +1789,7 @@ Sub myloadgrd2()
             " FROM    FILE1_10 INNER JOIN FILE1_11 ON FILE1_10.ITEM = FILE1_11.ITEM  INNER JOIN FILE4_10 ON FILE1_10.code = FILE4_10.CODE  WHERE FILE1_10.MODELNO = " & MyParn(cModelNo) & _
             " AND (FILE1_11.TYPE = '2' OR FILE1_11.TYPE = '7')"
     cString = cString & " GROUP BY  FILE1_10.MODEL , FILE4_10.CODE, FILE4_10.DESCA, FILE1_11.DATE, FILE1_11.DOC_ID  ORDER BY FILE1_11.DATE , FILE4_10.CODE "
-    Set data20.Recordset = myRecordSet(cString, con)
+    Set data20.RecordSet = myRecordSet(cString, con)
     Fixgrd2
 End Sub
 Sub Fixgrd2()
@@ -1884,7 +1885,7 @@ Private Sub Cmd_Model_Click()
     ModelLookupAll Me, oSearchItem
 End Sub
 Private Sub xModel_Change()
-            myLoadPicture Mid(XMODEL.Caption, 1, 16)
+    myLoadPicture Mid(XMODEL.Caption, 1, 16)
 End Sub
 Private Sub myLoadPicture(pModel As String)
 On Error Resume Next
@@ -1892,7 +1893,7 @@ On Error Resume Next
     ImgX1.Images.Clear
     If pModel = "" Then Exit Sub
     If conPict Is Nothing Then Exit Sub
-    Dim loctable As Recordset
+    Dim loctable As RecordSet
     Dim bytes() As Byte, nSize As Long
     ImgX1.Images.Clear
     Set loctable = myRecordSet("select PICT,size from PICT where MODELNO = " & MyParn(pModel), conPict)

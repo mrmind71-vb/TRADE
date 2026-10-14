@@ -590,7 +590,7 @@ Attribute VB_GlobalNameSpace = False
 Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
-Dim nTimes As Integer, nTime, userTable As Recordset
+Dim nTimes As Integer, nTime, userTable As RecordSet
 Dim con As New ADODB.Connection
 Private Sub CmdApply_Click()
 On Error GoTo LOCALERROR
@@ -665,7 +665,7 @@ Else
     If Not (sectable.EOF And sectable.BOF) Then
         
         nusercode = sectable!code
-        cusername = sectable!desca & ""
+        cusername = sectable!DESCA & ""
         bopt1 = sectable!Option1
         bopt2 = sectable!Option2
         bopt3 = sectable!Option3
@@ -734,7 +734,7 @@ LOCALERROR:
     MsgBox Err.Description
     Err.Clear
 End Sub
-Private Sub cmdExit_Click()
+Private Sub CmdExit_Click()
 Unload Me
 End Sub
 Private Sub Form_Activate()
@@ -748,7 +748,7 @@ Private Sub Form_KeyPress(KeyAscii As Integer)
     End If
 End Sub
 Private Sub Form_Load()
-On Error GoTo myerror
+On Error GoTo myError
 Dim fs As New FileSystemObject
 Dim bMain As Boolean, cString As String
 bMain = True
@@ -781,6 +781,7 @@ cBranchBox = RetSetting("BOX", "C:\TempMrshd\BRANCH_J.txt")
 cManBox = cBranchBox
     
 strCon = LoadConString
+strConDoc = loadConStringDoc
 strConfact = LoadConStringfact
 strConfact2 = LoadConStringfact2
 strConfact3 = LoadConStringfact3
@@ -827,9 +828,9 @@ If strConPICT <> "" Then openConPICT conPict
 StatusBar1.Panels(1).text = "19.01.2024 JENUR_SHOP"
 StatusBar1.Panels(2).text = RetSetting("SERVER", cPathConf & "\CONF.TXT")
 
-Set grid1.DataSource = DATA2
+Set grid1.DataSource = data2
 cString = "SELECT MOSM , DESCA FROM MOSM WHERE CLOSED = 0 ORDER BY DATE DESC "
-Set DATA2.Recordset = myRecordSet(cString, con)
+Set data2.RecordSet = myRecordSet(cString, con)
 
 Set GRBRANCH.DataSource = DATA3
 If cBranch = "00" Then
@@ -837,7 +838,7 @@ If cBranch = "00" Then
 Else
     cString = "SELECT CODE , DESCA FROM  QBRANCH_ALL WHERE CODE = " & MyParn(cBranch)
 End If
-Set DATA3.Recordset = myRecordSet(cString, con)
+Set DATA3.RecordSet = myRecordSet(cString, con)
 
 With grid1
     .Cols = 2
@@ -855,9 +856,9 @@ With GRBRANCH
 End With
 
 If lIsBranchStore Then
-    Set data1.Recordset = myRecordSet("SELECT * FROM USERS WHERE BRANCH = " & MyParn(cBranch), con)
+    Set data1.RecordSet = myRecordSet("SELECT * FROM USERS WHERE BRANCH = " & MyParn(cBranch), con)
 Else
-    Set data1.Recordset = myRecordSet("SELECT * FROM USERS WHERE BRANCH IS NULL ", con)
+    Set data1.RecordSet = myRecordSet("SELECT * FROM USERS WHERE BRANCH IS NULL ", con)
 End If
 Set xUser.RowSource = data1
 xUser.ListField = "Desca"
@@ -868,7 +869,7 @@ Set rsBranch = createRs(cmd("select * from branch where code = " & MyParn(cBranc
 Set rsBranches = createRs(cmd("select * from BRANCH", con).Execute)
 
 Exit Sub
-myerror:
+myError:
     
     MsgBox Err.Description
 '    confFrm.Show 1
@@ -896,7 +897,7 @@ If Not fs.FileExists(tempPath & "\BRANCH_J.txt") And fs.FileExists(App.Path & "\
 End If
 Me.Caption = "JUNIOR"
 Exit Sub
-myerror:
+myError:
 MsgBox "ãÔßáÉ Ýì äÓÎ ÇáãáÝ ÇáãÄÞÊ" & vbCrLf & Err.Number & vbCrLf & Err.Description
 Err.Clear
 End Sub
@@ -992,7 +993,7 @@ Private Sub SaveSetting()
 addSetting "user", xUser.BoundText, tempPath & "\password.txt"
 End Sub
 Private Sub grid1_DblClick()
-    On Error GoTo myerror
+    On Error GoTo myError
     If grid1.Row >= 0 Then
         cPMosm = grid1.TextMatrix(grid1.Row, 0)
         cPMosmD = grid1.TextMatrix(grid1.Row, 1)
@@ -1000,7 +1001,7 @@ Private Sub grid1_DblClick()
         Main.Show
     End If
     Exit Sub
-myerror:
+myError:
     MsgBox Err.Description
     Err.Clear
 End Sub
@@ -1060,7 +1061,7 @@ End If
 testData = "ok"
 End Function
 Private Function CreateRemote() As String
-On Error GoTo myerror
+On Error GoTo myError
 Dim conMaster As New ADODB.Connection
 Dim cString As String, cServerName As String
 cServerName = MyParn("." & turn(cExpress, "\") & cExpress)
@@ -1074,12 +1075,12 @@ createCommand cString, conMaster
 closeCon conMaster
 CreateRemote = "ok"
 Exit Function
-myerror:
+myError:
    CreateRemote = Err.Description
    Err.Clear
 End Function
 Private Function createLogin() As String
-On Error GoTo myerror
+On Error GoTo myError
 Dim conMaster As New ADODB.Connection
 Dim cServerName As String, cString As String
 cServerName = MyParn("." & turn(cExpress, "\") & cExpress)
@@ -1092,12 +1093,12 @@ createCommand cString, conMaster
 closeCon conMaster
 createLogin = "ok"
 Exit Function
-myerror:
+myError:
    createLogin = Err.Description
    Err.Clear
 End Function
 Private Function AttachData() As String
-On Error GoTo myerror
+On Error GoTo myError
 Dim conMaster As New ADODB.Connection
 Dim cString As String, cServerName As String
 cServerName = MyParn("." & turn(cExpress, "\") & cExpress)
@@ -1115,12 +1116,12 @@ createCommand cString, conMaster
 closeCon conMaster
 AttachData = "ok"
 Exit Function
-myerror:
+myError:
    AttachData = Err.Description
    Err.Clear
 End Function
 Private Function bringOnLine() As String
-On Error GoTo myerror
+On Error GoTo myError
 Dim conMaster As New ADODB.Connection
 Dim cString As String, cServerName As String
 cServerName = MyParn("." & turn(cExpress, "\") & cExpress)
@@ -1137,7 +1138,7 @@ FS1.CommandText = cString
 FS1.Execute
 bringOnLine = "ok"
 Exit Function
-myerror:
+myError:
 bringOnLine = Err.Description
 Err.Clear
 End Function
@@ -1293,18 +1294,18 @@ End Function
 
 
 Sub FixAddress()
-Dim loctable As New ADODB.Recordset
-loctable.Open "select * From Address", con, adOpenStatic, adLockReadOnly
-If Not (loctable.EOF And loctable.BOF) Then
-    cComp_Name = loctable!desca & ""
-    cComp_address = loctable!Address & ""
-    cComp_Phone = loctable!phone & ""
-    cComp_Head1 = loctable!HEAD1 & ""
-    cComp_Head2 = loctable!HEAD2 & ""
-    nCountPrint = Val(loctable!COUNTPRINT & "")
-    nLang_Boon = Val(loctable!lang & "")
+Dim locTable As New ADODB.RecordSet
+locTable.Open "select * From Address", con, adOpenStatic, adLockReadOnly
+If Not (locTable.EOF And locTable.BOF) Then
+    cComp_Name = locTable!DESCA & ""
+    cComp_address = locTable!Address & ""
+    cComp_Phone = locTable!phone & ""
+    cComp_Head1 = locTable!HEAD1 & ""
+    cComp_Head2 = locTable!HEAD2 & ""
+    nCountPrint = Val(locTable!COUNTPRINT & "")
+    nLang_Boon = Val(locTable!lang & "")
 End If
-loctable.Close
-Set loctable = Nothing
+locTable.Close
+Set locTable = Nothing
 End Sub
 

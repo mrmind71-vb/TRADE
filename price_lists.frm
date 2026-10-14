@@ -1131,14 +1131,14 @@ Dim aInsert As Variant
 aInsert = AddFlag(aInsert, "[NOTES]", addstring(xNotes.text))
 On Error GoTo myError
 con.BeginTrans
-If xdoc_no.Tag = DefineMode Then
-    xdoc_no.text = NewFlag("FILE6_53H", "DOC_NO", con)
-    aInsert = AddFlag(aInsert, "DOC_NO", xdoc_no.text)
+If xDoc_No.Tag = DefineMode Then
+    xDoc_No.text = Newflag("FILE6_53H", "DOC_NO", con)
+    aInsert = AddFlag(aInsert, "DOC_NO", xDoc_No.text)
     aInsert = AddFlag(aInsert, "[USERNAME]", addstring(cusername))
     con.Execute addInsert(aInsert, "FILE6_53H")
 Else
     aInsert = AddFlag(aInsert, "[USERNAME2]", addstring(cusername))
-    con.Execute addUpdate(aInsert, "FILE6_53H", "DOC_NO = " & addstring(xdoc_no.text))
+    con.Execute addUpdate(aInsert, "FILE6_53H", "DOC_NO = " & addstring(xDoc_No.text))
 End If
 If Row > 0 Then myreplaceGrd Row
 con.CommitTrans
@@ -1168,11 +1168,11 @@ If ActiveControl.Name = grid1.Name Then
     GrdDesc grid1.TextMatrix(grid1.Row, 1), grid1.Row
     Grid1_AfterEdit grid1.Row, grid1.Col
 ElseIf ActiveControl.Name = cmdInform.Name Then
-    xdoc_no.text = oSearchDoc.grid1.TextMatrix(oSearchDoc.grid1.Row, 0)
+    xDoc_No.text = oSearchDoc.grid1.TextMatrix(oSearchDoc.grid1.Row, 0)
     Unload oSearchDoc
     myUndo
-ElseIf ActiveControl.Name = Xcode.Name Then
-    Xcode.text = oSearchClientLook.grid1.TextMatrix(oSearchClientLook.grid1.Row, 0)
+ElseIf ActiveControl.Name = xCode.Name Then
+    xCode.text = oSearchClientLook.grid1.TextMatrix(oSearchClientLook.grid1.Row, 0)
     oSearchClientLook.Hide
     SendKeys "{tab}"
 ElseIf ActiveControl.Name = cmdClient.Name Then
@@ -1183,7 +1183,7 @@ ElseIf ActiveControl.Name = cmdClient.Name Then
         cmdClient.Tag = osearchClient.grid1.TextMatrix(osearchClient.grid1.Row, 0)
         cmdClient.Caption = osearchClient.grid1.TextMatrix(osearchClient.grid1.Row, 1)
     End If
-    If Not openCardTable(tbMode.tbFind, xdoc_no.text) Then
+    If Not openCardTable(tbMode.tbFind, xDoc_No.text) Then
         If Not openCardTable Then myDefine
     End If
     osearchClient.Hide
@@ -1214,11 +1214,11 @@ If MsgBox("Õ–› «·„” ‰œ »«·ﬂ«„·  ?, Â· «‰  „Ê«›ﬁ ø", vbOKCancel + vbDefaultButton
 End If
 
 con.BeginTrans
-con.Execute "Delete  From FILE6_53 where Doc_No = " & xdoc_no.text
-con.Execute "Delete  From FILE6_53H where Doc_No = " & xdoc_no.text
+con.Execute "Delete  From FILE6_53 where Doc_No = " & xDoc_No.text
+con.Execute "Delete  From FILE6_53H where Doc_No = " & xDoc_No.text
 con.CommitTrans
     
-If Not openCardTable(tbMode.tbPrevious, xdoc_no.text) Then
+If Not openCardTable(tbMode.tbPrevious, xDoc_No.text) Then
     If Not openCardTable(tbMode.tbFirst) Then
         myDefine
     End If
@@ -1261,14 +1261,14 @@ End Sub
 Private Sub CmdNewInv_Click()
 myDefine
 On Error Resume Next
-Xcode.SetFocus
+xCode.SetFocus
 Err.Clear
 End Sub
 Private Sub cmdSave_Click()
 If myreplace Then
     Inform " „ «·Õ›Ÿ »‰Ã«Õ"
 End If
-If Not openCardTable(tbMode.tbFind, xdoc_no.text) Then
+If Not openCardTable(tbMode.tbFind, xDoc_No.text) Then
     If Not openCardTable Then myDefine
 End If
 End Sub
@@ -1277,7 +1277,7 @@ myUndo
 End Sub
 Private Sub Form_Activate()
 If Not bAct Then
-    If xdoc_no.Tag = LoadMode Then
+    If xDoc_No.Tag = LoadMode Then
         On Error Resume Next
         grid1.SetFocus
         CellPos 13, grid1.Rows - 2, grid1.Cols - 1
@@ -1305,7 +1305,7 @@ Private Sub Form_Load()
 On Error GoTo myError
 bEdit = True
 
-OpenCon con
+openCon con
 nRound = 0
 
 If Not openCardTable Then myDefine
@@ -1361,8 +1361,8 @@ If Row = grid1.Rows - 1 Then
 End If
 
 If myreplace(Row) Then
-    If xdoc_no.Tag = DefineMode Then
-        openCardTable tbMode.tbFind, xdoc_no.text
+    If xDoc_No.Tag = DefineMode Then
+        openCardTable tbMode.tbFind, xDoc_No.text
     ElseIf grid1.TextMatrix(Row, grid1.Cols - 1) = "" Then
         grid1.TextMatrix(Row, grid1.Cols - 1) = get_Id(con)
     End If
@@ -1465,7 +1465,7 @@ End If
 MYVALID = True
 End Function
 Private Sub myload()
-xdoc_no.text = CardTable!doc_no
+xDoc_No.text = CardTable!doc_no
 xNotes.text = CardTable!NOTES & ""
 panel1(0).Caption = CardTable!UserName & ""
 
@@ -1479,7 +1479,7 @@ grid1.SetFocus
 Err.Clear
 End Sub
 Private Sub myDefine()
-xdoc_no.text = NewFlag("FILE6_53H", "DOC_NO", con)
+xDoc_No.text = Newflag("FILE6_53H", "DOC_NO", con)
 
 xNotes.text = ""
 panel1(1).Caption = GetComputerName
@@ -1488,7 +1488,7 @@ panel1(2).Caption = cusername
 grid1.Rows = 1
 myAddItem
 
-Fixgrd
+fixGrd
 
 Handlecontrols DefineMode
 
@@ -1501,14 +1501,14 @@ Private Sub Handlecontrols(nMode)
 bEditRecord = bEdit
 cmdNewInv.Enabled = bEdit And nMode = LoadMode
 
-xdoc_no.Tag = nMode
+xDoc_No.Tag = nMode
 
 
 cmdSave.Enabled = bEditRecord
 cmddel.Enabled = (bEditRecord Or bDelRecord) And nMode = LoadMode
 
 Dim nRecord As Long, nRecords As Long
-retRecords xdoc_no.text, nRecords, nRecord
+retRecords xDoc_No.text, nRecords, nRecord
 
 cmdNext.Enabled = nRecord < nRecords And nRecords <> 0 And nMode = LoadMode
 cmdPrevious.Enabled = nRecord <> 1 And nRecords <> 0 And nMode = LoadMode
@@ -1608,9 +1608,9 @@ oSearchDoc.Show 1
 End Sub
 Private Sub xPrinted_Click()
 If bIg Then Exit Sub
-con.Execute "update FILE6_53h set printed = " & xPrinted.Value & ",closed = " & xPrinted.Value & " from FILE6_53h where doc_no = " & MyParn(xdoc_no.text)
+con.Execute "update FILE6_53h set printed = " & xPrinted.Value & ",closed = " & xPrinted.Value & " from FILE6_53h where doc_no = " & MyParn(xDoc_No.text)
 MsgBox " „ › Õ «·›« Ê—… »‰Ã«Õ"
-If Not openCardTable(tbMode.tbFind, xdoc_no.text) Then
+If Not openCardTable(tbMode.tbFind, xDoc_No.text) Then
     If Not openCardTable Then
         myDefine
     End If
@@ -1621,7 +1621,7 @@ For i = 1 To grid1.Rows - 1
     grid1.TextMatrix(i, 0) = i
 Next
 End Sub
-Private Sub Fixgrd()
+Private Sub fixGrd()
 With grid1
 '                 0         1          2         3         4          5             6          7          8               9          10              11
 .FormatString = "„.|" & "»«—ﬂÊœ|" & "„Ê”„|" & "„’‰⁄|" & "„ﬂ »|" & "—ﬁ„ „ÊœÌ·|" & "«·’‰›|" & "„ﬁ«”|" & "«··Ê‰|" & "”⁄— „” Â·ﬂ|" & "”⁄— Ã„·…|" & "”⁄—|"
@@ -1672,7 +1672,7 @@ With grid1
         aInsert = AddFlag(Empty, "ITEM", addstring(grid1.TextMatrix(i, 1)))
         aInsert = AddFlag(aInsert, "PRICE", .ValueMatrix(i, 11))
         If grid1.TextMatrix(i, grid1.Cols - 1) = "" Then
-            aInsert = AddFlag(aInsert, "DOC_NO", addstring(xdoc_no.text))
+            aInsert = AddFlag(aInsert, "DOC_NO", addstring(xDoc_No.text))
             con.Execute addInsert(aInsert, "FILE6_53")
         Else
             con.Execute addUpdate(aInsert, "FILE6_53", "ID = " & grid1.TextMatrix(i, .Cols - 1))
@@ -1699,11 +1699,11 @@ strSql = "SELECT FILE6_53.ITEM," & _
          "INNER JOIN FILE1_10 " & _
          " ON FILE6_53.ITEM = FILE1_10.ITEM" & _
          " LEFT JOIN FACT ON FACT.CODE = FILE1_10.FACT" & _
-         " WHERE FILE6_53.DOC_NO = " & xdoc_no.text & _
+         " WHERE FILE6_53.DOC_NO = " & xDoc_No.text & _
          " ORDER BY FILE6_53.ID"
 Set grid1.DataSource = cmd(strSql, con).Execute
 myAddItem
-Fixgrd
+fixGrd
 End Sub
 Private Function mysave() As Boolean
 
@@ -1712,7 +1712,7 @@ If Not MYVALID Then Exit Function
 If Not myreplace Then Exit Function
 
 Inform " „ Õ›Ÿ «·„” ‰œ »‰Ã«Õ"
-If Not openCardTable(tbMode.tbFind, xdoc_no.text) Then
+If Not openCardTable(tbMode.tbFind, xDoc_No.text) Then
     If Not openCardTable Then myDefine
 End If
                     
@@ -1741,12 +1741,12 @@ grid1.AddItem ""
 MakeSerial
 End Sub
 Private Sub myUndo()
-If xdoc_no.Tag = DefineMode Then
+If xDoc_No.Tag = DefineMode Then
     If Not openCardTable Then
         CmdNewInv_Click
     End If
 Else
-    If Not openCardTable(tbMode.tbFind, xdoc_no.text) Then
+    If Not openCardTable(tbMode.tbFind, xDoc_No.text) Then
         If Not openCardTable Then
             myDefine
         End If
@@ -1759,7 +1759,7 @@ Err.Clear
 End Sub
 Private Sub CmdNext_Click()
 'If Not openCardTable(tbMode.tbNext, xdoc_no_flag.Caption) Then
-If Not openCardTable(tbMode.tbNext, xdoc_no.text) Then
+If Not openCardTable(tbMode.tbNext, xDoc_No.text) Then
     If Not openCardTable(tbMode.tblast) Then
         myDefine
     End If
@@ -1767,7 +1767,7 @@ End If
 End Sub
 Private Sub CmdPrevious_Click()
 'If Not openCardTable(tbMode.tbPrevious, xdoc_no_flag.Caption) Then
-If Not openCardTable(tbMode.tbPrevious, xdoc_no.text) Then
+If Not openCardTable(tbMode.tbPrevious, xDoc_No.text) Then
     If Not openCardTable(tbMode.tbFirst) Then
         myDefine
     End If
@@ -1791,7 +1791,7 @@ End If
 validOpen = True
 End Function
 Private Function retRecords(pDoc_no, ByRef nRecords As Long, ByRef nRecord As Long) As Variant
-Dim cString As String, loctable As New ADODB.RecordSet
+Dim cString As String, locTable As New ADODB.RecordSet
 If pDoc_no <> "" Then
     cString = "SELECT Count(FILE6_53H.DOC_NO) AS records,COUNT(CASE WHEN FILE6_53H.DOC_NO <= " & MyParn(pDoc_no) & " THEN 1 END) AS record"
 Else
@@ -1804,10 +1804,10 @@ If cFilter <> "" Then
     cString = cString & " WHERE " & cFilter
 End If
 
-Set loctable = cmd(cString, con).Execute
-If Not loctable.EOF Then
-    nRecords = loctable!RECORDS
-    nRecord = Val(loctable!Record & "")
+Set locTable = cmd(cString, con).Execute
+If Not locTable.EOF Then
+    nRecords = locTable!RECORDS
+    nRecord = Val(locTable!Record & "")
 End If
 End Function
 Private Function retFilter()
@@ -1854,24 +1854,24 @@ myLostFocus xDate
 myValidDate xDate
 End Sub
 Private Sub xDoc_No_GotFocus()
-myGotFocus xdoc_no
+myGotFocus xDoc_No
 End Sub
 Private Sub xDoc_No_LostFocus()
-myLostFocus xdoc_no
-If Not ValidNum(xdoc_no.text) Then
-     If xdoc_no.Tag = LoadMode Then
+myLostFocus xDoc_No
+If Not ValidNum(xDoc_No.text) Then
+     If xDoc_No.Tag = LoadMode Then
         myDefine
     Else
-        xdoc_no.text = ""
+        xDoc_No.text = ""
     End If
 Else
-    If (Not (CardTable.EOF)) And xdoc_no.Tag = LoadMode Then
-        If CardTable!doc_no = xdoc_no.text Then
+    If (Not (CardTable.EOF)) And xDoc_No.Tag = LoadMode Then
+        If CardTable!doc_no = xDoc_No.text Then
             Exit Sub
         End If
     End If
     
-    If Not openCardTable(tbMode.tbFind, xdoc_no.text) Then
+    If Not openCardTable(tbMode.tbFind, xDoc_No.text) Then
         If Not openCardTable Then
             myDefine
         End If
@@ -1914,7 +1914,7 @@ If xLogo.MatchedWithList Then
     End If
 End If
 
-Dim loctable As New ADODB.RecordSet, cString As String
+Dim locTable As New ADODB.RecordSet, cString As String
 cString = "SELECT FILE6_53H.DOC_NO," & _
           " FILE6_53H.DATE," & _
           " FILE3_10.DESCA AS CODE_DESCA," & _
@@ -1934,20 +1934,20 @@ cString = "SELECT FILE6_53H.DOC_NO," & _
           " INNER JOIN FILE1_10 ON FILE6_53.ITEM = FILE1_10.ITEM" & _
           " INNER JOIN FILE3_10 ON FILE6_53H.CODE = FILE3_10.CODE" & _
           " LEFT JOIN FACT ON FACT.CODE = FILE1_10.[FACT]" & _
-          " WHERE  FILE6_53.DOC_NO = " & MyParn(xdoc_no.text)
-Set loctable = cmd(cString, con).Execute
+          " WHERE  FILE6_53.DOC_NO = " & MyParn(xDoc_No.text)
+Set locTable = cmd(cString, con).Execute
 
 Dim con_image As New ADODB.Connection
 openConDoc con_image
 
 contemp.Execute "DELETE * FROM TEMP"
 temptable.Open "temp", contemp, adOpenStatic, adLockOptimistic, adCmdTable
-Do While Not loctable.EOF
+Do While Not locTable.EOF
     temptable.AddNew
     
     cString = " select top 1 * " & _
-             " from MODEL_IMAGES where model = " & MyParn(loctable!MODEL) & _
-             " AND (C_COLOR = " & loctable!c_Color & _
+             " from MODEL_IMAGES where model = " & MyParn(locTable!MODEL) & _
+             " AND (C_COLOR = " & locTable!c_Color & _
              " OR C_COLOR IS NULL)" & _
              " ORDER BY C_COLOR,ID"
      
@@ -1995,25 +1995,25 @@ Do While Not loctable.EOF
         SaveImageToRs imgxPrint.Picture, temptable, "picture1"
     End If
     
-    temptable!STR6 = loctable!doc_no
-    temptable!Date1 = myFormat_p(loctable!Date)
-    temptable!STR7 = loctable!CODE_desca
+    temptable!STR6 = locTable!doc_no
+    temptable!Date1 = myFormat_p(locTable!Date)
+    temptable!STR7 = locTable!CODE_desca
     
-    temptable!str2 = loctable!FACTDESCA
-    temptable!str1 = loctable!Item
-    temptable!str13 = TurnValue(DelZero(loctable!modelfact))
-    temptable!str3 = loctable!ITEM_DESCA
-    temptable!STR4 = loctable!color
-    temptable!STR5 = loctable!SCAL
-    temptable!str16 = loctable!MODEL
+    temptable!str2 = locTable!FACTDESCA
+    temptable!str1 = locTable!Item
+    temptable!str13 = TurnValue(DelZero(locTable!modelfact))
+    temptable!str3 = locTable!ITEM_DESCA
+    temptable!STR4 = locTable!color
+    temptable!STR5 = locTable!SCAL
+    temptable!str16 = locTable!MODEL
     temptable!str10 = "⁄—÷ ”⁄—"
     
-    temptable!VAL3 = loctable!Quant
-    temptable!VAL1 = loctable!price
-    temptable!VAL4 = loctable!TOTAL
+    temptable!VAL3 = locTable!Quant
+    temptable!VAL1 = locTable!price
+    temptable!VAL4 = locTable!TOTAL
     temptable!VAL14 = i
     temptable.Update
-    loctable.MoveNext
+    locTable.MoveNext
 Loop
 
 closeCon con_image
@@ -2057,7 +2057,7 @@ If xLogo.MatchedWithList Then
     End If
 End If
 
-Dim loctable As New ADODB.RecordSet
+Dim locTable As New ADODB.RecordSet
 Dim cString As String
 cString = "SELECT FILE1_10.MODEL," & _
             "FILE1_10.MODELFACT," & _
@@ -2074,7 +2074,7 @@ cString = "SELECT FILE1_10.MODEL," & _
             " INNER JOIN FILE1_10 ON FILE1_10.ITEM = FILE6_53.ITEM" & _
             " INNER JOIN FILE3_10 ON FILE6_53H.CODE = FILE3_10.CODE" & _
             " LEFT JOIN FACT ON FACT.CODE = FILE1_10.[FACT]" & _
-            " WHERE FILE6_53H.DOC_NO = " & MyParn(xdoc_no.text)
+            " WHERE FILE6_53H.DOC_NO = " & MyParn(xDoc_No.text)
  
  cString = cString & _
             " GROUP BY FILE6_53H.DOC_NO," & _
@@ -2087,18 +2087,18 @@ cString = "SELECT FILE1_10.MODEL," & _
              "FACT.DESCA" & _
             " ORDER BY FILE1_10.MODEL"
 
-Set loctable = myRs(cString, con)
+Set locTable = myRs(cString, con)
 
 Dim con_image As New ADODB.Connection
 openConDoc con_image
 
 contemp.Execute "DELETE * FROM TEMP"
 temptable.Open "temp", contemp, adOpenStatic, adLockOptimistic, adCmdTable
-Do While Not loctable.EOF
+Do While Not locTable.EOF
     temptable.AddNew
     
     cString = "SELECT TOP 1 * " & _
-             " FROM MODEL_IMAGES WHERE MODEL = " & MyParn(loctable!MODEL) & _
+             " FROM MODEL_IMAGES WHERE MODEL = " & MyParn(locTable!MODEL) & _
              " ORDER BY C_COLOR,ID"
      
     If chkImage.Value = 1 Then
@@ -2143,21 +2143,21 @@ Do While Not loctable.EOF
         SaveImageToRs imgxPrint.Picture, temptable, "picture1"
     End If
     
-    temptable!STR6 = loctable!doc_no
-    temptable!Date1 = myFormat_p(loctable!Date)
-    temptable!STR7 = loctable!CODE_desca
-    temptable!VAL1 = loctable!price
+    temptable!STR6 = locTable!doc_no
+    temptable!Date1 = myFormat_p(locTable!Date)
+    temptable!STR7 = locTable!CODE_desca
+    temptable!VAL1 = locTable!price
     
-    temptable!str2 = loctable!fact_Desca
-    temptable!MEMO1 = loctable!color
-    temptable!MEMO2 = loctable!SCAL
-    temptable!str16 = loctable!MODEL
-    temptable!str13 = TurnValue(DelZero(loctable!modelfact))
-    temptable!str3 = loctable!ITEM_DESCA
+    temptable!str2 = locTable!fact_Desca
+    temptable!MEMO1 = locTable!color
+    temptable!MEMO2 = locTable!SCAL
+    temptable!str16 = locTable!MODEL
+    temptable!str13 = TurnValue(DelZero(locTable!modelfact))
+    temptable!str3 = locTable!ITEM_DESCA
     temptable!str10 = "⁄—÷ ”⁄—"
     temptable!VAL14 = i
     temptable.Update
-    loctable.MoveNext
+    locTable.MoveNext
 Loop
 
 closeCon con_image
@@ -2301,7 +2301,7 @@ For i = 0 To cSv.NumRows - 1
 Next
 
 sb.Shorten 1
-If sb.length = 0 Then Exit Function
+If sb.Length = 0 Then Exit Function
 
 Dim strSql As String
 Dim ItemTable As ADODB.RecordSet
@@ -2311,7 +2311,7 @@ strSql = "SELECT * " & _
          " WHERE ITEM IN(" & sb.GetAsString & ")"
 
 Dim db As New clsDb
-Set ItemTable = db.myRs(strSql): If ItemTable Is Nothing Then GoTo CleanUp
+Set ItemTable = db.myRs(strSql): If ItemTable Is Nothing Then GoTo cleanUP
 
                     
 
@@ -2330,24 +2330,24 @@ For i = 0 To cSv.NumRows - 1
             If nPrice > 0 Then
                 strSql = "update file6_53 " & _
                               "set file6_53.price = " & nPrice & _
-                              " where doc_no = " & MyParn(xdoc_no.text) & _
+                              " where doc_no = " & MyParn(xDoc_No.text) & _
                               " and item  = " & MyParn(sitem)
                 
-                If Not db.Execute(strSql, nAffect) Then GoTo CleanUp
+                If Not db.Execute(strSql, nAffect) Then GoTo cleanUP
                 
                 If nAffect = 0 Then
                     strSql = "INSERT INTO FILE6_53(DOC_NO,ITEM,PRICE)" & _
-                             "VALUES(" & xdoc_no.text & "," & _
+                             "VALUES(" & xDoc_No.text & "," & _
                              addstring(sitem) & "," & _
                              nPrice & ")"
-                    If Not db.Execute(strSql) Then GoTo CleanUp
+                    If Not db.Execute(strSql) Then GoTo cleanUP
                 End If
             End If
         End If
     End If
 Next
 myloadCSV = True
-CleanUp:
+cleanUP:
 prog1.Visible = False
 Me.Caption = sCaption
 Set db = Nothing

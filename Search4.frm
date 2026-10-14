@@ -290,14 +290,14 @@ Attribute VB_Exposed = False
 Dim con As New ADODB.Connection
 Dim Generalarray, listarray, GrdArray
 Dim cString As String
-Private Sub cmdExit_Click()
+Private Sub CmdExit_Click()
 Unload Me
 End Sub
 Private Sub cmdGo_Click()
 Fillgrd
 FIXGRID
-If Grid1.Rows > 1 Then
-    Grid1.SetFocus
+If grid1.Rows > 1 Then
+    grid1.SetFocus
    ' grid1.Row = 1
 End If
 End Sub
@@ -316,8 +316,8 @@ End Sub
 Private Sub cmbLookup_LostFocus(Index As Integer)
 On Error Resume Next
 If Index = UBound(listarray) + 1 Then
-    Grid1.SetFocus
-    If Grid1.Rows > 1 Then Grid1.Row = 1
+    grid1.SetFocus
+    If grid1.Rows > 1 Then grid1.Row = 1
 End If
 Err.Clear
 Exit Sub
@@ -342,9 +342,9 @@ Private Sub Form_Activate()
 'If txtlookup(1).Visible Then txtlookup(1).SetFocus
 End Sub
 Private Sub Form_Load()
-    openCon con
-Set Grid1.DataSource = Ado1
-Grid1.ExplorerBar = flexExSort
+openCon con
+Set grid1.DataSource = Ado1
+grid1.ExplorerBar = flexExSort
 StatusBar1.Panels(1).Width = 2500
 'Ado1.ConnectionString = "Provider=Microsoft.Jet.OLEDB.4.0;Persist Security Info=False;Data Source=" & MainPath & "\DATA\Data.mdb"
 Ado1.ConnectionString = strCon
@@ -354,7 +354,7 @@ listarray = searchArray(1)
 GrdArray = searchArray(2)
 
 Frame2.Width = Generalarray(3)
-Grid1.Cols = UBound(GrdArray) + 1
+grid1.Cols = UBound(GrdArray) + 1
 LoadControls
 
 If UBound(Generalarray) = 3 Then
@@ -367,14 +367,14 @@ Handlecontrols
 End Sub
 
 Private Sub grid1_DblClick()
-If Grid1.Row > 0 Then Generalarray(0).myProc
+If grid1.Row > 0 Then Generalarray(0).myProc
 End Sub
 
-Private Sub Grid1_GotFocus()
-If Grid1.Row = 0 And Grid1.Rows > 1 Then Grid1.Select 1, 0
+Private Sub grid1_GotFocus()
+If grid1.Row = 0 And grid1.Rows > 1 Then grid1.Select 1, 0
 End Sub
 
-Private Sub Grid1_KeyPress(KeyAscii As Integer)
+Private Sub grid1_KeyPress(KeyAscii As Integer)
 If KeyAscii = 13 Then
     grid1_DblClick
 End If
@@ -404,22 +404,22 @@ Ado1.RecordSource = cString
 Ado1.Refresh
 FIXGRID
 Exit Sub
-myerror:
+myError:
 MsgBox "«œŒ«· ‰’ €Ì— „‰«”»"
 End Sub
 Private Sub Handlecontrols()
 End Sub
 Private Sub FIXGRID()
-For i = 0 To Grid1.Cols - 1
-   Grid1.TextMatrix(0, i) = GrdArray(i, 0)
-   Grid1.ColWidth(i) = GrdArray(i, 1)
-   Grid1.ColAlignment(i) = 6
-   nwidth = nwidth + Grid1.ColWidth(i) + 75
+For i = 0 To grid1.Cols - 1
+   grid1.TextMatrix(0, i) = GrdArray(i, 0)
+   grid1.ColWidth(i) = GrdArray(i, 1)
+   grid1.ColAlignment(i) = 6
+   nWidth = nWidth + grid1.ColWidth(i) + 75
 Next
-Grid1.Width = nwidth + 200
-Me.Width = Grid1.Width + 400
+grid1.Width = nWidth + 200
+Me.Width = grid1.Width + 400
 'Label2.Caption = IIf(Grid1.Rows = 1, "·«  ÊÃœ ”Ã·« ", "⁄œœ «·”Ã·«  «·„ÿ«»ﬁ… : " & Grid1.Rows - 1)
-StatusBar1.Panels(1).text = IIf(Grid1.Rows = 1, "·«  ÊÃœ ”Ã·« ", "⁄œœ «·”Ã·«  «·„ÿ«»ﬁ… : " & Grid1.Rows - 1)
+StatusBar1.Panels(1).text = IIf(grid1.Rows = 1, "·«  ÊÃœ ”Ã·« ", "⁄œœ «·”Ã·«  «·„ÿ«»ﬁ… : " & grid1.Rows - 1)
 End Sub
 Private Sub LoadControls()
 nVSpace = 375
@@ -472,7 +472,7 @@ txtlookup(Index).SelStart = 0
 txtlookup(Index).SelLength = Len(txtlookup(Index).text)
 End Sub
 Private Sub txtlookup_KeyPress(Index As Integer, KeyAscii As Integer)
-If KeyAscii = 13 Then Grid1.SetFocus
+If KeyAscii = 13 Then grid1.SetFocus
 End Sub
 Private Function FixString(cString)
 aString = Split(Trim(cString), " ")
